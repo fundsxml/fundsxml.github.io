@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.88.1" />
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <link rel="alternate" type="application/json" href="/index.json" title="FundsXML" />
+    <link rel="alternate" type="application/rss&#43;xml" href="/migration/controldata/index.xml" title="FundsXML" />
     <meta name="description" content="">
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title> :: FundsXML</title>
+    <title>Control Data :: FundsXML</title>
     <link href="/css/nucleus.css?1634568448" rel="stylesheet">
     <link href="/css/fontawesome-all.min.css?1634568448" rel="stylesheet">
     <link href="/css/featherlight.min.css?1634568448" rel="stylesheet">
@@ -26,7 +25,7 @@
       }
     </style>
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/migration/controldata/">
     <nav id="sidebar" class="">
       <div id="header-wrapper">
         <div id="header">
@@ -79,8 +78,8 @@
       </div>
       <div class="highlightable">
         <ul class="topics">
-          <li data-nav-id="/migration/" title="Migration 3 to 4" class="dd-item"><a href="/migration/"><i class='fas fa-code-branch'></i> Migration 3 to 4</a><ul>
-          <li data-nav-id="/migration/controldata/" title="Control Data" class="dd-item alwaysopen"><a href="/migration/controldata/"><i class='fas fa-code-branch'></i> Control Data</a><ul></ul></li>
+          <li data-nav-id="/migration/" title="Migration 3 to 4" class="dd-item parent"><a href="/migration/"><i class='fas fa-code-branch'></i> Migration 3 to 4</a><ul>
+          <li data-nav-id="/migration/controldata/" title="Control Data" class="dd-item active parent alwaysopen"><a href="/migration/controldata/"><i class='fas fa-code-branch'></i> Control Data</a><ul></ul></li>
           <li data-nav-id="/migration/fund/" title="Fund Data" class="dd-item alwaysopen"><a href="/migration/fund/"><i class='fas fa-code-branch'></i> Fund Data</a><ul></ul></li>
           <li data-nav-id="/migration/assetmasterdata/" title="Asset Master Data migration" class="dd-item alwaysopen"><a href="/migration/assetmasterdata/"><i class='fas fa-code-branch'></i> Asset Master Data migration</a><ul></ul></li></ul></li>
           <li data-nav-id="/basics/" title="Basics" class="dd-item"><a href="/basics/"><i class='fas fa-info-circle'></i> Basics</a><ul>
@@ -104,22 +103,133 @@
     <div id="body">
       <div id="overlay"></div>
       <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fas fa-bars"></i>
+              </a>
+            </span>
+            <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+                <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/"><span itemprop="name"></span></a> > </li>
+                <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/migration/"><span itemprop="name">Migration 3 to 4</span></a> > </li>
+                <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/migration/controldata/" aria-disabled="true"><span itemprop="name">Control Data</span></a></li>
+            </ol>
+          </div>
+            <div class="progress">
+              <div class="wrapper">
+<nav id="TableOfContents"></nav>
+              </div>
+            </div>
+        </div>
         <div id="head-tags">
         </div>
         <main id="body-inner">
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
+          <h1>Control Data</h1>
 
+<p>Control Data are Metadata describing the data transmitted within the file.<br>
+This Data contain information about the file itself (creation time, FundsXML Version, etc.) and the sender of the file (Data Supplier).<br>
+The sender of the file  does not have to be the manager of the fund. This can also be a technical service provider.</p>
+<hr>
+<p>Metadata in <strong>FundsXML3</strong>:
+<img src="metadata_fundsxml3.PNG" alt="FundsXML3 Metadata" title="Metadata FunsdXML3"></p>
+<p>XML Code in FundsXML3:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="hl"><span class="lnt"> 4
+</span></span><span class="hl"><span class="lnt"> 5
+</span></span><span class="hl"><span class="lnt"> 6
+</span></span><span class="hl"><span class="lnt"> 7
+</span></span><span class="hl"><span class="lnt"> 8
+</span></span><span class="hl"><span class="lnt"> 9
+</span></span><span class="hl"><span class="lnt">10
+</span></span><span class="hl"><span class="lnt">11
+</span></span><span class="hl"><span class="lnt">12
+</span></span><span class="hl"><span class="lnt">13
+</span></span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;FundsXML</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.fundsxml.org/XMLSchema/3.0.6&#34;</span> 
+    <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> 
+    <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.fundsxml.org/XMLSchema/3.0.6 FundsXML3.0.6.xsd&#34;</span> 
+<span class="hl">    <span class="na">Version=</span><span class="s">&#34;3.0.6&#34;</span> 
+</span><span class="hl">    <span class="na">task=</span><span class="s">&#34;import&#34;</span><span class="nt">&gt;</span>
+</span><span class="hl">    <span class="nt">&lt;Date&gt;</span>2021-01-02<span class="nt">&lt;/Date&gt;</span>
+</span><span class="hl">    <span class="nt">&lt;CompletionDate&gt;</span>2021-01-02T09:30:47Z<span class="nt">&lt;/CompletionDate&gt;</span>
+</span><span class="hl">    <span class="nt">&lt;PublicationDate&gt;</span>2021-01-02<span class="nt">&lt;/PublicationDate&gt;</span>
+</span><span class="hl">    <span class="nt">&lt;DataSupplier&gt;</span>
+</span><span class="hl">        <span class="nt">&lt;Short&gt;</span>AM1<span class="nt">&lt;/Short&gt;</span>
+</span><span class="hl">        <span class="nt">&lt;Name&gt;</span>Asset Manager One<span class="nt">&lt;/Name&gt;</span>
+</span><span class="hl">        <span class="nt">&lt;TypeOfDataSupplier&gt;</span>Vendor<span class="nt">&lt;/TypeOfDataSupplier&gt;</span>
+</span><span class="hl">    <span class="nt">&lt;/DataSupplier&gt;</span>
+</span>    <span class="nt">&lt;UniqueDeliveryIdentification&gt;</span>0123UNIQUE<span class="nt">&lt;/UniqueDeliveryIdentification&gt;</span>
+    <span class="nt">&lt;Language&gt;</span>en-us<span class="nt">&lt;/Language&gt;</span>
+...</code></pre></td></tr></table>
+</div>
+</div></p>
+<hr>
+<p>In FundsXML4 there is a dedicated node at the start of the file called &ldquo;ControlData&rdquo;.</p>
+<p>Metadata in <strong>FundsXML4</strong>:
+<img src="metadata_fundsxml4.PNG" alt="FundsXML4 Metadata" title="Metadata FunsdXML4"></p>
+<p>XML Code in FundsXML4:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml">...
+<span class="nt">&lt;ControlData&gt;</span>
+    <span class="nt">&lt;UniqueDocumentID&gt;</span>0123UNIQUE<span class="nt">&lt;/UniqueDocumentID&gt;</span>
+    <span class="nt">&lt;DocumentGenerated&gt;</span>2021-10-18T11:08:09.6252085+02:00<span class="nt">&lt;/DocumentGenerated&gt;</span>
+    <span class="nt">&lt;Version&gt;</span>4.1.8<span class="nt">&lt;/Version&gt;</span>
+    <span class="nt">&lt;ContentDate&gt;</span>2021-09-30<span class="nt">&lt;/ContentDate&gt;</span>
+    <span class="nt">&lt;DataSupplier&gt;</span>
+        <span class="nt">&lt;SystemCountry&gt;</span>AT<span class="nt">&lt;/SystemCountry&gt;</span>
+        <span class="nt">&lt;Short&gt;</span>AM1<span class="nt">&lt;/Short&gt;</span>
+        <span class="nt">&lt;Name&gt;</span>Asset Manager One<span class="nt">&lt;/Name&gt;</span>
+        <span class="nt">&lt;Type&gt;</span>VENDOR<span class="nt">&lt;/Type&gt;</span>
+        <span class="nt">&lt;Contact&gt;</span>
+            <span class="nt">&lt;Email&gt;</span>office@vendordomain.com<span class="nt">&lt;/Email&gt;</span>
+        <span class="nt">&lt;/Contact&gt;</span>
+    <span class="nt">&lt;/DataSupplier&gt;</span>
+    <span class="nt">&lt;Language&gt;</span>DE<span class="nt">&lt;/Language&gt;</span>
+<span class="nt">&lt;/ControlData&gt;</span>
+...</code></pre></td></tr></table>
+</div>
+</div></p>
 
-<p>Starting pages
-222 222</p>
-
-
+          <footer class=" footline">
+            <i class='fas fa-user'></i> <a href="mailto:karl.kauc@gmail.com">Karl Kauc</a>  <i class='fas fa-calendar'></i> 18/10/2021
+          </footer>
         </main>
       </div>
       <div id="navigation">
-        <a class="nav nav-next" href="/migration/" title="Migration 3 to 4"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/migration/" title="Migration 3 to 4"><i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/migration/fund/" title="Fund Data"><i class="fa fa-chevron-right"></i></a>
       </div>
     </div>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
