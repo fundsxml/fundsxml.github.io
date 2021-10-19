@@ -7,46 +7,46 @@
     "uri": "/migration/controldata/"
   },
   {
-    "content": "FundsXML3 to FundsXML4 update path This chapter contains information about the upgrade from the (long term) version FundsXML 3.0.6 to FundsXML 4.0.0.\n",
+    "content": "WORK IN PROCESS\n",
     "description": "",
     "tags": null,
-    "title": "Migration 3 to 4",
-    "uri": "/migration/"
+    "title": "XML Basics",
+    "uri": "/basics/1_xml_basics/"
   },
   {
-    "content": "Goal 222\nasdf asdfasdf asdf a\n",
+    "content": "WORK IN PROCESS\n",
+    "description": "",
+    "tags": null,
+    "title": "Schema Validation",
+    "uri": "/basics/2_schema_validation/"
+  },
+  {
+    "content": "WORK IN PROCESS\n",
     "description": "",
     "tags": null,
     "title": "Basics",
     "uri": "/basics/"
   },
   {
-    "content": "asdf\n",
+    "content": "This part of the schema was complete rewritten from scratch.\nPrior to FunsdXML4 it was very hard to distinguish between Fund and Shareclass data. FundsXML4 has a clear separation on Fund level data (LEI) and Shareclasse level Data (ISIN) - covering the AssetManager (Fund) view and the Investor (Shareclass) view.\nFundsXML3 Node translation from FundsXML3 perspective:    FundsXML3 Node FundsXML4 Node Description     DataSupplier DataSupplier Name of the Asset Manager who manges the fund.   Name Names Official Fund Name as written in the Prospectus   CompanyID FundStaticData/Administrator FundStaticData/Custodian FundStaticData/InvestmentCompany Company Data   SecurityCodes Identifiers Identifiers of fund   FundCurrency Currency Main currency of fund (typically used by custodian for calculation of total NAV)   FundFacts FundStaticData Main static data of fund (Fiscal Year, Custody, …)   ProcessData FundDynamicData Dynamic data of fund (total values, holdings, transactions, breakdowns, …)   CountrySpecificData CountrySpecificData no difference     FundsXML4 Node translation from FundsXML4 perspective:\n   FundsXML4 Node FundsXML3 Node Description     Identifiers SecurityCodes Identifiers of fund   Names Name Name of the Asset Manager who manges the fund. Multiple names can be provided. One Name “OfficialName” is mandatory.   Currency FundCurrency Main currency of fund (typically used by custodian for calculation of total NAV)   SingleFundFlag none Indicates if the fund is an umbrella - otherwise set to “true”. Note: Funds with multiple shareclasses are also SingleFunds in term of FundsXML4.   DataSupplier DataSupplier Name of the Asset Manager who manges the fund. Note: if multiple Funds are transported within a single file, the DataSupplier in the ControlData node contains the name of the sender (e.g. Service Provider) and the DataSupplier of the Funds contains the name of the Fund Management Company.   FundStaticData FundFacts Main static data of fund (Fiscal Year, Custody, …)   FundDynamicData ProcessData Dynamic data of fund (total values, holdings, transactions, breakdowns, …)   SingleFund / Subfunds none This is a choice element. That means that either the Node “SingleFund” OR “Subfunds” can be delivered.   CountrySpecificData CountrySpecificData no difference    Identifiers (4) / SecurityCodes (3) On Fund level a LEI or - if no LEI is available - an internal Fund Code has to be provided.\nIf an internal Fund Code is used, it must not change in future deliveries.\n1 2 3 4 5 6  ... \u003cIdentifiers\u003e \u003cLEI\u003ePQOH26KWDF7CG10L6792\u003c/LEI\u003e \u003cOtherID FreeType=\"INTERNAL FUND CODE\"\u003eAT_0001\u003c/OtherID\u003e \u003c/Identifiers\u003e ..   FundStaticData (4) / FundFacts (3) TBC\n",
     "description": "",
     "tags": null,
     "title": "Fund Data",
     "uri": "/migration/fund/"
   },
   {
-    "content": "asset master daata\n",
+    "content": "FundsXML3 to FundsXML4 update path FundsXML 4.0.0 is the first version since the beginning of FundsXML (2001) that was not backward compatible.\nThis chapter contains information about the major differences between version FundsXML 3.0.6 and FundsXML 4.0.0.\nNote: not all Nodes will be covered in detail. Only the most different ones.\nThe main differences are:\n clear separation between fund and sharecalss data (including holdings) more mandatory fields (especially for OTC instruments) more focus on issuer/counterparty data enhanced reference data check (e.g. automatic check of existing UniqueID in AssetMasterData)  ",
     "description": "",
     "tags": null,
-    "title": "Asset Master Data migration",
+    "title": "Migration 3 to 4",
+    "uri": "/migration/"
+  },
+  {
+    "content": "asset master data\n",
+    "description": "",
+    "tags": null,
+    "title": "Asset Master Data",
     "uri": "/migration/assetmasterdata/"
-  },
-  {
-    "content": "first contentasdfasd\nasfdasdf t\n",
-    "description": "",
-    "tags": null,
-    "title": "First Content",
-    "uri": "/basics/first-content/"
-  },
-  {
-    "content": "dies ist die zweite seite\n",
-    "description": "",
-    "tags": null,
-    "title": "Second Content",
-    "uri": "/basics/second-content/"
   },
   {
     "content": "",

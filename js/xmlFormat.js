@@ -7,4 +7,4 @@ jQuery.fn.highlight = function (str, className) {
   });
 };
 
-$("pre").highlight("<","special");
+$(".chroma").highlight("<","special");
