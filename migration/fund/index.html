@@ -8,18 +8,18 @@
     <meta name="description" content="">
     <link rel="icon" href="/images/favicon.png" type="image/png">
     <title>Fund Data :: FundsXML</title>
-    <link href="/css/nucleus.css?1634654724" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1634654724" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1634654724" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1634654724" rel="stylesheet">
-    <link href="/css/auto-complete.css?1634654724" rel="stylesheet">
-    <link href="/css/theme.css?1634654724" rel="stylesheet">
-    <link href="/css/theme-relearn.css?1634654724" rel="stylesheet">
-    <link href="/css/variant.css?1634654724" rel="stylesheet">
-    <link href="/css/print.css?1634654724" rel="stylesheet" media="print">
-    <link href="/css/syntax.css?1634654724" rel="stylesheet">
-    <script src="/js/jquery.min.js?1634654724"></script>
-    <script src="/js/xmlFormat.js?1634654724"></script>
+    <link href="/css/nucleus.css?1634747830" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1634747830" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1634747830" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1634747830" rel="stylesheet">
+    <link href="/css/auto-complete.css?1634747830" rel="stylesheet">
+    <link href="/css/theme.css?1634747830" rel="stylesheet">
+    <link href="/css/theme-relearn.css?1634747830" rel="stylesheet">
+    <link href="/css/variant.css?1634747830" rel="stylesheet">
+    <link href="/css/print.css?1634747830" rel="stylesheet" media="print">
+    <link href="/css/syntax.css?1634747830" rel="stylesheet">
+    <script src="/js/jquery.min.js?1634747830"></script>
+    <script src="/js/xmlFormat.js?1634747830"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -84,8 +84,8 @@ f9cAAAAASUVORK5CYII=
           <input data-search-input id="search-by" type="search" placeholder="Search...">
           <span data-search-clear=""><i class="fas fa-times"></i></span>
         </div>
-        <script src="/js/lunr.min.js?1634654724"></script>
-        <script src="/js/auto-complete.js?1634654724"></script>
+        <script src="/js/lunr.min.js?1634747830"></script>
+        <script src="/js/auto-complete.js?1634747830"></script>
         <!-- hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic: -->
         <!-- https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72 -->
         <script>
@@ -93,7 +93,7 @@ f9cAAAAASUVORK5CYII=
           var root_url="/";
           var baseUri=root_url.replace(/\/$/, '');
         </script>
-        <script src="/js/search.js?1634654724"></script>
+        <script src="/js/search.js?1634747830"></script>
       </div>
       <div id="homelinks">
         <ul>
@@ -154,6 +154,8 @@ f9cAAAAASUVORK5CYII=
       <ul>
         <li><a href="#identifiers-4--securitycodes-3">Identifiers (4) / SecurityCodes (3)</a></li>
         <li><a href="#fundstaticdata-4--fundfacts-3">FundStaticData (4) / FundFacts (3)</a></li>
+        <li><a href="#funddynamicdata-4--processdata-3">FundDynamicData (4) / ProcessData (3)</a></li>
+        <li><a href="#singlefund---shareclasses---shareclass-4">SingleFund - ShareClasses - ShareClass (4)</a></li>
       </ul>
     </li>
   </ul>
@@ -306,7 +308,51 @@ If an internal Fund Code is used, it must not change in future deliveries.</p>
 </div>
 </div>
 <h3 id="fundstaticdata-4--fundfacts-3">FundStaticData (4) / FundFacts (3)</h3>
-<p>TBC</p>
+<p>This node contains all Fund Static Data like:</p>
+<ul>
+<li>Inception Date</li>
+<li>Legal Structure (AIF, &hellip;)</li>
+<li>Fund Administrator</li>
+<li>Publication Texts (Investement Strategie, Risk Description, etc.)</li>
+<li>Benchmark Information (Custom Benchmark, Market Index, Blended Benchmark, Benchmark composition, Index Constituents, etc.)</li>
+</ul>
+<p>Unlike in FundsXML3 there is no &ldquo;ShareClassSecurityType&rdquo;, &ldquo;MainShareClass&rdquo;, &ldquo;EarningUse&rdquo;, etc. This information can be found in the corresponding ShareClass nodes.</p>
+<h3 id="funddynamicdata-4--processdata-3">FundDynamicData (4) / ProcessData (3)</h3>
+<p>This node contains all dynamic data (&ldquo;data that change on a regular basis - e.g. daily&rdquo;).</p>
+<p>The main differences are:</p>
+<ul>
+<li>Fund Volume must be transported in TotalAssetValues/TotalAssetValue node. <em>Note: this is <strong>not</strong> the Shareclass Volume.</em></li>
+<li>Different Fund Volume types <strong>&ldquo;OFFICIAL&rdquo;</strong>, <strong>&ldquo;ESTIMATED&rdquo;</strong> and <strong>&ldquo;TECHNICAL&rdquo;</strong> can be transported.</li>
+<li>Holdings are not split into Assets, Fees and Accounts. In FundsXML4 all holdings are transported in the <strong>Portfolios/Portfolio/Positions/Position</strong> node.</li>
+<li>Different Risk figures can be transported (on Fund Level, Shareclass Level and Asset Level).</li>
+<li>Positions do have a mandatory UniqueID. <strong>This ID must also appear in the AssetMasterData node. Otherwise, the Schema Validation will fail.</strong></li>
+</ul>
+<h4 id="positions-4">Positions (4)</h4>
+<p>Positions (former Assets + Fees + Accounts) must have a <strong>UniqueID</strong>. This ID must reflect exactly one UniqueID in the AssetMasterData.</p>
+<p>The <strong>TotalValue</strong> contains the valuation (including accrued interests) of the instrument and can be provided in different currencies. 
+The TotalValue must be provided at least in Funds Currency and Asset Currency. 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml">...
+<span class="nt">&lt;TotalValue&gt;</span>
+    <span class="nt">&lt;Amount</span> <span class="na">ccy=</span><span class="s">&#34;EUR&#34;</span><span class="nt">&gt;</span>1000.02<span class="nt">&lt;/Amount&gt;</span>
+    <span class="nt">&lt;Amount</span> <span class="na">ccy=</span><span class="s">&#34;USD&#34;</span><span class="nt">&gt;</span>1164.37<span class="nt">&lt;/Amount&gt;</span>
+<span class="nt">&lt;/TotalValue&gt;</span>
+..</code></pre></td></tr></table>
+</div>
+</div></p>
+<p>In FundsXML3 only one level of Assets exists. This leads to fields that have a multiple meaning (depending on the asset class). 
+E.g. the field <strong>&ldquo;NominalOrUnit&rdquo;</strong> that was filled different depending on the corresponding asset class.</p>
+<p><img src="fundsxml4_positions.png" alt="FundsXML4_Position" title="FundsXML4 Positions"></p>
+<h3 id="singlefund---shareclasses---shareclass-4">SingleFund - ShareClasses - ShareClass (4)</h3>
 
           <footer class=" footline">
             <i class='fas fa-user'></i> <a href="mailto:karl.kauc@erste-am.com">Karl Kauc</a>  <i class='fas fa-calendar'></i> 24/08/2021
@@ -321,18 +367,18 @@ If an internal Fund Code is used, it must not change in future deliveries.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1634654724"></script>
-    <script src="/js/perfect-scrollbar.min.js?1634654724"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1634654724"></script>
-    <script src="/js/jquery.svg.pan.zoom.js?1634654724"></script>
-    <script src="/js/featherlight.min.js?1634654724"></script>
-    <script src="/js/modernizr.custom-3.6.0.js?1634654724"></script>
-    <script src="/js/mermaid.min.js?1634654724"></script>
+    <script src="/js/clipboard.min.js?1634747830"></script>
+    <script src="/js/perfect-scrollbar.min.js?1634747830"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1634747830"></script>
+    <script src="/js/jquery.svg.pan.zoom.js?1634747830"></script>
+    <script src="/js/featherlight.min.js?1634747830"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1634747830"></script>
+    <script src="/js/mermaid.min.js?1634747830"></script>
     <script>
       if (typeof mermaid != 'undefined') {
         mermaid.mermaidAPI.initialize( Object.assign( { "securityLevel": "antiscript" }, JSON.parse("{ \"startOnLoad\": true }"), { startOnLoad: false } ) );
       }
     </script>
-    <script src="/js/relearn.js?1634654724"></script>
+    <script src="/js/relearn.js?1634747830"></script>
   </body>
 </html>
