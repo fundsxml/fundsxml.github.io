@@ -1,207 +1,1046 @@
+<!--
+  ~ FreeXMLToolkit - Universal Toolkit for XML
+  ~ Copyright (c) Karl Kauc 2024.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  ~
+  -->
+
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-    <link rel="alternate" type="application/json" href="/index.json" title="FundsXML" />
-    <meta name="description" content="">
-    <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title> :: FundsXML</title>
-    <link href="/css/nucleus.css?1634747830" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1634747830" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1634747830" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1634747830" rel="stylesheet">
-    <link href="/css/auto-complete.css?1634747830" rel="stylesheet">
-    <link href="/css/theme.css?1634747830" rel="stylesheet">
-    <link href="/css/theme-relearn.css?1634747830" rel="stylesheet">
-    <link href="/css/variant.css?1634747830" rel="stylesheet">
-    <link href="/css/print.css?1634747830" rel="stylesheet" media="print">
-    <link href="/css/syntax.css?1634747830" rel="stylesheet">
-    <script src="/js/jquery.min.js?1634747830"></script>
-    <script src="/js/xmlFormat.js?1634747830"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>XSD Documentation</title>
+    <link href="assets/freeXmlToolkit.css" rel="stylesheet"/>
+</head>
+<body>
 
-    <style>
-      :root #header + #content > #left > #rlblock_left{
-        display:none !important;
-      }
-    </style>
-  </head>
-  <body class="" data-url="/">
-    <nav id="sidebar" class="">
-      <div id="header-wrapper">
-        <div id="header">
-<a id="logo"
-   href="/"
-style="
-color: #3d414d;
-font-family: 'Novacento Sans Wide', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
-font-size: 30px;
-font-weight: bold;
-margin-top: -2px;
-">
-<svg
-  id="svg41"
-  width="179" height="43" viewBox="0 0 179 43"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns="http://www.w3.org/2000/svg">
-  <defs
-    id="defs45"/>
-  <g
-    id="g47">
-    <image
-      width="179"
-      height="43"
-      preserveAspectRatio="none"
-      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALMAAAArCAMAAAAE/0nvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
-bWFnZVJlYWR5ccllPAAAAJ9QTFRF6vX8weD11er4+vz+QEBAsdnz0Oj4gICA5fL7ttv0xuP29fr9
-srKy2dnZv7+/TU1N4PD65eXljY2Ny+X38vLypaWlvN707/f9c3NzWVlZ2+35MzIyMjEwzczLMjIy
-NDQ0MS8uMjIxc3Ny5eXks7OzMTAwMjExzMvLpKOjPjw7y8vKsbGxMTAvxMPDl5aWrNbyzMzMZmZm
-mZmZMzMz////QVaSDwAAA0BJREFUeNrsmNl2mzAQhrGMTcxmG29J2jTd91YS6P2frZJGO7JxepzT
-Ooe5MYyw+DTM/BpIDhNj7EosSbCxkXlkfiHMV1N/I/PI/KKZO98II/K3hUupcrLWXJH5A9T+N6W0
-qfVNSGZGaLPmjhuMZ1MLMcF4ziTIjQdXCBeCCy7GnB5llrYkcrzxnOkP7soxzg0DX8FiCsz+854/
-B3NXnmSWTlYGvvQDY9OZjak4Thgw48Jlnj0L8+0A85IP34XOr0wS6uzIRWZIzwSOtK34w3gG5m59
-mrmr7ayUpnDwXj333MkMyYwWXprv+bM4j5k6o8PMuz4zEVZnMN6oOVKZ2qW9w3QB2aEyA5h5ZFfm
-5geMN8llmTPz8ANm9d9MzUbcWZ1jlR25zgeBxxewNzffYHy4MHMNgayOMZcec7rtyazMDp0ZwCw4
-E12amPNfmJlkWqLbKLOJr0nnrG1LsvXydTUzkBKPK/JGjd6LPBlmfuWVTzvAXGuJHmBe+lV5VzsJ
-i61SAB6nU1XI65FdnFnBlEPMbaglH52MtYoMeCuAlHIyfyrz4+Mgc6MkeoBZVWMX7J7xOPPwLrRq
-F+cwv3lanCsl0UPMot9Iw90R1C7MZ8YQSGABTGcy8+4GrBxiVjvcLs5chxVdEbJLHeaYbkjYHAZv
-zmJ+F9eNLMrMl7QDiY4zN4p53QojrmiTY/qskrwQrcaCncX8Oc68hJOlz8yjv1VNR4x5m6ps99YN
-zF+Y7ZK8fVD9zk0pDjO/jjN3VESKmj3EMLNbP0nhEhnXLNVFsYa648q8JSV4v7vdqNtvGJHbK8n7
-C+Z1r+cRNW+Z6xizZ3yJac/54HX9tq9Dup2b661lmPlTyBzuB/CMLbPLE2WOSV33jVfazNmkTf+M
-zLkeHWb+2WOuwzBvfebsNHNaCb0Ivb/U21TvPQXZrWbPAmb7KXTiMb/tMbPaizQV7bLLXJ1kphXM
-4WXH8kH2EgunUc7V+yCyr4GrkNkxj/m3qJ4yaL+qtgG9bnZrVZmOerXG+GDZuqYv5xpStlTPIZeB
-EDo4t5jy82mBkM6We36q8MG5Qq6N3zdG5pH5v2DeJ9zG7/wj88j8D5gLuydeC/MfAQYATTGmM1Pt
-f9cAAAAASUVORK5CYII=
-"
-      id="image49"/>
-  </g>
-</svg>
-</a>
-        </div>
-        <div class="searchbox">
-          <label for="search-by"><i class="fas fa-search"></i></label>
-          <input data-search-input id="search-by" type="search" placeholder="Search...">
-          <span data-search-clear=""><i class="fas fa-times"></i></span>
-        </div>
-        <script src="/js/lunr.min.js?1634747830"></script>
-        <script src="/js/auto-complete.js?1634747830"></script>
-        <!-- hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic: -->
-        <!-- https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72 -->
-        <script>
-          var index_url="/index.json";
-          var root_url="/";
-          var baseUri=root_url.replace(/\/$/, '');
-        </script>
-        <script src="/js/search.js?1634747830"></script>
-      </div>
-      <div id="homelinks">
-        <ul>
-          <li>
-              <a class="padding" href="/"><i class="fas fa-home"></i> Home</a>
-          </li>
+<nav class="py-2 bg-body-tertiary border-bottom bg-newlight">
+    <div class="container d-flex flex-wrap">
+        <ul class="nav me-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link link-body-emphasis px-2 active"
+                   aria-current="page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-house" viewBox="0 0 16 16">
+                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                    </svg>
+                    Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link link-body-emphasis px-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-diamond-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435z"/>
+                    </svg>
+                    Complex Types
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link link-body-emphasis px-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-diamond" viewBox="0 0 16 16">
+                        <path d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/>
+                    </svg>
+                    Simple Types</a>
+            </li>
         </ul>
-      </div>
-      <div class="highlightable">
-        <ul class="topics">
-          <li data-nav-id="/basics/" title="Basics" class="dd-item"><a href="/basics/"><i class='fas fa-info-circle'></i> Basics</a><ul>
-          <li data-nav-id="/basics/1_xml_basics/" title="XML Basics" class="dd-item"><a href="/basics/1_xml_basics/">1. XML Basics</a></li>
-          <li data-nav-id="/basics/2_schema_validation/" title="Schema Validation" class="dd-item"><a href="/basics/2_schema_validation/">2. Schema Validation</a></li></ul></li>
-          <li data-nav-id="/migration/" title="Migration 3 to 4" class="dd-item"><a href="/migration/"><i class='fas fa-code-branch'></i> Migration 3 to 4</a><ul>
-          <li data-nav-id="/migration/controldata/" title="Control Data" class="dd-item alwaysopen"><a href="/migration/controldata/"><i class='fas fa-code-branch'></i> Control Data</a><ul></ul></li>
-          <li data-nav-id="/migration/fund/" title="Fund Data" class="dd-item alwaysopen"><a href="/migration/fund/"><i class='fas fa-code-branch'></i> Fund Data</a><ul></ul></li>
-          <li data-nav-id="/migration/assetmasterdata/" title="Asset Master Data" class="dd-item alwaysopen"><a href="/migration/assetmasterdata/"><i class='fas fa-code-branch'></i> Asset Master Data</a><ul></ul></li></ul></li>
+        <ul class="nav">
+            <li class="nav-item">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit"
+                   target="_blank"
+                   class="nav-link link-body-emphasis px-2">
+                    <img src="assets/logo.png" alt="logo"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                        <path fill-rule="evenodd"
+                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                    </svg>
+                    FreeXmlToolKit
+                </a>
+            </li>
         </ul>
-        <div id="shortcuts">
-          <div class="nav-title">More</div>
-          <ul>
-            <li><a class="padding" href="https://github.com/fundsxml/schema" target="_blank"><i class='fab fa-github'></i> Github repo</a></li>
-            <li><a class="padding" href="https://github.com/fundsxml/schema/releases/latest" target="_blank"><i class='fab fa-github'></i> latest release</a></li>
-            <li><a class="padding" href="http://www.fundsxml.org/" target="_blank"><i class='fas fa-bookmark'></i> Official FundsXML Site</a></li>
-            <li><a class="padding" href="https://www.youtube.com/channel/UCzSMxta13eDlYQPEmH2_iww" target="_blank"><i class='fab fa-youtube'></i> FundsXML Youtube site</a></li>
-            <li><a class="padding" href="/credits" target="_blank"><i class='far fa-address-card'></i> Credits</a></li>
-          </ul>
-        </div>
-        <div id="footer">
-	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-        </div>
-      </div>
-    </nav>
-    <div id="body">
-      <div id="overlay"></div>
-      <div class="padding highlightable">
-        <div id="head-tags">
-        </div>
-        <main id="body-inner">
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
-
-
-<h1 id="fundsxml">FundsXML</h1>
-<h2 id="the-pan-european-format">The pan-European format</h2>
-<p>Aside from its technical advantages and its easy handling, FundsXML is becoming the pan-European format, allowing B2B and B2C activity in the mutual fund sector. The development of this standard was pushed by various companies to integrate numerous working processes in the sector, enclosing the foundation of a fund and the system of registration as well as the electronic data exchange, beyond the borders of companies and countries.
-FundsXML is already used in the following countries:</p>
-<ul>
-<li>AT</li>
-<li>DK</li>
-<li>FR</li>
-<li>DE</li>
-<li>LU</li>
-<li>NL</li>
-</ul>
-<h2 id="fundsxml-is-a-powerful-xml-standard-format-for-easy-exchange-of-fund-related-data-between">FundsXML is a powerful XML standard format for easy exchange of fund related data between:</h2>
-<ul>
-<li>Asset Managers</li>
-<li>Clients</li>
-<li>Distributors</li>
-<li>Custodians</li>
-<li>Authorities</li>
-<li>Vendors</li>
-<li>Advisors</li>
-</ul>
-<h2 id="fundsxml-is-transporting">FundsXML is transporting:</h2>
-<ul>
-<li>Fund Static Data (Name, Identifiers, Type, Manager, Administrator, …)</li>
-<li>Fund Dynamic Data (Total Net Asset Values, Risk Figures, Break Downs, …)</li>
-<li>Portfolio Data (Holdings, Transactions, Earnings, …)</li>
-<li>Share Class Data (ISIN, Type, Net Asset Values, Performance, Subs/Reds, …)</li>
-<li>Asset Management Company Dynamic Data</li>
-<li>Asset Master Data (Details of Securities, Derivatives and OTC Instruments)</li>
-<li>Regulatory Reporting (MiFID II/EMT, EMIR, KIID, PRIIPS/EPT/CEPT, Solvency II/TPT, …)</li>
-<li>Documents (Factsheet, KIID, Prospectus, Reports, …)</li>
-<li>Country Specific Data</li>
-<li>Advantages in contrast to CSV format:</li>
-<li>Clear file structure and formatting (number, dates, …)</li>
-<li>Native support for nested loops, optional fields and sections</li>
-<li>Definition of fields and tree structure via XML-Schema</li>
-<li>Built in documentation in multiple languages</li>
-<li>Automatic validation of file structure and field content against XML-Schema</li>
-</ul>
-
-
-        </main>
-      </div>
-      <div id="navigation">
-        <a class="nav nav-next" href="/basics/" title="Basics"><i class="fa fa-chevron-right"></i></a>
-      </div>
     </div>
-    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</nav>
+
+<div class="container pt-3">
+    <div class="grid">
+        <span>Date Created:</span>
+        <span>2024-12-06</span>
+
+        <span>Filename:</span>
+        <span>FundsXML4.xsd</span>
+
+        <span>Root Element Name</span>
+        <span>FundsXML4</span>
+
+        <span>Root Element Name</span>
+        <span>FundsXML4</span>
+
+        <span>attributeFormDefault</span>
+        <span>unqualified</span>
+
+        <span>elementFormDefault</span>
+        <span>qualified</span>
+
+        <span>blockDefault</span>
+        <span></span>
+
+        <span>finalDefault</span>
+        <span></span>
+
+        <span>targetNamespace</span>
+        <span></span>
+
+        <span>noNamespaceLocation</span>
+        <span>DEFAULT</span>
     </div>
-    <script src="/js/clipboard.min.js?1634747830"></script>
-    <script src="/js/perfect-scrollbar.min.js?1634747830"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1634747830"></script>
-    <script src="/js/jquery.svg.pan.zoom.js?1634747830"></script>
-    <script src="/js/featherlight.min.js?1634747830"></script>
-    <script src="/js/modernizr.custom-3.6.0.js?1634747830"></script>
-    <script src="/js/mermaid.min.js?1634747830"></script>
-    <script>
-      if (typeof mermaid != 'undefined') {
-        mermaid.mermaidAPI.initialize( Object.assign( { "securityLevel": "antiscript" }, JSON.parse("{ \"startOnLoad\": true }"), { startOnLoad: false } ) );
-      }
-    </script>
-    <script src="/js/relearn.js?1634747830"></script>
-  </body>
+
+    <hr/>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Elements</th>
+            <th scope="col">Complex Types</th>
+            <th scope="col">Simple Types</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="align-text-top">
+                <a href="details/FundsXML4_03619599b453e5076558dea9d0ed8acb.html">FundsXML4</a>
+            </td>
+            <td class="align-text-top">
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AccountType.html">AccountType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AddressType.html">AddressType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AddressTypeDataDEType.html">AddressTypeDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AllocationType.html">AllocationType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AmountType.html">AmountType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AnnualReturnsDataDEType.html">AnnualReturnsDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AssetDetailsType.html">AssetDetailsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AssetManagementClosedDataType.html">AssetManagementClosedDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AssetManagementCompanyAggregatedType.html">AssetManagementCompanyAggregatedType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AssetManagementCompanyDataType.html">AssetManagementCompanyDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AssetManagementCompanyFundAssetsType.html">AssetManagementCompanyFundAssetsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AssetManagementCompanySalesType.html">AssetManagementCompanySalesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AssetMasterDataType.html">AssetMasterDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AssetMgmtCompanyDynDataType.html">AssetMgmtCompanyDynDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AssetType.html">AssetType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AttributesType.html">AttributesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AttributeType.html">AttributeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/AUMType.html">AUMType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/BenchmarkDynamicDataType.html">BenchmarkDynamicDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/BenchmarkProviderCompany.html">BenchmarkProviderCompany</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/BenchmarkStaticDataType.html">BenchmarkStaticDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/BenchmarkType.html">BenchmarkType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/BondType.html">BondType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/BreakDownsType.html">BreakDownsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CallCapitalType.html">CallCapitalType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CEPT_PriceType.html">CEPT_PriceType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CEPT_RHPSType.html">CEPT_RHPSType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CEPTV2_RHPSType.html">CEPTV2_RHPSType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CEPTV2HistoryType.html">CEPTV2HistoryType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CEPTV2PerformanceType.html">CEPTV2PerformanceType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CEPTV2PriceType.html">CEPTV2PriceType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CertificateType.html">CertificateType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ClassificationsType.html">ClassificationsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ClassificationType.html">ClassificationType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ClientStatisticType.html">ClientStatisticType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CodificationType.html">CodificationType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CodificationType_V5.html">CodificationType_V5</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CodificationType_V6.html">CodificationType_V6</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CommercialPaperType.html">CommercialPaperType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CompanyType.html">CompanyType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ContributionToSCRType.html">ContributionToSCRType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ContributionToSCRType_V5.html">ContributionToSCRType_V5</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ContributionToSCRType_V6.html">ContributionToSCRType_V6</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ControlDataType.html">ControlDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ConvertibleBondType.html">ConvertibleBondType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CounterpartyType.html">CounterpartyType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificAssetMasterDataATType.html">CountrySpecificAssetMasterDataATType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificAssetMasterDataDEType.html">CountrySpecificAssetMasterDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificAssetMasterDataDKType.html">CountrySpecificAssetMasterDataDKType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificAssetMasterDataFRType.html">CountrySpecificAssetMasterDataFRType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificAssetMasterDataLUType.html">CountrySpecificAssetMasterDataLUType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificAssetMasterDataNLType.html">CountrySpecificAssetMasterDataNLType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificControlDataATType.html">CountrySpecificControlDataATType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificControlDataDEType.html">CountrySpecificControlDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificControlDataDKType.html">CountrySpecificControlDataDKType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificControlDataFRType.html">CountrySpecificControlDataFRType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificControlDataLUType.html">CountrySpecificControlDataLUType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificControlDataNLType.html">CountrySpecificControlDataNLType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificDataATType.html">CountrySpecificDataATType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificDataDEType.html">CountrySpecificDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificDataDKType.html">CountrySpecificDataDKType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificDataFRType.html">CountrySpecificDataFRType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificDataLUType.html">CountrySpecificDataLUType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificDataNLType.html">CountrySpecificDataNLType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificDataType.html">CountrySpecificDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificEMT41DataType.html">CountrySpecificEMT41DataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificEMTATType.html">CountrySpecificEMTATType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificEMTDataType.html">CountrySpecificEMTDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificEMTDEType.html">CountrySpecificEMTDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificEMTDKType.html">CountrySpecificEMTDKType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificEMTFRType.html">CountrySpecificEMTFRType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificEMTLUType.html">CountrySpecificEMTLUType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificEMTNLType.html">CountrySpecificEMTNLType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificFundDataATType.html">CountrySpecificFundDataATType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificFundDataDEType.html">CountrySpecificFundDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificFundDataDKType.html">CountrySpecificFundDataDKType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificFundDataFRType.html">CountrySpecificFundDataFRType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificFundDataLUType.html">CountrySpecificFundDataLUType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificFundDataNLType.html">CountrySpecificFundDataNLType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificFundDataType.html">CountrySpecificFundDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificShareClassDataATType.html">CountrySpecificShareClassDataATType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificShareClassDataDEType.html">CountrySpecificShareClassDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificShareClassDataDKType.html">CountrySpecificShareClassDataDKType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificShareClassDataFRType.html">CountrySpecificShareClassDataFRType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificShareClassDataLUType.html">CountrySpecificShareClassDataLUType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificShareClassDataNLType.html">CountrySpecificShareClassDataNLType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CountrySpecificShareClassDataType.html">CountrySpecificShareClassDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CreditRiskDataType.html">CreditRiskDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CreditRiskDataType_V5.html">CreditRiskDataType_V5</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CreditRiskDataType_V6.html">CreditRiskDataType_V6</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/CryptoType.html">CryptoType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/DataPointType.html">DataPointType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/DataSupplierType.html">DataSupplierType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/DayMonthType.html">DayMonthType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/DirectReportingType.html">DirectReportingType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/DistributionType.html">DistributionType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/DocumentsType.html">DocumentsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/DocumentType.html">DocumentType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/DynLenNamesType.html">DynLenNamesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EarningsType.html">EarningsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EarningType.html">EarningType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETEnhancedExclusionType.html">EETEnhancedExclusionType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETEnhancedExclusionType1_1.html">EETEnhancedExclusionType1_1</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETExclusionType.html">EETExclusionType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETExclusionType1_1.html">EETExclusionType1_1</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETReportType.html">EETReportType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETReportType1_1.html">EETReportType1_1</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETReportType1_1_1.html">EETReportType1_1_1</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETReportType1_1_2.html">EETReportType1_1_2</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETsType.html">EETsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETsType1_1.html">EETsType1_1</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETsType1_1_1.html">EETsType1_1_1</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETsType1_1_2.html">EETsType1_1_2</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETWeightNumberType.html">EETWeightNumberType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EETWeightNumberType1_1.html">EETWeightNumberType1_1</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EFTReportType.html">EFTReportType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EFTType.html">EFTType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMIR_ReportType.html">EMIR_ReportType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMIRType.html">EMIRType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMT_V3_FinancialInstrumentType.html">EMT_V3_FinancialInstrumentType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMT_V4_FinancialInstrumentType.html">EMT_V4_FinancialInstrumentType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMT_V41_FinancialInstrumentType.html">EMT_V41_FinancialInstrumentType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMT_V42_FinancialInstrumentType.html">EMT_V42_FinancialInstrumentType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMTFinancialInstrumentType.html">EMTFinancialInstrumentType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMTType.html">EMTType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMTType_V3.html">EMTType_V3</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMTType_V4.html">EMTType_V4</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMTType_V41.html">EMTType_V41</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EMTType_V42.html">EMTType_V42</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/EquityType.html">EquityType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ExposureType.html">ExposureType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FeePeriodDataType.html">FeePeriodDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FeesType.html">FeesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FeeType.html">FeeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FixedTimeDepositType.html">FixedTimeDepositType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FlowType.html">FlowType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ForeignExchangeTradeType.html">ForeignExchangeTradeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FundAmountType.html">FundAmountType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FundCompaniesType.html">FundCompaniesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FundCompanyType.html">FundCompanyType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FundDynamicDataType.html">FundDynamicDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FundOrShareClassIdentifiersType.html">FundOrShareClassIdentifiersType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FundRelatedTextType.html">FundRelatedTextType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FundStaticDataType.html">FundStaticDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FundStatisticClosedFundType.html">FundStatisticClosedFundType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FundStatisticType.html">FundStatisticType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FundType.html">FundType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FutureType.html">FutureType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FXRatesType.html">FXRatesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/FXRateType.html">FXRateType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/HedgingStrategyType.html">HedgingStrategyType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/HighWatermarkType.html">HighWatermarkType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/IdentifiersType.html">IdentifiersType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/IndexType.html">IndexType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/IndirectReportingType.html">IndirectReportingType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/IndustryCodeType.html">IndustryCodeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/IndustryProviderType.html">IndustryProviderType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/InvestorType.html">InvestorType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/InvestorTypesType.html">InvestorTypesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/IssuerType.html">IssuerType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/KIIDsType.html">KIIDsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/KIIDType.html">KIIDType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/LanguageNamesType.html">LanguageNamesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/LegType.html">LegType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/LoanType.html">LoanType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/NamesType.html">NamesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/OptionType.html">OptionType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/OtherPricesType.html">OtherPricesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/OtherTotalValueType.html">OtherTotalValueType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PercentageStrategyCoverageType.html">PercentageStrategyCoverageType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PercentageStrategyCoverageType1_1.html">PercentageStrategyCoverageType1_1</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PercentageStrategyCoverageType1_1_2.html">PercentageStrategyCoverageType1_1_2</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PerformanceFiguresType.html">PerformanceFiguresType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PerformanceType.html">PerformanceType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PortfolioType.html">PortfolioType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PositionsDecomposedType.html">PositionsDecomposedType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PositionsType.html">PositionsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PositionType.html">PositionType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PositionUnderlyingType.html">PositionUnderlyingType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PositionValuationType.html">PositionValuationType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PositiveAmountType.html">PositiveAmountType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPS_AverageReturnType.html">PRIIPS_AverageReturnType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPS_DE_EPT_PiaType.html">PRIIPS_DE_EPT_PiaType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPS_InvestmentAmountType.html">PRIIPS_InvestmentAmountType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPS_NarrativesType.html">PRIIPS_NarrativesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPS_ReportType.html">PRIIPS_ReportType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPS_ReturnScenarioType.html">PRIIPS_ReturnScenarioType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPS_SecurityCodificationType.html">PRIIPS_SecurityCodificationType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPS_V2_Country_Specific_DE.html">PRIIPS_V2_Country_Specific_DE</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPS_V2_NarrativesType.html">PRIIPS_V2_NarrativesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPS_V2_ReturnScenarioType.html">PRIIPS_V2_ReturnScenarioType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPSType.html">PRIIPSType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PRIIPSType_V20.html">PRIIPSType_V20</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PrivateEquityType.html">PrivateEquityType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/PurchasesDataDEType.html">PurchasesDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/RatingsType.html">RatingsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/RatingType.html">RatingType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/RealEstateType.html">RealEstateType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/RedemptionType.html">RedemptionType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/RedemptionType_V5.html">RedemptionType_V5</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/RedemptionType_V6.html">RedemptionType_V6</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/RegulatoryReportingsType.html">RegulatoryReportingsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/REITType.html">REITType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ReposType.html">ReposType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/RiskCodeType.html">RiskCodeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SalesDataDEType.html">SalesDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SegmentDynamicDataType.html">SegmentDynamicDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SegmentStaticDataType.html">SegmentStaticDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SegmentType.html">SegmentType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ShareClassDetailsType.html">ShareClassDetailsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ShareClassFeeType.html">ShareClassFeeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ShareClassPriceType.html">ShareClassPriceType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ShareClassType.html">ShareClassType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ShareClassTypeType.html">ShareClassTypeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SIIIssuerType.html">SIIIssuerType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SIIIssuerType_V5.html">SIIIssuerType_V5</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SIIIssuerType_V6.html">SIIIssuerType_V6</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SIIPositionType.html">SIIPositionType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SIIPositionType_V5.html">SIIPositionType_V5</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SIIPositionType_V6.html">SIIPositionType_V6</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SIISecurityCodificationType.html">SIISecurityCodificationType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SIISecurityCodificationType_V5.html">SIISecurityCodificationType_V5</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SIISecurityCodificationType_V6.html">SIISecurityCodificationType_V6</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SingleAmountType.html">SingleAmountType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SingleFundStaticDataType.html">SingleFundStaticDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SingleFundType.html">SingleFundType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SolvencyIIPortfolioType.html">SolvencyIIPortfolioType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SolvencyIIPortfolioType_V5.html">SolvencyIIPortfolioType_V5</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SolvencyIIPortfolioType_V6.html">SolvencyIIPortfolioType_V6</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SubfundCompaniesType.html">SubfundCompaniesType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SubfundCompanyType.html">SubfundCompanyType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SubfundStaticDataType.html">SubfundStaticDataType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SubfundType.html">SubfundType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/SwapType.html">SwapType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/TotalAssetValueType.html">TotalAssetValueType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/TotalReturnType.html">TotalReturnType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/TransactionsType.html">TransactionsType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/TransactionType.html">TransactionType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/TripartiteTemplateSolvencyIIType.html">TripartiteTemplateSolvencyIIType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/TripartiteTemplateSolvencyIIType_V5.html">TripartiteTemplateSolvencyIIType_V5</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/TripartiteTemplateSolvencyIIType_V6.html">TripartiteTemplateSolvencyIIType_V6</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/UnderlyingType.html">UnderlyingType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/UsageDataDEType.html">UsageDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ValueStrategyCoverageType.html">ValueStrategyCoverageType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ValueStrategyCoverageType1_1.html">ValueStrategyCoverageType1_1</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/ValueStrategyCoverageType1_1_2.html">ValueStrategyCoverageType1_1_2</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="complexTypes/WarrantType.html">WarrantType</a>
+                </div>
+            </td>
+            <td class="align-text-top">
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#AssetTypeType">AssetTypeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#BenchmarkUsageType">BenchmarkUsageType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#BicCodeType">BicCodeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#CalculationPeriodType">CalculationPeriodType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#CICCodeType">CICCodeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#CompanyListedClassificationType">CompanyListedClassificationType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#CQSType">CQSType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#DateIntervalType">DateIntervalType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EconomicArea2Type">EconomicArea2Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EconomicAreaType">EconomicAreaType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EETYesNeutralType">EETYesNeutralType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EETYesNoNeutralType">EETYesNoNeutralType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EETYesNoType">EETYesNoType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EmailAddressType">EmailAddressType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EMIRIDType">EMIRIDType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EMTYesEmptyType">EMTYesEmptyType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EMTYesNeutralType">EMTYesNeutralType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EMTYesNoNeutralType">EMTYesNoNeutralType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#EMTYesNoType">EMTYesNoType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#FrequencyType">FrequencyType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#IBANType">IBANType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#IdentnummerType">IdentnummerType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#ISINType">ISINType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#ISOCountryCodeType">ISOCountryCodeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#ISOCurrencyCodeType">ISOCurrencyCodeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#ISOLanguageCodeType">ISOLanguageCodeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#LatitudeDataDEType">LatitudeDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#LEICodeType">LEICodeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#ListedIdentifierType">ListedIdentifierType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#LongitudeDataDEType">LongitudeDataDEType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#MICCodeType">MICCodeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#NACECodeType">NACECodeType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#PercentageType">PercentageType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#positiveDecimals">positiveDecimals</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#PRIIPSFrequencyType">PRIIPSFrequencyType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#RetailProfessionalBothNeitherType">RetailProfessionalBothNeitherType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#SIICouponFrequencyType">SIICouponFrequencyType</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#SIICouponFrequencyType_V5">SIICouponFrequencyType_V5</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#SIICouponFrequencyType_V6">SIICouponFrequencyType_V6</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text1000Type">Text1000Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text100Type">Text100Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text128Type">Text128Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text16Type">Text16Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text1Type">Text1Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text200Type">Text200Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text256Type">Text256Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text2Type">Text2Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text300Type">Text300Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text32Type">Text32Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text4Type">Text4Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text500Type">Text500Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text64Type">Text64Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#Text8Type">Text8Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#YesNoL1Type">YesNoL1Type</a>
+                </div>
+                <div class="bg-gradient detail-row p-1">
+                    <a href="#YesNoType">YesNoType</a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<script src="assets/bootstrap.bundle.min.js"></script>
+</body>
 </html>
