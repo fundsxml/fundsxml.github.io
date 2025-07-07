@@ -17,32 +17,57 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" class="bg-slate-50">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>XSD Documentation</title>
+    <title>Complex Type: ClientStatisticType</title>
 
-    <link href="../assets/freeXmlToolkit.css" rel="stylesheet"/>
+    <!-- Tailwind CSS & Modern Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="font-sans text-slate-800">
 
-<nav class="py-2 bg-body-tertiary border-bottom">
-    <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-            <li class="nav-item"><a href="../index.html" class="nav-link link-body-emphasis px-2 active"
-                                    aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="../complexTypes.html" class="nav-link link-body-emphasis px-2">Complex
-                Types</a></li>
-            <li class="nav-item"><a href="../simpleTypes.html" class="nav-link link-body-emphasis px-2">Simple Types</a>
-            </li>
-        </ul>
-        <ul class="nav">
-            <li class="nav-item">
-                <a href="https://github.com/karlkauc/FreeXmlToolkit"
-                   target="_blank"
-                   class="nav-link link-body-emphasis px-2">
-                    <img src="../assets/logo.png" width="32" height="32" alt="logo"/>
+<!-- Navigation -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="flex items-center space-x-8">
+                <a href="../index.html" class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+                <div class="hidden md:flex items-baseline space-x-6">
+                    <a href="../index.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
+                    <a href="../complexTypes.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100" aria-current="page">Complex
+                        Types</a>
+                    <a href="../simpleTypes.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                        Types</a>
+                </div>
+            </div>
+            <!-- Rechte Navigationsgruppe (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                    <span>GitHub</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -50,30 +75,272 @@
                         <path fill-rule="evenodd"
                               d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
                     </svg>
-                    FreeXmlToolKit
                 </a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </nav>
 
-<div class="container">
-    <h1>ClientStatisticType</h1>
+<!-- Hauptinhalt -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+    <!-- Zentrale Inhalts-Karte -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Karten-Header -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-slate-900">
+                    Complex Type: <span class="font-mono">ClientStatisticType</span>
+                </h1>
+                <div class="flex space-x-2">
+                    
+                    
+                </div>
+            </div>
+        </header>
 
-    <div>
-        <span>name</span>
-        <span>ClientStatisticType</span>
+        <!-- Karten-Body -->
+        <div class="p-6 md:p-8 space-y-10">
+            <!-- Sektion: Dokumentation -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Dokumentation</h2>
+                <div class="bg-slate-100/75 p-4 rounded-md space-y-2">
+                    <p class="text-slate-700">Data about the clients of an investment or asset management company</p>
+                </div>
+            </section>
+
+            <!-- Sektion: Attribute -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attribute</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Typ</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
+                            <td class="px-4 py-3 font-mono">
+                                <!--
+                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
+                                   th:text="${attrEntry.value}"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
+                                   -->
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- NEU: Sektion "Verwendet in" -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Verwendet in</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_61a3f49be223ecf93056a40feb955b91.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/ThirdPartyDiscretionaryMandates/PortfoliomanagementForThirdParties/OutsideAffiliatedGroup/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CompaniesInCountry_0b0efd320848c03b24bfbd82f85ca13a.html" class="text-sky-600 hover:text-sky-800 hover:underline">CompaniesInCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/ThirdPartyDiscretionaryMandates/PortfoliomanagementForThirdParties/WithinAffiliatedGroup/CompaniesInCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CompaniesInCountry_5e325e26d0b5abf70dc651851c083176.html" class="text-sky-600 hover:text-sky-800 hover:underline">CompaniesInCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/OwnDiscretionaryMandates/PortfoliomanagementByThirdParties/OutsideAffiliatedGroup/CompaniesInCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_f793cd8a5887349d770d219df094a5e3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/ThirdPartyDiscretionaryMandates/PortfoliomanagementForThirdParties/WithinAffiliatedGroup/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CompaniesInCountry_acf020bbf271bbe363b79eb4e04f9d46.html" class="text-sky-600 hover:text-sky-800 hover:underline">CompaniesInCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/ThirdPartyDiscretionaryMandates/PortfoliomanagementForThirdParties/WithinAffiliatedGroup/CompaniesInCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_6537cf75893211e8a0346ca198e7eddc.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/ThirdPartyDiscretionaryMandates/PortfoliomanagementForThirdParties/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_da3a65e2c25adc70f3e83b38febc1053.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/OwnDiscretionaryMandates/PortfoliomanagementByThirdParties/OutsideAffiliatedGroup/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_5407f23a1214d2c7f36b136becb3c3e1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/OwnDiscretionaryMandates/PortfoliomanagementByThirdParties/WithinAffiliatedGroup/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/InCountry_dec849245c3713a290187010eed213b3.html" class="text-sky-600 hover:text-sky-800 hover:underline">InCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/OwnDiscretionaryMandates/Clients/Location/InCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_d00417f7caf882fea3cfe36a69fa5e57.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/OwnDiscretionaryMandates/PortfoliomanagementByThirdParties/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CompaniesInCountry_8b24098d2be2408c201f50bc0c4665f6.html" class="text-sky-600 hover:text-sky-800 hover:underline">CompaniesInCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/OwnDiscretionaryMandates/PortfoliomanagementByThirdParties/WithinAffiliatedGroup/CompaniesInCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_1b4fa2ebf7dc2d0ce5d456022cd02329.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/OwnDiscretionaryMandates/Clients/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Private_34291f9a15d479453f0c385fb32739e2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Private</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/OwnDiscretionaryMandates/Clients/LegalTypeClient/Private</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Institutional_1b1b1424942d9a6e81ca2224645511e0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Institutional</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/OwnDiscretionaryMandates/Clients/LegalTypeClient/Institutional</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CompaniesInCountry_dc621dacac82e884aa507182564ed881.html" class="text-sky-600 hover:text-sky-800 hover:underline">CompaniesInCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/OwnDiscretionaryMandates/PortfoliomanagementByThirdParties/WithinAffiliatedGroup/CompaniesInCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_4390d55de7e29acb15cd0715117a1403.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/ThirdPartyDiscretionaryMandates/PortfoliomanagementForThirdParties/OutsideAffiliatedGroup/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Private_3772cf3c5c640f8a5ed1b1966fccb47e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Private</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/OwnDiscretionaryMandates/Clients/LegalTypeClient/Private</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CompaniesInCountry_e83c1781dbf9d6eb932a6a30ff047405.html" class="text-sky-600 hover:text-sky-800 hover:underline">CompaniesInCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/ThirdPartyDiscretionaryMandates/PortfoliomanagementForThirdParties/OutsideAffiliatedGroup/CompaniesInCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_2fe33de83fab4699a42ebd65435deec2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/ThirdPartyDiscretionaryMandates/PortfoliomanagementForThirdParties/WithinAffiliatedGroup/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_6d50e8da6ac872461ed48dd3cf59ea2c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/OwnDiscretionaryMandates/PortfoliomanagementByThirdParties/WithinAffiliatedGroup/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CompaniesInCountry_f9241f64cf5d94d67281c8384089ccf5.html" class="text-sky-600 hover:text-sky-800 hover:underline">CompaniesInCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/OwnDiscretionaryMandates/PortfoliomanagementByThirdParties/OutsideAffiliatedGroup/CompaniesInCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/OutsideCountry_60087396758d6aeceb8c27a379e9e08a.html" class="text-sky-600 hover:text-sky-800 hover:underline">OutsideCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/OwnDiscretionaryMandates/Clients/Location/OutsideCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/OutsideCountry_2e1fd70c555be41bdce6529019f87631.html" class="text-sky-600 hover:text-sky-800 hover:underline">OutsideCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/OwnDiscretionaryMandates/Clients/Location/OutsideCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/InCountry_67a0ffca0df412f5a24211c46c628de0.html" class="text-sky-600 hover:text-sky-800 hover:underline">InCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/OwnDiscretionaryMandates/Clients/Location/InCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CompaniesInCountry_fc0695776b05f7ee99d867d7817d160e.html" class="text-sky-600 hover:text-sky-800 hover:underline">CompaniesInCountry</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/RealAssets/ThirdPartyDiscretionaryMandates/PortfoliomanagementForThirdParties/OutsideAffiliatedGroup/CompaniesInCountry</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_0bbe8284e6dd8a283ba92c45d731a5cd.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/OwnDiscretionaryMandates/PortfoliomanagementByThirdParties/OutsideAffiliatedGroup/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_ec199b6bdbde5fee04a217acfd50f3af.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/ThirdPartyDiscretionaryMandates/PortfoliomanagementForThirdParties/Total</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Institutional_38e4cd7088bd49234b4e824548887696.html" class="text-sky-600 hover:text-sky-800 hover:underline">Institutional</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/OwnDiscretionaryMandates/Clients/LegalTypeClient/Institutional</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Total_1d15d854355f3255e973f37a30357547.html" class="text-sky-600 hover:text-sky-800 hover:underline">Total</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/DiscretionaryMandates/Securities_Holdings/OwnDiscretionaryMandates/Clients/Total</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- NEU: Sektion "Element-Deklarationen mit diesem Namen" -->
+            
+
+        </div>
     </div>
 
-    <h3>Documentation</h3>
-    <div>
-        <span></span>
-        <span>Data about the clients of an investment or asset management company</span>
+    <!-- Navigations-Button zurück zur Übersicht -->
+    <div class="mt-8 text-center">
+        <a href="../complexTypes.html"
+           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+            Zurück zur Übersicht
+        </a>
     </div>
+</main>
 
-</div>
-
-<script src="../assets/bootstrap.bundle.min.js"></script>
 <script src="../assets/prism.js"></script>
 </body>
 </html>

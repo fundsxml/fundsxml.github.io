@@ -17,32 +17,57 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" class="bg-slate-50">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>XSD Documentation</title>
+    <title>Complex Type: RiskCodeType</title>
 
-    <link href="../assets/freeXmlToolkit.css" rel="stylesheet"/>
+    <!-- Tailwind CSS & Modern Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="font-sans text-slate-800">
 
-<nav class="py-2 bg-body-tertiary border-bottom">
-    <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-            <li class="nav-item"><a href="../index.html" class="nav-link link-body-emphasis px-2 active"
-                                    aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="../complexTypes.html" class="nav-link link-body-emphasis px-2">Complex
-                Types</a></li>
-            <li class="nav-item"><a href="../simpleTypes.html" class="nav-link link-body-emphasis px-2">Simple Types</a>
-            </li>
-        </ul>
-        <ul class="nav">
-            <li class="nav-item">
-                <a href="https://github.com/karlkauc/FreeXmlToolkit"
-                   target="_blank"
-                   class="nav-link link-body-emphasis px-2">
-                    <img src="../assets/logo.png" width="32" height="32" alt="logo"/>
+<!-- Navigation -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="flex items-center space-x-8">
+                <a href="../index.html" class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+                <div class="hidden md:flex items-baseline space-x-6">
+                    <a href="../index.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
+                    <a href="../complexTypes.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100" aria-current="page">Complex
+                        Types</a>
+                    <a href="../simpleTypes.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                        Types</a>
+                </div>
+            </div>
+            <!-- Rechte Navigationsgruppe (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                    <span>GitHub</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -50,27 +75,237 @@
                         <path fill-rule="evenodd"
                               d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
                     </svg>
-                    FreeXmlToolKit
                 </a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </nav>
 
-<div class="container">
-    <h1>RiskCodeType</h1>
+<!-- Hauptinhalt -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+    <!-- Zentrale Inhalts-Karte -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Karten-Header -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-slate-900">
+                    Complex Type: <span class="font-mono">RiskCodeType</span>
+                </h1>
+                <div class="flex space-x-2">
+                    
+                    
+                </div>
+            </div>
+        </header>
 
-    <div>
-        <span>name</span>
-        <span>RiskCodeType</span>
+        <!-- Karten-Body -->
+        <div class="p-6 md:p-8 space-y-10">
+            <!-- Sektion: Dokumentation -->
+            
+
+            <!-- Sektion: Attribute -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attribute</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Typ</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
+                            <td class="px-4 py-3 font-mono">
+                                <!--
+                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
+                                   th:text="${attrEntry.value}"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
+                                   -->
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- NEU: Sektion "Verwendet in" -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Verwendet in</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_7f7249fd96f1b778fd22fff95573b2a8.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_8ddca0697f9d21300a36326cf0515d8f.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_d04e5276103c3c118e3b395dd11af7d5.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_5b1677ae7230cf4e816f19d09239ed1a.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_5f319d8a889a816b6d0e871e7b786adc.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_448d1f27966fd2c5b6d4dc2bc3b427db.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_8fb82710802af2cd1c7cf2b4a328e8fb.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_abdee7679aba8cf1cd83202e9fc21d8f.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_e58a4d3c86eadf5621d809d74a33849c.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_cfa2a5d50a1bf8583f96c5be16213f57.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_0d8a3d5dc4670091b3961afb9d1794d5.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_9d6c4d2e1c1fdde7a021c543b477b1f0.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_09ca68edd6657b589efec4ac4e501108.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_7f8eb4d788001e1b64239b89e92e9047.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_1006fc15830abde1642aec2b7b50baf9.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_714916b81edf4de240c1eb0c40694c85.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_165409e9d573cdc5e22c1cd542733d7d.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_53ad3fd134b8e37b6bef7fdfda17ec6d.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_870f9786d3be7fc7aec2d887d95a11b6.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_aaef4ac3acc5f3f77cdffe20bea1d8b9.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_703e41a0b2b83b87985fd35c1e2e3037.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_79d963decda6fc0436e6469c3f673c60.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_a3e24f0ddbf91604317fb8c2b7f7f80b.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RiskCode_c370c80872c6d36b21ac41dbf871b460.html" class="text-sky-600 hover:text-sky-800 hover:underline">RiskCode</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/RiskCodes/RiskCode</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- NEU: Sektion "Element-Deklarationen mit diesem Namen" -->
+            
+
+        </div>
     </div>
 
-    <h3>Documentation</h3>
-    
+    <!-- Navigations-Button zurück zur Übersicht -->
+    <div class="mt-8 text-center">
+        <a href="../complexTypes.html"
+           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+            Zurück zur Übersicht
+        </a>
+    </div>
+</main>
 
-</div>
-
-<script src="../assets/bootstrap.bundle.min.js"></script>
 <script src="../assets/prism.js"></script>
 </body>
 </html>

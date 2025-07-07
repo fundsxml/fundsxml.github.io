@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Type: ISOCurrencyCodeType</title>
+    <!-- Verweis auf die zentrale Tailwind CSS-Datei -->
+    <link href="../assets/freeXmlToolkit.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Optionale: Eigene Design-Anpassungen für Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Eine moderne, gut lesbare Schriftart
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body class="bg-slate-50">
+
+<!-- Moderne Navigation mit Schatten und klaren Abständen -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="flex items-center space-x-8">
+                <a href="#" class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+                <div class="hidden md:flex items-baseline space-x-6">
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                       aria-current="page">Home</a>
+                    <a href="#"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                        Types</a>
+                    <a href="#"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                        Types</a>
+                </div>
+            </div>
+            <!-- Rechte Navigationsgruppe (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                    <span>GitHub</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                        <path fill-rule="evenodd"
+                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Haupt-Titel der Seite -->
+    <header class="mb-6">
+        <h1 class="text-3xl font-bold text-slate-900">
+            Simple Type: <span class="font-mono text-sky-700">ISOCurrencyCodeType</span>
+        </h1>
+    </header>
+
+    <!-- Haupt-Inhaltsbereich -->
+    <main class="bg-white border border-slate-200 rounded-lg shadow-sm">
+
+        <!-- 1. Dokumentation (falls vorhanden) -->
+        <section class="p-6 border-b border-slate-200">
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Dokumentation</h2>
+            <div class="prose prose-slate max-w-none">
+                <!-- Iteriert durch alle Dokumentations-Einträge -->
+                <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
+                <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
+            </div>
+        </section>
+
+        <!-- 2. Einschränkungen (Restrictions) -->
+        <section class="p-6">
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Einschränkungen (Restrictions)</h2>
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                    <tr>
+                        <th scope="col" class="w-1/4 px-4 py-3 font-semibold text-slate-900">Eigenschaft</th>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Wert</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm">
+                    <!-- Basis-Typ -->
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Basis-Typ</td>
+                        <td class="px-4 py-3"><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">xs:string</code></td>
+                    </tr>
+                    <!-- Längen-Einschränkungen -->
+                    
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Minimale Länge (minLength)</td>
+                        <td class="px-4 py-3">3</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Maximale Länge (maxLength)</td>
+                        <td class="px-4 py-3">3</td>
+                    </tr>
+                    <!-- Pattern (Regulärer Ausdruck) -->
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Pattern (Muster)</td>
+                        <td class="px-4 py-3"><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">[A-Z]{3}</code></td>
+                    </tr>
+                    <!-- Wertebereich-Einschränkungen -->
+                    
+                    
+                    
+                    
+                    <!-- Ziffern-Einschränkungen -->
+                    
+                    
+                    <!-- Enumeration (Aufzählung von Werten) -->
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- NEU: Sektion "Verwendet in" -->
+        <section>
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Verwendet in</h2>
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                    <tr>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm">
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_14dc3beaa5bceefc1175b09b98588f3c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_7e7d3a73dae0320812c3e631bee9fc4b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PortfolioCurrency_0735b05cdeab0ab25c10835b76d2ff93.html" class="text-sky-600 hover:text-sky-800 hover:underline">PortfolioCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/GeneralPortfolioInformation/PortfolioCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_f9d44e654ae47ae9454a5cb2c62215b0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentCurrency_680fff646f6e10958018da4825e93457.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/GeneralInformation/InstrumentCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_ef6413877d13d28209442770099909bf.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_1e504805645a66c6a15a9a5edcd3bebb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/CollateralCurrency_fee6a97c2c60f215f44b6f5ad36c5108.html" class="text-sky-600 hover:text-sky-800 hover:underline">CollateralCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMIR/EMIR_Report/CounterpartyData/CollateralCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_33cecc20149aae821d57ee67d83cf5b0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SchwerpunktAnlagewaehrung_7bd2591b45b9b631c4ceee54d15916c1.html" class="text-sky-600 hover:text-sky-800 hover:underline">SchwerpunktAnlagewaehrung</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/CountrySpecificData/AT/OeKBStammdatenblatt/SchwerpunktAnlagewaehrung</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SettlementCurrency_4e62592f81956f245b8cda245086ed43.html" class="text-sky-600 hover:text-sky-800 hover:underline">SettlementCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/SettlementCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_e1ee0be65485da7b5891a7d9a31d0d12.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/NotionalCurrency1_5efe28f73c695f419b63c83b9e147edb.html" class="text-sky-600 hover:text-sky-800 hover:underline">NotionalCurrency1</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMIR/EMIR_Report/CommonData/ContractType/NotionalCurrency1</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/NotionalCurrency2_95c5b5107e8d7f5f5848a95ee1528164.html" class="text-sky-600 hover:text-sky-800 hover:underline">NotionalCurrency2</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMIR/EMIR_Report/CommonData/ContractType/NotionalCurrency2</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ShareClassCurrency_b0a6f62618b46d41a54fb8b817435c1e.html" class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2History/GeneralPortfolioInformation/ShareClassCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_e12071735d07665bc341cc039690fc2a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/TradingCurrency_ba7572165224811e135ab2984bacae8e.html" class="text-sky-600 hover:text-sky-800 hover:underline">TradingCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/MarketPlaces/MarketPlace/TradingCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PortfolioCurrency_63bc2a90fe73e095fcda1ddebfe42f72.html" class="text-sky-600 hover:text-sky-800 hover:underline">PortfolioCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V6/Portfolio/PortfolioCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_00aa462316941cdaf67198c95378bade.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_f4df9e3ca909c561734fa0aae976a0b7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/InvestmentCosts/PurchasePrice/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/TradingCurrency_ef2f9a0d0e299403c8aca071c363e88a.html" class="text-sky-600 hover:text-sky-800 hover:underline">TradingCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/MarketPlaces/MarketPlace/TradingCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/TradingCurrency_c075dac4471b09ff161245d3586b03ec.html" class="text-sky-600 hover:text-sky-800 hover:underline">TradingCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/MarketPlaces/MarketPlace/TradingCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_45688f10c3b6a31058448af849cb672a.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_1fc4dc39909f05e4c259e0672dd1633d.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ContractMtMValueCurrency_b01a1354a1b90cbc493b9569393c160a.html" class="text-sky-600 hover:text-sky-800 hover:underline">ContractMtMValueCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMIR/EMIR_Report/CounterpartyData/ContractMtMValueCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_4f1617d95f8d17d9576181797c24d23a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_83b0f997e23a593c4e95b7e089fe543a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_695f23ac1adc9910ba3d19ae75ef90fd.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_4ea45e1580cef43d13279f7135d43d3d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PaymentCurrency_5afa1070ff4ee1f5ab53cd336501a350.html" class="text-sky-600 hover:text-sky-800 hover:underline">PaymentCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Distributions/Distribution/PaymentCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_ac2b1baa2159e9b4fca1790c42a12a83.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_6757600a50b02ec1d9ee4fec91c3f63f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/CurrencyUsed_7cad2e08d3ca68fa212c5b74fcc603fb.html" class="text-sky-600 hover:text-sky-800 hover:underline">CurrencyUsed</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/CurrencyUsed</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_69e7ae93703fda9f6259efb5836f7973.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_d37ce1ad054d54f9673cc698d5c4a593.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Documents/Document/ShareClasses/ShareClass/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DividendCurrency_caf6bf38224dc08ed3db40b9a28c5bb6.html" class="text-sky-600 hover:text-sky-800 hover:underline">DividendCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/DividendCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency2_121fef99b54240643ae55daa752f2a8c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency2</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMIR/EMIR_Report/CommonData/ForeignExchange/Currency2</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DividendCurrency_c016c577420aebe2c8dac47f0ede82ca.html" class="text-sky-600 hover:text-sky-800 hover:underline">DividendCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/DividendCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_ab903f8d59af3434cf231001afbb8f68.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SettlementCurrency_3b701748c6a0c5af6519b35a3f47d857.html" class="text-sky-600 hover:text-sky-800 hover:underline">SettlementCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/SettlementCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_9936ad659cf3e9b0ca15a6213437e1be.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_c7a236b237d509bfc1b6112e53f51def.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/GeneralFinancialInstrumentInformation/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_f4beee62c841ddcd33c935f853e526b8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PaymentCurrency_cac822a4fe8bbe9f7cfac98d6093ad50.html" class="text-sky-600 hover:text-sky-800 hover:underline">PaymentCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Distributions/Distribution/PaymentCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_d26f36d1c6d9c6b9e54ac1ed6398960a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Fondswaehrung_034a11e5b7709ba53f8492cc911d662e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Fondswaehrung</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/CountrySpecificData/AT/OeKBStammdatenblatt/Block2/Fondswaehrung</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PriceCurrency_e8b4cac50a0eaa8d30ba90735be892a0.html" class="text-sky-600 hover:text-sky-800 hover:underline">PriceCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Prices/Price/PriceCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ISIN-Währung_2eb61da0e8083a798f0bec52b4b89526.html" class="text-sky-600 hover:text-sky-800 hover:underline">ISIN-Währung</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/CountrySpecificData/AT/OeKBStammdatenblatt/ISIN_W_hrung</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PriceCurrency_771c6d079249fe878e854aca5dae47df.html" class="text-sky-600 hover:text-sky-800 hover:underline">PriceCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_ac0abac3dadfaca2e8e2b2d47e355e44.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_157b583cb430e865517e7913688e8649.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_880bb416f2f647558a539248d405898c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SchwerpunktAnlagewaehrung_a19a90856063118781b3d78b724e997c.html" class="text-sky-600 hover:text-sky-800 hover:underline">SchwerpunktAnlagewaehrung</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/CountrySpecificData/AT/OeKBStammdatenblatt/SchwerpunktAnlagewaehrung</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/NAVCurrency_a1429d32ab8f189233640fcb6c4260e0.html" class="text-sky-600 hover:text-sky-800 hover:underline">NAVCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/MarketPlaces/MarketPlace/NAVCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_099dd1d071d1e915b25e897ef251f0d9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_24292ef6d904feadc932dbaac5dd6880.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_2ba596fb4f5f86bbfd19a6aca2c8f890.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ISIN-Währung_0544608d7ba068b93a7e6baa42121d5b.html" class="text-sky-600 hover:text-sky-800 hover:underline">ISIN-Währung</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/CountrySpecificData/AT/OeKBStammdatenblatt/ISIN_W_hrung</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_a133980e2f961b49abfc429476668c55.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SettlementCurrency_feab9daa1fca25066426ae522c8d1aa6.html" class="text-sky-600 hover:text-sky-800 hover:underline">SettlementCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/SettlementCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SharePriceCurrency_2e4b5f0ab1e9ca1a006a99f8a158dfd4.html" class="text-sky-600 hover:text-sky-800 hover:underline">SharePriceCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS/PRIIPS_Report/CEPT_Prices/CEPT_Price/SharePriceCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_ec923a887ec545aedf2159eacf7f887b.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_22e06d6ebae482d124f75994502fbe70.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/GeneralFinancialInstrumentInformation/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DividendCurrency_35bd0c6566c95dca4fc0fb1af58b64c9.html" class="text-sky-600 hover:text-sky-800 hover:underline">DividendCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/DividendCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PaymentCurrency_65f51c77148e441b2c9413d7dc2c04f7.html" class="text-sky-600 hover:text-sky-800 hover:underline">PaymentCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Distributions/Distribution/PaymentCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_ae8ceb55a402685705943695a3601417.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_165b4dca1ee262c9eebf17358cf303a7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_e4e1c383b621b8370dfb82d40308df40.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_dd6ea6a597ada7b4f4f44c3fde28b8cb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/QuotationCurrency_ab74270fe4d2d86c83e3c053561a4d53.html" class="text-sky-600 hover:text-sky-800 hover:underline">QuotationCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/Valuation/QuotationCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DeliverableCurrency_4d18c770a25790bac93f172a3ec4cc5b.html" class="text-sky-600 hover:text-sky-800 hover:underline">DeliverableCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMIR/EMIR_Report/CommonData/ContractType/DeliverableCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/NAVCurrency_8a2aa5a28e987ddf8079fd9008c04ec2.html" class="text-sky-600 hover:text-sky-800 hover:underline">NAVCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/MarketPlaces/MarketPlace/NAVCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_d861979e22337397d2211da300e19880.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_b0322c8b417617d50557b566a612fdf2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_e51f0ebe92ace135e6f3de28ee2b5d36.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_11a196e3a6c5ba92f01a31c649910bde.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Statistics/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PaymentCurrency_94382b4ec0ffdb58ad9f61f6785389cc.html" class="text-sky-600 hover:text-sky-800 hover:underline">PaymentCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Distributions/Distribution/PaymentCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_9e0406612d7b59d3f089415c18201f69.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PortfolioCurrency_3d9f0de1bb052c4657d0cb2f18dd3c87.html" class="text-sky-600 hover:text-sky-800 hover:underline">PortfolioCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/PortfolioCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_b928d32cbef3cd3ab30652cba20d90e7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_70f6fad5be93a8d00166f9877ff27e3a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_2a56c3d8943c395d100fc08f7e85e6ad.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_c610b32449818bec961d92d0aaf92748.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/IncomeCurrency_c151a81911b439a137c80575fb90e6fb.html" class="text-sky-600 hover:text-sky-800 hover:underline">IncomeCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/IncomeCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/TradingCurrency_a1e585af7bc60d6d8f72f2ac58d410a8.html" class="text-sky-600 hover:text-sky-800 hover:underline">TradingCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/MarketPlaces/MarketPlace/TradingCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/NAVCurrency_316ce84437bd715659a200c63bdf2e1f.html" class="text-sky-600 hover:text-sky-800 hover:underline">NAVCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/MarketPlaces/MarketPlace/NAVCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_613e729a3e30a066aad22003ac47d052.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_0d92d73f695a589a159cee8b6923498c.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ISIN-Währung_69077b6fb2f7523aa53a1ea510c5736b.html" class="text-sky-600 hover:text-sky-800 hover:underline">ISIN-Währung</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/CountrySpecificData/AT/OeKBStammdatenblatt/ISIN_W_hrung</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_60315f753c5e92abc2911b13ceb75eac.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DividendCurrency_e39d5e083197bb2cf2657a87adc180a5.html" class="text-sky-600 hover:text-sky-800 hover:underline">DividendCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/DividendCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SettlementCurrency_bb2ff9f9f0fb055b36a4527b32f4a94f.html" class="text-sky-600 hover:text-sky-800 hover:underline">SettlementCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/SettlementCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentCurrency_43c2e90e3af2128964f1cf19f9f184e5.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/GeneralInformation/InstrumentCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_69cdf5594f70b4c88a96effd9c7ddbae.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/GeneralFinancialInstrumentInformation/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_5aebdaadd7fbbfc9dd1c46a086ca12c7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_f611f97a28a6de1322759acf8206b1c2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_e81302ff1da4b4b4847c4225af000419.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_c0627f408b43554476122a1e1a91fb0a.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SchwerpunktAnlagewaehrung_d3cf5a3308a6c3e72842339b58c46c44.html" class="text-sky-600 hover:text-sky-800 hover:underline">SchwerpunktAnlagewaehrung</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/CountrySpecificData/AT/OeKBStammdatenblatt/SchwerpunktAnlagewaehrung</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/QuotationCurrency_651e4d774a51aa40ad55da13be6ed01a.html" class="text-sky-600 hover:text-sky-800 hover:underline">QuotationCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V6/Portfolio/Positions/Position/Valuation/QuotationCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentCurrency_7b81c9dac2facbda75c8921720ae4dc4.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT/FinancialInstrument/GeneralInformation/InstrumentCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_f4a8b54f98a8cbed6048401dc90c249e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/QuotationCurrency_9689b7ae91c518c4d1faed152720d882.html" class="text-sky-600 hover:text-sky-800 hover:underline">QuotationCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/QuotationCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_67becfe1ff20248ca8ad75a78cbe8dac.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_246dc9cd210e8ee14cc4be9469de008a.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SchwerpunktAnlagewaehrung_2ab88d1135bc0c6e0e479290832db3fa.html" class="text-sky-600 hover:text-sky-800 hover:underline">SchwerpunktAnlagewaehrung</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/CountrySpecificData/AT/OeKBStammdatenblatt/SchwerpunktAnlagewaehrung</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_130cba7bc3db7775f4cddee92af940dc.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PortfolioCurrency_c4a31ae363e296aec64d922011b55060.html" class="text-sky-600 hover:text-sky-800 hover:underline">PortfolioCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/PortfolioCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_23e40f3e3233cd7f7423897870f9cc7b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_40ffd709bbc1bdea84e2199062ab6e91.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PriceCurrency_25552ab2811db27298de84a62844a34a.html" class="text-sky-600 hover:text-sky-800 hover:underline">PriceCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Prices/Price/PriceCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_3774f06b694898dd3aee21aab962afdf.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/GeneralFinancialInstrumentInformation/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_497323c647b62551f2787892ccc9c9ab.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SettlementCurrency_3ea5469e41872feda49f34b0c534987b.html" class="text-sky-600 hover:text-sky-800 hover:underline">SettlementCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/SettlementCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/NAVCurrency_722edc34328dfbbcd5e0671aa71aae1f.html" class="text-sky-600 hover:text-sky-800 hover:underline">NAVCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/MarketPlaces/MarketPlace/NAVCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentCurrency_c66a00a960593ec4fb3c70d7942a6cae.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4/FinancialInstrument/GeneralInformation/InstrumentCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_1a5a2c5fae0d03bdadf017fe2f912fef.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/InvestmentCosts/ConstructionCosts/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PriceNotation_dedd18a5fd0294da12b1fcbf396a5f5d.html" class="text-sky-600 hover:text-sky-800 hover:underline">PriceNotation</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMIR/EMIR_Report/CommonData/TransactionDetails/PriceNotation</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_8dbf4122a6cfdbbbde28c33d08d137f7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_54478cb85004a8d93275a73ac394b39f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_d9ce498e7d9d09fb43046d88146ad092.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_a4b40bf2aad27396a5a6bdbc0fa79653.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DividendCurrency_f0ced8c11811783c9c98e2b4b7ec5e6b.html" class="text-sky-600 hover:text-sky-800 hover:underline">DividendCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/DividendCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SettlementCurrency_0f82e64cb5734ab0be2952a85056cd0e.html" class="text-sky-600 hover:text-sky-800 hover:underline">SettlementCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/SettlementCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_a2feb5c7b9ef27c41276edd0e0f449a4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_30a6da208be3a4e00d0b51e559ad7924.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SettlementCurrency_4adb8ac258e24196001095a49a38c977.html" class="text-sky-600 hover:text-sky-800 hover:underline">SettlementCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/SettlementCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_adf6704436a1c567e042e7ab339caedd.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_1ddf3425f2e7c797c9049269237c277e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_e460921c361a5c616b30af4bbcf09ac0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_f8629152ea24db4dedb7fa770b541553.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ShareClassCurrency_c67d67f9fdf6ab7b772e0119130c5e62.html" class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/GeneralPortfolioInformation/ShareClassCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_0139a3aaad4533b00960a63ba223a182.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_dde1c27bc68ce96627061f892da40def.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Documents/Document/Subfunds/Subfund/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_2f956b04b9ae31275ce1c35bc7a1f8f4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/GeneralFinancialInstrumentInformation/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DividendCurrency_7b392f8d5b538f2e486d8d13c656a531.html" class="text-sky-600 hover:text-sky-800 hover:underline">DividendCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/DividendCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SettlementCurrency_22cc80bb15ce490e7d7fdaecad43ce29.html" class="text-sky-600 hover:text-sky-800 hover:underline">SettlementCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/SettlementCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Old_share_class_currency_05bea7baa5d385c284e6286780bf6d60.html" class="text-sky-600 hover:text-sky-800 hover:underline">Old_share_class_currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS/PRIIPS_Report/CEPT_Prices/CEPT_Price/Old_share_class_currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_cdeb91fe1872298ad3589b14771474bf.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_faa6e7e3e7501229b63d51cb7a30e2e2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_c1e9495c49841d72fac11c5aff96a2b6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_d01ccd84445d3780fed868c1696c4439.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_ca22bd41bc02ad3396dcc404bd63166e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_740acef6acf960cdbf9e73215eb591e4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/Valuation/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_a6df0a3ee95e55b8f9ae6399a3222f58.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_3d1f200978c2539bf323abfda7353b9d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PortfolioCurrency_cb8dd79015429129d1fe360332853579.html" class="text-sky-600 hover:text-sky-800 hover:underline">PortfolioCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII/Portfolio/PortfolioCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_ae5eef0ae6f186b2216db7a5f49711d0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Documents/Document/Fund/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ISIN-Währung_50f72f993edf9148fd82a15cd8c8db52.html" class="text-sky-600 hover:text-sky-800 hover:underline">ISIN-Währung</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/CountrySpecificData/AT/OeKBStammdatenblatt/ISIN_W_hrung</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_2e5c72fa2c347c3cada9fc409021bb89.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/Valuation/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ShareClassCurrency_1dd492932bd801dbc412a35e76151279.html" class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS/PRIIPS_Report/GeneralPortfolioInformation/ShareClassCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InterestsCurrency_13594e90ef87e11798560b91970d7a0a.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestsCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/InterestsCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentCurrency_7080000483fb3e5559408f6dca3e65f5.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/GeneralInformation/InstrumentCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DividendCurrency_a5a052211b5ba5d1484a3cdf37abb5b4.html" class="text-sky-600 hover:text-sky-800 hover:underline">DividendCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/DividendCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_2a0060f47284a6c7cec2751b6db4e2d2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/Valuation/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PriceCurrency_7046e3ad268e6378ddfd7b6c5cf31e5a.html" class="text-sky-600 hover:text-sky-800 hover:underline">PriceCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Prices/Price/PriceCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_6c322b25902b5df2b611389e55c8c253.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DividendCurrency_f6043b07cf208faae23497d3a1275220.html" class="text-sky-600 hover:text-sky-800 hover:underline">DividendCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/DividendCurrency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_fb6431263db0a3506eebc87aa414ea00.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V6/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/Valuation/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Currency_0092f01f8d3bc47c49e94eb5e732627d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Currency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Currency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/QuotationCurrency_c919371d5ae9b0e693a2090571df4ea8.html" class="text-sky-600 hover:text-sky-800 hover:underline">QuotationCurrency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII/Portfolio/Positions/Position/Valuation/QuotationCurrency</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Fallback-Nachricht, falls keine Einschränkungen definiert sind -->
+        
+    </main>
+
+    <!-- Navigations-Button zurück zur Übersicht -->
+    <div class="mt-6">
+        <a href="../index.html"
+           class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm">
+            Zurück zur Übersicht
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

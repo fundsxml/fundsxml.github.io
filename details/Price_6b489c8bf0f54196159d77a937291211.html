@@ -1,5 +1,5 @@
 <!--
-  ~ FreeXMLToolkit - Universal Toolkit for XML 
+  ~ FreeXMLToolkit - Universal Toolkit for XML
   ~ Copyright (c) Karl Kauc 2024.
   ~
   ~  Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,373 +17,462 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" class="bg-slate-50">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>XSD Documentation</title>
+    <title>Detail: Price</title>
 
-    <link href="../assets/freeXmlToolkit.css" rel="stylesheet"/>
+    <!-- Tailwind CSS & Modern Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <!-- PrismJS for Syntax Highlighting -->
+    <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="font-sans text-slate-800">
 
-<nav class="py-2 bg-body-tertiary border-bottom">
-    <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-            <li class="nav-item"><a href="../index.html" class="nav-link link-body-emphasis px-2 active"
-                                    aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="../complexTypes.html" class="nav-link link-body-emphasis px-2">Complex
-                Types</a></li>
-            <li class="nav-item"><a href="../simpleTypes.html" class="nav-link link-body-emphasis px-2">Simple Types</a>
-            </li>
-        </ul>
-        <ul class="nav">
-            <li class="nav-item">
-                <a href="https://github.com/karlkauc/FreeXmlToolkit"
-                   target="_blank"
-                   class="nav-link link-body-emphasis px-2">
-                    <img src="../assets/logo.png" width="32" height="32" alt="logo"/>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
-                        <path fill-rule="evenodd"
-                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-                    </svg>
-                    FreeXmlToolKit
-                </a>
-            </li>
-        </ul>
+<!-- Moderne Navigation (identisch zur Startseite) -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="hidden md:flex items-baseline space-x-6">
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
+                <a href="../complexTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                    Types</a>
+                <a href="../simpleTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                    Types</a>
+                <!-- NEUER LINK -->
+                <a href="../dataDictionary.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
+                    Dictionary</a>
+            </div>
+        </div>
+        <!-- Rechte Navigationsgruppe (GitHub Link) -->
+        <div class="hidden md:block">
+            <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+               class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                <span>GitHub</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                    <path fill-rule="evenodd"
+                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
     </div>
 </nav>
 
-<div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="FundsXML4_03619599b453e5076558dea9d0ed8acb.html">FundsXML4</a>
+<!-- Hauptinhalt -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+
+    <!-- Breadcrumb-Navigation: Wird nur angezeigt, wenn der XPath-Pfad vorhanden ist. -->
+    <nav aria-label="breadcrumb" class="mb-6">
+        <ol class="flex items-center space-x-1 text-sm text-slate-500">
+            <!-- Iteriert über jeden Teil des Pfades und erstellt einen Breadcrumb-Eintrag -->
+            <li class="flex items-center">
+                <a href="FundsXML4_03619599b453e5076558dea9d0ed8acb.html" class="hover:text-sky-600 hover:underline">FundsXML4</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="Funds_656aeab202d160b949f1bc6412654b59.html">Funds</a>
+            <li class="flex items-center">
+                <a href="Funds_656aeab202d160b949f1bc6412654b59.html" class="hover:text-sky-600 hover:underline">Funds</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="Fund_71097e857687283c392615ceb51e59ab.html">Fund</a>
+            <li class="flex items-center">
+                <a href="Fund_71097e857687283c392615ceb51e59ab.html" class="hover:text-sky-600 hover:underline">Fund</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="SingleFund_903ab08a541064940b64ebf77fb271b3.html">SingleFund</a>
+            <li class="flex items-center">
+                <a href="SingleFund_903ab08a541064940b64ebf77fb271b3.html" class="hover:text-sky-600 hover:underline">SingleFund</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="Segments_1c1a6fdf08fdb0176def2d4d37c61fee.html">Segments</a>
+            <li class="flex items-center">
+                <a href="Segments_1c1a6fdf08fdb0176def2d4d37c61fee.html" class="hover:text-sky-600 hover:underline">Segments</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="Segment_5ef943ced5c4502b10b6b7e2ca50d98a.html">Segment</a>
+            <li class="flex items-center">
+                <a href="Segment_5ef943ced5c4502b10b6b7e2ca50d98a.html" class="hover:text-sky-600 hover:underline">Segment</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="SegmentDynamicData_dcae385a35b094891571179b7dbfb119.html">SegmentDynamicData</a>
+            <li class="flex items-center">
+                <a href="SegmentDynamicData_dcae385a35b094891571179b7dbfb119.html" class="hover:text-sky-600 hover:underline">SegmentDynamicData</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="Portfolios_e60d2111b7a9f7d157f2d5a82a8e0246.html">Portfolios</a>
+            <li class="flex items-center">
+                <a href="Portfolios_e60d2111b7a9f7d157f2d5a82a8e0246.html" class="hover:text-sky-600 hover:underline">Portfolios</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="Portfolio_06fc94bbc8bdbf07373cd153f2a8016a.html">Portfolio</a>
+            <li class="flex items-center">
+                <a href="Portfolio_06fc94bbc8bdbf07373cd153f2a8016a.html" class="hover:text-sky-600 hover:underline">Portfolio</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="Positions_43d7d0452c663d84e8717bcd2472978e.html">Positions</a>
+            <li class="flex items-center">
+                <a href="Positions_43d7d0452c663d84e8717bcd2472978e.html" class="hover:text-sky-600 hover:underline">Positions</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="Position_7bde48deeb4ccc2d1e5eb1c7f66089cd.html">Position</a>
+            <li class="flex items-center">
+                <a href="Position_7bde48deeb4ccc2d1e5eb1c7f66089cd.html" class="hover:text-sky-600 hover:underline">Position</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="ShareClass_86bf44490eed49c38573be445bb2a261.html">ShareClass</a>
+            <li class="flex items-center">
+                <a href="ShareClass_86bf44490eed49c38573be445bb2a261.html" class="hover:text-sky-600 hover:underline">ShareClass</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="OtherPrices_3bc6151746d9528e95726dc9bccccf01.html">OtherPrices</a>
+            <li class="flex items-center">
+                <a href="OtherPrices_3bc6151746d9528e95726dc9bccccf01.html" class="hover:text-sky-600 hover:underline">OtherPrices</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="Price_6b489c8bf0f54196159d77a937291211.html">Price</a>
+            <li class="flex items-center">
+                <a href="Price_6b489c8bf0f54196159d77a937291211.html" class="hover:text-sky-600 hover:underline">Price</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                
             </li>
         </ol>
     </nav>
 
-    <div class="container">
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">diagramm</div>
-            </div>
-            <div class="col">
-                <span><svg xmlns="http://www.w3.org/2000/svg"
-     width="331.0"
-     height="273.59375"
-     style="background-color: rgb(235, 252, 241)">
-   <a xmlns="" href="OtherPrices_3bc6151746d9528e95726dc9bccccf01.html">
+    <!-- Zentrale Detail-Karte -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Karten-Header mit Elementname und XPath -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <h1 class="text-2xl font-bold text-slate-900">Price</h1>
+            <p class="mt-1 text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/ShareClass/OtherPrices/Price</p>
+        </header>
+
+        <!-- Karten-Body mit allen Detail-Sektionen -->
+        <div class="p-6 md:p-8 space-y-10">
+
+            <!-- Sektion: Diagramm -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Diagramm</h2>
+                <div class="p-4 border border-slate-200 rounded-lg bg-slate-50 overflow-x-auto">
+
+                    <!-- Thymeleaf Switch, um zwischen SVG und PNG zu unterscheiden -->
+                    <div>
+
+                        <!-- Fall 1: Wenn der Typ 'SVG' ist, füge den SVG-Code direkt ein -->
+                        <div><svg xmlns="http://www.w3.org/2000/svg"
+     style="background-color: #f8fafc"
+     width="298.0"
+     height="288.1796875">
+   <defs>
+      <filter width="140%"
+              x="-20%"
+              height="140%"
+              id="drop-shadow"
+              y="-20%">
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="2" dy="3"/>
+         <feFlood flood-color="black" flood-opacity="0.25"/>
+         <feComposite in2="offsetblur" operator="in"/>
+         <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+         </feMerge>
+      </filter>
+      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
+         id="plus-icon">
+         <circle fill="none" r="9" cx="10" cy="10"/>
+         <line y2="15" x1="10" x2="10" y1="5"/>
+         <line y2="10" x1="5" x2="15" y1="10"/>
+      </g>
+   </defs>
+   <a href="#">
       <rect x="20"
-            y="107"
-            fill="#d5e3e8"
+            y="29"
+            fill="#f1f5f9"
             width="57.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
+            style="stroke: #475569; stroke-width: 1.5;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
             height="38.3984375"
             id="Price"/>
-      <text x="30.0"
-            fill="#096574"
-            y="135.3984375"
+      <text x="30"
+            fill="#0f172a"
+            y="57.3984375"
             font-size="16"
-            font-family="Arial"
-            textLength="0">Price</text>
+            font-family="Arial">Price</text>
    </a>
-   <text xmlns=""
-         x="132.0"
-         fill="#096574"
-         y="35.0"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">1:1</text>
-   <rect xmlns=""
-         x="157.0"
+   <g id="comment">
+      <text fill="#64748b" x="30" y="82.3984375">
+         <tspan x="25" dy="1.2em">Inform </tspan>
+         <tspan x="25" dy="1.2em">on the </tspan>
+         <tspan x="25" dy="1.2em">price </tspan>
+         <tspan x="25" dy="1.2em">type </tspan>
+         <tspan x="25" dy="1.2em">(different </tspan>
+         <tspan x="25" dy="1.2em">from </tspan>
+         <tspan x="25" dy="1.2em">the </tspan>
+         <tspan x="25" dy="1.2em">official </tspan>
+         <tspan x="25" dy="1.2em">NAV) </tspan>
+         <tspan x="25" dy="1.2em">used </tspan>
+         <tspan x="25" dy="1.2em">for </tspan>
+         <tspan x="25" dy="1.2em">other </tspan>
+         <tspan x="25" dy="1.2em">price </tspan>
+         <tspan x="25" dy="1.2em">communication </tspan>
+      </text>
+   </g>
+   <rect x="177.0"
          y="20.0"
-         fill="#d5e3e8"
-         width="144.0"
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-         rx="2"
-         ry="2"
-         height="38.3984375"
+         fill="#f1f5f9"
+         width="91.0"
+         style="stroke: #475569; stroke-width: 1.5;"
+         filter="url(#drop-shadow)"
+         rx="4"
+         ry="4"
+         height="64.796875"
          id="PriceType"/>
-   <text xmlns=""
-         x="167.0"
-         fill="#096574"
-         y="43.3984375"
-         font-size="16"
-         font-family="Arial"
-         textLength="0">PriceType</text>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5;"
+   <g>
+      <text x="187.0"
+            fill="#0f172a"
+            y="48.3984375"
+            font-size="16"
+            font-family="Arial">PriceType</text>
+      <line y2="52.3984375"
+            stroke-width="1"
+            x1="187.0"
+            x2="258.0"
+            stroke="#e2e8f0"
+            y1="52.3984375"/>
+      <text x="187.0"
+            fill="#64748b"
+            y="72.796875"
+            font-size="14"
+            font-family="Arial">xs:string</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 77.0 125.3984375 h 40 V 39.19921875 h 40"/>
-   <text xmlns=""
-         x="132.0"
-         fill="#096574"
-         y="93.3984375"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">1:1</text>
-   <rect xmlns=""
-         x="157.0"
-         y="78.3984375"
-         fill="#d5e3e8"
-         width="144.0"
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-         rx="2"
-         ry="2"
-         height="38.3984375"
-         id="NavPrice"/>
-   <text xmlns=""
-         x="167.0"
-         fill="#096574"
-         y="101.796875"
-         font-size="16"
-         font-family="Arial"
-         textLength="0">NavPrice</text>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5;"
-         fill="none"
-         d="M 77.0 125.3984375 h 40 V 97.59765625 h 40"/>
-   <text xmlns=""
-         x="132.0"
-         fill="#096574"
-         y="151.796875"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <rect xmlns=""
-         x="157.0"
-         y="136.796875"
-         fill="#d5e3e8"
-         width="144.0"
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-         rx="2"
-         ry="2"
-         height="38.3984375"
-         id="SubscriptionPrice"/>
-   <text xmlns=""
-         x="167.0"
-         fill="#096574"
-         y="160.1953125"
-         font-size="16"
-         font-family="Arial"
-         textLength="0">SubscriptionPrice</text>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 77.0 125.3984375 h 40 V 155.99609375 h 40"/>
-   <text xmlns=""
-         x="132.0"
-         fill="#096574"
-         y="210.1953125"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <rect xmlns=""
-         x="157.0"
-         y="195.1953125"
-         fill="#d5e3e8"
-         width="144.0"
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-         rx="2"
-         ry="2"
-         height="38.3984375"
-         id="RedemptionPrice"/>
-   <text xmlns=""
-         x="167.0"
-         fill="#096574"
-         y="218.59375"
-         font-size="16"
-         font-family="Arial"
-         textLength="0">RedemptionPrice</text>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 77.0 125.3984375 h 40 V 214.39453125 h 40"/>
+         d="M 77.0 48.19921875 h 50 V 52.3984375 h 50"/>
 </svg>
-</span>
-                <img src=""/>
-            </div>
-        </div>
-
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">Documentation</div>
-            </div>
-            <div class="col">
-                <span>
-                    <strong><div></div></strong>
-                    <div><p>Inform on the price type (different from the official NAV) used for other price communication</p>
 </div>
-                </span>
-            </div>
-        </div>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">namespace</div>
-            </div>
-            <div class="col">
-                <span></span>
-            </div>
-        </div>
+                        <!-- Fall 2: Wenn der Typ 'PNG' ist, erstelle ein normales Bild-Tag -->
+                        
+                    </div>
+                </div>
+            </section>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">Level</div>
-            </div>
-            <div class="col">
-                <span>15</span>
-            </div>
-        </div>
+            <!-- Sektion: Dokumentation -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Dokumentation</h2>
+                <div class="bg-slate-100/75 p-4 rounded-md space-y-2">
+                    <div>
+                        <strong class="text-slate-700 block"></strong>
+                        <p class="text-slate-600"><p>Inform on the price type (different from the official NAV) used for other price communication</p>
+</p>
+                    </div>
+                </div>
+            </section>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">type</div>
-            </div>
-            <div class="col">
-                <div></div>
-            </div>
-        </div>
+            <!-- Sektion: Eigenschaften -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Eigenschaften</h2>
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Typ</dt>
+                        <dd class="mt-1 text-slate-900 font-mono"></dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Kardinalität (min/max)</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">1 / unbounded</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Namespace</dt>
+                        <dd class="mt-1 text-slate-900">xmlns='http://www.w3.org/2001/XMLSchema'<br />altova='http://www.altova.com/xml-schema-extensions'<br />ds='http://www.w3.org/2000/09/xmldsig#'<br /></dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Level</dt>
+                        <dd class="mt-1 text-slate-900">15</dd>
+                    </div>
+                    
+                    
+                </dl>
+            </section>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">Properties</div>
-            </div>
-            <div class="col">
-                prop
-            </div>
-        </div>
+            <!-- Sektion: Kind-Elemente & Attribute -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Kind-Elemente &amp; Attribute</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name (XPath)</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Typ</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Dokumentation</th>
+                            <!-- NEU: Spalte für Beispieldaten -->
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Beispieldaten</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="PriceType_b9118757cd20d7450aeb3fd5d8dd4fcb.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/ShareClass/OtherPrices/Price/PriceType</a>
+                            </td>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">Children</div>
-            </div>
-            <div class="col">
-                <table class="table d-inline-block table-bordered table-sm">
-                    <thead>
-                    <td>XPah</td>
-                    <td>Type</td>
-                    <td>Documentation</td>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/ShareClass/OtherPrices/Price/PriceType</td>
-                        <td>1</td>
-                        <td>Select the price type you would like to communicate (SWING, MATURITY, MARKET,HOLD TO MATURITY, ADJUSTED GROSS, ADJUSTED NET)</td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/ShareClass/OtherPrices/Price/NavPrice</td>
-                        <td>default value</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/ShareClass/OtherPrices/Price/SubscriptionPrice</td>
-                        <td>default value</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/ShareClass/OtherPrices/Price/RedemptionPrice</td>
-                        <td>default value</td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                <span>xs:string</span>
+                            </td>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">facets</div>
-            </div>
-            <div class="col">
-                facets
-            </div>
-        </div>
+                            <td class="px-4 py-3 text-slate-600">Select the price type you would like to communicate (SWING, MATURITY, MARKET,HOLD TO MATURITY, ADJUSTED GROSS, ADJUSTED NET)</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">MARKET</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/ShareClass/OtherPrices/Price/NavPrice</a>
+                            </td>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">annotation</div>
-            </div>
-            <div class="col">
-                <table class="table d-inline-block table-bordered table-sm">
-                    <tbody>
-                    <tr>
-                        <td>Min Occurs</td>
-                        <td>
-                            <div class="col">1</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Max Occurs</td>
-                        <td>
-                            <div class="col">unbounded</div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                <span></span>
+                            </td>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">App Info</div>
-            </div>
-            <div class="col">
-                
-            </div>
-        </div>
+                            <td class="px-4 py-3 text-slate-600"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/ShareClass/OtherPrices/Price/SubscriptionPrice</a>
+                            </td>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">source</div>
-            </div>
-            <div class="col">
-                <pre class="language-xml"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                <span></span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/ShareClass/OtherPrices/Price/RedemptionPrice</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                <span></span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sektion: App Info -->
+            
+
+            <!-- Sektion: XML-Ausschnitt -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML-Ausschnitt</h2>
+                <div class="rounded-lg overflow-hidden border border-slate-200">
+                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
@@ -429,13 +518,14 @@
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;
 </code></pre>
-            </div>
+                </div>
+            </section>
+
         </div>
     </div>
+</main>
 
-</div>
-
-<script src="../assets/bootstrap.bundle.min.js"></script>
+<!-- Skripte am Ende laden -->
 <script src="../assets/prism.js"></script>
 </body>
 </html>

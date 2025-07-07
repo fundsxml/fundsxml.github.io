@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Type: Text16Type</title>
+    <!-- Verweis auf die zentrale Tailwind CSS-Datei -->
+    <link href="../assets/freeXmlToolkit.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Optionale: Eigene Design-Anpassungen für Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Eine moderne, gut lesbare Schriftart
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body class="bg-slate-50">
+
+<!-- Moderne Navigation mit Schatten und klaren Abständen -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="flex items-center space-x-8">
+                <a href="#" class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+                <div class="hidden md:flex items-baseline space-x-6">
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                       aria-current="page">Home</a>
+                    <a href="#"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                        Types</a>
+                    <a href="#"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                        Types</a>
+                </div>
+            </div>
+            <!-- Rechte Navigationsgruppe (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                    <span>GitHub</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                        <path fill-rule="evenodd"
+                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Haupt-Titel der Seite -->
+    <header class="mb-6">
+        <h1 class="text-3xl font-bold text-slate-900">
+            Simple Type: <span class="font-mono text-sky-700">Text16Type</span>
+        </h1>
+    </header>
+
+    <!-- Haupt-Inhaltsbereich -->
+    <main class="bg-white border border-slate-200 rounded-lg shadow-sm">
+
+        <!-- 1. Dokumentation (falls vorhanden) -->
+        <section class="p-6 border-b border-slate-200">
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Dokumentation</h2>
+            <div class="prose prose-slate max-w-none">
+                <!-- Iteriert durch alle Dokumentations-Einträge -->
+                <p>Text (max. 16 characters)</p>
+            </div>
+        </section>
+
+        <!-- 2. Einschränkungen (Restrictions) -->
+        <section class="p-6">
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Einschränkungen (Restrictions)</h2>
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                    <tr>
+                        <th scope="col" class="w-1/4 px-4 py-3 font-semibold text-slate-900">Eigenschaft</th>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Wert</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm">
+                    <!-- Basis-Typ -->
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Basis-Typ</td>
+                        <td class="px-4 py-3"><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">xs:string</code></td>
+                    </tr>
+                    <!-- Längen-Einschränkungen -->
+                    
+                    
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Maximale Länge (maxLength)</td>
+                        <td class="px-4 py-3">16</td>
+                    </tr>
+                    <!-- Pattern (Regulärer Ausdruck) -->
+                    
+                    <!-- Wertebereich-Einschränkungen -->
+                    
+                    
+                    
+                    
+                    <!-- Ziffern-Einschränkungen -->
+                    
+                    
+                    <!-- Enumeration (Aufzählung von Werten) -->
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- NEU: Sektion "Verwendet in" -->
+        <section>
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Verwendet in</h2>
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                    <tr>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm">
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_e78010635c982e9347e70dba10e44783.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Custodian/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_7f9c6e4e6cade66758f436aca352f5c5.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_8433654890a9864103f4f4b84922c850.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_2701af4ccb4cee5fceec202c0f601c57.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_ddaa20865d8f97238c2b413fef266229.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_9a7b108df5ddc75073c6932ae84f069b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_e2e43f1e9a8011d7a341820498ae8d2b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_992fe97b2e77bbdc4874a6842cf8ab25.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_04cc52c34fcfd3c231923b66e94014f3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/IsFeederFor/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_6ed964ff084bd5c4049be5db5ae8fb79.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_cc501d422c165138238d093931977cd0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_30fbfe392c044783359abf5d00065e45.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_6d914e5a3c0fcc2d31ce66e7dfe36b1c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_b240a7007449e8ec01d8850cdaef6cac.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_1c6324880003efb95d094fe1915ff9fd.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Fee/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_865f20f7cf525b503e47fb468a4e7b0a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Equity/Issuer/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_df6d091351748692267acd117fff591d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_05a66fca7463d6a981feaa46f08b6ea1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_bc1013b10049ce79b92c4ac6d217a118.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_62167dc020f4fb7a82afe29625ed7b40.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/IsFeederFor/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_a708c31c937eb16f17258647f8515336.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_2a691ae4dc419c6ee8c8b5dc9955cfce.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_f3093320347811d1587ae9fe40cd93b7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_915c95321511a3607b6d93a0c13b82d6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_8abc7eb2013e4f1afc34636d7241c626.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Documents/Document/ShareClasses/ShareClass/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0a149e3232caa9412fb835828bf74a14.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_3597db5e6d4394112ed707e72522277a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_a1e7c8825bef1263d95e26ca488740c0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/ConvertibleBond/Underlying/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_80e91f4f549bbfd9e5586b1cfdfeace6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_27ec6478ef8faa948f79248a46dc080f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_832026aa8d1ad5487fa43912631c41a7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/PrivateEquity/Company/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_ffb042c86b06cd03e31b980cc13512fe.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_51f1b945c99ace3cda3ec9b407b60bd1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Advisor/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_ee3a4a01ed840796a73b2291d065b3dc.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_6f176fd87908cfc2741e621e0fa2a74f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CallMoney/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_b80203f662154e7b7f6ddd5c841f8f07.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_bf793b5eee179780aa90af078c288973.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentStaticData/Manager/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_964586919cc1df56a07e2f0b147fd941.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Administrator/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_f1b47df17c477cd91b3598df857c0383.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_fccdd904da15f7ade808c1166c045737.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_6a52cc5632c68fdd99dcda832eaedb33.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_5be169c4a1559d33c206f6db0f4f32f7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_d4cf6516d845376898ba2a6d2e06e759.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_af825dc4ecf7687c3b9e980b98e909f4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_d338cb0dffff7ee72be659dcfee0aa00.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_b1ee6746f8a5aec37a06aafbdb97dbe3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Coupon/BaseIndex/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_078f50a72fff73cbc1eecc0e6fae5ca5.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_340dc49d5da369d76333075bf40cc01b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_2982a2b70ea2e035b270b32de5a79b37.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_e44e73762465417083aae7264befadc4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/CountrySpecificData/AT/PKG2012/Details/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_c5e7acfd7d05dabb960f3fd911949002.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CallMoney/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_845be53c4b93e521fb40b0db9ffee3c5.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Administrator/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_2a870ea5037c78bad5699534244b34db.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_c9cff1a824c7338ea1e8792a3e3bf39e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_d536f4ddb325c717a8401e2ead240a64.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Documents/Document/Fund/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_d342c807241b45f89c057f218264688d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Companies/Company/Details/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_48e5ba5650d492297c5392b09764a7ea.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_0e6f6ef9cf923ce059d90b3278f47d6e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_85c8de036141b135b8f401e76682deaf.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_6b11fe2ca65b4b2c267f39ad40af2f79.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_4e8567ef9dfc4777943ff93622cdb187.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_53b4b2dbd2b22355dc18135d13ce0354.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_8af0b9409aab4a92af1608e7b2eb2976.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_d7775f9e0b04f542dcfc89f5ca7d0b81.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_02b33ceb565a4c199ca86032b9e7018a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Issuer/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_bdbff623c36edccdab5e96c92338b2a1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Certificate/Issuer/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_47c507ee916e6a498fd75a5f528d5e38.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_a9e9d9adda0ae440f5be20f3bff57f91.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_10b5e7bd70b8d8aace8d6092a5587148.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_71835dcc8493d609c60cc5b47bf270a4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_9149bff3d81a7fdd03e6c6bdf5bec2f6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0cfd8113e6af7b94fe7ec97809b3490b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_defcda3d2f4553612c5067768a0e2c71.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_f5a7af33f15119c492aea8d6b72016b6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_2ec1210f7fb54e313cabcfb06354fe91.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Future/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_d378f37b18dd85f2bbf3c6ec151ea117.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Loan/CorrespondingRealEstate/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_d7b91255a663e5636203341d286e9f18.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Managers/Manager/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_ec657bc31538206233bd834346b07580.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_2cf731ef35ba233218e04d41a1a9afd7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_bfa49b7a30557994bf6c2e7504eaa8b0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/ShareClass/Issuer/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_356581eaf5411d14d6d006632d05f1d1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Companies/Company/Details/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_b9d6d8a50e69ee0f008aca00361a2a6c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_93863ada97ba1d49ec8c43944e4a8b67.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FXForward/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_4e551835881d2fdc095e2ebae8e55d0e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_78f774794ad8d32ae16f1139fbc1732c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_75cc53a1a2339a94fc52c0954723b5ed.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Documents/Document/Fund/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_8c96222bccc1354b2ecd52efc62f69e8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_cc4548a04f2d4374a6fa53f833d9ef6f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/IsFeederFor/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_bb07fbf9d469f9ce466f3872047883c0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_6a7bb4026835bacc5b5c83b27a200919.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_b7c4d5d237c882b5ada069ec45c13731.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_592fee5505b5d149d9a1f0b9cc488ecf.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_eb416190ea6c8a78866497c0d622da71.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/MarketPlaces/MarketPlace/MarketMaker/Identifier/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_173b9911ba2b024a70f07cdb0824ba1a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_923803cc9f8287e7553a7ac59acd1566.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/CountrySpecificData/AT/PKG2012/Details/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_496cd996122f851805181d36aa57ea42.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Repo/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0ccd727dd80ad516b840078b76003e56.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_b95e1985c58672d235860472d21c1100.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_2fbb1f64cd6222186a3b08eed544325a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_29e4aed11136e7cfe6171d32f0a2c925.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentStaticData/Manager/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_3b9fa46564517ec796b902975084e1c8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_3716431ba125596a534d84e81f0f32a7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_e69dbb56ffcfc12e0c67b214d58b46cc.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_00d0b596250e0e33ef6e7c74d8c63eec.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_8705282e4eea04894fd0202ddd03b888.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0d4d45f9ab212bc928e374b55911af1f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_8ca7c5069add998f3dbe4b82e795e171.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_798ac21f25bf566cdd56e53669df74e2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_3c14074e5103aa56c1a5a3771b9ec94b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Auditor/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_69102cace9cc0118c23268c801b4128f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Certificate/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_05f9f6ee37a26e2b11dcd3190d80e111.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_82ca530e82b554303f32ad8461af4687.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_cf17c877713f78ba13baf50de1c5cdfa.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Companies/Company/Details/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_45ffc498898ce262798aeb4c526cdc02.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/MarketPlaces/MarketPlace/MarketMaker/Identifier/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_1f85efacc3a28908a52083754f108a3f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_f25af8a2528acadad3db1d4ffcb08d5f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Issuer/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_07c889755d124238bbb0a429bf51b49a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_12613edcb8fed41a9392a6ba79a89ec1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Issuer/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_80a24b2322cc023ed9071082c15372c2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Advisor/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_da91458d6e96247dde3c2135e2e48c1d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Custodian/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_3245317821be8b373f9ee015d1a23fd2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_73f533e47236500487f88321782c36c7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Future/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_72ecfb50ceca3707047968d5a8784d70.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0ae9f92a4dd3d70a9ba5ab849c9e72d7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_8edd780b82b89da0d608b52e91b0cd9b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_b185817d356de3deb302fd90de887d60.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_8c46e8f397e7e98ed80cb1ccde1b1db3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_fbdc04c8c1889872259d38dd005f9671.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_ccf31aa68c27757affb2e651926d89c8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_d2664a29a70a18e885392cebcbac7980.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Advisor/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_02e143032125341f36cb3b41bfe414a5.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/IsMasterFor/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_621990beb454d3a2a5574d579b4d4cd1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_d7494ddabf74fb3ffa34bb27f1ae2e12.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_168af78c982d747c1c43a11e0d96128f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_bf323704a1f769e94b7d5f4976015d2c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_b480ad701312365a003c9c4e03834cf2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_7b7066ae88f8e889072b9ad32e374467.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_81607f309ed19a73cf9104953a15866c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_cb879d3bb86953986a0236aa7c7a56f8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/InvestmentCompany/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_4658da0671418f8e54e05687d4b893d6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Future/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_f23bced3ea62c3a676cbda2d4b4267ec.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Companies/Company/Details/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_be70a354d2be3a937298fa8402881347.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/IsFeederFor/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_4d54ebc880b133abf31fa34fa81c7ab7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_bb7aa7462db635fe5b7abbd91211fc5f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_d302fede024f464006c018f394f08487.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_e5d75b109d16ca33a385b30e93d450d2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_cd20e94661d3d2265d41b78bc6a64eda.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/ConvertibleBond/Underlying/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_bdb73aee8e2ca75219b666305d41fa37.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Company/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_d1baaaa3f6e2340fdc57aa6fee50fff6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_a88c06394ee96d7bec3e646e7acdd481.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Right/Issuer/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_ec15fef2b618590563740c541e1c4be2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Advisor/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_08e1cca73ca91b63444bda35e3796d39.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_a817259945bfc734d48edf61a60320a9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Auditor/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_7919b522a8da1c148c177f95bd9c0169.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/PrivateEquity/Company/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_e30c84e1053daed01f7e80ea7e91c55a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/MarketPlaces/MarketPlace/MarketMaker/Identifier/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_501202d97d9c75d24117f6b2bb9b1986.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_6c2485423328f5d578d4e9d57a941fbb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentStaticData/Manager/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_a4c146333287c467c2c0896f6889bdf4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/IsMasterFor/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_2f3d183d361a90709148a55a2f483f07.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Loan/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_0a217cc2c13520337048fd0cbcbad522.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_a34850b7ad9459c7f9c61cc61ca7aa39.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FixedTimeDeposit/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_61cfec80117dcbbbff6b10d8069c5b48.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_13a23c815b27e0adad0fa3ff7abec495.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/MarketPlaces/MarketPlace/MarketMaker/Identifier/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0c9a7671803b98833efc6a553d47ac12.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_36c6d5ce0d1fdb1f2df721399b0b46da.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Certificate/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_34576e10b3de909640838036bc841cfa.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_c3ab96c68492b5a9ee7f5fa299608bf9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_13c9664120523b68455843b2be600c7a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_41e1c5e1b9255e3f7ca20a4f8e0619db.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_11a5e05ea77c183591b2565205c0184a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_416ddad8f2dcd4176d8a2f1ffe42d8db.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_277195d5dbd71e22b8e81d94837b5892.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_4305f30333b34b00456d8148d2cb8148.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Equity/Issuer/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_d319ad517793bbea30377da8dfc7ce8b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_3ac1b101180d20a2c38693cdfc431232.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_f0f86d85e08a04e028a7a850f8cf2d38.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_f88a210a3be1eb3f4633a44f348b5eda.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_989bd39b228dae9ed3b50cae1e1de36e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_3a6fc5c89e0c79795dec6dcf53a5f9f4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_60d492651700475db0a15da03306f7fe.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_66c95e6804be83ccb94d6d50869d5438.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_645059d436ab5cce5f2a6e7405f17ee2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Issuer/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_4c72bf362d6325a6e0fe37bdaa85c8c4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_8590f312368b1c1910f31987652796a7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CommercialPaper/Coupon/BaseIndex/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_01f244d39f0b11fb1032ece6331754ca.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0accc0b4fbd17d7b10142b409840c55b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Fee/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_bc3a291505aae055cd71188d572fec3e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_1a02a17b8a9c09889f66524057653952.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_b67364a78c34602a1c76de9d9affd196.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/MarketPlaces/MarketPlace/MarketMaker/Identifier/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_908fca433a7b0ac9697815f87cc7d24b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Repo/SecurityIDPledge/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_b53765f8e3868186488caea81845574d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FixedTimeDeposit/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_cb4423c4f47ec6d63611c7e2fad91caa.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_45f2d825e5f7bbcf66ac15c6ed582dba.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/MarketPlaces/MarketPlace/MarketMaker/Identifier/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_c27bc9d6e098bba6ef5125290f67a7b3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_626a81426f744852c5de371b1b521558.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/REIT/Issuer/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_25ff312ea44d7d1bf2e50521b1ee19db.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_7354990fbbf5d290dbdde55b4d87a701.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Company/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_073d4671e76ef009c2051c283d7d9360.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_c006a125fd6292030096990620d98ecf.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_a364031eb0be02a51a41de9b23f6aaf4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Issuer/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_255bad84476b6f939391e01e0ab9257c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_1165f24c655ea3bd7a145cf74b52ff2a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_7daf36e60c61158613981e791632413e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_48310b9c582518919ba9d994708c5cc9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_6dfd57d337cdffe249b8f080b28e57d0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_fb733baca7fbe2a80e3fdc8613c24941.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_f413608f19fe50a3fc7c33f3c98df18b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CommercialPaper/Coupon/BaseIndex/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_6f6c9ba4de9b44ed149d3b341100dc0f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/TransferAgent/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_3515a6817f63f8d309bb760bc18d4f10.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/RealEstateCompany/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_30f3208230cce0a6a547d7712eaec671.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentStaticData/Manager/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_298772abe8d2c11dbe3908b07a163091.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_04e4fd7b24dd67c98e35b98835c61ca2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Right/Issuer/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_68cca5abe89f2977a634e24c5cdd1c96.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Managers/Manager/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_4e49d9aae7e98c580b2a74601268f2ee.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_90c506133a01d8776b39208c15d9af52.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_2a1071d857a55448ea803f5de7333cbe.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Documents/Document/Subfunds/Subfund/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_d671a412d50f8ea59a38de0363a25c01.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Loan/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_3bf73614192c016874c20a6bad65aa8e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_5836772d421cea437dec5f7ff7d02e72.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/MarketPlaces/MarketPlace/MarketMaker/Identifier/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0c4eb534896f0ad5b3d6b09bd96baab3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/MarketPlaces/MarketPlace/MarketMaker/Identifier/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_59a41b6dc21a49a25dc9e262ca6c9f21.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/TransferAgent/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_42adbc3d5a4cb6dfde7106529ee99396.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Certificate/Issuer/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_15ad07db211744a5e543e31614214e3a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_38d6ab3ff8b4479a6cdc70003a6ac927.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Documents/Document/Subfunds/Subfund/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_a4844c22f6f1ed0ed6d6bb338d926dcf.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_2eb8eaa14d7e939ea973f99489b18279.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_7a826abe0db3ae0822a2bb0e812e037d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FXForward/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_a8d4a48c5dc23ce5bfa5a9aa60056fbd.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_a2a9fdaa94e8cd1988b861df5585059f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_2e9ea3d57a07100ad051acc0992f072d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CommercialPaper/Issuer/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_395d19d03a7d171b755190c48295bae1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_9905d6dafbd32b9f7b8f5cb36006128b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_8ef4da0348e56bbbb339d7cbd8af6936.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_bd34dde24f984aff1495957b375b476d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_e79a3122e3f12b2dd7c3ac166a2b150f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Issuer/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0dc0c30c4c388a6d025ae73c7c86de92.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/REIT/Issuer/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_de23a513c7e04c978f0aabf936b727b9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_84c1b2b380f52977a8cfe52f0df50f78.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CommercialPaper/Issuer/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_8cede1594bf614cc7b71ac03046e4a8d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Guarantor/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_b3245f2efe4c95cd78197675f2640b70.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_b6933aedde1f87013213368339aba4d0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_d18cb106c31dc172f48f54607aa5b54c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_ca23aafab15dec62fb6a7c2236aa8516.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Future/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_f381304c62613992ace6eaa1835406a8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Managers/Manager/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_23393e46e36d9fe27d7416dc6ba44032.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_b9cba84cf77696f9823ab206bedfaac0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Repo/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_caac2363ab2439f3fae8629d54dc109d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_ea46e70297d59c83b72de1ca85a816ad.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/IsMasterFor/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_93b3b4fbd96e7428e494572c4b861631.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Guarantor/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_45800d036a854062e0d07eb9e84894c1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0d5ef1d0fe92fd64395ecfc6dba0ed90.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_ea46fa0faa002d5f764747906a1e6778.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_b0449cbd85b0f7d8a8fa902f4999b08e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_d0909b9620851f276580ff9ef1ed4af4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_e7b18f62b378cd8024afb61c59a2bf0f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/TransferAgent/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_b0ca2c9a206d46947f7a399cb0d6aae9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/ShareClass/Issuer/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_4527c73fd69a54a2d5925ec54888d20d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_022e4f45077f5bdc3660efb943160a35.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Coupon/BaseIndex/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_a5237d80dba177fd2a4ff44e23def885.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Repo/SecurityIDPledge/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_0d1881fa12739a99df17ca13c3487d9d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_a0e5780d85e397f492077e21ce30c48f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_be3386120578c36739e839a142c7825a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Managers/Manager/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_9769f453589b22dba688767eb1fe64cb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_64aa8618ebb71d69505c3aff95124d3e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_9c4c64c9330f35b334953a611e212cab.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/InvestmentCompany/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_bdc2b57bf3a9af1ff4a147bf635ad92f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_35cf93be52670e35e589a10a07b6ef7a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_6112b55acf41dfdd15a05dc9288ff8eb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_2c5adb1ab55f5f28db2de3479b7cfa6f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_b6a10a0793ccf67d2f97fad6f6b8568d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_980bb513218c73fb7eb47f4671b1a6d9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/IsMasterFor/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_fdff95e7e4adbd64e01cc2fe40432879.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_56cfb96044079975f72a91e064f3ab3f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_71cfd2e5777cc5dbf9c49edf7573c08c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Documents/Document/ShareClasses/ShareClass/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Market_e555d9004153fdd681e8c54fcb93fd67.html" class="text-sky-600 hover:text-sky-800 hover:underline">Market</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/RealEstateCompany/Identifiers/Bloomberg/Market</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_26adf2d9c5d7edeb33fc4f292e41329e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Loan/CorrespondingRealEstate/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_40529bc6001422a18c5ec6d1a915de42.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Exchange_adc0755cc35fc8bc0c8f6e432357a152.html" class="text-sky-600 hover:text-sky-800 hover:underline">Exchange</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/TransferAgent/Identifiers/Bloomberg/Exchange</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Fallback-Nachricht, falls keine Einschränkungen definiert sind -->
+        
+    </main>
+
+    <!-- Navigations-Button zurück zur Übersicht -->
+    <div class="mt-6">
+        <a href="../index.html"
+           class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm">
+            Zurück zur Übersicht
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

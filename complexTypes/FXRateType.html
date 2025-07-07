@@ -17,32 +17,57 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" class="bg-slate-50">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>XSD Documentation</title>
+    <title>Complex Type: FXRateType</title>
 
-    <link href="../assets/freeXmlToolkit.css" rel="stylesheet"/>
+    <!-- Tailwind CSS & Modern Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="font-sans text-slate-800">
 
-<nav class="py-2 bg-body-tertiary border-bottom">
-    <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-            <li class="nav-item"><a href="../index.html" class="nav-link link-body-emphasis px-2 active"
-                                    aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="../complexTypes.html" class="nav-link link-body-emphasis px-2">Complex
-                Types</a></li>
-            <li class="nav-item"><a href="../simpleTypes.html" class="nav-link link-body-emphasis px-2">Simple Types</a>
-            </li>
-        </ul>
-        <ul class="nav">
-            <li class="nav-item">
-                <a href="https://github.com/karlkauc/FreeXmlToolkit"
-                   target="_blank"
-                   class="nav-link link-body-emphasis px-2">
-                    <img src="../assets/logo.png" width="32" height="32" alt="logo"/>
+<!-- Navigation -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="flex items-center space-x-8">
+                <a href="../index.html" class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+                <div class="hidden md:flex items-baseline space-x-6">
+                    <a href="../index.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
+                    <a href="../complexTypes.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100" aria-current="page">Complex
+                        Types</a>
+                    <a href="../simpleTypes.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                        Types</a>
+                </div>
+            </div>
+            <!-- Rechte Navigationsgruppe (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                    <span>GitHub</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -50,27 +75,453 @@
                         <path fill-rule="evenodd"
                               d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
                     </svg>
-                    FreeXmlToolKit
                 </a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </nav>
 
-<div class="container">
-    <h1>FXRateType</h1>
+<!-- Hauptinhalt -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+    <!-- Zentrale Inhalts-Karte -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Karten-Header -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-slate-900">
+                    Complex Type: <span class="font-mono">FXRateType</span>
+                </h1>
+                <div class="flex space-x-2">
+                    
+                    
+                </div>
+            </div>
+        </header>
 
-    <div>
-        <span>name</span>
-        <span>FXRateType</span>
+        <!-- Karten-Body -->
+        <div class="p-6 md:p-8 space-y-10">
+            <!-- Sektion: Dokumentation -->
+            
+
+            <!-- Sektion: Attribute -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attribute</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Typ</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
+                            <td class="px-4 py-3 font-mono">
+                                <!--
+                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
+                                   th:text="${attrEntry.value}"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
+                                   -->
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- NEU: Sektion "Verwendet in" -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Verwendet in</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_718499e157e1ec4a0ac36179e386a8fb.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_1847bf5f3e21d7e667112cf09dcae1c5.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_5bae5f9db49c05b5dba3b943a308c93b.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_11c37ba34e980383017161e9d7a5bff6.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_bea658b6271e5a83fe4d8ee6fd855edf.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_1806e82689ed9aca7db815a2b5fa4efc.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_bacb71933dd27b57084b0bb57a39ea82.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_deca1d33fb6a0cf663564f7f8cf17e63.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_95bcd6b785a2b974f3c0f038896f9bb3.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_6ab96b6967c63de621f4ec72621270d4.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Flows/Flow/FXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_8f0ff8f23cef891cb5cb03b89eb9a6e2.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_0083c78ba50b0916a77006a0f32c4c85.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_a89a979e91b572e7dd755ce25559bd2d.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_75875ee3029d7d8e734daa8620c0d5e3.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_bee743354e3368b310e55704b45cb80e.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_169883de5bf042668bc91bd53eaaa0aa.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_5190917942486b0ee037d09ebfc1cd45.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_e57afd0b77f74ceb12d8d2afb3487c5f.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_31adf1a6c759fad6ef01c6af0066b02c.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_6bed2d6da01ac56ccfb1e6c2a04584d8.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_9d91b4303934d65a6b084321ff8c5d54.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/FXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_f7a5d59f7d81494ed99abb4ce0cd7cf6.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_b539daf02401f7525c5fdf925393c364.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_d2f823846f9235511f69200e0029b8b5.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_1491f4087c70bb94e4b3bd1731e1e08b.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_44dfa4848621fcea846c7485a00415f6.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_7f48a47ec100d3ffcc483b4624fdb8b7.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_db75ac9add2febffa42ac17c54bd2f82.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_1ce4cd25f1856a177be478f271eaff79.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_60cbdff6920c553440f3aae1843fc68b.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_e19a081471fc4cebe087e8d45de35784.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_b6732bb801898bb749f8d338a3b02ab3.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_46faaf6a951f423e4b14a6cb60395921.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_9b26f496e202e8102710170d6f2a94a5.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_844ede4d7acdd62139464ce1b915ecd0.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_55466160c0cd501000656ae7c5612071.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_ef318502933f5d75e4062a114664ebd1.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_f65493a0d3d0d3f94a3b147f970faa27.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_7be310640bfc17fd1780d6427252aecd.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_5e3fa4e3acc57652cbfa6227f29538f5.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_75317b62f1e3125601b22e7ed431de12.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_4e7dfceb511296f6ecf0c08beb0d232f.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_d54235f3b86fd7ec86009bf63240a0ea.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_8a581bad5c378b3634036f26b6fab697.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_c681eb29ca89ba332435eccad6ccbb48.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_4301f58a4befb9a73f3ef3fe56cf35fd.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_8bab84b10097cd30ddbabe60c21c7ff8.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_e3e2839502f99971198df14803254931.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_135071d964ace8b26c5d1e5f49088c0d.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_b2c1b72525147b46683863552885e633.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_5ec6f0836023effca4ae032b5e2ca682.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_d891a808ce52f7cd4634beb041213f36.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/FXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_d78b42161ef1a0de34085b25fd8c7df1.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_9af74c611b71bd6bea2ef80a3c3e8615.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_3cc6d0a765575aee321ab8fc0ab0209a.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_4348b683a970e9d079b05a227c09986e.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Flows/Flow/FXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_60c69e4ca51156ed9d6e43bbfb1ad3c5.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_2103b9fc0de05fd8bdf2fceb30130444.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/FXRates/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_3dbbc45efc4e7419bfcc7ab1f5a552ad.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/AveragePurchaseFXRate/FXRate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRate_bffd464b7a8843e7db643dbc4ebea567.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/FXRates/FXRate</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- NEU: Sektion "Element-Deklarationen mit diesem Namen" -->
+            
+
+        </div>
     </div>
 
-    <h3>Documentation</h3>
-    
+    <!-- Navigations-Button zurück zur Übersicht -->
+    <div class="mt-8 text-center">
+        <a href="../complexTypes.html"
+           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+            Zurück zur Übersicht
+        </a>
+    </div>
+</main>
 
-</div>
-
-<script src="../assets/bootstrap.bundle.min.js"></script>
 <script src="../assets/prism.js"></script>
 </body>
 </html>

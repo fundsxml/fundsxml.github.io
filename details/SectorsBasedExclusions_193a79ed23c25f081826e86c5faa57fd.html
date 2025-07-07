@@ -1,5 +1,5 @@
 <!--
-  ~ FreeXMLToolkit - Universal Toolkit for XML 
+  ~ FreeXMLToolkit - Universal Toolkit for XML
   ~ Copyright (c) Karl Kauc 2024.
   ~
   ~  Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,1029 +17,1401 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" class="bg-slate-50">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>XSD Documentation</title>
+    <title>Detail: SectorsBasedExclusions</title>
 
-    <link href="../assets/freeXmlToolkit.css" rel="stylesheet"/>
+    <!-- Tailwind CSS & Modern Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <!-- PrismJS for Syntax Highlighting -->
+    <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="font-sans text-slate-800">
 
-<nav class="py-2 bg-body-tertiary border-bottom">
-    <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-            <li class="nav-item"><a href="../index.html" class="nav-link link-body-emphasis px-2 active"
-                                    aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="../complexTypes.html" class="nav-link link-body-emphasis px-2">Complex
-                Types</a></li>
-            <li class="nav-item"><a href="../simpleTypes.html" class="nav-link link-body-emphasis px-2">Simple Types</a>
-            </li>
-        </ul>
-        <ul class="nav">
-            <li class="nav-item">
-                <a href="https://github.com/karlkauc/FreeXmlToolkit"
-                   target="_blank"
-                   class="nav-link link-body-emphasis px-2">
-                    <img src="../assets/logo.png" width="32" height="32" alt="logo"/>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
-                        <path fill-rule="evenodd"
-                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-                    </svg>
-                    FreeXmlToolKit
-                </a>
-            </li>
-        </ul>
+<!-- Moderne Navigation (identisch zur Startseite) -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="hidden md:flex items-baseline space-x-6">
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
+                <a href="../complexTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                    Types</a>
+                <a href="../simpleTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                    Types</a>
+                <!-- NEUER LINK -->
+                <a href="../dataDictionary.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
+                    Dictionary</a>
+            </div>
+        </div>
+        <!-- Rechte Navigationsgruppe (GitHub Link) -->
+        <div class="hidden md:block">
+            <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+               class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                <span>GitHub</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                    <path fill-rule="evenodd"
+                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
     </div>
 </nav>
 
-<div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="FundsXML4_03619599b453e5076558dea9d0ed8acb.html">FundsXML4</a>
+<!-- Hauptinhalt -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+
+    <!-- Breadcrumb-Navigation: Wird nur angezeigt, wenn der XPath-Pfad vorhanden ist. -->
+    <nav aria-label="breadcrumb" class="mb-6">
+        <ol class="flex items-center space-x-1 text-sm text-slate-500">
+            <!-- Iteriert über jeden Teil des Pfades und erstellt einen Breadcrumb-Eintrag -->
+            <li class="flex items-center">
+                <a href="FundsXML4_03619599b453e5076558dea9d0ed8acb.html" class="hover:text-sky-600 hover:underline">FundsXML4</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="RegulatoryReportings_e93b40b6a782673701031e15cd7537d0.html">RegulatoryReportings</a>
+            <li class="flex items-center">
+                <a href="RegulatoryReportings_e93b40b6a782673701031e15cd7537d0.html" class="hover:text-sky-600 hover:underline">RegulatoryReportings</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="DirectReporting_882595cd98a1d8bc042f0914995fff7b.html">DirectReporting</a>
+            <li class="flex items-center">
+                <a href="DirectReporting_882595cd98a1d8bc042f0914995fff7b.html" class="hover:text-sky-600 hover:underline">DirectReporting</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="EET1.0_6aa65f6cb65fec7ddc62a45938b81f96.html">EET1_0</a>
+            <li class="flex items-center">
+                <a href="EET1.0_6aa65f6cb65fec7ddc62a45938b81f96.html" class="hover:text-sky-600 hover:underline">EET1_0</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="EET_2d0ed27e89c1087906847b947b7ead82.html">EET</a>
+            <li class="flex items-center">
+                <a href="EET_2d0ed27e89c1087906847b947b7ead82.html" class="hover:text-sky-600 hover:underline">EET</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="ScreeningCriteria_6d4ab9adccdbdb31b91d269401de13ff.html">ScreeningCriteria</a>
+            <li class="flex items-center">
+                <a href="ScreeningCriteria_6d4ab9adccdbdb31b91d269401de13ff.html" class="hover:text-sky-600 hover:underline">ScreeningCriteria</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
             </li>
-            <li class="breadcrumb-item">
-                <a href="SectorsBasedExclusions_193a79ed23c25f081826e86c5faa57fd.html">SectorsBasedExclusions</a>
+            <li class="flex items-center">
+                <a href="SectorsBasedExclusions_193a79ed23c25f081826e86c5faa57fd.html" class="hover:text-sky-600 hover:underline">SectorsBasedExclusions</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                
             </li>
         </ol>
     </nav>
 
-    <div class="container">
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">diagramm</div>
-            </div>
-            <div class="col">
-                <span><svg xmlns="http://www.w3.org/2000/svg"
-     width="691.0"
-     height="1266.3671875"
-     style="background-color: rgb(235, 252, 241)">
-   <a xmlns="" href="ScreeningCriteria_6d4ab9adccdbdb31b91d269401de13ff.html">
+    <!-- Zentrale Detail-Karte -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Karten-Header mit Elementname und XPath -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <h1 class="text-2xl font-bold text-slate-900">SectorsBasedExclusions</h1>
+            <p class="mt-1 text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions</p>
+        </header>
+
+        <!-- Karten-Body mit allen Detail-Sektionen -->
+        <div class="p-6 md:p-8 space-y-10">
+
+            <!-- Sektion: Diagramm -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Diagramm</h2>
+                <div class="p-4 border border-slate-200 rounded-lg bg-slate-50 overflow-x-auto">
+
+                    <!-- Thymeleaf Switch, um zwischen SVG und PNG zu unterscheiden -->
+                    <div>
+
+                        <!-- Fall 1: Wenn der Typ 'SVG' ist, füge den SVG-Code direkt ein -->
+                        <div><svg xmlns="http://www.w3.org/2000/svg"
+     style="background-color: #f8fafc"
+     width="711.0"
+     height="1800.734375">
+   <defs>
+      <filter width="140%"
+              x="-20%"
+              height="140%"
+              id="drop-shadow"
+              y="-20%">
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="2" dy="3"/>
+         <feFlood flood-color="black" flood-opacity="0.25"/>
+         <feComposite in2="offsetblur" operator="in"/>
+         <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+         </feMerge>
+      </filter>
+      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
+         id="plus-icon">
+         <circle fill="none" r="9" cx="10" cy="10"/>
+         <line y2="15" x1="10" x2="10" y1="5"/>
+         <line y2="10" x1="5" x2="15" y1="10"/>
+      </g>
+   </defs>
+   <a href="#">
       <rect x="20"
-            y="603"
-            fill="#d5e3e8"
+            y="797"
+            fill="#f1f5f9"
             width="194.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
             height="38.3984375"
             id="SectorsBasedExclusions"/>
-      <text x="30.0"
-            fill="#096574"
-            y="631.3984375"
+      <text x="30"
+            fill="#0f172a"
+            y="825.3984375"
             font-size="16"
-            font-family="Arial"
-            textLength="0">SectorsBasedExclusions</text>
+            font-family="Arial">SectorsBasedExclusions</text>
    </a>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="35.0"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="PornographyAdultEntertainmentServicesExclusion_a310f4451b97a45f089455c398cc8c5d.html">
-      <rect x="294.0"
+   <g id="comment">
+      <text fill="#64748b" x="30" y="850.3984375">
+         <tspan x="25" dy="1.2em">50100 - 52130 </tspan>
+      </text>
+   </g>
+   <a href="PornographyAdultEntertainmentServicesExclusion_a310f4451b97a45f089455c398cc8c5d.html">
+      <rect x="314.0"
             y="20.0"
-            fill="#d5e3e8"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="PornographyAdultEntertainmentServicesExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="43.3984375"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">PornographyAdultEntertainmentServicesExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="29.19921875"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="48.3984375"
+               font-size="16"
+               font-family="Arial">PornographyAdultEntertainmentServicesExclusion</text>
+         <line y2="52.3984375"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="52.3984375"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="72.796875"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="42.3984375"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 39.19921875 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="93.3984375"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns="" href="AlcoholExclusion_f8e967b1589d4715ddff8aff15eb7482.html">
-      <rect x="294.0"
-            y="78.3984375"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 52.3984375 h 50"/>
+   <a href="AlcoholExclusion_f8e967b1589d4715ddff8aff15eb7482.html">
+      <rect x="314.0"
+            y="104.796875"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="AlcoholExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="101.796875"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">AlcoholExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="87.59765625"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="133.1953125"
+               font-size="16"
+               font-family="Arial">AlcoholExclusion</text>
+         <line y2="137.1953125"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="137.1953125"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="157.59375"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="127.1953125"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 97.59765625 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="151.796875"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="AnimalTestingExclusion_c408a68e52574920ed6d2cc43b21b841.html">
-      <rect x="294.0"
-            y="136.796875"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 137.1953125 h 50"/>
+   <a href="AnimalTestingExclusion_c408a68e52574920ed6d2cc43b21b841.html">
+      <rect x="314.0"
+            y="189.59375"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="AnimalTestingExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="160.1953125"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">AnimalTestingExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="145.99609375"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="217.9921875"
+               font-size="16"
+               font-family="Arial">AnimalTestingExclusion</text>
+         <line y2="221.9921875"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="221.9921875"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="242.390625"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="211.9921875"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 155.99609375 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="210.1953125"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns="" href="CannabisExclusion_ae35f27e2c2d8e325df0c75a6d8a3d9a.html">
-      <rect x="294.0"
-            y="195.1953125"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 221.9921875 h 50"/>
+   <a href="CannabisExclusion_ae35f27e2c2d8e325df0c75a6d8a3d9a.html">
+      <rect x="314.0"
+            y="274.390625"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="CannabisExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="218.59375"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">CannabisExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="204.39453125"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="302.7890625"
+               font-size="16"
+               font-family="Arial">CannabisExclusion</text>
+         <line y2="306.7890625"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="306.7890625"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="327.1875"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="296.7890625"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 214.39453125 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="268.59375"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="ConventionalWeaponsExclusion_db2077d4523946e76d9ba7b0275372c6.html">
-      <rect x="294.0"
-            y="253.59375"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 306.7890625 h 50"/>
+   <a href="ConventionalWeaponsExclusion_db2077d4523946e76d9ba7b0275372c6.html">
+      <rect x="314.0"
+            y="359.1875"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="ConventionalWeaponsExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="276.9921875"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">ConventionalWeaponsExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="262.79296875"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="387.5859375"
+               font-size="16"
+               font-family="Arial">ConventionalWeaponsExclusion</text>
+         <line y2="391.5859375"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="391.5859375"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="411.984375"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="381.5859375"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 272.79296875 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="326.9921875"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns="" href="CoalExclusion_c033a808507bc3518fb468b579309164.html">
-      <rect x="294.0"
-            y="311.9921875"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 391.5859375 h 50"/>
+   <a href="CoalExclusion_c033a808507bc3518fb468b579309164.html">
+      <rect x="314.0"
+            y="443.984375"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="CoalExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="335.390625"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">CoalExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="321.19140625"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="472.3828125"
+               font-size="16"
+               font-family="Arial">CoalExclusion</text>
+         <line y2="476.3828125"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="476.3828125"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="496.78125"
+               font-size="14"
+               font-family="Arial">EETEnhancedExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="466.3828125"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 331.19140625 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="385.390625"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="FactoryFarmingExclusion_2363dfa9ee18cd8b6e1c096a58760cc9.html">
-      <rect x="294.0"
-            y="370.390625"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 476.3828125 h 50"/>
+   <a href="FactoryFarmingExclusion_2363dfa9ee18cd8b6e1c096a58760cc9.html">
+      <rect x="314.0"
+            y="528.78125"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="FactoryFarmingExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="393.7890625"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">FactoryFarmingExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="379.58984375"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="557.1796875"
+               font-size="16"
+               font-family="Arial">FactoryFarmingExclusion</text>
+         <line y2="561.1796875"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="561.1796875"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="581.578125"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="551.1796875"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 389.58984375 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="443.7890625"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns="" href="FurExclusion_c8c47a50d807eafe2d5457b73b10bbdc.html">
-      <rect x="294.0"
-            y="428.7890625"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 561.1796875 h 50"/>
+   <a href="FurExclusion_c8c47a50d807eafe2d5457b73b10bbdc.html">
+      <rect x="314.0"
+            y="613.578125"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="FurExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="452.1875"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">FurExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="437.98828125"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="641.9765625"
+               font-size="16"
+               font-family="Arial">FurExclusion</text>
+         <line y2="645.9765625"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="645.9765625"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="666.375"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="635.9765625"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 447.98828125 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="502.1875"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns="" href="GamblingExclusion_dcc86d7b2ba2518adebe464858ef37f6.html">
-      <rect x="294.0"
-            y="487.1875"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 645.9765625 h 50"/>
+   <a href="GamblingExclusion_dcc86d7b2ba2518adebe464858ef37f6.html">
+      <rect x="314.0"
+            y="698.375"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="GamblingExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="510.5859375"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">GamblingExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="496.38671875"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="726.7734375"
+               font-size="16"
+               font-family="Arial">GamblingExclusion</text>
+         <line y2="730.7734375"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="730.7734375"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="751.171875"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="720.7734375"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 506.38671875 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="560.5859375"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns="" href="GasExclusion_9099a2cb94ccf4aa55d39d9c2c9b1634.html">
-      <rect x="294.0"
-            y="545.5859375"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 730.7734375 h 50"/>
+   <a href="GasExclusion_9099a2cb94ccf4aa55d39d9c2c9b1634.html">
+      <rect x="314.0"
+            y="783.171875"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="GasExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="568.984375"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">GasExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="554.78515625"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="811.5703125"
+               font-size="16"
+               font-family="Arial">GasExclusion</text>
+         <line y2="815.5703125"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="815.5703125"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="835.96875"
+               font-size="14"
+               font-family="Arial">EETEnhancedExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="805.5703125"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 564.78515625 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="618.984375"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="GeneticEngineeringExclusion_8ee59fb2652305b64032eed16068fd09.html">
-      <rect x="294.0"
-            y="603.984375"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 815.5703125 h 50"/>
+   <a href="GeneticEngineeringExclusion_8ee59fb2652305b64032eed16068fd09.html">
+      <rect x="314.0"
+            y="867.96875"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="GeneticEngineeringExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="627.3828125"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">GeneticEngineeringExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="613.18359375"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="896.3671875"
+               font-size="16"
+               font-family="Arial">GeneticEngineeringExclusion</text>
+         <line y2="900.3671875"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="900.3671875"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="920.765625"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="890.3671875"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 623.18359375 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="677.3828125"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="GeneticallyModifiedOrganismsExclusion_e1d3e12b48884f82fdc55234ab86a849.html">
-      <rect x="294.0"
-            y="662.3828125"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 900.3671875 h 50"/>
+   <a href="GeneticallyModifiedOrganismsExclusion_e1d3e12b48884f82fdc55234ab86a849.html">
+      <rect x="314.0"
+            y="952.765625"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="GeneticallyModifiedOrganismsExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="685.78125"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">GeneticallyModifiedOrganismsExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="671.58203125"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="981.1640625"
+               font-size="16"
+               font-family="Arial">GeneticallyModifiedOrganismsExclusion</text>
+         <line y2="985.1640625"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="985.1640625"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="1005.5625"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="975.1640625"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 681.58203125 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="735.78125"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="NuclearEnergyExclusion_b3873c18125c3305f3ee0e02609079b2.html">
-      <rect x="294.0"
-            y="720.78125"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 985.1640625 h 50"/>
+   <a href="NuclearEnergyExclusion_b3873c18125c3305f3ee0e02609079b2.html">
+      <rect x="314.0"
+            y="1037.5625"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="NuclearEnergyExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="744.1796875"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">NuclearEnergyExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="729.98046875"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="1065.9609375"
+               font-size="16"
+               font-family="Arial">NuclearEnergyExclusion</text>
+         <line y2="1069.9609375"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="1069.9609375"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="1090.359375"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="1059.9609375"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 739.98046875 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="794.1796875"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="NuclearWeaponsExclusion_5ec646db31371c92ecea2597e496eff0.html">
-      <rect x="294.0"
-            y="779.1796875"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 1069.9609375 h 50"/>
+   <a href="NuclearWeaponsExclusion_5ec646db31371c92ecea2597e496eff0.html">
+      <rect x="314.0"
+            y="1122.359375"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="NuclearWeaponsExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="802.578125"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">NuclearWeaponsExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="788.37890625"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="1150.7578125"
+               font-size="16"
+               font-family="Arial">NuclearWeaponsExclusion</text>
+         <line y2="1154.7578125"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="1154.7578125"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="1175.15625"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="1144.7578125"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 798.37890625 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="852.578125"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns="" href="OilExclusion_1af4c62d59cfffd26d7beeb07931d74f.html">
-      <rect x="294.0"
-            y="837.578125"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 1154.7578125 h 50"/>
+   <a href="OilExclusion_1af4c62d59cfffd26d7beeb07931d74f.html">
+      <rect x="314.0"
+            y="1207.15625"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="OilExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="860.9765625"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">OilExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="846.77734375"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="1235.5546875"
+               font-size="16"
+               font-family="Arial">OilExclusion</text>
+         <line y2="1239.5546875"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="1239.5546875"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="1259.953125"
+               font-size="14"
+               font-family="Arial">EETEnhancedExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="1229.5546875"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 856.77734375 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="910.9765625"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="OtherFossilFuelExclusion_8fae95faabd07b821d161eb8861748aa.html">
-      <rect x="294.0"
-            y="895.9765625"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 1239.5546875 h 50"/>
+   <a href="OtherFossilFuelExclusion_8fae95faabd07b821d161eb8861748aa.html">
+      <rect x="314.0"
+            y="1291.953125"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="OtherFossilFuelExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="919.375"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">OtherFossilFuelExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="905.17578125"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="1320.3515625"
+               font-size="16"
+               font-family="Arial">OtherFossilFuelExclusion</text>
+         <line y2="1324.3515625"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="1324.3515625"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="1344.75"
+               font-size="14"
+               font-family="Arial">EETEnhancedExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="1314.3515625"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 915.17578125 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="969.375"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns="" href="PalmOilExclusion_1a3013033124bc3bcee457eecfaf7e96.html">
-      <rect x="294.0"
-            y="954.375"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 1324.3515625 h 50"/>
+   <a href="PalmOilExclusion_1a3013033124bc3bcee457eecfaf7e96.html">
+      <rect x="314.0"
+            y="1376.75"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="PalmOilExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="977.7734375"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">PalmOilExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="963.57421875"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="1405.1484375"
+               font-size="16"
+               font-family="Arial">PalmOilExclusion</text>
+         <line y2="1409.1484375"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="1409.1484375"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="1429.546875"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="1399.1484375"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 973.57421875 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="1027.7734375"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns="" href="PesticidesExclusion_d2a8bd1fc58f66de1314ecb54da1143e.html">
-      <rect x="294.0"
-            y="1012.7734375"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 1409.1484375 h 50"/>
+   <a href="PesticidesExclusion_d2a8bd1fc58f66de1314ecb54da1143e.html">
+      <rect x="314.0"
+            y="1461.546875"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="PesticidesExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="1036.171875"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">PesticidesExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="1021.97265625"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="1489.9453125"
+               font-size="16"
+               font-family="Arial">PesticidesExclusion</text>
+         <line y2="1493.9453125"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="1493.9453125"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="1514.34375"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="1483.9453125"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 1031.97265625 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="1086.171875"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="ResearchOnHumanEmbryosExclusion_484832c4de60f94596d178cf28a643d9.html">
-      <rect x="294.0"
-            y="1071.171875"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 1493.9453125 h 50"/>
+   <a href="ResearchOnHumanEmbryosExclusion_484832c4de60f94596d178cf28a643d9.html">
+      <rect x="314.0"
+            y="1546.34375"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="ResearchOnHumanEmbryosExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="1094.5703125"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">ResearchOnHumanEmbryosExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="1080.37109375"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="1574.7421875"
+               font-size="16"
+               font-family="Arial">ResearchOnHumanEmbryosExclusion</text>
+         <line y2="1578.7421875"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="1578.7421875"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="1599.140625"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="1568.7421875"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 1090.37109375 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="1144.5703125"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns="" href="TobaccoExclusion_04c3b44cb37deb1a917592fdaf24454f.html">
-      <rect x="294.0"
-            y="1129.5703125"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 1578.7421875 h 50"/>
+   <a href="TobaccoExclusion_04c3b44cb37deb1a917592fdaf24454f.html">
+      <rect x="314.0"
+            y="1631.140625"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="TobaccoExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="1152.96875"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">TobaccoExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="1138.76953125"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="1659.5390625"
+               font-size="16"
+               font-family="Arial">TobaccoExclusion</text>
+         <line y2="1663.5390625"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="1663.5390625"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="1683.9375"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="1653.5390625"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 1148.76953125 h 40"/>
-   <text xmlns=""
-         x="269.0"
-         fill="#096574"
-         y="1202.96875"
-         font-size="14"
-         font-family="Arial"
-         textLength="0">0:1</text>
-   <a xmlns=""
-      href="UnconventionalWeaponsExclusion_d95a061841be2aa6dc23764dc0ad8478.html">
-      <rect x="294.0"
-            y="1187.96875"
-            fill="#d5e3e8"
+         d="M 214.0 816.19921875 h 50 V 1663.5390625 h 50"/>
+   <a href="UnconventionalWeaponsExclusion_d95a061841be2aa6dc23764dc0ad8478.html">
+      <rect x="314.0"
+            y="1715.9375"
+            fill="#f1f5f9"
             width="367.0"
-            style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));"
-            rx="2"
-            ry="2"
-            height="38.3984375"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="64.796875"
             id="UnconventionalWeaponsExclusion"/>
-      <text x="304.0"
-            fill="#096574"
-            y="1211.3671875"
-            font-size="16"
-            font-family="Arial"
-            textLength="0">UnconventionalWeaponsExclusion</text>
-      <image x="663.0"
-             width="20"
-             y="1197.16796875"
-             height="20"
-             href="../assets/plus.png"/>
+      <g>
+         <text x="324.0"
+               fill="#0f172a"
+               y="1744.3359375"
+               font-size="16"
+               font-family="Arial">UnconventionalWeaponsExclusion</text>
+         <line y2="1748.3359375"
+               stroke-width="1"
+               x1="324.0"
+               x2="671.0"
+               stroke="#e2e8f0"
+               y1="1748.3359375"/>
+         <text x="324.0"
+               fill="#64748b"
+               y="1768.734375"
+               font-size="14"
+               font-family="Arial">EETExclusionType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="683.0"
+           y="1738.3359375"
+           xlink:href="#plus-icon"/>
    </a>
-   <path xmlns=""
-         style="stroke: rgb(2,23,23); stroke-width: 1.5; stroke-dasharray: 7, 7;"
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 214.0 621.3984375 h 40 V 1207.16796875 h 40"/>
+         d="M 214.0 816.19921875 h 50 V 1748.3359375 h 50"/>
 </svg>
-</span>
-                <img src=""/>
-            </div>
-        </div>
-
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">Documentation</div>
-            </div>
-            <div class="col">
-                <span>
-                    <strong><div></div></strong>
-                    <div><p>50100 - 52130</p>
 </div>
-                </span>
-            </div>
-        </div>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">namespace</div>
-            </div>
-            <div class="col">
-                <span></span>
-            </div>
-        </div>
+                        <!-- Fall 2: Wenn der Typ 'PNG' ist, erstelle ein normales Bild-Tag -->
+                        
+                    </div>
+                </div>
+            </section>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">Level</div>
-            </div>
-            <div class="col">
-                <span>6</span>
-            </div>
-        </div>
+            <!-- Sektion: Dokumentation -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Dokumentation</h2>
+                <div class="bg-slate-100/75 p-4 rounded-md space-y-2">
+                    <div>
+                        <strong class="text-slate-700 block"></strong>
+                        <p class="text-slate-600"><p>50100 - 52130</p>
+</p>
+                    </div>
+                </div>
+            </section>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">type</div>
-            </div>
-            <div class="col">
-                <div></div>
-            </div>
-        </div>
+            <!-- Sektion: Eigenschaften -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Eigenschaften</h2>
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Typ</dt>
+                        <dd class="mt-1 text-slate-900 font-mono"></dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Kardinalität (min/max)</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">0 / 1</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Namespace</dt>
+                        <dd class="mt-1 text-slate-900">xmlns='http://www.w3.org/2001/XMLSchema'<br />altova='http://www.altova.com/xml-schema-extensions'<br />ds='http://www.w3.org/2000/09/xmldsig#'<br /></dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Level</dt>
+                        <dd class="mt-1 text-slate-900">6</dd>
+                    </div>
+                    
+                    
+                </dl>
+            </section>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">Properties</div>
-            </div>
-            <div class="col">
-                prop
-            </div>
-        </div>
+            <!-- Sektion: Kind-Elemente & Attribute -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Kind-Elemente &amp; Attribute</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name (XPath)</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Typ</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Dokumentation</th>
+                            <!-- NEU: Spalte für Beispieldaten -->
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Beispieldaten</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="PornographyAdultEntertainmentServicesExclusion_a310f4451b97a45f089455c398cc8c5d.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/PornographyAdultEntertainmentServicesExclusion</a>
+                            </td>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">Children</div>
-            </div>
-            <div class="col">
-                <table class="table d-inline-block table-bordered table-sm">
-                    <thead>
-                    <td>XPah</td>
-                    <td>Type</td>
-                    <td>Documentation</td>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/PornographyAdultEntertainmentServicesExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/AnimalTestingExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/CannabisExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/ConventionalWeaponsExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/CoalExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/FactoryFarmingExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/FurExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GamblingExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GasExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GeneticEngineeringExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GeneticallyModifiedOrganismsExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/NuclearEnergyExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/NuclearWeaponsExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/OilExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/OtherFossilFuelExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/PalmOilExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/PesticidesExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/ResearchOnHumanEmbryosExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/TobaccoExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/UnconventionalWeaponsExclusion</td>
-                        <td>1</td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">facets</div>
-            </div>
-            <div class="col">
-                facets
-            </div>
-        </div>
+                            <td class="px-4 py-3 text-slate-600">50100 - 50130</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="AlcoholExclusion_f8e967b1589d4715ddff8aff15eb7482.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion</a>
+                            </td>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">annotation</div>
-            </div>
-            <div class="col">
-                <table class="table d-inline-block table-bordered table-sm">
-                    <tbody>
-                    <tr>
-                        <td>Min Occurs</td>
-                        <td>
-                            <div class="col">0</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Max Occurs</td>
-                        <td>
-                            <div class="col">1</div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">App Info</div>
-            </div>
-            <div class="col">
-                
-            </div>
-        </div>
+                            <td class="px-4 py-3 text-slate-600">50200 - 50230</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="AnimalTestingExclusion_c408a68e52574920ed6d2cc43b21b841.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/AnimalTestingExclusion</a>
+                            </td>
 
-        <div class="row p-1 bg-gradient detail-row">
-            <div class="col-md-2">
-                <div class="float-end">source</div>
-            </div>
-            <div class="col">
-                <pre class="language-xml"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">50300 - 50330</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="CannabisExclusion_ae35f27e2c2d8e325df0c75a6d8a3d9a.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/CannabisExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">50400 - 50430</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="ConventionalWeaponsExclusion_db2077d4523946e76d9ba7b0275372c6.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/ConventionalWeaponsExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">50500 - 50530</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="CoalExclusion_c033a808507bc3518fb468b579309164.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/CoalExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETEnhancedExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">50600 - 50660</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="FactoryFarmingExclusion_2363dfa9ee18cd8b6e1c096a58760cc9.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/FactoryFarmingExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">50700 - 50730</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="FurExclusion_c8c47a50d807eafe2d5457b73b10bbdc.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/FurExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">50800 - 50830</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="GamblingExclusion_dcc86d7b2ba2518adebe464858ef37f6.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GamblingExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">50900 - 50930</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="GasExclusion_9099a2cb94ccf4aa55d39d9c2c9b1634.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GasExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETEnhancedExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">51000 - 51060</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="GeneticEngineeringExclusion_8ee59fb2652305b64032eed16068fd09.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GeneticEngineeringExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">51100 - 51130</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="GeneticallyModifiedOrganismsExclusion_e1d3e12b48884f82fdc55234ab86a849.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GeneticallyModifiedOrganismsExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">51200 - 51230</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="NuclearEnergyExclusion_b3873c18125c3305f3ee0e02609079b2.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/NuclearEnergyExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">51300 - 51330</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="NuclearWeaponsExclusion_5ec646db31371c92ecea2597e496eff0.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/NuclearWeaponsExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">51400 - 51430</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="OilExclusion_1af4c62d59cfffd26d7beeb07931d74f.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/OilExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETEnhancedExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">51500 - 51560</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="OtherFossilFuelExclusion_8fae95faabd07b821d161eb8861748aa.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/OtherFossilFuelExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETEnhancedExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">51600 - 51660</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="PalmOilExclusion_1a3013033124bc3bcee457eecfaf7e96.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/PalmOilExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">51700 - 51730</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="PesticidesExclusion_d2a8bd1fc58f66de1314ecb54da1143e.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/PesticidesExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">51800 - 51830</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="ResearchOnHumanEmbryosExclusion_484832c4de60f94596d178cf28a643d9.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/ResearchOnHumanEmbryosExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">51900 - 51930</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="TobaccoExclusion_04c3b44cb37deb1a917592fdaf24454f.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/TobaccoExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">52000 - 52030</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="UnconventionalWeaponsExclusion_d95a061841be2aa6dc23764dc0ad8478.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/UnconventionalWeaponsExclusion</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../complexTypes/EETExclusionType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">52100 - 52130</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sektion: App Info -->
+            
+
+            <!-- Sektion: XML-Ausschnitt -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML-Ausschnitt</h2>
+                <div class="rounded-lg overflow-hidden border border-slate-200">
+                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
@@ -1176,13 +1548,14 @@
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;
 </code></pre>
-            </div>
+                </div>
+            </section>
+
         </div>
     </div>
+</main>
 
-</div>
-
-<script src="../assets/bootstrap.bundle.min.js"></script>
+<!-- Skripte am Ende laden -->
 <script src="../assets/prism.js"></script>
 </body>
 </html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Type: EMTYesNoType</title>
+    <!-- Verweis auf die zentrale Tailwind CSS-Datei -->
+    <link href="../assets/freeXmlToolkit.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Optionale: Eigene Design-Anpassungen für Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Eine moderne, gut lesbare Schriftart
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body class="bg-slate-50">
+
+<!-- Moderne Navigation mit Schatten und klaren Abständen -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="flex items-center space-x-8">
+                <a href="#" class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+                <div class="hidden md:flex items-baseline space-x-6">
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                       aria-current="page">Home</a>
+                    <a href="#"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                        Types</a>
+                    <a href="#"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                        Types</a>
+                </div>
+            </div>
+            <!-- Rechte Navigationsgruppe (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                    <span>GitHub</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                        <path fill-rule="evenodd"
+                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Haupt-Titel der Seite -->
+    <header class="mb-6">
+        <h1 class="text-3xl font-bold text-slate-900">
+            Simple Type: <span class="font-mono text-sky-700">EMTYesNoType</span>
+        </h1>
+    </header>
+
+    <!-- Haupt-Inhaltsbereich -->
+    <main class="bg-white border border-slate-200 rounded-lg shadow-sm">
+
+        <!-- 1. Dokumentation (falls vorhanden) -->
+        <section class="p-6 border-b border-slate-200">
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Dokumentation</h2>
+            <div class="prose prose-slate max-w-none">
+                <!-- Iteriert durch alle Dokumentations-Einträge -->
+                <p>Y or N</p>
+            </div>
+        </section>
+
+        <!-- 2. Einschränkungen (Restrictions) -->
+        <section class="p-6">
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Einschränkungen (Restrictions)</h2>
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                    <tr>
+                        <th scope="col" class="w-1/4 px-4 py-3 font-semibold text-slate-900">Eigenschaft</th>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Wert</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm">
+                    <!-- Basis-Typ -->
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Basis-Typ</td>
+                        <td class="px-4 py-3"><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">xs:string</code></td>
+                    </tr>
+                    <!-- Längen-Einschränkungen -->
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Feste Länge (length)</td>
+                        <td class="px-4 py-3">1</td>
+                    </tr>
+                    
+                    
+                    <!-- Pattern (Regulärer Ausdruck) -->
+                    
+                    <!-- Wertebereich-Einschränkungen -->
+                    
+                    
+                    
+                    
+                    <!-- Ziffern-Einschränkungen -->
+                    
+                    
+                    <!-- Enumeration (Aufzählung von Werten) -->
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800 align-top">Erlaubte Werte (enumeration)</td>
+                        <td class="px-4 py-3">
+                            <ul class="space-y-2">
+                                <li>
+                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">Y</code>
+                                    <!-- Dokumentation für den einzelnen Enum-Wert (falls vorhanden) -->
+                                    
+                                </li>
+                                <li>
+                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">N</code>
+                                    <!-- Dokumentation für den einzelnen Enum-Wert (falls vorhanden) -->
+                                    
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- NEU: Sektion "Verwendet in" -->
+        <section>
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Verwendet in</h2>
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                    <tr>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm">
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentPerformanceFee_e8a6e3e7c9e46f0b5d8eb7bbb166a801.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentPerformanceFee</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/GeneralInformation/InstrumentPerformanceFee</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingTargetMarket_925b6712ceaf9dca4b35a1650c73a491.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingTargetMarket</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/DataSetInformation/DataReportingTargetMarket</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/FundShareClassWithoutRetrocession_2db7ac891e8a635689681cb416105b82.html" class="text-sky-600 hover:text-sky-800 hover:underline">FundShareClassWithoutRetrocession</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/GeneralInformation/Fund/FundShareClassWithoutRetrocession</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingExPost_bb5c82c69e4e1dd7416b319597d342d0.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingExPost</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/DataSetInformation/DataReportingExPost</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/IsAssessmentOfValueRequiredUnderCOLL_3bc092dae84f29fa23069cce0868be05.html" class="text-sky-600 hover:text-sky-800 hover:underline">IsAssessmentOfValueRequiredUnderCOLL</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/AdditionalInformationUK/ValueForMoney/IsAssessmentOfValueRequiredUnderCOLL</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingExPost_64aa1bf334e79355750d217a47dfb559.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingExPost</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/DataSetInformation/DataReportingExPost</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentDistributionCash_13188f5bb1b5c447bdc45a13825697e3.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentDistributionCash</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/GeneralInformation/InstrumentDistributionCash</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/MayBeTerminatedEarly_bcd10d768e03d356635ed763144eff79.html" class="text-sky-600 hover:text-sky-800 hover:underline">MayBeTerminatedEarly</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/GeneralInformation/MayBeTerminatedEarly</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/FundShareClassWithoutRetrocession_d3caa244561afa9c1aeb5c42f2ecd9c7.html" class="text-sky-600 hover:text-sky-800 hover:underline">FundShareClassWithoutRetrocession</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/GeneralInformation/Fund/FundShareClassWithoutRetrocession</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/LeveragedOrContingentLiability_78a79737ed7891b3484ed6bc5f9305b9.html" class="text-sky-600 hover:text-sky-800 hover:underline">LeveragedOrContingentLiability</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT/FinancialInstrument/GeneralInformation/LeveragedOrContingentLiability</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/IsAssessmentOfValueRequiredUnderCOLL_f353e8c7a3dc22fd2f3035bb68a733c0.html" class="text-sky-600 hover:text-sky-800 hover:underline">IsAssessmentOfValueRequiredUnderCOLL</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/AdditionalInformationUK/ValueForMoney/IsAssessmentOfValueRequiredUnderCOLL</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingExAnte_847714ac34785e910609f45ce70905ef.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingExAnte</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/DataSetInformation/DataReportingExAnte</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingExAnte_9b94093ece38d580b2de3a1bf53621cf.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingExAnte</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4/FinancialInstrument/DataSetInformation/DataReportingExAnte</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/EligibleCounterparty_355da59aae84270b15540391450e2a8d.html" class="text-sky-600 hover:text-sky-800 hover:underline">EligibleCounterparty</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/TargetMarket/InvestorType/EligibleCounterparty</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/EligibleCounterparty_b359ed0f53073c1ad37ecd9d0ad8d66b.html" class="text-sky-600 hover:text-sky-800 hover:underline">EligibleCounterparty</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/TargetMarket/InvestorType/EligibleCounterparty</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentPerformanceFee_17c350d23bd458862e34b86d9b348b3b.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentPerformanceFee</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4/FinancialInstrument/GeneralInformation/InstrumentPerformanceFee</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/MayBeTerminatedEarly_4203eda8b83b56bfd7cc592d27b2b298.html" class="text-sky-600 hover:text-sky-800 hover:underline">MayBeTerminatedEarly</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4/FinancialInstrument/GeneralInformation/MayBeTerminatedEarly</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingExPost_ec7c9fefe16964d3ffe3b3d441ab0ef3.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingExPost</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/DataSetInformation/DataReportingExPost</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/MayBeTerminatedEarly_f7fc3911a8e23580ed3fbf7099480a7b.html" class="text-sky-600 hover:text-sky-800 hover:underline">MayBeTerminatedEarly</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/GeneralInformation/MayBeTerminatedEarly</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentPerformanceFee_787d8a35bec84b4ad7a80a30914ef499.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentPerformanceFee</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/GeneralInformation/InstrumentPerformanceFee</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/EligibleCounterparty_f9679a7d8e67bdf29400f834ea849bc5.html" class="text-sky-600 hover:text-sky-800 hover:underline">EligibleCounterparty</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/TargetMarket/InvestorType/EligibleCounterparty</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingExPost_27ef413750222804ce0c96c8fc1654b8.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingExPost</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4/FinancialInstrument/DataSetInformation/DataReportingExPost</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/EligibleCounterparty_1e2bcb8bd4f87d8562f65396b49f8bea.html" class="text-sky-600 hover:text-sky-800 hover:underline">EligibleCounterparty</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4/FinancialInstrument/TargetMarket/InvestorType/EligibleCounterparty</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/FundShareClassWithoutRetrocession_130f9aa3d3e1c3343e1d82ee392b2885.html" class="text-sky-600 hover:text-sky-800 hover:underline">FundShareClassWithoutRetrocession</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/GeneralInformation/Fund/FundShareClassWithoutRetrocession</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/MayBeTerminatedEarly_e8c14ac16fb9f2d09d10e7039f2a95e0.html" class="text-sky-600 hover:text-sky-800 hover:underline">MayBeTerminatedEarly</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/GeneralInformation/MayBeTerminatedEarly</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingExAnte_8963d7b53bd4ee0c0d12469dd879912b.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingExAnte</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/DataSetInformation/DataReportingExAnte</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentPerformanceFee_f2dff19552ad815c9678a4823e03bef8.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentPerformanceFee</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/GeneralInformation/InstrumentPerformanceFee</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentDistributionCash_207d1c9f4c06284d7d2ababd4b73595c.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentDistributionCash</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4/FinancialInstrument/GeneralInformation/InstrumentDistributionCash</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/LeveragedOrContingentLiability_0189136425b80c1901c7511c895bbb21.html" class="text-sky-600 hover:text-sky-800 hover:underline">LeveragedOrContingentLiability</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/GeneralInformation/LeveragedOrContingentLiability</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingTargetMarket_45c5e1eb12b6f5b229cd788fd259f713.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingTargetMarket</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/DataSetInformation/DataReportingTargetMarket</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentDistributionCash_11edd6c576e1fadeae3eaf33def964d5.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentDistributionCash</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/GeneralInformation/InstrumentDistributionCash</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/LeveragedOrContingentLiability_0bbc0139fba33463ef81e9c588172d0c.html" class="text-sky-600 hover:text-sky-800 hover:underline">LeveragedOrContingentLiability</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4/FinancialInstrument/GeneralInformation/LeveragedOrContingentLiability</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/FundShareClassWithoutRetrocession_87f5fc42f5096c10123a8f475f1f5779.html" class="text-sky-600 hover:text-sky-800 hover:underline">FundShareClassWithoutRetrocession</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4/FinancialInstrument/GeneralInformation/Fund/FundShareClassWithoutRetrocession</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingTargetMarket_2422a28cedf065c19339f7c92ae84527.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingTargetMarket</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4/FinancialInstrument/DataSetInformation/DataReportingTargetMarket</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/LeveragedOrContingentLiability_df81f6781295529c5c12c1e96583c775.html" class="text-sky-600 hover:text-sky-800 hover:underline">LeveragedOrContingentLiability</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_2/FinancialInstrument/GeneralInformation/LeveragedOrContingentLiability</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/LeveragedOrContingentLiability_0c44c511d835b4322ea4175e9d7fae38.html" class="text-sky-600 hover:text-sky-800 hover:underline">LeveragedOrContingentLiability</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/GeneralInformation/LeveragedOrContingentLiability</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingExAnte_847c3f3a554d5a210beb0ea0b4ce1f32.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingExAnte</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/DataSetInformation/DataReportingExAnte</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataReportingTargetMarket_5d909ea94e30feeedf719e91d6846e7e.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataReportingTargetMarket</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/DataSetInformation/DataReportingTargetMarket</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/InstrumentDistributionCash_64753c2968867233625ac7a3456781e9.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentDistributionCash</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/GeneralInformation/InstrumentDistributionCash</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Fallback-Nachricht, falls keine Einschränkungen definiert sind -->
+        
+    </main>
+
+    <!-- Navigations-Button zurück zur Übersicht -->
+    <div class="mt-6">
+        <a href="../index.html"
+           class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm">
+            Zurück zur Übersicht
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

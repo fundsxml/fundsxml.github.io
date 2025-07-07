@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Type: FrequencyType</title>
+    <!-- Verweis auf die zentrale Tailwind CSS-Datei -->
+    <link href="../assets/freeXmlToolkit.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Optionale: Eigene Design-Anpassungen für Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Eine moderne, gut lesbare Schriftart
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body class="bg-slate-50">
+
+<!-- Moderne Navigation mit Schatten und klaren Abständen -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="flex items-center space-x-8">
+                <a href="#" class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+                <div class="hidden md:flex items-baseline space-x-6">
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                       aria-current="page">Home</a>
+                    <a href="#"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                        Types</a>
+                    <a href="#"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                        Types</a>
+                </div>
+            </div>
+            <!-- Rechte Navigationsgruppe (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                    <span>GitHub</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                        <path fill-rule="evenodd"
+                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Haupt-Titel der Seite -->
+    <header class="mb-6">
+        <h1 class="text-3xl font-bold text-slate-900">
+            Simple Type: <span class="font-mono text-sky-700">FrequencyType</span>
+        </h1>
+    </header>
+
+    <!-- Haupt-Inhaltsbereich -->
+    <main class="bg-white border border-slate-200 rounded-lg shadow-sm">
+
+        <!-- 1. Dokumentation (falls vorhanden) -->
+        <section class="p-6 border-b border-slate-200">
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Dokumentation</h2>
+            <div class="prose prose-slate max-w-none">
+                <!-- Iteriert durch alle Dokumentations-Einträge -->
+                <p>Frequency:
+DAIL ... Daily
+MNTH ... Monthly
+QURT ... Quarterly
+SEMI ... Semiannual
+TWMN ... Twomonthly
+TWWK ... Twoweekly
+WEEK ... Weekly
+YEAR</p>
+            </div>
+        </section>
+
+        <!-- 2. Einschränkungen (Restrictions) -->
+        <section class="p-6">
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Einschränkungen (Restrictions)</h2>
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                    <tr>
+                        <th scope="col" class="w-1/4 px-4 py-3 font-semibold text-slate-900">Eigenschaft</th>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Wert</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm">
+                    <!-- Basis-Typ -->
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800">Basis-Typ</td>
+                        <td class="px-4 py-3"><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">xs:string</code></td>
+                    </tr>
+                    <!-- Längen-Einschränkungen -->
+                    
+                    
+                    
+                    <!-- Pattern (Regulärer Ausdruck) -->
+                    
+                    <!-- Wertebereich-Einschränkungen -->
+                    
+                    
+                    
+                    
+                    <!-- Ziffern-Einschränkungen -->
+                    
+                    
+                    <!-- Enumeration (Aufzählung von Werten) -->
+                    <tr>
+                        <td class="px-4 py-3 font-medium text-slate-800 align-top">Erlaubte Werte (enumeration)</td>
+                        <td class="px-4 py-3">
+                            <ul class="space-y-2">
+                                <li>
+                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">DAIL</code>
+                                    <!-- Dokumentation für den einzelnen Enum-Wert (falls vorhanden) -->
+                                    
+                                </li>
+                                <li>
+                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">MNTH</code>
+                                    <!-- Dokumentation für den einzelnen Enum-Wert (falls vorhanden) -->
+                                    
+                                </li>
+                                <li>
+                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">QURT</code>
+                                    <!-- Dokumentation für den einzelnen Enum-Wert (falls vorhanden) -->
+                                    
+                                </li>
+                                <li>
+                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">SEMI</code>
+                                    <!-- Dokumentation für den einzelnen Enum-Wert (falls vorhanden) -->
+                                    
+                                </li>
+                                <li>
+                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">TWMN</code>
+                                    <!-- Dokumentation für den einzelnen Enum-Wert (falls vorhanden) -->
+                                    
+                                </li>
+                                <li>
+                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">TWWK</code>
+                                    <!-- Dokumentation für den einzelnen Enum-Wert (falls vorhanden) -->
+                                    
+                                </li>
+                                <li>
+                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">WEEK</code>
+                                    <!-- Dokumentation für den einzelnen Enum-Wert (falls vorhanden) -->
+                                    
+                                </li>
+                                <li>
+                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">YEAR</code>
+                                    <!-- Dokumentation für den einzelnen Enum-Wert (falls vorhanden) -->
+                                    
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- NEU: Sektion "Verwendet in" -->
+        <section>
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">Verwendet in</h2>
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                    <tr>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
+                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm">
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_c908c1e51b30fffd5ab68b1b3a8cca39.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SavingsPlanFrequency_91bb5784d66ba9968e7c622975596993.html" class="text-sky-600 hover:text-sky-800 hover:underline">SavingsPlanFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Performances/Performance/Investment/SavingsPlanFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_70a37553b0299c9beafdf0f9bea6dc0b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SavingsPlanFrequency_26659ba609f2f3249acd709ba2c0f9a5.html" class="text-sky-600 hover:text-sky-800 hover:underline">SavingsPlanFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/PerformanceFigures/Performances/Performance/Investment/SavingsPlanFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ResetFrequency_b3083d94f84e7fc6302666ce18d47162.html" class="text-sky-600 hover:text-sky-800 hover:underline">ResetFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/HighWatermark/ResetFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_ccd7605824ae70459c0e0bc81f567af4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataGroupedByFrequency_ad5202c01c5b6879e34babdb22699820.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataGroupedByFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Flows/Flow/DataGroupedByFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SavingsPlanFrequency_18b9463d2dc2c17c9aa39e402696c955.html" class="text-sky-600 hover:text-sky-800 hover:underline">SavingsPlanFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Performances/Performance/Investment/SavingsPlanFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_1cd5ac6a8d285e8f341bf7a4f316aaa4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataGroupedByFrequency_89cbf2b1de8c28d32ec3f5c24585201f.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataGroupedByFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Flows/Flow/DataGroupedByFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_2ec29e34296e7c6b9ce593ee0c83a114.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_44a733926c8ac77b61072e8e5963c054.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_fd424ffb48fc61a9c274d786d480e3f9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_af0647be741d7b5949aa60d586038236.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_75c668ed7c57f031cf4681b1b393d161.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PaymentFrequency_9e8174f7bd14edc787f891a3e9ec7eb8.html" class="text-sky-600 hover:text-sky-800 hover:underline">PaymentFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CommercialPaper/Coupon/PaymentFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_f33587abf3ceece690866ad512769d30.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_a08e67f9d6fb5c1ff1eed4e3ce9fb016.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_3bd737fa8dcd45113f94f8e41735aba3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_c0f0c6331357f42402ea560573ff04f6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Redemption/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_cd2da6673a4cf55099901f7daf7395ea.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_27bce45e4663869509f4f299d4ecd71f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ResetFrequency_3773c92e962b71cc84f56ab4ed076147.html" class="text-sky-600 hover:text-sky-800 hover:underline">ResetFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/HighWatermark/ResetFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataGroupedByFrequency_cbc28dc83c8ad0ed71dba31f7ee028e1.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataGroupedByFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/DataGroupedByFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_ec3e1c37ceed545d9c417ec09f4bbc60.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_b5e6c5624888bea2b72022e296e3130c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/DataGroupedByFrequency_45e33e6195ac7840cb9522f39230f5f4.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataGroupedByFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/DataGroupedByFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SavingsPlanFrequency_acf8ecb99d7212abe2a2bf9cc7d15bec.html" class="text-sky-600 hover:text-sky-800 hover:underline">SavingsPlanFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Investment/SavingsPlanFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SavingsPlanFrequency_3dfbb4945193356924a9ad37333e141b.html" class="text-sky-600 hover:text-sky-800 hover:underline">SavingsPlanFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Investment/SavingsPlanFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_0222bdffd6f1a0c9ed409baecc71d647.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ResetFrequency_ae95e986c17f049c5633580dc1a4de4e.html" class="text-sky-600 hover:text-sky-800 hover:underline">ResetFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/HighWatermark/ResetFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_61cccc704fd33a5a748e3b4ebc646593.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SavingsPlanFrequency_337019bd28ed05e73d517d62b2439074.html" class="text-sky-600 hover:text-sky-800 hover:underline">SavingsPlanFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Investment/SavingsPlanFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_5a61b194f70eb938f3792a8b37f09fbf.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_a8f5df408bf7252b4cf9f91ff50cd614.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_5d4630f54cebd101db0d397e62a69e8b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SavingsPlanFrequency_b608f64fa9a98a283728ba9b44d03787.html" class="text-sky-600 hover:text-sky-800 hover:underline">SavingsPlanFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Investment/SavingsPlanFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/ResetFrequency_ad42035571fe51c4d1de5760b8646794.html" class="text-sky-600 hover:text-sky-800 hover:underline">ResetFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/HighWatermark/ResetFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/SavingsPlanFrequency_d651dbf870cbe447dc9ae9b738fabd60.html" class="text-sky-600 hover:text-sky-800 hover:underline">SavingsPlanFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/PerformanceFigures/Performances/Performance/Investment/SavingsPlanFrequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_9980ae65e349ce9692e500e7f25f1664.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_f3d0dc96cec6b7293121a0352075df4e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/Frequency_43aed9932836ddabc020ca37e1d8a9d7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Frequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/RiskCodes/RiskCode/Frequency</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-mono">
+                            <!-- Link zur Detailseite des jeweiligen Elements -->
+                            <a href="../details/PaymentFrequency_216fad2366beb0e73d062213d2b2c190.html" class="text-sky-600 hover:text-sky-800 hover:underline">PaymentFrequency</a>
+                        </td>
+                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Coupon/PaymentFrequency</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Fallback-Nachricht, falls keine Einschränkungen definiert sind -->
+        
+    </main>
+
+    <!-- Navigations-Button zurück zur Übersicht -->
+    <div class="mt-6">
+        <a href="../index.html"
+           class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm">
+            Zurück zur Übersicht
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

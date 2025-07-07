@@ -17,32 +17,57 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" class="bg-slate-50">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>XSD Documentation</title>
+    <title>Complex Type: ValueStrategyCoverageType</title>
 
-    <link href="../assets/freeXmlToolkit.css" rel="stylesheet"/>
+    <!-- Tailwind CSS & Modern Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="font-sans text-slate-800">
 
-<nav class="py-2 bg-body-tertiary border-bottom">
-    <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-            <li class="nav-item"><a href="../index.html" class="nav-link link-body-emphasis px-2 active"
-                                    aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="../complexTypes.html" class="nav-link link-body-emphasis px-2">Complex
-                Types</a></li>
-            <li class="nav-item"><a href="../simpleTypes.html" class="nav-link link-body-emphasis px-2">Simple Types</a>
-            </li>
-        </ul>
-        <ul class="nav">
-            <li class="nav-item">
-                <a href="https://github.com/karlkauc/FreeXmlToolkit"
-                   target="_blank"
-                   class="nav-link link-body-emphasis px-2">
-                    <img src="../assets/logo.png" width="32" height="32" alt="logo"/>
+<!-- Navigation -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="flex items-center space-x-8">
+                <a href="../index.html" class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+                <div class="hidden md:flex items-baseline space-x-6">
+                    <a href="../index.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
+                    <a href="../complexTypes.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100" aria-current="page">Complex
+                        Types</a>
+                    <a href="../simpleTypes.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                        Types</a>
+                </div>
+            </div>
+            <!-- Rechte Navigationsgruppe (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                    <span>GitHub</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -50,27 +75,339 @@
                         <path fill-rule="evenodd"
                               d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
                     </svg>
-                    FreeXmlToolKit
                 </a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </nav>
 
-<div class="container">
-    <h1>ValueStrategyCoverageType</h1>
+<!-- Hauptinhalt -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+    <!-- Zentrale Inhalts-Karte -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Karten-Header -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-slate-900">
+                    Complex Type: <span class="font-mono">ValueStrategyCoverageType</span>
+                </h1>
+                <div class="flex space-x-2">
+                    
+                    
+                </div>
+            </div>
+        </header>
 
-    <div>
-        <span>name</span>
-        <span>ValueStrategyCoverageType</span>
+        <!-- Karten-Body -->
+        <div class="p-6 md:p-8 space-y-10">
+            <!-- Sektion: Dokumentation -->
+            
+
+            <!-- Sektion: Attribute -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attribute</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Typ</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
+                            <td class="px-4 py-3 font-mono">
+                                <!--
+                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
+                                   th:text="${attrEntry.value}"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
+                                   -->
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- NEU: Sektion "Verwendet in" -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Verwendet in</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/BoardGenderDiversity_244ce94ba28e1bcbbfbfcc46ef6262d0.html" class="text-sky-600 hover:text-sky-800 hover:underline">BoardGenderDiversity</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/SocialAndEmployeeMatters/BoardGenderDiversity</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/WaterEmissions_9d367f6a8bd0a0402fb2c29540bb3d81.html" class="text-sky-600 hover:text-sky-800 hover:underline">WaterEmissions</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/WaterEmissions</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/EmissionsOfInorganicPollutants_9a9d11fe995c7d14904a3c1e07250ded.html" class="text-sky-600 hover:text-sky-800 hover:underline">EmissionsOfInorganicPollutants</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/EnergyEfficiency/EmissionsOfInorganicPollutants</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Scope1_5a2c844e1009e592f7a4bca4bff147af.html" class="text-sky-600 hover:text-sky-800 hover:underline">Scope1</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/GreenhousegasEmissions/Scope1</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Scope2_ad7c71e3d6bfac13537dfd920b9a08be.html" class="text-sky-600 hover:text-sky-800 hover:underline">Scope2</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/GreenhousegasEmissions/Scope2</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Scope3_c062a24e3ecc048e0680f000125a1f43.html" class="text-sky-600 hover:text-sky-800 hover:underline">Scope3</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/GreenhousegasEmissions/Scope3</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CarbonFootprintScope12_8f87036bab1b7c9649d902781ee0ac61.html" class="text-sky-600 hover:text-sky-800 hover:underline">CarbonFootprintScope12</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/CarbonFootprintScope12</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/EmissionsOfOzoneDepletionSubstances_0dedb5f8521ededa64329b9499877c6b.html" class="text-sky-600 hover:text-sky-800 hover:underline">EmissionsOfOzoneDepletionSubstances</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/EnergyEfficiency/EmissionsOfOzoneDepletionSubstances</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AveragePoliticalStabilityScore_8b4180a04086448fc9243eedbb7e55f8.html" class="text-sky-600 hover:text-sky-800 hover:underline">AveragePoliticalStabilityScore</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/SovereignAndSupranationalInvestments/AveragePoliticalStabilityScore</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AverageFreedomOfExpressionScore_f078ec4601d6c358e2b0fbf8ac04245b.html" class="text-sky-600 hover:text-sky-800 hover:underline">AverageFreedomOfExpressionScore</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/SovereignAndSupranationalInvestments/AverageFreedomOfExpressionScore</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AverageHumanRightsPerformance_f11110e63a52ec68c9908da059e4f857.html" class="text-sky-600 hover:text-sky-800 hover:underline">AverageHumanRightsPerformance</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/SovereignAndSupranationalInvestments/AverageHumanRightsPerformance</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NumberOfCountriesSubjectToSocialViolations_7a2eae6781ab8ec498bc169f48075c21.html" class="text-sky-600 hover:text-sky-800 hover:underline">NumberOfCountriesSubjectToSocialViolations</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/SovereignAndSupranationalInvestments/NumberOfCountriesSubjectToSocialViolations</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NumberOfIncidentsOfDiscriminationReported_6d7240aa1dda04225643e6ec99fb6013.html" class="text-sky-600 hover:text-sky-800 hover:underline">NumberOfIncidentsOfDiscriminationReported</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/EmployeeMatters/NumberOfIncidentsOfDiscriminationReported</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/EnergyConsumptionIntensity_7cf732217aba7ac3bb27b0200fe2e6ab.html" class="text-sky-600 hover:text-sky-800 hover:underline">EnergyConsumptionIntensity</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/RealEstateInvestments/EnergyConsumptionIntensity</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GreenhouseGasIntensity_6ad35414f4b9ffa6cb61ca02f7ad033e.html" class="text-sky-600 hover:text-sky-800 hover:underline">GreenhouseGasIntensity</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/SovereignAndSupranationalInvestments/GreenhouseGasIntensity</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ActivitiesNegativelyAffectingBiodiversitySensitiveAreas_9f04a482d60e75f45e4c3e7999023730.html" class="text-sky-600 hover:text-sky-800 hover:underline">ActivitiesNegativelyAffectingBiodiversitySensitiveAreas</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/ActivitiesNegativelyAffectingBiodiversitySensitiveAreas</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/TotalScope123_f760f6dfa95ce6f4d0b3e414da93bc84.html" class="text-sky-600 hover:text-sky-800 hover:underline">TotalScope123</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/GreenhousegasEmissions/TotalScope123</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/TotalScope12_9aae64a5a455201ee19517917e48a17e.html" class="text-sky-600 hover:text-sky-800 hover:underline">TotalScope12</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/RealEstateInvestments/GreenhouseGasEmissions/TotalScope12</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GHG_IntensityOfInvesteeCompaniesScope12_605af02e505745d810c9d0962d6c7046.html" class="text-sky-600 hover:text-sky-800 hover:underline">GHG_IntensityOfInvesteeCompaniesScope12</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/GHG_IntensityOfInvesteeCompaniesScope12</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NumberOfDaysLostForInjuriesAccidentsFatalitiesIllness_73a3433bb7302e25e10fb58ae0a9743b.html" class="text-sky-600 hover:text-sky-800 hover:underline">NumberOfDaysLostForInjuriesAccidentsFatalitiesIllness</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/EmployeeMatters/NumberOfDaysLostForInjuriesAccidentsFatalitiesIllness</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/RateOfAccidents_ef1dcdb7706dd3c7916d3a6cd8eab5f5.html" class="text-sky-600 hover:text-sky-800 hover:underline">RateOfAccidents</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/EmployeeMatters/RateOfAccidents</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GHG_IntensityOfInvesteeCompaniesScope123_4914f86840c6aef007473b7fef3bcae0.html" class="text-sky-600 hover:text-sky-800 hover:underline">GHG_IntensityOfInvesteeCompaniesScope123</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/GHG_IntensityOfInvesteeCompaniesScope123</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AverageRuleOfLawScore_79c46d0aae8d15fd2d45a5d02075d309.html" class="text-sky-600 hover:text-sky-800 hover:underline">AverageRuleOfLawScore</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/SovereignAndSupranationalInvestments/AverageRuleOfLawScore</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NonRecycledWasteRatio_1d8e8a1f968af653534dbe9e8a60cd5a.html" class="text-sky-600 hover:text-sky-800 hover:underline">NonRecycledWasteRatio</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/WaterWasteAndLandProtection/NonRecycledWasteRatio</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NumberOfIncidentsOfDiscriminationLeadingToSanctions_51d992940ce64e870104df823778f131.html" class="text-sky-600 hover:text-sky-800 hover:underline">NumberOfIncidentsOfDiscriminationLeadingToSanctions</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/EmployeeMatters/NumberOfIncidentsOfDiscriminationLeadingToSanctions</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/WaterUsageAndRecyclingAmount_6683c08d63499caab3104f6894f15e01.html" class="text-sky-600 hover:text-sky-800 hover:underline">WaterUsageAndRecyclingAmount</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/WaterWasteAndLandProtection/WaterUsageAndRecyclingAmount</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NonCooperativeTaxJurisdictions_dbd5b8a8b951ca4b1713bdc27a577899.html" class="text-sky-600 hover:text-sky-800 hover:underline">NonCooperativeTaxJurisdictions</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/SovereignAndSupranationalInvestments/NonCooperativeTaxJurisdictions</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CarbonFootprintScope123_85785ec79c3623350484553184b0eaf4.html" class="text-sky-600 hover:text-sky-800 hover:underline">CarbonFootprintScope123</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/CarbonFootprintScope123</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ConvictionsOfAntiCorruptionAndAntiBriberyLaws_103ce067910ec842be7fece9a46235eb.html" class="text-sky-600 hover:text-sky-800 hover:underline">ConvictionsOfAntiCorruptionAndAntiBriberyLaws</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/CorruptionAndBribery/ConvictionsOfAntiCorruptionAndAntiBriberyLaws</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AverageCorruptionScore_8637bccdafce6a01d7ab96521b9823a2.html" class="text-sky-600 hover:text-sky-800 hover:underline">AverageCorruptionScore</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/SovereignAndSupranationalInvestments/AverageCorruptionScore</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ExcessiveCEOPayRatio_9d671da2c58b5c230e7a7c38b5ac925f.html" class="text-sky-600 hover:text-sky-800 hover:underline">ExcessiveCEOPayRatio</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/EmployeeMatters/ExcessiveCEOPayRatio</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NumberOfCasesOfSevereHumanRightsIssues_70ca7f593379481d8b513234646f59a1.html" class="text-sky-600 hover:text-sky-800 hover:underline">NumberOfCasesOfSevereHumanRightsIssues</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/HumanRightsMatters/NumberOfCasesOfSevereHumanRightsIssues</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/EmissionsOfAirPollutants_5f6a50232099b0add1f8f99fca06301e.html" class="text-sky-600 hover:text-sky-800 hover:underline">EmissionsOfAirPollutants</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/EnergyEfficiency/EmissionsOfAirPollutants</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/TotalScope123_1b39214cb8b59b418b4864bca63cbde9.html" class="text-sky-600 hover:text-sky-800 hover:underline">TotalScope123</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/RealEstateInvestments/GreenhouseGasEmissions/TotalScope123</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Scope1_1594888003b816778f04167c07866a37.html" class="text-sky-600 hover:text-sky-800 hover:underline">Scope1</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/RealEstateInvestments/GreenhouseGasEmissions/Scope1</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Scope2_a98caa481e1f65daadb2ef1f41817937.html" class="text-sky-600 hover:text-sky-800 hover:underline">Scope2</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/RealEstateInvestments/GreenhouseGasEmissions/Scope2</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Scope3_412d444657e8cc50cbf9710e0362a7dc.html" class="text-sky-600 hover:text-sky-800 hover:underline">Scope3</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreClimateAndEnvironmentRelatedIndicators/RealEstateInvestments/GreenhouseGasEmissions/Scope3</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/TotalScope12_89238af1215fb58bdaa16417012a8c29.html" class="text-sky-600 hover:text-sky-800 hover:underline">TotalScope12</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/GreenhousegasEmissions/TotalScope12</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/HazardousWaste_af488c7329c1892ccd03a8f5a4b46463.html" class="text-sky-600 hover:text-sky-800 hover:underline">HazardousWaste</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/HazardousWaste</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AverageIncomeInequalityScore_39c84d1e9405802649bcacf73b4729cb.html" class="text-sky-600 hover:text-sky-800 hover:underline">AverageIncomeInequalityScore</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/MoreSocialAndEmployeeMatters/SovereignAndSupranationalInvestments/AverageIncomeInequalityScore</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Values_d752e1edc45a47b625111cf4840e5e8c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Values</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/PrincipalAdverseIndicators/ClimateAndEnvironmentRelatedIndicators/EnergyConsumptionIntensityPerHighImpactClimateSector/NACE_Values/Values</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- NEU: Sektion "Element-Deklarationen mit diesem Namen" -->
+            
+
+        </div>
     </div>
 
-    <h3>Documentation</h3>
-    
+    <!-- Navigations-Button zurück zur Übersicht -->
+    <div class="mt-8 text-center">
+        <a href="../complexTypes.html"
+           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+            Zurück zur Übersicht
+        </a>
+    </div>
+</main>
 
-</div>
-
-<script src="../assets/bootstrap.bundle.min.js"></script>
 <script src="../assets/prism.js"></script>
 </body>
 </html>

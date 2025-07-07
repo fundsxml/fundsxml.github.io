@@ -17,32 +17,57 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" class="bg-slate-50">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>XSD Documentation</title>
+    <title>Complex Type: EETExclusionType1.1</title>
 
-    <link href="../assets/freeXmlToolkit.css" rel="stylesheet"/>
+    <!-- Tailwind CSS & Modern Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="font-sans text-slate-800">
 
-<nav class="py-2 bg-body-tertiary border-bottom">
-    <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-            <li class="nav-item"><a href="../index.html" class="nav-link link-body-emphasis px-2 active"
-                                    aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="../complexTypes.html" class="nav-link link-body-emphasis px-2">Complex
-                Types</a></li>
-            <li class="nav-item"><a href="../simpleTypes.html" class="nav-link link-body-emphasis px-2">Simple Types</a>
-            </li>
-        </ul>
-        <ul class="nav">
-            <li class="nav-item">
-                <a href="https://github.com/karlkauc/FreeXmlToolkit"
-                   target="_blank"
-                   class="nav-link link-body-emphasis px-2">
-                    <img src="../assets/logo.png" width="32" height="32" alt="logo"/>
+<!-- Navigation -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="flex items-center space-x-8">
+                <a href="../index.html" class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+                <div class="hidden md:flex items-baseline space-x-6">
+                    <a href="../index.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
+                    <a href="../complexTypes.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100" aria-current="page">Complex
+                        Types</a>
+                    <a href="../simpleTypes.html"
+                       class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                        Types</a>
+                </div>
+            </div>
+            <!-- Rechte Navigationsgruppe (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                    <span>GitHub</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -50,27 +75,501 @@
                         <path fill-rule="evenodd"
                               d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
                     </svg>
-                    FreeXmlToolKit
                 </a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </nav>
 
-<div class="container">
-    <h1>EETExclusionType1.1</h1>
+<!-- Hauptinhalt -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+    <!-- Zentrale Inhalts-Karte -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Karten-Header -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-slate-900">
+                    Complex Type: <span class="font-mono">EETExclusionType1.1</span>
+                </h1>
+                <div class="flex space-x-2">
+                    
+                    
+                </div>
+            </div>
+        </header>
 
-    <div>
-        <span>name</span>
-        <span>EETExclusionType1.1</span>
+        <!-- Karten-Body -->
+        <div class="p-6 md:p-8 space-y-10">
+            <!-- Sektion: Dokumentation -->
+            
+
+            <!-- Sektion: Attribute -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attribute</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Typ</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
+                            <td class="px-4 py-3 font-mono">
+                                <!--
+                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
+                                   th:text="${attrEntry.value}"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
+                                   -->
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- NEU: Sektion "Verwendet in" -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Verwendet in</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PornographyAdultEntertainmentServicesExclusion_b8fe15c9ec819f00aa0f1eddecf41214.html" class="text-sky-600 hover:text-sky-800 hover:underline">PornographyAdultEntertainmentServicesExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/PornographyAdultEntertainmentServicesExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GamblingExclusion_e85498bba4941d065c3524694d422e7b.html" class="text-sky-600 hover:text-sky-800 hover:underline">GamblingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/GamblingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AnimalTestingExclusion_24bfc595c4861307624192a176bd8bd4.html" class="text-sky-600 hover:text-sky-800 hover:underline">AnimalTestingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/AnimalTestingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FactoryFarmingExclusion_4bb32f7886d220264a3cc11d0f6af7f6.html" class="text-sky-600 hover:text-sky-800 hover:underline">FactoryFarmingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/FactoryFarmingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FactoryFarmingExclusion_55621d15dca401b2a79dc6c1fb9b5f18.html" class="text-sky-600 hover:text-sky-800 hover:underline">FactoryFarmingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/FactoryFarmingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GeneticallyModifiedOrganismsExclusion_358779bf65b475049dc3a9223d89a090.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticallyModifiedOrganismsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/GeneticallyModifiedOrganismsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PesticidesExclusion_7879b6c38d62c270ea9264bcce121d60.html" class="text-sky-600 hover:text-sky-800 hover:underline">PesticidesExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/PesticidesExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/TobaccoExclusion_1cc802133b628bf2f8112ef5322ac71d.html" class="text-sky-600 hover:text-sky-800 hover:underline">TobaccoExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/TobaccoExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FurExclusion_b5994096bf8a8dcc713004b443d81df8.html" class="text-sky-600 hover:text-sky-800 hover:underline">FurExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/FurExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FurExclusion_83452c18fd3164b6a2a5417cd37a64cb.html" class="text-sky-600 hover:text-sky-800 hover:underline">FurExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/FurExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/TobaccoExclusion_d1340e48b3ade802de2726e883eca9f3.html" class="text-sky-600 hover:text-sky-800 hover:underline">TobaccoExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/TobaccoExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AnimalTestingExclusion_3e58dd8c2294a5434988f60ffc64b532.html" class="text-sky-600 hover:text-sky-800 hover:underline">AnimalTestingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/AnimalTestingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NuclearWeaponsExclusion_3e472a0e95249fcca87085babeb6b806.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/NuclearWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ResearchOnHumanEmbryosExclusion_327268196357d83617af21a1ade9e00e.html" class="text-sky-600 hover:text-sky-800 hover:underline">ResearchOnHumanEmbryosExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/ResearchOnHumanEmbryosExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NuclearEnergyExclusion_cad013efc980af5ccae08eea8957e6f0.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearEnergyExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/NuclearEnergyExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FactoryFarmingExclusion_49de20679b4b9d8dbd4d27e107775f84.html" class="text-sky-600 hover:text-sky-800 hover:underline">FactoryFarmingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/FactoryFarmingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ResearchOnHumanEmbryosExclusion_03db481d994e82a9811a936e8ef60f4c.html" class="text-sky-600 hover:text-sky-800 hover:underline">ResearchOnHumanEmbryosExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/ResearchOnHumanEmbryosExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PalmOilExclusion_fbd2be4a5aad93d156beee98ce8e412e.html" class="text-sky-600 hover:text-sky-800 hover:underline">PalmOilExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/PalmOilExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ResearchOnHumanEmbryosExclusion_4011518ab02fe8970566ff3a09213dbf.html" class="text-sky-600 hover:text-sky-800 hover:underline">ResearchOnHumanEmbryosExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/ResearchOnHumanEmbryosExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CannabisExclusion_a7239325f49266b339c41ddf752988d6.html" class="text-sky-600 hover:text-sky-800 hover:underline">CannabisExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/CannabisExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NuclearWeaponsExclusion_25d0b6db8eefe9797cc3618e22a7d579.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/NuclearWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/UnconventionalWeaponsExclusion_741763709a5d2274b3cb4b7ccbc442a6.html" class="text-sky-600 hover:text-sky-800 hover:underline">UnconventionalWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/UnconventionalWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ResearchOnHumanEmbryosExclusion_0e281cc6ac84aa128ceccdd070cadef3.html" class="text-sky-600 hover:text-sky-800 hover:underline">ResearchOnHumanEmbryosExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/ResearchOnHumanEmbryosExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PalmOilExclusion_35fb426ec5d0c7ba3356b104216b2191.html" class="text-sky-600 hover:text-sky-800 hover:underline">PalmOilExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/PalmOilExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NuclearEnergyExclusion_93427f49bdd11fab8ee2b0cb452de408.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearEnergyExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/NuclearEnergyExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ConventionalWeaponsExclusion_f9b09746a0dcd55ea6dbc19019b9c398.html" class="text-sky-600 hover:text-sky-800 hover:underline">ConventionalWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/ConventionalWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NuclearEnergyExclusion_5b23900851d0a7fc5638d36fc010b11e.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearEnergyExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/NuclearEnergyExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AnimalTestingExclusion_ffb8b36ccfe32bd77e645b7f0952f983.html" class="text-sky-600 hover:text-sky-800 hover:underline">AnimalTestingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/AnimalTestingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GeneticallyModifiedOrganismsExclusion_3d7749c587d2e3ad320213da78638b41.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticallyModifiedOrganismsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/GeneticallyModifiedOrganismsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PornographyAdultEntertainmentServicesExclusion_69f8ec0639bca3f521518d970d3b774a.html" class="text-sky-600 hover:text-sky-800 hover:underline">PornographyAdultEntertainmentServicesExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/PornographyAdultEntertainmentServicesExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AlcoholExclusion_a6625e68fd2ca179f1f8956f178867fa.html" class="text-sky-600 hover:text-sky-800 hover:underline">AlcoholExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/UnconventionalWeaponsExclusion_9f7654918ea6dab751ed31d62de849a7.html" class="text-sky-600 hover:text-sky-800 hover:underline">UnconventionalWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/UnconventionalWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GamblingExclusion_583eb0e62d2ac822c384a9e150439ab8.html" class="text-sky-600 hover:text-sky-800 hover:underline">GamblingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/GamblingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ConventionalWeaponsExclusion_4920f8ce2c9138bf798717797d3cc839.html" class="text-sky-600 hover:text-sky-800 hover:underline">ConventionalWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/ConventionalWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NuclearWeaponsExclusion_ccb247b0169554a584bc2769bc836515.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/NuclearWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PesticidesExclusion_be54cbb778d5df0d385a7bb3f8a30552.html" class="text-sky-600 hover:text-sky-800 hover:underline">PesticidesExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/PesticidesExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CannabisExclusion_d3d5314eefda2c788206964387bd86d9.html" class="text-sky-600 hover:text-sky-800 hover:underline">CannabisExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/CannabisExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FactoryFarmingExclusion_30b8951a6da74a72403f056cca504c57.html" class="text-sky-600 hover:text-sky-800 hover:underline">FactoryFarmingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/FactoryFarmingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PalmOilExclusion_d2030b094e5c5bd146ffcdc362b4d49d.html" class="text-sky-600 hover:text-sky-800 hover:underline">PalmOilExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/PalmOilExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AlcoholExclusion_2e8ef4357292f426fa8ba75dad578b71.html" class="text-sky-600 hover:text-sky-800 hover:underline">AlcoholExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CannabisExclusion_bf62e1871192a5ab22a640d9cf7c5c7d.html" class="text-sky-600 hover:text-sky-800 hover:underline">CannabisExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/CannabisExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GeneticEngineeringExclusion_3d5192fc000304dec1bdb9d447f5fce7.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticEngineeringExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/GeneticEngineeringExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GeneticallyModifiedOrganismsExclusion_2721e6763051cac3a049a51aeec231b3.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticallyModifiedOrganismsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/GeneticallyModifiedOrganismsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CannabisExclusion_223186317fb0dc64d44d741dea791614.html" class="text-sky-600 hover:text-sky-800 hover:underline">CannabisExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/CannabisExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FurExclusion_27f54e8f4819b19b749fd6d37a2704d6.html" class="text-sky-600 hover:text-sky-800 hover:underline">FurExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/FurExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GeneticEngineeringExclusion_b08a7892207d37de6d1fa2d8190ff77a.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticEngineeringExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/GeneticEngineeringExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FurExclusion_815f5bce4627019dcb44b2f6d64311da.html" class="text-sky-600 hover:text-sky-800 hover:underline">FurExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/FurExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GamblingExclusion_82da413b52200dacedfc396136c0d821.html" class="text-sky-600 hover:text-sky-800 hover:underline">GamblingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/GamblingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GeneticEngineeringExclusion_e7321e9d274f46e0f13405d3423e8ce8.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticEngineeringExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/GeneticEngineeringExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PornographyAdultEntertainmentServicesExclusion_99178d79f5fb1d3551d724f40f969144.html" class="text-sky-600 hover:text-sky-800 hover:underline">PornographyAdultEntertainmentServicesExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/PornographyAdultEntertainmentServicesExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GeneticEngineeringExclusion_6a99b8eed3e568d2bf25f61e14649055.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticEngineeringExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/GeneticEngineeringExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PesticidesExclusion_7fcc5c6faa036c07422dc58b76069ef1.html" class="text-sky-600 hover:text-sky-800 hover:underline">PesticidesExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/PesticidesExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PornographyAdultEntertainmentServicesExclusion_f2c6c39ae1313444a3a8c5c1a8441ccf.html" class="text-sky-600 hover:text-sky-800 hover:underline">PornographyAdultEntertainmentServicesExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/PornographyAdultEntertainmentServicesExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/UnconventionalWeaponsExclusion_2616e0fbf800a457d0b96b89c815728a.html" class="text-sky-600 hover:text-sky-800 hover:underline">UnconventionalWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/UnconventionalWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NuclearEnergyExclusion_b582b916976a1fdb1d72276bfa8cfb3d.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearEnergyExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/NuclearEnergyExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AlcoholExclusion_3c594ce8b2bb3ff2227cfff1dda4c7d4.html" class="text-sky-600 hover:text-sky-800 hover:underline">AlcoholExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ConventionalWeaponsExclusion_9309cafd0206c6fcbda26775dd8782f3.html" class="text-sky-600 hover:text-sky-800 hover:underline">ConventionalWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/ConventionalWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GamblingExclusion_268fa64cd7cdcd5a2d0f19eb2f58c819.html" class="text-sky-600 hover:text-sky-800 hover:underline">GamblingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/GamblingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/GeneticallyModifiedOrganismsExclusion_24d9a8bd74aa4808fb0f901dcf24cb66.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticallyModifiedOrganismsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/GeneticallyModifiedOrganismsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/UnconventionalWeaponsExclusion_e9619ccb06610dd875179ad46aa0c3f1.html" class="text-sky-600 hover:text-sky-800 hover:underline">UnconventionalWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/UnconventionalWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AlcoholExclusion_e27739df85b50144162735e135c3363e.html" class="text-sky-600 hover:text-sky-800 hover:underline">AlcoholExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/TobaccoExclusion_f1c12b5c9ced4acc9de299b56e6f7092.html" class="text-sky-600 hover:text-sky-800 hover:underline">TobaccoExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_1/EET1_1_1/ScreeningCriteria/SectorsBasedExclusions/TobaccoExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PalmOilExclusion_ab592f76ee346adc1f230c608fa5e2cd.html" class="text-sky-600 hover:text-sky-800 hover:underline">PalmOilExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/PalmOilExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AnimalTestingExclusion_82b90f5842e1176c874ce5d53f6f632b.html" class="text-sky-600 hover:text-sky-800 hover:underline">AnimalTestingExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/ScreeningCriteria/SectorsBasedExclusions/AnimalTestingExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PesticidesExclusion_26c3a92aef8c6f084c504c4ec5b2504d.html" class="text-sky-600 hover:text-sky-800 hover:underline">PesticidesExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/PesticidesExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NuclearWeaponsExclusion_b625b21d81b29a66f00a1c2d11328192.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_2/EET1_1_2/ScreeningCriteria/SectorsBasedExclusions/NuclearWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ConventionalWeaponsExclusion_d02d7d8670264405b0f70d0353733130.html" class="text-sky-600 hover:text-sky-800 hover:underline">ConventionalWeaponsExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/ConventionalWeaponsExclusion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/TobaccoExclusion_09f22224d165b59d8926a6eed6b7fce0.html" class="text-sky-600 hover:text-sky-800 hover:underline">TobaccoExclusion</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1/EET1_1/ScreeningCriteria/SectorsBasedExclusions/TobaccoExclusion</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- NEU: Sektion "Element-Deklarationen mit diesem Namen" -->
+            
+
+        </div>
     </div>
 
-    <h3>Documentation</h3>
-    
+    <!-- Navigations-Button zurück zur Übersicht -->
+    <div class="mt-8 text-center">
+        <a href="../complexTypes.html"
+           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+            Zurück zur Übersicht
+        </a>
+    </div>
+</main>
 
-</div>
-
-<script src="../assets/bootstrap.bundle.min.js"></script>
 <script src="../assets/prism.js"></script>
 </body>
 </html>

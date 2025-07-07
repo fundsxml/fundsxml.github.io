@@ -1,0 +1,645 @@
+<!--
+  ~ FreeXMLToolkit - Universal Toolkit for XML
+  ~ Copyright (c) Karl Kauc 2024.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  ~
+  -->
+
+<!DOCTYPE html>
+<html lang="de" class="bg-slate-50">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Detail: MainCriterias</title>
+
+    <!-- Tailwind CSS & Modern Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <!-- PrismJS for Syntax Highlighting -->
+    <link href="../assets/prism.css" rel="stylesheet"/>
+</head>
+<body class="font-sans text-slate-800">
+
+<!-- Moderne Navigation (identisch zur Startseite) -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Linke Navigationsgruppe -->
+            <div class="hidden md:flex items-baseline space-x-6">
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
+                <a href="../complexTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                    Types</a>
+                <a href="../simpleTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                    Types</a>
+                <!-- NEUER LINK -->
+                <a href="../dataDictionary.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
+                    Dictionary</a>
+            </div>
+        </div>
+        <!-- Rechte Navigationsgruppe (GitHub Link) -->
+        <div class="hidden md:block">
+            <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+               class="inline-flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-900">
+                <span>GitHub</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                    <path fill-rule="evenodd"
+                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    </div>
+</nav>
+
+<!-- Hauptinhalt -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+
+    <!-- Breadcrumb-Navigation: Wird nur angezeigt, wenn der XPath-Pfad vorhanden ist. -->
+    <nav aria-label="breadcrumb" class="mb-6">
+        <ol class="flex items-center space-x-1 text-sm text-slate-500">
+            <!-- Iteriert über jeden Teil des Pfades und erstellt einen Breadcrumb-Eintrag -->
+            <li class="flex items-center">
+                <a href="FundsXML4_03619599b453e5076558dea9d0ed8acb.html" class="hover:text-sky-600 hover:underline">FundsXML4</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
+            </li>
+            <li class="flex items-center">
+                <a href="RegulatoryReportings_e93b40b6a782673701031e15cd7537d0.html" class="hover:text-sky-600 hover:underline">RegulatoryReportings</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
+            </li>
+            <li class="flex items-center">
+                <a href="DirectReporting_882595cd98a1d8bc042f0914995fff7b.html" class="hover:text-sky-600 hover:underline">DirectReporting</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
+            </li>
+            <li class="flex items-center">
+                <a href="EET1.1.3_d6ba3f82c13b7b5a397987e669e4c6d1.html" class="hover:text-sky-600 hover:underline">EET1_1_3</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                <svg class="h-5 w-5 flex-shrink-0 text-slate-400" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clip-rule="evenodd"/>
+                </svg>
+            </li>
+            <li class="flex items-center">
+                <a href="MainCriterias_c5080d66fba408bfe9fc55d9c757b729.html" class="hover:text-sky-600 hover:underline">MainCriterias</a>
+                <!-- Fügt ein Trenn-Icon hinzu, außer beim letzten Element -->
+                
+            </li>
+        </ol>
+    </nav>
+
+    <!-- Zentrale Detail-Karte -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Karten-Header mit Elementname und XPath -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <h1 class="text-2xl font-bold text-slate-900">MainCriterias</h1>
+            <p class="mt-1 text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias</p>
+        </header>
+
+        <!-- Karten-Body mit allen Detail-Sektionen -->
+        <div class="p-6 md:p-8 space-y-10">
+
+            <!-- Sektion: Diagramm -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Diagramm</h2>
+                <div class="p-4 border border-slate-200 rounded-lg bg-slate-50 overflow-x-auto">
+
+                    <!-- Thymeleaf Switch, um zwischen SVG und PNG zu unterscheiden -->
+                    <div>
+
+                        <!-- Fall 1: Wenn der Typ 'SVG' ist, füge den SVG-Code direkt ein -->
+                        <div><svg xmlns="http://www.w3.org/2000/svg"
+     style="background-color: #f8fafc"
+     width="521.0"
+     height="443.984375">
+   <defs>
+      <filter width="140%"
+              x="-20%"
+              height="140%"
+              id="drop-shadow"
+              y="-20%">
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="2" dy="3"/>
+         <feFlood flood-color="black" flood-opacity="0.25"/>
+         <feComposite in2="offsetblur" operator="in"/>
+         <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+         </feMerge>
+      </filter>
+      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
+         id="plus-icon">
+         <circle fill="none" r="9" cx="10" cy="10"/>
+         <line y2="15" x1="10" x2="10" y1="5"/>
+         <line y2="10" x1="5" x2="15" y1="10"/>
+      </g>
+   </defs>
+   <a href="#">
+      <rect x="20"
+            y="182"
+            fill="#f1f5f9"
+            width="114.0"
+            style="stroke: #475569; stroke-width: 1.5;"
+            filter="url(#drop-shadow)"
+            rx="4"
+            ry="4"
+            height="38.3984375"
+            id="MainCriterias"/>
+      <text x="30"
+            fill="#0f172a"
+            y="210.3984375"
+            font-size="16"
+            font-family="Arial">MainCriterias</text>
+   </a>
+   <g id="comment">
+      <text fill="#64748b" x="30" y="235.3984375">
+         <tspan x="25" dy="1.2em">20040 - 20100 </tspan>
+      </text>
+   </g>
+   <rect x="234.0"
+         y="20.0"
+         fill="#f1f5f9"
+         width="257.0"
+         style="stroke: #475569; stroke-width: 1.5;"
+         filter="url(#drop-shadow)"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="SFDRProductType"/>
+   <g>
+      <text x="244.0"
+            fill="#0f172a"
+            y="48.3984375"
+            font-size="16"
+            font-family="Arial">SFDRProductType</text>
+      <line y2="52.3984375"
+            stroke-width="1"
+            x1="244.0"
+            x2="481.0"
+            stroke="#e2e8f0"
+            y1="52.3984375"/>
+      <text x="244.0"
+            fill="#64748b"
+            y="72.796875"
+            font-size="14"
+            font-family="Arial">xs:string</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
+         fill="none"
+         d="M 134.0 201.19921875 h 50 V 52.3984375 h 50"/>
+   <rect x="234.0"
+         y="104.796875"
+         fill="#f1f5f9"
+         width="257.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="SFDRProductTypeEligible"/>
+   <g>
+      <text x="244.0"
+            fill="#0f172a"
+            y="133.1953125"
+            font-size="16"
+            font-family="Arial">SFDRProductTypeEligible</text>
+      <line y2="137.1953125"
+            stroke-width="1"
+            x1="244.0"
+            x2="481.0"
+            stroke="#e2e8f0"
+            y1="137.1953125"/>
+      <text x="244.0"
+            fill="#64748b"
+            y="157.59375"
+            font-size="14"
+            font-family="Arial">xs:string</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 134.0 201.19921875 h 50 V 137.1953125 h 50"/>
+   <rect x="234.0"
+         y="189.59375"
+         fill="#f1f5f9"
+         width="257.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="ESGLabelOrStandard"/>
+   <g>
+      <text x="244.0"
+            fill="#0f172a"
+            y="217.9921875"
+            font-size="16"
+            font-family="Arial">ESGLabelOrStandard</text>
+      <line y2="221.9921875"
+            stroke-width="1"
+            x1="244.0"
+            x2="481.0"
+            stroke="#e2e8f0"
+            y1="221.9921875"/>
+      <text x="244.0"
+            fill="#64748b"
+            y="242.390625"
+            font-size="14"
+            font-family="Arial">xs:string</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 134.0 201.19921875 h 50 V 221.9921875 h 50"/>
+   <rect x="234.0"
+         y="274.390625"
+         fill="#f1f5f9"
+         width="257.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="MainESGFocus"/>
+   <g>
+      <text x="244.0"
+            fill="#0f172a"
+            y="302.7890625"
+            font-size="16"
+            font-family="Arial">MainESGFocus</text>
+      <line y2="306.7890625"
+            stroke-width="1"
+            x1="244.0"
+            x2="481.0"
+            stroke="#e2e8f0"
+            y1="306.7890625"/>
+      <text x="244.0"
+            fill="#64748b"
+            y="327.1875"
+            font-size="14"
+            font-family="Arial">xs:string</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 134.0 201.19921875 h 50 V 306.7890625 h 50"/>
+   <rect x="234.0"
+         y="359.1875"
+         fill="#f1f5f9"
+         width="257.0"
+         style="stroke: #475569; stroke-width: 1.5;"
+         filter="url(#drop-shadow)"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="ConsidersPrincipleAdverseImpact"/>
+   <g>
+      <text x="244.0"
+            fill="#0f172a"
+            y="387.5859375"
+            font-size="16"
+            font-family="Arial">ConsidersPrincipleAdverseImpact</text>
+      <line y2="391.5859375"
+            stroke-width="1"
+            x1="244.0"
+            x2="481.0"
+            stroke="#e2e8f0"
+            y1="391.5859375"/>
+      <text x="244.0"
+            fill="#64748b"
+            y="411.984375"
+            font-size="14"
+            font-family="Arial">EETYesNoType</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
+         fill="none"
+         d="M 134.0 201.19921875 h 50 V 391.5859375 h 50"/>
+</svg>
+</div>
+
+                        <!-- Fall 2: Wenn der Typ 'PNG' ist, erstelle ein normales Bild-Tag -->
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sektion: Dokumentation -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Dokumentation</h2>
+                <div class="bg-slate-100/75 p-4 rounded-md space-y-2">
+                    <div>
+                        <strong class="text-slate-700 block"></strong>
+                        <p class="text-slate-600"><p>20040 - 20100</p>
+</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sektion: Eigenschaften -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Eigenschaften</h2>
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Typ</dt>
+                        <dd class="mt-1 text-slate-900 font-mono"></dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Kardinalität (min/max)</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">1 / 1</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Namespace</dt>
+                        <dd class="mt-1 text-slate-900">xmlns='http://www.w3.org/2001/XMLSchema'<br />altova='http://www.altova.com/xml-schema-extensions'<br />ds='http://www.w3.org/2000/09/xmldsig#'<br /></dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Level</dt>
+                        <dd class="mt-1 text-slate-900">5</dd>
+                    </div>
+                    
+                    
+                </dl>
+            </section>
+
+            <!-- Sektion: Kind-Elemente & Attribute -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Kind-Elemente &amp; Attribute</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name (XPath)</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Typ</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Dokumentation</th>
+                            <!-- NEU: Spalte für Beispieldaten -->
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Beispieldaten</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="SFDRProductType_00e399115cf180531eb913db82ec4463.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias/SFDRProductType</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                <span>xs:string</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">20040_Financial_Instrument_SFDR_Product_Type
+Reference of the article of SFDR european regulation applying to the product (art 6, art 8 or art 9). 
+0= product is not in SFDR scope
+6= product not Art8/9
+8=Art. 8 SFDR Product (ESG characteristics); 
+9=Art. 9 SFDR product (ESG objective)</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">8</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="SFDRProductTypeEligible_255e64c2b6e6ed5e6bce11083cc96a34.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias/SFDRProductTypeEligible</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                <span>xs:string</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">20050_Financial_Instrument_SFDR_Product_Type_Eligible
+Conditional to 20040 set to 0
+For funds and products not being in SFDR scope, which includes structured products
+0= product does not follow any SFDR guideline 
+6= product follows Art6 guidelines
+8= product is Art 8 like
+9= product is Art 9 like</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">6</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="ESGLabelOrStandard_414bfec4fe4c521ad17a82689c195a88.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias/ESGLabelOrStandard</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                <span>xs:string</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">20060_Financial_Instrument_ESG_Label_Or_Standard
+Disclosure of applicable ESG Label/s</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias/PercentageMinimumSFDRArt8Funds</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                <span></span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias/PercentageMinimumSFDRArt9Funds</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                <span></span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="MainESGFocus_ae196ea0517b48f9a2a31fb700e24fc6.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias/MainESGFocus</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                <span>xs:string</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">20090_Financial_Instrument_Main_ESG_Focus
+Indication of the &quot;main focus&quot; of the Financial_Instrument ( for example E for green bonds…). E or S or G or MF (Multi focus) or Blank (if no focus at all)</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">G</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="ConsidersPrincipleAdverseImpact_d060e07382573453b44db4f807b75e45.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias/ConsidersPrincipleAdverseImpact</a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Wenn der Typ ein benutzerdefinierter Typ ist (kein xs:...), wird er verlinkt -->
+                                <a href="../simpletypes/EETYesNoType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoType</a>
+                                <!-- Andernfalls (z.B. bei 'xs:string') wird er als normaler Text angezeigt -->
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600">20100_Financial_Instrument_Does_This_Product_Consider_Principle_Adverse_Impact_In_Their_Investment                                         Consideration of PAI is commitment to reduce or mitigate adverse impacts and can be done quantitative or qualitatively</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sektion: App Info -->
+            
+
+            <!-- Sektion: XML-Ausschnitt -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML-Ausschnitt</h2>
+                <div class="rounded-lg overflow-hidden border border-slate-200">
+                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+            xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+            xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            name=&quot;MainCriterias&quot;&gt;
+   &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;20040 - 20100&lt;/xs:documentation&gt;
+   &lt;/xs:annotation&gt;
+   &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+         &lt;xs:element name=&quot;SFDR_ProductType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20040_Financial_Instrument_SFDR_Product_Type
+Reference of the article of SFDR european regulation applying to the product (art 6, art 8 or art 9)
+6= no product acc. to Art. 8/9
+8= Art. 8 SFDR Product (ESG characteristics)
+9= Art. 9 SFDR product (ESG objective)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:enumeration value=&quot;0&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;6&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;8&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;9&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SFDR_ProductTypeEligible&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20050_Financial_Instrument_SFDR_Product_Type_Eligible
+Funds not being in SFDR scope and structured products. Art 8 like, art 9 like&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:enumeration value=&quot;0&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;6&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;8&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;9&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ESG_LabelOrStandard&quot; type=&quot;xs:string&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20060_Financial_Instrument_ESG_Label_Or_Standard
+Disclosure of applicable ESG Label/s&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Minimum_SFDR_Art_8_Funds&quot; type=&quot;xs:decimal&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20070_Financial_Instrument_%_Of_Minimum_SFDR_Art_8_Funds 
+Proportion in look through of art 8 sub invested funds. Nav based&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Minimum_SFDR_Art_9_Funds&quot; type=&quot;xs:decimal&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20080_Financial_Instrument_%_Of_Minimum_SFDR_Art_9_Funds
+Proportion in look through of art 9 sub invested funds. Nav based&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Main_ESG_Focus&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20090_Financial_Instrument_Main_ESG_Focus
+Indication of the &quot;main focus&quot; of the Financial_Instrument ( for example E for green bonds…). E or S or G.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:enumeration value=&quot;E&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;S&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;G&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;ConsidersPrincipleAdverseImpact&quot; type=&quot;EETYesNoType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20100_Financial_Instrument_Does_This_Product_Consider_Principle_Adverse_Impact_In_Their_Investment&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+   &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></pre>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<!-- Skripte am Ende laden -->
+<script src="../assets/prism.js"></script>
+</body>
+</html>
