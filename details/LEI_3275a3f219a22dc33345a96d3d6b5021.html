@@ -263,7 +263,7 @@
                     </div>
                     <div class="flex flex-col md:col-span-2">
                         <dt class="text-sm font-medium text-slate-500">Beispieldaten</dt>
-                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">cD0w8RZ7pp6IVvH2Tc40</dd>
+                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">3QN57MsGsx5dEgJ50p18</dd>
                     </div>
                     <div class="flex flex-col md:col-span-full">
                         <dt class="text-sm font-medium text-slate-500">Einschränkungen</dt>
@@ -287,24 +287,77 @@ Base: xs:string
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">XML-Ausschnitt</h2>
                 <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:simpleType xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
-               xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-               xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-               name=&quot;LEICodeType&quot;&gt;
+                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+            xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+            xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            name=&quot;FundsXML4&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Legal Entity Identifier (LEI) (ISO 17442 standard) of the Entity  or if not available the Interim Entity Identifier (IEI):
-•Characters 1-4: A four character prefix allocated uniquely to each LOU.
-•Characters 5-6: Two reserved characters set to zero.
-•Characters 7-18: Entity - specific part of the code generated and assigned by LOUs according to transparent, sound and robust allocation policies.
-•Characters 19-20: Two check digits&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
-   &lt;xs:restriction base=&quot;xs:string&quot;&gt;
-      &lt;xs:minLength value=&quot;20&quot;/&gt;
-      &lt;xs:maxLength value=&quot;20&quot;/&gt;
-      &lt;xs:pattern value=&quot;([0-9a-zA-Z]{18}[0-9]{2})&quot;/&gt;
-   &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-
+   &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:complexType&gt;
+               &lt;xs:sequence&gt;
+                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
+                     &lt;xs:annotation&gt;
+                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
+                     &lt;/xs:annotation&gt;
+                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
+                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
+                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
+                     &lt;/xs:key&gt;
+                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
+                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
+                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
+                     &lt;/xs:keyref&gt;
+                  &lt;/xs:element&gt;
+               &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;AssetMgmtCompanyDynData&quot;
+                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;RegulatoryReportings&quot;
+                     type=&quot;RegulatoryReportingsType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;CountrySpecificData&quot;
+                     type=&quot;CountrySpecificDataType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
+      &lt;/xs:sequence&gt;
+   &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
 </code></pre>
                 </div>
             </section>

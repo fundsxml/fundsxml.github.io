@@ -255,6 +255,17 @@
          <tspan x="25" dy="1.2em">quarter </tspan>
       </text>
    </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
+         fill="none"
+         d="M 94.0 86.19921875 H 134.0"/>
+   <rect x="134.0"
+         y="76.19921875"
+         fill="#f1f5f9"
+         width="20.0"
+         style="stroke: #475569; stroke-width: 1.5;"
+         rx="4"
+         id="seq-rect_Foreign"
+         height="20.0"/>
    <a href="Purchases_203ae124cf736f3e379c841337c34d49.html">
       <rect x="194.0"
             y="20.0"
@@ -291,7 +302,12 @@
    </a>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 94.0 86.19921875 h 50 V 52.3984375 h 50"/>
+         d="M 154.0 86.19921875 V 52.3984375 H 194.0"/>
+   <text x="163.0"
+         fill="#64748b"
+         y="47.3984375"
+         font-size="12"
+         font-family="Arial">1..1</text>
    <a href="Sales_c022bb17b3e65348b39589a52cce7795.html">
       <rect x="194.0"
             y="104.796875"
@@ -328,7 +344,12 @@
    </a>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 94.0 86.19921875 h 50 V 137.1953125 h 50"/>
+         d="M 154.0 86.19921875 V 137.1953125 H 194.0"/>
+   <text x="163.0"
+         fill="#64748b"
+         y="132.1953125"
+         font-size="12"
+         font-family="Arial">1..1</text>
 </svg>
 </div>
 
@@ -361,7 +382,7 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Typ</dt>
-                        <dd class="mt-1 text-slate-900 font-mono"></dd>
+                        <dd class="mt-1 text-slate-900 font-mono">(Complex Content)</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Kardinalität (min/max)</dt>
@@ -442,25 +463,71 @@
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-            name=&quot;Foreign&quot;&gt;
+            name=&quot;FundsXML4&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und Verkäufe im Ausland (außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-      &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases and sales in the previous quarter&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
-         &lt;xs:element name=&quot;Purchases&quot; type=&quot;PurchasesDataDEType&quot;&gt;
+         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe  im Ausland außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases in the previous quarter&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element name=&quot;Sales&quot; type=&quot;SalesDataDEType&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Verkäufe im Ausland (außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign sales  in the previous quarter&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:complexType&gt;
+               &lt;xs:sequence&gt;
+                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
+                     &lt;xs:annotation&gt;
+                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
+                     &lt;/xs:annotation&gt;
+                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
+                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
+                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
+                     &lt;/xs:key&gt;
+                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
+                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
+                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
+                     &lt;/xs:keyref&gt;
+                  &lt;/xs:element&gt;
+               &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;AssetMgmtCompanyDynData&quot;
+                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;RegulatoryReportings&quot;
+                     type=&quot;RegulatoryReportingsType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;CountrySpecificData&quot;
+                     type=&quot;CountrySpecificDataType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
       &lt;/xs:sequence&gt;
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;
