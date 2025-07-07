@@ -577,7 +577,7 @@
 One of the options in the following closed list to be used:
 LS - Lump sum 
 RP - Regular premium</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">LS</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">RP</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -624,71 +624,54 @@ RP - Regular premium</td>
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-            name=&quot;FundsXML4&quot;&gt;
+            name=&quot;RHPPeriodsDefinition&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;31-Definition of periods per RHPs and investment amount base&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
-         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Period_1&quot; type=&quot;xs:positiveInteger&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;31010-Has to be set as default value 1 and only to be filled when HP of product is &amp;gt;=3&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Period_2&quot; type=&quot;xs:positiveInteger&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-            &lt;xs:complexType&gt;
-               &lt;xs:sequence&gt;
-                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
-                     &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
-                     &lt;/xs:annotation&gt;
-                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:key&gt;
-                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:keyref&gt;
-                  &lt;/xs:element&gt;
-               &lt;/xs:sequence&gt;
-            &lt;/xs:complexType&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;AssetMgmtCompanyDynData&quot;
-                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;31020-Is considered as RHP/2 and rounded up to the nearest year. Has to be filled when RHP is &amp;gt;3&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
+         &lt;xs:element name=&quot;HP_Period_3&quot; type=&quot;xs:positiveInteger&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;31030-The holding period (HP) is the period used as a basis for the calculation of the subsequent purposes. It gives the MOPs manufacturer the possibility to align the HP of the underlying investment option with the RHP of the MOP.&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
+         &lt;xs:element name=&quot;Lump_sum_or_regular_premium_indicator&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;31050-To indicate whether a lump sum or regular premium option has been chosen
+One of the options in the following closed list to be used:
+LS - Lump sum 
+RP - Regular premium&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:maxLength value=&quot;2&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;LS&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;RP&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;Investment_Amount&quot; type=&quot;xs:positiveInteger&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;31060-Standard 10,000 for lump sum or 1,000 for regular premium&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;RegulatoryReportings&quot;
-                     type=&quot;RegulatoryReportingsType&quot;&gt;
+                     name=&quot;Accumulated_Investment_amount&quot;
+                     type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;31070-&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;CountrySpecificData&quot;
-                     type=&quot;CountrySpecificDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
       &lt;/xs:sequence&gt;
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;

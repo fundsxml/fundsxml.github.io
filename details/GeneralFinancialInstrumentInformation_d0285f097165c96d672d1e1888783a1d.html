@@ -466,7 +466,7 @@ One of the options in the following closed list to be used:
 9 - Other code by members of the Association of National Numbering Agencies
 10 - LEI
 99 - Code attributed by the undertaking</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">5</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -499,7 +499,7 @@ Name of the financial instrument</td>
 
                             <td class="px-4 py-3 text-slate-600">20030_Financial_Instrument_Currency
 Denomination Currency of the Financial Instrument</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">ZGJ</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">UXV</td>
                         </tr>
                         </tbody>
                     </table>
@@ -516,71 +516,76 @@ Denomination Currency of the Financial Instrument</td>
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-            name=&quot;FundsXML4&quot;&gt;
+            name=&quot;GeneralFinancialInstrumentInformation&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;20000 - 20030&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
-         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
+         &lt;xs:element name=&quot;IdentifyingData&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;20000_Financial_Instrument_Identifying_Data
+Use the following priority:
+  - ISO 6166 code of ISIN when available
+  - Other recognised codes (e.g.: CUSIP, Bloomberg Ticker, Reuters RIC)
+  - Code attributed by the undertaking, when the options above are not available. Code must be unique and kept consistent over time&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:maxLength value=&quot;255&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;TypeOfIdentification&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20010_Financial_Instrument_Type_Of_Identification_Code
+One of the options in the following closed list to be used:
+1 - ISO 6166 for ISIN code
+2 - CUSIP (The Committee on Uniform Securities Identification Procedures number assigned by the CUSIP Service Bureau for U.S. and Canadian companies)
+3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)
+4 – WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)
+5 - Bloomberg Ticker (Bloomberg letters code that identify a company&#39;s securities)
+6 - BBGID (The Bloomberg Global ID)
+7 - Reuters RIC (Reuters instrument code)
+8 – FIGI (Financial_Instrument Global Identifier)
+9 - Other code by members of the Association of National Numbering Agencies
+10 - LEI
+99 - Code attributed by the undertaking&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:int&quot;&gt;
+                  &lt;xs:enumeration value=&quot;1&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;2&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;3&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;4&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;5&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;6&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;7&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;8&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;9&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;10&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;11&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;99&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;Name&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20020_Financial_Instrument_Name
+Name of the financial instrument&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:maxLength value=&quot;255&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;Currency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20030_Financial_Instrument_Currency
+Denomination Currency of the Financial Instrument&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-            &lt;xs:complexType&gt;
-               &lt;xs:sequence&gt;
-                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
-                     &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
-                     &lt;/xs:annotation&gt;
-                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:key&gt;
-                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:keyref&gt;
-                  &lt;/xs:element&gt;
-               &lt;/xs:sequence&gt;
-            &lt;/xs:complexType&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;AssetMgmtCompanyDynData&quot;
-                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;RegulatoryReportings&quot;
-                     type=&quot;RegulatoryReportingsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;CountrySpecificData&quot;
-                     type=&quot;CountrySpecificDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
       &lt;/xs:sequence&gt;
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;

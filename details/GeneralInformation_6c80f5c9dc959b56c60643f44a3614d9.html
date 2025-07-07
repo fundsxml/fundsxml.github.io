@@ -1019,7 +1019,7 @@ Integer corresponding to the following closed list:
 9 - Other code by members of the Association of National Numbering Agencies
 10 - LEI
 99 - Code attributed by the undertaking</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">10</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1050,7 +1050,7 @@ Integer corresponding to the following closed list:
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">00040: Denomination currency of the financial instrument</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">XFJ</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">JLH</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1082,7 +1082,7 @@ Integer corresponding to the following closed list:
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">00047_Financial_Instrument_Distribution_Of_Cash</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1112,7 +1112,7 @@ Integer corresponding to the following closed list:
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">00060: Structured Securities or Structured Funds or UCITS or Non UCITS or UCITS Money Market Funds or Non UCITS Money Market Funds or Exchanged Traded Commodities or Bonds</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">S</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">U</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1175,7 +1175,7 @@ Name of Manufacturer of the financial instrument. The one who is responsible for
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">00073 Legal Entity Identifier, LEI of the Manufacturer of the financial instrument</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">bGMzv6G3A1B8m617I259</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">5B3po7VDwBVZLEi5MF91</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1191,7 +1191,7 @@ Name of Manufacturer of the financial instrument. The one who is responsible for
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">00074 Contact entry point for communication with the Manufacturer to either provide feed back reporting or to retrieve details on how to provide feed back reporting.</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">6\z</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">O&gt;H</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1306,71 +1306,292 @@ German code: number between 1 and 22, is using the english version of the german
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-            name=&quot;FundsXML4&quot;&gt;
+            name=&quot;GeneralInformation&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;General Financial Instrument Information&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
-         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
+         &lt;xs:element name=&quot;Code&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;00010: Use the following priority:
+  - ISO 6166 code of ISIN when available
+  - Other recognised codes (e.g.: CUSIP, Bloomberg Ticker, Reuters RIC)
+  - Code attributed by the undertaking, when the options above are not available. Code must be unique and kept consistent over time. Consistent with Solvency II and PRIIPS approach. &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:maxLength value=&quot;255&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;CodificationSystem&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;00020: Codification system used.
+Integer corresponding to the following closed list:
+1 - ISO 6166 for ISIN code
+2 - CUSIP (The Committee on Uniform Securities Identification Procedures number assigned by the CUSIP Service Bureau for U.S. and Canadian companies)
+3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)
+4 – WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)
+5 - Bloomberg Ticker (Bloomberg letters code that identify a company&#39;s securities)
+6 - BBGID (The Bloomberg Global ID)
+7 - Reuters RIC (Reuters instrument code)
+8 – FIGI (Financial Instrument Global Identifier)
+9 - Other code by members of the Association of National Numbering Agencies
+10 - LEI
+99 - Code attributed by the undertaking&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:short&quot;&gt;
+                  &lt;xs:minInclusive value=&quot;1&quot;/&gt;
+                  &lt;xs:maxInclusive value=&quot;99&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;1&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;2&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;3&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;4&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;5&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;6&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;7&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;8&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;9&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;10&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;99&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;InstrumentName&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;00030: Name of the financial instrument&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:maxLength value=&quot;255&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;InstrumentCurrency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;00040: Denomination currency of the financial instrument&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
+         &lt;xs:element name=&quot;InstrumentPerformanceFee&quot; type=&quot;EMTYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-            &lt;xs:complexType&gt;
-               &lt;xs:sequence&gt;
-                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
-                     &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
-                     &lt;/xs:annotation&gt;
-                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:key&gt;
-                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:keyref&gt;
-                  &lt;/xs:element&gt;
-               &lt;/xs:sequence&gt;
-            &lt;/xs:complexType&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;AssetMgmtCompanyDynData&quot;
-                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;00045_Financial_Instrument_Performance_Fee&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
+         &lt;xs:element name=&quot;InstrumentDistributionCash&quot; type=&quot;EMTYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;00047_Financial_Instrument_Distribution_Of_Cash&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
+         &lt;xs:element name=&quot;GeneralReferenceDate&quot; type=&quot;xs:date&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;00050 Date to which the General data within the EMT refer&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;RegulatoryReportings&quot;
-                     type=&quot;RegulatoryReportingsType&quot;&gt;
+         &lt;xs:element name=&quot;ProductType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;00060: Structured Securities or Structured Funds or UCITS or Non UCITS or UCITS Money Market Funds or Non UCITS Money Market Funds or Exchanged Traded Commodities or Bonds&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:minLength value=&quot;1&quot;/&gt;
+                  &lt;xs:maxLength value=&quot;3&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;S&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;SF&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;U&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;N&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;LM&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;NM&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;ETC&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;B&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MaturityDate&quot; type=&quot;xs:date&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;00065 Date of Maturity&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;CountrySpecificData&quot;
-                     type=&quot;CountrySpecificDataType&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MayBeTerminatedEarly&quot; type=&quot;EMTYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;00067 Yes or No. Conditional of field 00060 being set to S, SF or B &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
+         &lt;xs:element name=&quot;ManufacturerName&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;00070
+Name of Manufacturer of the financial instrument. The one who is responsible for the financial instrument management/issuance &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:maxLength value=&quot;255&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ManufacturerLEI&quot; type=&quot;LEICodeType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;00073 Legal Entity Identifier, LEI of the Manufacturer of the financial instrument&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ManufacturerEmail&quot; type=&quot;EmailAddressType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;00074 Contact entry point for communication with the Manufacturer to either provide feed back reporting or to retrieve details on how to provide feed back reporting.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ManufacturerProductGovernanceProces&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;00075 
+A = Product governance procedure pursuant to MiFID II 
+B = Product governance procedure comparable to MiFID II 
+C = Product governance procedure not in accordance with MiFID II 
+D = No information is requested from the issuer &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:minLength value=&quot;1&quot;/&gt;
+                  &lt;xs:maxLength value=&quot;1&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;A&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;B&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;C&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;D&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;GuarantorName&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;00080: Name of guarantor of the financial instrument.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:maxLength value=&quot;255&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ProductCategoryNatureGermany&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;00090: Designation of the respective product category or nature for Germany. 
+German code: number between 1 and 22, is using the english version of the german categorization. &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:positiveInteger&quot;&gt;
+                  &lt;xs:minInclusive value=&quot;1&quot;/&gt;
+                  &lt;xs:maxInclusive value=&quot;22&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;LeveragedOrContingentLiability&quot; type=&quot;EMTYesNoType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;00100: To enable reporting on the depreciation of leveraged financial instruments or contingent liability transactions in accordance with Art. 62 of the MiFID II&#39;s Delegated Regulation&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:choice minOccurs=&quot;0&quot;&gt;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;StructuredSecurity&quot;&gt;
+               &lt;xs:annotation&gt;
+                  &lt;xs:documentation&gt;Relevant fields for structured securities&lt;/xs:documentation&gt;
+               &lt;/xs:annotation&gt;
+               &lt;xs:complexType&gt;
+                  &lt;xs:sequence&gt;
+                     &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TypeNotionalOrItemBased&quot;&gt;
+                        &lt;xs:annotation&gt;
+                           &lt;xs:documentation&gt;00085: Enables interpretation of Cost and Charges data when used together with fields 00096, 08110 and 08120.
+N for Notional based instrument, I for Item based instrument&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                        &lt;xs:simpleType&gt;
+                           &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                              &lt;xs:minLength value=&quot;1&quot;/&gt;
+                              &lt;xs:maxLength value=&quot;1&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;N&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;I&quot;/&gt;
+                           &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                     &lt;/xs:element&gt;
+                     &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ProductCategoryNature&quot;&gt;
+                        &lt;xs:annotation&gt;
+                           &lt;xs:documentation&gt;00095: If the financial instrument is a structured security complete with the EUSIPA code&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                        &lt;xs:simpleType&gt;
+                           &lt;xs:restriction base=&quot;Text4Type&quot;&gt;
+                              &lt;xs:enumeration value=&quot;1100&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1120&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1130&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1140&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1199&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1200&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1210&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1220&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1230&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1240&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1250&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1260&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1299&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1300&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1310&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1320&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1330&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1340&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1399&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1440&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1450&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1460&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;1499&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;2100&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;2110&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;2199&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;2200&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;2205&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;2210&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;2230&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;2299&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;2300&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;2399&quot;/&gt;
+                           &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                     &lt;/xs:element&gt;
+                     &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Quotation&quot;&gt;
+                        &lt;xs:annotation&gt;
+                           &lt;xs:documentation&gt;00096: If 00060 is set to S or ETC. 
+U for Units, or P for Percentage.
+Defines if the quotation type in the Ex-Ante and Ex-Post section of the EMT file is in UNITS or in PERCENTAGE related to the specific Reference as presented in field 07150,07155, 08110 and 08120 respectively.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                        &lt;xs:simpleType&gt;
+                           &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                              &lt;xs:minLength value=&quot;1&quot;/&gt;
+                              &lt;xs:maxLength value=&quot;1&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;U&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;P&quot;/&gt;
+                           &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                     &lt;/xs:element&gt;
+                  &lt;/xs:sequence&gt;
+               &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Fund&quot;&gt;
+               &lt;xs:annotation&gt;
+                  &lt;xs:documentation&gt;Relevant fields for Funds&lt;/xs:documentation&gt;
+               &lt;/xs:annotation&gt;
+               &lt;xs:complexType&gt;
+                  &lt;xs:sequence&gt;
+                     &lt;xs:element name=&quot;FundShareClassWithoutRetrocession&quot; type=&quot;EMTYesNoType&quot;&gt;
+                        &lt;xs:annotation&gt;
+                           &lt;xs:documentation&gt;00110: The shareclass does not pay any inducement in the context of MiFID II.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                     &lt;/xs:element&gt;
+                     &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExPostCostCalculationBasisItaly&quot;&gt;
+                        &lt;xs:annotation&gt;
+                           &lt;xs:documentation&gt;00120: Rolling based (last 12 months) (R) or Fixed base (calendar year) (F)&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                        &lt;xs:simpleType&gt;
+                           &lt;xs:restriction base=&quot;Text1Type&quot;&gt;
+                              &lt;xs:enumeration value=&quot;R&quot;/&gt;
+                              &lt;xs:enumeration value=&quot;F&quot;/&gt;
+                           &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                     &lt;/xs:element&gt;
+                  &lt;/xs:sequence&gt;
+               &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+         &lt;/xs:choice&gt;
       &lt;/xs:sequence&gt;
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;

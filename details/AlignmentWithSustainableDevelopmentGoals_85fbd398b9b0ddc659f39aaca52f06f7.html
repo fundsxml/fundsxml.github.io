@@ -300,7 +300,7 @@ R - None</p>
                     </div>
                     <div class="flex flex-col md:col-span-2">
                         <dt class="text-sm font-medium text-slate-500">Beispieldaten</dt>
-                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">L</dd>
+                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">Q</dd>
                     </div>
                     <div class="flex flex-col md:col-span-full">
                         <dt class="text-sm font-medium text-slate-500">Einschränkungen</dt>
@@ -324,73 +324,53 @@ Base: xs:string
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-            name=&quot;FundsXML4&quot;&gt;
+            maxOccurs=&quot;unbounded&quot;
+            minOccurs=&quot;0&quot;
+            name=&quot;AlignmentWithSustainableDevelopmentGoals&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;20300_Financial_Instrument_Alignment_With_Sustainable_Development_Goals               Alignment with SDG means that SDG are used in the investment process (screening) or targeted by the fund. Multiple answers field.
+A - No Poverty
+B - Zero Hunger
+C - Good Health and Well-Being
+D - Quality Education
+E - Gender Equality
+F - Clean Water and Sanitaion
+G - Affordable and Clean Energy
+H - Decent Work and Economic Growth
+I - Industry, Innovation and Infrastructure
+J - Reduced Inequality
+K - Sustainable Cities and Communities
+L - Responsible Consumption and Production
+M - Climate Action
+N - Life Below Water
+O - Life on Land
+P - Peace and Justice, Strong Institutions
+Q - Partnerships to achive to Goal
+R - None
+&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
-   &lt;xs:complexType&gt;
-      &lt;xs:sequence&gt;
-         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-            &lt;xs:complexType&gt;
-               &lt;xs:sequence&gt;
-                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
-                     &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
-                     &lt;/xs:annotation&gt;
-                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:key&gt;
-                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:keyref&gt;
-                  &lt;/xs:element&gt;
-               &lt;/xs:sequence&gt;
-            &lt;/xs:complexType&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;AssetMgmtCompanyDynData&quot;
-                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;RegulatoryReportings&quot;
-                     type=&quot;RegulatoryReportingsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;CountrySpecificData&quot;
-                     type=&quot;CountrySpecificDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
-      &lt;/xs:sequence&gt;
-   &lt;/xs:complexType&gt;
+   &lt;xs:simpleType&gt;
+      &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+         &lt;xs:enumeration value=&quot;A&quot;/&gt;
+         &lt;xs:enumeration value=&quot;B&quot;/&gt;
+         &lt;xs:enumeration value=&quot;C&quot;/&gt;
+         &lt;xs:enumeration value=&quot;D&quot;/&gt;
+         &lt;xs:enumeration value=&quot;E&quot;/&gt;
+         &lt;xs:enumeration value=&quot;F&quot;/&gt;
+         &lt;xs:enumeration value=&quot;G&quot;/&gt;
+         &lt;xs:enumeration value=&quot;H&quot;/&gt;
+         &lt;xs:enumeration value=&quot;I&quot;/&gt;
+         &lt;xs:enumeration value=&quot;J&quot;/&gt;
+         &lt;xs:enumeration value=&quot;K&quot;/&gt;
+         &lt;xs:enumeration value=&quot;L&quot;/&gt;
+         &lt;xs:enumeration value=&quot;M&quot;/&gt;
+         &lt;xs:enumeration value=&quot;N&quot;/&gt;
+         &lt;xs:enumeration value=&quot;O&quot;/&gt;
+         &lt;xs:enumeration value=&quot;P&quot;/&gt;
+         &lt;xs:enumeration value=&quot;Q&quot;/&gt;
+         &lt;xs:enumeration value=&quot;R&quot;/&gt;
+      &lt;/xs:restriction&gt;
+   &lt;/xs:simpleType&gt;
 &lt;/xs:element&gt;
 </code></pre>
                 </div>

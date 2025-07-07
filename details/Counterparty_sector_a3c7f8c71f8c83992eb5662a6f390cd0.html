@@ -316,73 +316,35 @@ Base: xs:int
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-            name=&quot;FundsXML4&quot;&gt;
+            minOccurs=&quot;0&quot;
+            name=&quot;Counterparty_sector&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;A137 - One of the options in the following closed list should be used for CIC category 8 and for the following CIC categories if the instrument does not have an ISIN code (i.e. if Asset ID Code and Type of code C0010 does not start with either “ISIN/” or “CAU/ISIN/”): 
+
+CIC category 1, CIC category 2, CIC category 3, CIC category 5 and CIC category 6: 
+1 – central bank (ESA 2010 sector S.121)
+2 – deposit-taking corporations except the central bank (ESA 2010 sector S.122)
+3 – money market funds (ESA 2010 sector S.123)
+4 – investment funds other than money market funds (ESA 2010 sector S.124)
+5 – other financial intermediaries, except insurance corporations and pension funds (excluding financial vehicle corporations engaged in securitisation transactions) + financial auxiliaries + captive financial institutions and money lenders (ESA 2010 sector S.125 excluding FVCs + ESA 2010 sector S.126 + ESA 2010 sector S.127) 
+6 – financial vehicle corporations engaged in securitisation transactions (a subdivision of ESA 2010 sector S.125) 
+7 – insurance corporations (ESA 2010 sector S.128)
+8 – pension funds (ESA 2010 sector S.129)
+9 – non-financial corporations (ESA 2010 sector S.11)
+10 – general government (ESA 2010 sector S.13)
+11 – households and non-profit institutions serving households (ESA 2010 sector S.14 + ESA 2010 sector S.15) 
+
+For CIC category 7, one of the options in the following closed list should be selected:
+12 – central bank (ESA 2010 sector S.121), deposit-taking corporations except the central bank (ESA 2010 sector S.122) and money market funds (ESA 2010 sector S.123)
+13 – non-MFIs, not included under 12
+ &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
-   &lt;xs:complexType&gt;
-      &lt;xs:sequence&gt;
-         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-            &lt;xs:complexType&gt;
-               &lt;xs:sequence&gt;
-                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
-                     &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
-                     &lt;/xs:annotation&gt;
-                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:key&gt;
-                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:keyref&gt;
-                  &lt;/xs:element&gt;
-               &lt;/xs:sequence&gt;
-            &lt;/xs:complexType&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;AssetMgmtCompanyDynData&quot;
-                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;RegulatoryReportings&quot;
-                     type=&quot;RegulatoryReportingsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;CountrySpecificData&quot;
-                     type=&quot;CountrySpecificDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
-      &lt;/xs:sequence&gt;
-   &lt;/xs:complexType&gt;
+   &lt;xs:simpleType&gt;
+      &lt;xs:restriction base=&quot;xs:int&quot;&gt;
+         &lt;xs:minInclusive value=&quot;1&quot;/&gt;
+         &lt;xs:maxInclusive value=&quot;13&quot;/&gt;
+      &lt;/xs:restriction&gt;
+   &lt;/xs:simpleType&gt;
 &lt;/xs:element&gt;
 </code></pre>
                 </div>

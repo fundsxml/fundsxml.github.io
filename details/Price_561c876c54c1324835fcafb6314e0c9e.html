@@ -361,7 +361,57 @@
             
 
             <!-- Sektion: XML-Ausschnitt -->
-            
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML-Ausschnitt</h2>
+                <div class="rounded-lg overflow-hidden border border-slate-200">
+                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+            xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+            xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            maxOccurs=&quot;unbounded&quot;
+            name=&quot;Price&quot;&gt;
+   &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Inform on the price type (different from the official NAV) used for other price communication&lt;/xs:documentation&gt;
+   &lt;/xs:annotation&gt;
+   &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+         &lt;xs:element name=&quot;PriceType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Select the price type you would like to communicate (SWING, MATURITY, MARKET,HOLD TO MATURITY, ADJUSTED GROSS, ADJUSTED NET)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:minLength value=&quot;5&quot;/&gt;
+                  &lt;xs:maxLength value=&quot;16&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;SWING&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;MATURITY&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;MARKET&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;HOLD TO MATURITY&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;ADJUSTED GROSS&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;ADJUSTED NET&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;NavPrice&quot; type=&quot;xs:decimal&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Other price type Net Asset value calculated per share&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SubscriptionPrice&quot; type=&quot;xs:decimal&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Other price type Subscription price per share&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RedemptionPrice&quot; type=&quot;xs:decimal&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Other price type Redemption price per share&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+   &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></pre>
+                </div>
+            </section>
 
         </div>
     </div>

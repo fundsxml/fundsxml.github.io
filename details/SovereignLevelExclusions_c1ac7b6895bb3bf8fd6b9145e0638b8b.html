@@ -544,7 +544,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">53000_Financial_Instrument_Nuclear_Weapons_Exclusion</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -578,7 +578,7 @@
 A- Freedomhouse
 I - Internal method
 N - None</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">I</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">A</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -594,7 +594,7 @@ N - None</td>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">53030_Financial_Instrument_Corruption_Exclusion</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -642,7 +642,7 @@ N - None</td>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">53060_Financial_Instrument_Non_Ratification_Of_Paris_Agreement_Exclusion</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
                         </tr>
                         </tbody>
                     </table>
@@ -659,71 +659,62 @@ N - None</td>
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-            name=&quot;FundsXML4&quot;&gt;
+            minOccurs=&quot;0&quot;
+            name=&quot;SovereignLevelExclusions&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;53000 - 53060&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
-         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;NuclearWeaponsExclusion&quot; type=&quot;EETYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-            &lt;xs:complexType&gt;
-               &lt;xs:sequence&gt;
-                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
-                     &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
-                     &lt;/xs:annotation&gt;
-                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:key&gt;
-                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:keyref&gt;
-                  &lt;/xs:element&gt;
-               &lt;/xs:sequence&gt;
-            &lt;/xs:complexType&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;AssetMgmtCompanyDynData&quot;
-                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;53000_Financial_Instrument_Nuclear_Weapons_Exclusion&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;RegulatoryReportings&quot;
-                     type=&quot;RegulatoryReportingsType&quot;&gt;
+                     name=&quot;NonProliferationTreatyOfNuclearWeapons&quot;
+                     type=&quot;EETYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;53010_Financial_Instrument_Non-proliferation_Treaty_Of_Nuclear_Weapons&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;QualitativeExclusionOfCountries&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;53020_Financial_Instrument_Qualitative_Exclusion_Of_Countries:
+A- Freedomhouse
+I - Internal method
+N - None&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:enumeration value=&quot;A&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;I&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;N&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CorruptionExclusion&quot; type=&quot;EETYesNoType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;53030_Financial_Instrument_Corruption_Exclusion&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DeathSentenceExclusion&quot; type=&quot;EETYesNoType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;53040_Financial_Instrument_Death_Sentence_Exclusion&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;WarExclusion&quot; type=&quot;EETYesNoType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;53050_Financial_Instrument_War_Exclusion&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;CountrySpecificData&quot;
-                     type=&quot;CountrySpecificDataType&quot;&gt;
+                     name=&quot;NonRatificationOfParisAgreementExclusion&quot;
+                     type=&quot;EETYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;53060_Financial_Instrument_Non_Ratification_Of_Paris_Agreement_Exclusion&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
       &lt;/xs:sequence&gt;
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;

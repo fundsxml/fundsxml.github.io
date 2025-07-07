@@ -594,7 +594,7 @@
 
                             <td class="px-4 py-3 text-slate-600">A67 - Instrument type. E.g. Equity, bond, option, swap,...
 CIC codification.</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">NF46</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">QW26</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -708,71 +708,93 @@ If underlying instrument is an interest rate instrument.</td>
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-            name=&quot;FundsXML4&quot;&gt;
-   &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
-   &lt;/xs:annotation&gt;
+            name=&quot;UnderlyingInstrument&quot;&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
-         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
+         &lt;xs:element name=&quot;InstrumentCIC&quot; type=&quot;CICCodeType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A67 - Instrument type. E.g. Equity, bond, option, swap,...
+CIC codification.&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
+         &lt;xs:element name=&quot;InstrumentCode&quot; type=&quot;SIISecurityCodificationType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A69 68 - Use ISIN, CUSIP,  or OtherSecurityCodes/Name(of codification system) for BLOOMBERG, TELEKURS or Internal code&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;InstrumentName&quot; type=&quot;xs:string&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A70 - Name of underlying instrument.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;Valuation&quot;&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
-                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
+                  &lt;xs:element name=&quot;Currency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;A71 - Quotation currency (C)&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
-                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:key&gt;
-                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:keyref&gt;
+                  &lt;/xs:element&gt;
+                  &lt;xs:element name=&quot;MarketPrice&quot; type=&quot;xs:decimal&quot;&gt;
+                     &lt;xs:annotation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A72 - Last market price known, in Currency (C).&lt;/xs:documentation&gt;
+                     &lt;/xs:annotation&gt;
+                  &lt;/xs:element&gt;
+                  &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Country&quot; type=&quot;ISOCountryCodeType&quot;&gt;
+                     &lt;xs:annotation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A73 - Country of quotation&lt;/xs:documentation&gt;
+                     &lt;/xs:annotation&gt;
+                  &lt;/xs:element&gt;
+                  &lt;xs:element minOccurs=&quot;0&quot; name=&quot;EconomicArea&quot; type=&quot;EconomicAreaType&quot;&gt;
+                     &lt;xs:annotation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A74 - Economic area code of Country of quotation:
+0 non listed
+1 EEA;
+2 OECD non EEA
+3 non OECD&lt;/xs:documentation&gt;
+                     &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
             &lt;/xs:complexType&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;AssetMgmtCompanyDynData&quot;
-                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Coupon&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;If underlying instrument is an interest rate instrument.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:complexType&gt;
+               &lt;xs:sequence&gt;
+                  &lt;xs:element name=&quot;CouponRate&quot; type=&quot;PercentageType&quot;&gt;
+                     &lt;xs:annotation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A75 - Next coupon rate in percentage.
+3.5% = 3.5&lt;/xs:documentation&gt;
+                     &lt;/xs:annotation&gt;
+                  &lt;/xs:element&gt;
+                  &lt;xs:element name=&quot;CouponFrequency&quot; type=&quot;SIICouponFrequencyType&quot;&gt;
+                     &lt;xs:annotation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A76 - Coupon payment frequency as number of coupons per year
+0 = other case than
+1= annual
+2= biannual
+4= quarterly
+12= monthly
+52=Weekly&lt;/xs:documentation&gt;
+                     &lt;/xs:annotation&gt;
+                  &lt;/xs:element&gt;
+               &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Redemption&quot; type=&quot;RedemptionType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A77 78 79 - Redemption details.
+If underlying instrument is an interest rate instrument.&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CreditRiskData&quot; type=&quot;CreditRiskDataType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A80 to A89 - Issuer of underlying instrument
+(or counterparty for OTC instruments).&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;RegulatoryReportings&quot;
-                     type=&quot;RegulatoryReportingsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;CountrySpecificData&quot;
-                     type=&quot;CountrySpecificDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
       &lt;/xs:sequence&gt;
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;

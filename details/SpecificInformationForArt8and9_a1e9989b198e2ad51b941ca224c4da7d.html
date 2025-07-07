@@ -606,7 +606,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">20170_Financial_Instrument_Sustainable_Investments_Art_8 Does the art 8 product invest in sustainable investment?</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -655,7 +655,7 @@ Does the minimum specified in field 20170 include EU Taxonomy  sustainable inves
 
                             <td class="px-4 py-3 text-slate-600">20200_Financial_Instrument_Sustainable_Investment_Environmental_Not_EU_Taxonomy_Art_8
 Does the minimum specified in field 20170 include Non EU Taxonomy Environmental sustainable investment?</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -672,7 +672,7 @@ Does the minimum specified in field 20170 include Non EU Taxonomy Environmental 
 
                             <td class="px-4 py-3 text-slate-600">20210_Financial_Instrument_Sustainable_Investment_Social_Objective_Art_8
 Does the minimum specified in field 20170 include include sustainable investment with social objective?</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -756,71 +756,81 @@ Does the minimum specified in field 20210 include sustainable investments with s
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-            name=&quot;FundsXML4&quot;&gt;
+            minOccurs=&quot;0&quot;
+            name=&quot;SpecificInformationForArt8and9&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;20170 - 20250&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
-         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SustainableInvestmentsArt8&quot; type=&quot;EETYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-            &lt;xs:complexType&gt;
-               &lt;xs:sequence&gt;
-                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
-                     &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
-                     &lt;/xs:annotation&gt;
-                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:key&gt;
-                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:keyref&gt;
-                  &lt;/xs:element&gt;
-               &lt;/xs:sequence&gt;
-            &lt;/xs:complexType&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;AssetMgmtCompanyDynData&quot;
-                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;20170_Financial_Instrument_Sustainable_Investments_Art.8&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;RegulatoryReportings&quot;
-                     type=&quot;RegulatoryReportingsType&quot;&gt;
+                     name=&quot;MinimalProportionOfSustainableInvestmentsArt8&quot;
+                     type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;20180_Financial_Instrument_Products_Minimal_Proportion_Of_Sustainable_Investments_Art.8&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;CountrySpecificData&quot;
-                     type=&quot;CountrySpecificDataType&quot;&gt;
+                     name=&quot;SustainableInvestmentEUTaxonomyArt8&quot;
+                     type=&quot;EETYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;20190_Financial_Instrument_Sustainable_Investment_EU_Taxonomy_Art.8
+Does the minimum specified in field 20170 include EU Taxonomy  sustainable investment?&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;SustainableInvestmentEnvironmentalNotEUTaxonomyArt8&quot;
+                     type=&quot;EETYesNoType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20200_Financial_Instrument_Sustainable_Investment_Environmental_Not_EU_Taxonomy_Art.8
+Does the minimum specified in field 20170 include Non EU Taxonomy Environmental sustainable investment?&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;SustainableInvestmentSocialObjectiveArt8&quot;
+                     type=&quot;EETYesNoType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20210_Financial_Instrument_Sustainable_Investment_Social_Objective_Art.8
+Does the minimum specified in field 20170 include include sustainable investment with social objective?&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;SustainableInvestmentWithEnvironmentalObjectiveArt9&quot;
+                     type=&quot;xs:decimal&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20220_Financial_Instrument_Minimum_Sustainable_Investment_With_Environmental_Objective_Art.9
+For art 9 products, the minimum proportion of sustainable investments.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;EnvironmentallySustainableInvestmentEUTaxonomyArt9&quot;
+                     type=&quot;EETYesNoType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20230_Financial_Instrument_Environmentally_Sustainable_Investment_EU_Taxonomy_Art.9
+Does the minimum specified in field 20210 include EU Taxonomy Environmental sustainable investment?&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;EnvironmentallySustainableInvestmentNotEUTaxonomyArt9&quot;
+                     type=&quot;EETYesNoType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20240_Financial_Instrument_Environmentally_Sustainable_Investment_Not_EU_Taxonomy_Art.9
+Does the minimum specified in field 20210 include Non EU Taxonomy Environmental sustainable investment?&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;MinimumSustainableInvestmentSocialObjectiveArt9&quot;
+                     type=&quot;xs:decimal&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20250_Financial_Instrument_Minimum_Sustainable_Investment_Social_Objective_Art.9
+Does the minimum specified in field 20210 include sustainable investments with social objectives.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;

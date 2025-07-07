@@ -553,7 +553,7 @@ Reference of the article of SFDR european regulation applying to the product (ar
 
                             <td class="px-4 py-3 text-slate-600">20050_Financial_Instrument_SFDR_Product_Type_Eligible
 Funds not being in SFDR scope and structured products. Art 8 like, art 9 like</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">0</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">9</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -617,7 +617,7 @@ Proportion in look through of art 9 sub invested funds  for funds of funds Nav b
 
                             <td class="px-4 py-3 text-slate-600">20090_Financial_Instrument_Main_ESG_Focus
 Indication of the &quot;main focus&quot; of the Financial_Instrument ( for example E for green bonds…). E or S or G or MF (Multi focus) or Blank (if no focus at all)</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">E</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">S</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -650,71 +650,79 @@ Indication of the &quot;main focus&quot; of the Financial_Instrument ( for examp
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-            name=&quot;FundsXML4&quot;&gt;
+            name=&quot;MainCriterias&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Root element of FundsXML 4.2.9&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;20040 - 20100&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
-         &lt;xs:element name=&quot;ControlData&quot; type=&quot;ControlDataType&quot;&gt;
+         &lt;xs:element name=&quot;SFDR_ProductType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Meta data of xml document (like unique id, date, data supplier, language, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;20040_Financial_Instrument_SFDR_Product_Type
+Reference of the article of SFDR european regulation applying to the product (art 6, art 8 or art 9)
+6= no product acc. to Art. 8/9
+8= Art. 8 SFDR Product (ESG characteristics)
+9= Art. 9 SFDR product (ESG objective)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:enumeration value=&quot;0&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;6&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;8&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;9&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SFDR_ProductTypeEligible&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20050_Financial_Instrument_SFDR_Product_Type_Eligible
+Funds not being in SFDR scope and structured products. Art 8 like, art 9 like&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:enumeration value=&quot;0&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;6&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;8&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;9&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ESG_LabelOrStandard&quot; type=&quot;xs:string&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20060_Financial_Instrument_ESG_Label_Or_Standard
+Disclosure of applicable ESG Label/s&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Funds&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Minimum_SFDR_Art_8_Funds&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of funds, umbrellas, sicavs, portfolios ...&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-            &lt;xs:complexType&gt;
-               &lt;xs:sequence&gt;
-                  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Fund&quot; type=&quot;FundType&quot;&gt;
-                     &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
-                     &lt;/xs:annotation&gt;
-                     &lt;xs:key name=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:key&gt;
-                     &lt;xs:keyref name=&quot;benchmarkDynamicRef&quot; refer=&quot;benchmarkID&quot;&gt;
-                        &lt;xs:selector xpath=&quot;FundDynamicData/Benchmarks/Benchmark&quot;/&gt;
-                        &lt;xs:field xpath=&quot;BenchmarkID&quot;/&gt;
-                     &lt;/xs:keyref&gt;
-                  &lt;/xs:element&gt;
-               &lt;/xs:sequence&gt;
-            &lt;/xs:complexType&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;AssetMgmtCompanyDynData&quot;
-                     type=&quot;AssetMgmtCompanyDynDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Dynamic data of asset management companies&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;20070_Financial_Instrument_%_Of_Minimum_SFDR_Art_8_Funds 
+Proportion in look through of art 8 sub invested funds. Nav based&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetMasterData&quot; type=&quot;AssetMasterDataType&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Minimum_SFDR_Art_9_Funds&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Master data of securities, derivatives and all other portfolio assets&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;20080_Financial_Instrument_%_Of_Minimum_SFDR_Art_9_Funds
+Proportion in look through of art 9 sub invested funds. Nav based&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Documents&quot; type=&quot;DocumentsType&quot;&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Main_ESG_Focus&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;List of documents related to Fund / Subfunds / Share Classes (with link and/or content along with document attributes like type, format, language, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;20090_Financial_Instrument_Main_ESG_Focus
+Indication of the &quot;main focus&quot; of the Financial_Instrument ( for example E for green bonds…). E or S or G.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:enumeration value=&quot;E&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;S&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;G&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;ConsidersPrincipleAdverseImpact&quot; type=&quot;EETYesNoType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;20100_Financial_Instrument_Does_This_Product_Consider_Principle_Adverse_Impact_In_Their_Investment&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;RegulatoryReportings&quot;
-                     type=&quot;RegulatoryReportingsType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Direct and indirect regulatory reporting&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot;
-                     name=&quot;CountrySpecificData&quot;
-                     type=&quot;CountrySpecificDataType&quot;&gt;
-            &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Country specific data on top level (as defined in &#39;FundsXML4_CountrySpecificData_xx.xsd&#39;)&lt;/xs:documentation&gt;
-            &lt;/xs:annotation&gt;
-         &lt;/xs:element&gt;
-         &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;ds:Signature&quot;/&gt;
       &lt;/xs:sequence&gt;
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;
