@@ -183,7 +183,23 @@
         <!-- Karten-Header mit Elementname und XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">CountryFigures</h1>
-            <p class="mt-1 text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/FundData/AnnualReturnsStructure/CountryDistribution/CountryFigures</p>
+            <!-- KORREKTUR: Der p-Tag wurde durch einen flex-Container ersetzt, der den Text und einen Kopier-Button enthält -->
+            <div class="flex items-center space-x-2 mt-1">
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/FundData/AnnualReturnsStructure/CountryDistribution/CountryFigures</p>
+                <!-- Button zum Kopieren des XPath in die Zwischenablage -->
+                <button onclick="copyToClipboard(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/FundData/AnnualReturnsStructure/CountryDistribution/CountryFigures">
+                    <!-- Das Kopier-Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <!-- Tooltip, der beim Hovern erscheint und nach dem Klick den Status anzeigt -->
+                    <span id="tooltip-text"
+                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy XPath
+                    </span>
+                </button>
+            </div>
         </header>
 
         <!-- Karten-Body mit allen Detail-Sektionen -->
@@ -200,7 +216,7 @@
                         <!-- Fall 1: Wenn der Typ 'SVG' ist, füge den SVG-Code direkt ein -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f8fafc"
-     width="492.0"
+     width="512.0"
      height="867.96875">
    <defs>
       <filter width="140%"
@@ -246,16 +262,28 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 146.0 393.19921875 H 186.0"/>
-   <rect x="186.0"
-         y="383.19921875"
-         fill="#f1f5f9"
-         width="20.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         rx="4"
-         id="seq-rect_CountryFigures"
-         height="20.0"/>
-   <rect x="246.0"
+         d="M 146.0 393.19921875 H 176.0"/>
+   <g id="seq-group_CountryFigures">
+      <rect x="176.0"
+            y="383.19921875"
+            fill="#f1f5f9"
+            width="40.0"
+            style="stroke: #475569; stroke-width: 1.5;"
+            rx="4"
+            height="20.0"/>
+      <line y2="393.19921875"
+            style="stroke: #64748b; stroke-width: 1;"
+            x1="181.0"
+            x2="211.0"
+            y1="393.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="188.0" cy="393.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="196.0" cy="393.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="204.0" cy="393.19921875"/>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
+         fill="none"
+         d="M 216.0 393.19921875 h 20.0"/>
+   <rect x="266.0"
          y="20.0"
          fill="#f1f5f9"
          width="216.0"
@@ -266,18 +294,18 @@
          height="64.796875"
          id="GrossYield"/>
    <g>
-      <text x="256.0"
+      <text x="276.0"
             fill="#0f172a"
             y="48.3984375"
             font-size="16"
             font-family="Arial">GrossYield</text>
       <line y2="52.3984375"
             stroke-width="1"
-            x1="256.0"
-            x2="452.0"
+            x1="276.0"
+            x2="472.0"
             stroke="#e2e8f0"
             y1="52.3984375"/>
-      <text x="256.0"
+      <text x="276.0"
             fill="#64748b"
             y="72.796875"
             font-size="14"
@@ -285,13 +313,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 206.0 393.19921875 V 52.3984375 H 246.0"/>
-   <text x="215.0"
+         d="M 236.0 393.19921875 V 52.3984375 H 266.0"/>
+   <text x="238.0"
          fill="#64748b"
          y="47.3984375"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="246.0"
+   <rect x="266.0"
          y="104.796875"
          fill="#f1f5f9"
          width="216.0"
@@ -302,18 +330,18 @@
          height="64.796875"
          id="OperatingCosts"/>
    <g>
-      <text x="256.0"
+      <text x="276.0"
             fill="#0f172a"
             y="133.1953125"
             font-size="16"
             font-family="Arial">OperatingCosts</text>
       <line y2="137.1953125"
             stroke-width="1"
-            x1="256.0"
-            x2="452.0"
+            x1="276.0"
+            x2="472.0"
             stroke="#e2e8f0"
             y1="137.1953125"/>
-      <text x="256.0"
+      <text x="276.0"
             fill="#64748b"
             y="157.59375"
             font-size="14"
@@ -321,13 +349,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 206.0 393.19921875 V 137.1953125 H 246.0"/>
-   <text x="215.0"
+         d="M 236.0 393.19921875 V 137.1953125 H 266.0"/>
+   <text x="238.0"
          fill="#64748b"
          y="132.1953125"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="246.0"
+   <rect x="266.0"
          y="189.59375"
          fill="#f1f5f9"
          width="216.0"
@@ -338,18 +366,18 @@
          height="64.796875"
          id="NetYield"/>
    <g>
-      <text x="256.0"
+      <text x="276.0"
             fill="#0f172a"
             y="217.9921875"
             font-size="16"
             font-family="Arial">NetYield</text>
       <line y2="221.9921875"
             stroke-width="1"
-            x1="256.0"
-            x2="452.0"
+            x1="276.0"
+            x2="472.0"
             stroke="#e2e8f0"
             y1="221.9921875"/>
-      <text x="256.0"
+      <text x="276.0"
             fill="#64748b"
             y="242.390625"
             font-size="14"
@@ -357,13 +385,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 206.0 393.19921875 V 221.9921875 H 246.0"/>
-   <text x="215.0"
+         d="M 236.0 393.19921875 V 221.9921875 H 266.0"/>
+   <text x="238.0"
          fill="#64748b"
          y="216.9921875"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="246.0"
+   <rect x="266.0"
          y="274.390625"
          fill="#f1f5f9"
          width="216.0"
@@ -374,18 +402,18 @@
          height="64.796875"
          id="ChangeInValue"/>
    <g>
-      <text x="256.0"
+      <text x="276.0"
             fill="#0f172a"
             y="302.7890625"
             font-size="16"
             font-family="Arial">ChangeInValue</text>
       <line y2="306.7890625"
             stroke-width="1"
-            x1="256.0"
-            x2="452.0"
+            x1="276.0"
+            x2="472.0"
             stroke="#e2e8f0"
             y1="306.7890625"/>
-      <text x="256.0"
+      <text x="276.0"
             fill="#64748b"
             y="327.1875"
             font-size="14"
@@ -393,13 +421,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 206.0 393.19921875 V 306.7890625 H 246.0"/>
-   <text x="215.0"
+         d="M 236.0 393.19921875 V 306.7890625 H 266.0"/>
+   <text x="238.0"
          fill="#64748b"
          y="301.7890625"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="246.0"
+   <rect x="266.0"
          y="359.1875"
          fill="#f1f5f9"
          width="216.0"
@@ -410,18 +438,18 @@
          height="64.796875"
          id="ForeignIncomeTax"/>
    <g>
-      <text x="256.0"
+      <text x="276.0"
             fill="#0f172a"
             y="387.5859375"
             font-size="16"
             font-family="Arial">ForeignIncomeTax</text>
       <line y2="391.5859375"
             stroke-width="1"
-            x1="256.0"
-            x2="452.0"
+            x1="276.0"
+            x2="472.0"
             stroke="#e2e8f0"
             y1="391.5859375"/>
-      <text x="256.0"
+      <text x="276.0"
             fill="#64748b"
             y="411.984375"
             font-size="14"
@@ -429,13 +457,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 206.0 393.19921875 V 391.5859375 H 246.0"/>
-   <text x="215.0"
+         d="M 236.0 393.19921875 V 391.5859375 H 266.0"/>
+   <text x="238.0"
          fill="#64748b"
          y="386.5859375"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="246.0"
+   <rect x="266.0"
          y="443.984375"
          fill="#f1f5f9"
          width="216.0"
@@ -446,18 +474,18 @@
          height="64.796875"
          id="ForeignDeferredIncomeTax"/>
    <g>
-      <text x="256.0"
+      <text x="276.0"
             fill="#0f172a"
             y="472.3828125"
             font-size="16"
             font-family="Arial">ForeignDeferredIncomeTax</text>
       <line y2="476.3828125"
             stroke-width="1"
-            x1="256.0"
-            x2="452.0"
+            x1="276.0"
+            x2="472.0"
             stroke="#e2e8f0"
             y1="476.3828125"/>
-      <text x="256.0"
+      <text x="276.0"
             fill="#64748b"
             y="496.78125"
             font-size="14"
@@ -465,13 +493,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 206.0 393.19921875 V 476.3828125 H 246.0"/>
-   <text x="215.0"
+         d="M 236.0 393.19921875 V 476.3828125 H 266.0"/>
+   <text x="238.0"
          fill="#64748b"
          y="471.3828125"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="246.0"
+   <rect x="266.0"
          y="528.78125"
          fill="#f1f5f9"
          width="216.0"
@@ -482,18 +510,18 @@
          height="64.796875"
          id="ReturnBeforeCreditExpense"/>
    <g>
-      <text x="256.0"
+      <text x="276.0"
             fill="#0f172a"
             y="557.1796875"
             font-size="16"
             font-family="Arial">ReturnBeforeCreditExpense</text>
       <line y2="561.1796875"
             stroke-width="1"
-            x1="256.0"
-            x2="452.0"
+            x1="276.0"
+            x2="472.0"
             stroke="#e2e8f0"
             y1="561.1796875"/>
-      <text x="256.0"
+      <text x="276.0"
             fill="#64748b"
             y="581.578125"
             font-size="14"
@@ -501,13 +529,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 206.0 393.19921875 V 561.1796875 H 246.0"/>
-   <text x="215.0"
+         d="M 236.0 393.19921875 V 561.1796875 H 266.0"/>
+   <text x="238.0"
          fill="#64748b"
          y="556.1796875"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="246.0"
+   <rect x="266.0"
          y="613.578125"
          fill="#f1f5f9"
          width="216.0"
@@ -518,18 +546,18 @@
          height="64.796875"
          id="ReturnAfterCreditExpense"/>
    <g>
-      <text x="256.0"
+      <text x="276.0"
             fill="#0f172a"
             y="641.9765625"
             font-size="16"
             font-family="Arial">ReturnAfterCreditExpense</text>
       <line y2="645.9765625"
             stroke-width="1"
-            x1="256.0"
-            x2="452.0"
+            x1="276.0"
+            x2="472.0"
             stroke="#e2e8f0"
             y1="645.9765625"/>
-      <text x="256.0"
+      <text x="276.0"
             fill="#64748b"
             y="666.375"
             font-size="14"
@@ -537,13 +565,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 206.0 393.19921875 V 645.9765625 H 246.0"/>
-   <text x="215.0"
+         d="M 236.0 393.19921875 V 645.9765625 H 266.0"/>
+   <text x="238.0"
          fill="#64748b"
          y="640.9765625"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="246.0"
+   <rect x="266.0"
          y="698.375"
          fill="#f1f5f9"
          width="216.0"
@@ -554,18 +582,18 @@
          height="64.796875"
          id="CurrencyChange"/>
    <g>
-      <text x="256.0"
+      <text x="276.0"
             fill="#0f172a"
             y="726.7734375"
             font-size="16"
             font-family="Arial">CurrencyChange</text>
       <line y2="730.7734375"
             stroke-width="1"
-            x1="256.0"
-            x2="452.0"
+            x1="276.0"
+            x2="472.0"
             stroke="#e2e8f0"
             y1="730.7734375"/>
-      <text x="256.0"
+      <text x="276.0"
             fill="#64748b"
             y="751.171875"
             font-size="14"
@@ -573,13 +601,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 206.0 393.19921875 V 730.7734375 H 246.0"/>
-   <text x="215.0"
+         d="M 236.0 393.19921875 V 730.7734375 H 266.0"/>
+   <text x="238.0"
          fill="#64748b"
          y="725.7734375"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="246.0"
+   <rect x="266.0"
          y="783.171875"
          fill="#f1f5f9"
          width="216.0"
@@ -590,18 +618,18 @@
          height="64.796875"
          id="TotalReturn"/>
    <g>
-      <text x="256.0"
+      <text x="276.0"
             fill="#0f172a"
             y="811.5703125"
             font-size="16"
             font-family="Arial">TotalReturn</text>
       <line y2="815.5703125"
             stroke-width="1"
-            x1="256.0"
-            x2="452.0"
+            x1="276.0"
+            x2="472.0"
             stroke="#e2e8f0"
             y1="815.5703125"/>
-      <text x="256.0"
+      <text x="276.0"
             fill="#64748b"
             y="835.96875"
             font-size="14"
@@ -609,8 +637,8 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 206.0 393.19921875 V 815.5703125 H 246.0"/>
-   <text x="215.0"
+         d="M 236.0 393.19921875 V 815.5703125 H 266.0"/>
+   <text x="238.0"
          fill="#64748b"
          y="810.5703125"
          font-size="12"
@@ -681,7 +709,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Die Kennzahl ist bezogen auf das durchschnittliche direkt und indirekt gehaltene Immobilienvermögen des Fonds im jeweiligen Land. Bei Direktinvestments fließen die Positionen &quot;Erträge aus Immobilien&quot; und &quot;Eigengeldverzinsung&quot; der Ertrags- und Aufwandsrechnung ganz in die Berechnung ein. Die Position &quot;Sonstige Erträge&quot; wird eingerechnet, soweit die sonstigen Erträge immobilienbezogen sind (in Prozent).The ratio is based on the average directly and indirectly held real estate assets of the fund in the respective country. In the case of direct investments, the items &quot;Income from real estate&quot; and &quot;Interest on own funds&quot; in the income statement are included. The item &quot;Other income&quot; is included insofar as the other income is real estate-related (in percent).</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">761.30</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -697,7 +725,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Bei Angaben, die direkt gehaltene Immobilien beinhalten, sind die Positionen &quot;Bewirtschaftungskosten&quot; und &quot;Erbbauzinsen, Leib- und Zeitrenten&quot; der Ertrags- und Aufwandsrechnung zu berücksichtigen. Bei Angaben mit Daten von Beteiligungen sind hier Positionen zu berücksichtigen, die sich nicht in der Ertrags- und Aufwandsrechnung des Fonds wiederfinden (in Prozent).In the case of data containing directly held real estate, the items &quot;Management costs&quot; and &quot;Ground rents, life annuities and temporary annuities&quot; in the income statement must be taken into account. In the case of information on indirectly held real estate, items that are not reflected in the income statement of the fund must be taken into account (in percent).</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">876.86</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -713,7 +741,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Die Kennzahl ergibt sich aus der Kennzahl „Bruttoertrag“ minus Kennzahl „Bewirtschaftungsaufwand“ (in Prozent).The ratio is calculated from the ratio &quot;gross income&quot; minus the ratio &quot;operating expenses&quot; (in percent).</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">6.21</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -729,7 +757,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Es sind die „Wertänderungen lt. Gutachten insgesamt“ sowie „Sonstige Wertänderungen insgesamt“ entsprechend der „Information zu Wertänderungen“ zu berücksichtigen (in Prozent). (vgl. BVI-Bearbeitungshinweise zu den Angaben in den Jahres- und Halbjahresberichten für Immobilien-Sondervermögen)The &quot;Total changes in value according to expert reports&quot; and &quot;Total other changes in value&quot; must be taken into account in accordance with the &quot;Information on changes in value&quot; (in percent). (see BVI processing notes on the disclosures in the annual and semiannual reports for real estate funds)</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">286.55</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -745,7 +773,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Zu berücksichtigen sind hier tatsächlich angefallene ausländische Steuern sowie Rückstellungen für Ertragsteuer (in Prozent).Actual foreign taxes incurred and provisions for income taxes must be taken into account (in percent).</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">765.21</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -761,7 +789,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Die Kennzahl beschreibt den Einfluss von Rückstellungen für sogenannte Capital Gain Taxes (CGT-Rückstellungen) auf die Immobilienrendite (in Prozent).This indicator describes the impact of provisions for capital gain taxes on property returns (in percent).</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">877.70</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -777,7 +805,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Die Kennzahl errechnet sich aus Kennzahl „Nettoertrag“ plus/minus Kennzahl „Wertänderungen“, minus Kennzahl „ausländische Ertragssteuern“, minus Kennzahl „ausländische latente Steuern“ (in Prozent).The figure is calculated from &quot;net income&quot; plus/minus &quot;changes in value,&quot; minus &quot;foreign income taxes,&quot; minus &quot;foreign deferred taxes&quot; (in percent).</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">819.32</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -793,7 +821,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Die Kennzahl leitet sich bei direkt gehaltenen Immobilien aus der Kennzahl „Ergebnis vor Darlehensaufwand“ ab, indem &quot;Zinsen aus Kreditaufnahmen&quot; der Ertrags- und Aufwandsrechnung berücksichtigt werden. Enthalten die Angaben Daten von Beteiligungen, dann werden Gesellschafterdarlehen an Beteiligungsgesellschaften nicht in diese Abzugsposition mit eingerechnet. Zinsaufwendungen für andere Darlehen in Beteiligungsgesellschaften sind zu berücksichtigen (in Prozent).In the case of directly held real estate, the figure is derived from the &quot;income before credit expenses&quot; figure by taking into account &quot;interest from borrowings&quot; in the income statement. If the data contains data from indirectly held real estate, then shareholder loans to investees are not included. Interest expense on other loans in investees must be included (in percent).</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">306.98</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -809,7 +837,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Zu berücksichtigen sind sämtliche Währungskursveränderungen, die in Posten &quot;nicht realisiertes Ergebnis des Geschäftsjahres&quot; der Ertrags- und Aufwandsrechnung einfließen, unabhängig davon, ob sich die Änderungen auf Immobilien oder auf die Liquidität beziehen (in Prozent).All changes in exchange rates that are included in the item &quot;unrealized result for the financial year&quot; in the income statement must be taken into account, irrespective of whether the changes relate to real estate or to liquidity (in percent).</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">344.15</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -825,7 +853,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Diese Kennzahl errechnet sich aus der Kennzahl „Ergebnis nach Darlehensaufwand in Währung“ plus Kennzahl „Währungsänderung“ (in Prozent).This figure is calculated from the ratio &quot;profit after borrowing costs in currency&quot; plus the ratio &quot;change in currency&quot; (in percent).</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">259.38</td>
                         </tr>
                         </tbody>
                     </table>
@@ -854,5 +882,35 @@
 
 <!-- Skripte am Ende laden -->
 <script src="../assets/prism.js"></script>
+
+<!-- NEU: JavaScript für die Kopier-Funktionalität -->
+<script>
+    function copyToClipboard(buttonElement) {
+        const textToCopy = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('#tooltip-text');
+
+        // Moderne Methode zum Kopieren in die Zwischenablage
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            // Erfolg: Zeige eine Bestätigung im Tooltip an
+            tooltip.textContent = 'Copied!';
+            // Setze den Tooltip-Text nach 2 Sekunden zurück
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        }).catch(err => {
+            // Fehlerfall: Gib eine Fehlermeldung aus
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy text: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
 </body>
 </html>

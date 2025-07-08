@@ -203,7 +203,23 @@
         <!-- Karten-Header mit Elementname und XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">Bond</h1>
-            <p class="mt-1 text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond</p>
+            <!-- KORREKTUR: Der p-Tag wurde durch einen flex-Container ersetzt, der den Text und einen Kopier-Button enthält -->
+            <div class="flex items-center space-x-2 mt-1">
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond</p>
+                <!-- Button zum Kopieren des XPath in die Zwischenablage -->
+                <button onclick="copyToClipboard(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond">
+                    <!-- Das Kopier-Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <!-- Tooltip, der beim Hovern erscheint und nach dem Klick den Status anzeigt -->
+                    <span id="tooltip-text"
+                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy XPath
+                    </span>
+                </button>
+            </div>
         </header>
 
         <!-- Karten-Body mit allen Detail-Sektionen -->
@@ -220,7 +236,7 @@
                         <!-- Fall 1: Wenn der Typ 'SVG' ist, füge den SVG-Code direkt ein -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f8fafc"
-     width="454.0"
+     width="474.0"
      height="1970.328125">
    <defs>
       <filter width="140%"
@@ -271,16 +287,28 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 77.0 892.19921875 H 117.0"/>
-   <rect x="117.0"
-         y="882.19921875"
-         fill="#f1f5f9"
-         width="20.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         rx="4"
-         id="seq-rect_Bond"
-         height="20.0"/>
-   <rect x="177.0"
+         d="M 77.0 892.19921875 H 107.0"/>
+   <g id="seq-group_Bond">
+      <rect x="107.0"
+            y="882.19921875"
+            fill="#f1f5f9"
+            width="40.0"
+            style="stroke: #475569; stroke-width: 1.5;"
+            rx="4"
+            height="20.0"/>
+      <line y2="892.19921875"
+            style="stroke: #64748b; stroke-width: 1;"
+            x1="112.0"
+            x2="142.0"
+            y1="892.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="119.0" cy="892.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="127.0" cy="892.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="135.0" cy="892.19921875"/>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
+         fill="none"
+         d="M 147.0 892.19921875 h 20.0"/>
+   <rect x="197.0"
          y="20.0"
          fill="#f1f5f9"
          width="247.0"
@@ -291,18 +319,18 @@
          height="64.796875"
          id="Nominal"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="48.3984375"
             font-size="16"
             font-family="Arial">Nominal</text>
       <line y2="52.3984375"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="52.3984375"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="72.796875"
             font-size="14"
@@ -310,13 +338,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 137.0 892.19921875 V 52.3984375 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 52.3984375 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="47.3984375"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="177.0"
+   <rect x="197.0"
          y="104.796875"
          fill="#f1f5f9"
          width="247.0"
@@ -327,18 +355,18 @@
          height="64.796875"
          id="OriginalFace"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="133.1953125"
             font-size="16"
             font-family="Arial">OriginalFace</text>
       <line y2="137.1953125"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="137.1953125"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="157.59375"
             font-size="14"
@@ -346,14 +374,14 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 137.1953125 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 137.1953125 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="132.1953125"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="Price_c59777e96a17a1b10f086bc27910356e.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="189.59375"
             fill="#f1f5f9"
             width="247.0"
@@ -364,38 +392,38 @@
             height="64.796875"
             id="Price"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="217.9921875"
                font-size="16"
                font-family="Arial">Price</text>
          <line y2="221.9921875"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="221.9921875"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="242.390625"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="211.9921875"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 221.9921875 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 221.9921875 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="216.9921875"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="OtherPrices_b5dfbed5037e355c307e2d0869690430.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="274.390625"
             fill="#f1f5f9"
             width="247.0"
@@ -406,38 +434,38 @@
             height="64.796875"
             id="OtherPrices"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="302.7890625"
                font-size="16"
                font-family="Arial">OtherPrices</text>
          <line y2="306.7890625"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="306.7890625"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="327.1875"
                font-size="14"
                font-family="Arial">OtherPricesType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="296.7890625"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 306.7890625 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 306.7890625 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="301.7890625"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="DirtyPrice_9cd26f4b9846efa146d5903f5c131d67.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="359.1875"
             fill="#f1f5f9"
             width="247.0"
@@ -448,38 +476,38 @@
             height="64.796875"
             id="DirtyPrice"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="387.5859375"
                font-size="16"
                font-family="Arial">DirtyPrice</text>
          <line y2="391.5859375"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="391.5859375"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="411.984375"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="381.5859375"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 391.5859375 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 391.5859375 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="386.5859375"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="MarketValue_065968321e0ecc2677a079b94b2b9f6f.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="443.984375"
             fill="#f1f5f9"
             width="247.0"
@@ -490,38 +518,38 @@
             height="64.796875"
             id="MarketValue"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="472.3828125"
                font-size="16"
                font-family="Arial">MarketValue</text>
          <line y2="476.3828125"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="476.3828125"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="496.78125"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="466.3828125"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 476.3828125 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 476.3828125 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="471.3828125"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="InterestClaimNet_ce2a03538e1493485ccb708f54d29894.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="528.78125"
             fill="#f1f5f9"
             width="247.0"
@@ -532,38 +560,38 @@
             height="64.796875"
             id="InterestClaimNet"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="557.1796875"
                font-size="16"
                font-family="Arial">InterestClaimNet</text>
          <line y2="561.1796875"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="561.1796875"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="581.578125"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="551.1796875"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 561.1796875 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 561.1796875 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="556.1796875"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="InterestClaimGross_872df53f334c844f8ff817ce869a2a1d.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="613.578125"
             fill="#f1f5f9"
             width="247.0"
@@ -574,37 +602,37 @@
             height="64.796875"
             id="InterestClaimGross"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="641.9765625"
                font-size="16"
                font-family="Arial">InterestClaimGross</text>
          <line y2="645.9765625"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="645.9765625"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="666.375"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="635.9765625"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 645.9765625 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 645.9765625 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="640.9765625"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="177.0"
+   <rect x="197.0"
          y="698.375"
          fill="#f1f5f9"
          width="247.0"
@@ -615,18 +643,18 @@
          height="64.796875"
          id="AccruedInterestDays"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="726.7734375"
             font-size="16"
             font-family="Arial">AccruedInterestDays</text>
       <line y2="730.7734375"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="730.7734375"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="751.171875"
             font-size="14"
@@ -634,14 +662,14 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 730.7734375 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 730.7734375 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="725.7734375"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="ZeroBondInterestClaimNet_89cd98222484bda3d04f881119062485.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="783.171875"
             fill="#f1f5f9"
             width="247.0"
@@ -652,38 +680,38 @@
             height="64.796875"
             id="ZeroBondInterestClaimNet"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="811.5703125"
                font-size="16"
                font-family="Arial">ZeroBondInterestClaimNet</text>
          <line y2="815.5703125"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="815.5703125"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="835.96875"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="805.5703125"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 815.5703125 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 815.5703125 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="810.5703125"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="ZeroBondInterestClaimGross_d214b2af1d794e456d49c758be113277.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="867.96875"
             fill="#f1f5f9"
             width="247.0"
@@ -694,38 +722,38 @@
             height="64.796875"
             id="ZeroBondInterestClaimGross"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="896.3671875"
                font-size="16"
                font-family="Arial">ZeroBondInterestClaimGross</text>
          <line y2="900.3671875"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="900.3671875"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="920.765625"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="890.3671875"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 900.3671875 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 900.3671875 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="895.3671875"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="ZeroBondCapitalYieldsTaxClaim_720bb8b15ccd685dcfcae7544c3fd0d9.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="952.765625"
             fill="#f1f5f9"
             width="247.0"
@@ -736,37 +764,37 @@
             height="64.796875"
             id="ZeroBondCapitalYieldsTaxClaim"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="981.1640625"
                font-size="16"
                font-family="Arial">ZeroBondCapitalYieldsTaxClaim</text>
          <line y2="985.1640625"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="985.1640625"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="1005.5625"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="975.1640625"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 985.1640625 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 985.1640625 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="980.1640625"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="177.0"
+   <rect x="197.0"
          y="1037.5625"
          fill="#f1f5f9"
          width="247.0"
@@ -777,18 +805,18 @@
          height="64.796875"
          id="ZeroBondYield"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="1065.9609375"
             font-size="16"
             font-family="Arial">ZeroBondYield</text>
       <line y2="1069.9609375"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="1069.9609375"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="1090.359375"
             font-size="14"
@@ -796,13 +824,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1069.9609375 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1069.9609375 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1064.9609375"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="177.0"
+   <rect x="197.0"
          y="1122.359375"
          fill="#f1f5f9"
          width="247.0"
@@ -813,18 +841,18 @@
          height="64.796875"
          id="Indexfactor"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="1150.7578125"
             font-size="16"
             font-family="Arial">Indexfactor</text>
       <line y2="1154.7578125"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="1154.7578125"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="1175.15625"
             font-size="14"
@@ -832,13 +860,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1154.7578125 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1154.7578125 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1149.7578125"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="177.0"
+   <rect x="197.0"
          y="1207.15625"
          fill="#f1f5f9"
          width="247.0"
@@ -849,18 +877,18 @@
          height="64.796875"
          id="Poolfactor"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="1235.5546875"
             font-size="16"
             font-family="Arial">Poolfactor</text>
       <line y2="1239.5546875"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="1239.5546875"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="1259.953125"
             font-size="14"
@@ -868,14 +896,14 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1239.5546875 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1239.5546875 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1234.5546875"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="BookRate_159d2363c221f80fb266884f4cb05ea0.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="1291.953125"
             fill="#f1f5f9"
             width="247.0"
@@ -886,38 +914,38 @@
             height="64.796875"
             id="BookRate"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="1320.3515625"
                font-size="16"
                font-family="Arial">BookRate</text>
          <line y2="1324.3515625"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="1324.3515625"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="1344.75"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="1314.3515625"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1324.3515625 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1324.3515625 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1319.3515625"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="PurchaseValue_83870ad7270121cb3423f69ae917fb3b.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="1376.75"
             fill="#f1f5f9"
             width="247.0"
@@ -928,37 +956,37 @@
             height="64.796875"
             id="PurchaseValue"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="1405.1484375"
                font-size="16"
                font-family="Arial">PurchaseValue</text>
          <line y2="1409.1484375"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="1409.1484375"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="1429.546875"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="1399.1484375"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1409.1484375 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1409.1484375 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1404.1484375"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="177.0"
+   <rect x="197.0"
          y="1461.546875"
          fill="#f1f5f9"
          width="247.0"
@@ -969,18 +997,18 @@
          height="64.796875"
          id="AcrualIndexedBond"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="1489.9453125"
             font-size="16"
             font-family="Arial">AcrualIndexedBond</text>
       <line y2="1493.9453125"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="1493.9453125"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="1514.34375"
             font-size="14"
@@ -988,13 +1016,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1493.9453125 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1493.9453125 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1488.9453125"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="177.0"
+   <rect x="197.0"
          y="1546.34375"
          fill="#f1f5f9"
          width="247.0"
@@ -1005,18 +1033,18 @@
          height="64.796875"
          id="DateLastCouponPayment"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="1574.7421875"
             font-size="16"
             font-family="Arial">DateLastCouponPayment</text>
       <line y2="1578.7421875"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="1578.7421875"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="1599.140625"
             font-size="14"
@@ -1024,13 +1052,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1578.7421875 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1578.7421875 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1573.7421875"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="177.0"
+   <rect x="197.0"
          y="1631.140625"
          fill="#f1f5f9"
          width="247.0"
@@ -1041,18 +1069,18 @@
          height="64.796875"
          id="LendedFlag"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="1659.5390625"
             font-size="16"
             font-family="Arial">LendedFlag</text>
       <line y2="1663.5390625"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="1663.5390625"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="1683.9375"
             font-size="14"
@@ -1060,13 +1088,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1663.5390625 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1663.5390625 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1658.5390625"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="177.0"
+   <rect x="197.0"
          y="1715.9375"
          fill="#f1f5f9"
          width="247.0"
@@ -1077,18 +1105,18 @@
          height="64.796875"
          id="LendedUnits"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="1744.3359375"
             font-size="16"
             font-family="Arial">LendedUnits</text>
       <line y2="1748.3359375"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="1748.3359375"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="1768.734375"
             font-size="14"
@@ -1096,13 +1124,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1748.3359375 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1748.3359375 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1743.3359375"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="177.0"
+   <rect x="197.0"
          y="1800.734375"
          fill="#f1f5f9"
          width="247.0"
@@ -1113,18 +1141,18 @@
          height="64.796875"
          id="IndicatorRaffled"/>
    <g>
-      <text x="187.0"
+      <text x="207.0"
             fill="#0f172a"
             y="1829.1328125"
             font-size="16"
             font-family="Arial">IndicatorRaffled</text>
       <line y2="1833.1328125"
             stroke-width="1"
-            x1="187.0"
-            x2="414.0"
+            x1="207.0"
+            x2="434.0"
             stroke="#e2e8f0"
             y1="1833.1328125"/>
-      <text x="187.0"
+      <text x="207.0"
             fill="#64748b"
             y="1853.53125"
             font-size="14"
@@ -1132,14 +1160,14 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1833.1328125 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1833.1328125 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1828.1328125"
          font-size="12"
          font-family="Arial">0..1</text>
    <a href="CollateralValue_a9377758068b9712a005a9c4c10928fe.html">
-      <rect x="177.0"
+      <rect x="197.0"
             y="1885.53125"
             fill="#f1f5f9"
             width="247.0"
@@ -1150,32 +1178,32 @@
             height="64.796875"
             id="CollateralValue"/>
       <g>
-         <text x="187.0"
+         <text x="207.0"
                fill="#0f172a"
                y="1913.9296875"
                font-size="16"
                font-family="Arial">CollateralValue</text>
          <line y2="1917.9296875"
                stroke-width="1"
-               x1="187.0"
-               x2="414.0"
+               x1="207.0"
+               x2="434.0"
                stroke="#e2e8f0"
                y1="1917.9296875"/>
-         <text x="187.0"
+         <text x="207.0"
                fill="#64748b"
                y="1938.328125"
                font-size="14"
                font-family="Arial">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="426.0"
+           x="446.0"
            y="1907.9296875"
            xlink:href="#plus-icon"/>
    </a>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 137.0 892.19921875 V 1917.9296875 H 177.0"/>
-   <text x="146.0"
+         d="M 167.0 892.19921875 V 1917.9296875 H 197.0"/>
+   <text x="169.0"
          fill="#64748b"
          y="1912.9296875"
          font-size="12"
@@ -1254,7 +1282,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Nominal value (units) of bondNominale/Stückzahl der Rentenposition</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">362.73</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1269,7 +1297,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Par value of a bond when it has been bought</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">827.13</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1380,7 +1408,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Number of accrued interest daysAnzahl der Stueckzins Tage an</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">100</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">6481</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1443,7 +1471,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Yield of zero bond (percentage)Null-Coupon-Anleihenrendite (in Prozent)</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">92.53</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1458,7 +1486,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Index factor of bondIndexfaktor der Anleihe</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">992.25</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1473,7 +1501,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Pool factor of bondPoolfaktor der Anleihe</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">64.82</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1535,7 +1563,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Date when last coupon will be payedDatum an dem der letzte Kupon gezahlt wird</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2025-07-07</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2022-12-26</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1550,7 +1578,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Indicates whether (part of) position is lendedGibt an, ob Bestand (teilweise) verliehen ist</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1565,7 +1593,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">Number of lended unitsVerliehende Stücke</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">910.61</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1630,5 +1658,35 @@
 
 <!-- Skripte am Ende laden -->
 <script src="../assets/prism.js"></script>
+
+<!-- NEU: JavaScript für die Kopier-Funktionalität -->
+<script>
+    function copyToClipboard(buttonElement) {
+        const textToCopy = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('#tooltip-text');
+
+        // Moderne Methode zum Kopieren in die Zwischenablage
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            // Erfolg: Zeige eine Bestätigung im Tooltip an
+            tooltip.textContent = 'Copied!';
+            // Setze den Tooltip-Text nach 2 Sekunden zurück
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        }).catch(err => {
+            // Fehlerfall: Gib eine Fehlermeldung aus
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy text: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
 </body>
 </html>

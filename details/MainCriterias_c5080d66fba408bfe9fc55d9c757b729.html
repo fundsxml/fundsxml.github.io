@@ -133,7 +133,23 @@
         <!-- Karten-Header mit Elementname und XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">MainCriterias</h1>
-            <p class="mt-1 text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias</p>
+            <!-- KORREKTUR: Der p-Tag wurde durch einen flex-Container ersetzt, der den Text und einen Kopier-Button enthält -->
+            <div class="flex items-center space-x-2 mt-1">
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias</p>
+                <!-- Button zum Kopieren des XPath in die Zwischenablage -->
+                <button onclick="copyToClipboard(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/DirectReporting/EET1_1_3/EET1_1_3/MainCriterias">
+                    <!-- Das Kopier-Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <!-- Tooltip, der beim Hovern erscheint und nach dem Klick den Status anzeigt -->
+                    <span id="tooltip-text"
+                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy XPath
+                    </span>
+                </button>
+            </div>
         </header>
 
         <!-- Karten-Body mit allen Detail-Sektionen -->
@@ -150,7 +166,7 @@
                         <!-- Fall 1: Wenn der Typ 'SVG' ist, füge den SVG-Code direkt ein -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f8fafc"
-     width="544.0"
+     width="564.0"
      height="613.578125">
    <defs>
       <filter width="140%"
@@ -198,16 +214,28 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 134.0 278.19921875 H 174.0"/>
-   <rect x="174.0"
-         y="268.19921875"
-         fill="#f1f5f9"
-         width="20.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         rx="4"
-         id="seq-rect_MainCriterias"
-         height="20.0"/>
-   <rect x="234.0"
+         d="M 134.0 278.19921875 H 164.0"/>
+   <g id="seq-group_MainCriterias">
+      <rect x="164.0"
+            y="268.19921875"
+            fill="#f1f5f9"
+            width="40.0"
+            style="stroke: #475569; stroke-width: 1.5;"
+            rx="4"
+            height="20.0"/>
+      <line y2="278.19921875"
+            style="stroke: #64748b; stroke-width: 1;"
+            x1="169.0"
+            x2="199.0"
+            y1="278.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="176.0" cy="278.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="184.0" cy="278.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="192.0" cy="278.19921875"/>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
+         fill="none"
+         d="M 204.0 278.19921875 h 20.0"/>
+   <rect x="254.0"
          y="20.0"
          fill="#f1f5f9"
          width="280.0"
@@ -218,18 +246,18 @@
          height="64.796875"
          id="SFDRProductType"/>
    <g>
-      <text x="244.0"
+      <text x="264.0"
             fill="#0f172a"
             y="48.3984375"
             font-size="16"
             font-family="Arial">SFDRProductType</text>
       <line y2="52.3984375"
             stroke-width="1"
-            x1="244.0"
-            x2="504.0"
+            x1="264.0"
+            x2="524.0"
             stroke="#e2e8f0"
             y1="52.3984375"/>
-      <text x="244.0"
+      <text x="264.0"
             fill="#64748b"
             y="72.796875"
             font-size="14"
@@ -237,13 +265,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 194.0 278.19921875 V 52.3984375 H 234.0"/>
-   <text x="203.0"
+         d="M 224.0 278.19921875 V 52.3984375 H 254.0"/>
+   <text x="226.0"
          fill="#64748b"
          y="47.3984375"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="234.0"
+   <rect x="254.0"
          y="104.796875"
          fill="#f1f5f9"
          width="280.0"
@@ -254,18 +282,18 @@
          height="64.796875"
          id="SFDRProductTypeEligible"/>
    <g>
-      <text x="244.0"
+      <text x="264.0"
             fill="#0f172a"
             y="133.1953125"
             font-size="16"
             font-family="Arial">SFDRProductTypeEligible</text>
       <line y2="137.1953125"
             stroke-width="1"
-            x1="244.0"
-            x2="504.0"
+            x1="264.0"
+            x2="524.0"
             stroke="#e2e8f0"
             y1="137.1953125"/>
-      <text x="244.0"
+      <text x="264.0"
             fill="#64748b"
             y="157.59375"
             font-size="14"
@@ -273,13 +301,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 194.0 278.19921875 V 137.1953125 H 234.0"/>
-   <text x="203.0"
+         d="M 224.0 278.19921875 V 137.1953125 H 254.0"/>
+   <text x="226.0"
          fill="#64748b"
          y="132.1953125"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="234.0"
+   <rect x="254.0"
          y="189.59375"
          fill="#f1f5f9"
          width="280.0"
@@ -290,18 +318,18 @@
          height="64.796875"
          id="ESGLabelOrStandard"/>
    <g>
-      <text x="244.0"
+      <text x="264.0"
             fill="#0f172a"
             y="217.9921875"
             font-size="16"
             font-family="Arial">ESGLabelOrStandard</text>
       <line y2="221.9921875"
             stroke-width="1"
-            x1="244.0"
-            x2="504.0"
+            x1="264.0"
+            x2="524.0"
             stroke="#e2e8f0"
             y1="221.9921875"/>
-      <text x="244.0"
+      <text x="264.0"
             fill="#64748b"
             y="242.390625"
             font-size="14"
@@ -309,13 +337,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 194.0 278.19921875 V 221.9921875 H 234.0"/>
-   <text x="206.0"
+         d="M 224.0 278.19921875 V 221.9921875 H 254.0"/>
+   <text x="227.5"
          fill="#64748b"
          y="216.9921875"
          font-size="12"
          font-family="Arial">0..*</text>
-   <rect x="234.0"
+   <rect x="254.0"
          y="274.390625"
          fill="#f1f5f9"
          width="280.0"
@@ -326,18 +354,18 @@
          height="64.796875"
          id="PercentageMinimumSFDRArt8Funds"/>
    <g>
-      <text x="244.0"
+      <text x="264.0"
             fill="#0f172a"
             y="302.7890625"
             font-size="16"
             font-family="Arial">PercentageMinimumSFDRArt8Funds</text>
       <line y2="306.7890625"
             stroke-width="1"
-            x1="244.0"
-            x2="504.0"
+            x1="264.0"
+            x2="524.0"
             stroke="#e2e8f0"
             y1="306.7890625"/>
-      <text x="244.0"
+      <text x="264.0"
             fill="#64748b"
             y="327.1875"
             font-size="14"
@@ -345,13 +373,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 194.0 278.19921875 V 306.7890625 H 234.0"/>
-   <text x="203.0"
+         d="M 224.0 278.19921875 V 306.7890625 H 254.0"/>
+   <text x="226.0"
          fill="#64748b"
          y="301.7890625"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="234.0"
+   <rect x="254.0"
          y="359.1875"
          fill="#f1f5f9"
          width="280.0"
@@ -362,18 +390,18 @@
          height="64.796875"
          id="PercentageMinimumSFDRArt9Funds"/>
    <g>
-      <text x="244.0"
+      <text x="264.0"
             fill="#0f172a"
             y="387.5859375"
             font-size="16"
             font-family="Arial">PercentageMinimumSFDRArt9Funds</text>
       <line y2="391.5859375"
             stroke-width="1"
-            x1="244.0"
-            x2="504.0"
+            x1="264.0"
+            x2="524.0"
             stroke="#e2e8f0"
             y1="391.5859375"/>
-      <text x="244.0"
+      <text x="264.0"
             fill="#64748b"
             y="411.984375"
             font-size="14"
@@ -381,13 +409,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 194.0 278.19921875 V 391.5859375 H 234.0"/>
-   <text x="203.0"
+         d="M 224.0 278.19921875 V 391.5859375 H 254.0"/>
+   <text x="226.0"
          fill="#64748b"
          y="386.5859375"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="234.0"
+   <rect x="254.0"
          y="443.984375"
          fill="#f1f5f9"
          width="280.0"
@@ -398,18 +426,18 @@
          height="64.796875"
          id="MainESGFocus"/>
    <g>
-      <text x="244.0"
+      <text x="264.0"
             fill="#0f172a"
             y="472.3828125"
             font-size="16"
             font-family="Arial">MainESGFocus</text>
       <line y2="476.3828125"
             stroke-width="1"
-            x1="244.0"
-            x2="504.0"
+            x1="264.0"
+            x2="524.0"
             stroke="#e2e8f0"
             y1="476.3828125"/>
-      <text x="244.0"
+      <text x="264.0"
             fill="#64748b"
             y="496.78125"
             font-size="14"
@@ -417,13 +445,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 194.0 278.19921875 V 476.3828125 H 234.0"/>
-   <text x="203.0"
+         d="M 224.0 278.19921875 V 476.3828125 H 254.0"/>
+   <text x="226.0"
          fill="#64748b"
          y="471.3828125"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="234.0"
+   <rect x="254.0"
          y="528.78125"
          fill="#f1f5f9"
          width="280.0"
@@ -434,18 +462,18 @@
          height="64.796875"
          id="ConsidersPrincipleAdverseImpact"/>
    <g>
-      <text x="244.0"
+      <text x="264.0"
             fill="#0f172a"
             y="557.1796875"
             font-size="16"
             font-family="Arial">ConsidersPrincipleAdverseImpact</text>
       <line y2="561.1796875"
             stroke-width="1"
-            x1="244.0"
-            x2="504.0"
+            x1="264.0"
+            x2="524.0"
             stroke="#e2e8f0"
             y1="561.1796875"/>
-      <text x="244.0"
+      <text x="264.0"
             fill="#64748b"
             y="581.578125"
             font-size="14"
@@ -453,8 +481,8 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 194.0 278.19921875 V 561.1796875 H 234.0"/>
-   <text x="203.0"
+         d="M 224.0 278.19921875 V 561.1796875 H 254.0"/>
+   <text x="226.0"
          fill="#64748b"
          y="556.1796875"
          font-size="12"
@@ -538,7 +566,7 @@ Reference of the article of SFDR european regulation applying to the product (ar
 6= product not Art8/9
 8=Art. 8 SFDR Product (ESG characteristics); 
 9=Art. 9 SFDR product (ESG objective)</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">9</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">8</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -559,7 +587,7 @@ For funds and products not being in SFDR scope, which includes structured produc
 6= product follows Art6 guidelines
 8= product is Art 8 like
 9= product is Art 9 like</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">6</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">9</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -575,7 +603,7 @@ For funds and products not being in SFDR scope, which includes structured produc
 
                             <td class="px-4 py-3 text-slate-600">20060_Financial_Instrument_ESG_Label_Or_Standard
 Disclosure of applicable ESG Label/s</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">AM</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">F</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -591,7 +619,7 @@ Disclosure of applicable ESG Label/s</td>
 
                             <td class="px-4 py-3 text-slate-600">20070_Financial_Instrument_Percentage_Of_Minimum_SFDR_Art_8_Funds
 Proportion in look through of art 8 sub invested funds for funds of funds Nav based</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">769.95</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -607,7 +635,7 @@ Proportion in look through of art 8 sub invested funds for funds of funds Nav ba
 
                             <td class="px-4 py-3 text-slate-600">20080_Financial_Instrument_Percentage_Of_Minimum_SFDR_Art_9_Funds
 Proportion in look through of art 9 sub invested funds  for funds of funds Nav based</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">81.66</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -623,7 +651,7 @@ Proportion in look through of art 9 sub invested funds  for funds of funds Nav b
 
                             <td class="px-4 py-3 text-slate-600">20090_Financial_Instrument_Main_ESG_Focus
 Indication of the &quot;main focus&quot; of the Financial_Instrument ( for example E for green bonds…). E or S or G or MF (Multi focus) or Blank (if no focus at all)</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">S</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">E</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -742,5 +770,35 @@ Indication of the &quot;main focus&quot; of the Financial_Instrument ( for examp
 
 <!-- Skripte am Ende laden -->
 <script src="../assets/prism.js"></script>
+
+<!-- NEU: JavaScript für die Kopier-Funktionalität -->
+<script>
+    function copyToClipboard(buttonElement) {
+        const textToCopy = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('#tooltip-text');
+
+        // Moderne Methode zum Kopieren in die Zwischenablage
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            // Erfolg: Zeige eine Bestätigung im Tooltip an
+            tooltip.textContent = 'Copied!';
+            // Setze den Tooltip-Text nach 2 Sekunden zurück
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        }).catch(err => {
+            // Fehlerfall: Gib eine Fehlermeldung aus
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy text: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
 </body>
 </html>

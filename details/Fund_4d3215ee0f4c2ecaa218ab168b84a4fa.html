@@ -153,7 +153,23 @@
         <!-- Karten-Header mit Elementname und XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">Fund</h1>
-            <p class="mt-1 text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/CostsAndChargesExAnte/Fund</p>
+            <!-- KORREKTUR: Der p-Tag wurde durch einen flex-Container ersetzt, der den Text und einen Kopier-Button enthält -->
+            <div class="flex items-center space-x-2 mt-1">
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/CostsAndChargesExAnte/Fund</p>
+                <!-- Button zum Kopieren des XPath in die Zwischenablage -->
+                <button onclick="copyToClipboard(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V3/FinancialInstrument/CostsAndChargesExAnte/Fund">
+                    <!-- Das Kopier-Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <!-- Tooltip, der beim Hovern erscheint und nach dem Klick den Status anzeigt -->
+                    <span id="tooltip-text"
+                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy XPath
+                    </span>
+                </button>
+            </div>
         </header>
 
         <!-- Karten-Body mit allen Detail-Sektionen -->
@@ -170,7 +186,7 @@
                         <!-- Fall 1: Wenn der Typ 'SVG' ist, füge den SVG-Code direkt ein -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f8fafc"
-     width="455.0"
+     width="475.0"
      height="1291.953125">
    <defs>
       <filter width="140%"
@@ -222,16 +238,28 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 75.0 585.19921875 H 115.0"/>
-   <rect x="115.0"
-         y="575.19921875"
-         fill="#f1f5f9"
-         width="20.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         rx="4"
-         id="seq-rect_Fund"
-         height="20.0"/>
-   <rect x="175.0"
+         d="M 75.0 585.19921875 H 105.0"/>
+   <g id="seq-group_Fund">
+      <rect x="105.0"
+            y="575.19921875"
+            fill="#f1f5f9"
+            width="40.0"
+            style="stroke: #475569; stroke-width: 1.5;"
+            rx="4"
+            height="20.0"/>
+      <line y2="585.19921875"
+            style="stroke: #64748b; stroke-width: 1;"
+            x1="110.0"
+            x2="140.0"
+            y1="585.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="117.0" cy="585.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="125.0" cy="585.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="133.0" cy="585.19921875"/>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
+         fill="none"
+         d="M 145.0 585.19921875 h 20.0"/>
+   <rect x="195.0"
          y="20.0"
          fill="#f1f5f9"
          width="250.0"
@@ -242,18 +270,18 @@
          height="64.796875"
          id="GrossMaxEntryCostNonAcquired"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="48.3984375"
             font-size="16"
             font-family="Arial">GrossMaxEntryCostNonAcquired</text>
       <line y2="52.3984375"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="52.3984375"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="72.796875"
             font-size="14"
@@ -261,13 +289,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 52.3984375 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 52.3984375 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="47.3984375"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="104.796875"
          fill="#f1f5f9"
          width="250.0"
@@ -278,18 +306,18 @@
          height="64.796875"
          id="NetEntryCostNonAcquired"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="133.1953125"
             font-size="16"
             font-family="Arial">NetEntryCostNonAcquired</text>
       <line y2="137.1953125"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="137.1953125"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="157.59375"
             font-size="14"
@@ -297,13 +325,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 137.1953125 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 137.1953125 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="132.1953125"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="189.59375"
          fill="#f1f5f9"
          width="250.0"
@@ -314,18 +342,18 @@
          height="64.796875"
          id="MaxEntryCostItaly"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="217.9921875"
             font-size="16"
             font-family="Arial">MaxEntryCostItaly</text>
       <line y2="221.9921875"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="221.9921875"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="242.390625"
             font-size="14"
@@ -333,13 +361,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 221.9921875 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 221.9921875 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="216.9921875"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="274.390625"
          fill="#f1f5f9"
          width="250.0"
@@ -350,18 +378,18 @@
          height="64.796875"
          id="MaxEntryCostAcquired"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="302.7890625"
             font-size="16"
             font-family="Arial">MaxEntryCostAcquired</text>
       <line y2="306.7890625"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="306.7890625"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="327.1875"
             font-size="14"
@@ -369,13 +397,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 306.7890625 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 306.7890625 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="301.7890625"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="359.1875"
          fill="#f1f5f9"
          width="250.0"
@@ -386,18 +414,18 @@
          height="64.796875"
          id="MaxExitCost"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="387.5859375"
             font-size="16"
             font-family="Arial">MaxExitCost</text>
       <line y2="391.5859375"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="391.5859375"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="411.984375"
             font-size="14"
@@ -405,13 +433,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 391.5859375 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 391.5859375 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="386.5859375"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="443.984375"
          fill="#f1f5f9"
          width="250.0"
@@ -422,18 +450,18 @@
          height="64.796875"
          id="MaxExitCostItaly"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="472.3828125"
             font-size="16"
             font-family="Arial">MaxExitCostItaly</text>
       <line y2="476.3828125"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="476.3828125"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="496.78125"
             font-size="14"
@@ -441,13 +469,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 476.3828125 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 476.3828125 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="471.3828125"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="528.78125"
          fill="#f1f5f9"
          width="250.0"
@@ -458,18 +486,18 @@
          height="64.796875"
          id="MaxExitCostAcquired"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="557.1796875"
             font-size="16"
             font-family="Arial">MaxExitCostAcquired</text>
       <line y2="561.1796875"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="561.1796875"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="581.578125"
             font-size="14"
@@ -477,13 +505,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 561.1796875 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 561.1796875 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="556.1796875"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="613.578125"
          fill="#f1f5f9"
          width="250.0"
@@ -494,18 +522,18 @@
          height="64.796875"
          id="TypicalExitCost"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="641.9765625"
             font-size="16"
             font-family="Arial">TypicalExitCost</text>
       <line y2="645.9765625"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="645.9765625"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="666.375"
             font-size="14"
@@ -513,13 +541,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 645.9765625 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 645.9765625 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="640.9765625"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="698.375"
          fill="#f1f5f9"
          width="250.0"
@@ -530,18 +558,18 @@
          height="64.796875"
          id="ExitCostPriorRHP"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="726.7734375"
             font-size="16"
             font-family="Arial">ExitCostPriorRHP</text>
       <line y2="730.7734375"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="730.7734375"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="751.171875"
             font-size="14"
@@ -549,13 +577,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 730.7734375 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 730.7734375 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="725.7734375"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="783.171875"
          fill="#f1f5f9"
          width="250.0"
@@ -566,18 +594,18 @@
          height="64.796875"
          id="OngoingCosts"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="811.5703125"
             font-size="16"
             font-family="Arial">OngoingCosts</text>
       <line y2="815.5703125"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="815.5703125"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="835.96875"
             font-size="14"
@@ -585,13 +613,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 135.0 585.19921875 V 815.5703125 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 815.5703125 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="810.5703125"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="867.96875"
          fill="#f1f5f9"
          width="250.0"
@@ -602,18 +630,18 @@
          height="64.796875"
          id="BorrowingCostsUK"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="896.3671875"
             font-size="16"
             font-family="Arial">BorrowingCostsUK</text>
       <line y2="900.3671875"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="900.3671875"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="920.765625"
             font-size="14"
@@ -621,13 +649,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 900.3671875 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 900.3671875 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="895.3671875"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="952.765625"
          fill="#f1f5f9"
          width="250.0"
@@ -638,18 +666,18 @@
          height="64.796875"
          id="ManagementFee"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="981.1640625"
             font-size="16"
             font-family="Arial">ManagementFee</text>
       <line y2="985.1640625"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="985.1640625"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="1005.5625"
             font-size="14"
@@ -657,13 +685,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 135.0 585.19921875 V 985.1640625 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 985.1640625 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="980.1640625"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="1037.5625"
          fill="#f1f5f9"
          width="250.0"
@@ -674,18 +702,18 @@
          height="64.796875"
          id="DistributionFee"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="1065.9609375"
             font-size="16"
             font-family="Arial">DistributionFee</text>
       <line y2="1069.9609375"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="1069.9609375"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="1090.359375"
             font-size="14"
@@ -693,13 +721,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
          fill="none"
-         d="M 135.0 585.19921875 V 1069.9609375 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 1069.9609375 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="1064.9609375"
          font-size="12"
          font-family="Arial">0..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="1122.359375"
          fill="#f1f5f9"
          width="250.0"
@@ -710,18 +738,18 @@
          height="64.796875"
          id="TransactionCosts"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="1150.7578125"
             font-size="16"
             font-family="Arial">TransactionCosts</text>
       <line y2="1154.7578125"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="1154.7578125"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="1175.15625"
             font-size="14"
@@ -729,13 +757,13 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 135.0 585.19921875 V 1154.7578125 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 1154.7578125 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="1149.7578125"
          font-size="12"
          font-family="Arial">1..1</text>
-   <rect x="175.0"
+   <rect x="195.0"
          y="1207.15625"
          fill="#f1f5f9"
          width="250.0"
@@ -746,18 +774,18 @@
          height="64.796875"
          id="IncidentalCosts"/>
    <g>
-      <text x="185.0"
+      <text x="205.0"
             fill="#0f172a"
             y="1235.5546875"
             font-size="16"
             font-family="Arial">IncidentalCosts</text>
       <line y2="1239.5546875"
             stroke-width="1"
-            x1="185.0"
-            x2="415.0"
+            x1="205.0"
+            x2="435.0"
             stroke="#e2e8f0"
             y1="1239.5546875"/>
-      <text x="185.0"
+      <text x="205.0"
             fill="#64748b"
             y="1259.953125"
             font-size="14"
@@ -765,8 +793,8 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 135.0 585.19921875 V 1239.5546875 H 175.0"/>
-   <text x="144.0"
+         d="M 165.0 585.19921875 V 1239.5546875 H 195.0"/>
+   <text x="167.0"
          fill="#64748b"
          y="1234.5546875"
          font-size="12"
@@ -845,7 +873,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">07020: Maximum not acquired to the fund. Expressed as a % of the amount to be invested.  This data is a maximum cost not acquired to the fund.. It is indicative and should be adapted by the distributor receiving the file to take into account the commercial agreement with the asset manager. Conditional to the existence of this feature</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">582.21</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -860,7 +888,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">07025: Expressed as a % of the amount to be invested. Subscription NAV - Fair Value. Applicable for Structured Frund</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">501.41</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -877,7 +905,7 @@
                             <td class="px-4 py-3 text-slate-600">07030: Maximum fixed amount per subscription, not incorporated. Flat fixed fee definied by the manufacturer (Linked to Paying Agent)
 Only for the Italian Market. Conditionnal to the existence of the feature
 It is subscription related but decided by the manufacturers.  In all cases it must be adapted to the specific relationship between the manufacturers and the distribution. This cost is not taken in account in the entry cost item 07020</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">674.86</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -894,7 +922,7 @@ It is subscription related but decided by the manufacturers.  In all cases it mu
                             <td class="px-4 py-3 text-slate-600">07040: Subscription fees acquired to the fund 
 Expressed as a % of the amount to be invested.
 Not included in the entry cost 07020. Conditionnal to the fact that the fund has this feature.</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">13.31</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -910,7 +938,7 @@ Not included in the entry cost 07020. Conditionnal to the fact that the fund has
 
                             <td class="px-4 py-3 text-slate-600">07050: Maximum not acquired to the fund Expressed as a % of the NAV. 
 Maximum fees not acquired to the funds that could happen at a certain time during the life of the product. Conditional to the existence of this feature</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">339.30</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -927,7 +955,7 @@ Maximum fees not acquired to the funds that could happen at a certain time durin
                             <td class="px-4 py-3 text-slate-600">07060: Maximum fixed amount per redemption, not incorporated. Flat fee defined by the manufacturer.
 Only for the Italian Market. Conditionnal to the existence of the feature.
 It is redemption related but decided by the manufacturers.In all cases it must be adapted to the specific relationship between the manufacturers and the distribution. This cost is not taken in account in the exit cost  item 07050</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">946.18</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -943,7 +971,7 @@ It is redemption related but decided by the manufacturers.In all cases it must b
 
                             <td class="px-4 py-3 text-slate-600">07070: Maximum Exit fees acquired to the fund  Expressed as a % of the NAV.
 Not included in the exit cost  item 07050 . Conditional to the existence of this feature.</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">904.56</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -958,7 +986,7 @@ Not included in the exit cost  item 07050 . Conditional to the existence of this
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">07080: Current exit cost linked to the RHP or Time to Maturity or 1Y (V) or 3Y(S) or 5Y (M L)  (the value of 05080_Minimum_Recommended_Holding_Period)</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">151.69</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -973,7 +1001,7 @@ Not included in the exit cost  item 07050 . Conditional to the existence of this
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">07090:  Expressed as a % of the amount to be divested. Fair Value - Exit Value (eg Bid Price). For Structured Fund only</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">618.02</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -989,7 +1017,7 @@ Not included in the exit cost  item 07050 . Conditional to the existence of this
 
                             <td class="px-4 py-3 text-slate-600">07100: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied).
 Ongoing costs include management fees and distribution fees, and exclude all  transaction costs, incidental costs and performance fees. Costs reported should reflect current running ongoing costs.</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">560.85</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1006,7 +1034,7 @@ Ongoing costs include management fees and distribution fees, and exclude all  tr
                             <td class="px-4 py-3 text-slate-600">07105: Financing costs related to borrowing for the purposes of gearing expressed as a % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied).
 Only applicable if the product is borrowing
 Borrowing costs are included in Ongoing costs.</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">166.84</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1022,7 +1050,7 @@ Borrowing costs are included in Ongoing costs.</td>
 
                             <td class="px-4 py-3 text-slate-600">07110: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied).
 These fees are included in total on going costs. These fees are used by distributors to calculate their retrocession fees. Costs reported should reflect current running management costs.</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">280.01</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1037,7 +1065,7 @@ These fees are included in total on going costs. These fees are used by distribu
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">07120: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied)</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">881.93</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1053,7 +1081,7 @@ These fees are included in total on going costs. These fees are used by distribu
 
                             <td class="px-4 py-3 text-slate-600">07130: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied).
 0 for structured products. Costs within the products</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">64.20</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1068,7 +1096,7 @@ These fees are included in total on going costs. These fees are used by distribu
                             </td>
 
                             <td class="px-4 py-3 text-slate-600">07140: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied). Includes Performance Fees and other costs.</td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">141.50</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1110,5 +1138,35 @@ These fees are included in total on going costs. These fees are used by distribu
 
 <!-- Skripte am Ende laden -->
 <script src="../assets/prism.js"></script>
+
+<!-- NEU: JavaScript für die Kopier-Funktionalität -->
+<script>
+    function copyToClipboard(buttonElement) {
+        const textToCopy = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('#tooltip-text');
+
+        // Moderne Methode zum Kopieren in die Zwischenablage
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            // Erfolg: Zeige eine Bestätigung im Tooltip an
+            tooltip.textContent = 'Copied!';
+            // Setze den Tooltip-Text nach 2 Sekunden zurück
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        }).catch(err => {
+            // Fehlerfall: Gib eine Fehlermeldung aus
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy text: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
 </body>
 </html>

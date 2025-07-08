@@ -233,7 +233,23 @@
         <!-- Karten-Header mit Elementname und XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">OtherNonFinancialAssetValue</h1>
-            <p class="mt-1 text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RealEstate/OtherNonFinancialAssetValue</p>
+            <!-- KORREKTUR: Der p-Tag wurde durch einen flex-Container ersetzt, der den Text und einen Kopier-Button enthält -->
+            <div class="flex items-center space-x-2 mt-1">
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RealEstate/OtherNonFinancialAssetValue</p>
+                <!-- Button zum Kopieren des XPath in die Zwischenablage -->
+                <button onclick="copyToClipboard(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RealEstate/OtherNonFinancialAssetValue">
+                    <!-- Das Kopier-Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <!-- Tooltip, der beim Hovern erscheint und nach dem Klick den Status anzeigt -->
+                    <span id="tooltip-text"
+                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy XPath
+                    </span>
+                </button>
+            </div>
         </header>
 
         <!-- Karten-Body mit allen Detail-Sektionen -->
@@ -250,7 +266,7 @@
                         <!-- Fall 1: Wenn der Typ 'SVG' ist, füge den SVG-Code direkt ein -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f8fafc"
-     width="529.0"
+     width="549.0"
      height="122.59375">
    <defs>
       <filter width="140%"
@@ -303,16 +319,28 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 249.0 48.19921875 H 289.0"/>
-   <rect x="289.0"
-         y="38.19921875"
-         fill="#f1f5f9"
-         width="20.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         rx="4"
-         id="seq-rect_OtherNonFinancialAssetValue"
-         height="20.0"/>
-   <rect x="349.0"
+         d="M 249.0 48.19921875 H 279.0"/>
+   <g id="seq-group_OtherNonFinancialAssetValue">
+      <rect x="279.0"
+            y="38.19921875"
+            fill="#f1f5f9"
+            width="40.0"
+            style="stroke: #475569; stroke-width: 1.5;"
+            rx="4"
+            height="20.0"/>
+      <line y2="48.19921875"
+            style="stroke: #64748b; stroke-width: 1;"
+            x1="284.0"
+            x2="314.0"
+            y1="48.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="291.0" cy="48.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="299.0" cy="48.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="307.0" cy="48.19921875"/>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
+         fill="none"
+         d="M 319.0 48.19921875 h 20.0"/>
+   <rect x="369.0"
          y="20.0"
          fill="#f1f5f9"
          width="150.0"
@@ -323,18 +351,18 @@
          height="64.796875"
          id="Amount"/>
    <g>
-      <text x="359.0"
+      <text x="379.0"
             fill="#0f172a"
             y="48.3984375"
             font-size="16"
             font-family="Arial">Amount</text>
       <line y2="52.3984375"
             stroke-width="1"
-            x1="359.0"
-            x2="489.0"
+            x1="379.0"
+            x2="509.0"
             stroke="#e2e8f0"
             y1="52.3984375"/>
-      <text x="359.0"
+      <text x="379.0"
             fill="#64748b"
             y="72.796875"
             font-size="14"
@@ -342,8 +370,8 @@
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
-         d="M 309.0 48.19921875 V 52.3984375 H 349.0"/>
-   <text x="321.0"
+         d="M 339.0 48.19921875 V 52.3984375 H 369.0"/>
+   <text x="342.5"
          fill="#64748b"
          y="47.3984375"
          font-size="12"
@@ -463,5 +491,35 @@
 
 <!-- Skripte am Ende laden -->
 <script src="../assets/prism.js"></script>
+
+<!-- NEU: JavaScript für die Kopier-Funktionalität -->
+<script>
+    function copyToClipboard(buttonElement) {
+        const textToCopy = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('#tooltip-text');
+
+        // Moderne Methode zum Kopieren in die Zwischenablage
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            // Erfolg: Zeige eine Bestätigung im Tooltip an
+            tooltip.textContent = 'Copied!';
+            // Setze den Tooltip-Text nach 2 Sekunden zurück
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        }).catch(err => {
+            // Fehlerfall: Gib eine Fehlermeldung aus
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy text: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
 </body>
 </html>
