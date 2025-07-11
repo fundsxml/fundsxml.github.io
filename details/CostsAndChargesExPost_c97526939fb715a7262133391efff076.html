@@ -223,7 +223,11 @@
             font-family="Arial">CostsAndChargesExPost</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="158.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="158.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Costs and Charges ex post </tspan>
       </text>
    </g>
@@ -386,6 +390,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -480,7 +491,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -507,7 +518,8 @@
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;EntryCostAcquired&quot;&gt;
                         &lt;xs:annotation&gt;
                            &lt;xs:documentation&gt;08025:
-% of NAV&lt;/xs:documentation&gt;
+                                                    % of NAV
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                         &lt;xs:simpleType&gt;
                            &lt;xs:restriction base=&quot;xs:decimal&quot;/&gt;
@@ -515,36 +527,51 @@
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;OngoingCosts&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08030: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied)&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08030: % of NAV of the Financial Product expressed in
+                                                    annualized terms (rate of cost deduction to be applied)
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;BorrowingCoststUK&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08045: Financing costs related to borrowing for the purposes of gearing expressed as a % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied)&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08045: Financing costs related to borrowing for the
+                                                    purposes of gearing expressed as a % of NAV of the Financial Product
+                                                    expressed in annualized terms (rate of cost deduction to be applied)
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;ManagementFee&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08050: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied)&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08050: % of NAV of the Financial Product expressed in
+                                                    annualized terms (rate of cost deduction to be applied)
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DistributionFee&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08060: 
-% of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied).
-Only applicable if the product has this feature (legal wording in the documentation). These fees are included in total on going costs and are not included into the management fees. &lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08060:
+                                                    % of NAV of the Financial Product expressed in annualized terms
+                                                    (rate of cost deduction to be applied).
+                                                    Only applicable if the product has this feature (legal wording in
+                                                    the documentation). These fees are included in total on going costs
+                                                    and are not included into the management fees.
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;TransactionCosts&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08070: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied).
-Costs within the products&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08070: % of NAV of the Financial Product expressed in
+                                                    annualized terms (rate of cost deduction to be applied).
+                                                    Costs within the products
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;IncidentalCosts&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
                            &lt;xs:documentation&gt;08080: Incidential costs ex post
-% of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied)&lt;/xs:documentation&gt;
+                                                    % of NAV of the Financial Product expressed in annualized terms
+                                                    (rate of cost deduction to be applied)
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                   &lt;/xs:sequence&gt;
@@ -558,58 +585,97 @@ Costs within the products&lt;/xs:documentation&gt;
                   &lt;xs:sequence&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;GrossEntryCost&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08010: This data should only incorporate manufacturer costs (i.e. cost of the financial instrument) and distributor upfront when known by the manufacturer.  It should however NOT include distribution fees added on top of the product price by distributors that is out of control of the manufacturer.&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08010: This data should only incorporate manufacturer
+                                                    costs (i.e. cost of the financial instrument) and distributor
+                                                    upfront when known by the manufacturer.  It should however NOT
+                                                    include distribution fees added on top of the product price by
+                                                    distributors that is out of control of the manufacturer.
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;NetEntryCost&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
                            &lt;xs:documentation&gt;08015: Net one off entry cost ex post
-Net One-off Entry cost = 08010 less upfront distribution fee embedded in the 08010. In practice 08015 will be the portion of the 08010 retained by the manufacturer.
-This data is optional and could be used in the event of only one layer of intermediation or in a case where distributor up fronts are paid equally to all distributors. The costs reported in this field is a Net disclosure and therefore the distributor upfront is equal to the difference between 08010 and 08025.&lt;/xs:documentation&gt;
+                                                    Net One-off Entry cost = 08010 less upfront distribution fee
+                                                    embedded in the 08010. In practice 08015 will be the portion of the
+                                                    08010 retained by the manufacturer.
+                                                    This data is optional and could be used in the event of only one
+                                                    layer of intermediation or in a case where distributor up fronts are
+                                                    paid equally to all distributors. The costs reported in this field
+                                                    is a Net disclosure and therefore the distributor upfront is equal
+                                                    to the difference between 08010 and 08025.
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExitCost&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08020: 
-Fixed amount
-If 00096 set to U : number of units in product currency
-If 00096 set to P : % of Reference in field 08110 or 08120 respectively.
-This exit cost is supposed to be prior RHP&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08020:
+                                                    Fixed amount
+                                                    If 00096 set to U : number of units in product currency
+                                                    If 00096 set to P : % of Reference in field 08110 or 08120
+                                                    respectively.
+                                                    This exit cost is supposed to be prior RHP
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;OngoingCosts&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08030: Expressed as a % of NAV / Notional (or currency  amount for Absolute quotation) of the Financial Product in annualized terms related to Reference Value in 08110 &lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08030: Expressed as a % of NAV / Notional (or currency
+                                                    amount for Absolute quotation) of the Financial Product in
+                                                    annualized terms related to Reference Value in 08110
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OngoingCostsAccumulated&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
                            &lt;xs:documentation&gt;08040: Sum of each daily Recurring Product Costs
-Presented in absolute figures in product currency accumulated during the year up until the End of Reference Date Period Ex Post in field 08100.
-Mandatory field for Distribution in Germany, Switzerland and Austria&lt;/xs:documentation&gt;
+                                                    Presented in absolute figures in product currency accumulated during
+                                                    the year up until the End of Reference Date Period Ex Post in field
+                                                    08100.
+                                                    Mandatory field for Distribution in Germany, Switzerland and Austria
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ManagementFee&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08050: Expressed as a % of NAV / Notional (or currency  amount for Absolute quotation) of the Financial Product in annualized terms related to Reference Value in 08110.
-These fees are included in total on going costs. Only applicable if the product has this feature. These fees are used by distributors to calculate their retrocession fees  &lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08050: Expressed as a % of NAV / Notional (or currency
+                                                    amount for Absolute quotation) of the Financial Product in
+                                                    annualized terms related to Reference Value in 08110.
+                                                    These fees are included in total on going costs. Only applicable if
+                                                    the product has this feature. These fees are used by distributors to
+                                                    calculate their retrocession fees
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;IncidentalCosts&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08080: Expressed as a % of NAV / Notional (or currency  amount for Absolute quotation) of the Financial Product in annualized terms related to Reference Value in 08110 
-If 00096 set to U : number of units in product currency
-If 00096 set to P : % of Reference in field 08110 or 08120 respectively.&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08080: Expressed as a % of NAV / Notional (or currency
+                                                    amount for Absolute quotation) of the Financial Product in
+                                                    annualized terms related to Reference Value in 08110
+                                                    If 00096 set to U : number of units in product currency
+                                                    If 00096 set to P : % of Reference in field 08110 or 08120
+                                                    respectively.
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ReferencePrice&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08110: The Reference Price is the instrument price to which a Unit disclosed Ex-Post cost is based and to which a Percentage disclosed cost should be multiplied in order to retrieve the Unit cost. This field is conditional and only used if 08120 is not used.&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08110: The Reference Price is the instrument price to
+                                                    which a Unit disclosed Ex-Post cost is based and to which a
+                                                    Percentage disclosed cost should be multiplied in order to retrieve
+                                                    the Unit cost. This field is conditional and only used if 08120 is
+                                                    not used.
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;NotionalReferenceAmount&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;080120: The Notional Reference Amount is the amount expressed in number of currency units to which a Unit disclosed Ex-Post cost is based and to which a Percentage disclosed cost should be multiplied in order to retrieve the Unit cost. This field is conditional and only used if 08110 is not used.&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;080120: The Notional Reference Amount is the amount
+                                                    expressed in number of currency units to which a Unit disclosed
+                                                    Ex-Post cost is based and to which a Percentage disclosed cost
+                                                    should be multiplied in order to retrieve the Unit cost. This field
+                                                    is conditional and only used if 08110 is not used.
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                   &lt;/xs:sequence&gt;
@@ -621,12 +687,20 @@ If 00096 set to P : % of Reference in field 08110 or 08120 respectively.&lt;/xs:
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Start&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;08090: The Date that specifies the start of the Reference Period. Defined as &quot;From and including&quot;. All ex-post cost disclosures apart from 08040 refers to all dates in such period.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;08090: The Date that specifies the start of the Reference
+                                                Period. Defined as &quot;From and including&quot;. All ex-post cost disclosures
+                                                apart from 08040 refers to all dates in such period.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;End&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;08100: The Date that specifies the end of the Reference Period. Defined as &quot;To and including&quot;. All ex-post cost disclosures apart from 08040 refers to all dates in such period. For the avoidance of doubt, this date can be specified as equal to the date specified in 08090.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;08100: The Date that specifies the end of the Reference
+                                                Period. Defined as &quot;To and including&quot;. All ex-post cost disclosures
+                                                apart from 08040 refers to all dates in such period. For the avoidance
+                                                of doubt, this date can be specified as equal to the date specified in
+                                                08090.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;

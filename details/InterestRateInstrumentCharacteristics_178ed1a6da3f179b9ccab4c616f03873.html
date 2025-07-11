@@ -243,7 +243,11 @@
             font-family="Arial">InterestRateInstrumentCharacteristics</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="350.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="350.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Detailed characteristics for interest rate </tspan>
          <tspan x="25" dy="1.2em">instruments. </tspan>
       </text>
@@ -617,6 +621,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -668,14 +679,15 @@
                                 <span>xs:string</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Fixed - plain vanilla fixed coupon rate</p>
-<ul>
-<li>Floating - plain vanilla floating coupon rates (for all interest rates, which refer to a reference interest rate like EONIA or EURIBOR + margin in BP)</li>
-<li>Variable - all other variable interest rates like step-up or step-down or fixed-to-float bonds. The variable feature is the (credit) margin or the change between fixed and float.</li>
-<li>Inflation_linked for Inflation_linked bonds in order to identify them.</li>
-</ul>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Fixed - plain vanilla fixed coupon rate<br />
+* Floating - plain vanilla floating coupon rates (for all interest rates, which<br />
+refer to a reference interest rate like EONIA or EURIBOR + margin in BP)<br />
+* Variable - all other variable interest rates like step-up or step-down or<br />
+fixed-to-float bonds. The variable feature is the (credit) margin or the change<br />
+between fixed and float.<br />
+* Inflation_linked for Inflation_linked bonds in order to identify them.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Floating</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Inflation_linked</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -684,7 +696,7 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/PercentageType.html"
+                                <a href="../simpleTypes/PercentageType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">PercentageType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -694,7 +706,7 @@
 (known, or estimated for Floating).<br />
 3.5% has to be written &quot;3.5&quot;</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">79.23</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">813.33</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -720,13 +732,14 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/SIICouponFrequencyType.html"
+                                <a href="../simpleTypes/SIICouponFrequencyType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">SIICouponFrequencyType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A38 - Coupon payment frequency as number of coupons per year<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A38 - Coupon payment frequency as number of coupons<br />
+per year<br />
 0 = other than below options:<br />
 1= annual<br />
 2= biannual<br />
@@ -734,7 +747,7 @@
 12= monthly<br />
 52= weekly</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">0</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -750,7 +763,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A63 - Start date to accrue interest.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2025-03-13</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2025-06-02</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -801,7 +814,8 @@ The embedded option is described only for the first option date to come.</p>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Specific data in case no yield curve of reference is available (e.g. for developing countries or BRICS)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Specific data in case no yield curve of reference is available (e.g.<br />
+for developing countries or BRICS)</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -810,7 +824,7 @@ The embedded option is described only for the first option date to come.</p>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -823,7 +837,8 @@ The embedded option is described only for the first option date to come.</p>
             minOccurs=&quot;0&quot;
             name=&quot;InterestRateInstrumentCharacteristics&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Detailed characteristics for interest rate instruments.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Detailed characteristics for interest rate instruments.
+                    &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
@@ -831,7 +846,8 @@ The embedded option is described only for the first option date to come.</p>
             &lt;xs:element name=&quot;RateType&quot;&gt;
                &lt;xs:annotation&gt;
                   &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A32 - Type of interest rate:
-&quot;Fixed&quot; (fixe), &quot;Variable&quot; (révisable), &quot;Floating&quot; (variable)&lt;/xs:documentation&gt;
+                                        &quot;Fixed&quot; (fixe), &quot;Variable&quot; (révisable), &quot;Floating&quot; (variable)
+                                    &lt;/xs:documentation&gt;
                &lt;/xs:annotation&gt;
                &lt;xs:simpleType&gt;
                   &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -844,8 +860,9 @@ The embedded option is described only for the first option date to come.</p>
             &lt;xs:element name=&quot;CouponRate&quot; type=&quot;PercentageType&quot;&gt;
                &lt;xs:annotation&gt;
                   &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A33 - Next annual coupon rate in percentage
-(known, or estimated for Floating).
-3.5% has to be written &quot;3.5&quot;&lt;/xs:documentation&gt;
+                                        (known, or estimated for Floating).
+                                        3.5% has to be written &quot;3.5&quot;
+                                    &lt;/xs:documentation&gt;
                &lt;/xs:annotation&gt;
             &lt;/xs:element&gt;
             &lt;xs:element minOccurs=&quot;0&quot; name=&quot;VariableRate&quot;&gt;
@@ -856,8 +873,10 @@ The embedded option is described only for the first option date to come.</p>
                   &lt;xs:sequence&gt;
                      &lt;xs:element name=&quot;IndexID&quot; type=&quot;CodificationType&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A35 34  - Identification of index used as reference for Floating/Variable rate bond.
-CodificationSystem omitted if internal codification is used.&lt;/xs:documentation&gt;
+                           &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A35 34 - Identification of index used as
+                                                    reference for Floating/Variable rate bond.
+                                                    CodificationSystem omitted if internal codification is used.
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;IndexName&quot; type=&quot;xs:string&quot;&gt;
@@ -867,8 +886,10 @@ CodificationSystem omitted if internal codification is used.&lt;/xs:documentatio
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;Margin&quot; type=&quot;PercentageType&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A37 - Annual additive margin in percentage.
-e.g. -0.5% should be written as &quot;-0.5&quot;&lt;/xs:documentation&gt;
+                           &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A37 - Annual additive margin in
+                                                    percentage.
+                                                    e.g. -0.5% should be written as &quot;-0.5&quot;
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                   &lt;/xs:sequence&gt;
@@ -876,13 +897,15 @@ e.g. -0.5% should be written as &quot;-0.5&quot;&lt;/xs:documentation&gt;
             &lt;/xs:element&gt;
             &lt;xs:element name=&quot;CouponFrequency&quot; type=&quot;SIICouponFrequencyType&quot;&gt;
                &lt;xs:annotation&gt;
-                  &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A38 - Coupon payment frequency as number of coupons per year
-0 = other case than
-1= annual
-2= biannual
-4= quarterly
-12= monthly 
-52= weekly&lt;/xs:documentation&gt;
+                  &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A38 - Coupon payment frequency as number of coupons
+                                        per year
+                                        0 = other case than
+                                        1= annual
+                                        2= biannual
+                                        4= quarterly
+                                        12= monthly
+                                        52= weekly
+                                    &lt;/xs:documentation&gt;
                &lt;/xs:annotation&gt;
             &lt;/xs:element&gt;
          &lt;/xs:sequence&gt;
@@ -898,18 +921,20 @@ e.g. -0.5% should be written as &quot;-0.5&quot;&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;EmbeddedOption&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;To be used only for a 
-callable / putable bond.
-The embedded option is described only for the first option date to come.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;To be used only for a
+                                    callable / putable bond.
+                                    The embedded option is described only for the first option date to come.
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;CallPutType&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A42 - Cal = Call
-Put = Put
-Cap = Cap
-Flr= Floor&lt;/xs:documentation&gt;
+                                                Put = Put
+                                                Cap = Cap
+                                                Flr= Floor
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -922,12 +947,16 @@ Flr= Floor&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;CallPutDate&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A43 - Date of first Call / Put option to come.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A43 - Date of first Call / Put option to
+                                                come.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;OptionDirection&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A44 - Option at the discretion of issuer(I) or bearer(B). &quot;O&quot; if both are possible.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A44 - Option at the discretion of issuer(I)
+                                                or bearer(B). &quot;O&quot; if both are possible.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -941,8 +970,10 @@ Flr= Floor&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;StrikePrice&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A45 - Strike price of first optional Call / Put as a percentage of nominal amount.
-95%=0.95&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A45 - Strike price of first optional Call /
+                                                Put as a percentage of nominal amount.
+                                                95%=0.95
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -950,20 +981,25 @@ Flr= Floor&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ValuationYieldCurve&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Specific data in case no yield curve of reference is available (e.g. for developing countries or BRICS)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Specific data in case no yield curve of reference is available (e.g.
+                                    for developing countries or BRICS)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Yield&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;A129 - Valuation Yield of the interest rate instrument
-****Is 3.5% coded as 3.5 or 0.035?&lt;/xs:documentation&gt;
+                                                ****Is 3.5% coded as 3.5 or 0.035?
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Spread&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;A130 - Issuer spread calculated from Z coupon IRS curve of quotation currency
-****Is 0.5% coded as 0.5 or 0.005?&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;A130 - Issuer spread calculated from Z coupon IRS curve of
+                                                quotation currency
+                                                ****Is 0.5% coded as 0.5 or 0.005?
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;

@@ -233,7 +233,11 @@
             font-family="Arial">StructuredSecurity</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="274.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="274.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Relevant fields for </tspan>
          <tspan x="25" dy="1.2em">structured securities </tspan>
       </text>
@@ -504,6 +508,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -555,7 +566,8 @@
                                 <span>xs:string</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07010: Unit quotation in Units figures or Percentage quotation of the amount to be invested</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07010: Unit quotation in Units figures or Percentage<br />
+quotation of the amount to be invested</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">U</td>
                         </tr>
@@ -573,7 +585,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07020: &quot;Ask Price&quot; - Fair Value (as of reporting date)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">418.44</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">120.45</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -589,7 +601,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07080: Exit cost at the RHP (typically 0%)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">409.88</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">877.81</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -605,7 +617,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07090: For non exchange traded structured securities</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">944.19</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">373.82</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -619,9 +631,11 @@
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07100: Expressed as a % of NAV / Notional (or currency  amount for Absolute quotation) of the Financial Product / always per annum</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07100: Expressed as a % of NAV / Notional (or currency<br />
+amount for Absolute quotation) of the Financial Product / always per<br />
+annum</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">584.28</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">355.50</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -635,16 +649,18 @@
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07110: Percentage per annum. These fees are included in total on going costs. Only applicable if the product has this feature. These fees are used by distributors to calculate their retrocession fees</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07110: Percentage per annum. These fees are included in<br />
+total on going costs. Only applicable if the product has this feature.<br />
+These fees are used by distributors to calculate their retrocession fees</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">326.38</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">190.82</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -663,8 +679,10 @@
       &lt;xs:sequence&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TypeNotionalOrItemBased&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;00085: Enables interpretation of Cost and Charges data when used together with fields 00096, 08110 and 08120.
-N for Notional based instrument, I for Item based instrument&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;00085: Enables interpretation of Cost and Charges data
+                                                    when used together with fields 00096, 08110 and 08120.
+                                                    N for Notional based instrument, I for Item based instrument
+                                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -677,7 +695,9 @@ N for Notional based instrument, I for Item based instrument&lt;/xs:documentatio
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ProductCategoryNature&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;00095: If the financial instrument is a structured security complete with the EUSIPA code&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;00095: If the financial instrument is a structured
+                                                    security complete with the EUSIPA code
+                                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;Text4Type&quot;&gt;
@@ -719,9 +739,13 @@ N for Notional based instrument, I for Item based instrument&lt;/xs:documentatio
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Quotation&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;00096: If 00060 is set to S or ETC. 
-U for Units, or P for Percentage.
-Defines if the quotation type in the Ex-Ante and Ex-Post section of the EMT file is in UNITS or in PERCENTAGE related to the specific Reference as presented in field 07150,07155, 08110 and 08120 respectively.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;00096: If 00060 is set to S or ETC.
+                                                    U for Units, or P for Percentage.
+                                                    Defines if the quotation type in the Ex-Ante and Ex-Post section of
+                                                    the EMT file is in UNITS or in PERCENTAGE related to the specific
+                                                    Reference as presented in field 07150,07155, 08110 and 08120
+                                                    respectively.
+                                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;

@@ -233,10 +233,13 @@
             font-family="Arial">InvestorType</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="158.3984375">
-         <tspan x="25" dy="1.2em">Target </tspan>
-         <tspan x="25" dy="1.2em">markets - </tspan>
-         <tspan x="25" dy="1.2em">Investor Type </tspan>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="158.3984375"
+            font-family="Arial">
+         <tspan x="25" dy="1.2em">Target markets </tspan>
+         <tspan x="25" dy="1.2em">- Investor Type </tspan>
       </text>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
@@ -394,6 +397,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -440,15 +450,16 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/EMTYesNoNeutralType.html"
+                                <a href="../simpleTypes/EMTYesNoNeutralType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesNoNeutralType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>01010: Neutral means usage by Retail clients are available under certain conditions.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>01010: Neutral means usage by Retail clients are available<br />
+under certain conditions.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -462,10 +473,14 @@
                                 <span>xs:string</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>01020: Y means both Professional Per Se and Elective Professionals are compatible.<br />
-N means that neither Professional Per Se nor Elective Professionals are compatible.<br />
-P means that Professional Per Se is compatible but Elective Professionals are not.<br />
-E means that Elective Professional is compatible but Professionals Per Se are not.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>01020: Y means both Professional Per Se and Elective<br />
+Professionals are compatible.<br />
+N means that neither Professional Per Se nor Elective Professionals are<br />
+compatible.<br />
+P means that Professional Per Se is compatible but Elective<br />
+Professionals are not.<br />
+E means that Elective Professional is compatible but Professionals Per<br />
+Se are not.<br />
 P is only used if the distinction Per Se is done in the Prospectus.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">Y</td>
@@ -477,7 +492,7 @@ P is only used if the distinction Per Se is done in the Prospectus.</p>
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/EMTYesNoType.html"
+                                <a href="../simpleTypes/EMTYesNoType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesNoType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -492,7 +507,7 @@ P is only used if the distinction Per Se is done in the Prospectus.</p>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -510,16 +525,23 @@ P is only used if the distinction Per Se is done in the Prospectus.</p>
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;Retail&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;01010: Neutral means usage by Retail clients are available under certain conditions.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;01010: Neutral means usage by Retail clients are available
+                                                under certain conditions.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Professional&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;01020: Y means both Professional Per Se and Elective Professionals are compatible.
-N means that neither Professional Per Se nor Elective Professionals are compatible.
-P means that Professional Per Se is compatible but Elective Professionals are not.
-E means that Elective Professional is compatible but Professionals Per Se are not.
-P is only used if the distinction Per Se is done in the Prospectus. &lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;01020: Y means both Professional Per Se and Elective
+                                                Professionals are compatible.
+                                                N means that neither Professional Per Se nor Elective Professionals are
+                                                compatible.
+                                                P means that Professional Per Se is compatible but Elective
+                                                Professionals are not.
+                                                E means that Elective Professional is compatible but Professionals Per
+                                                Se are not.
+                                                P is only used if the distinction Per Se is done in the Prospectus.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -532,7 +554,8 @@ P is only used if the distinction Per Se is done in the Prospectus. &lt;/xs:docu
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;EligibleCounterparty&quot; type=&quot;EMTYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;01030: Investor Type Eligible Counterparty&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;01030: Investor Type Eligible Counterparty
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

@@ -193,7 +193,11 @@
             font-family="Arial">Fund</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="427.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="427.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">All </tspan>
          <tspan x="25" dy="1.2em">single </tspan>
          <tspan x="25" dy="1.2em">fund, </tspan>
@@ -666,6 +670,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -746,7 +757,7 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/ISOCurrencyCodeType.html"
+                                <a href="../simpleTypes/ISOCurrencyCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -754,7 +765,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Main currency of fund (typically used by custodian for calculation of total NAV)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">QMZ</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">GPJ</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -768,9 +779,10 @@
                                 <span>xs:boolean</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether this is a single fund or an umbrella like structure with subfunds</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether this is a single fund or an umbrella like structure with<br />
+subfunds</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -870,7 +882,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Country specific data of fund (as defined in 'FundsXML4_CountrySpecificData_xx.xsd')</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Country specific data of fund (as defined in<br />
+'FundsXML4_CountrySpecificData_xx.xsd')</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -879,7 +892,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -893,7 +906,8 @@
             name=&quot;Fund&quot;
             type=&quot;FundType&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;All single fund, umbrella, sicav, portfolio related data
+                                    &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:key name=&quot;benchmarkID&quot;&gt;
       &lt;xs:selector xpath=&quot;FundStaticData/Benchmarks/Benchmark&quot;/&gt;

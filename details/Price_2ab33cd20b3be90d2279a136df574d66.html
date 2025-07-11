@@ -270,7 +270,7 @@
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f8fafc"
      width="371.0"
-     height="403.1796875">
+     height="373.2822265625">
    <defs>
       <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
       <filter width="140%"
@@ -313,20 +313,25 @@
             font-family="Arial">Price</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="197.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="197.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Inform </tspan>
          <tspan x="25" dy="1.2em">on the </tspan>
          <tspan x="25" dy="1.2em">price </tspan>
          <tspan x="25" dy="1.2em">type </tspan>
          <tspan x="25" dy="1.2em">(different </tspan>
-         <tspan x="25" dy="1.2em">from </tspan>
-         <tspan x="25" dy="1.2em">the </tspan>
+         <tspan x="25" dy="1.2em">from the </tspan>
          <tspan x="25" dy="1.2em">official </tspan>
          <tspan x="25" dy="1.2em">NAV) </tspan>
-         <tspan x="25" dy="1.2em">used </tspan>
-         <tspan x="25" dy="1.2em">for </tspan>
+         <tspan x="25" dy="1.2em">used for </tspan>
          <tspan x="25" dy="1.2em">other </tspan>
-         <tspan x="25" dy="1.2em">price </tspan>
+         <tspan x="25" dy="1.2em">price
+      </tspan>
+         <tspan x="25" dy="1.2em">              </tspan>
+         <tspan x="25" dy="1.2em">    </tspan>
          <tspan x="25" dy="1.2em">communication </tspan>
       </text>
    </g>
@@ -516,11 +521,19 @@
                 <div class="bg-slate-100/75 p-4 rounded-md space-y-2">
                     <div>
                         <strong class="text-slate-700 block"></strong>
-                        <p class="text-slate-600"><p>Inform on the price type (different from the official NAV) used for other price communication</p>
+                        <p class="text-slate-600"><p>Inform on the price type (different from the official NAV) used for other price<br />
+communication</p>
 </p>
                     </div>
                 </div>
             </section>
+
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
 
             <!-- Section: Properties -->
             <section>
@@ -573,7 +586,8 @@
                                 <span>xs:string</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Select the price type you would like to communicate (SWING, MATURITY, MARKET,HOLD TO MATURITY, ADJUSTED GROSS, ADJUSTED NET)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Select the price type you would like to communicate (SWING, MATURITY,<br />
+MARKET,HOLD TO MATURITY, ADJUSTED GROSS, ADJUSTED NET)</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">MATURITY</td>
                         </tr>
@@ -591,7 +605,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Other price type Net Asset value calculated per share</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">355.68</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">105.64</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -607,7 +621,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Other price type Subscription price per share</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">151.60</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">579.87</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -623,14 +637,14 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Other price type Redemption price per share</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">762.04</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">674.82</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -643,13 +657,17 @@
             maxOccurs=&quot;unbounded&quot;
             name=&quot;Price&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Inform on the price type (different from the official NAV) used for other price communication&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;Inform on the price type (different from the official NAV) used for other price
+                        communication
+                    &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;PriceType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Select the price type you would like to communicate (SWING, MATURITY, MARKET,HOLD TO MATURITY, ADJUSTED GROSS, ADJUSTED NET)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Select the price type you would like to communicate (SWING, MATURITY,
+                                    MARKET,HOLD TO MATURITY, ADJUSTED GROSS, ADJUSTED NET)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -666,7 +684,8 @@
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;NavPrice&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Other price type Net Asset value calculated per share&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Other price type Net Asset value calculated per share
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SubscriptionPrice&quot; type=&quot;xs:decimal&quot;&gt;

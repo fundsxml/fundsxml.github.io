@@ -243,10 +243,13 @@
             font-family="Arial">CapitalPreservation</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="235.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="235.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Additional information </tspan>
-         <tspan x="25" dy="1.2em">for capital </tspan>
-         <tspan x="25" dy="1.2em">preservation </tspan>
+         <tspan x="25" dy="1.2em">for capital preservation </tspan>
          <tspan x="25" dy="1.2em">funds/portfolio </tspan>
       </text>
    </g>
@@ -479,6 +482,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -525,15 +535,16 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/YesNoType.html"
+                                <a href="../simpleTypes/YesNoType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">YesNoType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>06040-Identifies if a capital preservation method is used (Y) or not (N).</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>06040-Identifies if a capital preservation method is used (Y) or not<br />
+(N).</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">NO</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">YES</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -547,9 +558,10 @@
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>06050-100% minus the maximum possible loss in percentage of its market value.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>06050-100% minus the maximum possible loss in percentage of its market<br />
+value.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">940.28</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">876.56</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -563,7 +575,8 @@
                                 <span>xs:integer</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>06060-The time period in which a possible loss of a capital perservation funds is measured.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>06060-The time period in which a possible loss of a capital<br />
+perservation funds is measured.<br />
 &quot;1&quot;= annual&quot;<br />
 &quot;2&quot;= biannual<br />
 &quot;4&quot;=quarterly<br />
@@ -573,7 +586,7 @@
 &quot;104&quot;=biweekly<br />
 &quot;252&quot;=daily</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">24</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">104</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -582,15 +595,16 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/YesNoType.html"
+                                <a href="../simpleTypes/YesNoType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">YesNoType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>06070-Identifies if PI (Portfolio Insurance including CPPI Constant Proportion Portfolio Insurance)  is used (Y) or not (N) for capital preservation.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>06070-Identifies if PI (Portfolio Insurance including CPPI Constant<br />
+Proportion Portfolio Insurance) is used (Y) or not (N) for capital preservation.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">YES</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">NO</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -606,14 +620,14 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>06080-Gives the maximum multiplier value if PI algorithm is us</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">90.67</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">805.36</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -631,25 +645,31 @@
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;Existing_Capital_Preservation&quot; type=&quot;YesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;06040-Identifies if a capital preservation method is used (Y) or not (N).&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;06040-Identifies if a capital preservation method is used (Y) or not
+                                    (N).
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;CapitalPreservationLevel&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;06050-100% minus the maximum possible loss in percentage of its market value.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;06050-100% minus the maximum possible loss in percentage of its market
+                                    value.
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;TimeIntervalMaximumLoss&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;06060-The time period in which a possible loss of a capital perservation funds is measured. 
-&quot;1&quot;= annual&quot;
-&quot;2&quot;= biannual
-&quot;4&quot;=quarterly
-&quot;12&quot;= monthly
-&quot;24&quot;=bimonthly
-&quot;52&quot;=weekly
-&quot;104&quot;=biweekly
-&quot;252&quot;=daily&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;06060-The time period in which a possible loss of a capital
+                                    perservation funds is measured.
+                                    &quot;1&quot;= annual&quot;
+                                    &quot;2&quot;= biannual
+                                    &quot;4&quot;=quarterly
+                                    &quot;12&quot;= monthly
+                                    &quot;24&quot;=bimonthly
+                                    &quot;52&quot;=weekly
+                                    &quot;104&quot;=biweekly
+                                    &quot;252&quot;=daily
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:integer&quot;&gt;
@@ -666,12 +686,15 @@
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;UsesPI&quot; type=&quot;YesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;06070-Identifies if PI (Portfolio Insurance including CPPI Constant Proportion Portfolio Insurance)  is used (Y) or not (N) for capital preservation.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;06070-Identifies if PI (Portfolio Insurance including CPPI Constant
+                                    Proportion Portfolio Insurance) is used (Y) or not (N) for capital preservation.
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MultiplierPI&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;06080-Gives the maximum multiplier value if PI algorithm is us&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;06080-Gives the maximum multiplier value if PI algorithm is us
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

@@ -243,7 +243,11 @@
             font-family="Arial">Incidental</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="197.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="197.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em"></tspan>
          <tspan x="25" dy="1.2em">03080-03100 </tspan>
       </text>
@@ -440,6 +444,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -486,15 +497,16 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/YesNoType.html"
+                                <a href="../simpleTypes/YesNoType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">YesNoType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>03090-Indicates whether there are existing performance fees or not</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>03090-Indicates whether there are existing<br />
+performance fees or not</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">YES</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">NO</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -508,9 +520,10 @@
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>03095-See PRIIPS definition as a % of NAV of the portfolio, the funds or the share class / per annum</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>03095-See PRIIPS definition as a % of NAV of<br />
+the portfolio, the funds or the share class / per annum</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">432.94</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">663.59</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -525,7 +538,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>03100-Indicates whether there are exiting carried interest fees or not</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>03100-Indicates whether there are exiting<br />
+carried interest fees or not</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -541,16 +555,17 @@
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>03105-See PRIIPS definition as a % of invested capital per annum (average)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>03105-See PRIIPS definition as a % of invested<br />
+capital per annum (average)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">991.20</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">333.80</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -568,24 +583,32 @@
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;ExistringPerformanceFees&quot; type=&quot;YesNoType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;03090-Indicates whether there are existing performance fees or not&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;03090-Indicates whether there are existing
+                                                            performance fees or not
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
                      name=&quot;IncidentalCostsPortfolioPerformanceFees&quot;
                      type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;03095-See PRIIPS definition as a % of NAV of the portfolio, the funds or the share class / per annum&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;03095-See PRIIPS definition as a % of NAV of
+                                                            the portfolio, the funds or the share class / per annum
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;ExistingCarriedInterestFees&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;03100-Indicates whether there are exiting carried interest fees or not&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;03100-Indicates whether there are exiting
+                                                            carried interest fees or not
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CarriedInterest&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;03105-See PRIIPS definition as a % of invested capital per annum (average)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;03105-See PRIIPS definition as a % of invested
+                                                            capital per annum (average)
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:decimal&quot;&gt;

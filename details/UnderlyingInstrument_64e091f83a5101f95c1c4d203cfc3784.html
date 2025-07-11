@@ -253,7 +253,11 @@
             font-family="Arial">UnderlyingInstrument</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="312.3984375"/>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="312.3984375"
+            font-family="Arial"/>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
@@ -579,6 +583,13 @@
             <!-- Section: Documentation -->
             
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -625,16 +636,17 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/CICCodeType.html"
+                                <a href="../simpleTypes/CICCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">CICCodeType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A67 - Instrument type. E.g. Equity, bond, option, swap,...<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A67 - Instrument type. E.g. Equity, bond,<br />
+option, swap,...<br />
 CIC codification.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">DB32</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">OL68</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -649,7 +661,9 @@ CIC codification.</p>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A69 68 - Use ISIN, CUSIP,  or OtherSecurityCodes/Name(of codification system) for BLOOMBERG, TELEKURS or Internal code</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A69 68 - Use ISIN, CUSIP, or<br />
+OtherSecurityCodes/Name(of codification system) for BLOOMBERG, TELEKURS<br />
+or Internal code</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -698,7 +712,8 @@ CIC codification.</p>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>If underlying instrument is an interest rate instrument.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>If underlying instrument is an interest rate<br />
+instrument.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -743,7 +758,7 @@ If underlying instrument is an interest rate instrument.</p>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -758,18 +773,24 @@ If underlying instrument is an interest rate instrument.</p>
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;InstrumentCIC&quot; type=&quot;CICCodeType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A67 - Instrument type. E.g. Equity, bond, option, swap,...
-CIC codification.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A67 - Instrument type. E.g. Equity, bond,
+                                                option, swap,...
+                                                CIC codification.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;InstrumentCode&quot; type=&quot;SIISecurityCodificationType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A69 68 - Use ISIN, CUSIP,  or OtherSecurityCodes/Name(of codification system) for BLOOMBERG, TELEKURS or Internal code&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A69 68 - Use ISIN, CUSIP, or
+                                                OtherSecurityCodes/Name(of codification system) for BLOOMBERG, TELEKURS
+                                                or Internal code
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;InstrumentName&quot; type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A70 - Name of underlying instrument.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A70 - Name of underlying instrument.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Valuation&quot;&gt;
@@ -777,26 +798,32 @@ CIC codification.&lt;/xs:documentation&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Currency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;A71 - Quotation currency (C)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;A71 - Quotation currency (C)
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;MarketPrice&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A72 - Last market price known, in Currency (C).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A72 - Last market price known,
+                                                            in Currency (C).
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Country&quot; type=&quot;ISOCountryCodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A73 - Country of quotation&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A73 - Country of quotation
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;EconomicArea&quot; type=&quot;EconomicAreaType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A74 - Economic area code of Country of quotation:
-0 non listed
-1 EEA;
-2 OECD non EEA
-3 non OECD&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A74 - Economic area code of
+                                                            Country of quotation:
+                                                            0 non listed
+                                                            1 EEA;
+                                                            2 OECD non EEA
+                                                            3 non OECD
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -804,25 +831,31 @@ CIC codification.&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Coupon&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;If underlying instrument is an interest rate instrument.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;If underlying instrument is an interest rate
+                                                instrument.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;CouponRate&quot; type=&quot;PercentageType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A75 - Next coupon rate in percentage.
-3.5% = 3.5&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A75 - Next coupon rate in
+                                                            percentage.
+                                                            3.5% = 3.5
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;CouponFrequency&quot; type=&quot;SIICouponFrequencyType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A76 - Coupon payment frequency as number of coupons per year
-0 = other case than
-1= annual
-2= biannual
-4= quarterly
-12= monthly
-52=Weekly&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A76 - Coupon payment frequency
+                                                            as number of coupons per year
+                                                            0 = other case than
+                                                            1= annual
+                                                            2= biannual
+                                                            4= quarterly
+                                                            12= monthly
+                                                            52=Weekly
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -831,13 +864,15 @@ CIC codification.&lt;/xs:documentation&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Redemption&quot; type=&quot;RedemptionType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A77 78 79 - Redemption details.
-If underlying instrument is an interest rate instrument.&lt;/xs:documentation&gt;
+                                                If underlying instrument is an interest rate instrument.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CreditRiskData&quot; type=&quot;CreditRiskDataType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A80 to A89 - Issuer of underlying instrument
-(or counterparty for OTC instruments).&lt;/xs:documentation&gt;
+                                                (or counterparty for OTC instruments).
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

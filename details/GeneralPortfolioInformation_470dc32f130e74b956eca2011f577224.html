@@ -223,7 +223,11 @@
             font-family="Arial">GeneralPortfolioInformation</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="235.3984375"/>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="235.3984375"
+            font-family="Arial"/>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
@@ -451,6 +455,13 @@
             <!-- Section: Documentation -->
             
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -519,7 +530,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>30020_Portfolio_Identifying_Data / 30030_Type_Of_Identification_Code_For_The_Fund_Share_Or_Portfolio</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>30020_Portfolio_Identifying_Data /<br />
+30030_Type_Of_Identification_Code_For_The_Fund_Share_Or_Portfolio</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -530,7 +542,7 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/ISOCurrencyCodeType.html"
+                                <a href="../simpleTypes/ISOCurrencyCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -538,7 +550,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>30040_Portfolio_Or_Share_Class_Currency</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">XRZ</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">CWH</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -554,7 +566,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>30050_PRIIPs_KID_Publication_Date</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-01-11</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2024-03-07</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -570,16 +582,17 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>10060_Historical_Start_Date<br />
 &quot;Start date of the data set</p>
-<p>&quot;</p>
+<pre><code>                                &quot;
+</code></pre>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-01-20</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-09-21</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -595,8 +608,8 @@
          &lt;xs:element name=&quot;PortfolioIdentifyingData&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;10020_Portfolio_Identifying_Data
-Identification of the fund or share class or segregated account
-&lt;/xs:documentation&gt;
+                                    Identification of the fund or share class or segregated account
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -606,29 +619,30 @@ Identification of the fund or share class or segregated account
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;PortfolioID&quot; type=&quot;PRIIPS_SecurityCodificationType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;10030_Type_Of_Identification_Code_For_The_Fund_Share_Or_Portfolio
-&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;
+                                    10030_Type_Of_Identification_Code_For_The_Fund_Share_Or_Portfolio
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;ShareClassCurrency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;10040_Portfolio_Or_Share_Class_Currency
-&lt;/xs:documentation&gt;
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;ReferenceDate&quot; type=&quot;xs:date&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;10050_General_Reference_Date
-&lt;/xs:documentation&gt;
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;PortfolioHistoricalStartDate&quot; type=&quot;xs:date&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;10060_Historical_Start_Date
-&quot;Start date of the data set
+                                    &quot;Start date of the data set
 
-&quot;
-&lt;/xs:documentation&gt;
+                                    &quot;
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

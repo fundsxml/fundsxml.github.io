@@ -223,7 +223,11 @@
             font-family="Arial">GeneralFinancialInstrumentInformation</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="197.3984375"/>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="197.3984375"
+            font-family="Arial"/>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
@@ -408,6 +412,13 @@
             <!-- Section: Documentation -->
             
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -461,13 +472,12 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>04010_Financial_Instrument_Identifying_Data<br />
 Identification of the financial instrument<br />
-Use the following priority for identification of a specific financial instrument:</p>
-<ul>
-<li>ISO 6166 code of ISIN when available</li>
-<li>Other recognised codes (e.g.: CUSIP, Bloomberg Ticker, Reuters RIC)</li>
-<li>Code attributed by the undertaking, when the options above are not available. Code must be unique and kept consistent over time.</li>
-<li>blank if 04020 is set to 11</li>
-</ul>
+Use the following priority for identification of a specific financial instrument:<br />
+- ISO 6166 code of ISIN when available<br />
+- Other recognised codes (e.g.: CUSIP, Bloomberg Ticker, Reuters RIC)<br />
+- Code attributed by the undertaking, when the options above are not available. Code<br />
+must be unique and kept consistent over time.<br />
+- blank if 04020 is set to 11</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
@@ -484,10 +494,12 @@ Use the following priority for identification of a specific financial instrument
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>04020_Type_Of_Identification_Code_For_The_Financial_Instrument<br />
-Codification chosen to identify the financial instrument or Aggregated Class of Products<br />
+Codification chosen to identify the financial instrument or Aggregated Class of<br />
+Products<br />
 One of the options in the following closed list to be used:<br />
 1 - ISO 6166 for ISIN code<br />
-2 - CUSIP (The Committee on Uniform Securities Identification Procedures number assigned by the CUSIP Service Bureau for U.S. and Canadian companies)<br />
+2 - CUSIP (The Committee on Uniform Securities Identification Procedures number<br />
+assigned by the CUSIP Service Bureau for U.S. and Canadian companies)<br />
 3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)<br />
 4 – WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)<br />
 5 - Bloomberg Ticker (Bloomberg letters code that identify a company's securities)<br />
@@ -499,7 +511,7 @@ One of the options in the following closed list to be used:<br />
 11 - Aggregated Class of products<br />
 99 - Code attributed by the undertaking</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">11</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -531,16 +543,17 @@ Name of the financial instrument if applicable</p>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>04040_Financial_Instrument_Total_Number_Of_Transactions<br />
-Means total number of transactions expressed in absolute number. Includes volumes in Positive, Negative and outside of Positve.</p>
+Means total number of transactions expressed in absolute number. Includes volumes in<br />
+Positive, Negative and outside of Positve.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">4956</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">445</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -559,10 +572,12 @@ Means total number of transactions expressed in absolute number. Includes volume
          &lt;xs:element name=&quot;IdentifyingData&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;20000_Financial_Instrument_Identifying_Data
-Use the following priority:
-  - ISO 6166 code of ISIN when available
-  - Other recognised codes (e.g.: CUSIP, Bloomberg Ticker, Reuters RIC)
-  - Code attributed by the undertaking, when the options above are not available. Code must be unique and kept consistent over time&lt;/xs:documentation&gt;
+                                    Use the following priority:
+                                    - ISO 6166 code of ISIN when available
+                                    - Other recognised codes (e.g.: CUSIP, Bloomberg Ticker, Reuters RIC)
+                                    - Code attributed by the undertaking, when the options above are not available. Code
+                                    must be unique and kept consistent over time
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -573,18 +588,20 @@ Use the following priority:
          &lt;xs:element name=&quot;TypeOfIdentification&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;20010_Financial_Instrument_Type_Of_Identification_Code
-One of the options in the following closed list to be used:
-1 - ISO 6166 for ISIN code
-2 - CUSIP (The Committee on Uniform Securities Identification Procedures number assigned by the CUSIP Service Bureau for U.S. and Canadian companies)
-3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)
-4 – WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)
-5 - Bloomberg Ticker (Bloomberg letters code that identify a company&#39;s securities)
-6 - BBGID (The Bloomberg Global ID)
-7 - Reuters RIC (Reuters instrument code)
-8 – FIGI (Financial_Instrument Global Identifier)
-9 - Other code by members of the Association of National Numbering Agencies
-10 - LEI
-99 - Code attributed by the undertaking&lt;/xs:documentation&gt;
+                                    One of the options in the following closed list to be used:
+                                    1 - ISO 6166 for ISIN code
+                                    2 - CUSIP (The Committee on Uniform Securities Identification Procedures number
+                                    assigned by the CUSIP Service Bureau for U.S. and Canadian companies)
+                                    3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)
+                                    4 – WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)
+                                    5 - Bloomberg Ticker (Bloomberg letters code that identify a company&#39;s securities)
+                                    6 - BBGID (The Bloomberg Global ID)
+                                    7 - Reuters RIC (Reuters instrument code)
+                                    8 – FIGI (Financial_Instrument Global Identifier)
+                                    9 - Other code by members of the Association of National Numbering Agencies
+                                    10 - LEI
+                                    99 - Code attributed by the undertaking
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:int&quot;&gt;
@@ -606,7 +623,8 @@ One of the options in the following closed list to be used:
          &lt;xs:element name=&quot;Name&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;20020_Financial_Instrument_Name
-Name of the financial instrument&lt;/xs:documentation&gt;
+                                    Name of the financial instrument
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -617,7 +635,8 @@ Name of the financial instrument&lt;/xs:documentation&gt;
          &lt;xs:element name=&quot;Currency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;20030_Financial_Instrument_Currency
-Denomination Currency of the Financial Instrument&lt;/xs:documentation&gt;
+                                    Denomination Currency of the Financial Instrument
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

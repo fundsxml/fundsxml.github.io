@@ -273,9 +273,13 @@
             font-family="Arial">CorporateAction</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="427.3984375">
-         <tspan x="25" dy="1.2em">Details for </tspan>
-         <tspan x="25" dy="1.2em">corporate actions </tspan>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="427.3984375"
+            font-family="Arial">
+         <tspan x="25" dy="1.2em">Details for corporate </tspan>
+         <tspan x="25" dy="1.2em">actions </tspan>
       </text>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
@@ -722,6 +726,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -818,7 +829,7 @@ ESC = Exchange of share certificate<br />
 CD = Capital Decrease<br />
 GenM= General Meetings</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">SD</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">DEM</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -835,7 +846,7 @@ GenM= General Meetings</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Ex dividend day of the corporate action</p>
 <p>Extag</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2020-11-12</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2022-01-20</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -852,7 +863,7 @@ GenM= General Meetings</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Valuta day of expenses</p>
 <p>Gibt das Valutadatum der Spesen an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-02-06</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2021-11-08</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -867,9 +878,10 @@ GenM= General Meetings</p>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Exchange rate applied for expenses</p>
-<p>Enthaelt den Devisenkurs der fuer die Spesenbuchung verwendet wird</p>
+<p>Enthaelt den Devisenkurs der fuer die Spesenbuchung<br />
+verwendet wird</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">903.98</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">226.48</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -885,7 +897,8 @@ GenM= General Meetings</p>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Expenses in fund and/or foreign currency</p>
-<p>Enthaelt den Spesenbetrag in Fonds- und Fremdwaehrung</p>
+<p>Enthaelt den Spesenbetrag in Fonds- und<br />
+Fremdwaehrung</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -904,7 +917,7 @@ GenM= General Meetings</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Account number used for booking of expenses</p>
 <p>Gibt das Spesenkonto an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">6691</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1369</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -919,8 +932,10 @@ GenM= General Meetings</p>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unit interests to be used for calculating EU withholding tax</p>
-<p>Gibt die StuecKZinsen fuer die Berechnung der EU-QUEST an</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unit interests to be used for calculating EU<br />
+withholding tax</p>
+<p>Gibt die StuecKZinsen fuer die Berechnung der<br />
+EU-QUEST an</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -946,7 +961,7 @@ GenM= General Meetings</p>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -970,13 +985,16 @@ GenM= General Meetings</p>
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Identifiers&quot; type=&quot;IdentifiersType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Kennnummer von welcher der Bestand weggebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Kennnummer von welcher der Bestand weggebucht wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetUniqueID&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Link to AssetMasterData&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Referenz zu den Wertpapierstammdaten&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Link to AssetMasterData
+                                                &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Referenz zu den Wertpapierstammdaten
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:IDREF&quot;&gt;
@@ -986,23 +1004,28 @@ GenM= General Meetings</p>
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SubscriptionRatio&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Enhaelt das Bezugsverhaeltnis von &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Enhaelt das Bezugsverhaeltnis von&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;UnitsExDate&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;***Should be &quot;UnitsExDate&quot;
-Anzahl der Stuecke, die vom Bestand weggebucht werden&lt;/xs:documentation&gt;
+                                                    Anzahl der Stuecke, die vom Bestand weggebucht werden
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Price&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Gibt den Kurs an mit dem der auszubuchende Bestand gebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Gibt den Kurs an mit dem der auszubuchende Bestand
+                                                    gebucht wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MarketValue&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Gibt den Kurswert an mit dem der auszubuchende Bestand gebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Gibt den Kurswert an mit dem der auszubuchende Bestand
+                                                    gebucht wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;NominalOrUnits&quot; type=&quot;xs:decimal&quot;&gt;
@@ -1012,65 +1035,84 @@ Anzahl der Stuecke, die vom Bestand weggebucht werden&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExchangeRateValue&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Gibt den Devisenkurs an mit dem der auszubuchende Bestand gebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Gibt den Devisenkurs an mit dem der auszubuchende
+                                                    Bestand gebucht wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Interests&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Enthaelt die Zinsen des Wertpapier, welches ausgebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Enthaelt die Zinsen des Wertpapier, welches ausgebucht
+                                                    wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;InterestsCurrency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Enthaelt die Waehrung in welcher die Zinsen angegeben sind falls Fremdwaehrung&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Enthaelt die Waehrung in welcher die Zinsen angegeben
+                                                    sind falls Fremdwaehrung
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CostValue&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Einstandswert vom auszubuchenden Bestand&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Einstandswert vom auszubuchenden Bestand
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ValueDate&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;****Should be &quot;ValueDate&quot;
-Valutadatum &lt;/xs:documentation&gt;
+                                                    Valutadatum
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DividendCurrency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Enthaelt die Waehrung in welcher die Dividende angegeben ist falls Fremdwaehrung&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Enthaelt die Waehrung in welcher die Dividende
+                                                    angegeben ist falls Fremdwaehrung
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DividendExchangeRate&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Devisenkurs mit dem die Dividende vom auszubuchenden Bestand gebucht wurde&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Devisenkurs mit dem die Dividende vom auszubuchenden
+                                                    Bestand gebucht wurde
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;NetDividend&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Nettodividende des auszubuchenden Bestandes&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Nettodividende des auszubuchenden Bestandes
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Quest&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Quellensteuer der Dividende des auszubuchenden Bestandes&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Quellensteuer der Dividende des auszubuchenden
+                                                    Bestandes
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ProfitLoss&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Angabe des Gewinn/des Verlustes des auszubuchenden Bestandes&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Angabe des Gewinn/des Verlustes des auszubuchenden
+                                                    Bestandes
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;UnitsInterestCapitalYieldsTax&quot;
                               type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Kapitalertragsteuer des auszubuchenden Bestandes&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Kapitalertragsteuer des auszubuchenden Bestandes
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;EUWithholdingTax&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;EU-QUEST des auszubuchenden Bestandes&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;EU-QUEST des auszubuchenden Bestandes
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -1084,13 +1126,16 @@ Valutadatum &lt;/xs:documentation&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Identifiers&quot; type=&quot;IdentifiersType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Kennnummer auf welche der Bestand gebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Kennnummer auf welche der Bestand gebucht wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetUniqueID&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Link to AssetMasterData&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Referenz zu den Wertpapierstammdaten&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Link to AssetMasterData
+                                                &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Referenz zu den Wertpapierstammdaten
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:IDREF&quot;&gt;
@@ -1105,17 +1150,22 @@ Valutadatum &lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Currency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Waehrung des Bestandes der eingebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Waehrung des Bestandes der eingebucht wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Price&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Gibt den Kurs an, mit dem der einzubuchende Bestand gebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Gibt den Kurs an, mit dem der einzubuchende Bestand
+                                                    gebucht wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MarketValue&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Gibt den Kurswert an, mit dem der einzubuchende Bestand gebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Gibt den Kurswert an, mit dem der einzubuchende
+                                                    Bestand gebucht wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;NominalOrUnits&quot; type=&quot;xs:decimal&quot;&gt;
@@ -1125,34 +1175,43 @@ Valutadatum &lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExchangeRate&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Gibt den Devisenkurs an, mit dem der einzubuchende Bestand gebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Gibt den Devisenkurs an, mit dem der einzubuchende
+                                                    Bestand gebucht wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Interests&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Enthaelt die Zinsen des Wertpapieres, welches eingebucht wird&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Enthaelt die Zinsen des Wertpapieres, welches
+                                                    eingebucht wird
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;InterestsCurrency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Enthaelt die Waehrung fuer die Zinsen vom einzubuchenden Betrag&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Enthaelt die Waehrung fuer die Zinsen vom
+                                                    einzubuchenden Betrag
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CostValue&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Einstandswert des einzubuchenden Bestandes&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Einstandswert des einzubuchenden Bestandes
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;UnitsInterestCapitalYieldsTax&quot;
                               type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Kapitalertragsteuer des einzubuchenden Bestandes&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Kapitalertragsteuer des einzubuchenden Bestandes
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;EUWithholdingTax&quot; type=&quot;FundAmountType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;EU-QUEST des einzubuchenden Bestandes&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;EU-QUEST des einzubuchenden Bestandes
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -1161,15 +1220,16 @@ Valutadatum &lt;/xs:documentation&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CorporateActionKind&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;S = Split
-RS = Reversesplit
-M = Merger
-SD = Stock dividend
-NSinS = New Shares in Shares
-DEM = Demerger
-RI =Rights issue
-ESC = Exchange of share certificate 
-CD = Capital Decrease
-GenM= General Meetings&lt;/xs:documentation&gt;
+                                        RS = Reversesplit
+                                        M = Merger
+                                        SD = Stock dividend
+                                        NSinS = New Shares in Shares
+                                        DEM = Demerger
+                                        RI =Rights issue
+                                        ESC = Exchange of share certificate
+                                        CD = Capital Decrease
+                                        GenM= General Meetings
+                                    &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -1188,31 +1248,40 @@ GenM= General Meetings&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExDividendDate&quot; type=&quot;xs:date&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Ex dividend day of the corporate action&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Ex dividend day of the corporate action
+                                    &lt;/xs:documentation&gt;
                &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Extag&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExpensesValutaDate&quot; type=&quot;xs:date&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Valuta day of expenses&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt das Valutadatum der Spesen an&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt das Valutadatum der Spesen an
+                                    &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExpensesExchangeRate&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Exchange rate applied for expenses&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Enthaelt den Devisenkurs der fuer die Spesenbuchung verwendet wird&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Exchange rate applied for expenses
+                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Enthaelt den Devisenkurs der fuer die Spesenbuchung
+                                        verwendet wird
+                                    &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Expenses&quot; type=&quot;FundAmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Expenses in fund and/or foreign currency&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Enthaelt den Spesenbetrag in Fonds- und Fremdwaehrung&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Expenses in fund and/or foreign currency
+                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Enthaelt den Spesenbetrag in Fonds- und
+                                        Fremdwaehrung
+                                    &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AccountNumberExpenses&quot; type=&quot;xs:integer&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Account number used for booking of expenses&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Account number used for booking of expenses
+                                    &lt;/xs:documentation&gt;
                &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt das Spesenkonto an&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
@@ -1220,20 +1289,26 @@ GenM= General Meetings&lt;/xs:documentation&gt;
                      name=&quot;UnitInterestEUWithholdingTax&quot;
                      type=&quot;FundAmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Unit interests to be used for calculating EU withholding tax&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt die StuecKZinsen fuer die Berechnung der EU-QUEST an&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Unit interests to be used for calculating EU
+                                        withholding tax
+                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt die StuecKZinsen fuer die Berechnung der
+                                        EU-QUEST an
+                                    &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CorporateActionDocument&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Text document describing details of corporate action&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Text document describing details of corporate action
+                                    &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Format&quot; type=&quot;Text256Type&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;Technical format of document:
-PDF, XML, Excel, Word, Image, ...&lt;/xs:documentation&gt;
+                                                    PDF, XML, Excel, Word, Image, ...
+                                                &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DocumentURL&quot; type=&quot;Text1000Type&quot;&gt;

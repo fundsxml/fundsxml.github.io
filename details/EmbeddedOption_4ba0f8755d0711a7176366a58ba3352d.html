@@ -253,16 +253,21 @@
             font-family="Arial">EmbeddedOption</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="197.3984375">
-         <tspan x="25" dy="1.2em">To be used only for </tspan>
-         <tspan x="25" dy="1.2em">a 
-callable / putable </tspan>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="197.3984375"
+            font-family="Arial">
+         <tspan x="25" dy="1.2em">To be used only for a
+  </tspan>
+         <tspan x="25" dy="1.2em">                                  </tspan>
+         <tspan x="25" dy="1.2em">callable / putable </tspan>
          <tspan x="25" dy="1.2em">bond.
-The </tspan>
-         <tspan x="25" dy="1.2em">embedded option is </tspan>
-         <tspan x="25" dy="1.2em">described only for </tspan>
-         <tspan x="25" dy="1.2em">the first option date </tspan>
-         <tspan x="25" dy="1.2em">to come. </tspan>
+                           </tspan>
+         <tspan x="25" dy="1.2em">         The embedded </tspan>
+         <tspan x="25" dy="1.2em">option is described </tspan>
+         <tspan x="25" dy="1.2em">only for the first </tspan>
+         <tspan x="25" dy="1.2em">option date to come. </tspan>
       </text>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
@@ -459,6 +464,13 @@ The embedded option is described only for the first option date to come.</p>
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -515,7 +527,7 @@ Put = Put<br />
 Cap = Cap<br />
 Flr= Floor</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Put</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Cap</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -529,9 +541,10 @@ Flr= Floor</p>
                                 <span>xs:date</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A43 - Date of first Call / Put option to come.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A43 - Date of first Call / Put option to<br />
+come.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-07-03</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2024-10-07</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -545,7 +558,8 @@ Flr= Floor</p>
                                 <span>xs:string</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A44 - Option at the discretion of issuer(I) or bearer(B). &quot;O&quot; if both are possible.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A44 - Option at the discretion of issuer(I)<br />
+or bearer(B). &quot;O&quot; if both are possible.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">I</td>
                         </tr>
@@ -561,17 +575,18 @@ Flr= Floor</p>
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A45 - Strike price of first optional Call / Put as a percentage of nominal amount.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A45 - Strike price of first optional Call /<br />
+Put as a percentage of nominal amount.<br />
 95%=0.95</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">978.31</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">93.85</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -584,18 +599,20 @@ Flr= Floor</p>
             minOccurs=&quot;0&quot;
             name=&quot;EmbeddedOption&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation xml:lang=&quot;en&quot;&gt;To be used only for a 
-callable / putable bond.
-The embedded option is described only for the first option date to come.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang=&quot;en&quot;&gt;To be used only for a
+                                    callable / putable bond.
+                                    The embedded option is described only for the first option date to come.
+                                &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;CallPutType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A42 - Cal = Call
-Put = Put
-Cap = Cap
-Flr= Floor&lt;/xs:documentation&gt;
+                                                Put = Put
+                                                Cap = Cap
+                                                Flr= Floor
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -608,12 +625,16 @@ Flr= Floor&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;CallPutDate&quot; type=&quot;xs:date&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A43 - Date of first Call / Put option to come.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A43 - Date of first Call / Put option to
+                                                come.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;OptionDirection&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A44 - Option at the discretion of issuer(I) or bearer(B). &quot;O&quot; if both are possible.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A44 - Option at the discretion of issuer(I)
+                                                or bearer(B). &quot;O&quot; if both are possible.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -627,8 +648,10 @@ Flr= Floor&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;StrikePrice&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A45 - Strike price of first optional Call / Put as a percentage of nominal amount.
-95%=0.95&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A45 - Strike price of first optional Call /
+                                                Put as a percentage of nominal amount.
+                                                95%=0.95
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

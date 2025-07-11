@@ -223,7 +223,11 @@
             font-family="Arial">DataReporting</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="235.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="235.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">00060 - 00100 </tspan>
       </text>
    </g>
@@ -456,6 +460,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -502,7 +513,7 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/EETYesNoType.html"
+                                <a href="../simpleTypes/EETYesNoType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -519,16 +530,17 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/EETYesNoType.html"
+                                <a href="../simpleTypes/EETYesNoType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>00070_EET_Data_Reporting_SFDR_Periodic<br />
-No means that there is not yet a periodic reporting. The M related fields have not to be fullfiled&quot;</p>
+No means that there is not yet a periodic reporting. The M<br />
+related fields have not to be fullfiled&quot;</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -537,7 +549,7 @@ No means that there is not yet a periodic reporting. The M related fields have n
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/EETYesNoType.html"
+                                <a href="../simpleTypes/EETYesNoType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -545,7 +557,7 @@ No means that there is not yet a periodic reporting. The M related fields have n
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>00080_EET_Data_Reporting_SFDR_Entity_Level</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -554,7 +566,7 @@ No means that there is not yet a periodic reporting. The M related fields have n
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/EETYesNoType.html"
+                                <a href="../simpleTypes/EETYesNoType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -562,7 +574,7 @@ No means that there is not yet a periodic reporting. The M related fields have n
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>00090_EET_Data_Reporting_Mifid</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -571,7 +583,7 @@ No means that there is not yet a periodic reporting. The M related fields have n
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/EETYesNoType.html"
+                                <a href="../simpleTypes/EETYesNoType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -586,7 +598,7 @@ No means that there is not yet a periodic reporting. The M related fields have n
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -605,31 +617,38 @@ No means that there is not yet a periodic reporting. The M related fields have n
          &lt;xs:element name=&quot;SFDR_PreContractual&quot; type=&quot;EETYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;00060_EET_Data_Reporting_SFDR_Pre_Contractual
-Implementation date of SFDR pre-contractual (1/7/2022 TBC)&lt;/xs:documentation&gt;
+                                                            Implementation date of SFDR pre-contractual (1/7/2022 TBC)
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;SFDR_Periodic&quot; type=&quot;EETYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;00070_EET_Data_Reporting_SFDR_Periodic
-First period of SFDR periodic reporting (2022? TBD)&lt;/xs:documentation&gt;
+                                                            First period of SFDR periodic reporting (2022? TBD)
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;SFDR_EntityLevel&quot; type=&quot;EETYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;00080_EET_Data_Reporting_SFDR_Entity_Level
-Date of first PAI statement at entity level (31/12/2022? TBC)&lt;/xs:documentation&gt;
+                                                            Date of first PAI statement at entity level (31/12/2022?
+                                                            TBC)
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MiFID&quot; type=&quot;EETYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;00090_EET_Data_Reporting_Mifid
-Implementation date of MIFID2 (2/8/22) and SFDR L2 (1/7/22 TBC)&lt;/xs:documentation&gt;
+                                                            Implementation date of MIFID2 (2/8/22) and SFDR L2 (1/7/22
+                                                            TBC)
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;IDD&quot; type=&quot;EETYesNoType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;00100_EET_Data_Reporting_IDD
-MiFID/IDD Sustainability preferences (2/8/2022)&lt;/xs:documentation&gt;
+                                                            MiFID/IDD Sustainability preferences (2/8/2022)
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

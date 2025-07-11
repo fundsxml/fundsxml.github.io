@@ -243,11 +243,14 @@
             font-family="Arial">Position</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="120.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="120.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Je </tspan>
          <tspan x="25" dy="1.2em">Kategorie </tspan>
-         <tspan x="25" dy="1.2em">ein </tspan>
-         <tspan x="25" dy="1.2em">Knoten </tspan>
+         <tspan x="25" dy="1.2em">ein Knoten </tspan>
       </text>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
@@ -374,6 +377,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -425,9 +435,10 @@
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>PKG/QMV-Kategorie (dreistellige Nummer) laut Vermögensausweis</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>PKG/QMV-Kategorie (dreistellige Nummer) laut<br />
+Vermögensausweis</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">449.47</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">606.81</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -451,7 +462,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -464,18 +475,26 @@
             maxOccurs=&quot;unbounded&quot;
             name=&quot;Position&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Je Position zumindest ein Knoten mit einer UniqueID und der QMV-Kategorie und/oder dem zuzurechnenden Betrag. Bei Derivaten sollten hier zwei Knoten je Position angegeben werden (Bewertung + Exposure).&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;Je Position zumindest ein Knoten mit einer UniqueID und
+                                                der QMV-Kategorie und/oder dem zuzurechnenden Betrag. Bei Derivaten
+                                                sollten hier zwei Knoten je Position angegeben werden (Bewertung +
+                                                Exposure).
+                                            &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;Identifiers&quot; type=&quot;IdentifiersType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Bezug zur Position bzw. Bezug zum Wertpapier, Derivat oder Geld&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Bezug zur Position bzw. Bezug zum Wertpapier,
+                                                            Derivat oder Geld
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Category&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;PKG/QMV-Kategorie (dreistellige Nummer) laut Vermögensausweis&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;PKG/QMV-Kategorie (dreistellige Nummer) laut
+                                                            Vermögensausweis
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:decimal&quot;&gt;
@@ -485,7 +504,9 @@
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Value&quot; type=&quot;AmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Betrag, der aufgrund der oben genannten Position einer Kategorie zugerechnet wird&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Betrag, der aufgrund der oben genannten
+                                                            Position einer Kategorie zugerechnet wird
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

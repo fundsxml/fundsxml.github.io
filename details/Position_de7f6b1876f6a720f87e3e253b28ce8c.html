@@ -283,7 +283,11 @@
             font-family="Arial">Position</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="1502.3984375"/>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="1502.3984375"
+            font-family="Arial"/>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
@@ -1906,6 +1910,13 @@
             <!-- Section: Documentation -->
             
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -1957,8 +1968,10 @@
                                 <span>xs:IDREF</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unique identifier referencing the corresponding element in the AssetMasterData block</p>
-<p>Eindeutige Referenznummer der Stammdaten der Position (muss unter /AssetMasterData/Asset/UniqueID vorhanden sein)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unique identifier referencing the corresponding element in the<br />
+AssetMasterData block</p>
+<p>Eindeutige Referenznummer der Stammdaten der Position (muss unter<br />
+/AssetMasterData/Asset/UniqueID vorhanden sein)</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -1976,7 +1989,8 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Identifiers of instrument (like ISIN, Ticker, ...)</p>
-<p>Kennnummer des im Portfolio enthaltenen Instrumentes (ISIN, Ticker, ...)</p>
+<p>Kennnummer des im Portfolio enthaltenen Instrumentes (ISIN, Ticker,<br />
+...)</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -1987,7 +2001,7 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/ISOCurrencyCodeType.html"
+                                <a href="../simpleTypes/ISOCurrencyCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -1996,7 +2010,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Valuation currency (original currency of security/derivative/cash)</p>
 <p>Bewertungswährung (Währung des Wertpapiers/Derivates/Geldes)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">WMM</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">FVA</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2012,7 +2026,8 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Total value of position (including interests ...)</p>
-<p>Sum of all total values in fund currency must be equal to fund volume (total nav of fund)</p>
+<pre><code>                    Sum of all total values in fund currency must be equal to fund volume (total nav of fund)
+</code></pre>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -2040,7 +2055,7 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/PercentageType.html"
+                                <a href="../simpleTypes/PercentageType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">PercentageType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -2048,7 +2063,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Percentage of total value based on total asset value (of fund or share class)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">790.01</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">584.46</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2063,7 +2078,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Average purchase price (considering all transactions related to this position)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Average purchase price (considering all transactions related to this<br />
+position)</p>
 <p>Mischeinstands-Preis</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
@@ -2081,7 +2097,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Average purchase fx rates (considering all transactions related to this position)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Average purchase fx rates (considering all transactions related to<br />
+this position)</p>
 <p>Mischeinstands-Devisenkurs</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
@@ -2134,7 +2151,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date of pricing information taken for fund valuation</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2025-01-12</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-06-16</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2536,7 +2553,7 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/PercentageType.html"
+                                <a href="../simpleTypes/PercentageType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">PercentageType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -2545,7 +2562,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Inflationary adjustment of position</p>
 <p>Inflationsausgleich der Position</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">698.49</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">367.41</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2604,7 +2621,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -2617,18 +2634,26 @@
             maxOccurs=&quot;unbounded&quot;
             name=&quot;Position&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Je Position zumindest ein Knoten mit einer UniqueID und der QMV-Kategorie und/oder dem zuzurechnenden Betrag. Bei Derivaten sollten hier zwei Knoten je Position angegeben werden (Bewertung + Exposure).&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;Je Position zumindest ein Knoten mit einer UniqueID und
+                                                der QMV-Kategorie und/oder dem zuzurechnenden Betrag. Bei Derivaten
+                                                sollten hier zwei Knoten je Position angegeben werden (Bewertung +
+                                                Exposure).
+                                            &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;Identifiers&quot; type=&quot;IdentifiersType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Bezug zur Position bzw. Bezug zum Wertpapier, Derivat oder Geld&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Bezug zur Position bzw. Bezug zum Wertpapier,
+                                                            Derivat oder Geld
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Category&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;PKG/QMV-Kategorie (dreistellige Nummer) laut Vermögensausweis&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;PKG/QMV-Kategorie (dreistellige Nummer) laut
+                                                            Vermögensausweis
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:decimal&quot;&gt;
@@ -2638,7 +2663,9 @@
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Value&quot; type=&quot;AmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Betrag, der aufgrund der oben genannten Position einer Kategorie zugerechnet wird&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Betrag, der aufgrund der oben genannten
+                                                            Position einer Kategorie zugerechnet wird
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

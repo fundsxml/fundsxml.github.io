@@ -223,7 +223,11 @@
             font-family="Arial">OeNB</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="274.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="274.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em"></tspan>
          <tspan x="25" dy="1.2em">ZusatzFelder </tspan>
          <tspan x="25" dy="1.2em">fuer die </tspan>
@@ -528,6 +532,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -597,7 +608,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Mittelabfluesse aus Ruecknahme von Anteilsrechten fuer den Gesamtfonds</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Mittelabfluesse aus Ruecknahme von Anteilsrechten fuer den<br />
+Gesamtfonds</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -631,7 +643,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Fondsvermoegen des Vormonats (ultimo) des Gesamtfonds (sollte dem Wert der letzten Meldung entsprechen; wenns geht)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Fondsvermoegen des Vormonats (ultimo) des Gesamtfonds (sollte dem Wert<br />
+der letzten Meldung entsprechen; wenns geht)</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -648,7 +661,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Sonstiges Einkommen aus nicht-Wertpapiervermögen (Zinseinkommen aus Einlagen, GmbH Ausschüttungen, etc)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Sonstiges Einkommen aus nicht-Wertpapiervermögen (Zinseinkommen aus<br />
+Einlagen, GmbH Ausschüttungen, etc)</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -673,7 +687,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -686,18 +700,21 @@
             minOccurs=&quot;0&quot;
             name=&quot;OeNB&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;ZusatzFelder fuer die monatliche OFI Meldung &lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;ZusatzFelder fuer die monatliche OFI Meldung&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Subscription&quot; type=&quot;AmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Mittelzufluesse aus Ausgabe von Anteilsrechten fuer den Gesamtfonds&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Mittelzufluesse aus Ausgabe von Anteilsrechten fuer den Gesamtfonds
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Redemption&quot; type=&quot;AmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Mittelabfluesse aus Ruecknahme von Anteilsrechten fuer den Gesamtfonds&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Mittelabfluesse aus Ruecknahme von Anteilsrechten fuer den
+                                    Gesamtfonds
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Distribution&quot; type=&quot;AmountType&quot;&gt;
@@ -707,12 +724,16 @@
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalNetAssetPreviousMonth&quot; type=&quot;AmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Fondsvermoegen des Vormonats (ultimo) des Gesamtfonds (sollte dem Wert der letzten Meldung entsprechen; wenns geht)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Fondsvermoegen des Vormonats (ultimo) des Gesamtfonds (sollte dem Wert
+                                    der letzten Meldung entsprechen; wenns geht)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OtherIncomeNonSecurities&quot; type=&quot;AmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Sonstiges Einkommen aus nicht-Wertpapiervermögen (Zinseinkommen aus Einlagen, GmbH Ausschüttungen, etc)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Sonstiges Einkommen aus nicht-Wertpapiervermögen (Zinseinkommen aus
+                                    Einlagen, GmbH Ausschüttungen, etc)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Meldungstyp&quot;&gt;

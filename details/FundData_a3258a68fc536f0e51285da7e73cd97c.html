@@ -233,7 +233,11 @@
             font-family="Arial">FundData</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="197.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="197.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em"></tspan>
          <tspan x="25" dy="1.2em">Informationen </tspan>
          <tspan x="25" dy="1.2em">auf </tspan>
@@ -463,6 +467,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -547,8 +558,10 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Jährliche Datenlieferung, ausschließlich für offene Publikumsfonds</p>
-<p>Once per year; exclusively for open-ended retail funds</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Jährliche Datenlieferung, ausschließlich für<br />
+offene Publikumsfonds</p>
+<p>Once per year; exclusively for open-ended<br />
+retail funds</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -565,8 +578,10 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Für offene Spezailfonds sowie geschlossene Publikums- und Spezialfonds</p>
-<p>For open-ended Spezialfonds and closed-ended retail and Spezialfonds.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Für offene Spezailfonds sowie geschlossene<br />
+Publikums- und Spezialfonds</p>
+<p>For open-ended Spezialfonds and closed-ended<br />
+retail and Spezialfonds.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -575,7 +590,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -597,81 +612,162 @@
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;ExpiringLeases&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller auslaufenden Mietverträge. Maßgebend ist First Break, es sind keine Optionen zu berücksichtigen. Anzugeben ist ein Jahreswert.&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent. First break is relevant; no options have to be taken into account. An annual value must be given.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete
+                                                            aller auslaufenden Mietverträge. Maßgebend ist First Break,
+                                                            es sind keine Optionen zu berücksichtigen. Anzugeben ist ein
+                                                            Jahreswert.
+                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent.
+                                                            First break is relevant; no options have to be taken into
+                                                            account. An annual value must be given.
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Year_T&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im aktuellen Berichtsjahr (t) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the current reporting year (t).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im aktuellen
+                                                                        Berichtsjahr (t) auslaufenden Mietverträge (in
+                                                                        Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) of all
+                                                                        leases expiring in the current reporting year
+                                                                        (t).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus1&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+1) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the year (t+1).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+1)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) of all
+                                                                        leases expiring in the year (t+1).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus2&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+2) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the year (t+2).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+2)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) of all
+                                                                        leases expiring in the year (t+2).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus3&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+3) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+3).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+3)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+3).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus4&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+4) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+4).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+4)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+4).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus5&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+5) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+5).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+5)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+5).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus6&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+6) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+6).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+6)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+6).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus7&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+7) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+7).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+7)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+7).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus8&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+8) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+8).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+8)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+8).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus9&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+9) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+9).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+9)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+9).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus10AndLater&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+10) oder später auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+10) or later.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+10) oder
+                                                                        später auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+10) or later.
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;IndefiniteLeases&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller unbefristeten Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all unlimited leases.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller unbefristeten
+                                                                        Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        unlimited leases.
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -685,21 +781,36 @@
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Domestic&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und Verkäufe im Inland (innerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic purchases and sales in the previous quarter&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und
+                                                            Verkäufe im Inland (innerhalb Deutschlands) im
+                                                            vorangegangenen Quartal
+                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic
+                                                            purchases and sales in the previous quarter
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Purchases&quot; type=&quot;PurchasesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe  im Inland (innerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic purchases in the previous quarter&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Käufe im Inland (innerhalb Deutschlands) im
+                                                                        vorangegangenen Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
+                                                                        domestic purchases in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Sales&quot; type=&quot;SalesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Verkäufe  im Inland (innerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic sales in the previous quarter&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Verkäufe im Inland (innerhalb Deutschlands) im
+                                                                        vorangegangenen Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
+                                                                        domestic sales in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -707,21 +818,36 @@
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Foreign&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und Verkäufe im Ausland (außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases and sales in the previous quarter&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und
+                                                            Verkäufe im Ausland (außerhalb Deutschlands) im
+                                                            vorangegangenen Quartal
+                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases
+                                                            and sales in the previous quarter
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Purchases&quot; type=&quot;PurchasesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe  im Ausland außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases in the previous quarter&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Käufe im Ausland außerhalb Deutschlands) im
+                                                                        vorangegangenen Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
+                                                                        foreign purchases in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Sales&quot; type=&quot;SalesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Verkäufe im Ausland (außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign sales  in the previous quarter&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Verkäufe im Ausland (außerhalb Deutschlands) im
+                                                                        vorangegangenen Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
+                                                                        foreign sales in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -729,21 +855,35 @@
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;ParticipationsRECompanies&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und Verkäufe von Beteiligungen im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on purchases and sales of investees in the previous quarter&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und
+                                                            Verkäufe von Beteiligungen im vorangegangenen Quartal
+                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on purchases and
+                                                            sales of investees in the previous quarter
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Purchases&quot; type=&quot;PurchasesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe von Beteiligungen im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on purchases of investees in the previous quarter&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Käufe von Beteiligungen im vorangegangenen
+                                                                        Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
+                                                                        purchases of investees in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Sales&quot; type=&quot;SalesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Verkäufe von Beteiligungen im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on sales of investees in the previous quarter&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Verkäufe von Beteiligungen im vorangegangenen
+                                                                        Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on sales
+                                                                        of investees in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -754,21 +894,33 @@
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AnnualReturnsStructure&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Jährliche Datenlieferung, ausschließlich für offene Publikumsfonds&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Once per year; exclusively for open-ended retail funds&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Jährliche Datenlieferung, ausschließlich für
+                                                offene Publikumsfonds
+                                            &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Once per year; exclusively for open-ended
+                                                retail funds
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;StartFiscalYear&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Beginn des Geschäftsjahres, auf das sich die Renditekennzahlen beziehen&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Beginning of the fiscal year to which the return components refer&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Beginn des Geschäftsjahres, auf
+                                                            das sich die Renditekennzahlen beziehen
+                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Beginning of the fiscal year to
+                                                            which the return components refer
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;EndFiscalYear&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Ende des Geschäftsjahres, auf das sich die Renditekennzahlen beziehen&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;End of the fiscal year to which the return components refer&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Ende des Geschäftsjahres, auf
+                                                            das sich die Renditekennzahlen beziehen
+                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;End of the fiscal year to which
+                                                            the return components refer
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;CountryDistribution&quot;&gt;
@@ -776,8 +928,12 @@
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Country&quot; type=&quot;ISOCountryCodeType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Land, für das die Renditekennzahlen zutreffen&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Country for which the return indicators apply&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Land, für das die
+                                                                        Renditekennzahlen zutreffen
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Country for which
+                                                                        the return indicators apply
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;CountryFigures&quot; type=&quot;AnnualReturnsDataDEType&quot;/&gt;
@@ -790,20 +946,37 @@
                            &lt;xs:element name=&quot;TotalAnnualReturns&quot; type=&quot;AnnualReturnsDataDEType&quot;/&gt;
                            &lt;xs:element name=&quot;Liquidity&quot; type=&quot;PercentageType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Die Liquiditätsrendite errechnet wird aus &quot;Erträge und Wertveränderungen aus Liquidität&quot;/&quot;Durchschnittliche Liquidität&quot; berechnet (in Prozent).&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The liquidity yield is calculated from &quot;Income and changes in value from liquidity&quot;/&quot;Average liquidity&quot; (in percent).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Die
+                                                                        Liquiditätsrendite errechnet wird aus &quot;Erträge
+                                                                        und Wertveränderungen aus
+                                                                        Liquidität&quot;/&quot;Durchschnittliche Liquidität&quot;
+                                                                        berechnet (in Prozent).
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The liquidity yield
+                                                                        is calculated from &quot;Income and changes in value
+                                                                        from liquidity&quot;/&quot;Average liquidity&quot; (in
+                                                                        percent).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;ReturnBeforeFundCosts&quot; type=&quot;PercentageType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des Fonds vor Fondskosten (in Prozent).&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the fund before fund costs (in Prozent).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des
+                                                                        Fonds vor Fondskosten (in Prozent).
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the
+                                                                        fund before fund costs (in Prozent).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;ReturnAfterFundCosts&quot; type=&quot;PercentageType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des Fonds nach Fondskosten (in Prozent).&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the fund after fund costs (in Prozent).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des
+                                                                        Fonds nach Fondskosten (in Prozent).
+                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the
+                                                                        fund after fund costs (in Prozent).
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -814,27 +987,50 @@
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;EquityCommitments&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Für offene Spezailfonds sowie geschlossene Publikums- und Spezialfonds&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;For open-ended Spezialfonds and closed-ended retail and Spezialfonds.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Für offene Spezailfonds sowie geschlossene
+                                                Publikums- und Spezialfonds
+                                            &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;For open-ended Spezialfonds and closed-ended
+                                                retail and Spezialfonds.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;TotalAmount&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der gesamten Kapitalzusagen für den Fonds (in Tsd. Euro).&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Equity commitments, total amount (in thousands of euros).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der gesamten
+                                                            Kapitalzusagen für den Fonds (in Tsd. Euro).
+                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Equity commitments, total amount
+                                                            (in thousands of euros).
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;CalledOff&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe des von den Kapitalzusagen bereits abgerufenen Kapitals (in Tsd. Euro).&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Cumulative sum of equity commitments that have already been called off (in thousands of euros).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe des von den Kapitalzusagen
+                                                            bereits abgerufenen Kapitals (in Tsd. Euro).
+                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Cumulative sum of equity
+                                                            commitments that have already been called off (in thousands
+                                                            of euros).
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;NotRequested&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;In Form von Zeichungsscheinen/Verträgen befristet oder unbefristet zugesagtes Eigenkapital. Unverbindliche Zusagen (z.B. ohne Zeichnungsschein) werden bei der Ermittlung der Eigenkapitalzusagen nicht berücksichtigt. Eigenkapitalzusagen werden nur bis zur Auflösung eines Fonds berücksichtigt (in Tsd. Euro).&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The outstanding part of equity commitments in total that hasn&#39;t been requested as yet (in thousands of euros).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;In Form von
+                                                            Zeichungsscheinen/Verträgen befristet oder unbefristet
+                                                            zugesagtes Eigenkapital. Unverbindliche Zusagen (z.B. ohne
+                                                            Zeichnungsschein) werden bei der Ermittlung der
+                                                            Eigenkapitalzusagen nicht berücksichtigt.
+                                                            Eigenkapitalzusagen werden nur bis zur Auflösung eines Fonds
+                                                            berücksichtigt (in Tsd. Euro).
+                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The outstanding part of equity
+                                                            commitments in total that hasn&#39;t been requested as yet (in
+                                                            thousands of euros).
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;

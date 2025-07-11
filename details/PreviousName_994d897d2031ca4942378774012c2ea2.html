@@ -209,8 +209,8 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f8fafc"
-     width="293.0"
-     height="66.1953125">
+     width="343.0"
+     height="104.796875">
    <defs>
       <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
       <filter width="140%"
@@ -236,7 +236,7 @@
    </defs>
    <a href="#">
       <rect x="20"
-            y="-9"
+            y="29"
             fill="#f1f5f9"
             width="123.0"
             style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
@@ -248,18 +248,54 @@
             id="PreviousName"/>
       <text x="30"
             fill="#0f172a"
-            y="19.3984375"
+            y="57.3984375"
             font-size="16"
             font-family="Arial">PreviousName</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="44.3984375">
-         <tspan x="25" dy="1.2em">Previous name </tspan>
-         <tspan x="25" dy="1.2em">of fund or </tspan>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="82.3984375"
+            font-family="Arial">
+         <tspan x="25" dy="1.2em">Previous name of </tspan>
+         <tspan x="25" dy="1.2em">fund or </tspan>
          <tspan x="25" dy="1.2em">corresponding </tspan>
          <tspan x="25" dy="1.2em">object </tspan>
       </text>
    </g>
+   <rect x="243.0"
+         y="20.0"
+         fill="#f1f5f9"
+         width="70.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         class="hoverable-rect"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="@until"/>
+   <g>
+      <text x="253.0"
+            fill="#0f172a"
+            y="48.3984375"
+            font-size="16"
+            font-family="Arial">@until</text>
+      <line y2="52.3984375"
+            stroke-width="1"
+            x1="253.0"
+            x2="303.0"
+            stroke="#e2e8f0"
+            y1="52.3984375"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="72.796875"
+            font-size="14"
+            font-family="Arial">xs:date</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 243.0 48.19921875 V 52.3984375 H 243.0"/>
 </svg>
 </div>
 
@@ -280,6 +316,13 @@
                     </div>
                 </div>
             </section>
+
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
 
             <!-- Section: Properties -->
             <section>
@@ -307,9 +350,41 @@
             </section>
 
             <!-- Section: Child Elements & Attributes -->
-            
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name (XPath)</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="@until_7b6de540ca97cdde1b637c956c7e8eaa.html" class="text-sky-600 hover:text-sky-800 hover:underline">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Names/PreviousName/@until</a>
+                            </td>
 
-            <!-- Section: App Info -->
+                            <td class="px-4 py-3 font-mono">
+                                <!-- If the type is a custom type (not xs:...), it will be linked -->
+                                
+                                <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
+                                <span>xs:date</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date until previous name of fund or object was valid</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -329,7 +404,8 @@
          &lt;xs:extension base=&quot;Text500Type&quot;&gt;
             &lt;xs:attribute name=&quot;until&quot; type=&quot;xs:date&quot;&gt;
                &lt;xs:annotation&gt;
-                  &lt;xs:documentation&gt;Date until previous name of fund or object was valid&lt;/xs:documentation&gt;
+                  &lt;xs:documentation&gt;Date until previous name of fund or object was valid
+                                    &lt;/xs:documentation&gt;
                &lt;/xs:annotation&gt;
             &lt;/xs:attribute&gt;
          &lt;/xs:extension&gt;

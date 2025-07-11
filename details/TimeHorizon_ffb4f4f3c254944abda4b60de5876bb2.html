@@ -233,9 +233,12 @@
             font-family="Arial">TimeHorizon</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="120.3984375">
-         <tspan x="25" dy="1.2em">05080: </tspan>
-         <tspan x="25" dy="1.2em">Minimum </tspan>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="120.3984375"
+            font-family="Arial">
+         <tspan x="25" dy="1.2em">05080: Minimum </tspan>
          <tspan x="25" dy="1.2em">recommended </tspan>
          <tspan x="25" dy="1.2em">holding period </tspan>
       </text>
@@ -344,6 +347,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -397,7 +407,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Minimum recommended holding period in years</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">354.28</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">690.20</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -417,14 +427,14 @@ M ... Medium term (max 5Y)<br />
 L ... Long term (min 5Y)<br />
 Neutral ... Neutral</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">S</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Neutral</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -442,16 +452,18 @@ Neutral ... Neutral</p>
       &lt;xs:choice&gt;
          &lt;xs:element name=&quot;Years&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Minimum recommended holding period in years&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Minimum recommended holding period in years
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Category&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;V ... Very short term (max 1Y)
-S ... Short term (max 3Y)
-M ... Medium term (max 5Y)
-L ... Long term (min 5Y)
-Neutral ... Neutral&lt;/xs:documentation&gt;
+                                                S ... Short term (max 3Y)
+                                                M ... Medium term (max 5Y)
+                                                L ... Long term (min 5Y)
+                                                Neutral ... Neutral
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;

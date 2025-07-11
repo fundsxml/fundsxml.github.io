@@ -223,11 +223,15 @@
             font-family="Arial">PastPerformances</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="274.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="274.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Art.15 to 19
-Not to be </tspan>
-         <tspan x="25" dy="1.2em">provided for </tspan>
-         <tspan x="25" dy="1.2em">structured funds </tspan>
+                   </tspan>
+         <tspan x="25" dy="1.2em">     Not to be provided </tspan>
+         <tspan x="25" dy="1.2em">for structured funds </tspan>
       </text>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
@@ -503,6 +507,13 @@ Not to be provided for structured funds</p>
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -571,7 +582,8 @@ Not to be provided for structured funds</p>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Zero to ten past years perfomances, according to fund existence duration.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Zero to ten past years perfomances, according to fund existence<br />
+duration.<br />
 Only full years of existence of the fund are used.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
@@ -619,7 +631,7 @@ d - Currency used for calculation</p>
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/ISOCurrencyCodeType.html"
+                                <a href="../simpleTypes/ISOCurrencyCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -627,7 +639,7 @@ d - Currency used for calculation</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Currency used for performance calculation</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">PHA</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">TUA</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -641,7 +653,8 @@ d - Currency used for calculation</p>
                                 <span>xs:string</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>'Event impacting performance in ' [Year with MaterialChandeIndicator=&quot;y&quot;]</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>'Event impacting performance in ' [Year with<br />
+MaterialChandeIndicator=&quot;y&quot;]</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
@@ -650,7 +663,7 @@ d - Currency used for calculation</p>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -664,7 +677,8 @@ d - Currency used for calculation</p>
             name=&quot;PastPerformances&quot;&gt;
    &lt;xs:annotation&gt;
       &lt;xs:documentation&gt;Art.15 to 19
-Not to be provided for structured funds&lt;/xs:documentation&gt;
+                        Not to be provided for structured funds
+                    &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
@@ -675,8 +689,10 @@ Not to be provided for structured funds&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element maxOccurs=&quot;10&quot; minOccurs=&quot;0&quot; name=&quot;Performance&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Zero to ten past years perfomances, according to fund existence duration.
-Only full years of existence of the fund are used.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Zero to ten past years perfomances, according to fund existence
+                                    duration.
+                                    Only full years of existence of the fund are used.
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
@@ -692,17 +708,23 @@ Only full years of existence of the fund are used.&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;BenchmarkPerformanceValue&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Benchmark performance if available (Percentage)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Benchmark performance if available
+                                                (Percentage)
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;MaterialChangeIndicator&quot; type=&quot;xs:boolean&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;17-1 and 17-2  Indicates that a material change having an impact on performance occurred during the year (y/n)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;17-1 and 17-2 Indicates that a material
+                                                change having an impact on performance occurred during the year (y/n)
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;SimulatedPerformanceIndicator&quot; type=&quot;xs:boolean&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;19-2 Indicates that the performance has been simulated&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;19-2 Indicates that the performance has been
+                                                simulated
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -710,26 +732,31 @@ Only full years of existence of the fund are used.&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element maxOccurs=&quot;5&quot; name=&quot;PerformanceDisclaimer&quot; type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;15-5a to 5d 
-a - Limited value for future performance
-b - List of charges and fees included for computation
-c - Year of creation of the fund
-d - Currency used for calculation&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;15-5a to 5d
+                                    a - Limited value for future performance
+                                    b - List of charges and fees included for computation
+                                    c - Year of creation of the fund
+                                    d - Currency used for calculation
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;CurrencyUsedHeading&quot; type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;&#39;Currency used for calculation: &#39; [CurrencyUsed]&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;&#39;Currency used for calculation: &#39; [CurrencyUsed]
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;CurrencyUsed&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Currency used for performance calculation&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Currency used for performance calculation
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;PerformanceYearImpactHeading&quot; type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;&#39;Event impacting performance in &#39; [Year with MaterialChandeIndicator=&quot;y&quot;]&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;&#39;Event impacting performance in &#39; [Year with
+                                    MaterialChandeIndicator=&quot;y&quot;]
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

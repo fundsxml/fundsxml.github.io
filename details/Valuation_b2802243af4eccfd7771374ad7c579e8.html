@@ -263,7 +263,11 @@
             font-family="Arial">Valuation</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="197.3984375"/>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="197.3984375"
+            font-family="Arial"/>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
@@ -448,6 +452,13 @@
             <!-- Section: Documentation -->
             
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -494,7 +505,7 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/ISOCurrencyCodeType.html"
+                                <a href="../simpleTypes/ISOCurrencyCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -502,7 +513,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A71 - Quotation currency (C)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">FRA</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">VEI</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -516,9 +527,10 @@
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A72 - Last market price known, in Currency (C).</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A72 - Last market price known,<br />
+in Currency (C).</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">371.52</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">340.06</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -527,7 +539,7 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/ISOCountryCodeType.html"
+                                <a href="../simpleTypes/ISOCountryCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCountryCodeType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -544,26 +556,27 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/EconomicAreaType.html"
+                                <a href="../simpleTypes/EconomicAreaType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EconomicAreaType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A74 - Economic area code of Country of quotation:<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A74 - Economic area code of<br />
+Country of quotation:<br />
 0 non listed<br />
 1 EEA;<br />
 2 OECD non EEA<br />
 3 non OECD</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -575,16 +588,18 @@
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             name=&quot;Valuation&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Valuation characteristics and 
-Position market value(s).&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Valuation characteristics and
+                        Position market value(s).
+                    &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AssetOrLiability&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;A17b - Asset/Liability identification if needed
-&quot;A&quot; or &quot;L&quot; or blank if values are directional values.
-&quot;NA&quot; or blank if not used&lt;/xs:documentation&gt;
+                                    &quot;A&quot; or &quot;L&quot; or blank if values are directional values.
+                                    &quot;NA&quot; or blank if not used
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -596,102 +611,121 @@ Position market value(s).&lt;/xs:documentation&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Quantity&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A18 - Quantity of Instrument in Position.
-1 for OTC.
-Not reported if A19 is reported  ?????&lt;/xs:documentation&gt;
+                                    1 for OTC.
+                                    Not reported if A19 is reported ?????
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalNominalValueQC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A19 - In QuotationCurrency.
-= Quantity * Nominal Unit Amount&lt;/xs:documentation&gt;
+                                    = Quantity * Nominal Unit Amount
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ContractSize&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A20 - Only for futures and options.
-The way the contract size is defined varies according with the type of instrument. See EIOPA definition (QRT 0801)&lt;/xs:documentation&gt;
+                                    The way the contract size is defined varies according with the type of instrument.
+                                    See EIOPA definition (QRT 0801)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;QuotationCurrency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A21 - Instrument quotation currency (A)&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A21 - Instrument quotation currency (A)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MarketValueQC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A22 - Amount in QuotationCurrency (A) 
-including accrued coupon.
-(Dirty value)&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A22 - Amount in QuotationCurrency (A)
+                                    including accrued coupon.
+                                    (Dirty value)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;CleanValueQC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A23 - Market value in QuotationCurrency
-not including accrued income.&lt;/xs:documentation&gt;
+                                    not including accrued income.
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AccruedIncomeQC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;A125 - Accrued interest in QuotationCurrency.
-Generally equals to: MarketValueQC - CleanValueQC&lt;/xs:documentation&gt;
+                                    Generally equals to: MarketValueQC - CleanValueQC
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MarketValuePC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A24 - Amount in PortfolioCurrency (B) including accrued coupon.
-(Dirty value)&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A24 - Amount in PortfolioCurrency (B) including accrued
+                                    coupon.
+                                    (Dirty value)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;CleanValuePC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A25 - Market value in PortfolioCurrency
-not including accrued interest&lt;/xs:documentation&gt;
+                                    not including accrued interest
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AccruedIncomePC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;A126 - Accrued interest in PortfolioCurrency.
-Generally equals to: MarketValuePC - CleanValuePC&lt;/xs:documentation&gt;
+                                    Generally equals to: MarketValuePC - CleanValuePC
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;PositionWeight&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;A26 - MarketValuePC in percentage
-of TotalNetAssets (including liquidity)
-50%=0.5&lt;/xs:documentation&gt;
+                                    of TotalNetAssets (including liquidity)
+                                    50%=0.5
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MarketExposureQC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A27 - MarketExposure in QuotationCurrency (A).
-Different from MarketValueQC for derivatives:
-valuation of the equivalent position on the underlying asset.&lt;/xs:documentation&gt;
+                                    Different from MarketValueQC for derivatives:
+                                    valuation of the equivalent position on the underlying asset.
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MarketExposurePC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A28 - MarketExposure in PortfolioCurrency (B).
-Different from MarketValuePC for derivatives:
-valuation of the equivalent position on the underlying asset.&lt;/xs:documentation&gt;
+                                    Different from MarketValuePC for derivatives:
+                                    valuation of the equivalent position on the underlying asset.
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MarketExposureUC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;A29 - %Market exposure in QuotationCurrency (C) 
-of underlying asset&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;A29 - %Market exposure in QuotationCurrency (C)
+                                    of underlying asset
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MarketExposureWeight&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A30 - MarketExposurePC 
-as percentage of TotalNetAssets.
-1.2% = 0.012&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A30 - MarketExposurePC
+                                    as percentage of TotalNetAssets.
+                                    1.2% = 0.012
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MarketExposureUCWeight&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A31 - MarketExposureUC converted in PC, in percentage in percentage of TotalNetAssets.
-2.7% = 0.027&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A31 - MarketExposureUC converted in PC, in percentage in
+                                    percentage of TotalNetAssets.
+                                    2.7% = 0.027
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

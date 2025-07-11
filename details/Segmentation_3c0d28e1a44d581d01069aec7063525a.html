@@ -253,11 +253,14 @@
             font-family="Arial">Segmentation</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="158.3984375">
-         <tspan x="25" dy="1.2em">Information </tspan>
-         <tspan x="25" dy="1.2em">about the </tspan>
-         <tspan x="25" dy="1.2em">segmentation of </tspan>
-         <tspan x="25" dy="1.2em">funds </tspan>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="158.3984375"
+            font-family="Arial">
+         <tspan x="25" dy="1.2em">Information about </tspan>
+         <tspan x="25" dy="1.2em">the segmentation </tspan>
+         <tspan x="25" dy="1.2em">of funds </tspan>
       </text>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
@@ -421,6 +424,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -474,7 +484,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Number of funds without segments or comparable subunits</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">1767</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1745</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -489,7 +499,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Data about the funds with segments of an investment or asset management company</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Data about the funds with segments of an investment or<br />
+asset management company</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -505,16 +516,18 @@
                                 <span>xs:int</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Total number of administrative units, which is the sum of the number of funds without segments and comparable subunits and the number of segments or comparable subunits.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Total number of administrative units, which is the sum of<br />
+the number of funds without segments and comparable subunits and the<br />
+number of segments or comparable subunits.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">3276</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1915</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -532,28 +545,36 @@
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;FundsWithoutSegments&quot; type=&quot;xs:int&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Number of funds without segments or comparable subunits&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Number of funds without segments or comparable subunits
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;FundsWithSegments&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Data about the funds with segments of an investment or asset management company&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Data about the funds with segments of an investment or
+                                                asset management company
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Number&quot; type=&quot;xs:int&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Number of funds with segments or comparable subunits&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Number of funds with segments or comparable
+                                                            subunits
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;NumberOfSegments&quot; type=&quot;xs:int&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Number of segments or comparable subunits&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Number of segments or comparable subunits
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;NetAssetsSegments&quot; type=&quot;AssetManagementCompanyFundAssetsType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Net asstes of funds with segments or comparable subunits&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Net asstes of funds with segments or
+                                                            comparable subunits
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -561,7 +582,10 @@
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;NumberOfAdministrativeUnits&quot; type=&quot;xs:int&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Total number of administrative units, which is the sum of the number of funds without segments and comparable subunits and the number of segments or comparable subunits.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Total number of administrative units, which is the sum of
+                                                the number of funds without segments and comparable subunits and the
+                                                number of segments or comparable subunits.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

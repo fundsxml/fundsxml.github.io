@@ -223,7 +223,11 @@
             font-family="Arial">TargetMarket</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="312.3984375"/>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="312.3984375"
+            font-family="Arial"/>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
@@ -555,6 +559,13 @@
             <!-- Section: Documentation -->
             
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -608,7 +619,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>01000 Date to which the Target Market data within the EMT refer</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-09-18</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2022-02-21</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -717,7 +728,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -732,7 +743,8 @@
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;GeneralReferenceDate&quot; type=&quot;xs:date&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;01000 Date to which the Target Market data within the EMT refer&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;01000 Date to which the Target Market data within the EMT refer
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;InvestorType&quot;&gt;
@@ -743,16 +755,23 @@
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Retail&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01010: Neutral means usage by Retail clients are available under certain conditions.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01010: Neutral means usage by Retail clients are available
+                                                under certain conditions.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Professional&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01020: Y means both Professional Per Se and Elective Professionals are compatible.
-N means that neither Professional Per Se nor Elective Professionals are compatible.
-P means that Professional Per Se is compatible but Elective Professionals are not.
-E means that Elective Professional is compatible but Professionals Per Se are not.
-P is only used if the distinction Per Se is done in the Prospectus. &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01020: Y means both Professional Per Se and Elective
+                                                Professionals are compatible.
+                                                N means that neither Professional Per Se nor Elective Professionals are
+                                                compatible.
+                                                P means that Professional Per Se is compatible but Elective
+                                                Professionals are not.
+                                                E means that Elective Professional is compatible but Professionals Per
+                                                Se are not.
+                                                P is only used if the distinction Per Se is done in the Prospectus.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -765,7 +784,8 @@ P is only used if the distinction Per Se is done in the Prospectus. &lt;/xs:docu
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;EligibleCounterparty&quot; type=&quot;EMTYesNoType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01030: Investor Type Eligible Counterparty&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01030: Investor Type Eligible Counterparty
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -780,29 +800,45 @@ P is only used if the distinction Per Se is done in the Prospectus. &lt;/xs:docu
                   &lt;xs:element name=&quot;BasicInvestor&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;02010: Investors having the following characteristics:
-• basic knowledge of relevant financial instruments (a  basic investor can make an informed investment decision based on the regulated and authorised offering documentation  or with the help of basic information provided by point of sale); 
-• no financial industry  experience, i.e. suited to a first time investor&lt;/xs:documentation&gt;
+                                                • basic knowledge of relevant financial instruments (a basic investor
+                                                can make an informed investment decision based on the regulated and
+                                                authorised offering documentation or with the help of basic information
+                                                provided by point of sale);
+                                                • no financial industry experience, i.e. suited to a first time investor
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;InformedInvestor&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02020: Having one, or more, of the following characteristics:
-• average knowledge of relevant financial products (an informed investor can make an informed investment decision based on the regulated and authorised offering documentation, together with knowledge and understanding of the specific factors/risks highlighted within them only)
-• some financial industry experience &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02020: Having one, or more, of the following
+                                                characteristics:
+                                                • average knowledge of relevant financial products (an informed investor
+                                                can make an informed investment decision based on the regulated and
+                                                authorised offering documentation, together with knowledge and
+                                                understanding of the specific factors/risks highlighted within them
+                                                only)
+                                                • some financial industry experience
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;AdvancedInvestor&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02030: Investors having one, or more, of the following characteristics:
-• good knowledge of relevant financial products and transactions
-• financial industry experience or accompanied by professional investment advice or included in a discretionary portfolio service&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02030: Investors having one, or more, of the following
+                                                characteristics:
+                                                • good knowledge of relevant financial products and transactions
+                                                • financial industry experience or accompanied by professional
+                                                investment advice or included in a discretionary portfolio service
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;ExpertInvestorGermany&quot;
                               type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02040: Expert knowledge of and / or experience with highly specialised financial products (Regulatory requirement in Germany/ example: CFD/ the updated list will be provided by the DSGV)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02040: Expert knowledge of and / or experience with highly
+                                                specialised financial products (Regulatory requirement in Germany/
+                                                example: CFD/ the updated list will be provided by the DSGV)
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -817,35 +853,52 @@ P is only used if the distinction Per Se is done in the Prospectus. &lt;/xs:docu
                   &lt;xs:element name=&quot;CompatibleWithClientsWhoCanNotBearCapitalLoss&quot;
                               type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;03010: Investor can bear no loss of capital. Minor losses especially due to costs possible. Yes or No or Neutral.
-N for negative target: product should not be sold to investors that cannot bear losses &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;03010: Investor can bear no loss of capital. Minor losses
+                                                especially due to costs possible. Yes or No or Neutral.
+                                                N for negative target: product should not be sold to investors that
+                                                cannot bear losses
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;CompatibleWithClientsWhoCanBearLimitedCapitalLoss&quot;
                               type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;03020: Investor seeking to preserve capital or can bear losses limited to a level specified by the product. Assessment  of loss level is based on investments in the same currency as the instrument denomination and do not take into consideration potential adverse FX market performance.
-To be filled only for structured securities and funds with an explicit capital protection or for Money Market funds.
-Yes or No or Neutral&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;03020: Investor seeking to preserve capital or can bear
+                                                losses limited to a level specified by the product. Assessment of loss
+                                                level is based on investments in the same currency as the instrument
+                                                denomination and do not take into consideration potential adverse FX
+                                                market performance.
+                                                To be filled only for structured securities and funds with an explicit
+                                                capital protection or for Money Market funds.
+                                                Yes or No or Neutral
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;LimitedCapitalLossLevel&quot; type=&quot;PercentageType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;03030: To be completed for products that have a clearly stated full or partial capital guarantee, provided on the primary market. This field represents the maximum loss a client could incur when investing in this product – it is not the level of capital protection offered&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;03030: To be completed for products that have a clearly
+                                                stated full or partial capital guarantee, provided on the primary
+                                                market. This field represents the maximum loss a client could incur when
+                                                investing in this product – it is not the level of capital protection
+                                                offered
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;CompatibleWithClientsWhoDoNotNeedCapitalGuarantee&quot;
                               type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;03040: No Capital Guarantee nor protection. 100% capital at risk. Yes or No or Neutral&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;03040: No Capital Guarantee nor protection. 100% capital
+                                                at risk. Yes or No or Neutral
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;CompatibleWithClientsWhoCanBearLossBeyondCapital&quot;
                               type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;03050: Loss Beyond the Capital. 
-Yes or No or Neutral&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;03050: Loss Beyond the Capital.
+                                                Yes or No or Neutral
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -859,7 +912,9 @@ Yes or No or Neutral&lt;/xs:documentation&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;PRIIPSMethodology&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;04010: SRI (1-7), if PRIIPS KID is available. German distributors will use only this Risk Tolerance item&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;04010: SRI (1-7), if PRIIPS KID is available. German
+                                                distributors will use only this Risk Tolerance item
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:positiveInteger&quot;&gt;
@@ -882,9 +937,10 @@ Yes or No or Neutral&lt;/xs:documentation&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;InternalMethodology&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;04030: For Non PRIIPS and Non UCITS:
-L ... Low
-M ... Medium
-H ... High&lt;/xs:documentation&gt;
+                                                L ... Low
+                                                M ... Medium
+                                                H ... High
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -898,8 +954,10 @@ H ... High&lt;/xs:documentation&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MethodologySpain&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;04040: Spanish SRI (1-6) for Non PRIIPS and Non UCITS
-For Spanish local NON PRIIPS and NON UCITS products.
-Orden ECC/2316/2015, de 4 de noviembre, relativa a las obligaciones de información y clasificación de productos financieros&lt;/xs:documentation&gt;
+                                                For Spanish local NON PRIIPS and NON UCITS products.
+                                                Orden ECC/2316/2015, de 4 de noviembre, relativa a las obligaciones de
+                                                información y clasificación de productos financieros
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:positiveInteger&quot;&gt;
@@ -910,7 +968,9 @@ Orden ECC/2316/2015, de 4 de noviembre, relativa a las obligaciones de informaci
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;NotForInvestorsWithLowestRiskToleranceGermany&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;04050: For all products distributed in Germany (Yes or Neutral)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;04050: For all products distributed in Germany (Yes or
+                                                Neutral)
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -933,20 +993,35 @@ Orden ECC/2316/2015, de 4 de noviembre, relativa a las obligaciones de informaci
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;ClientLookingForPreservation&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;05010: Indicates if the product is compatible with clients looking for preserving their capital.
-Products stipulating a capital preservation objective should be YES. For other products, the answer should be NO or NEUTRAL based on a case-by-case analysis. In Germany fields 05010, 05020 and 05030 are merged and regarded &quot;General Capital Formation&quot;. A YES in any of these fields will be regarded a YES in the German combined field.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;05010: Indicates if the product is compatible
+                                                            with clients looking for preserving their capital.
+                                                            Products stipulating a capital preservation objective should
+                                                            be YES. For other products, the answer should be NO or
+                                                            NEUTRAL based on a case-by-case analysis. In Germany fields
+                                                            05010, 05020 and 05030 are merged and regarded &quot;General
+                                                            Capital Formation&quot;. A YES in any of these fields will be
+                                                            regarded a YES in the German combined field.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;ClientLookingForCapitalGrowth&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;05020: Indicates if the product is compatible with clients looking for growing their capital.
-In Germany fields 05010, 05020 and 05030 are merged and regarded &quot;General Capital Formation&quot;. A YES in any of these fields will be regarded a YES in the German combined field.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;05020: Indicates if the product is compatible
+                                                            with clients looking for growing their capital.
+                                                            In Germany fields 05010, 05020 and 05030 are merged and
+                                                            regarded &quot;General Capital Formation&quot;. A YES in any of these
+                                                            fields will be regarded a YES in the German combined field.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;ClientLookingForIncome&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;05030: Indicates if the product is compatible with clients looking for Income.
-In Germany fields 05010, 05020 and 05030 are merged and regarded &quot;General Capital Formation&quot;. A YES in any of these fields will be regarded a YES in the German combined field.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;05030: Indicates if the product is compatible
+                                                            with clients looking for Income.
+                                                            In Germany fields 05010, 05020 and 05030 are merged and
+                                                            regarded &quot;General Capital Formation&quot;. A YES in any of these
+                                                            fields will be regarded a YES in the German combined field.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OptionOrLeveraged&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
@@ -967,7 +1042,8 @@ In Germany fields 05010, 05020 and 05030 are merged and regarded &quot;General C
                                     &lt;xs:element name=&quot;Hedging&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                                        &lt;xs:annotation&gt;
                                           &lt;xs:documentation&gt;05040: Yes or No or Neutral
-Only for structured Securities&lt;/xs:documentation&gt;
+                                                                        Only for structured Securities
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                  &lt;/xs:sequence&gt;
@@ -979,22 +1055,25 @@ Only for structured Securities&lt;/xs:documentation&gt;
                   &lt;xs:element name=&quot;MinimumRecommendedHoldingPeriod&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;05080: Minimum recommended holding period
-RHP: Recommended Holding Period&lt;/xs:documentation&gt;
+                                                RHP: Recommended Holding Period
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:choice&gt;
                            &lt;xs:element name=&quot;Years&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;Minimum recommended holding period in years&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;Minimum recommended holding period in years
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Category&quot;&gt;
                               &lt;xs:annotation&gt;
                                  &lt;xs:documentation&gt;V ... Very short term (max 1Y)
-S ... Short term (max 3Y)
-M ... Medium term (max 5Y)
-L ... Long term (min 5Y)
-H ... Hold to Maturity&lt;/xs:documentation&gt;
+                                                            S ... Short term (max 3Y)
+                                                            M ... Medium term (max 5Y)
+                                                            L ... Long term (min 5Y)
+                                                            H ... Hold to Maturity
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -1013,17 +1092,20 @@ H ... Hold to Maturity&lt;/xs:documentation&gt;
                               name=&quot;IntendedCompatibleWithClientsHavingESGPreferences&quot;
                               type=&quot;EMTYesNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;05105: Discloses if the product is developed with the aim of being compatible with clients having ESG preferences. 
-(Yes or Neutral).
-There is no Negative Target Market&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;05105: Discloses if the product is developed with the aim
+                                                of being compatible with clients having ESG preferences.
+                                                (Yes or Neutral).
+                                                There is no Negative Target Market
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;OtherSpecificInvestmentNeed&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;05115: No, Islamic banking or Other
-N...No, 
-I... Islamic banking 
-or O... Other&lt;/xs:documentation&gt;
+                                                N...No,
+                                                I... Islamic banking
+                                                or O... Other
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -1045,23 +1127,27 @@ or O... Other&lt;/xs:documentation&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;ExecutionOnly&quot; type=&quot;RetailProfessionalBothNeitherType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;06010: Retail or Professional or Both or Neither&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;06010: Retail or Professional or Both or Neither
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;ExecutionWithCheckOrNonAdvisedServices&quot;
                               type=&quot;RetailProfessionalBothNeitherType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;06020: Retail or Professional or Both or Neither&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;06020: Retail or Professional or Both or Neither
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;InvestmentAdvice&quot; type=&quot;RetailProfessionalBothNeitherType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;06030: Retail or Professional or Both or Neither&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;06030: Retail or Professional or Both or Neither
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;PortfolioManagement&quot; type=&quot;RetailProfessionalBothNeitherType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;06040: Retail or Professional or Both or Neither&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;06040: Retail or Professional or Both or Neither
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;

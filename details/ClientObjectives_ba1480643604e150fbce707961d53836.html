@@ -233,7 +233,11 @@
             font-family="Arial">ClientObjectives</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="197.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="197.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Target markets - </tspan>
          <tspan x="25" dy="1.2em">Client Objectives </tspan>
          <tspan x="25" dy="1.2em">and Needs </tspan>
@@ -443,6 +447,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -523,17 +534,18 @@ RHP: Recommended Holding Period</p>
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/EMTYesNeutralType.html"
+                                <a href="../simpleTypes/EMTYesNeutralType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesNeutralType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>05105: Discloses if the product is developed with the aim of being compatible with clients having ESG preferences.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>05105: Discloses if the product is developed with the aim<br />
+of being compatible with clients having ESG preferences.<br />
 (Yes or Neutral).<br />
 There is no Negative Target Market</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Neutral</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -559,7 +571,7 @@ or O... Other</p>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -580,20 +592,35 @@ or O... Other</p>
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;ClientLookingForPreservation&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;05010: Indicates if the product is compatible with clients looking for preserving their capital.
-Products stipulating a capital preservation objective should be YES. For other products, the answer should be NO or NEUTRAL based on a case-by-case analysis. In Germany fields 05010, 05020 and 05030 are merged and regarded &quot;General Capital Formation&quot;. A YES in any of these fields will be regarded a YES in the German combined field.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;05010: Indicates if the product is compatible
+                                                            with clients looking for preserving their capital.
+                                                            Products stipulating a capital preservation objective should
+                                                            be YES. For other products, the answer should be NO or
+                                                            NEUTRAL based on a case-by-case analysis. In Germany fields
+                                                            05010, 05020 and 05030 are merged and regarded &quot;General
+                                                            Capital Formation&quot;. A YES in any of these fields will be
+                                                            regarded a YES in the German combined field.
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;ClientLookingForCapitalGrowth&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;05020: Indicates if the product is compatible with clients looking for growing their capital.
-In Germany fields 05010, 05020 and 05030 are merged and regarded &quot;General Capital Formation&quot;. A YES in any of these fields will be regarded a YES in the German combined field.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;05020: Indicates if the product is compatible
+                                                            with clients looking for growing their capital.
+                                                            In Germany fields 05010, 05020 and 05030 are merged and
+                                                            regarded &quot;General Capital Formation&quot;. A YES in any of these
+                                                            fields will be regarded a YES in the German combined field.
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;ClientLookingForIncome&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;05030: Indicates if the product is compatible with clients looking for Income.
-In Germany fields 05010, 05020 and 05030 are merged and regarded &quot;General Capital Formation&quot;. A YES in any of these fields will be regarded a YES in the German combined field.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;05030: Indicates if the product is compatible
+                                                            with clients looking for Income.
+                                                            In Germany fields 05010, 05020 and 05030 are merged and
+                                                            regarded &quot;General Capital Formation&quot;. A YES in any of these
+                                                            fields will be regarded a YES in the German combined field.
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OptionOrLeveraged&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
@@ -614,7 +641,8 @@ In Germany fields 05010, 05020 and 05030 are merged and regarded &quot;General C
                            &lt;xs:element name=&quot;Hedging&quot; type=&quot;EMTYesNoNeutralType&quot;&gt;
                               &lt;xs:annotation&gt;
                                  &lt;xs:documentation&gt;05040: Yes or No or Neutral
-Only for structured Securities&lt;/xs:documentation&gt;
+                                                                        Only for structured Securities
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -626,22 +654,25 @@ Only for structured Securities&lt;/xs:documentation&gt;
          &lt;xs:element name=&quot;MinimumRecommendedHoldingPeriod&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;05080: Minimum recommended holding period
-RHP: Recommended Holding Period&lt;/xs:documentation&gt;
+                                                RHP: Recommended Holding Period
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:choice&gt;
                   &lt;xs:element name=&quot;Years&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Minimum recommended holding period in years&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Minimum recommended holding period in years
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Category&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;V ... Very short term (max 1Y)
-S ... Short term (max 3Y)
-M ... Medium term (max 5Y)
-L ... Long term (min 5Y)
-H ... Hold to Maturity&lt;/xs:documentation&gt;
+                                                            S ... Short term (max 3Y)
+                                                            M ... Medium term (max 5Y)
+                                                            L ... Long term (min 5Y)
+                                                            H ... Hold to Maturity
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -660,17 +691,20 @@ H ... Hold to Maturity&lt;/xs:documentation&gt;
                      name=&quot;IntendedCompatibleWithClientsHavingESGPreferences&quot;
                      type=&quot;EMTYesNeutralType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;05105: Discloses if the product is developed with the aim of being compatible with clients having ESG preferences. 
-(Yes or Neutral).
-There is no Negative Target Market&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;05105: Discloses if the product is developed with the aim
+                                                of being compatible with clients having ESG preferences.
+                                                (Yes or Neutral).
+                                                There is no Negative Target Market
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;OtherSpecificInvestmentNeed&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;05115: No, Islamic banking or Other
-N...No, 
-I... Islamic banking 
-or O... Other&lt;/xs:documentation&gt;
+                                                N...No,
+                                                I... Islamic banking
+                                                or O... Other
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;

@@ -243,7 +243,11 @@
             font-family="Arial">AdditionalInformation</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="235.3984375"/>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="235.3984375"
+            font-family="Arial"/>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
@@ -465,6 +469,13 @@
             <!-- Section: Documentation -->
             
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -535,12 +546,12 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A132 - Use closed list:<br />
 0 - Not assessed<br />
 1 - Debt on eligible Infrastructure project<br />
-2 - Equity on  eligible infrastructure project<br />
+2 - Equity on eligible infrastructure project<br />
 3 - Debt on eligible Infrastructure corporate<br />
 4 - Equity on eligible infrastructure corporate<br />
 5 - Non eligible</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">4</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -574,9 +585,10 @@ Int (1)<br />
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A 135- Beta of the issuer of the private equity calculated according to art 168a of the regulation UE DR 2019/981</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A 135- Beta of the issuer of the private equity calculated according<br />
+to art 168a of the regulation UE DR 2019/981</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">894.86</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">128.52</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -590,31 +602,43 @@ Int (1)<br />
                                 <span>xs:int</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A137 - One of the options in the following closed list should be used for CIC category 8 and for the following CIC categories if the instrument does not have an ISIN code (i.e. if Asset ID Code and Type of code C0010 does not start with either “ISIN/” or “CAU/ISIN/”):</p>
-<p>CIC category 1, CIC category 2, CIC category 3, CIC category 5 and CIC category 6:<br />
-1 – central bank (ESA 2010 sector S.121)<br />
-2 – deposit-taking corporations except the central bank (ESA 2010 sector S.122)<br />
-3 – money market funds (ESA 2010 sector S.123)<br />
-4 – investment funds other than money market funds (ESA 2010 sector S.124)<br />
-5 – other financial intermediaries, except insurance corporations and pension funds (excluding financial vehicle corporations engaged in securitisation transactions) + financial auxiliaries + captive financial institutions and money lenders (ESA 2010 sector S.125 excluding FVCs + ESA 2010 sector S.126 + ESA 2010 sector S.127)<br />
-6 – financial vehicle corporations engaged in securitisation transactions (a subdivision of ESA 2010 sector S.125)<br />
-7 – insurance corporations (ESA 2010 sector S.128)<br />
-8 – pension funds (ESA 2010 sector S.129)<br />
-9 – non-financial corporations (ESA 2010 sector S.11)<br />
-10 – general government (ESA 2010 sector S.13)<br />
-11 – households and non-profit institutions serving households (ESA 2010 sector S.14 + ESA 2010 sector S.15)</p>
-<p>For CIC category 7, one of the options in the following closed list should be selected:<br />
-12 – central bank (ESA 2010 sector S.121), deposit-taking corporations except the central bank (ESA 2010 sector S.122) and money market funds (ESA 2010 sector S.123)<br />
-13 – non-MFIs, not included under 12</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A137 - One of the options in the following closed list should be used<br />
+for CIC category 8 and for the following CIC categories if the instrument does not<br />
+have an ISIN code (i.e. if Asset ID Code and Type of code C0010 does not start with<br />
+either “ISIN/” or “CAU/ISIN/”):</p>
+<pre><code>                                CIC category 1, CIC category 2, CIC category 3, CIC category 5 and CIC category 6:
+                                1 – central bank (ESA 2010 sector S.121)
+                                2 – deposit-taking corporations except the central bank (ESA 2010 sector S.122)
+                                3 – money market funds (ESA 2010 sector S.123)
+                                4 – investment funds other than money market funds (ESA 2010 sector S.124)
+                                5 – other financial intermediaries, except insurance corporations and pension funds
+                                (excluding financial vehicle corporations engaged in securitisation transactions) +
+                                financial auxiliaries + captive financial institutions and money lenders (ESA 2010
+                                sector S.125 excluding FVCs + ESA 2010 sector S.126 + ESA 2010 sector S.127)
+                                6 – financial vehicle corporations engaged in securitisation transactions (a
+                                subdivision of ESA 2010 sector S.125)
+                                7 – insurance corporations (ESA 2010 sector S.128)
+                                8 – pension funds (ESA 2010 sector S.129)
+                                9 – non-financial corporations (ESA 2010 sector S.11)
+                                10 – general government (ESA 2010 sector S.13)
+                                11 – households and non-profit institutions serving households (ESA 2010 sector S.14
+                                + ESA 2010 sector S.15)
+
+                                For CIC category 7, one of the options in the following closed list should be
+                                selected:
+                                12 – central bank (ESA 2010 sector S.121), deposit-taking corporations except the
+                                central bank (ESA 2010 sector S.122) and money market funds (ESA 2010 sector S.123)
+                                13 – non-MFIs, not included under 12
+</code></pre>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">6</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -635,12 +659,13 @@ Int (1)<br />
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;InfrastructureInvestment&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;A132 - Use closed list:
-0 - Not assessed
-1 - Debt on eligible Infrastructure project
-2 - Equity on  eligible infrastructure project 
-3 - Debt on eligible Infrastructure corporate
-4 - Equity on eligible infrastructure corporate
-5 - Non eligible&lt;/xs:documentation&gt;
+                                    0 - Not assessed
+                                    1 - Debt on eligible Infrastructure project
+                                    2 - Equity on eligible infrastructure project
+                                    3 - Debt on eligible Infrastructure corporate
+                                    4 - Equity on eligible infrastructure corporate
+                                    5 - Non eligible
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:int&quot;&gt;

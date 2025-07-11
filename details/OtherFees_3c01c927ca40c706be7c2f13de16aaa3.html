@@ -233,7 +233,11 @@
             font-family="Arial">OtherFees</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="120.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="120.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Art.12 Other </tspan>
          <tspan x="25" dy="1.2em">fees details </tspan>
       </text>
@@ -362,6 +366,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -413,7 +424,8 @@
                                 <span>xs:string</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>'Charges taken from the fund under certain specific conditions'</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>'Charges taken from the fund under certain<br />
+specific conditions'</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
@@ -439,7 +451,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -458,7 +470,9 @@
       &lt;xs:sequence&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OtherFeesHeading&quot; type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;&#39;Charges taken from the fund under certain specific conditions&#39;&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;&#39;Charges taken from the fund under certain
+                                                specific conditions&#39;
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;OtherFee&quot;&gt;
@@ -469,17 +483,23 @@
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;FeeType&quot; type=&quot;xs:string&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Eg. Performance fee, Switch fee, Master fund fees, All-inclusive fee,...&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Eg. Performance fee, Switch fee,
+                                                            Master fund fees, All-inclusive fee,...
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Description&quot; type=&quot;xs:string&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Description of current fee (conditions,...)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Description of current fee
+                                                            (conditions,...)
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CalculationDescription&quot; type=&quot;xs:string&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Calculation rules for the current fee&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Calculation rules for the
+                                                            current fee
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MaximumPercentage&quot; type=&quot;xs:decimal&quot;/&gt;
@@ -489,7 +509,9 @@
                            &lt;xs:element name=&quot;Percentage&quot; type=&quot;xs:decimal&quot;/&gt;
                            &lt;xs:element name=&quot;ClosingMonth&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Last closing month for current fee MM/YYYY&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Last closing month
+                                                                        for current fee MM/YYYY
+                                                                    &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:string&quot;/&gt;

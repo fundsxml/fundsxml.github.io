@@ -283,7 +283,11 @@
             font-family="Arial">Performance</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="389.3984375"/>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="389.3984375"
+            font-family="Arial"/>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
@@ -665,6 +669,13 @@
             <!-- Section: Documentation -->
             
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -717,7 +728,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-10-25</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2020-02-24</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -726,14 +737,14 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/CalculationPeriodType.html"
+                                <a href="../simpleTypes/CalculationPeriodType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">CalculationPeriodType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">3 Months</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">5 Years</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -742,14 +753,14 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/PercentageType.html"
+                                <a href="../simpleTypes/PercentageType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">PercentageType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">806.89</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">999.09</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -764,7 +775,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -794,7 +805,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2024-09-10</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2020-04-12</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -819,14 +830,14 @@
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/DateIntervalType.html"
+                                <a href="../simpleTypes/DateIntervalType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">DateIntervalType</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Yearly</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Quarterly</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -849,7 +860,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -863,8 +874,10 @@
             minOccurs=&quot;0&quot;
             name=&quot;Performance&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Zero to ten past years perfomances, according to fund existence duration.
-Only full years of existence of the fund are used.&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;Zero to ten past years perfomances, according to fund existence
+                                    duration.
+                                    Only full years of existence of the fund are used.
+                                &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
@@ -880,17 +893,23 @@ Only full years of existence of the fund are used.&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;BenchmarkPerformanceValue&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Benchmark performance if available (Percentage)&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Benchmark performance if available
+                                                (Percentage)
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MaterialChangeIndicator&quot; type=&quot;xs:boolean&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;17-1 and 17-2  Indicates that a material change having an impact on performance occurred during the year (y/n)&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;17-1 and 17-2 Indicates that a material
+                                                change having an impact on performance occurred during the year (y/n)
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;SimulatedPerformanceIndicator&quot; type=&quot;xs:boolean&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;19-2 Indicates that the performance has been simulated&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;19-2 Indicates that the performance has been
+                                                simulated
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;

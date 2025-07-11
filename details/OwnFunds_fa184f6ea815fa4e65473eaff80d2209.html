@@ -243,7 +243,11 @@
             font-family="Arial">OwnFunds</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="235.3984375"/>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="235.3984375"
+            font-family="Arial"/>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
@@ -489,6 +493,13 @@
             <!-- Section: Documentation -->
             
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -542,7 +553,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Number of funds</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">4548</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1887</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -606,7 +617,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Information about the structure of the respective investment or asset management company with regard to portfoliomanagement or advise by third parties</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Information about the structure of the respective investment or asset<br />
+management company with regard to portfoliomanagement or advise by third parties</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -615,7 +627,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -644,28 +656,36 @@
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;FundsWithoutSegments&quot; type=&quot;xs:int&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Number of funds without segments or comparable subunits&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Number of funds without segments or comparable subunits
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;FundsWithSegments&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Data about the funds with segments of an investment or asset management company&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Data about the funds with segments of an investment or
+                                                asset management company
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Number&quot; type=&quot;xs:int&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;Number of funds with segments or comparable subunits&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;Number of funds with segments or comparable
+                                                            subunits
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;NumberOfSegments&quot; type=&quot;xs:int&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;Number of segments or comparable subunits&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;Number of segments or comparable subunits
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;NetAssetsSegments&quot; type=&quot;AssetManagementCompanyFundAssetsType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;Net asstes of funds with segments or comparable subunits&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;Net asstes of funds with segments or
+                                                            comparable subunits
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -673,7 +693,10 @@
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;NumberOfAdministrativeUnits&quot; type=&quot;xs:int&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Total number of administrative units, which is the sum of the number of funds without segments and comparable subunits and the number of segments or comparable subunits.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Total number of administrative units, which is the sum of
+                                                the number of funds without segments and comparable subunits and the
+                                                number of segments or comparable subunits.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -681,31 +704,42 @@
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;PortfoliomanagementByThirdParties&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Information about the structure of the respective investment or asset management company with regard to portfoliomanagement or advise by third parties&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Information about the structure of the respective investment or asset
+                                    management company with regard to portfoliomanagement or advise by third parties
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;TotalAdministrativeUnits&quot; type=&quot;FundStatisticClosedFundType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Data about the total of the respective administrative units&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Data about the total of the respective administrative
+                                                units
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;WithinAffiliatedGroup&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Data about the respective administrative units for which the portfoliomanagement or advise is done by a third party which is part of the affiliated company group&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Data about the respective administrative units for which
+                                                the portfoliomanagement or advise is done by a third party which is part
+                                                of the affiliated company group
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;TotalAdministrativeUnits&quot; type=&quot;FundStatisticClosedFundType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;Data about the total of the respetive adminisrative units&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;Data about the total of the respetive
+                                                            adminisrative units
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element minOccurs=&quot;0&quot;
                                        name=&quot;CompaniesInCountry&quot;
                                        type=&quot;FundStatisticClosedFundType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;Data about the part of the total which is related to the companies within the respective country&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;Data about the part of the total which is
+                                                            related to the companies within the respective country
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -713,20 +747,27 @@
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OutsideAffiliatedGroup&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Data about the respective administrative units for which the portfoliomanagement or advise is done by a third party which is not a part of the affiliated company group&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Data about the respective administrative units for which
+                                                the portfoliomanagement or advise is done by a third party which is not
+                                                a part of the affiliated company group
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;TotalAdministrativeUnits&quot; type=&quot;FundStatisticClosedFundType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;Data about the total of the respective administrative units&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;Data about the total of the respective
+                                                            administrative units
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element minOccurs=&quot;0&quot;
                                        name=&quot;CompaniesInCountry&quot;
                                        type=&quot;FundStatisticClosedFundType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;Data about the part of the total which is related to the companies within the respective country&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;Data about the part of the total which is
+                                                            related to the companies within the respective country
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;

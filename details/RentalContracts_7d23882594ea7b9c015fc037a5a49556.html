@@ -243,7 +243,11 @@
             font-family="Arial">RentalContracts</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="82.3984375"/>
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="82.3984375"
+            font-family="Arial"/>
    </g>
    <path style="stroke: #475569; stroke-width: 1.5;"
          fill="none"
@@ -323,6 +327,13 @@
             <!-- Section: Documentation -->
             
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -375,8 +386,13 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Summe der Nettovertragsmiete aller auslaufenden Mietverträge. Maßgebend ist First Break, es sind keine Optionen zu berücksichtigen. Anzugeben ist ein Jahreswert.</p>
-<p>Total net contractual rent. First break is relevant; no options have to be taken into account. An annual value must be given.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Summe der Nettovertragsmiete<br />
+aller auslaufenden Mietverträge. Maßgebend ist First Break,<br />
+es sind keine Optionen zu berücksichtigen. Anzugeben ist ein<br />
+Jahreswert.</p>
+<p>Total net contractual rent.<br />
+First break is relevant; no options have to be taken into<br />
+account. An annual value must be given.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -385,7 +401,7 @@
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -400,81 +416,162 @@
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;ExpiringLeases&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller auslaufenden Mietverträge. Maßgebend ist First Break, es sind keine Optionen zu berücksichtigen. Anzugeben ist ein Jahreswert.&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent. First break is relevant; no options have to be taken into account. An annual value must be given.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete
+                                                            aller auslaufenden Mietverträge. Maßgebend ist First Break,
+                                                            es sind keine Optionen zu berücksichtigen. Anzugeben ist ein
+                                                            Jahreswert.
+                                                        &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent.
+                                                            First break is relevant; no options have to be taken into
+                                                            account. An annual value must be given.
+                                                        &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Year_T&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im aktuellen Berichtsjahr (t) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the current reporting year (t).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im aktuellen
+                                                                        Berichtsjahr (t) auslaufenden Mietverträge (in
+                                                                        Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) of all
+                                                                        leases expiring in the current reporting year
+                                                                        (t).
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Year_TPlus1&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+1) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the year (t+1).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+1)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) of all
+                                                                        leases expiring in the year (t+1).
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Year_TPlus2&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+2) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the year (t+2).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+2)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) of all
+                                                                        leases expiring in the year (t+2).
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Year_TPlus3&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+3) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+3).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+3)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+3).
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Year_TPlus4&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+4) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+4).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+4)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+4).
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Year_TPlus5&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+5) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+5).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+5)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+5).
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Year_TPlus6&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+6) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+6).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+6)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+6).
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Year_TPlus7&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+7) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+7).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+7)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+7).
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Year_TPlus8&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+8) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+8).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+8)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+8).
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Year_TPlus9&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+9) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+9).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+9)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+9).
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Year_TPlus10AndLater&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+10) oder später auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+10) or later.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+10) oder
+                                                                        später auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+10) or later.
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;IndefiniteLeases&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller unbefristeten Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all unlimited leases.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller unbefristeten
+                                                                        Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        unlimited leases.
+                                                                    &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;

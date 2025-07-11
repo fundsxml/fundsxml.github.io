@@ -210,7 +210,7 @@
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f8fafc"
      width="270.0"
-     height="102.9921875">
+     height="75.39453125">
    <defs>
       <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
       <filter width="140%"
@@ -253,14 +253,17 @@
             font-family="Arial">Commodity</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="44.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="44.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Details for </tspan>
          <tspan x="25" dy="1.2em">commodities </tspan>
          <tspan x="25" dy="1.2em">(empty) </tspan>
          <tspan x="25" dy="1.2em">Details zu </tspan>
-         <tspan x="25" dy="1.2em">Bewertung </tspan>
-         <tspan x="25" dy="1.2em">von Rohstoff </tspan>
-         <tspan x="25" dy="1.2em">(leer) </tspan>
+         <tspan x="25" dy="1.2em">Bewertung von </tspan>
+         <tspan x="25" dy="1.2em">Rohstoff (leer) </tspan>
       </text>
    </g>
 </svg>
@@ -288,6 +291,13 @@
                     </div>
                 </div>
             </section>
+
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
 
             <!-- Section: Properties -->
             <section>
@@ -326,7 +336,7 @@ Base: xs:string<br />
             <!-- Section: Child Elements & Attributes -->
             
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -345,12 +355,13 @@ Base: xs:string<br />
          &lt;xs:element name=&quot;Group&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;AG ... Agricultural products
-EN ... Energy
-EV ... Environmental
-EX ... Exotic
-FR ... Freights
-IN ... Index
-ME ... Metals&lt;/xs:documentation&gt;
+                                    EN ... Energy
+                                    EV ... Environmental
+                                    EX ... Exotic
+                                    FR ... Freights
+                                    IN ... Index
+                                    ME ... Metals
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -367,19 +378,20 @@ ME ... Metals&lt;/xs:documentation&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SubGroup&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;CO ... Coal
-DA ... Dairy
-EL ... Electricity
-EM ... Emissions
-FO ... Forestry
-GO ... Grain Oilseeds
-IE ... Inter-Energy
-LI ... Livestock
-NG ... Natural Gas
-NP ... Non-Precious
-OL ... Oil
-PR ... Precious
-SO ... Softs
-WE ... Weather&lt;/xs:documentation&gt;
+                                    DA ... Dairy
+                                    EL ... Electricity
+                                    EM ... Emissions
+                                    FO ... Forestry
+                                    GO ... Grain Oilseeds
+                                    IE ... Inter-Energy
+                                    LI ... Livestock
+                                    NG ... Natural Gas
+                                    NP ... Non-Precious
+                                    OL ... Oil
+                                    PR ... Precious
+                                    SO ... Softs
+                                    WE ... Weather
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -402,7 +414,8 @@ WE ... Weather&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Description&quot; type=&quot;Text256Type&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Description of commodity (e.g. Gold, Copper, Meat, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Description of commodity (e.g. Gold, Copper, Meat, ...)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element maxOccurs=&quot;unbounded&quot;
@@ -410,34 +423,38 @@ WE ... Weather&lt;/xs:documentation&gt;
                      name=&quot;StockMarket&quot;
                      type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Exchange at which this asset is listed.&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt den Boerseplatz an an dem das Wertpapier notiert&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Exchange at which this asset is listed.
+                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt den Boerseplatz an an dem das Wertpapier notiert
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Listing&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indicator whether this asset is listed at an exchange
-A   Listed at an official market
-B   Listed at an exchange
-G   Listed on a regular market
-K   No listing
-M  Listed on a regular market inside the EU
-O  Over the Counter (OTC)
-S   Unregulated market
-V   Securitised rights
-Y   Acceptance on unregulated market planned
-Z   New issue&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an ob das Wertpapier an einer Boerse notiert 
+                                    A Listed at an official market
+                                    B Listed at an exchange
+                                    G Listed on a regular market
+                                    K No listing
+                                    M Listed on a regular market inside the EU
+                                    O Over the Counter (OTC)
+                                    S Unregulated market
+                                    V Securitised rights
+                                    Y Acceptance on unregulated market planned
+                                    Z New issue
+                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an ob das Wertpapier an einer Boerse notiert
 
-- A  Amtlicher Handel 
-- B  Boersennotierung Ausland
-- G  Geregelter Freiverkehr
-- K  Keine Boersenotierung
-- M  Geregelter Markt id. EU
-- S  Sonstiger Handel
-- V  Verbriefte Rechte
-- Y  Zulassung zum sonst. Handel vorges.
-- Z  Neuemission       &lt;/xs:documentation&gt;
+                                    - A Amtlicher Handel
+                                    - B Boersennotierung Ausland
+                                    - G Geregelter Freiverkehr
+                                    - K Keine Boersenotierung
+                                    - M Geregelter Markt id. EU
+                                    - S Sonstiger Handel
+                                    - V Verbriefte Rechte
+                                    - Y Zulassung zum sonst. Handel vorges.
+                                    - Z Neuemission
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -457,11 +474,13 @@ Z   New issue&lt;/xs:documentation&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ListingUnit&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Listing unit:
-P ... Pieces
-U ... Units&lt;/xs:documentation&gt;
+                                    P ... Pieces
+                                    U ... Units
+                                &lt;/xs:documentation&gt;
                &lt;xs:documentation xml:lang=&quot;de&quot;&gt;S = Stueck
-oder
-N = Nominale&lt;/xs:documentation&gt;
+                                    oder
+                                    N = Nominale
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;

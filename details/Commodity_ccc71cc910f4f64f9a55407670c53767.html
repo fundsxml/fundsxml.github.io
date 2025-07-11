@@ -213,7 +213,11 @@
             font-family="Arial">Commodity</text>
    </a>
    <g id="comment">
-      <text fill="#64748b" x="30" y="350.3984375">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="350.3984375"
+            font-family="Arial">
          <tspan x="25" dy="1.2em">Commodity </tspan>
          <tspan x="25" dy="1.2em">details </tspan>
       </text>
@@ -564,6 +568,13 @@
                 </div>
             </section>
 
+            <!-- ================================================================== -->
+            <!-- NEU: Section for Javadoc-style annotations                       -->
+            <!-- ================================================================== -->
+            
+
+            <!-- Section: Properties -->
+
             <!-- Section: Properties -->
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
@@ -623,7 +634,7 @@ FR ... Freights<br />
 IN ... Index<br />
 ME ... Metals</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">EX</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">FR</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -652,7 +663,7 @@ PR ... Precious<br />
 SO ... Softs<br />
 WE ... Weather</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">NG</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">FO</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -661,7 +672,7 @@ WE ... Weather</p>
 
                             <td class="px-4 py-3 font-mono">
                                 <!-- If the type is a custom type (not xs:...), it will be linked -->
-                                <a href="../simpletypes/Text256Type.html"
+                                <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 <!-- Otherwise (e.g., for 'xs:string'), it is displayed as normal text -->
                                 
@@ -701,30 +712,29 @@ WE ... Weather</p>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicator whether this asset is listed at an exchange<br />
-A   Listed at an official market<br />
-B   Listed at an exchange<br />
-G   Listed on a regular market<br />
-K   No listing<br />
-M  Listed on a regular market inside the EU<br />
-O  Over the Counter (OTC)<br />
-S   Unregulated market<br />
-V   Securitised rights<br />
-Y   Acceptance on unregulated market planned<br />
-Z   New issue</p>
+A Listed at an official market<br />
+B Listed at an exchange<br />
+G Listed on a regular market<br />
+K No listing<br />
+M Listed on a regular market inside the EU<br />
+O Over the Counter (OTC)<br />
+S Unregulated market<br />
+V Securitised rights<br />
+Y Acceptance on unregulated market planned<br />
+Z New issue</p>
 <p>Gibt an ob das Wertpapier an einer Boerse notiert</p>
-<ul>
-<li>A  Amtlicher Handel</li>
-<li>B  Boersennotierung Ausland</li>
-<li>G  Geregelter Freiverkehr</li>
-<li>K  Keine Boersenotierung</li>
-<li>M  Geregelter Markt id. EU</li>
-<li>S  Sonstiger Handel</li>
-<li>V  Verbriefte Rechte</li>
-<li>Y  Zulassung zum sonst. Handel vorges.</li>
-<li>Z  Neuemission</li>
-</ul>
+<pre><code>                                - A Amtlicher Handel
+                                - B Boersennotierung Ausland
+                                - G Geregelter Freiverkehr
+                                - K Keine Boersenotierung
+                                - M Geregelter Markt id. EU
+                                - S Sonstiger Handel
+                                - V Verbriefte Rechte
+                                - Y Zulassung zum sonst. Handel vorges.
+                                - Z Neuemission
+</code></pre>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">A</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -761,7 +771,7 @@ N = Nominale</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Gram, Kilogram, Ounce, Carat</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Kilogram</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Carat</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -785,7 +795,7 @@ N = Nominale</p>
                 </div>
             </section>
 
-            <!-- Section: App Info -->
+            <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
             <!-- Section: XML Snippet -->
@@ -804,12 +814,13 @@ N = Nominale</p>
          &lt;xs:element name=&quot;Group&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;AG ... Agricultural products
-EN ... Energy
-EV ... Environmental
-EX ... Exotic
-FR ... Freights
-IN ... Index
-ME ... Metals&lt;/xs:documentation&gt;
+                                    EN ... Energy
+                                    EV ... Environmental
+                                    EX ... Exotic
+                                    FR ... Freights
+                                    IN ... Index
+                                    ME ... Metals
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -826,19 +837,20 @@ ME ... Metals&lt;/xs:documentation&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SubGroup&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;CO ... Coal
-DA ... Dairy
-EL ... Electricity
-EM ... Emissions
-FO ... Forestry
-GO ... Grain Oilseeds
-IE ... Inter-Energy
-LI ... Livestock
-NG ... Natural Gas
-NP ... Non-Precious
-OL ... Oil
-PR ... Precious
-SO ... Softs
-WE ... Weather&lt;/xs:documentation&gt;
+                                    DA ... Dairy
+                                    EL ... Electricity
+                                    EM ... Emissions
+                                    FO ... Forestry
+                                    GO ... Grain Oilseeds
+                                    IE ... Inter-Energy
+                                    LI ... Livestock
+                                    NG ... Natural Gas
+                                    NP ... Non-Precious
+                                    OL ... Oil
+                                    PR ... Precious
+                                    SO ... Softs
+                                    WE ... Weather
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -861,7 +873,8 @@ WE ... Weather&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Description&quot; type=&quot;Text256Type&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Description of commodity (e.g. Gold, Copper, Meat, ...)&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Description of commodity (e.g. Gold, Copper, Meat, ...)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element maxOccurs=&quot;unbounded&quot;
@@ -869,34 +882,38 @@ WE ... Weather&lt;/xs:documentation&gt;
                      name=&quot;StockMarket&quot;
                      type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Exchange at which this asset is listed.&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt den Boerseplatz an an dem das Wertpapier notiert&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Exchange at which this asset is listed.
+                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt den Boerseplatz an an dem das Wertpapier notiert
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Listing&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indicator whether this asset is listed at an exchange
-A   Listed at an official market
-B   Listed at an exchange
-G   Listed on a regular market
-K   No listing
-M  Listed on a regular market inside the EU
-O  Over the Counter (OTC)
-S   Unregulated market
-V   Securitised rights
-Y   Acceptance on unregulated market planned
-Z   New issue&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an ob das Wertpapier an einer Boerse notiert 
+                                    A Listed at an official market
+                                    B Listed at an exchange
+                                    G Listed on a regular market
+                                    K No listing
+                                    M Listed on a regular market inside the EU
+                                    O Over the Counter (OTC)
+                                    S Unregulated market
+                                    V Securitised rights
+                                    Y Acceptance on unregulated market planned
+                                    Z New issue
+                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an ob das Wertpapier an einer Boerse notiert
 
-- A  Amtlicher Handel 
-- B  Boersennotierung Ausland
-- G  Geregelter Freiverkehr
-- K  Keine Boersenotierung
-- M  Geregelter Markt id. EU
-- S  Sonstiger Handel
-- V  Verbriefte Rechte
-- Y  Zulassung zum sonst. Handel vorges.
-- Z  Neuemission       &lt;/xs:documentation&gt;
+                                    - A Amtlicher Handel
+                                    - B Boersennotierung Ausland
+                                    - G Geregelter Freiverkehr
+                                    - K Keine Boersenotierung
+                                    - M Geregelter Markt id. EU
+                                    - S Sonstiger Handel
+                                    - V Verbriefte Rechte
+                                    - Y Zulassung zum sonst. Handel vorges.
+                                    - Z Neuemission
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -916,11 +933,13 @@ Z   New issue&lt;/xs:documentation&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ListingUnit&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Listing unit:
-P ... Pieces
-U ... Units&lt;/xs:documentation&gt;
+                                    P ... Pieces
+                                    U ... Units
+                                &lt;/xs:documentation&gt;
                &lt;xs:documentation xml:lang=&quot;de&quot;&gt;S = Stueck
-oder
-N = Nominale&lt;/xs:documentation&gt;
+                                    oder
+                                    N = Nominale
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
