@@ -434,23 +434,7 @@
             <!-- ================================================================== -->
             <!-- Section for Javadoc-style annotations                       -->
             <!-- ================================================================== -->
-            <section class="space-y-6">
-
-                <!-- Deprecated Warning Box -->
-                
-
-                <!-- Grid for other Javadoc info like @since and @see -->
-                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
-                    <!-- Since -->
-                    <div class="flex flex-col">
-                        <dt class="text-sm font-medium text-slate-500">Since</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">4.0.0</dd>
-                    </div>
-
-                    <!-- See Also -->
-                    
-                </dl>
-            </section>
+            
 
             <!-- Section: Properties -->
             <section>
@@ -520,8 +504,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>01010_Submitter_Entity_Name<br />
-Name of the Entity distributing the financial instrument. The one who is<br />
-responsible for the Distributor Target Market</p>
+Name of the Entity distributing the financial instrument. The one who is responsible for the Distributor Target Market</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
@@ -552,8 +535,7 @@ responsible for the Distributor Target Market</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>01020_Submitter_Entity_identifier<br />
 Identification of the Distribution Entity<br />
-: the one who is responsible for the Distributor Target Market or<br />
-Nothing (N)<br />
+: the one who is responsible for the Distributor Target Market or Nothing (N)<br />
 LEI, National Identity Number, N</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
@@ -587,7 +569,7 @@ LEI, National Identity Number, N</p>
 LEI of the recipient entity or National identifier or Nothing<br />
 L or NI or No</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">No</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">L</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -615,11 +597,13 @@ L or NI or No</p>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>02040_Recipient_Entity_Position_In_The_Distribution_Chain<br />
-One of the following items<br />
-- Manufacturer<br />
-- Distributor (The one doing the sales)<br />
-- Intermediary (e.g. platform)<br />
-M or D or I (intermediary / platform)</p>
+One of the following items</p>
+<ul>
+<li>Manufacturer</li>
+<li>Distributor (The one doing the sales)</li>
+<li>Intermediary (e.g. platform)<br />
+M or D or I (intermediary / platform)</li>
+</ul>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">I</td>
                         </tr>
@@ -644,9 +628,7 @@ M or D or I (intermediary / platform)</p>
          &lt;xs:element name=&quot;Name&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;01010_Submitter_Entity_Name
-                                                Name of the Entity distributing the financial instrument. The one who is
-                                                responsible for the Distributor Target Market
-                                            &lt;/xs:documentation&gt;
+Name of the Entity distributing the financial instrument. The one who is responsible for the Distributor Target Market&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -657,11 +639,9 @@ M or D or I (intermediary / platform)</p>
          &lt;xs:element name=&quot;Identifier&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;01020_Submitter_Entity_identifier
-                                                Identification of the Distribution Entity
-                                                : the one who is responsible for the Distributor Target Market or
-                                                Nothing (N)
-                                                LEI, National Identity Number, N
-                                            &lt;/xs:documentation&gt;
+Identification of the Distribution Entity
+: the one who is responsible for the Distributor Target Market or Nothing (N)
+LEI, National Identity Number, N&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -672,9 +652,8 @@ M or D or I (intermediary / platform)</p>
          &lt;xs:element name=&quot;IdentifierType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;02030_Recipient_Entity_identifier_Type
-                                                LEI of the recipient entity or National identifier or Nothing
-                                                L or NI or No
-                                            &lt;/xs:documentation&gt;
+LEI of the recipient entity or National identifier or Nothing
+L or NI or No&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -687,12 +666,11 @@ M or D or I (intermediary / platform)</p>
          &lt;xs:element name=&quot;PositionInTheDistributionChain&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation&gt;02040_Recipient_Entity_Position_In_The_Distribution_Chain
-                                                One of the following items
-                                                - Manufacturer
-                                                - Distributor (The one doing the sales)
-                                                - Intermediary (e.g. platform)
-                                                M or D or I (intermediary / platform)
-                                            &lt;/xs:documentation&gt;
+One of the following items
+- Manufacturer
+-  Distributor (The one doing the sales)
+- Intermediary (e.g. platform)
+M or D or I (intermediary / platform)&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:string&quot;&gt;
