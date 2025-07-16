@@ -42,7 +42,7 @@
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
 <!-- Modern navigation with shadow and clear spacing -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
@@ -61,6 +61,15 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full px-3 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -1950,7 +1959,23 @@
             <!-- ================================================================== -->
             <!-- Section for Javadoc-style annotations                       -->
             <!-- ================================================================== -->
-            
+            <section class="space-y-6">
+
+                <!-- Deprecated Warning Box -->
+                
+
+                <!-- Grid for other Javadoc info like @since and @see -->
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <!-- Since -->
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Since</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">4.0.0</dd>
+                    </div>
+
+                    <!-- See Also -->
+                    
+                </dl>
+            </section>
 
             <!-- Section: Properties -->
             <section>
@@ -2055,7 +2080,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicates whether transaction has been cancelled</p>
 <p>Kennzeichen ob die Transaktion storniert wurde</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2181,7 +2206,7 @@
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">SVV</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">PKH</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2211,7 +2236,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>BUY, SELL, LENDING_BUY, LENDING_SELL, CORP_ACTION, CASH</p>
 <p>BUY, SELL, LENDING_BUY, LENDING_SELL</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">BUY</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">SELL</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2246,7 +2271,7 @@
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">WPR</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">EEK</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2276,7 +2301,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date when transaction has been booked</p>
 <p>Buchungsdatum</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-10-06</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2025-03-16</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2306,7 +2331,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Valuta date (effective date)</p>
 <p>Gibt das Valutadatum an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-05-13</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-07-29</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2336,7 +2361,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Closing date (trade date)</p>
 <p>Gibt das Datum an, an dem das Geschaefts abgeschlossen wurde</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-11-06</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2024-03-02</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2365,7 +2390,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>for PRIIPs/MiFID II transaction costs calucation</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2024-09-13T09:47:34</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2025-02-16T20:50:58</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2394,7 +2419,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>for PRIIPs/MiFID II transaction costs calucation</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2025-04-30T13:56:33</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2025-05-29T16:13:37</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2459,7 +2484,7 @@
 <p>Gibt die Stuecke oder Nominale oder Kontraktzahl an (ohne<br />
 Vorzeichen)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">769.57</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">706.12</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2971,7 +2996,7 @@ Fondsbuchhaltungssystem zur Verfügung gestellt)</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Account number used for transaction</p>
 <p>Gibt das bei der Transaktion verwendete Konto an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">3213</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">3279</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3136,7 +3161,7 @@ and further detail related to the respective type of transaction.</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Transaction finally settled or not</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3285,7 +3310,7 @@ and further detail related to the respective type of transaction.</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Type of Order Execution</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">StopLimit</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">MarketOnOpen</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3354,6 +3379,7 @@ and further detail related to the respective type of transaction.</p>
 
 <!-- Load scripts at the end -->
 <script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 
 <!-- JavaScript for the copy functionality -->
 <script>

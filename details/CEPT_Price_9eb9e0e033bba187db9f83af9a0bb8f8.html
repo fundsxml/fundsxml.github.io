@@ -42,7 +42,7 @@
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
 <!-- Modern navigation with shadow and clear spacing -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
@@ -61,6 +61,15 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full px-3 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -610,7 +619,23 @@
             <!-- ================================================================== -->
             <!-- Section for Javadoc-style annotations                       -->
             <!-- ================================================================== -->
-            
+            <section class="space-y-6">
+
+                <!-- Deprecated Warning Box -->
+                
+
+                <!-- Grid for other Javadoc info like @since and @see -->
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <!-- Since -->
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Since</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">4.0.0</dd>
+                    </div>
+
+                    <!-- See Also -->
+                    
+                </dl>
+            </section>
 
             <!-- Section: Properties -->
             <section>
@@ -681,7 +706,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>11010-Price date</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-10-15</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2024-01-29</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -710,7 +735,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>11020-Share price of the fund/share class</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">372.88</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">922.23</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -744,7 +769,7 @@
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">IFU</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">NTD</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -777,7 +802,7 @@ multiplied to to obtain the correct performance time series. This should reflect
 factor and should be populated every day. In case of null value, '1' is taken as default. Should<br />
 only be populated in case a share price factor is relevant.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">982.78</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">965.73</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -807,7 +832,7 @@ only be populated in case a share price factor is relevant.</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>11050-Distribution value in share price currency. Should be populated on day of<br />
 distribution only and only in case a distribution has taken place.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">930.26</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">460.99</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -838,7 +863,7 @@ distribution only and only in case a distribution has taken place.</p>
 should be populated. This should reflect the multiplying factor and should be populated every<br />
 day. In case of null value, '1' is taken as default.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">905.54</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">59.94</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -874,7 +899,7 @@ currency change took place.</p>
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">ECK</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">TDK</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -905,7 +930,7 @@ currency change took place.</p>
 populated with the value: (old share class currency/new share class currency). Should only be<br />
 populated in case a share class currency change took place.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">183.13</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">387.75</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -945,7 +970,7 @@ case a share class currency change took place.<br />
 &quot;104&quot;=biweekly<br />
 &quot;252&quot;=daily</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">104</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                         </tr>
                         </tbody>
                     </table>
@@ -975,6 +1000,7 @@ case a share class currency change took place.<br />
 
 <!-- Load scripts at the end -->
 <script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 
 <!-- JavaScript for the copy functionality -->
 <script>

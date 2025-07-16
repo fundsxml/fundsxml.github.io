@@ -42,7 +42,7 @@
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
 <!-- Modern navigation with shadow and clear spacing -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
@@ -61,6 +61,15 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full px-3 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -3351,7 +3360,23 @@
             <!-- ================================================================== -->
             <!-- Section for Javadoc-style annotations                       -->
             <!-- ================================================================== -->
-            
+            <section class="space-y-6">
+
+                <!-- Deprecated Warning Box -->
+                
+
+                <!-- Grid for other Javadoc info like @since and @see -->
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <!-- Since -->
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Since</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">4.0.0</dd>
+                    </div>
+
+                    <!-- See Also -->
+                    
+                </dl>
+            </section>
 
             <!-- Section: Properties -->
             <section>
@@ -3423,7 +3448,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Datum ab wann das Stammdatenblatt gültig ist</p>
 <p>valid since</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2025-01-24</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2020-03-20</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3498,7 +3523,7 @@ Interim Entity Identifier (IEI):<br />
 transparent, sound and robust allocation policies.<br />
 •Characters 19-20: Two check digits</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">XMNvpN8zo3H31Sq89X83</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">X8v8vT2DnIYA455O5078</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3560,7 +3585,7 @@ Währungen, etc.) handelt</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>International Securities Identification Number (according to ISO 6166)</p>
 <p>International Securities Identification Number (according to ISO 6166)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">RYBO6T895149</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">IL15R7931JK1</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3593,7 +3618,7 @@ C-PLAN</p>
 <p>Indicates a regular fund, internal (technicial) ISIN or<br />
 a saving plan</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">FONDS</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">TECHNISCHE_ISIN</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3653,7 +3678,7 @@ a saving plan</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>interne ÖNB Wrapper Nummer</p>
 <p>internal OeNB wrapper number</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2901</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1147</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3688,7 +3713,7 @@ Prüfziffer</p>
 <p>Identnummer der Oesterreichischen Nationalbank: maximal 8 stellig nummerisch mit<br />
 Prüfziffer</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">47</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">66</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3748,7 +3773,7 @@ Prüfziffer</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Handelt es sich um einen börsengehandelten Fonds</p>
 <p>Indicates an ETF</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3824,7 +3849,7 @@ Interim Entity Identifier (IEI):<br />
 transparent, sound and robust allocation policies.<br />
 •Characters 19-20: Two check digits</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Ep5BKWoCkV1FQ6gCNj24</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">cE46b0suk3v0tu458c99</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -3869,7 +3894,7 @@ Interim Entity Identifier (IEI):<br />
 transparent, sound and robust allocation policies.<br />
 •Characters 19-20: Two check digits</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">c4cwP1VNn2a7cIDY8p68</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">y9d31ca9oJSmMgyWQ065</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4053,7 +4078,7 @@ transparent, sound and robust allocation policies.<br />
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Währung des Anteilscheines</p>
 <p>Currency of the shareclass</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">BRL</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">HKD</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4083,7 +4108,7 @@ transparent, sound and robust allocation policies.<br />
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Datum des ersten Fondsvolumens</p>
 <p>Date of the first NAV</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-06-05</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2022-07-14</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4113,7 +4138,7 @@ transparent, sound and robust allocation policies.<br />
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Zielgruppe laut ÖKB</p>
 <p>investor target group according to ÖKB</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">SF</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">PFR</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4143,7 +4168,7 @@ transparent, sound and robust allocation policies.<br />
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Anteilscheinsertragstyp</p>
 <p>Shareclass revenue type</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">VTA</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">T</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4190,7 +4215,7 @@ decimal. Veraendert wurde er nicht. Bei Prozentwerten kann man je nach Definitio
 Auspraegung 3.5 benutzt werden muss um eine einheitliche Auspraegung fuer den Datenaustausch zwischen<br />
 Firmen zu erreichen.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">70.50</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">628.48</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4237,7 +4262,7 @@ decimal. Veraendert wurde er nicht. Bei Prozentwerten kann man je nach Definitio
 Auspraegung 3.5 benutzt werden muss um eine einheitliche Auspraegung fuer den Datenaustausch zwischen<br />
 Firmen zu erreichen.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">596.32</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">991.24</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4267,7 +4292,7 @@ Firmen zu erreichen.</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>gibt es eine Midestverwaltungsgebühr</p>
 <p>minimum admin fee flag</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4314,7 +4339,7 @@ decimal. Veraendert wurde er nicht. Bei Prozentwerten kann man je nach Definitio
 Auspraegung 3.5 benutzt werden muss um eine einheitliche Auspraegung fuer den Datenaustausch zwischen<br />
 Firmen zu erreichen.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">421.57</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">21.34</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4344,7 +4369,7 @@ Firmen zu erreichen.</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Existiert eine Performance Fee</p>
 <p>performance fee existing</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4374,7 +4399,7 @@ Firmen zu erreichen.</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>die kleinste Stückelung der Ausgabe</p>
 <p>minimum denomination</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">700.70</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">597.93</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4404,7 +4429,7 @@ Firmen zu erreichen.</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Mindestivnest bei Ersterwerb</p>
 <p>minimum investment first invest</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">3471</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">3081</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4434,7 +4459,7 @@ Firmen zu erreichen.</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Mindeststück bei Ersterwerb</p>
 <p>smalest amount of units</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">6175</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">7490</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4475,7 +4500,7 @@ ELTIO ELTIF - offen<br />
 ELTIG ELTIF - geschlossen</p>
 <p>legal fund type</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">EUSEO</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">OGAW</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4505,7 +4530,7 @@ ELTIG ELTIF - geschlossen</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>0.2 - Sondervermögen</p>
 <p>separate property</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4588,7 +4613,7 @@ RFLEX Flexibel (Duration flexibel)</p>
 </code></pre>
 <p>fund investment type</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">MMF</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">HLGBS</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4651,7 +4676,7 @@ BLEND Blend</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>5.6. Passive Style Management - Indextracking</p>
 <p>passive fund (indextracing) flag</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4684,7 +4709,7 @@ VARAB VaR absolut gemäß DerVO<br />
 VARRE VaR relativ gemäß DerVO</p>
 <p>regulatory risk management</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">COMMA</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">VARAB</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4764,7 +4789,7 @@ IMMOG Immobilieninvestmentfonds gemäß AIFMG<br />
 SONST Sonstige AIF gemäß AIFMG</p>
 <p>legal framework</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">IMMOG</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">NKZVE</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4816,7 +4841,7 @@ GLEM Global, emerging markets<br />
 GLAC Global, all countries</p>
 <p>main investment region</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">ME</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">SASIA</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4852,7 +4877,7 @@ GLDOM Global mit dominanter Währung<br />
 GL Global</p>
 <p>investement currency</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">EURHG</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">SICUR</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4887,7 +4912,7 @@ STRUC Structural Fund<br />
 LIFCY Life Cycle Fund</p>
 <p>SRRI category</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">TR</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">LIFCY</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -4968,7 +4993,7 @@ angegeben werden.</p>
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">AUJ</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">FQV</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5039,7 +5064,7 @@ IMMO Immobilien-Investmentfonds (gemäß ImmoInvFG)<br />
 SONST sonstige AIF</p>
 <p>fund investment type (fund of fund)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">INVF</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">IMMO</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5072,7 +5097,7 @@ GOV Government Bonds<br />
 AGBND Aggregate Bonds (= Corporate Bonds and Government Bonds)</p>
 <p>Bond type</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">AGBND</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">CORP</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5106,7 +5131,7 @@ RLONG Long (Duration ab 7 Jahre)<br />
 RFLEX Flexibel (Duration flexibel)</p>
 <p>duration of balanced funds</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">RSHT</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">NA</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5239,7 +5264,7 @@ sein.</li>
 Geldmarktfonds oder Real Estate Fonds möglich.</p>
 <p>financial security fund</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5270,7 +5295,7 @@ Geldmarktfonds oder Real Estate Fonds möglich.</p>
 Geldmarktfonds, Gemischte Fonds oder Real Estate Fonds möglich.</p>
 <p>cash reserves fund</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5331,7 +5356,7 @@ Geldmarktfonds, Gemischte Fonds oder Real Estate Fonds möglich.</p>
 Geldmarktfonds, Gemischte Fonds oder Real Estate Fonds möglich.</p>
 <p>pension fund flag</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5431,7 +5456,7 @@ oder 'Gemischter Fonds' sein.</li>
 </ul>
 <p>Convertibles allowed flag</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5464,7 +5489,7 @@ oder 'Gemischter Fonds' sein.</li>
 </ul>
 <p>ABS / MBS flag</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5527,7 +5552,7 @@ oder 'Gemischter Fonds' sein.</li>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Lizenz Hinweis notwendig</p>
 <p>license notice required</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5562,7 +5587,7 @@ NEIN Nein</p>
 </code></pre>
 <p>master or feeder fund</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">MSTER</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">FDER</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5655,7 +5680,7 @@ LMCAP Large Caps/Mid Caps</p>
 </code></pre>
 <p>equity capitalization</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">NA</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">LMCAP</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5685,7 +5710,7 @@ LMCAP Large Caps/Mid Caps</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unterliegt dem KESt Zinesen §98 EStG</p>
 <p>§98 EStG applicapable</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5753,7 +5778,7 @@ AIM10 mehr als 10%</p>
 </code></pre>
 <p>alternative investment percentage allowed</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">AIK10</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">AIM10</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5813,7 +5838,7 @@ AIM10 mehr als 10%</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Laufzeitenede</p>
 <p>maturity</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-05-21</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-01-30</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5879,7 +5904,7 @@ IMM20 Anteil/Immobilienfonds bis zu 20%</p>
 </code></pre>
 <p>type of real estate fund</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">IMM20</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">IMM10</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -5948,7 +5973,7 @@ NTGL nicht tägliche Preismeldung<br />
 NEIN keine Preismeldung</p>
 <p>daily price delivery to OeKB</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">TGL</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">NEIN</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -6010,7 +6035,7 @@ DAT Datum Fondspreis = Bewertungsdatum</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Art der Preisveröffentlichung der ÖKB</p>
 <p>Price distribution OeKB</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">V</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">K</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -6071,7 +6096,7 @@ DAT Datum Fondspreis = Bewertungsdatum</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Kontakt Email</p>
 <p>contacts email address</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">_K</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">_u</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -6161,7 +6186,7 @@ DAT Datum Fondspreis = Bewertungsdatum</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>aktuelles Datum</p>
 <p>actual date</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2025-02-01</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2021-02-11</td>
                         </tr>
                         </tbody>
                     </table>
@@ -6841,6 +6866,7 @@ DAT Datum Fondspreis = Bewertungsdatum</p>
 
 <!-- Load scripts at the end -->
 <script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 
 <!-- JavaScript for the copy functionality -->
 <script>

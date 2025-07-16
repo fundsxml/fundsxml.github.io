@@ -42,7 +42,7 @@
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
 <!-- Modern navigation with shadow and clear spacing -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
@@ -61,6 +61,15 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full px-3 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -1069,7 +1078,23 @@
             <!-- ================================================================== -->
             <!-- Section for Javadoc-style annotations                       -->
             <!-- ================================================================== -->
-            
+            <section class="space-y-6">
+
+                <!-- Deprecated Warning Box -->
+                
+
+                <!-- Grid for other Javadoc info like @since and @see -->
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <!-- Since -->
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Since</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">4.0.0</dd>
+                    </div>
+
+                    <!-- See Also -->
+                    
+                </dl>
+            </section>
 
             <!-- Section: Properties -->
             <section>
@@ -1141,7 +1166,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>08010 Indicates if the line contains UK<br />
 PRIIPs data, UCITS data or Both</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">UCITS</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Both</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1172,7 +1197,7 @@ PRIIPs data, UCITS data or Both</p>
 2 Full UK PRIIPS methodology<br />
 3 Other methodology</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">3</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1202,7 +1227,7 @@ PRIIPs data, UCITS data or Both</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>08040 Information about the total benefit derived from an<br />
 anti-dilution mechanism floating decimal. 100%= 1, 5%= 0,05</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">696.04</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">581.96</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1232,7 +1257,7 @@ anti-dilution mechanism floating decimal. 100%= 1, 5%= 0,05</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>08045 The date to which the UK PRIIPs data in this section<br />
 relates</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2020-05-31</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2022-07-30</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1262,7 +1287,7 @@ relates</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>08050 Date of the latest UK PRIIPs KID produced for the<br />
 portfolio or share class.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2024-11-14</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-06-23</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1552,7 +1577,7 @@ adverse market conditions.</p>
 return for estimating future benefit payments when calculating summary<br />
 cost indicators</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">326.46</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">345.87</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1582,7 +1607,7 @@ cost indicators</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>08150 Date of the latest UCITS KIID produced for the<br />
 portfolio or share class.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-04-20</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2020-01-14</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1640,7 +1665,7 @@ portfolio or share class.</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>08170 -The SRRI of the Valid UCITS KIID</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">3</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1671,7 +1696,7 @@ portfolio or share class.</p>
 return for estimating future benefit payments when calculating summary<br />
 cost indicators</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">326.46</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">345.87</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1767,7 +1792,7 @@ fees or carried interest</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>08200-See UCITS definition as a % of NAV of the portfolio,<br />
 the funds or the share class / per annum</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">41.85</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">176.89</td>
                         </tr>
                         </tbody>
                     </table>
@@ -2040,6 +2065,7 @@ the funds or the share class / per annum</p>
 
 <!-- Load scripts at the end -->
 <script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 
 <!-- JavaScript for the copy functionality -->
 <script>

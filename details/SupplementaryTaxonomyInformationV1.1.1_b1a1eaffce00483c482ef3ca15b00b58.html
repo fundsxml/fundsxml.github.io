@@ -42,7 +42,7 @@
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
 <!-- Modern navigation with shadow and clear spacing -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
@@ -61,6 +61,15 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full px-3 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -1230,7 +1239,23 @@
             <!-- ================================================================== -->
             <!-- Section for Javadoc-style annotations                       -->
             <!-- ================================================================== -->
-            
+            <section class="space-y-6">
+
+                <!-- Deprecated Warning Box -->
+                
+
+                <!-- Grid for other Javadoc info like @since and @see -->
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <!-- Since -->
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Since</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">4.0.0</dd>
+                    </div>
+
+                    <!-- See Also -->
+                    
+                </dl>
+            </section>
 
             <!-- Section: Properties -->
             <section>
@@ -1333,7 +1358,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90010_Financial_Instrument_Minimum_Percentage_Investments_Aligned_EU_Taxonomy_Fossil_Gas_Incl_Sovereign_Bonds</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">641.93</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">825.05</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1362,7 +1387,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90020_Financial_Instrument_Minimum_Percentage_Investments_Aligned_EU_Taxonomy_Fossil_Gas_Excl_Sovereign_Bonds</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">60.63</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">599.23</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1394,7 +1419,7 @@
 <p>Y or N</p>
 <p>Y or N</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">N</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1423,7 +1448,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90040_Financial_Instrument_Minimum_Percentage_Investments_Aligned_EU_Taxonomy_Nuclear_Incl_Sovereign_Bonds</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">47.04</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">125.37</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1452,7 +1477,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90050_Financial_Instrument_Minimum_Percentage_Investments_Aligned_EU_Taxonomy_Nuclear_Excl_Sovereign_Bonds</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">757.08</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">714.24</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1481,7 +1506,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90060_Financial_Instrument_Minimum_Percentage_Investments_Aligned_EU_Taxonomy_No_Fossil_Gas_and_Nuclear_Incl_Sovereign_Bonds</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">534.27</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">98.21</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1510,7 +1535,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90070_Financial_Instrument_Minimum_Percentage_Investments_Aligned_EU_Taxonomy_No_Fossil_Gas_and_Nuclear_Excl_Sovereign_Bonds</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">995.40</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">456.75</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1539,7 +1564,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90080_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Fossil_Gas_Incl_Sovereign_Bonds_Turnover</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">287.77</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">449.96</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1568,7 +1593,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90090_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Fossil_Gas_Excl_Sovereign_Bonds_Turnover</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">602.85</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">306.54</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1597,7 +1622,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90100_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Nuclear_Incl_Sovereign_Bonds_Turnover</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">351.31</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">417.93</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1626,7 +1651,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90110_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Nuclear_Excl_Sovereign_Bonds_Turnover</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">497.64</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">185.30</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1655,7 +1680,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90120_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_No_Fossil_Gas_and_Nuclear_Incl_Sovereign_Bonds_Turnover</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">423.42</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">219.01</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1684,7 +1709,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90130_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_No_Fossil_Gas_and_Nuclear_Excl_Sovereign_Bonds_Turnover</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">538.56</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">562.56</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1713,7 +1738,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90140_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Fossil_Gas_Incl_Sovereign_Bonds_Capex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">506.96</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">260.97</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1742,7 +1767,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90150_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Fossil_Gas_Excl_Sovereign_Bonds_Capex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">606.36</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">918.39</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1771,7 +1796,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90160_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Nuclear_Incl_Sovereign_Bonds_Capex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">378.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">624.97</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1800,7 +1825,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90170_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Nuclear_Excl_Sovereign_Bonds_Capex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">145.73</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">178.01</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1829,7 +1854,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90180_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_No_Fossil_Gas_and_Nuclear_Incl_Sovereign_Bonds_Capex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">616.28</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">996.86</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1858,7 +1883,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90190_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_No_Fossil_Gas_and_Nuclear_Excl_Sovereign_Bonds_Capex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">920.21</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">61.52</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1887,7 +1912,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90200_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Fossil_Gas_Incl_Sovereign_Bonds_Opex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">118.59</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">766.22</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1916,7 +1941,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90210_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Fossil_Gas_Excl_Sovereign_Bonds_Opex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">979.16</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">364.67</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1945,7 +1970,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90220_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Nuclear_Incl_Sovereign_Bonds_Opex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">585.19</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">29.49</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1974,7 +1999,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90230_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_Nuclear_Excl_Sovereign_Bonds_Opex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">872.27</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">724.97</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2003,7 +2028,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90240_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_No_Fossil_Gas_and_Nuclear_Incl_Sovereign_Bonds_Opex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">767.62</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">723.28</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2032,7 +2057,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>90250_Financial_Instrument_Current_Percentage_Investments_Aligned_EU_Taxonomy_No_Fossil_Gas_and_Nuclear_Excl_Sovereign_Bonds_Opex</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">255.04</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">299.31</td>
                         </tr>
                         </tbody>
                     </table>
@@ -2317,6 +2342,7 @@
 
 <!-- Load scripts at the end -->
 <script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 
 <!-- JavaScript for the copy functionality -->
 <script>

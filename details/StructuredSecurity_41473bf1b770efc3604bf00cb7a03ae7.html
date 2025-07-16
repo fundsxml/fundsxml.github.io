@@ -42,7 +42,7 @@
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
 <!-- Modern navigation with shadow and clear spacing -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
@@ -61,6 +61,15 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full px-3 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -622,7 +631,23 @@
             <!-- ================================================================== -->
             <!-- Section for Javadoc-style annotations                       -->
             <!-- ================================================================== -->
-            
+            <section class="space-y-6">
+
+                <!-- Deprecated Warning Box -->
+                
+
+                <!-- Grid for other Javadoc info like @since and @see -->
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <!-- Since -->
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Since</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">4.0.0</dd>
+                    </div>
+
+                    <!-- See Also -->
+                    
+                </dl>
+            </section>
 
             <!-- Section: Properties -->
             <section>
@@ -699,7 +724,7 @@ manufacturer.  It should however NOT include distribution fees added<br />
 on top of the product price by ditributors that is out of control of<br />
 the manufacturer.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">661.15</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">523.01</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -735,7 +760,7 @@ paid equally to all distributors. The costs reported in this field<br />
 is a Net disclosure and therefore the distributor upfront is equal<br />
 to the difference between 07020 and 07025.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">558.42</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">765.70</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -764,7 +789,7 @@ to the difference between 07020 and 07025.</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07080: Exit cost at the RHP</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">59.71</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">552.11</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -793,7 +818,7 @@ to the difference between 07020 and 07025.</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07090: Fixed amount</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">987.26</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">735.90</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -825,7 +850,7 @@ amount for Absolute quotation) of the Financial Product in<br />
 annualized terms related to Reference in 07150 or 07155<br />
 respectively.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">522.39</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">427.25</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -860,7 +885,7 @@ These fees are included in total on going costs. Only applicable if<br />
 the product has this feature. These fees are used by distributors to<br />
 calculate their retrocession fees</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">587.43</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">249.83</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -892,7 +917,7 @@ amount for Absolute quotation) of the Financial Product in<br />
 annualized terms related to Reference Value in 07150 or 07155<br />
 respectively.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">115.00</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">460.16</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -925,7 +950,7 @@ Ex-Post cost is based and to which a Percentage disclosed cost<br />
 should be multiplied in order to retrieve the Unit cost. This field<br />
 is conditional and only used if 07150 is not used.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">714.63</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">283.82</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -957,7 +982,7 @@ amount for Absolute quotation) of the Financial Product in<br />
 annualized terms related to Reference Value in 07150 or 07155<br />
 respectively.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">660.68</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">431.37</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1073,6 +1098,7 @@ respectively.</p>
 
 <!-- Load scripts at the end -->
 <script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 
 <!-- JavaScript for the copy functionality -->
 <script>

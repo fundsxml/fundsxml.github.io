@@ -42,7 +42,7 @@
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
 <!-- Modern navigation with shadow and clear spacing -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
@@ -61,6 +61,15 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full px-3 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -604,7 +613,23 @@ Useless fo cash positions</p>
             <!-- ================================================================== -->
             <!-- Section for Javadoc-style annotations                       -->
             <!-- ================================================================== -->
-            
+            <section class="space-y-6">
+
+                <!-- Deprecated Warning Box -->
+                
+
+                <!-- Grid for other Javadoc info like @since and @see -->
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <!-- Since -->
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Since</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">4.0.0</dd>
+                    </div>
+
+                    <!-- See Also -->
+                    
+                </dl>
+            </section>
 
             <!-- Section: Properties -->
             <section>
@@ -676,7 +701,7 @@ Useless fo cash positions</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A90 - Modified duration based on maturity date<br />
 (contractual one), indicated in datapoint 39</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">167.57</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">684.84</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -706,7 +731,7 @@ Useless fo cash positions</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A91 - Modified duration based on next option exercice<br />
 indicated in datapoint 43</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">855.17</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">25.98</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -737,7 +762,7 @@ indicated in datapoint 43</p>
 (contractual) indicated in datapoint 39) eventually used for the SCR spread risk<br />
 calculation (e.g. based on 176 (1) or (2) DR 2015/35 for bonds and loans)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">606.66</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">334.27</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -767,7 +792,7 @@ calculation (e.g. based on 176 (1) or (2) DR 2015/35 for bonds and loans)</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A93 - For Convertibles and Options.<br />
 Sensitivity to the underlying asset.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">787.75</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">90.28</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -797,7 +822,7 @@ Sensitivity to the underlying asset.</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A94 - Convexity for interest rates instruments; or<br />
 gamma for derivatives with optional components</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">467.79</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">458.83</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -826,7 +851,7 @@ gamma for derivatives with optional components</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A94b</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">707.97</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">436.24</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -858,7 +883,7 @@ defined in the field 143.<br />
 This datapoint is needed by insurance companies in case the legal/contractual<br />
 maturity date is different from the expected maturity date used sor SCR calculation.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">246.06</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">529.37</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -891,7 +916,7 @@ based on 176 (1) or (2) DR 2015/35 for bonds and loans).<br />
 This datapoint is needed by insurance companies in case the legal/contractual<br />
 maturity date is different from the expected maturity date used sor SCR calculation.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">485.84</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">893.89</td>
                         </tr>
                         </tbody>
                     </table>
@@ -967,6 +992,7 @@ maturity date is different from the expected maturity date used sor SCR calculat
 
 <!-- Load scripts at the end -->
 <script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 
 <!-- JavaScript for the copy functionality -->
 <script>

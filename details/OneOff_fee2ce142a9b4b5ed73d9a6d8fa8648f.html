@@ -42,7 +42,7 @@
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
 <!-- Modern navigation with shadow and clear spacing -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
@@ -61,6 +61,15 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full px-3 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -521,7 +530,23 @@
             <!-- ================================================================== -->
             <!-- Section for Javadoc-style annotations                       -->
             <!-- ================================================================== -->
-            
+            <section class="space-y-6">
+
+                <!-- Deprecated Warning Box -->
+                
+
+                <!-- Grid for other Javadoc info like @since and @see -->
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <!-- Since -->
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Since</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">4.0.0</dd>
+                    </div>
+
+                    <!-- See Also -->
+                    
+                </dl>
+            </section>
 
             <!-- Section: Properties -->
             <section>
@@ -594,7 +619,7 @@
 fund or the share class or portfolio mandate. Expressed as a<br />
 % of the amount to be invested</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">270.86</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">983.52</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -625,7 +650,7 @@ fund or the share class or portfolio mandate. Expressed as a<br />
 or the share class or portfolio mandate. Expressed as a % of<br />
 the amount to be invested</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">996.10</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">788.93</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -656,7 +681,7 @@ the amount to be invested</p>
 portfolio or fund or share class. It is expressed as a % of<br />
 net asset value.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">866.58</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">873.63</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -688,7 +713,7 @@ portfolio or fund or shar class. It is expressed as a % of<br />
 net asset value. Mandatory if datapoint Sliding exit cost is<br />
 Yes.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">69.30</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">837.55</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -720,7 +745,7 @@ portfolio or fund or shar class. It is expressed as a % of<br />
 net asset value. Mandatory if datapoint Sliding exit cost is<br />
 Yes.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">618.36</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">498.48</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -752,7 +777,7 @@ Yes.</p>
 <p>YES or NO</p>
 <p>YES or NO</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">NO</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">YES</td>
                         </tr>
                         </tbody>
                     </table>
@@ -856,6 +881,7 @@ Yes.</p>
 
 <!-- Load scripts at the end -->
 <script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 
 <!-- JavaScript for the copy functionality -->
 <script>
