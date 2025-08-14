@@ -1,46 +1,68 @@
+<!--
+  ~ FreeXMLToolkit - Universal Toolkit for XML
+  ~ Copyright (c) Karl Kauc 2024.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  ~
+  -->
+
 <!DOCTYPE html>
 <html lang="en" class="bg-slate-50">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Simple Types - XSD Documentation</title>
-    <!-- Tailwind CSS & Modern Font -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-</head>
-<body class="font-sans text-slate-800">
 
-<!-- Modern navigation with shadow and clear spacing -->
+    <!-- Generated Tailwind CSS -->
+    <link href="assets/freexmltoolkit-docs.css" rel="stylesheet">
+    <!-- PrismJS for Syntax Highlighting -->
+    <link href="assets/prism.css" rel="stylesheet"/>
+</head>
+<body class="font-sans text-slate-800" data-root-path="." data-search-index-path="search_index.json">
+
+<!-- Navigation, jetzt mit "Simple Types" als aktivem Link -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
-            <!-- Left navigation group -->
             <div class="hidden md:flex items-baseline space-x-6">
-                <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
-                   aria-current="page">Home</a>
+                <a href="index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <a href="complexTypes.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
                     Types</a>
+                <!-- KORREKTUR: Dieser Link ist jetzt als aktiv markiert -->
                 <a href="simpleTypes.html"
-                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
-                    Types</a>
+                   class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Simple Types</a>
                 <a href="dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
             </div>
-            <!-- Right navigation group (GitHub Link) -->
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Search..."
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                </div>
+            </div>
             <div class="hidden md:block">
                 <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank" class="flex items-center space-x-2 text-slate-700 font-bold">
                     <img src="assets/logo.png" alt="logo" class="h-8 w-8"/>
@@ -51,254 +73,264 @@
     </div>
 </nav>
 
-<!-- Main content -->
+<!-- Hauptinhalt, jetzt mit einer Liste der Simple Types -->
 <main class="container mx-auto px-4 py-8 md:py-12">
-    <header class="mb-8">
-        <h1 class="text-3xl font-bold tracking-tight text-slate-900">All Simple Types</h1>
-        <p class="mt-2 text-lg text-slate-600">An overview of all simple types defined in the schema.</p>
-    </header>
 
-    <!-- List of Simple Types -->
+    <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 mb-12">
+        <h1 class="text-2xl font-bold text-slate-900 mb-2">Global Simple Types</h1>
+        <p class="text-slate-600">This page lists all globally defined simple types in the schema.</p>
+    </div>
+
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
-        <ul role="list" class="divide-y divide-slate-200">
-            <!-- Thymeleaf loop to iterate over all simple types -->
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/AssetTypeType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">AssetTypeType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/BenchmarkUsageType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">BenchmarkUsageType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/BicCodeType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">BicCodeType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">BIC Code (SWIFT)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/CalculationPeriodType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">CalculationPeriodType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/CICCodeType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">CICCodeType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">CIC code (4 positions) to identify a kind of security</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/CompanyListedClassificationType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">CompanyListedClassificationType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">List of company classifications</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/CQSType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">CQSType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:int</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Credit Quality Step (Synthetic rating) 0 to 6 or 9 if no rating known.</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/DateIntervalType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">DateIntervalType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EconomicArea2Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EconomicArea2Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:int</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">SII Economic area of a country</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EconomicAreaType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EconomicAreaType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:int</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">SII Economic area of a quotation place (including Non listed)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EETYesNeutralType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EETYesNeutralType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EETYesNoNeutralType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EETYesNoNeutralType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EETYesNoType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EETYesNoType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Y or N</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EmailAddressType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EmailAddressType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EMIRIDType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EMIRIDType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EMTYesEmptyType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EMTYesEmptyType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Y or Empty</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EMTYesNeutralType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EMTYesNeutralType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EMTYesNoNeutralType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EMTYesNoNeutralType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/EMTYesNoType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">EMTYesNoType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Y or N</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/FrequencyType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">FrequencyType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Frequency:
+        <table class="w-full text-left">
+            <thead class="bg-slate-50 border-b border-slate-200">
+            <tr>
+                <th scope="col" class="px-6 py-4 text-sm font-semibold text-slate-900 w-1/3">Name</th>
+                <th scope="col" class="px-6 py-4 text-sm font-semibold text-slate-900">Documentation</th>
+            </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+            <!-- Iteriert über die Liste der Simple-Type-Knoten -->
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/AssetTypeType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">AssetTypeType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/BenchmarkUsageType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">BenchmarkUsageType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/BicCodeType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">BicCodeType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>BIC Code (SWIFT)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/CICCodeType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">CICCodeType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>CIC code (4 positions) to identify a kind of security</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/CQSType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">CQSType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Credit Quality Step (Synthetic rating) 0 to 6 or 9 if no rating known.</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/CalculationPeriodType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">CalculationPeriodType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/CompanyListedClassificationType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">CompanyListedClassificationType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>List of company classifications</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/CryptoBinary.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">CryptoBinary</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/DateIntervalType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">DateIntervalType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/DigestValueType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">DigestValueType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EETYesNeutralType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNeutralType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EETYesNoNeutralType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoNeutralType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EETYesNoType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Y or N</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EMIRIDType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EMIRIDType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EMTYesEmptyType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesEmptyType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Y or Empty</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EMTYesNeutralType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesNeutralType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EMTYesNoNeutralType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesNoNeutralType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EMTYesNoType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesNoType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Y or N</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EconomicArea2Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EconomicArea2Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>SII Economic area of a country</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EconomicAreaType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EconomicAreaType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>SII Economic area of a quotation place (including Non listed)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/EmailAddressType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">EmailAddressType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/FrequencyType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">FrequencyType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Frequency:
 DAIL ... Daily
 MNTH ... Monthly
 QURT ... Quarterly
@@ -306,501 +338,421 @@ SEMI ... Semiannual
 TWMN ... Twomonthly
 TWWK ... Twoweekly
 WEEK ... Weekly
-YEAR</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/IBANType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">IBANType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">IBAN as defined in ISO 13616-1:2020 (no blanks)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/IdentnummerType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">IdentnummerType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Identnummer der Oesterreichischen Nationalbank: maximal 8 stellig nummerisch mit Prüfziffer</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/ISINType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">ISINType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">International Securities Identification Number (according to ISO 6166)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/ISOCountryCodeType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">ISOCountryCodeType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">The ISOCountryCodeType is a type for decoding ISO-CountryCodes. It is used the two-letter ISO-CountryCodes (ISO 3166-1alpha-2). It is of the type string and has a length from exactly two letters.</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/ISOCurrencyCodeType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">ISOCurrencyCodeType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Three-letter ISO-CurrencyCode (ISO 4217)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/ISOLanguageCodeType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">ISOLanguageCodeType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">The ISOLanguageCodeType is a type for decoding ISO 639-1 Language Code. It is of the type string and has a length from exactly two letters.</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/LatitudeDataDEType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">LatitudeDataDEType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:decimal</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">The latitude of the object. Decimal degrees.</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/LEICodeType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">LEICodeType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Legal Entity Identifier (LEI) (ISO 17442 standard) of the Entity  or if not available the Interim Entity Identifier (IEI):
+YEAR</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/HMACOutputLengthType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">HMACOutputLengthType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/IBANType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">IBANType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>IBAN as defined in ISO 13616-1:2020 (no blanks)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/ISINType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">ISINType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>International Securities Identification Number (according to ISO 6166)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/ISOCountryCodeType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">ISOCountryCodeType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>The ISOCountryCodeType is a type for decoding ISO-CountryCodes. It is used the two-letter ISO-CountryCodes (ISO 3166-1alpha-2). It is of the type string and has a length from exactly two letters.
+Der ISOCountryCodeType stellt einen einfachen Typ zur Verarbeitung von ISO-Laendercodes bereit. Verwendet werden die zweistelligen ISO-Waehrungscodes (ISO 3166-1alpha-2). Er ist vom Typ string und hat eine Laenge von zwei Zeichen.</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/ISOCurrencyCodeType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Three-letter ISO-CurrencyCode (ISO 4217)
+Dreistelliger ISO-Waehrungscode (ISO 4217)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/ISOLanguageCodeType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">ISOLanguageCodeType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>The ISOLanguageCodeType is a type for decoding ISO 639-1 Language Code. It is of the type string and has a length from exactly two letters.</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/IdentnummerType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">IdentnummerType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Identnummer der Oesterreichischen Nationalbank: maximal 8 stellig nummerisch mit Prüfziffer</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/LEICodeType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">LEICodeType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Legal Entity Identifier (LEI) (ISO 17442 standard) of the Entity  or if not available the Interim Entity Identifier (IEI):
 •Characters 1-4: A four character prefix allocated uniquely to each LOU.
 •Characters 5-6: Two reserved characters set to zero.
 •Characters 7-18: Entity - specific part of the code generated and assigned by LOUs according to transparent, sound and robust allocation policies.
-•Characters 19-20: Two check digits</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/ListedIdentifierType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">ListedIdentifierType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">List of all public available Identifiers</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/LongitudeDataDEType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">LongitudeDataDEType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:decimal</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">The longitude of the object. Decimal degrees.</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/MICCodeType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">MICCodeType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Market Identifier Code - ISO 10383</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/NACECodeType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">NACECodeType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">NACE European code (7 positions) to identify a kind of economic activity</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/PercentageType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">PercentageType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:decimal</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">The PercentageType defines the percentage-values. It is derived from decimal. To decimal there is no modification. Percentage values can be expressed in three was: For 3.5 % it can be written as 3.5 or 1.035 or 0.035. For FundsXML percentage value has to be written as 3.5</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/positiveDecimals.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">positiveDecimals</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:decimal</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/PRIIPSFrequencyType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">PRIIPSFrequencyType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:nonNegativeInteger</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Coupon Frequency: 0 other than 1 Annual, 2 Semestrial, 4 Quarterly, 12 Monthly</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/RetailProfessionalBothNeitherType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">RetailProfessionalBothNeitherType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/SIICouponFrequencyType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">SIICouponFrequencyType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:nonNegativeInteger</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Coupon Frequency: 0 other than 1 Annual, 2 Semestrial, 4 Quarterly, 12 Monthly</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/SIICouponFrequencyType_V5.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">SIICouponFrequencyType_V5</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:nonNegativeInteger</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Coupon Frequency: 0 other than 1 Annual, 2 Semestrial, 4 Quarterly, 12 Monthly</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/SIICouponFrequencyType_V6.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">SIICouponFrequencyType_V6</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:nonNegativeInteger</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Coupon Frequency: 0 other than 1 Annual, 2 Semestrial, 4 Quarterly, 12 Monthly</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text1000Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text1000Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 1000 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text100Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text100Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 100 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text128Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text128Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 128 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text16Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text16Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 16 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text1Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text1Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 1 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text200Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text200Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 200 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text256Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text256Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 256 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text2Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text2Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 2 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text300Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text300Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 300 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text32Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text32Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 32 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text4Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text4Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 4 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text500Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text500Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 500 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text64Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text64Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 64 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/Text8Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">Text8Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Text (max. 8 characters)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/YesNoL1Type.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">YesNoL1Type</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">Flag Y or N</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/YesNoType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">YesNoType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: xs:string</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    <div class="mt-2">
-                        <p class="text-sm text-slate-600">YES or NO</p>
-                    </div>
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/CryptoBinary.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">CryptoBinary</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: base64Binary</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/DigestValueType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">DigestValueType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: base64Binary</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-            <li class="hover:bg-slate-50 transition-colors">
-                <a href="simpleTypes/HMACOutputLengthType.html" class="block p-6">
-                    <div class="flex items-center justify-between">
-                        <p class="text-lg font-semibold text-sky-600 font-mono">HMACOutputLengthType</p>
-                        <!-- Display the base type if it exists (with an explicit null check) -->
-                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Base: integer</span>
-                    </div>
-                    <!-- Documentation (if present, with an explicit null check) -->
-                    
-                </a>
-            </li>
-        </ul>
+•Characters 19-20: Two check digits</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/LatitudeDataDEType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">LatitudeDataDEType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>
+ The latitude of the object. Decimal degrees.  </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/ListedIdentifierType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">ListedIdentifierType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>List of all public available Identifiers</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/LongitudeDataDEType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">LongitudeDataDEType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>
+The longitude of the object. Decimal degrees.</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/MICCodeType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">MICCodeType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Market Identifier Code - ISO 10383</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/NACECodeType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">NACECodeType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>NACE European code (7 positions) to identify a kind of economic activity</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/PRIIPSFrequencyType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPSFrequencyType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Coupon Frequency: 0 other than 1 Annual, 2 Semestrial, 4 Quarterly, 12 Monthly</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/PercentageType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">PercentageType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>The PercentageType defines the percentage-values. It is derived from decimal. To decimal there is no modification. Percentage values can be expressed in three was: For 3.5 % it can be written as 3.5 or 1.035 or 0.035. For FundsXML percentage value has to be written as 3.5
+Der PercentageType definiert die Prozentwerte. Abgeleitet ist er von decimal. Veraendert wurde er nicht. Bei Prozentwerten kann man je nach Definition fuer 3, 5 % die Werte 3.5 oder 1.035 oder 0.035 angeben. Mit diesem Typ dokumentiert FundsXML, dass fuer Prozentwerte die Auspraegung 3.5 benutzt werden muss um eine einheitliche Auspraegung fuer den Datenaustausch zwischen Firmen zu erreichen.</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/RetailProfessionalBothNeitherType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">RetailProfessionalBothNeitherType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/SIICouponFrequencyType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">SIICouponFrequencyType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Coupon Frequency: 0 other than 1 Annual, 2 Semestrial, 4 Quarterly, 12 Monthly</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/SIICouponFrequencyType_V5.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">SIICouponFrequencyType_V5</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Coupon Frequency: 0 other than 1 Annual, 2 Semestrial, 4 Quarterly, 12 Monthly</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/SIICouponFrequencyType_V6.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">SIICouponFrequencyType_V6</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Coupon Frequency: 0 other than 1 Annual, 2 Semestrial, 4 Quarterly, 12 Monthly</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text1000Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text1000Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 1000 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text100Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text100Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 100 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text128Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text128Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 128 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text16Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text16Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 16 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text1Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text1Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 1 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text200Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text200Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 200 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text256Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 256 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text2Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text2Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 2 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text300Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text300Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 300 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text32Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text32Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 32 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text4Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text4Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 4 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text500Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text500Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 500 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text64Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text64Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 64 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/Text8Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">Text8Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Text (max. 8 characters)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/YesNoL1Type.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">YesNoL1Type</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>Flag Y or N</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/YesNoType.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">YesNoType</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div>YES or NO</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="px-6 py-4 align-top font-mono">
+                    <!-- Erstellt einen Link zur Detailseite des Typs -->
+                    <a href="simpleTypes/positiveDecimals.html"
+                       class="text-sky-600 hover:text-sky-800 hover:underline">positiveDecimals</a>
+                </td>
+                <td class="px-6 py-4 align-top text-slate-600 text-sm">
+                    <!-- Zeigt die Dokumentation des Typs an -->
+                    <div></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
+
 </main>
 
+<script src="assets/prism.js" defer></script>
+<script src="assets/search.js" defer></script>
 </body>
 </html>

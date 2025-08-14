@@ -22,22 +22,11 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>XSD Documentation for &#39;FundsXML4&#39;</title>
-    <!-- Include Tailwind CSS via CDN for easy integration -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Optional: Custom design adjustments for Tailwind
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'], // A modern, easily readable font
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <!-- Generated Tailwind CSS -->
+    <link href="assets/freexmltoolkit-docs.css" rel="stylesheet">
+    <!-- PrismJS for Syntax Highlighting -->
+    <link href="assets/prism.css" rel="stylesheet"/>
 </head>
 <body class="font-sans text-slate-800" data-root-path="." data-search-index-path="search_index.json">
 
@@ -58,11 +47,20 @@
                 <a href="dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+                <a href="schema-svg.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">SVG</a>
             </div>
             <!-- Search Bar -->
             <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </div>
                 <input type="search" id="search-input" placeholder="Loading search index..." disabled
-                       class="w-full px-3 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
                 <div id="search-results"
                      class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
                     <!-- Search results will be injected here -->
@@ -89,11 +87,13 @@
         <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
             <div class="flex flex-col">
                 <dt class="text-sm font-medium text-slate-500">Created on</dt>
-                <dd class="mt-1 text-slate-900">2025-07-16</dd>
+                <dd class="mt-1 text-slate-900">2025-08-13</dd>
             </div>
             <div class="flex flex-col">
                 <dt class="text-sm font-medium text-slate-500">Filename</dt>
-                <dd class="mt-1 text-slate-900">FundsXML4.xsd</dd>
+                <dd class="mt-1 text-slate-900">
+                    <a href="FundsXML4.xsd" class="text-sky-600 hover:text-sky-800 hover:underline" download>FundsXML4.xsd</a>
+                </dd>
             </div>
             <div class="flex flex-col">
                 <dt class="text-sm font-medium text-slate-500">Root Element</dt>
@@ -106,6 +106,7 @@
                 <dt class="text-sm font-medium text-slate-500">Target Namespace</dt>
                 <dd class="mt-1 text-slate-900"></dd>
             </div>
+            <!-- NEU: Greift auf die neuen Variablen zu, die direkt vom Schema-Knoten kommen -->
             <div class="flex flex-col">
                 <dt class="text-sm font-medium text-slate-500">attributeFormDefault</dt>
                 <dd class="mt-1 font-mono text-sm text-slate-900">unqualified</dd>
@@ -114,13 +115,10 @@
                 <dt class="text-sm font-medium text-slate-500">elementFormDefault</dt>
                 <dd class="mt-1 font-mono text-sm text-slate-900">qualified</dd>
             </div>
-            <div class="flex flex-col">
-                <dt class="text-sm font-medium text-slate-500">Version</dt>
-                <dd class="mt-1 font-mono text-slate-900">4.2.9</dd>
-            </div>
+            
             <div class="flex flex-col md:col-span-2">
                 <dt class="text-sm font-medium text-slate-500">Namespaces</dt>
-                <dd class="mt-1 font-mono text-xs text-slate-700 bg-slate-100 p-2 rounded">xmlns='http://www.w3.org/2001/XMLSchema'<br />altova='http://www.altova.com/xml-schema-extensions'<br />ds='http://www.w3.org/2000/09/xmldsig#'<br /></dd>
+                <dd class="mt-1 font-mono text-xs text-slate-700 bg-slate-100 p-2 rounded">xs='http://www.w3.org/2001/XMLSchema'<br />vc='http://www.w3.org/2007/XMLSchema-versioning'<br />altova='http://www.altova.com/xml-schema-extensions'<br />ds='http://www.w3.org/2000/09/xmldsig#'</dd>
             </div>
         </dl>
     </div>
@@ -130,7 +128,7 @@
         <table class="w-full text-left">
             <thead class="bg-slate-50 border-b border-slate-200">
             <tr>
-                <th scope="col" class="px-6 py-4 text-sm font-semibold text-slate-900">Elements</th>
+                <th scope="col" class="px-6 py-4 text-sm font-semibold text-slate-900">Global Elements</th>
                 <th scope="col" class="px-6 py-4 text-sm font-semibold text-slate-900">Complex Types</th>
                 <th scope="col" class="px-6 py-4 text-sm font-semibold text-slate-900">Simple Types</th>
             </tr>
@@ -140,13 +138,19 @@
                 <td class="px-6 py-4 align-top">
                     <!-- Vertical layout for the links -->
                     <div class="flex flex-col space-y-2">
-                        <a href="details/FundsXML4_03619599b453e5076558dea9d0ed8acb.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">FundsXML4</a>
+                        <!-- Iteriert über die globalen Elemente und zeigt optional ein Badge für importierte Elemente an -->
+                        <div class="flex items-center space-x-2">
+                            <a href="details/FundsXML4_03619599b453e5076558dea9d0ed8acb.html"
+                               class="text-sky-600 hover:text-sky-800 hover:underline">FundsXML4</a>
+                            
+                        </div>
                     </div>
                 </td>
                 <td class="px-6 py-4 align-top">
                     <div class="flex flex-col space-y-2">
-                        <a href="complexTypes/AccountType.html"
+                        <!-- NEU: Iteriert über eine Liste von DOM-Knoten und nutzt eine Hilfsmethode für den Namen -->
+                        <a href="complexTypes/AUMType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">AUMType</a><a href="complexTypes/AccountType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">AccountType</a><a href="complexTypes/AddressType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">AddressType</a><a href="complexTypes/AddressTypeDataDEType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">AddressTypeDataDEType</a><a href="complexTypes/AllocationType.html"
@@ -161,26 +165,26 @@
                            class="text-sky-600 hover:text-sky-800 hover:underline">AssetManagementCompanySalesType</a><a href="complexTypes/AssetMasterDataType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">AssetMasterDataType</a><a href="complexTypes/AssetMgmtCompanyDynDataType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">AssetMgmtCompanyDynDataType</a><a href="complexTypes/AssetType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">AssetType</a><a href="complexTypes/AttributesType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">AttributesType</a><a href="complexTypes/AttributeType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">AttributeType</a><a href="complexTypes/AUMType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">AUMType</a><a href="complexTypes/BenchmarkDynamicDataType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">AssetType</a><a href="complexTypes/AttributeType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">AttributeType</a><a href="complexTypes/AttributesType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">AttributesType</a><a href="complexTypes/BenchmarkDynamicDataType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">BenchmarkDynamicDataType</a><a href="complexTypes/BenchmarkProviderCompany.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">BenchmarkProviderCompany</a><a href="complexTypes/BenchmarkStaticDataType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">BenchmarkStaticDataType</a><a href="complexTypes/BenchmarkType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">BenchmarkType</a><a href="complexTypes/BondType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">BondType</a><a href="complexTypes/BreakDownsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">BreakDownsType</a><a href="complexTypes/CallCapitalType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CallCapitalType</a><a href="complexTypes/CEPT_PriceType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CEPT_PriceType</a><a href="complexTypes/CEPT_RHPSType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CEPT_RHPSType</a><a href="complexTypes/CEPTV2_RHPSType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CEPTV2_RHPSType</a><a href="complexTypes/CEPTV2HistoryType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">BreakDownsType</a><a href="complexTypes/CEPTV2HistoryType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CEPTV2HistoryType</a><a href="complexTypes/CEPTV2PerformanceType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CEPTV2PerformanceType</a><a href="complexTypes/CEPTV2PriceType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CEPTV2PriceType</a><a href="complexTypes/CertificateType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CertificateType</a><a href="complexTypes/ClassificationsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ClassificationsType</a><a href="complexTypes/ClassificationType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ClassificationType</a><a href="complexTypes/ClientStatisticType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CEPTV2PriceType</a><a href="complexTypes/CEPTV2_RHPSType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CEPTV2_RHPSType</a><a href="complexTypes/CEPT_PriceType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CEPT_PriceType</a><a href="complexTypes/CEPT_RHPSType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CEPT_RHPSType</a><a href="complexTypes/CallCapitalType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CallCapitalType</a><a href="complexTypes/CanonicalizationMethodType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CanonicalizationMethodType</a><a href="complexTypes/CertificateType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CertificateType</a><a href="complexTypes/ClassificationType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ClassificationType</a><a href="complexTypes/ClassificationsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ClassificationsType</a><a href="complexTypes/ClientStatisticType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">ClientStatisticType</a><a href="complexTypes/CodificationType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CodificationType</a><a href="complexTypes/CodificationType_V5.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CodificationType_V5</a><a href="complexTypes/CodificationType_V6.html"
@@ -215,10 +219,10 @@
                            class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificDataNLType</a><a href="complexTypes/CountrySpecificDataType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificDataType</a><a href="complexTypes/CountrySpecificEMT41DataType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMT41DataType</a><a href="complexTypes/CountrySpecificEMTATType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMTATType</a><a href="complexTypes/CountrySpecificEMTDataType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMTDataType</a><a href="complexTypes/CountrySpecificEMTDEType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMTATType</a><a href="complexTypes/CountrySpecificEMTDEType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMTDEType</a><a href="complexTypes/CountrySpecificEMTDKType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMTDKType</a><a href="complexTypes/CountrySpecificEMTFRType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMTDKType</a><a href="complexTypes/CountrySpecificEMTDataType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMTDataType</a><a href="complexTypes/CountrySpecificEMTFRType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMTFRType</a><a href="complexTypes/CountrySpecificEMTLUType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMTLUType</a><a href="complexTypes/CountrySpecificEMTNLType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CountrySpecificEMTNLType</a><a href="complexTypes/CountrySpecificFundDataATType.html"
@@ -240,52 +244,56 @@
                            class="text-sky-600 hover:text-sky-800 hover:underline">CreditRiskDataType_V5</a><a href="complexTypes/CreditRiskDataType_V6.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CreditRiskDataType_V6</a><a href="complexTypes/CreditRiskDataType_V7.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">CreditRiskDataType_V7</a><a href="complexTypes/CryptoType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CryptoType</a><a href="complexTypes/DataPointType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CryptoType</a><a href="complexTypes/DSAKeyValueType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">DSAKeyValueType</a><a href="complexTypes/DataPointType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">DataPointType</a><a href="complexTypes/DataSupplierType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">DataSupplierType</a><a href="complexTypes/DayMonthType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">DayMonthType</a><a href="complexTypes/DirectReportingType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">DayMonthType</a><a href="complexTypes/DigestMethodType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">DigestMethodType</a><a href="complexTypes/DirectReportingType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">DirectReportingType</a><a href="complexTypes/DistributionType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">DistributionType</a><a href="complexTypes/DocumentsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">DocumentsType</a><a href="complexTypes/DocumentType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">DocumentType</a><a href="complexTypes/DynLenNamesType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">DynLenNamesType</a><a href="complexTypes/EarningsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EarningsType</a><a href="complexTypes/EarningType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EarningType</a><a href="complexTypes/EETEnhancedExclusionType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType</a><a href="complexTypes/EETEnhancedExclusionType1_1.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType1_1</a><a href="complexTypes/EETExclusionType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a><a href="complexTypes/EETExclusionType1_1.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1_1</a><a href="complexTypes/EETReportType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETReportType</a><a href="complexTypes/EETReportType1_1.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETReportType1_1</a><a href="complexTypes/EETReportType1_1_1.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETReportType1_1_1</a><a href="complexTypes/EETReportType1_1_2.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETReportType1_1_2</a><a href="complexTypes/EETReportType1_1_3.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETReportType1_1_3</a><a href="complexTypes/EETsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETsType</a><a href="complexTypes/EETsType1_1.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETsType1_1</a><a href="complexTypes/EETsType1_1_1.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETsType1_1_1</a><a href="complexTypes/EETsType1_1_2.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETsType1_1_2</a><a href="complexTypes/EETsType1_1_3.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETsType1_1_3</a><a href="complexTypes/EETWeightNumberType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETWeightNumberType</a><a href="complexTypes/EETWeightNumberType1_1.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETWeightNumberType1_1</a><a href="complexTypes/EFTReportType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">DistributionType</a><a href="complexTypes/DocumentType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">DocumentType</a><a href="complexTypes/DocumentsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">DocumentsType</a><a href="complexTypes/DynLenNamesType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">DynLenNamesType</a><a href="complexTypes/EETEnhancedExclusionType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType</a><a href="complexTypes/EETEnhancedExclusionType1.1.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType1.1</a><a href="complexTypes/EETExclusionType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType</a><a href="complexTypes/EETExclusionType1.1.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a><a href="complexTypes/EETReportType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETReportType</a><a href="complexTypes/EETReportType1.1.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETReportType1.1</a><a href="complexTypes/EETReportType1.1.1.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETReportType1.1.1</a><a href="complexTypes/EETReportType1.1.2.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETReportType1.1.2</a><a href="complexTypes/EETReportType1.1.3.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETReportType1.1.3</a><a href="complexTypes/EETWeightNumberType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETWeightNumberType</a><a href="complexTypes/EETWeightNumberType1.1.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETWeightNumberType1.1</a><a href="complexTypes/EETsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETsType</a><a href="complexTypes/EETsType1.1.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETsType1.1</a><a href="complexTypes/EETsType1.1.1.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETsType1.1.1</a><a href="complexTypes/EETsType1.1.2.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETsType1.1.2</a><a href="complexTypes/EETsType1.1.3.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETsType1.1.3</a><a href="complexTypes/EFTReportType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EFTReportType</a><a href="complexTypes/EFTType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EFTType</a><a href="complexTypes/EMIR_ReportType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EMIR_ReportType</a><a href="complexTypes/EMIRType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EMIRType</a><a href="complexTypes/EMT_V3_FinancialInstrumentType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EMT_V3_FinancialInstrumentType</a><a href="complexTypes/EMT_V4_FinancialInstrumentType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EMT_V4_FinancialInstrumentType</a><a href="complexTypes/EMT_V41_FinancialInstrumentType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EMT_V41_FinancialInstrumentType</a><a href="complexTypes/EMT_V42_FinancialInstrumentType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EMT_V42_FinancialInstrumentType</a><a href="complexTypes/EMTFinancialInstrumentType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EFTType</a><a href="complexTypes/EMIRType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EMIRType</a><a href="complexTypes/EMIR_ReportType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EMIR_ReportType</a><a href="complexTypes/EMTFinancialInstrumentType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EMTFinancialInstrumentType</a><a href="complexTypes/EMTType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EMTType</a><a href="complexTypes/EMTType_V3.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EMTType_V3</a><a href="complexTypes/EMTType_V4.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EMTType_V4</a><a href="complexTypes/EMTType_V41.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EMTType_V41</a><a href="complexTypes/EMTType_V42.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EMTType_V42</a><a href="complexTypes/EquityType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EMTType_V42</a><a href="complexTypes/EMT_V3_FinancialInstrumentType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EMT_V3_FinancialInstrumentType</a><a href="complexTypes/EMT_V41_FinancialInstrumentType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EMT_V41_FinancialInstrumentType</a><a href="complexTypes/EMT_V42_FinancialInstrumentType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EMT_V42_FinancialInstrumentType</a><a href="complexTypes/EMT_V4_FinancialInstrumentType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EMT_V4_FinancialInstrumentType</a><a href="complexTypes/EarningType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EarningType</a><a href="complexTypes/EarningsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EarningsType</a><a href="complexTypes/EquityType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EquityType</a><a href="complexTypes/ExposureType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ExposureType</a><a href="complexTypes/FeePeriodDataType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">FeePeriodDataType</a><a href="complexTypes/FeesType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">FeesType</a><a href="complexTypes/FeeType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">FeeType</a><a href="complexTypes/FixedTimeDepositType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ExposureType</a><a href="complexTypes/FXRateType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">FXRateType</a><a href="complexTypes/FXRatesType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">FXRatesType</a><a href="complexTypes/FeePeriodDataType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">FeePeriodDataType</a><a href="complexTypes/FeeType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">FeeType</a><a href="complexTypes/FeesType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">FeesType</a><a href="complexTypes/FixedTimeDepositType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">FixedTimeDepositType</a><a href="complexTypes/FlowType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">FlowType</a><a href="complexTypes/ForeignExchangeTradeType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">ForeignExchangeTradeType</a><a href="complexTypes/FundAmountType.html"
@@ -299,9 +307,7 @@
                            class="text-sky-600 hover:text-sky-800 hover:underline">FundStatisticClosedFundType</a><a href="complexTypes/FundStatisticType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">FundStatisticType</a><a href="complexTypes/FundType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">FundType</a><a href="complexTypes/FutureType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">FutureType</a><a href="complexTypes/FXRatesType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">FXRatesType</a><a href="complexTypes/FXRateType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">FXRateType</a><a href="complexTypes/HedgingStrategyType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">FutureType</a><a href="complexTypes/HedgingStrategyType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">HedgingStrategyType</a><a href="complexTypes/HighWatermarkType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">HighWatermarkType</a><a href="complexTypes/IdentifiersType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">IdentifiersType</a><a href="complexTypes/IndexType.html"
@@ -311,28 +317,23 @@
                            class="text-sky-600 hover:text-sky-800 hover:underline">IndustryProviderType</a><a href="complexTypes/InvestorType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">InvestorType</a><a href="complexTypes/InvestorTypesType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypesType</a><a href="complexTypes/IssuerType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">IssuerType</a><a href="complexTypes/KIIDsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">KIIDsType</a><a href="complexTypes/KIIDType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">KIIDType</a><a href="complexTypes/LanguageNamesType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">IssuerType</a><a href="complexTypes/KIIDType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">KIIDType</a><a href="complexTypes/KIIDsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">KIIDsType</a><a href="complexTypes/KeyInfoType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">KeyInfoType</a><a href="complexTypes/KeyValueType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">KeyValueType</a><a href="complexTypes/LanguageNamesType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">LanguageNamesType</a><a href="complexTypes/LegType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">LegType</a><a href="complexTypes/LoanType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">LoanType</a><a href="complexTypes/NamesType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">NamesType</a><a href="complexTypes/OptionType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">LoanType</a><a href="complexTypes/ManifestType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ManifestType</a><a href="complexTypes/NamesType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">NamesType</a><a href="complexTypes/ObjectType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ObjectType</a><a href="complexTypes/OptionType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">OptionType</a><a href="complexTypes/OtherPricesType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">OtherPricesType</a><a href="complexTypes/OtherTotalValueType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">OtherTotalValueType</a><a href="complexTypes/PercentageStrategyCoverageType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PercentageStrategyCoverageType</a><a href="complexTypes/PercentageStrategyCoverageType1_1.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PercentageStrategyCoverageType1_1</a><a href="complexTypes/PercentageStrategyCoverageType1_1_2.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PercentageStrategyCoverageType1_1_2</a><a href="complexTypes/PerformanceFiguresType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PerformanceFiguresType</a><a href="complexTypes/PerformanceType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PerformanceType</a><a href="complexTypes/PortfolioType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PortfolioType</a><a href="complexTypes/PositionsDecomposedType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PositionsDecomposedType</a><a href="complexTypes/PositionsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PositionsType</a><a href="complexTypes/PositionType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PositionType</a><a href="complexTypes/PositionUnderlyingType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PositionUnderlyingType</a><a href="complexTypes/PositionValuationType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PositionValuationType</a><a href="complexTypes/PositiveAmountType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PositiveAmountType</a><a href="complexTypes/PRIIPS_AverageReturnType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">OtherTotalValueType</a><a href="complexTypes/PGPDataType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PGPDataType</a><a href="complexTypes/PRIIPSType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPSType</a><a href="complexTypes/PRIIPSType_V20.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPSType_V20</a><a href="complexTypes/PRIIPS_AverageReturnType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPS_AverageReturnType</a><a href="complexTypes/PRIIPS_DE_EPT_PiaType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPS_DE_EPT_PiaType</a><a href="complexTypes/PRIIPS_InvestmentAmountType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPS_InvestmentAmountType</a><a href="complexTypes/PRIIPS_NarrativesType.html"
@@ -342,32 +343,36 @@
                            class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPS_SecurityCodificationType</a><a href="complexTypes/PRIIPS_V2_Country_Specific_DE.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPS_V2_Country_Specific_DE</a><a href="complexTypes/PRIIPS_V2_NarrativesType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPS_V2_NarrativesType</a><a href="complexTypes/PRIIPS_V2_ReturnScenarioType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPS_V2_ReturnScenarioType</a><a href="complexTypes/PRIIPSType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPSType</a><a href="complexTypes/PRIIPSType_V20.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPSType_V20</a><a href="complexTypes/PrivateEquityType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPS_V2_ReturnScenarioType</a><a href="complexTypes/PercentageStrategyCoverageType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PercentageStrategyCoverageType</a><a href="complexTypes/PercentageStrategyCoverageType1.1.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PercentageStrategyCoverageType1.1</a><a href="complexTypes/PercentageStrategyCoverageType1.1.2.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PercentageStrategyCoverageType1.1.2</a><a href="complexTypes/PerformanceFiguresType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PerformanceFiguresType</a><a href="complexTypes/PerformanceType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PerformanceType</a><a href="complexTypes/PortfolioType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PortfolioType</a><a href="complexTypes/PositionType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PositionType</a><a href="complexTypes/PositionUnderlyingType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PositionUnderlyingType</a><a href="complexTypes/PositionValuationType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PositionValuationType</a><a href="complexTypes/PositionsDecomposedType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PositionsDecomposedType</a><a href="complexTypes/PositionsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PositionsType</a><a href="complexTypes/PositiveAmountType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PositiveAmountType</a><a href="complexTypes/PrivateEquityType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">PrivateEquityType</a><a href="complexTypes/PurchasesDataDEType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PurchasesDataDEType</a><a href="complexTypes/RatingsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">RatingsType</a><a href="complexTypes/RatingType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">RatingType</a><a href="complexTypes/RealEstateType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PurchasesDataDEType</a><a href="complexTypes/REITType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">REITType</a><a href="complexTypes/RSAKeyValueType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">RSAKeyValueType</a><a href="complexTypes/RatingType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">RatingType</a><a href="complexTypes/RatingsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">RatingsType</a><a href="complexTypes/RealEstateType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">RealEstateType</a><a href="complexTypes/RedemptionType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">RedemptionType</a><a href="complexTypes/RedemptionType_V5.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">RedemptionType</a><a href="complexTypes/RedemptionTypeDerivatives.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">RedemptionTypeDerivatives</a><a href="complexTypes/RedemptionType_V5.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">RedemptionType_V5</a><a href="complexTypes/RedemptionType_V6.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">RedemptionType_V6</a><a href="complexTypes/RedemptionType_V7.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">RedemptionType_V7</a><a href="complexTypes/RedemptionTypeDerivatives.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">RedemptionTypeDerivatives</a><a href="complexTypes/RegulatoryReportingsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">RegulatoryReportingsType</a><a href="complexTypes/REITType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">REITType</a><a href="complexTypes/ReposType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ReposType</a><a href="complexTypes/RiskCodeType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">RiskCodeType</a><a href="complexTypes/SalesDataDEType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SalesDataDEType</a><a href="complexTypes/SegmentDynamicDataType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SegmentDynamicDataType</a><a href="complexTypes/SegmentStaticDataType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SegmentStaticDataType</a><a href="complexTypes/SegmentType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SegmentType</a><a href="complexTypes/ShareClassDetailsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassDetailsType</a><a href="complexTypes/ShareClassFeeType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassFeeType</a><a href="complexTypes/ShareClassPriceType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassPriceType</a><a href="complexTypes/ShareClassType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassType</a><a href="complexTypes/ShareClassTypeType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassTypeType</a><a href="complexTypes/SIIIssuerType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">RedemptionType_V7</a><a href="complexTypes/ReferenceType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ReferenceType</a><a href="complexTypes/RegulatoryReportingsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">RegulatoryReportingsType</a><a href="complexTypes/ReposType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ReposType</a><a href="complexTypes/RetrievalMethodType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">RetrievalMethodType</a><a href="complexTypes/RiskCodeType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">RiskCodeType</a><a href="complexTypes/SIIIssuerType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SIIIssuerType</a><a href="complexTypes/SIIIssuerType_V5.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SIIIssuerType_V5</a><a href="complexTypes/SIIIssuerType_V6.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SIIIssuerType_V6</a><a href="complexTypes/SIIIssuerType_V7.html"
@@ -379,7 +384,23 @@
                            class="text-sky-600 hover:text-sky-800 hover:underline">SIISecurityCodificationType</a><a href="complexTypes/SIISecurityCodificationType_V5.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SIISecurityCodificationType_V5</a><a href="complexTypes/SIISecurityCodificationType_V6.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SIISecurityCodificationType_V6</a><a href="complexTypes/SIISecurityCodificationType_V7.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SIISecurityCodificationType_V7</a><a href="complexTypes/SingleAmountType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SIISecurityCodificationType_V7</a><a href="complexTypes/SPKIDataType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SPKIDataType</a><a href="complexTypes/SalesDataDEType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SalesDataDEType</a><a href="complexTypes/SegmentDynamicDataType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SegmentDynamicDataType</a><a href="complexTypes/SegmentStaticDataType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SegmentStaticDataType</a><a href="complexTypes/SegmentType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SegmentType</a><a href="complexTypes/ShareClassDetailsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassDetailsType</a><a href="complexTypes/ShareClassFeeType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassFeeType</a><a href="complexTypes/ShareClassPriceType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassPriceType</a><a href="complexTypes/ShareClassType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassType</a><a href="complexTypes/ShareClassTypeType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ShareClassTypeType</a><a href="complexTypes/SignatureMethodType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SignatureMethodType</a><a href="complexTypes/SignaturePropertiesType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SignaturePropertiesType</a><a href="complexTypes/SignaturePropertyType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SignaturePropertyType</a><a href="complexTypes/SignatureType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SignatureType</a><a href="complexTypes/SignatureValueType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SignatureValueType</a><a href="complexTypes/SignedInfoType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">SignedInfoType</a><a href="complexTypes/SingleAmountType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SingleAmountType</a><a href="complexTypes/SingleFundStaticDataType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SingleFundStaticDataType</a><a href="complexTypes/SingleFundType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SingleFundType</a><a href="complexTypes/SolvencyIIPortfolioType.html"
@@ -393,81 +414,66 @@
                            class="text-sky-600 hover:text-sky-800 hover:underline">SubfundType</a><a href="complexTypes/SwapType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SwapType</a><a href="complexTypes/TotalAssetValueType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">TotalAssetValueType</a><a href="complexTypes/TotalReturnType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">TotalReturnType</a><a href="complexTypes/TransactionsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">TransactionsType</a><a href="complexTypes/TransactionType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">TransactionType</a><a href="complexTypes/TripartiteTemplateSolvencyIIType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">TotalReturnType</a><a href="complexTypes/TransactionType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">TransactionType</a><a href="complexTypes/TransactionsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">TransactionsType</a><a href="complexTypes/TransformType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">TransformType</a><a href="complexTypes/TransformsType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">TransformsType</a><a href="complexTypes/TripartiteTemplateSolvencyIIType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">TripartiteTemplateSolvencyIIType</a><a href="complexTypes/TripartiteTemplateSolvencyIIType_V5.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">TripartiteTemplateSolvencyIIType_V5</a><a href="complexTypes/TripartiteTemplateSolvencyIIType_V6.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">TripartiteTemplateSolvencyIIType_V6</a><a href="complexTypes/TripartiteTemplateSolvencyIIType_V7.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">TripartiteTemplateSolvencyIIType_V7</a><a href="complexTypes/UnderlyingType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">UnderlyingType</a><a href="complexTypes/UsageDataDEType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">UsageDataDEType</a><a href="complexTypes/ValueStrategyCoverageType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ValueStrategyCoverageType</a><a href="complexTypes/ValueStrategyCoverageType1_1.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ValueStrategyCoverageType1_1</a><a href="complexTypes/ValueStrategyCoverageType1_1_2.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ValueStrategyCoverageType1_1_2</a><a href="complexTypes/WarrantType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">WarrantType</a><a href="complexTypes/SignatureType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SignatureType</a><a href="complexTypes/SignatureValueType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SignatureValueType</a><a href="complexTypes/SignedInfoType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SignedInfoType</a><a href="complexTypes/CanonicalizationMethodType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CanonicalizationMethodType</a><a href="complexTypes/SignatureMethodType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SignatureMethodType</a><a href="complexTypes/ReferenceType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ReferenceType</a><a href="complexTypes/TransformsType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">TransformsType</a><a href="complexTypes/TransformType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">TransformType</a><a href="complexTypes/DigestMethodType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">DigestMethodType</a><a href="complexTypes/KeyInfoType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">KeyInfoType</a><a href="complexTypes/KeyValueType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">KeyValueType</a><a href="complexTypes/RetrievalMethodType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">RetrievalMethodType</a><a href="complexTypes/X509DataType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ValueStrategyCoverageType</a><a href="complexTypes/ValueStrategyCoverageType1.1.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ValueStrategyCoverageType1.1</a><a href="complexTypes/ValueStrategyCoverageType1.1.2.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ValueStrategyCoverageType1.1.2</a><a href="complexTypes/WarrantType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">WarrantType</a><a href="complexTypes/X509DataType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">X509DataType</a><a href="complexTypes/X509IssuerSerialType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">X509IssuerSerialType</a><a href="complexTypes/PGPDataType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PGPDataType</a><a href="complexTypes/SPKIDataType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SPKIDataType</a><a href="complexTypes/ObjectType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ObjectType</a><a href="complexTypes/ManifestType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ManifestType</a><a href="complexTypes/SignaturePropertiesType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SignaturePropertiesType</a><a href="complexTypes/SignaturePropertyType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">SignaturePropertyType</a><a href="complexTypes/DSAKeyValueType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">DSAKeyValueType</a><a href="complexTypes/RSAKeyValueType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">RSAKeyValueType</a>
+                           class="text-sky-600 hover:text-sky-800 hover:underline">X509IssuerSerialType</a>
                     </div>
                 </td>
                 <td class="px-6 py-4 align-top">
                     <div class="flex flex-col space-y-2">
+                        <!-- NEU: Iteriert über eine Liste von DOM-Knoten und nutzt eine Hilfsmethode für den Namen -->
                         <a href="simpleTypes/AssetTypeType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">AssetTypeType</a><a href="simpleTypes/BenchmarkUsageType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">BenchmarkUsageType</a><a href="simpleTypes/BicCodeType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">BicCodeType</a><a href="simpleTypes/CalculationPeriodType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CalculationPeriodType</a><a href="simpleTypes/CICCodeType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CICCodeType</a><a href="simpleTypes/CompanyListedClassificationType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CompanyListedClassificationType</a><a href="simpleTypes/CQSType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CQSType</a><a href="simpleTypes/DateIntervalType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">DateIntervalType</a><a href="simpleTypes/EconomicArea2Type.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EconomicArea2Type</a><a href="simpleTypes/EconomicAreaType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EconomicAreaType</a><a href="simpleTypes/EETYesNeutralType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">BicCodeType</a><a href="simpleTypes/CICCodeType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CICCodeType</a><a href="simpleTypes/CQSType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CQSType</a><a href="simpleTypes/CalculationPeriodType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CalculationPeriodType</a><a href="simpleTypes/CompanyListedClassificationType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CompanyListedClassificationType</a><a href="simpleTypes/CryptoBinary.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">CryptoBinary</a><a href="simpleTypes/DateIntervalType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">DateIntervalType</a><a href="simpleTypes/DigestValueType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">DigestValueType</a><a href="simpleTypes/EETYesNeutralType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNeutralType</a><a href="simpleTypes/EETYesNoNeutralType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoNeutralType</a><a href="simpleTypes/EETYesNoType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoType</a><a href="simpleTypes/EmailAddressType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EmailAddressType</a><a href="simpleTypes/EMIRIDType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoType</a><a href="simpleTypes/EMIRIDType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EMIRIDType</a><a href="simpleTypes/EMTYesEmptyType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesEmptyType</a><a href="simpleTypes/EMTYesNeutralType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesNeutralType</a><a href="simpleTypes/EMTYesNoNeutralType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesNoNeutralType</a><a href="simpleTypes/EMTYesNoType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesNoType</a><a href="simpleTypes/FrequencyType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">FrequencyType</a><a href="simpleTypes/IBANType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">IBANType</a><a href="simpleTypes/IdentnummerType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">IdentnummerType</a><a href="simpleTypes/ISINType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EMTYesNoType</a><a href="simpleTypes/EconomicArea2Type.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EconomicArea2Type</a><a href="simpleTypes/EconomicAreaType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EconomicAreaType</a><a href="simpleTypes/EmailAddressType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">EmailAddressType</a><a href="simpleTypes/FrequencyType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">FrequencyType</a><a href="simpleTypes/HMACOutputLengthType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">HMACOutputLengthType</a><a href="simpleTypes/IBANType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">IBANType</a><a href="simpleTypes/ISINType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">ISINType</a><a href="simpleTypes/ISOCountryCodeType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">ISOCountryCodeType</a><a href="simpleTypes/ISOCurrencyCodeType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a><a href="simpleTypes/ISOLanguageCodeType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">ISOLanguageCodeType</a><a href="simpleTypes/LatitudeDataDEType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">LatitudeDataDEType</a><a href="simpleTypes/LEICodeType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">LEICodeType</a><a href="simpleTypes/ListedIdentifierType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">ISOLanguageCodeType</a><a href="simpleTypes/IdentnummerType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">IdentnummerType</a><a href="simpleTypes/LEICodeType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">LEICodeType</a><a href="simpleTypes/LatitudeDataDEType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">LatitudeDataDEType</a><a href="simpleTypes/ListedIdentifierType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">ListedIdentifierType</a><a href="simpleTypes/LongitudeDataDEType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">LongitudeDataDEType</a><a href="simpleTypes/MICCodeType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">MICCodeType</a><a href="simpleTypes/NACECodeType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">NACECodeType</a><a href="simpleTypes/PercentageType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PercentageType</a><a href="simpleTypes/positiveDecimals.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">positiveDecimals</a><a href="simpleTypes/PRIIPSFrequencyType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPSFrequencyType</a><a href="simpleTypes/RetailProfessionalBothNeitherType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">NACECodeType</a><a href="simpleTypes/PRIIPSFrequencyType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PRIIPSFrequencyType</a><a href="simpleTypes/PercentageType.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">PercentageType</a><a href="simpleTypes/RetailProfessionalBothNeitherType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">RetailProfessionalBothNeitherType</a><a href="simpleTypes/SIICouponFrequencyType.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SIICouponFrequencyType</a><a href="simpleTypes/SIICouponFrequencyType_V5.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">SIICouponFrequencyType_V5</a><a href="simpleTypes/SIICouponFrequencyType_V6.html"
@@ -487,10 +493,8 @@
                            class="text-sky-600 hover:text-sky-800 hover:underline">Text64Type</a><a href="simpleTypes/Text8Type.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">Text8Type</a><a href="simpleTypes/YesNoL1Type.html"
                            class="text-sky-600 hover:text-sky-800 hover:underline">YesNoL1Type</a><a href="simpleTypes/YesNoType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">YesNoType</a><a href="simpleTypes/CryptoBinary.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">CryptoBinary</a><a href="simpleTypes/DigestValueType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">DigestValueType</a><a href="simpleTypes/HMACOutputLengthType.html"
-                           class="text-sky-600 hover:text-sky-800 hover:underline">HMACOutputLengthType</a>
+                           class="text-sky-600 hover:text-sky-800 hover:underline">YesNoType</a><a href="simpleTypes/positiveDecimals.html"
+                           class="text-sky-600 hover:text-sky-800 hover:underline">positiveDecimals</a>
                     </div>
                 </td>
             </tr>
@@ -500,15 +504,37 @@
 
 </main>
 
-<!--
-  Embed the search index data directly into the page to avoid file protocol issues with fetch().
-  Thymeleaf's th:inline="javascript" handles the correct escaping and formatting.
--->
 <script>
-    /*<![CDATA[*/
-    window.SEARCH_INDEX_DATA = JSON.parse(null);
-    /*]]>*/
+    document.addEventListener('DOMContentLoaded', function () {
+        const params = new URLSearchParams(window.location.search);
+        const xpathToFind = params.get('xpath');
+
+        if (xpathToFind) {
+            const searchIndexPath = document.body.dataset.searchIndexPath;
+            fetch(searchIndexPath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(searchIndex => {
+                    const foundItem = searchIndex.find(item => item.xpath === xpathToFind);
+                    if (foundItem && foundItem.url) {
+                        window.location.href = foundItem.url;
+                    } else {
+                        console.warn(`XPath "${xpathToFind}" not found in search index.`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching or processing search index:', error);
+                });
+        }
+    });
 </script>
+
+<!-- The search script will now fetch the search_index.json file externally
+     using the path provided in the body's data-search-index-path attribute. -->
 <script src="assets/search.js" defer></script>
 </body>
 </html>

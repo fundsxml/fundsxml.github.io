@@ -21,37 +21,29 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- NEU: Titel wird mit Hilfsmethode aus dem Node-Objekt gelesen -->
     <title>Complex Type: EarningType</title>
 
-    <!-- Tailwind CSS & Modern Font -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<!-- NEU: Body-Tag mit data-Attributen für das Such-Skript -->
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
-<!-- Modern navigation with shadow and clear spacing -->
+<!-- NEU: Navigation mit Suchleiste für konsistente UI -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <!-- Left navigation group -->
             <div class="hidden md:flex items-baseline space-x-6">
-                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
-                   aria-current="page">Home</a>
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <a href="../complexTypes.html"
-                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                   class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Complex
                     Types</a>
                 <a href="../simpleTypes.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
@@ -59,6 +51,23 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                                fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -79,6 +88,7 @@
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-slate-900">
+                    <!-- NEU: Greift auf Hilfsmethoden zu, um Daten aus dem Node zu lesen -->
                     Complex Type: <span class="font-mono">EarningType</span>
                 </h1>
                 <div class="flex space-x-2">
@@ -94,55 +104,442 @@
             
 
             <!-- Section: Attributes -->
+            
+
+            <!-- Section for Child Elements -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attributes</h2>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements</h2>
                 <div class="overflow-x-auto border border-slate-200 rounded-lg">
                     <table class="w-full text-left">
                         <thead class="bg-slate-50 border-b border-slate-200 text-sm">
                         <tr>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Cardinality</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
+                        <!-- Iteriert über XsdExtendedElement-Objekte -->
                         <tr>
-                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
                             <td class="px-4 py-3 font-mono">
-                                <!--
-                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
-                                   th:text="${attrEntry.value}"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
-                                   -->
+                                <a href="../details/EarningID_c299c367905425c2d39710f28381ad71.html" class="text-sky-600 hover:text-sky-800 hover:underline">EarningID</a>
                             </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../simpleTypes/Text256Type.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unique Earning ID</p>
+<p>Eindeutige Transaktionsnummer (Auftragsnummer)</p>
+<p>Text (max. 256 characters)</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CancellationFlag_9ef176c68f8ff01dbc8c54aecc7fbc4b.html" class="text-sky-600 hover:text-sky-800 hover:underline">CancellationFlag</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:boolean</span>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicates whether earning has been cancelled</p>
+<p>Kennzeichen ob das Erträgnis storniert wurde</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/OriginalEarningID_a4eb583ebc1cff5868439746e498f0ab.html" class="text-sky-600 hover:text-sky-800 hover:underline">OriginalEarningID</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../simpleTypes/Text256Type.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Earning ID of cancelled earning</p>
+<p>Text (max. 256 characters)</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AssetUniqueID_7bc823ebbfdcbed6d5f0895165ada7d6.html" class="text-sky-600 hover:text-sky-800 hover:underline">AssetUniqueID</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unique ID of asset (link to AssetMasterData)</p>
+<p>Referenz zu den Wertpapierstammdaten</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_dd2f381607c5296c0d1fddb91e67ccc1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/IdentifiersType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">IdentifiersType</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Identifiers of instrument (like ISIN, Ticker, ...)</p>
+<p>Kennnummern des Instrumentes (ISIN, Ticker, ...)</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/EarningKind_413fa6de8e7c62d95911df4ff8aac408.html" class="text-sky-600 hover:text-sky-800 hover:underline">EarningKind</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Type of earning:<br />
+Coupon, Dividend, Fund distribution, ...</p>
+<p>Diese Bezeichnung ist aus dem Dictionary zu entnehmen.Gibt die Ertragsart an: z.B Coupon, Dividend,Fund distribution</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ClosingDate_5efe99f575b418ba86e8be7f92dd748e.html" class="text-sky-600 hover:text-sky-800 hover:underline">ClosingDate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:date</span>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Closing date / trade date</p>
+<p>Datum, an dem das Geschaeft abgeschlossen wurde</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/EntryDate_b7fc271b35f1a5fe3ed5033bd30f084d.html" class="text-sky-600 hover:text-sky-800 hover:underline">EntryDate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:date</span>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date when earning has been booked into portfolio</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ValutaDate_8bb117d3c3b86d34a0887e58195dfe23.html" class="text-sky-600 hover:text-sky-800 hover:underline">ValutaDate</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:date</span>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Value date</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/EntryCurrency_6746ad2856aacec1ea3231daa46cc321.html" class="text-sky-600 hover:text-sky-800 hover:underline">EntryCurrency</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../simpleTypes/ISOCurrencyCodeType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Booking currency</p>
+<p>Buchungswährung</p>
+<p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
+<p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/IncomeCurrency_d4ac0514df788ed23bd8700b6cddc4b2.html" class="text-sky-600 hover:text-sky-800 hover:underline">IncomeCurrency</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../simpleTypes/ISOCurrencyCodeType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Income currency</p>
+<p>Eträgniswährung</p>
+<p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
+<p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/EntryValue_1e121fda65d4cf79cf18a5558e893fd7.html" class="text-sky-600 hover:text-sky-800 hover:underline">EntryValue</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Booking value</p>
+<p>Buchungsbetrag</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Interests_26e94941f845e6cbd94c96feee616c98.html" class="text-sky-600 hover:text-sky-800 hover:underline">Interests</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Interests value</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FXRates_6ec0d9fd175609c8cf7b95833b849811.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRates</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FXRatesType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FXRatesType</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>FX Rates used for this earning</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/NominalValueOrUnits_c5b2453ecd084f912f90424a53311f7c.html" class="text-sky-600 hover:text-sky-800 hover:underline">NominalValueOrUnits</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:decimal</span>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Nominal value / units</p>
+<p>Stuecke / Nominale</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/ReferenceNumber_86a8efbc330ba8bb81fbab78421920cd.html" class="text-sky-600 hover:text-sky-800 hover:underline">ReferenceNumber</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../simpleTypes/Text100Type.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">Text100Type</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>External reference number of earning transaction</p>
+<p>Externe Referenznummer der Erträgnisbuchung</p>
+<p>Text (max. 100 characters)</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AccountNumber_4098fb2fb989ca0414339a16c6e30e9a.html" class="text-sky-600 hover:text-sky-800 hover:underline">AccountNumber</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:integer</span>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Account number of earning transaction</p>
+<p>Kontonummer der Erträgnisbuchung</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/PostingText_5487b0f6544843aad4f46f975dd23c0d.html" class="text-sky-600 hover:text-sky-800 hover:underline">PostingText</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../simpleTypes/Text1000Type.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">Text1000Type</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Posting text of earning transaction</p>
+<p>Buchungstext der Erträgnisbuchung</p>
+<p>Text (max. 1000 characters)</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FinallySettled_d405ad6a92d5985bb9468571df15e693.html" class="text-sky-600 hover:text-sky-800 hover:underline">FinallySettled</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:boolean</span>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Earning finally settled or not</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Coupon_a37a8f4d8ab5d7b8c3eced7d140dedb5.html" class="text-sky-600 hover:text-sky-800 hover:underline">Coupon</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Earning details for coupon payments</p>
+<p>Erträgnis vom Typ Kuponzahlung</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Dividend_69a132810bfeb365003532893797e87d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Dividend</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Earning details for dividend payments</p>
+<p>Erträgnis vom Typ Dividendenzahlung</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FundDistribution_4f7f5ac5fa3383c1547d8ad9a4cb3020.html" class="text-sky-600 hover:text-sky-800 hover:underline">FundDistribution</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Earning details for fund distributions</p>
+<p>Erträgnis vom Typ Fondsausschüttung</p>
+</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- ================================================================== -->
-            <!-- Section for Child Elements -->
-            <!-- ================================================================== -->
-            
-
             <!-- Section "Used In" -->
-            
-
-            <!-- Section "Element Declarations with this Name" -->
-            
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Used In</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_5a0fa7f802dc1f4cb5dd7398111e48b3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_f56fc7dcd239f739a900f62d19031390.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_ce50e4f735bde1754f4b75da90f54715.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_24537857a06168aef461e2f7b16a8788.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_bab5d84234ddc6b69cdb7caafeeed7f5.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_e1b6e7bd8f6e77fc07c5369b9873f1d1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_352a24ed92996d2760b3f11690adf6f7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_4e7e62decfc9291cdd1d730b6411aabd.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_890276317c0eb042b9c246a643bc7729.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_5db93aeaafb2f48189df80f0c1811bb6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_9eddf0d976777e08f8aca1603bc59144.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Earning_817ace8046d3816ab1f8018d0b4a704f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Earning</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Earnings/Earning</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
         </div>
     </div>
 
     <!-- Navigation button back to overview -->
-    <div class="mt-8 text-center">
+    <div class="mt-8">
         <a href="../complexTypes.html"
-           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+           class="inline-flex items-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                <path fill-rule="evenodd"
+                      d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                      clip-rule="evenodd"/>
+            </svg>
             Back to Overview
         </a>
     </div>
 </main>
 
-<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 </body>
 </html>

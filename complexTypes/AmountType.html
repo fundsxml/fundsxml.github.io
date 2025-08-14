@@ -21,37 +21,29 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- NEU: Titel wird mit Hilfsmethode aus dem Node-Objekt gelesen -->
     <title>Complex Type: AmountType</title>
 
-    <!-- Tailwind CSS & Modern Font -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<!-- NEU: Body-Tag mit data-Attributen für das Such-Skript -->
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
-<!-- Modern navigation with shadow and clear spacing -->
+<!-- NEU: Navigation mit Suchleiste für konsistente UI -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <!-- Left navigation group -->
             <div class="hidden md:flex items-baseline space-x-6">
-                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
-                   aria-current="page">Home</a>
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <a href="../complexTypes.html"
-                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                   class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Complex
                     Types</a>
                 <a href="../simpleTypes.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
@@ -59,6 +51,23 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                                fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -79,6 +88,7 @@
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-slate-900">
+                    <!-- NEU: Greift auf Hilfsmethoden zu, um Daten aus dem Node zu lesen -->
                     Complex Type: <span class="font-mono">AmountType</span>
                 </h1>
                 <div class="flex space-x-2">
@@ -94,77 +104,42 @@
             <section>
                 <h2 class="text-lg font-semibold text-slate-800 mb-3">Documentation</h2>
                 <div class="bg-slate-100/75 p-4 rounded-md space-y-2">
-                    <p class="text-slate-700">Amount in different currencies</p>
-                    <p class="text-slate-700">Betrag in verschiedenen Waehrungen</p>
+                    <p class="text-slate-700">Amount in different currencies
+Betrag in verschiedenen Waehrungen</p>
                 </div>
             </section>
 
             <!-- Section: Attributes -->
-            <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attributes</h2>
-                <div class="overflow-x-auto border border-slate-200 rounded-lg">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
-                        <tr>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
-                        </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200 text-sm">
-                        <tr>
-                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
-                            <td class="px-4 py-3 font-mono">
-                                <!--
-                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
-                                   th:text="${attrEntry.value}"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
-                                   -->
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+            
 
-            <!-- ================================================================== -->
             <!-- Section for Child Elements -->
-            <!-- ================================================================== -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements</h2>
                 <div class="overflow-x-auto border border-slate-200 rounded-lg">
                     <table class="w-full text-left">
                         <thead class="bg-slate-50 border-b border-slate-200 text-sm">
                         <tr>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Cardinality</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- The loop now iterates over the list of child objects -->
+                        <!-- Iteriert über XsdExtendedElement-Objekte -->
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Amount_6cd7bb25d5c52d1d3eaa0ff9b3fd7d22.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Future/Quotation/QuotationAmount/Amount"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Amount</a>
+                                <a href="../details/Amount_6cd7bb25d5c52d1d3eaa0ff9b3fd7d22.html" class="text-sky-600 hover:text-sky-800 hover:underline">Amount</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">org.xmlet.xsdparser.xsdelements.XsdBuiltInDataType@361311e7</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1..*</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Amounts in currency as defined in attribute</p>
 <p>Betrag in frei waehlbarer Waehrung</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         </tbody>
                     </table>
@@ -239,12 +214,6 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/FeesPaidByShareholders_ee9b6146606851576273a735885a4957.html" class="text-sky-600 hover:text-sky-800 hover:underline">FeesPaidByShareholders</a>
-                            </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/CountrySpecificData/AT/OeNB/FeesPaidByShareholders</td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/OtherIncomeNonSecurities_425f6d7a1dea947fdecb396026e8ba6e.html" class="text-sky-600 hover:text-sky-800 hover:underline">OtherIncomeNonSecurities</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/CountrySpecificData/AT/OeNB/OtherIncomeNonSecurities</td>
@@ -311,6 +280,42 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/OrderPrice_dacf8a4f6888818dba275262aa5aebb2.html" class="text-sky-600 hover:text-sky-800 hover:underline">OrderPrice</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/OrderPrice</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/OrderPrice_4b174e1ea19d0509e8e69b9e30c15664.html" class="text-sky-600 hover:text-sky-800 hover:underline">OrderPrice</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/OrderPrice</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/MaxRedemptionAmount_c47ce4c3ddc0b9d8aa53e21230d30647.html" class="text-sky-600 hover:text-sky-800 hover:underline">MaxRedemptionAmount</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/RedemptionRestrictions/MaxRedemptionAmount</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/MinRegularInvestmentAmount_e7e61c40fec13fcea88b9f2184430f25.html" class="text-sky-600 hover:text-sky-800 hover:underline">MinRegularInvestmentAmount</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/SubscriptionRestrictions/MinRegularInvestmentAmount</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/MinSubscriptionAmount_eeea0ea55a8e0410ec4db1e231ee472b.html" class="text-sky-600 hover:text-sky-800 hover:underline">MinSubscriptionAmount</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/SubscriptionRestrictions/MinSubscriptionAmount</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/MinSubscriptionAmountSubsequent_d81666d915cdc3e594f2dc71aed53678.html" class="text-sky-600 hover:text-sky-800 hover:underline">MinSubscriptionAmountSubsequent</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/SubscriptionRestrictions/MinSubscriptionAmountSubsequent</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/OrderPrice_ba9729b91444779359e8c046fc71db25.html" class="text-sky-600 hover:text-sky-800 hover:underline">OrderPrice</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/OrderPrice</td>
@@ -374,6 +379,42 @@
                                 <a href="../details/OrderPrice_1f51aa30496e19ccc507a9562d698d20.html" class="text-sky-600 hover:text-sky-800 hover:underline">OrderPrice</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/OrderPrice</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/OrderPrice_47f5619e4dee930476d4a6aab52359fa.html" class="text-sky-600 hover:text-sky-800 hover:underline">OrderPrice</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/OrderPrice</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/OrderPrice_0a293483ff6a7c5f10e7df0457094091.html" class="text-sky-600 hover:text-sky-800 hover:underline">OrderPrice</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/OrderPrice</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/MaxRedemptionAmount_54dc80c229587b519e5d2ee07e34f4c3.html" class="text-sky-600 hover:text-sky-800 hover:underline">MaxRedemptionAmount</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/RedemptionRestrictions/MaxRedemptionAmount</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/MinRegularInvestmentAmount_6b10335fa95199c00e011f40b277bf92.html" class="text-sky-600 hover:text-sky-800 hover:underline">MinRegularInvestmentAmount</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/SubscriptionRestrictions/MinRegularInvestmentAmount</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/MinSubscriptionAmount_8f0db241826aa59780e7929455f11e2c.html" class="text-sky-600 hover:text-sky-800 hover:underline">MinSubscriptionAmount</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/SubscriptionRestrictions/MinSubscriptionAmount</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/MinSubscriptionAmountSubsequent_4cf59d1959dd2729fd9bd0f1a8a98e20.html" class="text-sky-600 hover:text-sky-800 hover:underline">MinSubscriptionAmountSubsequent</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/SubscriptionRestrictions/MinSubscriptionAmountSubsequent</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -458,21 +499,23 @@
                 </div>
             </section>
 
-            <!-- Section "Element Declarations with this Name" -->
-            
-
         </div>
     </div>
 
     <!-- Navigation button back to overview -->
-    <div class="mt-8 text-center">
+    <div class="mt-8">
         <a href="../complexTypes.html"
-           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+           class="inline-flex items-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                <path fill-rule="evenodd"
+                      d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                      clip-rule="evenodd"/>
+            </svg>
             Back to Overview
         </a>
     </div>
 </main>
 
-<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 </body>
 </html>

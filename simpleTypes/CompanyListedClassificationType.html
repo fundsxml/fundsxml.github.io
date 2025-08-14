@@ -1,28 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-slate-50">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Simple Type: CompanyListedClassificationType</title>
-    <!-- Reference to the central Tailwind CSS file -->
-    <link href="../assets/freeXmlToolkit.css" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Optional: Custom design adjustments for Tailwind
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'], // A modern, easily readable font
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+    <!-- PrismJS for Syntax Highlighting -->
+    <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="bg-slate-50">
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
 <!-- Modern navigation with shadow and clear spacing -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
@@ -30,17 +18,34 @@
         <div class="flex justify-between items-center h-16">
             <!-- Left navigation group -->
             <div class="hidden md:flex items-baseline space-x-6">
-                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
-                   aria-current="page">Home</a>
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <a href="../complexTypes.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
                     Types</a>
                 <a href="../simpleTypes.html"
-                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                   class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100" aria-current="page">Simple
                     Types</a>
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                                fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -53,494 +58,1142 @@
     </div>
 </nav>
 
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Main page title -->
-    <header class="mb-6">
+    <header class="mb-8">
         <h1 class="text-3xl font-bold text-slate-900">
             Simple Type: <span class="font-mono text-sky-700">CompanyListedClassificationType</span>
         </h1>
     </header>
 
     <!-- Main content area -->
-    <main class="bg-white border border-slate-200 rounded-lg shadow-sm">
+    <div class="space-y-8">
 
         <!-- 1. Documentation (if present) -->
-        <section class="p-6 border-b border-slate-200">
-            <h2 class="text-lg font-semibold text-slate-800 mb-3">Documentation</h2>
-            <div class="prose prose-slate max-w-none">
-                <!-- Iterates through all documentation entries -->
+        <section class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
+            <h2 class="text-xl font-semibold text-slate-900 mb-4">Documentation</h2>
+            <div class="prose prose-slate max-w-none text-slate-700">
                 <p>List of company classifications</p>
             </div>
         </section>
 
         <!-- 2. Restrictions -->
-        <section class="p-6">
-            <h2 class="text-lg font-semibold text-slate-800 mb-3">Restrictions</h2>
-            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+        <section class="bg-white rounded-xl shadow-md border border-slate-200">
+            <header class="p-6 border-b border-slate-200">
+                <h2 class="text-xl font-semibold text-slate-900">Restrictions</h2>
+            </header>
+            <div class="p-6">
                 <table class="w-full text-left">
-                    <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                    <thead class="text-sm">
                     <tr>
-                        <th scope="col" class="w-1/4 px-4 py-3 font-semibold text-slate-900">Property</th>
-                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Value</th>
+                        <th scope="col" class="w-1/3 pb-3 font-semibold text-slate-900">Property</th>
+                        <th scope="col" class="pb-3 font-semibold text-slate-900">Value</th>
                     </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200 text-sm">
                     <!-- Base Type -->
                     <tr>
-                        <td class="px-4 py-3 font-medium text-slate-800">Base Type</td>
-                        <td class="px-4 py-3"><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">xs:string</code></td>
-                    </tr>
-                    <!-- Length Restrictions -->
-                    
-                    
-                    
-                    <!-- Pattern (Regular Expression) -->
-                    
-                    <!-- Value Range Restrictions -->
-                    
-                    
-                    
-                    
-                    <!-- Digit Restrictions -->
-                    
-                    
-                    <!-- Enumeration (List of values) -->
-                    <tr>
-                        <td class="px-4 py-3 font-medium text-slate-800 align-top">Allowed Values (enumeration)</td>
-                        <td class="px-4 py-3">
-                            <ul class="space-y-2">
-                                <li>
-                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">NACE Rev 2.1</code>
-                                    <!-- Documentation for the individual enum value (if present) -->
-                                    
-                                </li>
-                                <li>
-                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">NACE Rev 2</code>
-                                    <!-- Documentation for the individual enum value (if present) -->
-                                    <div class="mt-1 pl-2 text-slate-600">
-                                        <p class="text-xs">1 character + 4 digits. no dots. Regex: [A-Z][0-9]{4}</p>
-                                        <p class="text-xs">5 Stelliger NACE Code. 1 Buchstabe und 4 Zahlen (ohne Punkte) Regex: [A-Z][0-9]{4}</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">ÖNACE 2008</code>
-                                    <!-- Documentation for the individual enum value (if present) -->
-                                    
-                                </li>
-                                <li>
-                                    <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">SIC</code>
-                                    <!-- Documentation for the individual enum value (if present) -->
-                                    
-                                </li>
-                            </ul>
+                        <td class="py-3 pr-4 font-medium text-slate-800">Base Type</td>
+                        <td class="py-3"><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">xs:string</code>
                         </td>
                     </tr>
+
+                    <!-- Dynamically iterate over all other facets -->
+                    
+                        <!-- Special handling for enumeration -->
+                        <tr>
+                            <td class="py-3 pr-4 font-medium text-slate-800 align-top">Allowed Values (enumeration)</td>
+                            <td class="py-3">
+                                <ul class="space-y-2">
+                                    <!-- Iterate over all enumeration nodes with the same name -->
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">NACE Rev 2.1</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">NACE Rev 2</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        <div class="mt-1 pl-2 text-slate-600 text-xs italic">
+                                            <p>1 character + 4 digits. no dots. Regex: [A-Z][0-9]{4} 
+5 Stelliger NACE Code. 1 Buchstabe und 4 Zahlen (ohne Punkte) Regex: [A-Z][0-9]{4} </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">ÖNACE 2008</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">SIC</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- Generic handling for all other facets -->
+                        
+                    
+                        <!-- Special handling for enumeration -->
+                        <tr>
+                            <td class="py-3 pr-4 font-medium text-slate-800 align-top">Allowed Values (enumeration)</td>
+                            <td class="py-3">
+                                <ul class="space-y-2">
+                                    <!-- Iterate over all enumeration nodes with the same name -->
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">NACE Rev 2.1</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">NACE Rev 2</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        <div class="mt-1 pl-2 text-slate-600 text-xs italic">
+                                            <p>1 character + 4 digits. no dots. Regex: [A-Z][0-9]{4} 
+5 Stelliger NACE Code. 1 Buchstabe und 4 Zahlen (ohne Punkte) Regex: [A-Z][0-9]{4} </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">ÖNACE 2008</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">SIC</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- Generic handling for all other facets -->
+                        
+                    
+                        <!-- Special handling for enumeration -->
+                        <tr>
+                            <td class="py-3 pr-4 font-medium text-slate-800 align-top">Allowed Values (enumeration)</td>
+                            <td class="py-3">
+                                <ul class="space-y-2">
+                                    <!-- Iterate over all enumeration nodes with the same name -->
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">NACE Rev 2.1</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">NACE Rev 2</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        <div class="mt-1 pl-2 text-slate-600 text-xs italic">
+                                            <p>1 character + 4 digits. no dots. Regex: [A-Z][0-9]{4} 
+5 Stelliger NACE Code. 1 Buchstabe und 4 Zahlen (ohne Punkte) Regex: [A-Z][0-9]{4} </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">ÖNACE 2008</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">SIC</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- Generic handling for all other facets -->
+                        
+                    
+                        <!-- Special handling for enumeration -->
+                        <tr>
+                            <td class="py-3 pr-4 font-medium text-slate-800 align-top">Allowed Values (enumeration)</td>
+                            <td class="py-3">
+                                <ul class="space-y-2">
+                                    <!-- Iterate over all enumeration nodes with the same name -->
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">NACE Rev 2.1</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">NACE Rev 2</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        <div class="mt-1 pl-2 text-slate-600 text-xs italic">
+                                            <p>1 character + 4 digits. no dots. Regex: [A-Z][0-9]{4} 
+5 Stelliger NACE Code. 1 Buchstabe und 4 Zahlen (ohne Punkte) Regex: [A-Z][0-9]{4} </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">ÖNACE 2008</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                    <li>
+                                        <code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">SIC</code>
+                                        <!-- Documentation for the individual enum value -->
+                                        
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- Generic handling for all other facets -->
+                        
+                    
+
                     </tbody>
                 </table>
+                <!-- Fallback message if no restrictions are defined -->
+                
             </div>
         </section>
 
         <!-- "Used In" Section -->
-        <section class="p-6">
-            <h2 class="text-lg font-semibold text-slate-800 mb-3">Used In</h2>
-            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+        <section class="bg-white rounded-xl shadow-md border border-slate-200">
+            <header class="p-6 border-b border-slate-200">
+                <h2 class="text-xl font-semibold text-slate-900">Used In</h2>
+            </header>
+            <div class="p-6">
                 <table class="w-full text-left">
-                    <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                    <thead class="text-sm">
                     <tr>
-                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Element</th>
-                        <th scope="col" class="px-4 py-3 font-semibold text-slate-900">XPath</th>
+                        <th scope="col" class="pb-3 font-semibold text-slate-900">Element</th>
+                        <th scope="col" class="pb-3 font-semibold text-slate-900">XPath</th>
                     </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200 text-sm">
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_f4d0e78f5e89713ee54329611a310d84.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_f4d0e78f5e89713ee54329611a310d84.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_735f50ac7281a1952bd45a73045f68c3.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_5c07d488626e804e34d5b754fbf8e90a.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Guarantor/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_6f22c1610db94d700223ea1cc2ebf2d1.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_735f50ac7281a1952bd45a73045f68c3.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Issuer/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Guarantor/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_46b573ced7561fbf61c05b0ce25a59d9.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_812d11341013947acdba11cdad2f1bb5.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CallMoney/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Guarantor/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_d06cba14380fee2483583953ba796507.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_6f22c1610db94d700223ea1cc2ebf2d1.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Certificate/Issuer/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Issuer/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_5818fb3a759f2abed7e9cea0ab00c994.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_cf4a67c38ef6574c88c78b6a3ea59b96.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CommercialPaper/Issuer/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Issuer/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_35567eb0f8fa2cefc341f3e244b10bea.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_46b573ced7561fbf61c05b0ce25a59d9.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Equity/Issuer/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CallMoney/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_45b3b19f012b89dd17e6fcd0c995f274.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_522bb1a1eaf9800955b4ad3e6bc9e0cc.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FXForward/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CallMoney/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_80c509f8d5588f429e436f9354b1b264.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_d06cba14380fee2483583953ba796507.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Fee/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Certificate/Issuer/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_093bb6d047b52fce9a8549a5fd737eae.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_36962fad9f2b11a92d069000cc82c99f.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FixedTimeDeposit/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Certificate/Issuer/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_240a5f48d7dc275f53dc0c746d71d4d6.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_5818fb3a759f2abed7e9cea0ab00c994.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Future/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CommercialPaper/Issuer/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_89f1db395e8341f9f536fd6529287a9c.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_90c37f09a63bf42abe189177a6bcaeca.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CommercialPaper/Issuer/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_72982316318611c2e58f8e32b9f55ea6.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_35567eb0f8fa2cefc341f3e244b10bea.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Loan/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Equity/Issuer/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_00a1f502bd3b5ec5b162cbf879735182.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_7bc66647f4b7a32c0e16158ad5a3979a.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Equity/Issuer/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_83f96008fb841bfb8fed7ceeb329a659.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_45b3b19f012b89dd17e6fcd0c995f274.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Issuer/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FXForward/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_02e4010f97566b19c0ae59f9a24c894b.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_2654c2b58afde71d0051b687b0dcbaae.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/PrivateEquity/Company/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FXForward/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_f4c597af0a8c6a70b037f195d0f28fd0.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_80c509f8d5588f429e436f9354b1b264.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/REIT/Issuer/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Fee/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_f6c286005913739d62eaea71f2dc1c56.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_b101852f8e8dda09470414e6501d4128.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Repo/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Fee/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_de5201915f0af106ddd474b693b33abc.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_093bb6d047b52fce9a8549a5fd737eae.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Right/Issuer/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FixedTimeDeposit/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_749b55ba0649984bbbf1a68aab45e5c9.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_24b569b0e0d711954dfc62140ecaaad7.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/ShareClass/Issuer/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FixedTimeDeposit/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_462e38662eb4cefdb9870835688245bd.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_240a5f48d7dc275f53dc0c746d71d4d6.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Future/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_862eccfb81179fa8475b1efb477d4208.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_b9873417896f19a9f584f3197a5bfacf.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Future/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_432d8ee2d7b02e2109792ff76ea0e009.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_89f1db395e8341f9f536fd6529287a9c.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Issuer/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_26c3ab6cf12eee01eb7dde6222e27395.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_e20792497f8ad4c0c5e3f768a4ad610c.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/RealEstateCompany/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_3d477f63da6e69c03a8a9b032b983806.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_72982316318611c2e58f8e32b9f55ea6.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Company/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Loan/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_67c62292b45b03d0db77c6d34e36ec93.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_33a9d2beb0a7f032d2af927a6b83e6d0.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Loan/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_021283b32cb4bf4e4e33247ad0bb4991.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_00a1f502bd3b5ec5b162cbf879735182.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Administrator/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_6aa25075a8a4a6358809c1becc4275c7.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_7596ffced5217ff3c8707c463e7d1942.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Auditor/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_149c5a070f7c5f2da5cb7813a04d78b0.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_83f96008fb841bfb8fed7ceeb329a659.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Companies/Company/Details/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Issuer/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_9e0e2038ea6765fdbbb43b925047dcb8.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_e467fbb12db51c11aec97524fd8b527f.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Custodian/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Issuer/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_49fea385c6cbe067e25863b7eb1aaf63.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_02e4010f97566b19c0ae59f9a24c894b.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/InvestmentCompany/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/PrivateEquity/Company/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_c7a6db87336fc19d468f8fc45ded9f77.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_18520efdde86b9d15d2981b42f8b494a.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/PrivateEquity/Company/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_ba7521cf85e86db4fa06b15e1a5b9f6e.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_f4c597af0a8c6a70b037f195d0f28fd0.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentStaticData/Manager/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/REIT/Issuer/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_82fb2504643c0526db188f20126628f2.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_905df2d7a6dbe4a3891fd829f5dcf8f0.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/REIT/Issuer/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_f274f562657627c03f95ba7a4a214c58.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_f6c286005913739d62eaea71f2dc1c56.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Repo/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_b4e9186d1c37ec94742f62b0d1a2631a.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_2b82dab9d1153eae889909def5c87d13.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Repo/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_4ee54d74649fff59a79c6c3bcd491e49.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_de5201915f0af106ddd474b693b33abc.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Right/Issuer/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_7ae899ec0e82766e8d7d958b87252707.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_654dcf66dece5783bb90299d10e7579e.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Right/Issuer/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_329b3ccfc63684cc18617d07829266f2.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_749b55ba0649984bbbf1a68aab45e5c9.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/TransferAgent/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/ShareClass/Issuer/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_c15db36cd86c039671441d1a8c9a367c.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_da6253c651dd5ec7da3d81183c4a2866.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Advisor/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/ShareClass/Issuer/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_f420bce35cc5227b5dea184ab016de55.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_462e38662eb4cefdb9870835688245bd.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Managers/Manager/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_ef58a67218824a01cfd402fe6ab2c3ad.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_61345c059cd30ab1e151272b84ef2dab.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_4f3549cb56c887aa060159f73d45fac7.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_862eccfb81179fa8475b1efb477d4208.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentStaticData/Manager/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_9c0b5abb17cb19e4d642c48f5b8292fa.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_fcbda6c8edbf6e42eead4e1acca850f6.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_55c34ec6323013cd4e68dd0c6f68f76c.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_432d8ee2d7b02e2109792ff76ea0e009.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Issuer/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_029460c48978bbc52937462d0ee401cd.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_f3acb618302e0358b587c8eafc20c309.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Issuer/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_00733f7da165abc3cb95a077003fed1b.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_26c3ab6cf12eee01eb7dde6222e27395.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/RealEstateCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_9548e81a302f63b815e8e0bb8fbef29b.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_a54b43199134a3471fc338ee422e1f6e.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/RealEstateCompany/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_c185bdd38a9261aac5103b4022c72472.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_3d477f63da6e69c03a8a9b032b983806.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/TransferAgent/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Company/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_e87314f64c0bd6b4633392c2046835b1.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_e2bdae016a418d86552557de9889edc9.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Company/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_18aeb168b0da5683fd3a0835cecbf024.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_67c62292b45b03d0db77c6d34e36ec93.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Advisor/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_004ee08025b5f008e27a6dc901e350b9.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_fa688038fcfdcd85cffedc11d38db13f.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Companies/Company/Details/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
-                    <tr>
-                        <td class="px-4 py-3 font-mono">
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
                             <!-- Link to the detail page of the respective element -->
-                            <a href="../details/@ListedType_9f6549ebef69e882c72b2d4afb745097.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                            <a href="../details/attr_ListedType_021283b32cb4bf4e4e33247ad0bb4991.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
                         </td>
-                        <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Managers/Manager/OtherClassification/@ListedType</td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Administrator/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_ac7bb49b6ef8b59e15c53a38929ff078.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Administrator/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_6aa25075a8a4a6358809c1becc4275c7.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Auditor/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_8b806f475979464657118295b6dc8997.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Auditor/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_c674663914e6e7e683c29fd05477bffd.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Benchmarks/Benchmark/BenchmarkComponents/BenchmarkComponent/Provider/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_86873ccb82c1b313fd8aa5324e000235.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Benchmarks/Benchmark/BenchmarkComponents/BenchmarkComponent/Provider/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_031dbfdb80c011fbb5d274ca2a063b8e.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Benchmarks/Benchmark/Provider/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_1a7de3c676b310e70ab50f75b130e039.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Benchmarks/Benchmark/Provider/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_149c5a070f7c5f2da5cb7813a04d78b0.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Companies/Company/Details/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_66ed553b7bc3504dcaf684ac05659690.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Companies/Company/Details/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_9e0e2038ea6765fdbbb43b925047dcb8.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Custodian/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_9300c274be09723c8bf42e8a201b6366.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Custodian/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_49fea385c6cbe067e25863b7eb1aaf63.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/InvestmentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_02393dc478a9fe6b52ece36c7166fcbc.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/InvestmentCompany/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_c7a6db87336fc19d468f8fc45ded9f77.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_d29d9f6d5dba4ac69cdb6eff2762c699.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_ba7521cf85e86db4fa06b15e1a5b9f6e.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentStaticData/Manager/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_2c9aa5e4825b8cec75b0bbe4807260fd.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentStaticData/Manager/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_69c7202a3a5e10ce836fdd1c97978891.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_cedd4d5d9c8d177ec4b47091fe3d9b33.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_8942bb773ba6360caa0ac5dc29f8662f.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentStaticData/Manager/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_82f8eeb28fea8266a290f2fd204cae7c.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentStaticData/Manager/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_76132699fd1852040c95b209b8425797.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_316f8ca9b83bab61211ed388adf745ae.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_6227cbf3c716abf9836e06d347099d81.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_3fe623ccf04b44510101e70db96a2ea3.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_f89160086fc4facbb1e7445da0e3a03a.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/TransferAgent/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_f666c850f02bbd632d2a6fd3ed38ea4a.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/TransferAgent/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_82fb2504643c0526db188f20126628f2.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_f114972f2573351803eee791ba9beb86.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_f274f562657627c03f95ba7a4a214c58.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_72dbe746b9bf6214b09ac4e226c2d36e.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_b4e9186d1c37ec94742f62b0d1a2631a.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_7b822ce7cbc1c2eaa5b011a8bb45125d.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_4ee54d74649fff59a79c6c3bcd491e49.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_64072ad79e1c494e336bdc5c36094e18.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_7ae899ec0e82766e8d7d958b87252707.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_b4a543646f6a8ec39c5c767ad356f7cd.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_329b3ccfc63684cc18617d07829266f2.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/TransferAgent/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_d04be908ee18f448ed1081994a30ad06.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/TransferAgent/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_c15db36cd86c039671441d1a8c9a367c.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Advisor/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_6d30cf993908eddbc73b26600a275cc0.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Advisor/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_f420bce35cc5227b5dea184ab016de55.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Managers/Manager/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_0baf5570105edceb208449bbfb2b99fb.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Managers/Manager/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_ef58a67218824a01cfd402fe6ab2c3ad.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_8caa6c5fda3318f42bb3915426aa210a.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_4f3549cb56c887aa060159f73d45fac7.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentStaticData/Manager/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_31d3a0115c76904d6bd7697f260c4fa7.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentStaticData/Manager/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_646d19d6914b5219735f42591ad137b2.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_22c0f11ee8ad7002ec330bc3acbf7149.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_ddfe2ac695cfb21d55e271853206fb70.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentStaticData/Manager/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_4e1e99d572d5b8a0843d28fb1b93666a.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentStaticData/Manager/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_cf5f610155e5f9b33b130e95af820608.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_f0989f4c339d5ba75ebac1d68358e0c2.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_5bf1ee90a4398a0fc5462df1d98683f3.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_5c3442041072ca328a66a5a1bf9b9ee4.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_3ac1b55a3ffae112f31dda64c4e9a587.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/TransferAgent/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_ddab94222d27418b6ea0ae2d0bf12f8c.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/TransferAgent/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_9c0b5abb17cb19e4d642c48f5b8292fa.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_47ce03c71cf3f10b7690ce8f1ce7a2ff.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_55c34ec6323013cd4e68dd0c6f68f76c.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_7b9ddf5aa99a317a640bad855ca271c8.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_029460c48978bbc52937462d0ee401cd.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_982e7c4813c2e00201d1e17149f911b2.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_00733f7da165abc3cb95a077003fed1b.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_33d529b25010b62674e0516fabab1415.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_9548e81a302f63b815e8e0bb8fbef29b.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_587721a9f9862238d4b296a1c5ae9275.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_c185bdd38a9261aac5103b4022c72472.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/TransferAgent/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_78fb1eaa7aaa7068a97ba8839385508e.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/TransferAgent/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_e87314f64c0bd6b4633392c2046835b1.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_e6d394b5c4725f17ce874da8cda539f6.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_18aeb168b0da5683fd3a0835cecbf024.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Advisor/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_dd258736029bf4f3edd32b8d9ac96abf.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Advisor/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_004ee08025b5f008e27a6dc901e350b9.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Companies/Company/Details/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_68170ba84deb578c42bd9d6e33b4f168.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Companies/Company/Details/ParentCompany/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_9f6549ebef69e882c72b2d4afb745097.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Managers/Manager/OtherClassification/@ListedType</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                        <td class="py-3 pr-4 font-mono">
+                            <!-- Link to the detail page of the respective element -->
+                            <a href="../details/attr_ListedType_4307b7cf66b677e6b9ad5cd879b95b7c.html" class="text-sky-600 hover:text-sky-800 hover:underline">@ListedType</a>
+                        </td>
+                        <td class="py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Managers/Manager/ParentCompany/OtherClassification/@ListedType</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </section>
-
-        <!-- Fallback message if no restrictions are defined -->
-        
-    </main>
+    </div>
 
     <!-- Navigation button back to the overview -->
-    <div class="mt-6">
+    <div class="mt-8">
         <a href="../index.html"
-           class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm">
+           class="inline-flex items-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                <path fill-rule="evenodd"
+                      d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                      clip-rule="evenodd"/>
+            </svg>
             Back to Overview
         </a>
     </div>
-</div>
+</main>
+
+<script src="../assets/search.js" defer></script>
 
 </body>
 </html>

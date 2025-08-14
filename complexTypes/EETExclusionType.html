@@ -21,37 +21,29 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- NEU: Titel wird mit Hilfsmethode aus dem Node-Objekt gelesen -->
     <title>Complex Type: EETExclusionType</title>
 
-    <!-- Tailwind CSS & Modern Font -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<!-- NEU: Body-Tag mit data-Attributen für das Such-Skript -->
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
-<!-- Modern navigation with shadow and clear spacing -->
+<!-- NEU: Navigation mit Suchleiste für konsistente UI -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <!-- Left navigation group -->
             <div class="hidden md:flex items-baseline space-x-6">
-                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
-                   aria-current="page">Home</a>
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <a href="../complexTypes.html"
-                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                   class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Complex
                     Types</a>
                 <a href="../simpleTypes.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
@@ -59,6 +51,23 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                                fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -79,6 +88,7 @@
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-slate-900">
+                    <!-- NEU: Greift auf Hilfsmethoden zu, um Daten aus dem Node zu lesen -->
                     Complex Type: <span class="font-mono">EETExclusionType</span>
                 </h1>
                 <div class="flex space-x-2">
@@ -94,134 +104,73 @@
             
 
             <!-- Section: Attributes -->
-            <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attributes</h2>
-                <div class="overflow-x-auto border border-slate-200 rounded-lg">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
-                        <tr>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
-                        </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200 text-sm">
-                        <tr>
-                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
-                            <td class="px-4 py-3 font-mono">
-                                <!--
-                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
-                                   th:text="${attrEntry.value}"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
-                                   -->
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+            
 
-            <!-- ================================================================== -->
             <!-- Section for Child Elements -->
-            <!-- ================================================================== -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements</h2>
                 <div class="overflow-x-auto border border-slate-200 rounded-lg">
                     <table class="w-full text-left">
                         <thead class="bg-slate-50 border-b border-slate-200 text-sm">
                         <tr>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Cardinality</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- The loop now iterates over the list of child objects -->
+                        <!-- Iteriert über XsdExtendedElement-Objekte -->
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Applied_622d119c8d2bce3153f56747516c6e93.html"
-                                   title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion/Applied"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Applied</a>
+                                <a href="../details/Applied_2e876fb3aa9268a48e3a5490313e702d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Applied</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/EETYesNoType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETYesNoType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Yes (Y) or No (N)</p>
 <p>Y or N</p>
-<p>Y or N</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ThresholdType_a0aee492590b60d721bebd01f1d7e7bf.html"
-                                   title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion/ThresholdType"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ThresholdType</a>
+                                <a href="../details/ThresholdType_7db8cba01353a3639e2ab00dff2cdc9f.html" class="text-sky-600 hover:text-sky-800 hover:underline">ThresholdType</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Revenue (R) or CaPEX (C) or Opex (O)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">C</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/RelativeThreshold_73f625f94ab6b181a011bb3065e5b45b.html"
-                                   title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion/RelativeThreshold"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">RelativeThreshold</a>
+                                <a href="../details/RelativeThreshold_4e29f664466313a77237799f655c90ea.html" class="text-sky-600 hover:text-sky-800 hover:underline">RelativeThreshold</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:decimal</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">299.68</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/PartOfValueChain_ccd3698fc7ccf24261ae8a11a3d22873.html"
-                                   title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion/PartOfValueChain"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">PartOfValueChain</a>
+                                <a href="../details/PartOfValueChain_cae82b04d3ac0bf06119274a2d737ba1.html" class="text-sky-600 hover:text-sky-800 hover:underline">PartOfValueChain</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Upstream/Production/Downstream</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">P</td>
                         </tr>
                         </tbody>
                     </table>
@@ -242,126 +191,128 @@
                         <tbody class="divide-y divide-slate-200 text-sm">
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/AlcoholExclusion_f8e967b1589d4715ddff8aff15eb7482.html" class="text-sky-600 hover:text-sky-800 hover:underline">AlcoholExclusion</a>
+                                <a href="../details/AlcoholExclusion_616ef1e501d36d5bd608bfec098a0de8.html" class="text-sky-600 hover:text-sky-800 hover:underline">AlcoholExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/AnimalTestingExclusion_c408a68e52574920ed6d2cc43b21b841.html" class="text-sky-600 hover:text-sky-800 hover:underline">AnimalTestingExclusion</a>
+                                <a href="../details/AnimalTestingExclusion_9519828670cd64ba61b33c65197c016f.html" class="text-sky-600 hover:text-sky-800 hover:underline">AnimalTestingExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/AnimalTestingExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/AnimalTestingExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/CannabisExclusion_ae35f27e2c2d8e325df0c75a6d8a3d9a.html" class="text-sky-600 hover:text-sky-800 hover:underline">CannabisExclusion</a>
+                                <a href="../details/CannabisExclusion_2221559d5441b8832f054a926660c97a.html" class="text-sky-600 hover:text-sky-800 hover:underline">CannabisExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/CannabisExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/CannabisExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ConventionalWeaponsExclusion_db2077d4523946e76d9ba7b0275372c6.html" class="text-sky-600 hover:text-sky-800 hover:underline">ConventionalWeaponsExclusion</a>
+                                <a href="../details/ConventionalWeaponsExclusion_03e86c98324beb10c3bccfd770933196.html" class="text-sky-600 hover:text-sky-800 hover:underline">ConventionalWeaponsExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/ConventionalWeaponsExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/ConventionalWeaponsExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/FactoryFarmingExclusion_2363dfa9ee18cd8b6e1c096a58760cc9.html" class="text-sky-600 hover:text-sky-800 hover:underline">FactoryFarmingExclusion</a>
+                                <a href="../details/FactoryFarmingExclusion_6a0daafc14e3a18f4889da83ea723fa5.html" class="text-sky-600 hover:text-sky-800 hover:underline">FactoryFarmingExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/FactoryFarmingExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/FactoryFarmingExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/FurExclusion_c8c47a50d807eafe2d5457b73b10bbdc.html" class="text-sky-600 hover:text-sky-800 hover:underline">FurExclusion</a>
+                                <a href="../details/FurExclusion_ba2791966aec50d2cdc1e60fd0a2c042.html" class="text-sky-600 hover:text-sky-800 hover:underline">FurExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/FurExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/FurExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/GamblingExclusion_dcc86d7b2ba2518adebe464858ef37f6.html" class="text-sky-600 hover:text-sky-800 hover:underline">GamblingExclusion</a>
+                                <a href="../details/GamblingExclusion_e3d1699be2165a712cad5bc0cc8c97f4.html" class="text-sky-600 hover:text-sky-800 hover:underline">GamblingExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GamblingExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/GamblingExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/GeneticEngineeringExclusion_8ee59fb2652305b64032eed16068fd09.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticEngineeringExclusion</a>
+                                <a href="../details/GeneticEngineeringExclusion_16b9db69eb0a5dbb7773b46e33ace112.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticEngineeringExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GeneticEngineeringExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/GeneticEngineeringExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/GeneticallyModifiedOrganismsExclusion_e1d3e12b48884f82fdc55234ab86a849.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticallyModifiedOrganismsExclusion</a>
+                                <a href="../details/GeneticallyModifiedOrganismsExclusion_a77788d501c3b6fc16901dd09a1eb05e.html" class="text-sky-600 hover:text-sky-800 hover:underline">GeneticallyModifiedOrganismsExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/GeneticallyModifiedOrganismsExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/GeneticallyModifiedOrganismsExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/NuclearEnergyExclusion_b3873c18125c3305f3ee0e02609079b2.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearEnergyExclusion</a>
+                                <a href="../details/NuclearEnergyExclusion_6fb595efe4b6309956e3e3159077e7f6.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearEnergyExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/NuclearEnergyExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/NuclearEnergyExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/NuclearWeaponsExclusion_5ec646db31371c92ecea2597e496eff0.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearWeaponsExclusion</a>
+                                <a href="../details/NuclearWeaponsExclusion_665d5f7038466ea47f0cf9a9cbe95785.html" class="text-sky-600 hover:text-sky-800 hover:underline">NuclearWeaponsExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/NuclearWeaponsExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/NuclearWeaponsExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/PalmOilExclusion_1a3013033124bc3bcee457eecfaf7e96.html" class="text-sky-600 hover:text-sky-800 hover:underline">PalmOilExclusion</a>
+                                <a href="../details/PalmOilExclusion_311fd3fa6729d8da19e233be7f36ab8e.html" class="text-sky-600 hover:text-sky-800 hover:underline">PalmOilExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/PalmOilExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/PalmOilExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/PesticidesExclusion_d2a8bd1fc58f66de1314ecb54da1143e.html" class="text-sky-600 hover:text-sky-800 hover:underline">PesticidesExclusion</a>
+                                <a href="../details/PesticidesExclusion_8ae59030309062c4ec070ba301a13699.html" class="text-sky-600 hover:text-sky-800 hover:underline">PesticidesExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/PesticidesExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/PesticidesExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/PornographyAdultEntertainmentServicesExclusion_a310f4451b97a45f089455c398cc8c5d.html" class="text-sky-600 hover:text-sky-800 hover:underline">PornographyAdultEntertainmentServicesExclusion</a>
+                                <a href="../details/PornographyAdultEntertainmentServicesExclusion_82bab2188c62cd440e2b6179d5678c43.html" class="text-sky-600 hover:text-sky-800 hover:underline">PornographyAdultEntertainmentServicesExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/PornographyAdultEntertainmentServicesExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/PornographyAdultEntertainmentServicesExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ResearchOnHumanEmbryosExclusion_484832c4de60f94596d178cf28a643d9.html" class="text-sky-600 hover:text-sky-800 hover:underline">ResearchOnHumanEmbryosExclusion</a>
+                                <a href="../details/ResearchOnHumanEmbryosExclusion_eaa71b3272599810ab90b87798306c8b.html" class="text-sky-600 hover:text-sky-800 hover:underline">ResearchOnHumanEmbryosExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/ResearchOnHumanEmbryosExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/ResearchOnHumanEmbryosExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/TobaccoExclusion_04c3b44cb37deb1a917592fdaf24454f.html" class="text-sky-600 hover:text-sky-800 hover:underline">TobaccoExclusion</a>
+                                <a href="../details/TobaccoExclusion_a35b0ec7df41be981022134a1a00cb8b.html" class="text-sky-600 hover:text-sky-800 hover:underline">TobaccoExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/TobaccoExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/TobaccoExclusion</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/UnconventionalWeaponsExclusion_d95a061841be2aa6dc23764dc0ad8478.html" class="text-sky-600 hover:text-sky-800 hover:underline">UnconventionalWeaponsExclusion</a>
+                                <a href="../details/UnconventionalWeaponsExclusion_56f1b85d4a4787aed0bb88da9efa5616.html" class="text-sky-600 hover:text-sky-800 hover:underline">UnconventionalWeaponsExclusion</a>
                             </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1_0/EET/ScreeningCriteria/SectorsBasedExclusions/UnconventionalWeaponsExclusion</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.0/EET/ScreeningCriteria/SectorsBasedExclusions/UnconventionalWeaponsExclusion</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section "Element Declarations with this Name" -->
-            
-
         </div>
     </div>
 
     <!-- Navigation button back to overview -->
-    <div class="mt-8 text-center">
+    <div class="mt-8">
         <a href="../complexTypes.html"
-           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+           class="inline-flex items-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                <path fill-rule="evenodd"
+                      d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                      clip-rule="evenodd"/>
+            </svg>
             Back to Overview
         </a>
     </div>
 </main>
 
-<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 </body>
 </html>

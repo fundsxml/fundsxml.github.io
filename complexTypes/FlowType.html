@@ -21,37 +21,29 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- NEU: Titel wird mit Hilfsmethode aus dem Node-Objekt gelesen -->
     <title>Complex Type: FlowType</title>
 
-    <!-- Tailwind CSS & Modern Font -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<!-- NEU: Body-Tag mit data-Attributen für das Such-Skript -->
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
-<!-- Modern navigation with shadow and clear spacing -->
+<!-- NEU: Navigation mit Suchleiste für konsistente UI -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <!-- Left navigation group -->
             <div class="hidden md:flex items-baseline space-x-6">
-                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
-                   aria-current="page">Home</a>
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <a href="../complexTypes.html"
-                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                   class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Complex
                     Types</a>
                 <a href="../simpleTypes.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
@@ -59,6 +51,23 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                                fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -79,6 +88,7 @@
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-slate-900">
+                    <!-- NEU: Greift auf Hilfsmethoden zu, um Daten aus dem Node zu lesen -->
                     Complex Type: <span class="font-mono">FlowType</span>
                 </h1>
                 <div class="flex space-x-2">
@@ -94,107 +104,59 @@
             
 
             <!-- Section: Attributes -->
-            <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attributes</h2>
-                <div class="overflow-x-auto border border-slate-200 rounded-lg">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
-                        <tr>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
-                        </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200 text-sm">
-                        <tr>
-                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
-                            <td class="px-4 py-3 font-mono">
-                                <!--
-                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
-                                   th:text="${attrEntry.value}"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
-                                   -->
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+            
 
-            <!-- ================================================================== -->
             <!-- Section for Child Elements -->
-            <!-- ================================================================== -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements</h2>
                 <div class="overflow-x-auto border border-slate-200 rounded-lg">
                     <table class="w-full text-left">
                         <thead class="bg-slate-50 border-b border-slate-200 text-sm">
                         <tr>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Cardinality</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- The loop now iterates over the list of child objects -->
+                        <!-- Iteriert über XsdExtendedElement-Objekte -->
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ActionCode_b160e4ee12eec9c50803e9b04935aaa0.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/ActionCode"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ActionCode</a>
+                                <a href="../details/ActionCode_c58deedf86b7361e7d351ae6df850e74.html" class="text-sky-600 hover:text-sky-800 hover:underline">ActionCode</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Operational code: Create(C), Modify(M), Delete(D) below information</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">M</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/DataGroupedBy_7b0e50e18315e66409727cb3d8a7e904.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/DataGroupedBy"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">DataGroupedBy</a>
+                                <a href="../details/DataGroupedBy_ca2bdde0132b52f071921c4506b7afc7.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataGroupedBy</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..*</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether data is already grouped by specific fields; &quot;Nothing&quot; indicates that information is on seperate transaction level</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">TransactionType</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/DataGroupedByFrequency_cbc28dc83c8ad0ed71dba31f7ee028e1.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/DataGroupedByFrequency"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">DataGroupedByFrequency</a>
+                                <a href="../details/DataGroupedByFrequency_634c1ef1b0c9f2537910ead9db2502db.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataGroupedByFrequency</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/FrequencyType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FrequencyType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines the time period for grouped data (if DataGroupedBy contains a date field)</p>
 <p>Frequency:<br />
 DAIL ... Daily<br />
@@ -205,400 +167,228 @@ TWMN ... Twomonthly<br />
 TWWK ... Twoweekly<br />
 WEEK ... Weekly<br />
 YEAR</p>
-<p>Frequency:<br />
-DAIL ... Daily<br />
-MNTH ... Monthly<br />
-QURT ... Quarterly<br />
-SEMI ... Semiannual<br />
-TWMN ... Twomonthly<br />
-TWWK ... Twoweekly<br />
-WEEK ... Weekly<br />
-YEAR</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">SEMI</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/TransactionID_8af398577bee68a400d7870c9f20fb77.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TransactionID"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">TransactionID</a>
+                                <a href="../details/TransactionID_2d506af0f19c0383a2076caf8d8bbaa9.html" class="text-sky-600 hover:text-sky-800 hover:underline">TransactionID</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unique ID of transaction (also needed for cancellations)</p>
 <p>Text (max. 256 characters)</p>
-<p>Text (max. 256 characters)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/TradeDate_08a2a796df188290c5c1d3ae2eccaf0f.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TradeDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">TradeDate</a>
+                                <a href="../details/TradeDate_f3da625458faa521317171d481d440a0.html" class="text-sky-600 hover:text-sky-800 hover:underline">TradeDate</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:date</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date trade has been initiated</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">2024-07-28</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/AccountingDate_e015b68a9bee1842a541676fc58844a7.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/AccountingDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">AccountingDate</a>
+                                <a href="../details/AccountingDate_5be0344fe84df0c9a81acd17399b44d4.html" class="text-sky-600 hover:text-sky-800 hover:underline">AccountingDate</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:date</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date transaction has been booked in accounting system</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-12-11</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/SettlementDate_cfac0041df5d9fc8666eee4fc5fbd29e.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/SettlementDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">SettlementDate</a>
+                                <a href="../details/SettlementDate_171abc850a64dea8e5dbce775f8e1733.html" class="text-sky-600 hover:text-sky-800 hover:underline">SettlementDate</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:date</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date transaction has been settled</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-02-28</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ValueDate_594215b796438b22df577d79e5e41a9e.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/ValueDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ValueDate</a>
+                                <a href="../details/ValueDate_da85eafcbd26aa645e95fce06c098b63.html" class="text-sky-600 hover:text-sky-800 hover:underline">ValueDate</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:date</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date transaction is effective on customer account</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-05-29</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/TransactionType_9f8e17ff6fecf51a4e7926e7d186078d.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TransactionType"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">TransactionType</a>
+                                <a href="../details/TransactionType_4718fc0ed98d510c09f8fefac93ab17f.html" class="text-sky-600 hover:text-sky-800 hover:underline">TransactionType</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Subscription or Redemption (SUB,RED)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">RED</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/TransactionSubtype_6ee12e08412e7333fec0046843e260c8.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TransactionSubtype"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">TransactionSubtype</a>
+                                <a href="../details/TransactionSubtype_8d7d6e43a4b4f3b876ecda44225fb6ab.html" class="text-sky-600 hover:text-sky-800 hover:underline">TransactionSubtype</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>reinvested dividend, capital repayment, equity increase for closed-ended funds, additional investment, repayment of liabilities, restructuring plan</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Netted_130c7b822969ac71face34158cb5c631.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Netted"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Netted</a>
+                                <a href="../details/Netted_a9949a87d78927b8f06bf37d3e4d18f7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Netted</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:boolean</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Whether data is already netted or not</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Cancellation_82fbd9aba7e9cd26c15c28dbd51a6e88.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Cancellation"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Cancellation</a>
+                                <a href="../details/Cancellation_f69b4d809156244b6bf6cbc7aee94193.html" class="text-sky-600 hover:text-sky-800 hover:underline">Cancellation</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:boolean</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicator for cancellation</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/OriginalTransactionID_c8ae4c897b01ef0d1a22fe70f71cf51d.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/OriginalTransactionID"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">OriginalTransactionID</a>
+                                <a href="../details/OriginalTransactionID_6ec6e28954ef9f3b5c94c850ec2e7d31.html" class="text-sky-600 hover:text-sky-800 hover:underline">OriginalTransactionID</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Original ID of cancelled transaction</p>
 <p>Text (max. 256 characters)</p>
-<p>Text (max. 256 characters)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Units_d4f77ded31ce1bd09a1f82bf2c331eab.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Units"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Units</a>
+                                <a href="../details/Units_a9559a10bfd8e211d06e71a5b3ca207c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Units</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:decimal</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Number of shares/units bought or sold (should be always positive)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">447.15</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/FXRate_1601a7475fc7322448073c2d24632581.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/FXRate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
+                                <a href="../details/FXRate_f6d76e33a8ffc0897358f04c1f75efd3.html" class="text-sky-600 hover:text-sky-800 hover:underline">FXRate</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../complexTypes/FXRatesType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FXRatesType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Foreign exchange rate used for transaction</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/TotalValue_9751bc2d6b195584055c20c6de59e9cc.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TotalValue"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">TotalValue</a>
+                                <a href="../details/TotalValue_03460bdec487c908ebcdd38e37a1d64f.html" class="text-sky-600 hover:text-sky-800 hover:underline">TotalValue</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../complexTypes/FundAmountType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Total value of transaction</p>
 <p>Amount in different currencies</p>
 <p>Betrag in verschiedenen Waehrungen</p>
-<p>Amount in different currencies</p>
-<p>Betrag in verschiedenen Waehrungen</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Channel_ffd4b8e2f0c3f3b0fef1cd75e5535acc.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Channel"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Channel</a>
+                                <a href="../details/Channel_0a860732f799e7ec813908a1f6587244.html" class="text-sky-600 hover:text-sky-800 hover:underline">Channel</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Retail, Institutional, Wholesale, website, distribution partner etc.</p>
 <p>Text (max. 256 characters)</p>
-<p>Text (max. 256 characters)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/InvestorID_dfe61a6cb4ebdaa8d0272a037bbdd64a.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorID"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">InvestorID</a>
+                                <a href="../details/InvestorID_f625ce36391d6c05fac1edcb0e92f111.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorID</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unique ID of investor</p>
 <p>Text (max. 256 characters)</p>
-<p>Text (max. 256 characters)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/InvestorTypes_688854458c83cca79411112f9bc26bb8.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorTypes"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypes</a>
+                                <a href="../details/InvestorTypes_12746ef88ebb958f463650014d4c3336.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypes</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../complexTypes/InvestorTypesType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypesType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Private, Institutional, Asset Manager, Banks, Pension Funds, Insurances, Treasury, Charities, … (AIFMD &quot;ID 208 - Investor Group Type&quot;)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/InvestorCountry_c7d41f57d3f6215b492ddbb73c217ef6.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorCountry"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">InvestorCountry</a>
+                                <a href="../details/InvestorCountry_7d76d5026b8e8d2b6ac941132ec7a766.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorCountry</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/ISOCountryCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCountryCodeType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Country of investor</p>
 <p>The ISOCountryCodeType is a type for decoding ISO-CountryCodes. It is used the two-letter ISO-CountryCodes (ISO 3166-1alpha-2). It is of the type string and has a length from exactly two letters.</p>
 <p>Der ISOCountryCodeType stellt einen einfachen Typ zur Verarbeitung von ISO-Laendercodes bereit. Verwendet werden die zweistelligen ISO-Waehrungscodes (ISO 3166-1alpha-2). Er ist vom Typ string und hat eine Laenge von zwei Zeichen.</p>
-<p>The ISOCountryCodeType is a type for decoding ISO-CountryCodes. It is used the two-letter ISO-CountryCodes (ISO 3166-1alpha-2). It is of the type string and has a length from exactly two letters.</p>
-<p>Der ISOCountryCodeType stellt einen einfachen Typ zur Verarbeitung von ISO-Laendercodes bereit. Verwendet werden die zweistelligen ISO-Waehrungscodes (ISO 3166-1alpha-2). Er ist vom Typ string und hat eine Laenge von zwei Zeichen.</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">aa</td>
                         </tr>
                         </tbody>
                     </table>
@@ -619,6 +409,12 @@ YEAR</p>
                         <tbody class="divide-y divide-slate-200 text-sm">
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Flow_6d697c908ebcc36ffa1c3bc3bb85fdf2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Flow</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Flow_072f326d2d58eab45a873c30c6574eca.html" class="text-sky-600 hover:text-sky-800 hover:underline">Flow</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow</td>
@@ -628,6 +424,12 @@ YEAR</p>
                                 <a href="../details/Flow_502a33acab653da3406dc00e35e6eb9b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Flow</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Flows/Flow</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Flow_d694ae7ebce505b7a57ae39bba3fd0c5.html" class="text-sky-600 hover:text-sky-800 hover:underline">Flow</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -646,21 +448,23 @@ YEAR</p>
                 </div>
             </section>
 
-            <!-- Section "Element Declarations with this Name" -->
-            
-
         </div>
     </div>
 
     <!-- Navigation button back to overview -->
-    <div class="mt-8 text-center">
+    <div class="mt-8">
         <a href="../complexTypes.html"
-           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+           class="inline-flex items-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                <path fill-rule="evenodd"
+                      d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                      clip-rule="evenodd"/>
+            </svg>
             Back to Overview
         </a>
     </div>
 </main>
 
-<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 </body>
 </html>

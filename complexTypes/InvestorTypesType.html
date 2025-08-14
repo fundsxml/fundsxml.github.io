@@ -21,37 +21,29 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- NEU: Titel wird mit Hilfsmethode aus dem Node-Objekt gelesen -->
     <title>Complex Type: InvestorTypesType</title>
 
-    <!-- Tailwind CSS & Modern Font -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<!-- NEU: Body-Tag mit data-Attributen für das Such-Skript -->
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
-<!-- Modern navigation with shadow and clear spacing -->
+<!-- NEU: Navigation mit Suchleiste für konsistente UI -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <!-- Left navigation group -->
             <div class="hidden md:flex items-baseline space-x-6">
-                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
-                   aria-current="page">Home</a>
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <a href="../complexTypes.html"
-                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                   class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Complex
                     Types</a>
                 <a href="../simpleTypes.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
@@ -59,6 +51,23 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                                fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -79,6 +88,7 @@
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-slate-900">
+                    <!-- NEU: Greift auf Hilfsmethoden zu, um Daten aus dem Node zu lesen -->
                     Complex Type: <span class="font-mono">InvestorTypesType</span>
                 </h1>
                 <div class="flex space-x-2">
@@ -94,149 +104,82 @@
             
 
             <!-- Section: Attributes -->
-            <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attributes</h2>
-                <div class="overflow-x-auto border border-slate-200 rounded-lg">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
-                        <tr>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
-                        </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200 text-sm">
-                        <tr>
-                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
-                            <td class="px-4 py-3 font-mono">
-                                <!--
-                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
-                                   th:text="${attrEntry.value}"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
-                                   -->
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+            
 
-            <!-- ================================================================== -->
             <!-- Section for Child Elements -->
-            <!-- ================================================================== -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements</h2>
                 <div class="overflow-x-auto border border-slate-200 rounded-lg">
                     <table class="w-full text-left">
                         <thead class="bg-slate-50 border-b border-slate-200 text-sm">
                         <tr>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Cardinality</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- The loop now iterates over the list of child objects -->
+                        <!-- Iteriert über XsdExtendedElement-Objekte -->
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ECB_6c132ae9bcf6df1b71d51278eb44cf61.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorTypes/ECB"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ECB</a>
+                                <a href="../details/ECB_b22bbaba8b08ad5ba27979f7a73928b7.html" class="text-sky-600 hover:text-sky-800 hover:underline">ECB</a>
                             </td>
-
-                            <!-- Column: Type -->
-                            <td class="px-4 py-3 font-mono">
-                                
-                                <span>xs:string</span>
-                            </td>
-
-                            <!-- Column: Documentation -->
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">PROFESSIONAL INVESTOR</td>
-                        </tr>
-                        <tr>
-                            <!-- Column: Name -->
-                            <td class="px-4 py-3 font-mono">
-                                <a href="../details/EMIR_40b3c231d9aad3e9d7a95856631b8ac2.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorTypes/EMIR"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">EMIR</a>
-                            </td>
-
-                            <!-- Column: Type -->
-                            <td class="px-4 py-3 font-mono">
-                                
-                                <span>xs:string</span>
-                            </td>
-
-                            <!-- Column: Documentation -->
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">F</td>
-                        </tr>
-                        <tr>
-                            <!-- Column: Name -->
-                            <td class="px-4 py-3 font-mono">
-                                <a href="../details/AIFMD_48195b097b9b80faf7a0d2353d88dfee.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorTypes/AIFMD"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">AIFMD</a>
-                            </td>
-
-                            <!-- Column: Type -->
-                            <td class="px-4 py-3 font-mono">
-                                
-                                <span>xs:string</span>
-                            </td>
-
-                            <!-- Column: Documentation -->
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">NFCO</td>
-                        </tr>
-                        <tr>
-                            <!-- Column: Name -->
-                            <td class="px-4 py-3 font-mono">
-                                <a href="../details/CentralBank_65ea91764e2e0aa4b30c899ea3582aad.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorTypes/CentralBank"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">CentralBank</a>
-                            </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/FundSquare_44754f6cf30e6de2bb9c77f63c77fa98.html"
-                                   title="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorTypes/FundSquare"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundSquare</a>
+                                <a href="../details/EMIR_7a78da46739e11d49fc081bdc5e23b55.html" class="text-sky-600 hover:text-sky-800 hover:underline">EMIR</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">DEDICATED</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/AIFMD_90bc93b34b0f0487bbb0645409c51514.html" class="text-sky-600 hover:text-sky-800 hover:underline">AIFMD</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/CentralBank_d6dbb5d6417f4d4fbcf35553ae264fa7.html" class="text-sky-600 hover:text-sky-800 hover:underline">CentralBank</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/FundSquare_f90eef39fc33f5fad93ee552de8dc7c7.html" class="text-sky-600 hover:text-sky-800 hover:underline">FundSquare</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
                         </tr>
                         </tbody>
                     </table>
@@ -255,6 +198,24 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/InvestorTypes_12746ef88ebb958f463650014d4c3336.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypes</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorTypes</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/InvestorTypes_e40e4d696862a2d1222a865ea16d5515.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypes</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/InvestorAllocation/Allocation/InvestorTypes</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/InvestorTypes_a3e96e29b586499ae2851b4700f7ac91.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypes</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Investors/Investor/InvestorTypes</td>
+                        </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="../details/InvestorTypes_688854458c83cca79411112f9bc26bb8.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypes</a>
@@ -290,6 +251,24 @@
                                 <a href="../details/InvestorTypes_52b851d73567efa006021336d0a80235.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypes</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Investors/Investor/InvestorTypes</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/InvestorTypes_a36f31e956ddc1a24ac136556e48e21f.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypes</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorTypes</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/InvestorTypes_a518cb8a67ef6c2f8a4b042b5e20ca4d.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypes</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/InvestorAllocation/Allocation/InvestorTypes</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/InvestorTypes_0bc81059d5bcb7c61e24ed83ee0b5dce.html" class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypes</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Investors/Investor/InvestorTypes</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -332,21 +311,23 @@
                 </div>
             </section>
 
-            <!-- Section "Element Declarations with this Name" -->
-            
-
         </div>
     </div>
 
     <!-- Navigation button back to overview -->
-    <div class="mt-8 text-center">
+    <div class="mt-8">
         <a href="../complexTypes.html"
-           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+           class="inline-flex items-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                <path fill-rule="evenodd"
+                      d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                      clip-rule="evenodd"/>
+            </svg>
             Back to Overview
         </a>
     </div>
 </main>
 
-<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 </body>
 </html>

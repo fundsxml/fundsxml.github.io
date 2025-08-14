@@ -21,37 +21,29 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- NEU: Titel wird mit Hilfsmethode aus dem Node-Objekt gelesen -->
     <title>Complex Type: DocumentType</title>
 
-    <!-- Tailwind CSS & Modern Font -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<!-- NEU: Body-Tag mit data-Attributen für das Such-Skript -->
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
-<!-- Modern navigation with shadow and clear spacing -->
+<!-- NEU: Navigation mit Suchleiste für konsistente UI -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <!-- Left navigation group -->
             <div class="hidden md:flex items-baseline space-x-6">
-                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
-                   aria-current="page">Home</a>
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <a href="../complexTypes.html"
-                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                   class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Complex
                     Types</a>
                 <a href="../simpleTypes.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
@@ -59,6 +51,23 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                                fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -79,6 +88,7 @@
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-slate-900">
+                    <!-- NEU: Greift auf Hilfsmethoden zu, um Daten aus dem Node zu lesen -->
                     Complex Type: <span class="font-mono">DocumentType</span>
                 </h1>
                 <div class="flex space-x-2">
@@ -94,531 +104,304 @@
             
 
             <!-- Section: Attributes -->
-            <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attributes</h2>
-                <div class="overflow-x-auto border border-slate-200 rounded-lg">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
-                        <tr>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
-                        </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200 text-sm">
-                        <tr>
-                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
-                            <td class="px-4 py-3 font-mono">
-                                <!--
-                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
-                                   th:text="${attrEntry.value}"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
-                                   -->
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+            
 
-            <!-- ================================================================== -->
             <!-- Section for Child Elements -->
-            <!-- ================================================================== -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements</h2>
                 <div class="overflow-x-auto border border-slate-200 rounded-lg">
                     <table class="w-full text-left">
                         <thead class="bg-slate-50 border-b border-slate-200 text-sm">
                         <tr>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Cardinality</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- The loop now iterates over the list of child objects -->
+                        <!-- Iteriert über XsdExtendedElement-Objekte -->
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Type_eaca3c7b7adc1e2d8f733dfe2216592e.html"
-                                   title="/FundsXML4/Documents/Document/Type"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Type</a>
+                                <a href="../details/Type_eaca3c7b7adc1e2d8f733dfe2216592e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Type</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Type of document</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Version_604d65996a669d841df7afd13dd8e339.html"
-                                   title="/FundsXML4/Documents/Document/Version"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Version</a>
+                                <a href="../details/Version_604d65996a669d841df7afd13dd8e339.html" class="text-sky-600 hover:text-sky-800 hover:underline">Version</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/Text64Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text64Type</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Version of document</p>
 <p>Text (max. 64 characters)</p>
-<p>Text (max. 64 characters)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Language_28b2856c433f56059477dcf2e7ecca98.html"
-                                   title="/FundsXML4/Documents/Document/Language"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Language</a>
+                                <a href="../details/Language_28b2856c433f56059477dcf2e7ecca98.html" class="text-sky-600 hover:text-sky-800 hover:underline">Language</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:language</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Language of document</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">en-US</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/TranslationsAvailable_169f44fc24a25b0eee691c92ceabb929.html"
-                                   title="/FundsXML4/Documents/Document/TranslationsAvailable"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">TranslationsAvailable</a>
+                                <a href="../details/TranslationsAvailable_169f44fc24a25b0eee691c92ceabb929.html" class="text-sky-600 hover:text-sky-800 hover:underline">TranslationsAvailable</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:boolean</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether document is available in other languages as well</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/PublicationCountries_4d2a8f76459fb246d6bbdc44817cd933.html"
-                                   title="/FundsXML4/Documents/Document/PublicationCountries"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">PublicationCountries</a>
+                                <a href="../details/PublicationCountries_4d2a8f76459fb246d6bbdc44817cd933.html" class="text-sky-600 hover:text-sky-800 hover:underline">PublicationCountries</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>List of publication countries of document</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Fund_b8f81ad055a65e6cdaf00904cef4e315.html"
-                                   title="/FundsXML4/Documents/Document/Fund"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Fund</a>
+                                <a href="../details/Fund_b8f81ad055a65e6cdaf00904cef4e315.html" class="text-sky-600 hover:text-sky-800 hover:underline">Fund</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Fund of document</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Subfunds_7739c9016649cb0f7876319897c6ac09.html"
-                                   title="/FundsXML4/Documents/Document/Subfunds"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Subfunds</a>
+                                <a href="../details/Subfunds_7739c9016649cb0f7876319897c6ac09.html" class="text-sky-600 hover:text-sky-800 hover:underline">Subfunds</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Subfunds of document</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ShareClasses_86a1576f3c91769f5d4b3ce3aae68fd6.html"
-                                   title="/FundsXML4/Documents/Document/ShareClasses"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ShareClasses</a>
+                                <a href="../details/ShareClasses_86a1576f3c91769f5d4b3ce3aae68fd6.html" class="text-sky-600 hover:text-sky-800 hover:underline">ShareClasses</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Share classes of document</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Name_62d5eac28f66a98dc1761f51bb8582fe.html"
-                                   title="/FundsXML4/Documents/Document/Name"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Name</a>
+                                <a href="../details/Name_62d5eac28f66a98dc1761f51bb8582fe.html" class="text-sky-600 hover:text-sky-800 hover:underline">Name</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Name of document</p>
 <p>Text (max. 256 characters)</p>
-<p>Text (max. 256 characters)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/FileName_46ab37d6e60b6573dc0e4c3e8d6abd9b.html"
-                                   title="/FundsXML4/Documents/Document/FileName"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">FileName</a>
+                                <a href="../details/FileName_46ab37d6e60b6573dc0e4c3e8d6abd9b.html" class="text-sky-600 hover:text-sky-800 hover:underline">FileName</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Name of file (including file extension)</p>
 <p>Text (max. 256 characters)</p>
-<p>Text (max. 256 characters)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ForPublicUsage_a982250998889b06f8af97680c34cad7.html"
-                                   title="/FundsXML4/Documents/Document/ForPublicUsage"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ForPublicUsage</a>
+                                <a href="../details/ForPublicUsage_a982250998889b06f8af97680c34cad7.html" class="text-sky-600 hover:text-sky-800 hover:underline">ForPublicUsage</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:boolean</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether document can be published to the public</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Restrictions_b52edd0d2221af496e457fe15410f56a.html"
-                                   title="/FundsXML4/Documents/Document/Restrictions"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Restrictions</a>
+                                <a href="../details/Restrictions_b52edd0d2221af496e457fe15410f56a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Restrictions</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Description of restrictions</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Format_a5deadb0cd885a71f9d20ce7fb2f928a.html"
-                                   title="/FundsXML4/Documents/Document/Format"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Format</a>
+                                <a href="../details/Format_a5deadb0cd885a71f9d20ce7fb2f928a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Format</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Technical format of document:<br />
 PDF, XML, Excel, Word, Image, ...</p>
 <p>Text (max. 256 characters)</p>
-<p>Text (max. 256 characters)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Signature_3bad1fb6f4c42d0de8f253f6c8f447c1.html"
-                                   title="/FundsXML4/Documents/Document/Signature"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Signature</a>
+                                <a href="../details/Signature_3bad1fb6f4c42d0de8f253f6c8f447c1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Signature</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether signature is available:<br />
 No, Digital, Scan</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">No</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/CreationDate_cfc8f7bab389386c1cd136ded2c6b2cb.html"
-                                   title="/FundsXML4/Documents/Document/CreationDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">CreationDate</a>
+                                <a href="../details/CreationDate_cfc8f7bab389386c1cd136ded2c6b2cb.html" class="text-sky-600 hover:text-sky-800 hover:underline">CreationDate</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:date</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date when document has been generated</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-04-21</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ModificationDate_ddb8a6cd73bab83e0480914613022d2a.html"
-                                   title="/FundsXML4/Documents/Document/ModificationDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ModificationDate</a>
+                                <a href="../details/ModificationDate_ddb8a6cd73bab83e0480914613022d2a.html" class="text-sky-600 hover:text-sky-800 hover:underline">ModificationDate</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:date</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date of last change (e.g. for KID)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-07-01</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ExpirationDate_28029fdb836b61662e397eeb8858e9ae.html"
-                                   title="/FundsXML4/Documents/Document/ExpirationDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ExpirationDate</a>
+                                <a href="../details/ExpirationDate_28029fdb836b61662e397eeb8858e9ae.html" class="text-sky-600 hover:text-sky-800 hover:underline">ExpirationDate</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:date</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Document is valid till this expiration date</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-01-02</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/DataSupplier_c0db3e799e9f570848d633535c853b73.html"
-                                   title="/FundsXML4/Documents/Document/DataSupplier"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">DataSupplier</a>
+                                <a href="../details/DataSupplier_c0db3e799e9f570848d633535c853b73.html" class="text-sky-600 hover:text-sky-800 hover:underline">DataSupplier</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../complexTypes/DataSupplierType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">DataSupplierType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Data supplier of document</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Attributes_95907adc75edc0c094f3e72cc6a3f17f.html"
-                                   title="/FundsXML4/Documents/Document/Attributes"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Attributes</a>
+                                <a href="../details/Attributes_95907adc75edc0c094f3e72cc6a3f17f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Attributes</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../complexTypes/AttributesType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">AttributesType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Attributes of document (depending on type of document)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/SizeInBytes_582507b96e73a96ca1c71c15f75e04a4.html"
-                                   title="/FundsXML4/Documents/Document/SizeInBytes"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">SizeInBytes</a>
+                                <a href="../details/SizeInBytes_582507b96e73a96ca1c71c15f75e04a4.html" class="text-sky-600 hover:text-sky-800 hover:underline">SizeInBytes</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:positiveInteger</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Size of document in bytes (exact size of binary data, estimated size in case of download)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">3172</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/DocumentURL_8a393688be3521692305fe4594e4d7ac.html"
-                                   title="/FundsXML4/Documents/Document/DocumentURL"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">DocumentURL</a>
+                                <a href="../details/DocumentURL_8a393688be3521692305fe4594e4d7ac.html" class="text-sky-600 hover:text-sky-800 hover:underline">DocumentURL</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:anyURI</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Link of document for downloading</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/BinaryData_33fdf22d6985c12017daa7ae508169ac.html"
-                                   title="/FundsXML4/Documents/Document/BinaryData"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">BinaryData</a>
+                                <a href="../details/BinaryData_33fdf22d6985c12017daa7ae508169ac.html" class="text-sky-600 hover:text-sky-800 hover:underline">BinaryData</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:base64Binary</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Document in xml base64Binary format</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         </tbody>
                     </table>
@@ -648,21 +431,23 @@ No, Digital, Scan</p>
                 </div>
             </section>
 
-            <!-- Section "Element Declarations with this Name" -->
-            
-
         </div>
     </div>
 
     <!-- Navigation button back to overview -->
-    <div class="mt-8 text-center">
+    <div class="mt-8">
         <a href="../complexTypes.html"
-           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+           class="inline-flex items-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                <path fill-rule="evenodd"
+                      d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                      clip-rule="evenodd"/>
+            </svg>
             Back to Overview
         </a>
     </div>
 </main>
 
-<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 </body>
 </html>

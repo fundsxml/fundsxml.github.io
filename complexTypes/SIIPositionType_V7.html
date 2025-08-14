@@ -21,37 +21,29 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- NEU: Titel wird mit Hilfsmethode aus dem Node-Objekt gelesen -->
     <title>Complex Type: SIIPositionType_V7</title>
 
-    <!-- Tailwind CSS & Modern Font -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<!-- NEU: Body-Tag mit data-Attributen für das Such-Skript -->
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
-<!-- Modern navigation with shadow and clear spacing -->
+<!-- NEU: Navigation mit Suchleiste für konsistente UI -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <!-- Left navigation group -->
             <div class="hidden md:flex items-baseline space-x-6">
-                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
-                   aria-current="page">Home</a>
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <a href="../complexTypes.html"
-                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                   class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Complex
                     Types</a>
                 <a href="../simpleTypes.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
@@ -59,6 +51,23 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                                fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -79,6 +88,7 @@
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-slate-900">
+                    <!-- NEU: Greift auf Hilfsmethoden zu, um Daten aus dem Node zu lesen -->
                     Complex Type: <span class="font-mono">SIIPositionType_V7</span>
                 </h1>
                 <div class="flex space-x-2">
@@ -94,447 +104,266 @@
             
 
             <!-- Section: Attributes -->
-            <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attributes</h2>
-                <div class="overflow-x-auto border border-slate-200 rounded-lg">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
-                        <tr>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
-                        </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200 text-sm">
-                        <tr>
-                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
-                            <td class="px-4 py-3 font-mono">
-                                <!--
-                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
-                                   th:text="${attrEntry.value}"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
-                                   -->
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+            
 
-            <!-- ================================================================== -->
             <!-- Section for Child Elements -->
-            <!-- ================================================================== -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements</h2>
                 <div class="overflow-x-auto border border-slate-200 rounded-lg">
                     <table class="w-full text-left">
                         <thead class="bg-slate-50 border-b border-slate-200 text-sm">
                         <tr>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Cardinality</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- The loop now iterates over the list of child objects -->
+                        <!-- Iteriert über XsdExtendedElement-Objekte -->
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/InstrumentCIC_3a63fd533982b1044940b2a83cb523e1.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/InstrumentCIC"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentCIC</a>
+                                <a href="../details/InstrumentCIC_3a63fd533982b1044940b2a83cb523e1.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentCIC</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../simpleTypes/CICCodeType.html"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">CICCodeType</a>
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A12 - Instrument type. E.g. Equity, bond, option, swap,...<br />
 CIC codification used.</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">DS96</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/EconomicArea_bd39ab5d114e006a3fdfd3f7e5e1a8e8.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/EconomicArea"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">EconomicArea</a>
+                                <a href="../details/EconomicArea_bd39ab5d114e006a3fdfd3f7e5e1a8e8.html" class="text-sky-600 hover:text-sky-800 hover:underline">EconomicArea</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/EconomicAreaType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EconomicAreaType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A13 - Economic area code of quotation country:<br />
 0 non listed<br />
 1 EEA<br />
 2 OECD non EEA<br />
 3 non OECD</p>
 <p>SII Economic area of a quotation place (including Non listed)</p>
-<p>SII Economic area of a quotation place (including Non listed)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">0</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/InstrumentCode_8e67c39e953480e0380235772dd82470.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/InstrumentCode"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentCode</a>
+                                <a href="../details/InstrumentCode_8e67c39e953480e0380235772dd82470.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentCode</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../complexTypes/SIISecurityCodificationType_V7.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">SIISecurityCodificationType_V7</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A15 14 - Use ISIN, CUSIP, BLOOMBERG etc.  or internal code. See CodificationSystem.<br />
 ISIN Preferred when available.</p>
 <p>CodificationSystem (restricted list for Securities) and Code expressed in CodificationSystem</p>
-<p>CodificationSystem (restricted list for Securities) and Code expressed in CodificationSystem</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/GroupID_543ca50850496d80d4d5b19f763cfb55.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/GroupID"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">GroupID</a>
+                                <a href="../details/GroupID_543ca50850496d80d4d5b19f763cfb55.html" class="text-sky-600 hover:text-sky-800 hover:underline">GroupID</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A16 - Grouping code for operations on multi-leg instruments.<br />
 Useless for single-leg positions.</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/InstrumentName_d10d1aa20342b351d794d1b7d9709158.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/InstrumentName"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentName</a>
+                                <a href="../details/InstrumentName_d10d1aa20342b351d794d1b7d9709158.html" class="text-sky-600 hover:text-sky-800 hover:underline">InstrumentName</a>
                             </td>
-
-                            <!-- Column: Type -->
-                            <td class="px-4 py-3 font-mono">
-                                
-                                <span>xs:string</span>
-                            </td>
-
-                            <!-- Column: Documentation -->
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A17</p>
-</td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
-                        </tr>
-                        <tr>
-                            <!-- Column: Name -->
-                            <td class="px-4 py-3 font-mono">
-                                <a href="../details/Valuation_c47c94a7fd04060c122a82c40bd7b258.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Valuation</a>
-                            </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A17</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Valuation_c47c94a7fd04060c122a82c40bd7b258.html" class="text-sky-600 hover:text-sky-800 hover:underline">Valuation</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Valuation characteristics and<br />
 Position market value(s).</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/InterestRateInstrumentCharacteristics_f116f257a4602cfc75c53dc5ea2abd8a.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/InterestRateInstrumentCharacteristics"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">InterestRateInstrumentCharacteristics</a>
+                                <a href="../details/InterestRateInstrumentCharacteristics_f116f257a4602cfc75c53dc5ea2abd8a.html" class="text-sky-600 hover:text-sky-800 hover:underline">InterestRateInstrumentCharacteristics</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Detailed characteristics for interest rate instruments.</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/CreditRiskData_b17c7026724dbba921f1fe3bae845f8a.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/CreditRiskData"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">CreditRiskData</a>
+                                <a href="../details/CreditRiskData_b17c7026724dbba921f1fe3bae845f8a.html" class="text-sky-600 hover:text-sky-800 hover:underline">CreditRiskData</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A46 to A54 + A57 + A59- Useless for cash positions.<br />
 Mandatory otherwise.<br />
 Refers to Counterparty for OTC Derivatives.<br />
 Corresponds to TPT block &quot;Issuer data&quot; (A46 to A59)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Securitisation_5360be26c1124e0a9290ac2b89bc8a44.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Securitisation"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Securitisation</a>
+                                <a href="../details/Securitisation_5360be26c1124e0a9290ac2b89bc8a44.html" class="text-sky-600 hover:text-sky-800 hover:underline">Securitisation</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>To be used for synthetic Asset Backed Securities (ABS) and other ABS</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/SubordinatedDebt_cf9ac7698c70b99176b340f4ed37dcdd.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/SubordinatedDebt"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">SubordinatedDebt</a>
+                                <a href="../details/SubordinatedDebt_cf9ac7698c70b99176b340f4ed37dcdd.html" class="text-sky-600 hover:text-sky-800 hover:underline">SubordinatedDebt</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/YesNoL1Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">YesNoL1Type</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A58 - Y/N</p>
 <p>Flag Y or N</p>
-<p>Flag Y or N</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">Y</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/HedgingRolling_f1eb76834cf3e51bc3581f9e7df0b125.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/HedgingRolling"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">HedgingRolling</a>
+                                <a href="../details/HedgingRolling_f1eb76834cf3e51bc3581f9e7df0b125.html" class="text-sky-600 hover:text-sky-800 hover:underline">HedgingRolling</a>
                             </td>
-
-                            <!-- Column: Type -->
-                            <td class="px-4 py-3 font-mono">
-                                
-                                <span>xs:string</span>
-                            </td>
-
-                            <!-- Column: Documentation -->
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A65 - Indication of existing Risk Mitigation program &quot;Y&quot; used for Risk Mitigation purpose and the position is systematically rolled at maturity, &quot;N&quot; used for hedging purpose but no systematic roll at maturity); &quot;EPM&quot; Efficient Portfolio Management / not used for hedging purpose</p>
-</td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">EPM</td>
-                        </tr>
-                        <tr>
-                            <!-- Column: Name -->
-                            <td class="px-4 py-3 font-mono">
-                                <a href="../details/DerivativeOrConvertible_389a2ccefe6d48ccd0914a8e86626dc3.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/DerivativeOrConvertible"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">DerivativeOrConvertible</a>
-                            </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A65 - Indication of existing Risk Mitigation program &quot;Y&quot; used for Risk Mitigation purpose and the position is systematically rolled at maturity, &quot;N&quot; used for hedging purpose but no systematic roll at maturity); &quot;EPM&quot; Efficient Portfolio Management / not used for hedging purpose</p>
+</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/DerivativeOrConvertible_389a2ccefe6d48ccd0914a8e86626dc3.html" class="text-sky-600 hover:text-sky-800 hover:underline">DerivativeOrConvertible</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>For Futures or Convertible bonds:</p>
 <ul>
 <li>Characteristics of the option (implicit or explicit).</li>
 <li>Description of underlying instrument.</li>
 </ul>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Analytics_d9c86755918eaf60cd7ae2e748c271eb.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Analytics"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Analytics</a>
+                                <a href="../details/Analytics_d9c86755918eaf60cd7ae2e748c271eb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Analytics</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Financial ratios: Modified duration, Delta, ...<br />
 Useless fo cash positions</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/LookThroughIdentifier_aedf14b43f4fac66149b57c674dec0d9.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/LookThroughIdentifier"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">LookThroughIdentifier</a>
+                                <a href="../details/LookThroughIdentifier_aedf14b43f4fac66149b57c674dec0d9.html" class="text-sky-600 hover:text-sky-800 hover:underline">LookThroughIdentifier</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/ISINType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISINType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A95 - identification code of the investee funds<br />
 ISIN or CUSIP or any other identification</p>
 <p>International Securities Identification Number (according to ISO 6166)</p>
-<p>International Securities Identification Number (according to ISO 6166)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">CV007BXD0QI8</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ContributionToSCR_a43c3904616fffa13b444806dac52dd0.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/ContributionToSCR"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ContributionToSCR</a>
+                                <a href="../details/ContributionToSCR_a43c3904616fffa13b444806dac52dd0.html" class="text-sky-600 hover:text-sky-800 hover:underline">ContributionToSCR</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../complexTypes/ContributionToSCRType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ContributionToSCRType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Instrument level.<br />
 The block is optional. However, if the block is present, all the SCRs inside can be present, with the non relevant ones set to 0.</p>
 <p>List of possible contributions to global SCR. Applicable to a Position.Could also be used for a group of Positions</p>
-<p>List of possible contributions to global SCR. Applicable to a Position.Could also be used for a group of Positions</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/QRTPositionInformation_4820940ab8de59548233d7f76c98a04d.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">QRTPositionInformation</a>
+                                <a href="../details/QRTPositionInformation_4820940ab8de59548233d7f76c98a04d.html" class="text-sky-600 hover:text-sky-800 hover:underline">QRTPositionInformation</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Needed for segregated account.<br />
 To be specified***********</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/AdditionalInformation_c485c431018b95a1448aa360fb350a9a.html"
-                                   title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/AdditionalInformation"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">AdditionalInformation</a>
+                                <a href="../details/AdditionalInformation_c485c431018b95a1448aa360fb350a9a.html" class="text-sky-600 hover:text-sky-800 hover:underline">AdditionalInformation</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         </tbody>
                     </table>
@@ -570,21 +399,23 @@ To be specified***********</p>
                 </div>
             </section>
 
-            <!-- Section "Element Declarations with this Name" -->
-            
-
         </div>
     </div>
 
     <!-- Navigation button back to overview -->
-    <div class="mt-8 text-center">
+    <div class="mt-8">
         <a href="../complexTypes.html"
-           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+           class="inline-flex items-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                <path fill-rule="evenodd"
+                      d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                      clip-rule="evenodd"/>
+            </svg>
             Back to Overview
         </a>
     </div>
 </main>
 
-<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 </body>
 </html>

@@ -21,37 +21,29 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- NEU: Titel wird mit Hilfsmethode aus dem Node-Objekt gelesen -->
     <title>Complex Type: IdentifiersType</title>
 
-    <!-- Tailwind CSS & Modern Font -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
 </head>
-<body class="font-sans text-slate-800">
+<!-- NEU: Body-Tag mit data-Attributen für das Such-Skript -->
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
-<!-- Modern navigation with shadow and clear spacing -->
+<!-- NEU: Navigation mit Suchleiste für konsistente UI -->
 <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <!-- Left navigation group -->
             <div class="hidden md:flex items-baseline space-x-6">
-                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
-                   aria-current="page">Home</a>
+                <a href="../index.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <a href="../complexTypes.html"
-                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                   class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Complex
                     Types</a>
                 <a href="../simpleTypes.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
@@ -59,6 +51,23 @@
                 <a href="../dataDictionary.html"
                    class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
                     Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                                fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
             </div>
             <!-- Right navigation group (GitHub Link) -->
             <div class="hidden md:block">
@@ -79,6 +88,7 @@
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-slate-900">
+                    <!-- NEU: Greift auf Hilfsmethoden zu, um Daten aus dem Node zu lesen -->
                     Complex Type: <span class="font-mono">IdentifiersType</span>
                 </h1>
                 <div class="flex space-x-2">
@@ -94,290 +104,166 @@
             
 
             <!-- Section: Attributes -->
-            <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Attributes</h2>
-                <div class="overflow-x-auto border border-slate-200 rounded-lg">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
-                        <tr>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
-                        </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200 text-sm">
-                        <tr>
-                            <td class="px-4 py-3 font-mono text-slate-800">name</td>
-                            <td class="px-4 py-3 font-mono">
-                                <!--
-                                <a th:href="${typeLinks != null ? typeLinks[attrEntry.value] : '#'}"
-                                   th:text="${attrEntry.value}"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline"></a>
-                                   -->
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+            
 
-            <!-- ================================================================== -->
             <!-- Section for Child Elements -->
-            <!-- ================================================================== -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements</h2>
                 <div class="overflow-x-auto border border-slate-200 rounded-lg">
                     <table class="w-full text-left">
                         <thead class="bg-slate-50 border-b border-slate-200 text-sm">
                         <tr>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Cardinality</th>
                             <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
-                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- The loop now iterates over the list of child objects -->
+                        <!-- Iteriert über XsdExtendedElement-Objekte -->
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ISIN_f58ddf14ce38c2776b9afd6b78f95ddf.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/ISIN"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ISIN</a>
+                                <a href="../details/ISIN_f58ddf14ce38c2776b9afd6b78f95ddf.html" class="text-sky-600 hover:text-sky-800 hover:underline">ISIN</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/ISINType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISINType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>International Securities Identification Number (12 chars)</p>
 <p>International Securities Identification Number (according to ISO 6166)</p>
-<p>International Securities Identification Number (according to ISO 6166)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">QWTCGCX985Y9</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/Bloomberg_257d5481088fb868776217362eca293d.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/Bloomberg"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">Bloomberg</a>
+                                <a href="../details/Bloomberg_257d5481088fb868776217362eca293d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Bloomberg</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(Complex Content)</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Bloomberg identifiers</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/CUSIP_28c0674645aed01cd49c6e29a3c9d592.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/CUSIP"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">CUSIP</a>
+                                <a href="../details/CUSIP_28c0674645aed01cd49c6e29a3c9d592.html" class="text-sky-600 hover:text-sky-800 hover:underline">CUSIP</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Committee on Uniform Security Identification Procedures (9 chars)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">aaaaaaaaa</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/GermanWKN_80a215cda73385c6b7167ff1b3bc84a8.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/GermanWKN"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">GermanWKN</a>
+                                <a href="../details/GermanWKN_80a215cda73385c6b7167ff1b3bc84a8.html" class="text-sky-600 hover:text-sky-800 hover:underline">GermanWKN</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>German Wertpapier-Kenn-Nummer (6 chars)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">aaaaaa</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/LEI_b0400a2ac21478baa2860ac288cbe661.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/LEI"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">LEI</a>
+                                <a href="../details/LEI_b0400a2ac21478baa2860ac288cbe661.html" class="text-sky-600 hover:text-sky-800 hover:underline">LEI</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../simpleTypes/LEICodeType.html"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">LEICodeType</a>
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Legal Entity Identification for Financial Contracts (20 chars)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/MexID_efc6ff091fb144d5a2e9dc7fbba12d68.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/MexID"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">MexID</a>
+                                <a href="../details/MexID_efc6ff091fb144d5a2e9dc7fbba12d68.html" class="text-sky-600 hover:text-sky-800 hover:underline">MexID</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">org.xmlet.xsdparser.xsdelements.XsdSimpleType@61bb4ac9</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..2</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Market Exchange Identifier</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/ReutersRIC_dbb84d8242f364d5dcdb449c4589abd3.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/ReutersRIC"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">ReutersRIC</a>
+                                <a href="../details/ReutersRIC_dbb84d8242f364d5dcdb449c4589abd3.html" class="text-sky-600 hover:text-sky-800 hover:underline">ReutersRIC</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">org.xmlet.xsdparser.xsdelements.XsdSimpleType@22dc4128</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..2</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Reuters Instrument Code</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/SEDOL_3060a1f59597e50cec2966cbc2d60724.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/SEDOL"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">SEDOL</a>
+                                <a href="../details/SEDOL_3060a1f59597e50cec2966cbc2d60724.html" class="text-sky-600 hover:text-sky-800 hover:underline">SEDOL</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
-                                <span>xs:string</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Stock Exchange Daily Official List (7 chars)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">QHYKLC7</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/SwissValorenCode_2995cb0c996d41cb55d7bf4007340098.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/SwissValorenCode"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">SwissValorenCode</a>
+                                <a href="../details/SwissValorenCode_2995cb0c996d41cb55d7bf4007340098.html" class="text-sky-600 hover:text-sky-800 hover:underline">SwissValorenCode</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 
                                 <span>xs:int</span>
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Local swiss security number</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">3506</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/SwiftBIC_b1e598e969ca17ffdf98651a14c37257.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/SwiftBIC"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">SwiftBIC</a>
+                                <a href="../details/SwiftBIC_b1e598e969ca17ffdf98651a14c37257.html" class="text-sky-600 hover:text-sky-800 hover:underline">SwiftBIC</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="../simpleTypes/BicCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">BicCodeType</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..1</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Business Identifier Code from SWIFT (3-12 chars)</p>
 <p>BIC Code (SWIFT)</p>
-<p>BIC Code (SWIFT)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600">aaaaaa</td>
                         </tr>
                         <tr>
-                            <!-- Column: Name -->
                             <td class="px-4 py-3 font-mono">
-                                <a href="../details/OtherID_1017d24dc4b43810cd1b763508dd24b7.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/Identifiers/OtherID"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">OtherID</a>
+                                <a href="../details/OtherID_1017d24dc4b43810cd1b763508dd24b7.html" class="text-sky-600 hover:text-sky-800 hover:underline">OtherID</a>
                             </td>
-
-                            <!-- Column: Type -->
                             <td class="px-4 py-3 font-mono">
                                 <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">org.xmlet.xsdparser.xsdelements.XsdSimpleType@7f37f62e</a>
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
-
-                            <!-- Column: Documentation -->
+                            <td class="px-4 py-3 font-mono text-slate-600">0..*</td>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>All other identifiers (with listed or free type)</p>
 </td>
-
-                            <!-- Column: Sample Data -->
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
                         </tbody>
                     </table>
@@ -404,6 +290,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_9753f5c153c28282d586d9ca78f64db0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Account/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Underlying_f8596faa29d803c71456db7d605143a4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Underlying</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/ConvertibleBond/Underlying</td>
@@ -422,9 +314,21 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_b8b27d450022e3034380fb1dd65a3889.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Guarantor/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_54b99eaa265da0545a596ea5e16eb0a4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Issuer/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_244c129b979321a842484cabd86b9c56.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Issuer/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -434,9 +338,21 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_a122703df2952133c667fed6e3f907ae.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CallMoney/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_4b4a90e9e3dc24e9fcb8eb95478ed0ae.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Certificate/Issuer/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_a526758f09471ab885ee6a9574011c8a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Certificate/Issuer/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -458,9 +374,21 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_be63efd4436448d6668a6a843ffda12e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/CommercialPaper/Issuer/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_b471cd977a7cde71ddff3d8a02dcf8b0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Equity/Issuer/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_a8980c82f5853260e8b994adb5450368.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Equity/Issuer/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -470,9 +398,21 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_6380cc1b948ed0b802c777d8acfb7929.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FXForward/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_1568725db40ea0988f2abdedf0812de4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Fee/Counterparty/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_3900a6b96875fe6cf347a0b3324ef10b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Fee/Counterparty/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -482,9 +422,21 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_01a2b5557a8571833a1effec4c23c127.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/FixedTimeDeposit/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_ecd7a3bacc0c5fd60b605562b1d1bd92.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Future/Counterparty/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_1c2528450d797ed1b692c12e0a3f40fe.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Future/Counterparty/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -500,6 +452,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_874e723ac06a0449b6ae64bd8b5eab5d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/CorrespondingRealEstate_2dc8a53dcc2e6070c6ba67d092d71fb5.html" class="text-sky-600 hover:text-sky-800 hover:underline">CorrespondingRealEstate</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Loan/CorrespondingRealEstate</td>
@@ -512,15 +470,33 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_13d5b91c511ccf62772eac4ef34c3fdb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Loan/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_1eb3b2996343796cf28f5b1c35b818d0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Counterparty/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_9798e6a1e49a7866751b7ef824bad72b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_c530d0d8baa7cd644870a0631d02a2f4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Issuer/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_5bb5863d8d88838fc3ea60277da93be8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Option/Issuer/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -536,15 +512,33 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_3814f13dabf6757c97133010770b4a75.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/PrivateEquity/Company/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_4c69a35300745da27a45b948b9d9582e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/REIT/Issuer/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_5c290f6c1b4fdfa2dff5454bd01ed9a2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/REIT/Issuer/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_68fa5e83fdbe266a6d6e7be9c0538fb8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Repo/Counterparty/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_7276bf4d7ed9bcddc7b3614de6182577.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Repo/Counterparty/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -560,15 +554,33 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_199a67df89d34606f1654bcdcb37d41b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Right/Issuer/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_82c90a212f5e988afe6b3f67f68c0d48.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/ShareClass/Issuer/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_2cf91c71b373a94fda69610659358bf9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/ShareClass/Issuer/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_595e5bb2cd39395f91a992e517b87039.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Counterparty/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_8fb136ce258a0d12bab68404f17ae825.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Counterparty/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -590,9 +602,21 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_48962360967c41372a95a6003ebed7eb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_e26330db41b7dad8a40754201ac1e122.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Issuer/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_7858b5348ed48d2a0ffb382e8970687c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/AssetDetails/Warrant/Issuer/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -614,9 +638,21 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_498bfc821771006a2262fa6045d429f0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMasterData/Asset/RealEstateCompany/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_af4456a23acb977014cf233a31867bfe.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Company/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_f478c3f76e87d6bee59b859918b2f11d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/AssetMgmtCompanyDynData/AssetMgmtCompanyDynDataSet/Company/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -641,6 +677,12 @@
                                 <a href="../details/Identifiers_96b30fed0efe5adecc090848dee2c28b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/CountrySpecificData/AT/PKG2012/Details/Position/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_dd2f381607c5296c0d1fddb91e67ccc1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -686,6 +728,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_b62276ddba580cf7091769acd36d680a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_3748a5f785e56bc909c9c638749d7945.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
@@ -698,9 +746,51 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_a3365751ab9a26e880c887e24f9b6d53.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Administrator/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_9190e394566ae41796b530b8c5cb99eb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Auditor/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_8826233a11bde0a112a74cafb4e0b802.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Auditor/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifier_ea716030a0246d184e189daf4b9d9901.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifier</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Benchmarks/Benchmark/BenchmarkComponents/BenchmarkComponent/Identifier</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_9d13bc1a481b1e2befeb6b6c30ac7c07.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Benchmarks/Benchmark/BenchmarkComponents/BenchmarkComponent/Provider/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_833bd13863b594109afda2d1d2738b0a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Benchmarks/Benchmark/BenchmarkComponents/BenchmarkComponent/Provider/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_6e45cb7cecf1e556ec8f7447af363487.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Benchmarks/Benchmark/Provider/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_496c3f40a6555a03db4cae1f154138c4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Benchmarks/Benchmark/Provider/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -710,15 +800,33 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_f2e85dd6c4e8f13e89346f0cae7cf4d8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Companies/Company/Details/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_069fac19107112498a2c1e984479c581.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Custodian/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_e9ffad8ec81c63c5bebfa8b71fbbb6e2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/Custodian/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_9e10f56903533b645a15b13463c85478.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/InvestmentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_dc2b758c05de37f4ed1d24860baed856.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/FundStaticData/InvestmentCompany/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -731,6 +839,12 @@
                                 <a href="../details/Identifiers_f72ab2b813550d5acd77c702cc17884f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_d964ee3145023bb88662b43cd44e6f41.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -776,6 +890,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_6b57e73fd50368a12547a7b32b982b29.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_b71f988d905b9a5389b105d9c933d561.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
@@ -785,6 +905,186 @@
                                 <a href="../details/Identifiers_d3ebbf3bffeea39a3e058f8d084a1306.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentStaticData/Manager/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_d731ad0c4ba992dccf29bd7dca7a06e8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentStaticData/Manager/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_33e0368c9949b3e1bafc48a205a2e8b0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_727f9d40bd7d7af9292de1257f0d5d75.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_d1c1383dfc26739a6d7003be9fac8d7f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_40f87f6ac485d4dd375794ff5e0b1a57.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_d1c45f1575ad015aa98378594cfb0e42.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_0d2b06dcd7347bea18bf10220e6c9f68.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_c4a314d0c59e44c7ea18adb17783cfe8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_fae3cfd5f30945ac8d13813c03fd6ece.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_bfe39a462604c0b8e88e90fb27f2ac98.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_d954e3c0e1a24bc04b238404dcfef02e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_e17b6280f00937e259a273ae8aa29eb2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_0be66e348fe83ea05ff6145f5bdded39.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentStaticData/Manager/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_010a5158333c798a2e6861bf915880eb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/SegmentStaticData/Manager/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_8608b29b604f08b9c26c02661a9154f2.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifier_99928c4690b7f93a4c9cd612f07b83a0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifier</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/MarketPlaces/MarketPlace/MarketMaker/Identifier</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_3200a3cbe7dc7b99f070f645f42be727.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_0adc0960ebb5c6f64a360f4e879aa70d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_260b1d6f5c2fcb76a76a9265224a1299.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_b81c75737b34b25baa248e08b3d522db.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_b08d784a37a1f998fff65ae667496878.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_6f4f03614f6fe919bd1273068973291d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_f9c32a06b406e2646c48c5d3177337ef.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_8e7849d7f1758af0a220c427ac0adc72.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_cbd45ca76f3148491e4dedec82ce7408.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_891916e655595be9e6ebf8f96df78d43.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_e55d1c4b715d8eb1433698763daf9bd7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_f37ae948a23ee8c188d950ae85646b8c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_9387c834811882c59a2e66a1042af5ec.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/TransferAgent/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_c0a6b3906098164709e1917475ce9cb4.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/TransferAgent/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -803,6 +1103,18 @@
                                 <a href="../details/Identifiers_6bf1629cceff25b4aea218dbb8a8530b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_77ff3d24f62fcbd84c2579c232c1ef64.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_24e2c094cff816efce619966dc9669d6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -848,6 +1160,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_2943a48d686a25d8ce7b038aacc18908.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_f976f2e60a6732d63f4acc5ca2d77a6e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
@@ -857,6 +1175,12 @@
                                 <a href="../details/Identifiers_a856e72de83343cd9e4715354c8797e6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_972a1d42728f62d8b2ee1698d1415688.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -875,6 +1199,18 @@
                                 <a href="../details/Identifiers_7d8d8fd68a905291b3d6f7e0b3702f9a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_8070ffce59815301ee9c52ef20e84779.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_0a9bbcae9fc441447b5d212189d6d756.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -920,6 +1256,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_2cc8c7f2153495478752a9261c4fcd4a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_cbd79d8c59dd0ff1aa796f927959aa08.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
@@ -932,9 +1274,21 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_4241ca23b3216e2b6a2a67d6eb6aeae9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/TransferAgent/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_3e54c4a7532b4b38ea16a0ab4ce8d580.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Advisor/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_57013de675a7cdf7ff9326ee43952f49.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Advisor/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -956,6 +1310,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_6e22019e70e5632b9582341c99e4929f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/SingleFund/SingleFundStaticData/Managers/Manager/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_a8446922afecfdfb09d1b316ffd5eb5a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Identifiers</td>
@@ -965,6 +1325,12 @@
                                 <a href="../details/Identifiers_a4579d296475b94fb4eb25d168718ffe.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_6153c64b3e507fe13c480fec6b1cee70.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1010,6 +1376,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_eaa3018f0e5affc2ad32206bd884aba0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_2cac7fd97a9216e555389079ef72ed13.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
@@ -1019,6 +1391,186 @@
                                 <a href="../details/Identifiers_c4236e20fbbaa237bed9be256ade954e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentStaticData/Manager/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_ffabd66996098df3e904ebc5010efc52.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentStaticData/Manager/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_95dae1839bc88a1627fbb3dc2212c2a9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_3a95d05a09bb2e6604f7ec70f95b03d6.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_bccba03f94880f071c1dd6a1659bc498.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_5bc419b74f7170b4560400905595bbb9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_b19f71c211d7c17fef01daa9791f45af.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_b2a6a14b4f09668e6e665dad8e22bec1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_3fe099a4316758b3ba24357de5acdba1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_19235ecf5b8ec51431253101c135b2d3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_8467b9784dea39cc6ad61b507a7bb3f0.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_b2b6d6c11f15dae7bb585505a17fca37.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_c6385424f410306982ab24c546b5c363.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_61a77b545a8b37a8152bfb68df3859a1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentStaticData/Manager/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_f4faa40af52d8e30afe5c7a70f510903.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentStaticData/Manager/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_ec006a31b18e783c8a87a0603d04b440.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifier_2458b3b6c1ff782055aeebf7e8c8395b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifier</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/MarketPlaces/MarketPlace/MarketMaker/Identifier</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_dc5a9c9aca74613ec5060d071632dbb7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_baeacfa8a5af281ab1e9f8876c92f32d.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_9a5cc2042734bdd28dd3bb2d4773849f.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_712eed73ec7e238a764a41be54f7f8bd.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_8b223cba9fe42ce2d289c92aa72c30c3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_88a84626f946c3d8d568ad8ee29878b5.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_06889dba61c3eb8390a84b3c56cb0846.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings/Underlying/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_792c449932d74289e4e419427cbd230a.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_8a5a9c0425b93d99cd82b64e94583acc.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/to/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_7a89e5675e5bccc96b7a01778c673829.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_313e00e96f8af7142b8ff51c8999c896.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_e220ad02835d9d888a525485a33710b1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_869ec3f9d3d7be47b7688ed0aeaa09fe.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/TransferAgent/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_e423a619380df27b20d6c0c183520cb8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/TransferAgent/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1037,6 +1589,18 @@
                                 <a href="../details/Identifiers_b18eb18749a14f7535c0b96776544a48.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_c20d36c6677db3a5626e403176a6f6e7.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_d471769413b980e0ed152c1408f6213e.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1082,6 +1646,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_a1e304c47b50dd293cdd86723fd63353.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_769d3bc2c7b799968c3df0b15e298c82.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
@@ -1091,6 +1661,12 @@
                                 <a href="../details/Identifiers_53722d689ce3156a5a0fb23d7ffdcd61.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_c490c0075caf3f810b7884a37934ae97.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/TransferAgent/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1109,6 +1685,18 @@
                                 <a href="../details/Identifiers_16b3c409e2ee8fda89e616382cebc9c3.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_565615ea5579a6f53185627e410a2ee1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/PerformanceFigures/Ratings/Rating/UnlistedAgency/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_32309f0faf23c03877c10d30dd619b0b.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1154,6 +1742,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_83b08056a449161ef8ae7fe374409d85.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_4868aa58818729927734cd70371f84ef.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
@@ -1163,6 +1757,18 @@
                                 <a href="../details/Identifiers_f2f13312184e87e8e72e3e3fcfcf1cf9.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/TransferAgent/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_f68d45985fa0a01e78b0344b8aa2a214.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/TransferAgent/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_bc2076dba98eb9f3f0785e4e92c41bbb.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Earnings/Earning/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1208,6 +1814,12 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_8c5381818634986bff3dc8cd520f1b53.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Counterparty/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_b2339b9f9cf6338509a2a0f10c115594.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundDynamicData/Portfolios/Portfolio/Transactions/Transaction/Identifiers</td>
@@ -1220,9 +1832,21 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_2e99fefe2985ea0357eccfd8b9f422c1.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Advisor/ParentCompany/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="../details/Identifiers_74324b939b34a478e0e316f4bbc6a8c8.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Companies/Company/Details/Identifiers</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_fb74cd3c4e5262c05fa7cbc513ace32c.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Companies/Company/Details/ParentCompany/Identifiers</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1242,26 +1866,34 @@
                             </td>
                             <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Managers/Manager/Identifiers</td>
                         </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../details/Identifiers_a099c34fd706ac0d877275aedcb874ee.html" class="text-sky-600 hover:text-sky-800 hover:underline">Identifiers</a>
+                            </td>
+                            <td class="px-4 py-3 font-mono text-slate-600">/FundsXML4/Funds/Fund/Subfunds/Subfund/SubfundStaticData/Managers/Manager/ParentCompany/Identifiers</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section "Element Declarations with this Name" -->
-            
-
         </div>
     </div>
 
     <!-- Navigation button back to overview -->
-    <div class="mt-8 text-center">
+    <div class="mt-8">
         <a href="../complexTypes.html"
-           class="inline-flex items-center gap-x-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
+           class="inline-flex items-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                <path fill-rule="evenodd"
+                      d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                      clip-rule="evenodd"/>
+            </svg>
             Back to Overview
         </a>
     </div>
 </main>
 
-<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
 </body>
 </html>

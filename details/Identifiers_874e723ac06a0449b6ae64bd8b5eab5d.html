@@ -1,0 +1,986 @@
+<!--
+  ~ FreeXMLToolkit - Universal Toolkit for XML
+  ~ Copyright (c) Karl Kauc 2024.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  ~
+  -->
+
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-50">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Detail: Identifiers</title>
+
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
+    <link href="../assets/prism.css" rel="stylesheet"/>
+</head>
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
+
+<!-- Modern navigation with shadow and clear spacing -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Left navigation group -->
+            <div class="hidden md:flex items-baseline space-x-6">
+                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Home</a>
+                <a href="../complexTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                    Types</a>
+                <a href="../simpleTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                    Types</a>
+                <a href="../dataDictionary.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
+                    Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
+            </div>
+            <!-- Right navigation group (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main content -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+
+    <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='AssetMasterData_1944b3819a21ab3426c2741e35e5c461.html' class='text-sky-600 hover:underline'>AssetMasterData</a> <span class='mx-1 text-slate-400'>/</span> <a href='Asset_2730c64f96f2968f4d1c360891c64bb9.html' class='text-sky-600 hover:underline'>Asset</a> <span class='mx-1 text-slate-400'>/</span> <a href='AssetDetails_5b4732028b92aa3f93aabd3643d80e60.html' class='text-sky-600 hover:underline'>AssetDetails</a> <span class='mx-1 text-slate-400'>/</span> <a href='Index_884ebf572e269a37d6b724a5b560eeb2.html' class='text-sky-600 hover:underline'>Index</a> <span class='mx-1 text-slate-400'>/</span> <a href='IndexProvider_a77b5a458ee94eb9e83e28dc613fa177.html' class='text-sky-600 hover:underline'>IndexProvider</a> <span class='mx-1 text-slate-400'>/</span> <a href='ParentCompany_c0962c2485a3aedb2bdb440820dde806.html' class='text-sky-600 hover:underline'>ParentCompany</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Identifiers</span></nav>
+
+    <!-- Central detail card -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Card header with element name and XPath -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <h1 class="text-2xl font-bold text-slate-900">Identifiers</h1>
+            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <div class="flex items-center space-x-2 mt-1">
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers</p>
+                <!-- Button to copy the XPath to the clipboard -->
+                <button onclick="copyToClipboard(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers">
+                    <!-- The copy icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                    <!-- Tooltip that appears on hover and shows status after click -->
+                    <span id="tooltip-text"
+                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy XPath
+                    </span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Card body with all detail sections -->
+        <div class="p-6 md:p-8 space-y-10">
+
+            <!-- Section: Diagram -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Diagram</h2>
+                <div class="p-4 border border-slate-200 rounded-lg bg-slate-50 overflow-x-auto">
+                    <!-- Thymeleaf switch to differentiate between SVG and PNG -->
+                    <div>
+                        <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
+                        <div><svg xmlns="http://www.w3.org/2000/svg"
+     style="background-color: #f8fafc"
+     width="412.0"
+     height="952.765625">
+   <defs>
+      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
+      <filter width="140%"
+              x="-20%"
+              height="140%"
+              id="drop-shadow"
+              y="-20%">
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="2" dy="3"/>
+         <feFlood flood-color="black" flood-opacity="0.25"/>
+         <feComposite in2="offsetblur" operator="in"/>
+         <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+         </feMerge>
+      </filter>
+      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
+         id="plus-icon">
+         <circle fill="none" r="9" cx="10" cy="10"/>
+         <line y2="15" x1="10" x2="10" y1="5"/>
+         <line y2="10" x1="5" x2="15" y1="10"/>
+      </g>
+   </defs>
+   <a href="#">
+      <rect x="20"
+            y="413"
+            fill="#f1f5f9"
+            width="87.0"
+            style="stroke: #475569; stroke-width: 1.5;"
+            filter="url(#drop-shadow)"
+            class="hoverable-rect"
+            rx="4"
+            ry="4"
+            height="38.3984375"
+            id="Identifiers"/>
+      <text x="30"
+            fill="#0f172a"
+            y="441.3984375"
+            font-size="16"
+            font-family="Arial">Identifiers</text>
+   </a>
+   <g id="comment">
+      <text x="30"
+            fill="#64748b"
+            font-size="14"
+            y="466.3984375"
+            font-family="Arial">
+         <tspan x="25" dy="1.2em">Identifiers of </tspan>
+         <tspan x="25" dy="1.2em">company </tspan>
+      </text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
+         fill="none"
+         d="M 107.0 432.19921875 H 137.0"/>
+   <g id="seq-group_Identifiers">
+      <rect x="137.0"
+            y="422.19921875"
+            fill="#f1f5f9"
+            width="40.0"
+            style="stroke: #475569; stroke-width: 1.5;"
+            rx="4"
+            height="20.0"/>
+      <line y2="432.19921875"
+            style="stroke: #64748b; stroke-width: 1;"
+            x1="142.0"
+            x2="172.0"
+            y1="432.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="149.0" cy="432.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="157.0" cy="432.19921875"/>
+      <circle fill="#64748b" r="1.5" cx="165.0" cy="432.19921875"/>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5;"
+         fill="none"
+         d="M 177.0 432.19921875 h 20.0"/>
+   <rect x="227.0"
+         y="20.0"
+         fill="#f1f5f9"
+         width="155.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         class="hoverable-rect"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="ISIN"/>
+   <g>
+      <text x="237.0"
+            fill="#0f172a"
+            y="48.3984375"
+            font-size="16"
+            font-family="Arial">ISIN</text>
+      <line y2="52.3984375"
+            stroke-width="1"
+            x1="237.0"
+            x2="372.0"
+            stroke="#e2e8f0"
+            y1="52.3984375"/>
+      <text x="237.0"
+            fill="#64748b"
+            y="72.796875"
+            font-size="14"
+            font-family="Arial">ISINType</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 52.3984375 H 227.0"/>
+   <text x="199.0"
+         fill="#64748b"
+         y="47.3984375"
+         font-size="12"
+         font-family="Arial">0..1</text>
+   <a href="Bloomberg_be637e7ec846e11d31cb4db9f095154f.html">
+      <rect x="227.0"
+            y="104.796875"
+            fill="#f1f5f9"
+            width="155.0"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            class="hoverable-rect"
+            rx="4"
+            ry="4"
+            height="64.796875"
+            id="Bloomberg"/>
+      <g>
+         <text x="237.0"
+               fill="#0f172a"
+               y="133.1953125"
+               font-size="16"
+               font-family="Arial">Bloomberg</text>
+         <line y2="137.1953125"
+               stroke-width="1"
+               x1="237.0"
+               x2="372.0"
+               stroke="#e2e8f0"
+               y1="137.1953125"/>
+         <text x="237.0"
+               fill="#64748b"
+               y="157.59375"
+               font-size="14"
+               font-family="Arial">(anonymous)</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="384.0"
+           y="127.1953125"
+           xlink:href="#plus-icon"/>
+   </a>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 137.1953125 H 227.0"/>
+   <text x="199.0"
+         fill="#64748b"
+         y="132.1953125"
+         font-size="12"
+         font-family="Arial">0..1</text>
+   <rect x="227.0"
+         y="189.59375"
+         fill="#f1f5f9"
+         width="155.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         class="hoverable-rect"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="CUSIP"/>
+   <g>
+      <text x="237.0"
+            fill="#0f172a"
+            y="217.9921875"
+            font-size="16"
+            font-family="Arial">CUSIP</text>
+      <line y2="221.9921875"
+            stroke-width="1"
+            x1="237.0"
+            x2="372.0"
+            stroke="#e2e8f0"
+            y1="221.9921875"/>
+      <text x="237.0"
+            fill="#64748b"
+            y="242.390625"
+            font-size="14"
+            font-family="Arial">(anonymous)</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 221.9921875 H 227.0"/>
+   <text x="199.0"
+         fill="#64748b"
+         y="216.9921875"
+         font-size="12"
+         font-family="Arial">0..1</text>
+   <rect x="227.0"
+         y="274.390625"
+         fill="#f1f5f9"
+         width="155.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         class="hoverable-rect"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="GermanWKN"/>
+   <g>
+      <text x="237.0"
+            fill="#0f172a"
+            y="302.7890625"
+            font-size="16"
+            font-family="Arial">GermanWKN</text>
+      <line y2="306.7890625"
+            stroke-width="1"
+            x1="237.0"
+            x2="372.0"
+            stroke="#e2e8f0"
+            y1="306.7890625"/>
+      <text x="237.0"
+            fill="#64748b"
+            y="327.1875"
+            font-size="14"
+            font-family="Arial">(anonymous)</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 306.7890625 H 227.0"/>
+   <text x="199.0"
+         fill="#64748b"
+         y="301.7890625"
+         font-size="12"
+         font-family="Arial">0..1</text>
+   <rect x="227.0"
+         y="359.1875"
+         fill="#f1f5f9"
+         width="155.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         class="hoverable-rect"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="LEI"/>
+   <g>
+      <text x="237.0"
+            fill="#0f172a"
+            y="387.5859375"
+            font-size="16"
+            font-family="Arial">LEI</text>
+      <line y2="391.5859375"
+            stroke-width="1"
+            x1="237.0"
+            x2="372.0"
+            stroke="#e2e8f0"
+            y1="391.5859375"/>
+      <text x="237.0"
+            fill="#64748b"
+            y="411.984375"
+            font-size="14"
+            font-family="Arial">(anonymous)</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 391.5859375 H 227.0"/>
+   <text x="199.0"
+         fill="#64748b"
+         y="386.5859375"
+         font-size="12"
+         font-family="Arial">0..1</text>
+   <a href="MexID_be46c645d254cee1f38972ec1ba771e6.html">
+      <rect x="227.0"
+            y="443.984375"
+            fill="#f1f5f9"
+            width="155.0"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            class="hoverable-rect"
+            rx="4"
+            ry="4"
+            height="64.796875"
+            id="MexID"/>
+      <g>
+         <text x="237.0"
+               fill="#0f172a"
+               y="472.3828125"
+               font-size="16"
+               font-family="Arial">MexID</text>
+         <line y2="476.3828125"
+               stroke-width="1"
+               x1="237.0"
+               x2="372.0"
+               stroke="#e2e8f0"
+               y1="476.3828125"/>
+         <text x="237.0"
+               fill="#64748b"
+               y="496.78125"
+               font-size="14"
+               font-family="Arial">(anonymous)</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="384.0"
+           y="466.3828125"
+           xlink:href="#plus-icon"/>
+   </a>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 476.3828125 H 227.0"/>
+   <text x="199.0"
+         fill="#64748b"
+         y="471.3828125"
+         font-size="12"
+         font-family="Arial">0..2</text>
+   <a href="ReutersRIC_2915f59ea0c9220bf57a1c0d8fd1be38.html">
+      <rect x="227.0"
+            y="528.78125"
+            fill="#f1f5f9"
+            width="155.0"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            class="hoverable-rect"
+            rx="4"
+            ry="4"
+            height="64.796875"
+            id="ReutersRIC"/>
+      <g>
+         <text x="237.0"
+               fill="#0f172a"
+               y="557.1796875"
+               font-size="16"
+               font-family="Arial">ReutersRIC</text>
+         <line y2="561.1796875"
+               stroke-width="1"
+               x1="237.0"
+               x2="372.0"
+               stroke="#e2e8f0"
+               y1="561.1796875"/>
+         <text x="237.0"
+               fill="#64748b"
+               y="581.578125"
+               font-size="14"
+               font-family="Arial">(anonymous)</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="384.0"
+           y="551.1796875"
+           xlink:href="#plus-icon"/>
+   </a>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 561.1796875 H 227.0"/>
+   <text x="199.0"
+         fill="#64748b"
+         y="556.1796875"
+         font-size="12"
+         font-family="Arial">0..2</text>
+   <rect x="227.0"
+         y="613.578125"
+         fill="#f1f5f9"
+         width="155.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         class="hoverable-rect"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="SEDOL"/>
+   <g>
+      <text x="237.0"
+            fill="#0f172a"
+            y="641.9765625"
+            font-size="16"
+            font-family="Arial">SEDOL</text>
+      <line y2="645.9765625"
+            stroke-width="1"
+            x1="237.0"
+            x2="372.0"
+            stroke="#e2e8f0"
+            y1="645.9765625"/>
+      <text x="237.0"
+            fill="#64748b"
+            y="666.375"
+            font-size="14"
+            font-family="Arial">(anonymous)</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 645.9765625 H 227.0"/>
+   <text x="199.0"
+         fill="#64748b"
+         y="640.9765625"
+         font-size="12"
+         font-family="Arial">0..1</text>
+   <rect x="227.0"
+         y="698.375"
+         fill="#f1f5f9"
+         width="155.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         class="hoverable-rect"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="SwissValorenCode"/>
+   <g>
+      <text x="237.0"
+            fill="#0f172a"
+            y="726.7734375"
+            font-size="16"
+            font-family="Arial">SwissValorenCode</text>
+      <line y2="730.7734375"
+            stroke-width="1"
+            x1="237.0"
+            x2="372.0"
+            stroke="#e2e8f0"
+            y1="730.7734375"/>
+      <text x="237.0"
+            fill="#64748b"
+            y="751.171875"
+            font-size="14"
+            font-family="Arial">xs:int</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 730.7734375 H 227.0"/>
+   <text x="199.0"
+         fill="#64748b"
+         y="725.7734375"
+         font-size="12"
+         font-family="Arial">0..1</text>
+   <rect x="227.0"
+         y="783.171875"
+         fill="#f1f5f9"
+         width="155.0"
+         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         filter="url(#drop-shadow)"
+         class="hoverable-rect"
+         rx="4"
+         ry="4"
+         height="64.796875"
+         id="SwiftBIC"/>
+   <g>
+      <text x="237.0"
+            fill="#0f172a"
+            y="811.5703125"
+            font-size="16"
+            font-family="Arial">SwiftBIC</text>
+      <line y2="815.5703125"
+            stroke-width="1"
+            x1="237.0"
+            x2="372.0"
+            stroke="#e2e8f0"
+            y1="815.5703125"/>
+      <text x="237.0"
+            fill="#64748b"
+            y="835.96875"
+            font-size="14"
+            font-family="Arial">BicCodeType</text>
+   </g>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 815.5703125 H 227.0"/>
+   <text x="199.0"
+         fill="#64748b"
+         y="810.5703125"
+         font-size="12"
+         font-family="Arial">0..1</text>
+   <a href="OtherID_6b536eb4e2568b6760ec0679f502f693.html">
+      <rect x="227.0"
+            y="867.96875"
+            fill="#f1f5f9"
+            width="155.0"
+            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+            filter="url(#drop-shadow)"
+            class="hoverable-rect"
+            rx="4"
+            ry="4"
+            height="64.796875"
+            id="OtherID"/>
+      <g>
+         <text x="237.0"
+               fill="#0f172a"
+               y="896.3671875"
+               font-size="16"
+               font-family="Arial">OtherID</text>
+         <line y2="900.3671875"
+               stroke-width="1"
+               x1="237.0"
+               x2="372.0"
+               stroke="#e2e8f0"
+               y1="900.3671875"/>
+         <text x="237.0"
+               fill="#64748b"
+               y="920.765625"
+               font-size="14"
+               font-family="Arial">(anonymous)</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="384.0"
+           y="890.3671875"
+           xlink:href="#plus-icon"/>
+   </a>
+   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
+         fill="none"
+         d="M 197.0 432.19921875 V 900.3671875 H 227.0"/>
+   <text x="200.5"
+         fill="#64748b"
+         y="895.3671875"
+         font-size="12"
+         font-family="Arial">0..*</text>
+</svg>
+</div>
+                        <!-- Case 2: If the type is 'PNG', create a normal image tag -->
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Documentation -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Documentation</h2>
+                <div class="bg-slate-100/75 p-4 rounded-md space-y-2">
+                    <div>
+                        
+                        <p class="text-slate-600"><p>Identifiers of company</p>
+</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section for Javadoc-style annotations -->
+            
+
+            <!-- Section: Properties -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Type</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">IdentifiersType</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
+                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
+                        <dd class="mt-1 text-slate-900 font-mono">1</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Namespace</dt>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Level</dt>
+                        <dd class="mt-1 text-slate-900">7</dd>
+                    </div>
+                    <div class="flex flex-col md:col-span-2">
+                        <dt class="text-sm font-medium text-slate-500">Sample Data</dt>
+                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm"></dd>
+                    </div>
+                    
+                </dl>
+            </section>
+
+            <!-- Section: Child Elements & Attributes -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name (XPath)</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="ISIN_fd4a0e92d39298ddf46109010e6efa02.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/ISIN"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../ISIN</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                <a href="../simpleTypes/ISINType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">ISINType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>International Securities Identification Number (12 chars)</p>
+<p>International Securities Identification Number (according to ISO 6166)</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">AJ0558K64F76</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="Bloomberg_be637e7ec846e11d31cb4db9f095154f.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/Bloomberg"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../Bloomberg</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Bloomberg identifiers</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="CUSIP_8a9f7e36c738ae6ed0194edc4f45d17f.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/CUSIP"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../CUSIP</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Committee on Uniform Security Identification Procedures (9 chars)</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">aaaaaaaaa</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="GermanWKN_129c1478bbeca41ad8891986f6121dc3.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/GermanWKN"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../GermanWKN</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>German Wertpapier-Kenn-Nummer (6 chars)</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">aaaaaa</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="LEI_d545aa64a348121ef84346425bd131c9.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/LEI"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../LEI</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Legal Entity Identification for Financial Contracts (20 chars)</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="MexID_be46c645d254cee1f38972ec1ba771e6.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/MexID"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../MexID</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Market Exchange Identifier</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="ReutersRIC_2915f59ea0c9220bf57a1c0d8fd1be38.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/ReutersRIC"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../ReutersRIC</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Reuters Instrument Code</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="SEDOL_e49ecbea286634b60be2232225316393.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/SEDOL"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../SEDOL</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Stock Exchange Daily Official List (7 chars)</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">HBVSTG6</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="SwissValorenCode_2eb127e5f3f7c2d749255162267faae0.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/SwissValorenCode"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../SwissValorenCode</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                
+                                <span>xs:int</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Local swiss security number</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">3694</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="SwiftBIC_b30093548b99ea83c100dbb14175e6ec.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/SwiftBIC"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../SwiftBIC</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                <a href="../simpleTypes/BicCodeType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">BicCodeType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Business Identifier Code from SWIFT (3-12 chars)</p>
+<p>BIC Code (SWIFT)</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">aaaaaa</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="OtherID_6b536eb4e2568b6760ec0679f502f693.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Index/IndexProvider/ParentCompany/Identifiers/OtherID"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
+                                    <span>/AssetMasterData/.../OtherID</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>All other identifiers (with listed or free type)</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section: Additional Information (for generic appinfo tags) -->
+            
+
+            <!-- Section: XML Snippet -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
+                <div class="rounded-lg overflow-hidden border border-slate-200">
+                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+            xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
+            xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            name=&quot;Identifiers&quot;
+            type=&quot;IdentifiersType&quot;&gt;
+   &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Identifiers of company&lt;/xs:documentation&gt;
+   &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+</code></pre>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<!-- Load scripts at the end -->
+<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
+
+<!-- JavaScript for the copy functionality -->
+<script>
+    function copyToClipboard(buttonElement) {
+        const textToCopy = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('#tooltip-text');
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy text: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
