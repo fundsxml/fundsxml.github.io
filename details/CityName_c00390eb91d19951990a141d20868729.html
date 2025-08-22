@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">CityName</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/Address/CityName</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/Address/CityName">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/Address/CityName">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,59 +129,65 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="259.0"
-     height="43.197265625">
+     style="background-color: #ffffff"
+     width="377.0"
+     height="124.1279296875">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="-9"
-            fill="#f1f5f9"
+      <rect x="32"
+            y="-20"
+            fill="#f8fafc"
             width="89.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="CityName"/>
-      <text x="30"
-            fill="#0f172a"
-            y="19.3984375"
-            font-size="16"
-            font-family="Arial">CityName</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/Address/CityName"/>
+      <text x="44"
+            fill="#1e293b"
+            y="8.939453125"
             font-size="14"
-            y="44.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">Text (max. </tspan>
-         <tspan x="25" dy="1.2em">256 </tspan>
-         <tspan x="25" dy="1.2em">characters) </tspan>
+            font-family="Inter Regular">CityName</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="38.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">Text (max. </tspan>
+         <tspan x="27" dy="1.3em">256 </tspan>
+         <tspan x="27" dy="1.3em">characters) </tspan>
       </text>
    </g>
 </svg>
@@ -208,12 +223,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">0..1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -242,7 +256,6 @@
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
             name=&quot;CityName&quot;
@@ -261,9 +274,9 @@
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -275,6 +288,29 @@
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

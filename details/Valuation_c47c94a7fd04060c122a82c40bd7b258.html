@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">Valuation</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,679 +129,710 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="461.0"
-     height="1376.75">
+     style="background-color: #ffffff"
+     width="546.0"
+     height="1630.0625">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="605"
-            fill="#f1f5f9"
-            width="85.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="778"
+            fill="#f8fafc"
+            width="84.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="Valuation"/>
-      <text x="30"
-            fill="#0f172a"
-            y="633.3984375"
-            font-size="16"
-            font-family="Arial">Valuation</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation"/>
+      <text x="44"
+            fill="#1e293b"
+            y="806.939453125"
             font-size="14"
-            y="658.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">Valuation </tspan>
-         <tspan x="25" dy="1.2em">characteristics </tspan>
-         <tspan x="25" dy="1.2em">and 
+            font-family="Inter Regular">Valuation</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="836.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">Valuation </tspan>
+         <tspan x="27" dy="1.3em">characteristics </tspan>
+         <tspan x="27" dy="1.3em">and
 Position </tspan>
-         <tspan x="25" dy="1.2em">market </tspan>
-         <tspan x="25" dy="1.2em">value(s). </tspan>
+         <tspan x="27" dy="1.3em">market </tspan>
+         <tspan x="27" dy="1.3em">value(s). </tspan>
       </text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 105.0 624.19921875 H 135.0"/>
-   <g id="seq-group_Valuation">
-      <rect x="135.0"
-            y="614.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="624.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="140.0"
-            x2="170.0"
-            y1="624.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="147.0" cy="624.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="155.0" cy="624.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="163.0" cy="624.19921875"/>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 175.0 624.19921875 h 20.0"/>
-   <rect x="225.0"
-         y="20.0"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Quantity"/>
-   <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="48.3984375"
-            font-size="16"
-            font-family="Arial">Quantity</text>
-      <line y2="52.3984375"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="52.3984375"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="72.796875"
-            font-size="14"
-            font-family="Arial">xs:decimal</text>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 195.0 624.19921875 V 52.3984375 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 116.0 798.4697265625 H 151.0"/>
+   <text x="163.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="225.0"
-         y="104.796875"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="TotalNominalValueQC"/>
-   <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="133.1953125"
-            font-size="16"
-            font-family="Arial">TotalNominalValueQC</text>
-      <line y2="137.1953125"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="137.1953125"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="157.59375"
-            font-size="14"
-            font-family="Arial">xs:decimal</text>
+         y="771.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856760963">
+      <rect x="151.0"
+            y="783.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="798.4697265625"
+            stroke-width="1.5"
+            x1="159.0"
+            x2="193.0"
+            stroke="#64748b"
+            y1="798.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="166.0" cy="798.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="176.0" cy="798.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="186.0" cy="798.4697265625"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 195.0 624.19921875 V 137.1953125 H 225.0"/>
-   <text x="197.0"
-         fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="225.0"
-         y="189.59375"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 201.0 798.4697265625 h 25.0"/>
+   <rect x="276.0"
+         y="32.0"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ContractSize"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/Quantity"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="217.9921875"
-            font-size="16"
-            font-family="Arial">ContractSize</text>
-      <line y2="221.9921875"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="221.9921875"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="242.390625"
+      <text x="288.0"
+            fill="#1e293b"
+            y="60.939453125"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">Quantity</text>
+      <line y2="66.939453125"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="66.939453125"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="87.87890625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 195.0 624.19921875 V 221.9921875 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 64.939453125 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="225.0"
-         y="274.390625"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="276.0"
+         y="129.87890625"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="QuotationCurrency"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/TotalNominalValueQC"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="302.7890625"
-            font-size="16"
-            font-family="Arial">QuotationCurrency</text>
-      <line y2="306.7890625"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="306.7890625"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="327.1875"
+      <text x="288.0"
+            fill="#1e293b"
+            y="158.818359375"
             font-size="14"
-            font-family="Arial">ISOCurrencyCodeType</text>
+            font-family="Inter Regular">TotalNominalValueQC</text>
+      <line y2="164.818359375"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="164.818359375"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="185.7578125"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 195.0 624.19921875 V 306.7890625 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 162.818359375 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="225.0"
-         y="359.1875"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="276.0"
+         y="227.7578125"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="MarketValueQC"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/ContractSize"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="387.5859375"
-            font-size="16"
-            font-family="Arial">MarketValueQC</text>
-      <line y2="391.5859375"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="391.5859375"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="411.984375"
+      <text x="288.0"
+            fill="#1e293b"
+            y="256.697265625"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">ContractSize</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="262.697265625"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 195.0 624.19921875 V 391.5859375 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 260.697265625 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="225.0"
-         y="443.984375"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="276.0"
+         y="325.63671875"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="CleanValueQC"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/QuotationCurrency"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="472.3828125"
-            font-size="16"
-            font-family="Arial">CleanValueQC</text>
-      <line y2="476.3828125"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="476.3828125"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="496.78125"
+      <text x="288.0"
+            fill="#1e293b"
+            y="354.576171875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">QuotationCurrency</text>
+      <line y2="360.576171875"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="360.576171875"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="381.515625"
+            font-size="13"
+            font-family="Inter Regular">ISOCurrencyCodeType</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 195.0 624.19921875 V 476.3828125 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 358.576171875 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="225.0"
-         y="528.78125"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="276.0"
+         y="423.515625"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="AccruedIncomeQC"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketValueQC"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="557.1796875"
-            font-size="16"
-            font-family="Arial">AccruedIncomeQC</text>
-      <line y2="561.1796875"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="561.1796875"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="581.578125"
+      <text x="288.0"
+            fill="#1e293b"
+            y="452.455078125"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">MarketValueQC</text>
+      <line y2="458.455078125"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="458.455078125"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="479.39453125"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 195.0 624.19921875 V 561.1796875 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 456.455078125 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="556.1796875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="225.0"
-         y="613.578125"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="276.0"
+         y="521.39453125"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="MarketValuePC"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/CleanValueQC"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="641.9765625"
-            font-size="16"
-            font-family="Arial">MarketValuePC</text>
-      <line y2="645.9765625"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="645.9765625"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="666.375"
+      <text x="288.0"
+            fill="#1e293b"
+            y="550.333984375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">CleanValueQC</text>
+      <line y2="556.333984375"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="556.333984375"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="577.2734375"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 195.0 624.19921875 V 645.9765625 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 554.333984375 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="640.9765625"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="225.0"
-         y="698.375"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="276.0"
+         y="619.2734375"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="CleanValuePC"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/AccruedIncomeQC"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="726.7734375"
-            font-size="16"
-            font-family="Arial">CleanValuePC</text>
-      <line y2="730.7734375"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="730.7734375"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="751.171875"
+      <text x="288.0"
+            fill="#1e293b"
+            y="648.212890625"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">AccruedIncomeQC</text>
+      <line y2="654.212890625"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="654.212890625"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="675.15234375"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 195.0 624.19921875 V 730.7734375 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 652.212890625 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="725.7734375"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="225.0"
-         y="783.171875"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="640.212890625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="276.0"
+         y="717.15234375"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="AccruedIncomePC"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketValuePC"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="811.5703125"
-            font-size="16"
-            font-family="Arial">AccruedIncomePC</text>
-      <line y2="815.5703125"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="815.5703125"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="835.96875"
+      <text x="288.0"
+            fill="#1e293b"
+            y="746.091796875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">MarketValuePC</text>
+      <line y2="752.091796875"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="752.091796875"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="773.03125"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 195.0 624.19921875 V 815.5703125 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 750.091796875 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="810.5703125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="225.0"
-         y="867.96875"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="738.091796875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="276.0"
+         y="815.03125"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="PositionWeight"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/CleanValuePC"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="896.3671875"
-            font-size="16"
-            font-family="Arial">PositionWeight</text>
-      <line y2="900.3671875"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="900.3671875"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="920.765625"
+      <text x="288.0"
+            fill="#1e293b"
+            y="843.970703125"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">CleanValuePC</text>
+      <line y2="849.970703125"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="849.970703125"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="870.91015625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 195.0 624.19921875 V 900.3671875 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 847.970703125 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="895.3671875"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="225.0"
-         y="952.765625"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="835.970703125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="276.0"
+         y="912.91015625"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="MarketExposureQC"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/AccruedIncomePC"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="981.1640625"
-            font-size="16"
-            font-family="Arial">MarketExposureQC</text>
-      <line y2="985.1640625"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="985.1640625"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="1005.5625"
+      <text x="288.0"
+            fill="#1e293b"
+            y="941.849609375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">AccruedIncomePC</text>
+      <line y2="947.849609375"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="947.849609375"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="968.7890625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 195.0 624.19921875 V 985.1640625 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 945.849609375 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="980.1640625"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="225.0"
-         y="1037.5625"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="933.849609375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="276.0"
+         y="1010.7890625"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="MarketExposurePC"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/PositionWeight"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="1065.9609375"
-            font-size="16"
-            font-family="Arial">MarketExposurePC</text>
-      <line y2="1069.9609375"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="1069.9609375"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="1090.359375"
+      <text x="288.0"
+            fill="#1e293b"
+            y="1039.728515625"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">PositionWeight</text>
+      <line y2="1045.728515625"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="1045.728515625"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="1066.66796875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 195.0 624.19921875 V 1069.9609375 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 1043.728515625 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="1064.9609375"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="225.0"
-         y="1122.359375"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1031.728515625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="276.0"
+         y="1108.66796875"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="MarketExposureUC"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketExposureQC"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="1150.7578125"
-            font-size="16"
-            font-family="Arial">MarketExposureUC</text>
-      <line y2="1154.7578125"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="1154.7578125"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="1175.15625"
+      <text x="288.0"
+            fill="#1e293b"
+            y="1137.607421875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">MarketExposureQC</text>
+      <line y2="1143.607421875"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="1143.607421875"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="1164.546875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 195.0 624.19921875 V 1154.7578125 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 1141.607421875 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="1149.7578125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="225.0"
-         y="1207.15625"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="1129.607421875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="276.0"
+         y="1206.546875"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="MarketExposureWeight"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketExposurePC"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="1235.5546875"
-            font-size="16"
-            font-family="Arial">MarketExposureWeight</text>
-      <line y2="1239.5546875"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="1239.5546875"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="1259.953125"
+      <text x="288.0"
+            fill="#1e293b"
+            y="1235.486328125"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">MarketExposurePC</text>
+      <line y2="1241.486328125"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="1241.486328125"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="1262.42578125"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 195.0 624.19921875 V 1239.5546875 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 1239.486328125 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="1234.5546875"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="225.0"
-         y="1291.953125"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1227.486328125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="276.0"
+         y="1304.42578125"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="MarketExposureUCWeight"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketExposureUC"/>
    <g>
-      <text x="235.0"
-            fill="#0f172a"
-            y="1320.3515625"
-            font-size="16"
-            font-family="Arial">MarketExposureUCWeight</text>
-      <line y2="1324.3515625"
-            stroke-width="1"
-            x1="235.0"
-            x2="421.0"
-            stroke="#e2e8f0"
-            y1="1324.3515625"/>
-      <text x="235.0"
-            fill="#64748b"
-            y="1344.75"
+      <text x="288.0"
+            fill="#1e293b"
+            y="1333.365234375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">MarketExposureUC</text>
+      <line y2="1339.365234375"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="1339.365234375"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="1360.3046875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 195.0 624.19921875 V 1324.3515625 H 225.0"/>
-   <text x="197.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 1337.365234375 H 276.0"/>
+   <text x="238.0"
          fill="#64748b"
-         y="1319.3515625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1325.365234375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="276.0"
+         y="1402.3046875"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketExposureWeight"/>
+   <g>
+      <text x="288.0"
+            fill="#1e293b"
+            y="1431.244140625"
+            font-size="14"
+            font-family="Inter Regular">MarketExposureWeight</text>
+      <line y2="1437.244140625"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="1437.244140625"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="1458.18359375"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
+   </g>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 1435.244140625 H 276.0"/>
+   <text x="238.0"
+         fill="#64748b"
+         y="1423.244140625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="276.0"
+         y="1500.18359375"
+         fill="#f8fafc"
+         width="222.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketExposureUCWeight"/>
+   <g>
+      <text x="288.0"
+            fill="#1e293b"
+            y="1529.123046875"
+            font-size="14"
+            font-family="Inter Regular">MarketExposureUCWeight</text>
+      <line y2="1535.123046875"
+            stroke-width="1"
+            x1="288.0"
+            x2="486.0"
+            stroke="#e2e8f0"
+            y1="1535.123046875"/>
+      <text x="288.0"
+            fill="#64748b"
+            y="1556.0625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
+   </g>
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 226.0 798.4697265625 V 1533.123046875 H 276.0"/>
+   <text x="238.0"
+         fill="#64748b"
+         y="1521.123046875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -827,12 +867,11 @@ Position market value(s).</p>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -860,39 +899,34 @@ Position market value(s).</p>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Quantity_f3f3a44b3d5f12fdd1181dee6e5c37d0.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/Quantity"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Quantity</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A18 - Quantity of Instrument in Position.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">123.75</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">130.62</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="TotalNominalValueQC_304edc6cb778036b8dc1e93cfa87b5c0.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/TotalNominalValueQC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../TotalNominalValueQC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -900,20 +934,18 @@ Position market value(s).</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A19 - In QuotationCurrency.<br />
 = Quantity * Nominal Unit Amount</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">256.45</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">301.41</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ContractSize_5f9ad1678c693cb5631bcd69cfc58fad.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/ContractSize"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../ContractSize</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -921,20 +953,18 @@ Position market value(s).</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A20 - Only for futures and options.<br />
 The way the contract size is defined varies according with the type of instrument. See EIOPA definition (QRT 0801)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">545.63</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">622.61</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="QuotationCurrency_9689b7ae91c518c4d1faed152720d882.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/QuotationCurrency"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../QuotationCurrency</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/ISOCurrencyCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
                                 
@@ -944,20 +974,18 @@ The way the contract size is defined varies according with the type of instrumen
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">DCE</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">VZM</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="MarketValueQC_e3761ef63dfaab5e04a5544ba0305798.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketValueQC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../MarketValueQC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -966,20 +994,18 @@ The way the contract size is defined varies according with the type of instrumen
 including accrued coupon.<br />
 (Dirty value)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">597.10</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">606.18</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="CleanValueQC_aff1e8092972a958c20bcc09931268b1.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/CleanValueQC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../CleanValueQC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -987,20 +1013,18 @@ including accrued coupon.<br />
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A23 - Market value in QuotationCurrency<br />
 not including accrued income.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">995.64</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">391.53</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="AccruedIncomeQC_580c51d224bef849bbe46750620e46b4.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/AccruedIncomeQC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../AccruedIncomeQC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1008,41 +1032,38 @@ not including accrued income.</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A125 - Accrued interest in QuotationCurrency.<br />
 Generally equals to: MarketValueQC - CleanValueQC</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">849.48</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">585.54</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="MarketValuePC_bc4aa9ba599ad5b98b55726b84117c84.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketValuePC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../MarketValuePC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A24 - Amount in PortfolioCurrency (B) including accrued coupon.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A24 - Amount in PortfolioCurrency (B) including accrued<br />
+coupon.<br />
 (Dirty value)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">84.60</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">746.05</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="CleanValuePC_b20d6c524031798db887dd8eed6ea3cf.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/CleanValuePC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../CleanValuePC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1050,20 +1071,18 @@ Generally equals to: MarketValueQC - CleanValueQC</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A25 - Market value in PortfolioCurrency<br />
 not including accrued interest</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">928.77</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">278.40</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="AccruedIncomePC_083c03729ba364e5b972615bbc0ad4e6.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/AccruedIncomePC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../AccruedIncomePC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1071,20 +1090,18 @@ not including accrued interest</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A126 - Accrued interest in PortfolioCurrency.<br />
 Generally equals to: MarketValuePC - CleanValuePC</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">422.41</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">278.72</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="PositionWeight_3aa18d9f4b260da3d27f2bb451bcc4fb.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/PositionWeight"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../PositionWeight</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1093,20 +1110,18 @@ Generally equals to: MarketValuePC - CleanValuePC</p>
 of TotalNetAssets (including liquidity)<br />
 50%=0.5</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">824.36</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">915.24</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="MarketExposureQC_8e546e97cab0ceb274dbea28fc048eb3.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketExposureQC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../MarketExposureQC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1115,20 +1130,18 @@ of TotalNetAssets (including liquidity)<br />
 Different from MarketValueQC for derivatives:<br />
 valuation of the equivalent position on the underlying asset.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">335.17</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">928.10</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="MarketExposurePC_cd6e82e7845644ea16bfdb571c72f895.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketExposurePC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../MarketExposurePC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1137,20 +1150,18 @@ valuation of the equivalent position on the underlying asset.</p>
 Different from MarketValuePC for derivatives:<br />
 valuation of the equivalent position on the underlying asset.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">760.87</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">669.75</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="MarketExposureUC_581e15f1c33c69123ce246faee03974b.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketExposureUC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../MarketExposureUC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1158,20 +1169,18 @@ valuation of the equivalent position on the underlying asset.</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A29 - %Market exposure in QuotationCurrency (C)<br />
 of underlying asset</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">509.38</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">83.45</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="MarketExposureWeight_131c0c23f1bf4fffa53bbd4d16355069.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketExposureWeight"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../MarketExposureWeight</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1180,28 +1189,27 @@ of underlying asset</p>
 as percentage of TotalNetAssets.<br />
 1.2% = 0.012</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">137.42</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">289.00</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="MarketExposureUCWeight_e4eb91549cac76cf8027846268ff1e01.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Valuation/MarketExposureUCWeight"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../MarketExposureUCWeight</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A31 - MarketExposureUC converted in PC, in percentage in percentage of TotalNetAssets.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A31 - MarketExposureUC converted in PC, in percentage in<br />
+percentage of TotalNetAssets.<br />
 2.7% = 0.027</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">579.56</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">628.39</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1217,11 +1225,10 @@ as percentage of TotalNetAssets.<br />
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             name=&quot;Valuation&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Valuation characteristics and 
+      &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Valuation characteristics and
 Position market value(s).&lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
@@ -1246,12 +1253,13 @@ The way the contract size is defined varies according with the type of instrumen
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;QuotationCurrency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A21 - Instrument quotation currency (A)&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A21 - Instrument quotation currency (A)
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MarketValueQC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A22 - Amount in QuotationCurrency (A) 
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A22 - Amount in QuotationCurrency (A)
 including accrued coupon.
 (Dirty value)&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
@@ -1270,7 +1278,8 @@ Generally equals to: MarketValueQC - CleanValueQC&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MarketValuePC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A24 - Amount in PortfolioCurrency (B) including accrued coupon.
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A24 - Amount in PortfolioCurrency (B) including accrued
+                                    coupon.
 (Dirty value)&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
@@ -1309,20 +1318,21 @@ valuation of the equivalent position on the underlying asset.&lt;/xs:documentati
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MarketExposureUC&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;A29 - %Market exposure in QuotationCurrency (C) 
+               &lt;xs:documentation&gt;A29 - %Market exposure in QuotationCurrency (C)
 of underlying asset&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;MarketExposureWeight&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A30 - MarketExposurePC 
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A30 - MarketExposurePC
 as percentage of TotalNetAssets.
 1.2% = 0.012&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MarketExposureUCWeight&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A31 - MarketExposureUC converted in PC, in percentage in percentage of TotalNetAssets.
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A31 - MarketExposureUC converted in PC, in percentage in
+                                    percentage of TotalNetAssets.
 2.7% = 0.027&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
@@ -1343,9 +1353,9 @@ as percentage of TotalNetAssets.
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -1357,6 +1367,29 @@ as percentage of TotalNetAssets.
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

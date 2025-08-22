@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">Document</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/Documents/Document</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Documents/Document">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Documents/Document">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,936 +129,973 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="429.0"
-     height="1885.53125">
+     style="background-color: #ffffff"
+     width="517.0"
+     height="2217.3359375">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="835"
-            fill="#f1f5f9"
+      <rect x="32"
+            y="1072"
+            fill="#f8fafc"
             width="91.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="Document"/>
-      <text x="30"
-            fill="#0f172a"
-            y="863.3984375"
-            font-size="16"
-            font-family="Arial">Document</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/Documents/Document"/>
+      <text x="44"
+            fill="#1e293b"
+            y="1100.939453125"
             font-size="14"
-            y="888.3984375"
-            font-family="Arial"/>
+            font-family="Inter Regular">Document</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="1130.939453125"
+            font-family="Inter Regular"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 111.0 854.19921875 H 141.0"/>
-   <g id="seq-group_Document">
-      <rect x="141.0"
-            y="844.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="854.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="146.0"
-            x2="176.0"
-            y1="854.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="153.0" cy="854.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="161.0" cy="854.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="169.0" cy="854.19921875"/>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 123.0 1092.4697265625 H 158.0"/>
+   <text x="170.0"
+         fill="#64748b"
+         y="1065.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856773667">
+      <rect x="158.0"
+            y="1077.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="1092.4697265625"
+            stroke-width="1.5"
+            x1="166.0"
+            x2="200.0"
+            stroke="#64748b"
+            y1="1092.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="173.0" cy="1092.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="183.0" cy="1092.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="193.0" cy="1092.4697265625"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 181.0 854.19921875 h 20.0"/>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 208.0 1092.4697265625 h 25.0"/>
    <a href="Type_eaca3c7b7adc1e2d8f733dfe2216592e.html">
-      <rect x="231.0"
-            y="20.0"
-            fill="#f1f5f9"
-            width="168.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="283.0"
+            y="32.0"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Type"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Documents/Document/Type"/>
       <g>
-         <text x="241.0"
-               fill="#0f172a"
-               y="48.3984375"
-               font-size="16"
-               font-family="Arial">Type</text>
-         <line y2="52.3984375"
-               stroke-width="1"
-               x1="241.0"
-               x2="389.0"
-               stroke="#e2e8f0"
-               y1="52.3984375"/>
-         <text x="241.0"
-               fill="#64748b"
-               y="72.796875"
+         <text x="295.0"
+               fill="#1e293b"
+               y="60.939453125"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Type</text>
+         <line y2="66.939453125"
+               stroke-width="1"
+               x1="295.0"
+               x2="457.0"
+               stroke="#e2e8f0"
+               y1="66.939453125"/>
+         <text x="295.0"
+               fill="#64748b"
+               y="87.87890625"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="401.0"
-           y="42.3984375"
-           xlink:href="#plus-icon"/>
+           x="473.0"
+           y="52.939453125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 201.0 854.19921875 V 52.3984375 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 64.939453125 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="231.0"
-         y="104.796875"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="283.0"
+         y="129.87890625"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Version"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/Version"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="133.1953125"
-            font-size="16"
-            font-family="Arial">Version</text>
-      <line y2="137.1953125"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="137.1953125"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="157.59375"
+      <text x="295.0"
+            fill="#1e293b"
+            y="158.818359375"
             font-size="14"
-            font-family="Arial">Text64Type</text>
+            font-family="Inter Regular">Version</text>
+      <line y2="164.818359375"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="164.818359375"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="185.7578125"
+            font-size="13"
+            font-family="Inter Regular">Text64Type</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 137.1953125 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 162.818359375 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="189.59375"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="227.7578125"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Language"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/Language"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="217.9921875"
-            font-size="16"
-            font-family="Arial">Language</text>
-      <line y2="221.9921875"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="221.9921875"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="242.390625"
+      <text x="295.0"
+            fill="#1e293b"
+            y="256.697265625"
             font-size="14"
-            font-family="Arial">xs:language</text>
+            font-family="Inter Regular">Language</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="262.697265625"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">xs:language</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 201.0 854.19921875 V 221.9921875 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 260.697265625 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="231.0"
-         y="274.390625"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="283.0"
+         y="325.63671875"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="TranslationsAvailable"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/TranslationsAvailable"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="302.7890625"
-            font-size="16"
-            font-family="Arial">TranslationsAvailable</text>
-      <line y2="306.7890625"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="306.7890625"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="327.1875"
+      <text x="295.0"
+            fill="#1e293b"
+            y="354.576171875"
             font-size="14"
-            font-family="Arial">xs:boolean</text>
+            font-family="Inter Regular">TranslationsAvailable</text>
+      <line y2="360.576171875"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="360.576171875"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="381.515625"
+            font-size="13"
+            font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 306.7890625 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 358.576171875 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="PublicationCountries_4d2a8f76459fb246d6bbdc44817cd933.html">
-      <rect x="231.0"
-            y="359.1875"
-            fill="#f1f5f9"
-            width="168.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="283.0"
+            y="423.515625"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="PublicationCountries"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Documents/Document/PublicationCountries"/>
       <g>
-         <text x="241.0"
-               fill="#0f172a"
-               y="387.5859375"
-               font-size="16"
-               font-family="Arial">PublicationCountries</text>
-         <line y2="391.5859375"
-               stroke-width="1"
-               x1="241.0"
-               x2="389.0"
-               stroke="#e2e8f0"
-               y1="391.5859375"/>
-         <text x="241.0"
-               fill="#64748b"
-               y="411.984375"
+         <text x="295.0"
+               fill="#1e293b"
+               y="452.455078125"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">PublicationCountries</text>
+         <line y2="458.455078125"
+               stroke-width="1"
+               x1="295.0"
+               x2="457.0"
+               stroke="#e2e8f0"
+               y1="458.455078125"/>
+         <text x="295.0"
+               fill="#64748b"
+               y="479.39453125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="401.0"
-           y="381.5859375"
-           xlink:href="#plus-icon"/>
+           x="473.0"
+           y="444.455078125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 391.5859375 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 456.455078125 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Fund_b8f81ad055a65e6cdaf00904cef4e315.html">
-      <rect x="231.0"
-            y="443.984375"
-            fill="#f1f5f9"
-            width="168.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="283.0"
+            y="521.39453125"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Fund"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Documents/Document/Fund"/>
       <g>
-         <text x="241.0"
-               fill="#0f172a"
-               y="472.3828125"
-               font-size="16"
-               font-family="Arial">Fund</text>
-         <line y2="476.3828125"
-               stroke-width="1"
-               x1="241.0"
-               x2="389.0"
-               stroke="#e2e8f0"
-               y1="476.3828125"/>
-         <text x="241.0"
-               fill="#64748b"
-               y="496.78125"
+         <text x="295.0"
+               fill="#1e293b"
+               y="550.333984375"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Fund</text>
+         <line y2="556.333984375"
+               stroke-width="1"
+               x1="295.0"
+               x2="457.0"
+               stroke="#e2e8f0"
+               y1="556.333984375"/>
+         <text x="295.0"
+               fill="#64748b"
+               y="577.2734375"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="401.0"
-           y="466.3828125"
-           xlink:href="#plus-icon"/>
+           x="473.0"
+           y="542.333984375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 476.3828125 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 554.333984375 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Subfunds_7739c9016649cb0f7876319897c6ac09.html">
-      <rect x="231.0"
-            y="528.78125"
-            fill="#f1f5f9"
-            width="168.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="283.0"
+            y="619.2734375"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Subfunds"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Documents/Document/Subfunds"/>
       <g>
-         <text x="241.0"
-               fill="#0f172a"
-               y="557.1796875"
-               font-size="16"
-               font-family="Arial">Subfunds</text>
-         <line y2="561.1796875"
-               stroke-width="1"
-               x1="241.0"
-               x2="389.0"
-               stroke="#e2e8f0"
-               y1="561.1796875"/>
-         <text x="241.0"
-               fill="#64748b"
-               y="581.578125"
+         <text x="295.0"
+               fill="#1e293b"
+               y="648.212890625"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Subfunds</text>
+         <line y2="654.212890625"
+               stroke-width="1"
+               x1="295.0"
+               x2="457.0"
+               stroke="#e2e8f0"
+               y1="654.212890625"/>
+         <text x="295.0"
+               fill="#64748b"
+               y="675.15234375"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="401.0"
-           y="551.1796875"
-           xlink:href="#plus-icon"/>
+           x="473.0"
+           y="640.212890625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 561.1796875 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 652.212890625 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="556.1796875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="640.212890625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="ShareClasses_86a1576f3c91769f5d4b3ce3aae68fd6.html">
-      <rect x="231.0"
-            y="613.578125"
-            fill="#f1f5f9"
-            width="168.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="283.0"
+            y="717.15234375"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="ShareClasses"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Documents/Document/ShareClasses"/>
       <g>
-         <text x="241.0"
-               fill="#0f172a"
-               y="641.9765625"
-               font-size="16"
-               font-family="Arial">ShareClasses</text>
-         <line y2="645.9765625"
-               stroke-width="1"
-               x1="241.0"
-               x2="389.0"
-               stroke="#e2e8f0"
-               y1="645.9765625"/>
-         <text x="241.0"
-               fill="#64748b"
-               y="666.375"
+         <text x="295.0"
+               fill="#1e293b"
+               y="746.091796875"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">ShareClasses</text>
+         <line y2="752.091796875"
+               stroke-width="1"
+               x1="295.0"
+               x2="457.0"
+               stroke="#e2e8f0"
+               y1="752.091796875"/>
+         <text x="295.0"
+               fill="#64748b"
+               y="773.03125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="401.0"
-           y="635.9765625"
-           xlink:href="#plus-icon"/>
+           x="473.0"
+           y="738.091796875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 645.9765625 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 750.091796875 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="640.9765625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="698.375"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="738.091796875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="815.03125"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Name"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/Name"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="726.7734375"
-            font-size="16"
-            font-family="Arial">Name</text>
-      <line y2="730.7734375"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="730.7734375"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="751.171875"
+      <text x="295.0"
+            fill="#1e293b"
+            y="843.970703125"
             font-size="14"
-            font-family="Arial">Text256Type</text>
+            font-family="Inter Regular">Name</text>
+      <line y2="849.970703125"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="849.970703125"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="870.91015625"
+            font-size="13"
+            font-family="Inter Regular">Text256Type</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 730.7734375 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 847.970703125 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="725.7734375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="783.171875"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="835.970703125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="912.91015625"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="FileName"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/FileName"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="811.5703125"
-            font-size="16"
-            font-family="Arial">FileName</text>
-      <line y2="815.5703125"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="815.5703125"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="835.96875"
+      <text x="295.0"
+            fill="#1e293b"
+            y="941.849609375"
             font-size="14"
-            font-family="Arial">Text256Type</text>
+            font-family="Inter Regular">FileName</text>
+      <line y2="947.849609375"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="947.849609375"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="968.7890625"
+            font-size="13"
+            font-family="Inter Regular">Text256Type</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 815.5703125 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 945.849609375 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="810.5703125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="867.96875"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="933.849609375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="1010.7890625"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ForPublicUsage"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/ForPublicUsage"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="896.3671875"
-            font-size="16"
-            font-family="Arial">ForPublicUsage</text>
-      <line y2="900.3671875"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="900.3671875"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="920.765625"
+      <text x="295.0"
+            fill="#1e293b"
+            y="1039.728515625"
             font-size="14"
-            font-family="Arial">xs:boolean</text>
+            font-family="Inter Regular">ForPublicUsage</text>
+      <line y2="1045.728515625"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1045.728515625"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="1066.66796875"
+            font-size="13"
+            font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 900.3671875 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 1043.728515625 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="895.3671875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="952.765625"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1031.728515625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="1108.66796875"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Restrictions"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/Restrictions"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="981.1640625"
-            font-size="16"
-            font-family="Arial">Restrictions</text>
-      <line y2="985.1640625"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="985.1640625"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="1005.5625"
+      <text x="295.0"
+            fill="#1e293b"
+            y="1137.607421875"
             font-size="14"
-            font-family="Arial">xs:string</text>
+            font-family="Inter Regular">Restrictions</text>
+      <line y2="1143.607421875"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1143.607421875"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="1164.546875"
+            font-size="13"
+            font-family="Inter Regular">xs:string</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 985.1640625 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 1141.607421875 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="980.1640625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="1037.5625"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="1129.607421875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="1206.546875"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Format"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/Format"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="1065.9609375"
-            font-size="16"
-            font-family="Arial">Format</text>
-      <line y2="1069.9609375"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1069.9609375"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="1090.359375"
+      <text x="295.0"
+            fill="#1e293b"
+            y="1235.486328125"
             font-size="14"
-            font-family="Arial">Text256Type</text>
+            font-family="Inter Regular">Format</text>
+      <line y2="1241.486328125"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1241.486328125"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="1262.42578125"
+            font-size="13"
+            font-family="Inter Regular">Text256Type</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 201.0 854.19921875 V 1069.9609375 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 1239.486328125 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="1064.9609375"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="231.0"
-         y="1122.359375"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1227.486328125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="283.0"
+         y="1304.42578125"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Signature"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/Signature"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="1150.7578125"
-            font-size="16"
-            font-family="Arial">Signature</text>
-      <line y2="1154.7578125"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1154.7578125"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="1175.15625"
+      <text x="295.0"
+            fill="#1e293b"
+            y="1333.365234375"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">Signature</text>
+      <line y2="1339.365234375"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1339.365234375"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="1360.3046875"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 1154.7578125 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 1337.365234375 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="1149.7578125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="1207.15625"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1325.365234375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="1402.3046875"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="CreationDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/CreationDate"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="1235.5546875"
-            font-size="16"
-            font-family="Arial">CreationDate</text>
-      <line y2="1239.5546875"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1239.5546875"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="1259.953125"
+      <text x="295.0"
+            fill="#1e293b"
+            y="1431.244140625"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">CreationDate</text>
+      <line y2="1437.244140625"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1437.244140625"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="1458.18359375"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 1239.5546875 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 1435.244140625 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="1234.5546875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="1291.953125"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1423.244140625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="1500.18359375"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ModificationDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/ModificationDate"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="1320.3515625"
-            font-size="16"
-            font-family="Arial">ModificationDate</text>
-      <line y2="1324.3515625"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1324.3515625"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="1344.75"
+      <text x="295.0"
+            fill="#1e293b"
+            y="1529.123046875"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">ModificationDate</text>
+      <line y2="1535.123046875"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1535.123046875"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="1556.0625"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 1324.3515625 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 1533.123046875 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="1319.3515625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="1376.75"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1521.123046875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="1598.0625"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ExpirationDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/ExpirationDate"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="1405.1484375"
-            font-size="16"
-            font-family="Arial">ExpirationDate</text>
-      <line y2="1409.1484375"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1409.1484375"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="1429.546875"
+      <text x="295.0"
+            fill="#1e293b"
+            y="1627.001953125"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">ExpirationDate</text>
+      <line y2="1633.001953125"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1633.001953125"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="1653.94140625"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 1409.1484375 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 1631.001953125 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="1404.1484375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1619.001953125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="DataSupplier_c0db3e799e9f570848d633535c853b73.html">
-      <rect x="231.0"
-            y="1461.546875"
-            fill="#f1f5f9"
-            width="168.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="283.0"
+            y="1695.94140625"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="DataSupplier"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Documents/Document/DataSupplier"/>
       <g>
-         <text x="241.0"
-               fill="#0f172a"
-               y="1489.9453125"
-               font-size="16"
-               font-family="Arial">DataSupplier</text>
-         <line y2="1493.9453125"
-               stroke-width="1"
-               x1="241.0"
-               x2="389.0"
-               stroke="#e2e8f0"
-               y1="1493.9453125"/>
-         <text x="241.0"
-               fill="#64748b"
-               y="1514.34375"
+         <text x="295.0"
+               fill="#1e293b"
+               y="1724.880859375"
                font-size="14"
-               font-family="Arial">DataSupplierType</text>
+               font-family="Inter Regular">DataSupplier</text>
+         <line y2="1730.880859375"
+               stroke-width="1"
+               x1="295.0"
+               x2="457.0"
+               stroke="#e2e8f0"
+               y1="1730.880859375"/>
+         <text x="295.0"
+               fill="#64748b"
+               y="1751.8203125"
+               font-size="13"
+               font-family="Inter Regular">DataSupplierType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="401.0"
-           y="1483.9453125"
-           xlink:href="#plus-icon"/>
+           x="473.0"
+           y="1716.880859375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 1493.9453125 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 1728.880859375 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="1488.9453125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1716.880859375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Attributes_95907adc75edc0c094f3e72cc6a3f17f.html">
-      <rect x="231.0"
-            y="1546.34375"
-            fill="#f1f5f9"
-            width="168.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="283.0"
+            y="1793.8203125"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Attributes"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Documents/Document/Attributes"/>
       <g>
-         <text x="241.0"
-               fill="#0f172a"
-               y="1574.7421875"
-               font-size="16"
-               font-family="Arial">Attributes</text>
-         <line y2="1578.7421875"
-               stroke-width="1"
-               x1="241.0"
-               x2="389.0"
-               stroke="#e2e8f0"
-               y1="1578.7421875"/>
-         <text x="241.0"
-               fill="#64748b"
-               y="1599.140625"
+         <text x="295.0"
+               fill="#1e293b"
+               y="1822.759765625"
                font-size="14"
-               font-family="Arial">AttributesType</text>
+               font-family="Inter Regular">Attributes</text>
+         <line y2="1828.759765625"
+               stroke-width="1"
+               x1="295.0"
+               x2="457.0"
+               stroke="#e2e8f0"
+               y1="1828.759765625"/>
+         <text x="295.0"
+               fill="#64748b"
+               y="1849.69921875"
+               font-size="13"
+               font-family="Inter Regular">AttributesType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="401.0"
-           y="1568.7421875"
-           xlink:href="#plus-icon"/>
+           x="473.0"
+           y="1814.759765625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 1578.7421875 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 1826.759765625 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="1573.7421875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="1631.140625"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1814.759765625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="1891.69921875"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="SizeInBytes"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/SizeInBytes"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="1659.5390625"
-            font-size="16"
-            font-family="Arial">SizeInBytes</text>
-      <line y2="1663.5390625"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1663.5390625"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="1683.9375"
+      <text x="295.0"
+            fill="#1e293b"
+            y="1920.638671875"
             font-size="14"
-            font-family="Arial">xs:positiveInteger</text>
+            font-family="Inter Regular">SizeInBytes</text>
+      <line y2="1926.638671875"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1926.638671875"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="1947.578125"
+            font-size="13"
+            font-family="Inter Regular">xs:positiveInteger</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 1663.5390625 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 1924.638671875 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="1658.5390625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="1715.9375"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1912.638671875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="1989.578125"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="DocumentURL"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/DocumentURL"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="1744.3359375"
-            font-size="16"
-            font-family="Arial">DocumentURL</text>
-      <line y2="1748.3359375"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1748.3359375"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="1768.734375"
+      <text x="295.0"
+            fill="#1e293b"
+            y="2018.517578125"
             font-size="14"
-            font-family="Arial">xs:anyURI</text>
+            font-family="Inter Regular">DocumentURL</text>
+      <line y2="2024.517578125"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="2024.517578125"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="2045.45703125"
+            font-size="13"
+            font-family="Inter Regular">xs:anyURI</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 1748.3359375 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 2022.517578125 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="1743.3359375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="231.0"
-         y="1800.734375"
-         fill="#f1f5f9"
-         width="168.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2010.517578125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="283.0"
+         y="2087.45703125"
+         fill="#f8fafc"
+         width="186.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="BinaryData"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Documents/Document/BinaryData"/>
    <g>
-      <text x="241.0"
-            fill="#0f172a"
-            y="1829.1328125"
-            font-size="16"
-            font-family="Arial">BinaryData</text>
-      <line y2="1833.1328125"
-            stroke-width="1"
-            x1="241.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1833.1328125"/>
-      <text x="241.0"
-            fill="#64748b"
-            y="1853.53125"
+      <text x="295.0"
+            fill="#1e293b"
+            y="2116.396484375"
             font-size="14"
-            font-family="Arial">xs:base64Binary</text>
+            font-family="Inter Regular">BinaryData</text>
+      <line y2="2122.396484375"
+            stroke-width="1"
+            x1="295.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="2122.396484375"/>
+      <text x="295.0"
+            fill="#64748b"
+            y="2143.3359375"
+            font-size="13"
+            font-family="Inter Regular">xs:base64Binary</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 201.0 854.19921875 V 1833.1328125 H 231.0"/>
-   <text x="203.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 233.0 1092.4697265625 V 2120.396484375 H 283.0"/>
+   <text x="245.0"
          fill="#64748b"
-         y="1828.1328125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="2108.396484375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -1074,12 +1120,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">1..*</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -1107,19 +1152,16 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Type_eaca3c7b7adc1e2d8f733dfe2216592e.html"
                                    title="/FundsXML4/Documents/Document/Type"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../Type</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1134,13 +1176,11 @@
                                 <a href="Version_604d65996a669d841df7afd13dd8e339.html"
                                    title="/FundsXML4/Documents/Document/Version"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../Version</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text64Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text64Type</a>
                                 
@@ -1156,13 +1196,11 @@
                                 <a href="Language_28b2856c433f56059477dcf2e7ecca98.html"
                                    title="/FundsXML4/Documents/Document/Language"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../Language</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:language</span>
                             </td>
@@ -1176,33 +1214,29 @@
                                 <a href="TranslationsAvailable_169f44fc24a25b0eee691c92ceabb929.html"
                                    title="/FundsXML4/Documents/Document/TranslationsAvailable"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../TranslationsAvailable</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:boolean</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether document is available in other languages as well</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="PublicationCountries_4d2a8f76459fb246d6bbdc44817cd933.html"
                                    title="/FundsXML4/Documents/Document/PublicationCountries"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../PublicationCountries</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1217,13 +1251,11 @@
                                 <a href="Fund_b8f81ad055a65e6cdaf00904cef4e315.html"
                                    title="/FundsXML4/Documents/Document/Fund"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../Fund</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1238,13 +1270,11 @@
                                 <a href="Subfunds_7739c9016649cb0f7876319897c6ac09.html"
                                    title="/FundsXML4/Documents/Document/Subfunds"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../Subfunds</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1259,13 +1289,11 @@
                                 <a href="ShareClasses_86a1576f3c91769f5d4b3ce3aae68fd6.html"
                                    title="/FundsXML4/Documents/Document/ShareClasses"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../ShareClasses</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1280,13 +1308,11 @@
                                 <a href="Name_62d5eac28f66a98dc1761f51bb8582fe.html"
                                    title="/FundsXML4/Documents/Document/Name"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../Name</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
@@ -1302,13 +1328,11 @@
                                 <a href="FileName_46ab37d6e60b6573dc0e4c3e8d6abd9b.html"
                                    title="/FundsXML4/Documents/Document/FileName"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../FileName</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
@@ -1324,33 +1348,29 @@
                                 <a href="ForPublicUsage_a982250998889b06f8af97680c34cad7.html"
                                    title="/FundsXML4/Documents/Document/ForPublicUsage"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../ForPublicUsage</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:boolean</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether document can be published to the public</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Restrictions_b52edd0d2221af496e457fe15410f56a.html"
                                    title="/FundsXML4/Documents/Document/Restrictions"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../Restrictions</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:string</span>
                             </td>
@@ -1364,13 +1384,11 @@
                                 <a href="Format_a5deadb0cd885a71f9d20ce7fb2f928a.html"
                                    title="/FundsXML4/Documents/Document/Format"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../Format</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
@@ -1387,13 +1405,11 @@ PDF, XML, Excel, Word, Image, ...</p>
                                 <a href="Signature_3bad1fb6f4c42d0de8f253f6c8f447c1.html"
                                    title="/FundsXML4/Documents/Document/Signature"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../Signature</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1402,80 +1418,72 @@ PDF, XML, Excel, Word, Image, ...</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether signature is available:<br />
 No, Digital, Scan</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Scan</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Digital</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="CreationDate_cfc8f7bab389386c1cd136ded2c6b2cb.html"
                                    title="/FundsXML4/Documents/Document/CreationDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../CreationDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date when document has been generated</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2025-07-28</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2025-08-15</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ModificationDate_ddb8a6cd73bab83e0480914613022d2a.html"
                                    title="/FundsXML4/Documents/Document/ModificationDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../ModificationDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date of last change (e.g. for KID)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2020-12-28</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2022-06-29</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ExpirationDate_28029fdb836b61662e397eeb8858e9ae.html"
                                    title="/FundsXML4/Documents/Document/ExpirationDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../ExpirationDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Document is valid till this expiration date</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2024-12-22</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2025-08-07</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="DataSupplier_c0db3e799e9f570848d633535c853b73.html"
                                    title="/FundsXML4/Documents/Document/DataSupplier"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../DataSupplier</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/DataSupplierType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">DataSupplierType</a>
                                 
@@ -1490,13 +1498,11 @@ No, Digital, Scan</p>
                                 <a href="Attributes_95907adc75edc0c094f3e72cc6a3f17f.html"
                                    title="/FundsXML4/Documents/Document/Attributes"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../Attributes</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/AttributesType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">AttributesType</a>
                                 
@@ -1511,33 +1517,30 @@ No, Digital, Scan</p>
                                 <a href="SizeInBytes_582507b96e73a96ca1c71c15f75e04a4.html"
                                    title="/FundsXML4/Documents/Document/SizeInBytes"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../SizeInBytes</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:positiveInteger</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Size of document in bytes (exact size of binary data, estimated size in case of download)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Size of document in bytes (exact size of binary data, estimated size in case of<br />
+download)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">3523</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2641</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="DocumentURL_8a393688be3521692305fe4594e4d7ac.html"
                                    title="/FundsXML4/Documents/Document/DocumentURL"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../DocumentURL</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:anyURI</span>
                             </td>
@@ -1551,13 +1554,11 @@ No, Digital, Scan</p>
                                 <a href="BinaryData_33fdf22d6985c12017daa7ae508169ac.html"
                                    title="/FundsXML4/Documents/Document/BinaryData"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Documents/.../BinaryData</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:base64Binary</span>
                             </td>
@@ -1580,7 +1581,6 @@ No, Digital, Scan</p>
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
             name=&quot;Document&quot;
@@ -1599,9 +1599,9 @@ No, Digital, Scan</p>
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -1613,6 +1613,29 @@ No, Digital, Scan</p>
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

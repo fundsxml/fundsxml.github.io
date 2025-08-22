@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">Bond</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,1316 +129,1363 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="470.0"
-     height="2733.5">
+     style="background-color: #ffffff"
+     width="556.0"
+     height="3196.125">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="1219"
-            fill="#f1f5f9"
-            width="57.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="1561"
+            fill="#f8fafc"
+            width="58.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="Bond"/>
-      <text x="30"
-            fill="#0f172a"
-            y="1247.3984375"
-            font-size="16"
-            font-family="Arial">Bond</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond"/>
+      <text x="44"
+            fill="#1e293b"
+            y="1589.939453125"
             font-size="14"
-            y="1272.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">Bond, </tspan>
-         <tspan x="25" dy="1.2em">Fixed </tspan>
-         <tspan x="25" dy="1.2em">Income </tspan>
-         <tspan x="25" dy="1.2em">details </tspan>
-         <tspan x="25" dy="1.2em">Rente </tspan>
-         <tspan x="25" dy="1.2em">Bond </tspan>
-         <tspan x="25" dy="1.2em">Asset </tspan>
-         <tspan x="25" dy="1.2em">data </tspan>
-         <tspan x="25" dy="1.2em">information </tspan>
+            font-family="Inter Regular">Bond</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="1619.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">Bond, </tspan>
+         <tspan x="27" dy="1.3em">Fixed </tspan>
+         <tspan x="27" dy="1.3em">Income </tspan>
+         <tspan x="27" dy="1.3em">details </tspan>
+         <tspan x="27" dy="1.3em">Rente </tspan>
+         <tspan x="27" dy="1.3em">Bond </tspan>
+         <tspan x="27" dy="1.3em">Asset </tspan>
+         <tspan x="27" dy="1.3em">data </tspan>
+         <tspan x="27" dy="1.3em">information </tspan>
       </text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 77.0 1238.19921875 H 107.0"/>
-   <g id="seq-group_Bond">
-      <rect x="107.0"
-            y="1228.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="1238.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="112.0"
-            x2="142.0"
-            y1="1238.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="119.0" cy="1238.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="127.0" cy="1238.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="135.0" cy="1238.19921875"/>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 147.0 1238.19921875 h 20.0"/>
-   <rect x="197.0"
-         y="20.0"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ConvertibleFlag"/>
-   <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="48.3984375"
-            font-size="16"
-            font-family="Arial">ConvertibleFlag</text>
-      <line y2="52.3984375"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="52.3984375"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="72.796875"
-            font-size="14"
-            font-family="Arial">xs:boolean</text>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 52.3984375 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 90.0 1581.4697265625 H 125.0"/>
+   <text x="137.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="1554.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856763586">
+      <rect x="125.0"
+            y="1566.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="1581.4697265625"
+            stroke-width="1.5"
+            x1="133.0"
+            x2="167.0"
+            stroke="#64748b"
+            y1="1581.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="140.0" cy="1581.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="150.0" cy="1581.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="160.0" cy="1581.4697265625"/>
+   </g>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 175.0 1581.4697265625 h 25.0"/>
+   <rect x="250.0"
+         y="32.0"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/ConvertibleFlag"/>
+   <g>
+      <text x="262.0"
+            fill="#1e293b"
+            y="60.939453125"
+            font-size="14"
+            font-family="Inter Regular">ConvertibleFlag</text>
+      <line y2="66.939453125"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="66.939453125"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="87.87890625"
+            font-size="13"
+            font-family="Inter Regular">xs:boolean</text>
+   </g>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 64.939453125 H 250.0"/>
+   <text x="212.0"
+         fill="#64748b"
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="Issuer_a6ac8671c5ac09d0174f9b403b761ea7.html">
-      <rect x="197.0"
-            y="104.796875"
-            fill="#f1f5f9"
-            width="243.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="250.0"
+            y="129.87890625"
+            fill="#f8fafc"
+            width="258.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Issuer"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Issuer"/>
       <g>
-         <text x="207.0"
-               fill="#0f172a"
-               y="133.1953125"
-               font-size="16"
-               font-family="Arial">Issuer</text>
-         <line y2="137.1953125"
-               stroke-width="1"
-               x1="207.0"
-               x2="430.0"
-               stroke="#e2e8f0"
-               y1="137.1953125"/>
-         <text x="207.0"
-               fill="#64748b"
-               y="157.59375"
+         <text x="262.0"
+               fill="#1e293b"
+               y="158.818359375"
                font-size="14"
-               font-family="Arial">CompanyType</text>
+               font-family="Inter Regular">Issuer</text>
+         <line y2="164.818359375"
+               stroke-width="1"
+               x1="262.0"
+               x2="496.0"
+               stroke="#e2e8f0"
+               y1="164.818359375"/>
+         <text x="262.0"
+               fill="#64748b"
+               y="185.7578125"
+               font-size="13"
+               font-family="Inter Regular">CompanyType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="442.0"
-           y="127.1953125"
-           xlink:href="#plus-icon"/>
+           x="512.0"
+           y="150.818359375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 137.1953125 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 162.818359375 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="189.59375"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="227.7578125"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="StockMarket"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/StockMarket"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="217.9921875"
-            font-size="16"
-            font-family="Arial">StockMarket</text>
-      <line y2="221.9921875"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="221.9921875"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="242.390625"
+      <text x="262.0"
+            fill="#1e293b"
+            y="256.697265625"
             font-size="14"
-            font-family="Arial">MICCodeType</text>
+            font-family="Inter Regular">StockMarket</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="262.697265625"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">MICCodeType</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 221.9921875 H 197.0"/>
-   <text x="170.5"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 260.697265625 H 250.0"/>
+   <text x="213.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">0..*</text>
-   <rect x="197.0"
-         y="274.390625"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..*</text>
+   <rect x="250.0"
+         y="325.63671875"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Listing"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Listing"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="302.7890625"
-            font-size="16"
-            font-family="Arial">Listing</text>
-      <line y2="306.7890625"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="306.7890625"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="327.1875"
+      <text x="262.0"
+            fill="#1e293b"
+            y="354.576171875"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">Listing</text>
+      <line y2="360.576171875"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="360.576171875"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="381.515625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 306.7890625 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 358.576171875 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="359.1875"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="423.515625"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ListingUnit"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/ListingUnit"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="387.5859375"
-            font-size="16"
-            font-family="Arial">ListingUnit</text>
-      <line y2="391.5859375"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="391.5859375"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="411.984375"
+      <text x="262.0"
+            fill="#1e293b"
+            y="452.455078125"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">ListingUnit</text>
+      <line y2="458.455078125"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="458.455078125"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="479.39453125"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 391.5859375 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 456.455078125 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="443.984375"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="521.39453125"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="IssueDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IssueDate"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="472.3828125"
-            font-size="16"
-            font-family="Arial">IssueDate</text>
-      <line y2="476.3828125"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="476.3828125"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="496.78125"
+      <text x="262.0"
+            fill="#1e293b"
+            y="550.333984375"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">IssueDate</text>
+      <line y2="556.333984375"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="556.333984375"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="577.2734375"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 476.3828125 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 554.333984375 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="528.78125"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="619.2734375"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="MaturityDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/MaturityDate"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="557.1796875"
-            font-size="16"
-            font-family="Arial">MaturityDate</text>
-      <line y2="561.1796875"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="561.1796875"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="581.578125"
+      <text x="262.0"
+            fill="#1e293b"
+            y="648.212890625"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">MaturityDate</text>
+      <line y2="654.212890625"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="654.212890625"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="675.15234375"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 561.1796875 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 652.212890625 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="556.1796875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="613.578125"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="640.212890625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="717.15234375"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="DateFirstCoupon"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/DateFirstCoupon"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="641.9765625"
-            font-size="16"
-            font-family="Arial">DateFirstCoupon</text>
-      <line y2="645.9765625"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="645.9765625"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="666.375"
+      <text x="262.0"
+            fill="#1e293b"
+            y="746.091796875"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">DateFirstCoupon</text>
+      <line y2="752.091796875"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="752.091796875"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="773.03125"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 645.9765625 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 750.091796875 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="640.9765625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="698.375"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="738.091796875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="815.03125"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="DateLastCoupon"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/DateLastCoupon"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="726.7734375"
-            font-size="16"
-            font-family="Arial">DateLastCoupon</text>
-      <line y2="730.7734375"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="730.7734375"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="751.171875"
+      <text x="262.0"
+            fill="#1e293b"
+            y="843.970703125"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">DateLastCoupon</text>
+      <line y2="849.970703125"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="849.970703125"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="870.91015625"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 730.7734375 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 847.970703125 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="725.7734375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="783.171875"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="835.970703125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="912.91015625"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="CouponDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/CouponDate"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="811.5703125"
-            font-size="16"
-            font-family="Arial">CouponDate</text>
-      <line y2="815.5703125"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="815.5703125"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="835.96875"
+      <text x="262.0"
+            fill="#1e293b"
+            y="941.849609375"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">CouponDate</text>
+      <line y2="947.849609375"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="947.849609375"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="968.7890625"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 815.5703125 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 945.849609375 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="810.5703125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="933.849609375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Coupon_b853a49523decac2931accc7a1ba97c8.html">
-      <rect x="197.0"
-            y="867.96875"
-            fill="#f1f5f9"
-            width="243.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="250.0"
+            y="1010.7890625"
+            fill="#f8fafc"
+            width="258.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Coupon"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Coupon"/>
       <g>
-         <text x="207.0"
-               fill="#0f172a"
-               y="896.3671875"
-               font-size="16"
-               font-family="Arial">Coupon</text>
-         <line y2="900.3671875"
-               stroke-width="1"
-               x1="207.0"
-               x2="430.0"
-               stroke="#e2e8f0"
-               y1="900.3671875"/>
-         <text x="207.0"
-               fill="#64748b"
-               y="920.765625"
+         <text x="262.0"
+               fill="#1e293b"
+               y="1039.728515625"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Coupon</text>
+         <line y2="1045.728515625"
+               stroke-width="1"
+               x1="262.0"
+               x2="496.0"
+               stroke="#e2e8f0"
+               y1="1045.728515625"/>
+         <text x="262.0"
+               fill="#64748b"
+               y="1066.66796875"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="442.0"
-           y="890.3671875"
-           xlink:href="#plus-icon"/>
+           x="512.0"
+           y="1031.728515625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 900.3671875 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 1043.728515625 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="895.3671875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="952.765625"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1031.728515625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="1108.66796875"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="RedemptionRate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/RedemptionRate"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="981.1640625"
-            font-size="16"
-            font-family="Arial">RedemptionRate</text>
-      <line y2="985.1640625"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="985.1640625"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="1005.5625"
+      <text x="262.0"
+            fill="#1e293b"
+            y="1137.607421875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">RedemptionRate</text>
+      <line y2="1143.607421875"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="1143.607421875"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="1164.546875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 985.1640625 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 1141.607421875 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="980.1640625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1129.607421875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Redemption_3d5bdbcd33179a194105d838a40bcd92.html">
-      <rect x="197.0"
-            y="1037.5625"
-            fill="#f1f5f9"
-            width="243.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="250.0"
+            y="1206.546875"
+            fill="#f8fafc"
+            width="258.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Redemption"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Redemption"/>
       <g>
-         <text x="207.0"
-               fill="#0f172a"
-               y="1065.9609375"
-               font-size="16"
-               font-family="Arial">Redemption</text>
-         <line y2="1069.9609375"
-               stroke-width="1"
-               x1="207.0"
-               x2="430.0"
-               stroke="#e2e8f0"
-               y1="1069.9609375"/>
-         <text x="207.0"
-               fill="#64748b"
-               y="1090.359375"
+         <text x="262.0"
+               fill="#1e293b"
+               y="1235.486328125"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Redemption</text>
+         <line y2="1241.486328125"
+               stroke-width="1"
+               x1="262.0"
+               x2="496.0"
+               stroke="#e2e8f0"
+               y1="1241.486328125"/>
+         <text x="262.0"
+               fill="#64748b"
+               y="1262.42578125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="442.0"
-           y="1059.9609375"
-           xlink:href="#plus-icon"/>
+           x="512.0"
+           y="1227.486328125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1069.9609375 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 1239.486328125 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1064.9609375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="1122.359375"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1227.486328125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="1304.42578125"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="InterestRate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/InterestRate"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="1150.7578125"
-            font-size="16"
-            font-family="Arial">InterestRate</text>
-      <line y2="1154.7578125"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="1154.7578125"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="1175.15625"
+      <text x="262.0"
+            fill="#1e293b"
+            y="1333.365234375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">InterestRate</text>
+      <line y2="1339.365234375"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="1339.365234375"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="1360.3046875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1154.7578125 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 1337.365234375 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1149.7578125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="1207.15625"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1325.365234375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="1402.3046875"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="InterestsStartDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/InterestsStartDate"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="1235.5546875"
-            font-size="16"
-            font-family="Arial">InterestsStartDate</text>
-      <line y2="1239.5546875"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="1239.5546875"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="1259.953125"
+      <text x="262.0"
+            fill="#1e293b"
+            y="1431.244140625"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">InterestsStartDate</text>
+      <line y2="1437.244140625"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="1437.244140625"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="1458.18359375"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1239.5546875 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 1435.244140625 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1234.5546875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="1291.953125"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1423.244140625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="1500.18359375"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="IssueRate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IssueRate"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="1320.3515625"
-            font-size="16"
-            font-family="Arial">IssueRate</text>
-      <line y2="1324.3515625"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="1324.3515625"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="1344.75"
+      <text x="262.0"
+            fill="#1e293b"
+            y="1529.123046875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">IssueRate</text>
+      <line y2="1535.123046875"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="1535.123046875"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="1556.0625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1324.3515625 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 1533.123046875 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1319.3515625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="1376.75"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1521.123046875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="1598.0625"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="IssueYield"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IssueYield"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="1405.1484375"
-            font-size="16"
-            font-family="Arial">IssueYield</text>
-      <line y2="1409.1484375"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="1409.1484375"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="1429.546875"
+      <text x="262.0"
+            fill="#1e293b"
+            y="1627.001953125"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">IssueYield</text>
+      <line y2="1633.001953125"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="1633.001953125"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="1653.94140625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1409.1484375 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 1631.001953125 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1404.1484375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1619.001953125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Yields_a357eb2e58603f16ff75a0b8578861ea.html">
-      <rect x="197.0"
-            y="1461.546875"
-            fill="#f1f5f9"
-            width="243.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="250.0"
+            y="1695.94140625"
+            fill="#f8fafc"
+            width="258.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Yields"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Yields"/>
       <g>
-         <text x="207.0"
-               fill="#0f172a"
-               y="1489.9453125"
-               font-size="16"
-               font-family="Arial">Yields</text>
-         <line y2="1493.9453125"
-               stroke-width="1"
-               x1="207.0"
-               x2="430.0"
-               stroke="#e2e8f0"
-               y1="1493.9453125"/>
-         <text x="207.0"
-               fill="#64748b"
-               y="1514.34375"
+         <text x="262.0"
+               fill="#1e293b"
+               y="1724.880859375"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Yields</text>
+         <line y2="1730.880859375"
+               stroke-width="1"
+               x1="262.0"
+               x2="496.0"
+               stroke="#e2e8f0"
+               y1="1730.880859375"/>
+         <text x="262.0"
+               fill="#64748b"
+               y="1751.8203125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="442.0"
-           y="1483.9453125"
-           xlink:href="#plus-icon"/>
+           x="512.0"
+           y="1716.880859375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1493.9453125 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 1728.880859375 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1488.9453125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="1546.34375"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1716.880859375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="1793.8203125"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="EUWithholdingTaxRate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/EUWithholdingTaxRate"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="1574.7421875"
-            font-size="16"
-            font-family="Arial">EUWithholdingTaxRate</text>
-      <line y2="1578.7421875"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="1578.7421875"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="1599.140625"
+      <text x="262.0"
+            fill="#1e293b"
+            y="1822.759765625"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">EUWithholdingTaxRate</text>
+      <line y2="1828.759765625"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="1828.759765625"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="1849.69921875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1578.7421875 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 1826.759765625 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1573.7421875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="1631.140625"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1814.759765625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="1891.69921875"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="EUWithholdingTaxCategory"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/EUWithholdingTaxCategory"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="1659.5390625"
-            font-size="16"
-            font-family="Arial">EUWithholdingTaxCategory</text>
-      <line y2="1663.5390625"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="1663.5390625"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="1683.9375"
+      <text x="262.0"
+            fill="#1e293b"
+            y="1920.638671875"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">EUWithholdingTaxCategory</text>
+      <line y2="1926.638671875"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="1926.638671875"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="1947.578125"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1663.5390625 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 1924.638671875 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1658.5390625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="1715.9375"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1912.638671875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="1989.578125"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="CapitalYieldsTaxKind"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/CapitalYieldsTaxKind"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="1744.3359375"
-            font-size="16"
-            font-family="Arial">CapitalYieldsTaxKind</text>
-      <line y2="1748.3359375"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="1748.3359375"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="1768.734375"
+      <text x="262.0"
+            fill="#1e293b"
+            y="2018.517578125"
             font-size="14"
-            font-family="Arial">xs:string</text>
+            font-family="Inter Regular">CapitalYieldsTaxKind</text>
+      <line y2="2024.517578125"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="2024.517578125"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="2045.45703125"
+            font-size="13"
+            font-family="Inter Regular">xs:string</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1748.3359375 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 2022.517578125 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1743.3359375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="1800.734375"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2010.517578125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="2087.45703125"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="CapitalYieldsTaxRate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/CapitalYieldsTaxRate"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="1829.1328125"
-            font-size="16"
-            font-family="Arial">CapitalYieldsTaxRate</text>
-      <line y2="1833.1328125"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="1833.1328125"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="1853.53125"
+      <text x="262.0"
+            fill="#1e293b"
+            y="2116.396484375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">CapitalYieldsTaxRate</text>
+      <line y2="2122.396484375"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="2122.396484375"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="2143.3359375"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1833.1328125 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 2120.396484375 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1828.1328125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="1885.53125"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2108.396484375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="2185.3359375"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="GuaranteeType"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/GuaranteeType"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="1913.9296875"
-            font-size="16"
-            font-family="Arial">GuaranteeType</text>
-      <line y2="1917.9296875"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="1917.9296875"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="1938.328125"
+      <text x="262.0"
+            fill="#1e293b"
+            y="2214.275390625"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">GuaranteeType</text>
+      <line y2="2220.275390625"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="2220.275390625"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="2241.21484375"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 1917.9296875 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 2218.275390625 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1912.9296875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="2206.275390625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Guarantor_718e8181d25b352ae79c6ae32c27d643.html">
-      <rect x="197.0"
-            y="1970.328125"
-            fill="#f1f5f9"
-            width="243.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="250.0"
+            y="2283.21484375"
+            fill="#f8fafc"
+            width="258.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Guarantor"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Guarantor"/>
       <g>
-         <text x="207.0"
-               fill="#0f172a"
-               y="1998.7265625"
-               font-size="16"
-               font-family="Arial">Guarantor</text>
-         <line y2="2002.7265625"
-               stroke-width="1"
-               x1="207.0"
-               x2="430.0"
-               stroke="#e2e8f0"
-               y1="2002.7265625"/>
-         <text x="207.0"
-               fill="#64748b"
-               y="2023.125"
+         <text x="262.0"
+               fill="#1e293b"
+               y="2312.154296875"
                font-size="14"
-               font-family="Arial">CompanyType</text>
+               font-family="Inter Regular">Guarantor</text>
+         <line y2="2318.154296875"
+               stroke-width="1"
+               x1="262.0"
+               x2="496.0"
+               stroke="#e2e8f0"
+               y1="2318.154296875"/>
+         <text x="262.0"
+               fill="#64748b"
+               y="2339.09375"
+               font-size="13"
+               font-family="Inter Regular">CompanyType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="442.0"
-           y="1992.7265625"
-           xlink:href="#plus-icon"/>
+           x="512.0"
+           y="2304.154296875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 2002.7265625 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 2316.154296875 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="1997.7265625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="2055.125"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2304.154296875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="2381.09375"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="IndicatorAcceptableAsCollateral"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IndicatorAcceptableAsCollateral"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="2083.5234375"
-            font-size="16"
-            font-family="Arial">IndicatorAcceptableAsCollateral</text>
-      <line y2="2087.5234375"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="2087.5234375"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="2107.921875"
+      <text x="262.0"
+            fill="#1e293b"
+            y="2410.033203125"
             font-size="14"
-            font-family="Arial">xs:boolean</text>
+            font-family="Inter Regular">IndicatorAcceptableAsCollateral</text>
+      <line y2="2416.033203125"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="2416.033203125"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="2436.97265625"
+            font-size="13"
+            font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 2087.5234375 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 2414.033203125 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="2082.5234375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="2139.921875"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2402.033203125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="2478.97265625"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="IndicatorZoneA"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IndicatorZoneA"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="2168.3203125"
-            font-size="16"
-            font-family="Arial">IndicatorZoneA</text>
-      <line y2="2172.3203125"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="2172.3203125"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="2192.71875"
+      <text x="262.0"
+            fill="#1e293b"
+            y="2507.912109375"
             font-size="14"
-            font-family="Arial">xs:boolean</text>
+            font-family="Inter Regular">IndicatorZoneA</text>
+      <line y2="2513.912109375"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="2513.912109375"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="2534.8515625"
+            font-size="13"
+            font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 2172.3203125 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 2511.912109375 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="2167.3203125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="2224.71875"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2499.912109375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="2576.8515625"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="IndicatorAbsolutelySafe"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IndicatorAbsolutelySafe"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="2253.1171875"
-            font-size="16"
-            font-family="Arial">IndicatorAbsolutelySafe</text>
-      <line y2="2257.1171875"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="2257.1171875"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="2277.515625"
+      <text x="262.0"
+            fill="#1e293b"
+            y="2605.791015625"
             font-size="14"
-            font-family="Arial">xs:boolean</text>
+            font-family="Inter Regular">IndicatorAbsolutelySafe</text>
+      <line y2="2611.791015625"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="2611.791015625"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="2632.73046875"
+            font-size="13"
+            font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 2257.1171875 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 2609.791015625 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="2252.1171875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="2309.515625"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2597.791015625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="2674.73046875"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="WithholdingTaxRate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/WithholdingTaxRate"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="2337.9140625"
-            font-size="16"
-            font-family="Arial">WithholdingTaxRate</text>
-      <line y2="2341.9140625"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="2341.9140625"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="2362.3125"
+      <text x="262.0"
+            fill="#1e293b"
+            y="2703.669921875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">WithholdingTaxRate</text>
+      <line y2="2709.669921875"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="2709.669921875"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="2730.609375"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 2341.9140625 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 2707.669921875 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="2336.9140625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="2394.3125"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2695.669921875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="2772.609375"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="AgioFactor"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/AgioFactor"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="2422.7109375"
-            font-size="16"
-            font-family="Arial">AgioFactor</text>
-      <line y2="2426.7109375"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="2426.7109375"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="2447.109375"
+      <text x="262.0"
+            fill="#1e293b"
+            y="2801.548828125"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">AgioFactor</text>
+      <line y2="2807.548828125"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="2807.548828125"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="2828.48828125"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 2426.7109375 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 2805.548828125 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="2421.7109375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="2793.548828125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Durations_67da57854363c468ea28e2c3a0f72f67.html">
-      <rect x="197.0"
-            y="2479.109375"
-            fill="#f1f5f9"
-            width="243.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="250.0"
+            y="2870.48828125"
+            fill="#f8fafc"
+            width="258.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Durations"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Durations"/>
       <g>
-         <text x="207.0"
-               fill="#0f172a"
-               y="2507.5078125"
-               font-size="16"
-               font-family="Arial">Durations</text>
-         <line y2="2511.5078125"
-               stroke-width="1"
-               x1="207.0"
-               x2="430.0"
-               stroke="#e2e8f0"
-               y1="2511.5078125"/>
-         <text x="207.0"
-               fill="#64748b"
-               y="2531.90625"
+         <text x="262.0"
+               fill="#1e293b"
+               y="2899.427734375"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Durations</text>
+         <line y2="2905.427734375"
+               stroke-width="1"
+               x1="262.0"
+               x2="496.0"
+               stroke="#e2e8f0"
+               y1="2905.427734375"/>
+         <text x="262.0"
+               fill="#64748b"
+               y="2926.3671875"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="442.0"
-           y="2501.5078125"
-           xlink:href="#plus-icon"/>
+           x="512.0"
+           y="2891.427734375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 2511.5078125 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 2903.427734375 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="2506.5078125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="197.0"
-         y="2563.90625"
-         fill="#f1f5f9"
-         width="243.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2891.427734375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="250.0"
+         y="2968.3671875"
+         fill="#f8fafc"
+         width="258.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Tranche"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Tranche"/>
    <g>
-      <text x="207.0"
-            fill="#0f172a"
-            y="2592.3046875"
-            font-size="16"
-            font-family="Arial">Tranche</text>
-      <line y2="2596.3046875"
-            stroke-width="1"
-            x1="207.0"
-            x2="430.0"
-            stroke="#e2e8f0"
-            y1="2596.3046875"/>
-      <text x="207.0"
-            fill="#64748b"
-            y="2616.703125"
+      <text x="262.0"
+            fill="#1e293b"
+            y="2997.306640625"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">Tranche</text>
+      <line y2="3003.306640625"
+            stroke-width="1"
+            x1="262.0"
+            x2="496.0"
+            stroke="#e2e8f0"
+            y1="3003.306640625"/>
+      <text x="262.0"
+            fill="#64748b"
+            y="3024.24609375"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 2596.3046875 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 3001.306640625 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="2591.3046875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="2989.306640625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="ConvertibleBond_2af199b9b98269e83747bad92c3dd544.html">
-      <rect x="197.0"
-            y="2648.703125"
-            fill="#f1f5f9"
-            width="243.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="250.0"
+            y="3066.24609375"
+            fill="#f8fafc"
+            width="258.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="ConvertibleBond"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/ConvertibleBond"/>
       <g>
-         <text x="207.0"
-               fill="#0f172a"
-               y="2677.1015625"
-               font-size="16"
-               font-family="Arial">ConvertibleBond</text>
-         <line y2="2681.1015625"
-               stroke-width="1"
-               x1="207.0"
-               x2="430.0"
-               stroke="#e2e8f0"
-               y1="2681.1015625"/>
-         <text x="207.0"
-               fill="#64748b"
-               y="2701.5"
+         <text x="262.0"
+               fill="#1e293b"
+               y="3095.185546875"
                font-size="14"
-               font-family="Arial">ConvertibleBondType</text>
+               font-family="Inter Regular">ConvertibleBond</text>
+         <line y2="3101.185546875"
+               stroke-width="1"
+               x1="262.0"
+               x2="496.0"
+               stroke="#e2e8f0"
+               y1="3101.185546875"/>
+         <text x="262.0"
+               fill="#64748b"
+               y="3122.125"
+               font-size="13"
+               font-family="Inter Regular">ConvertibleBondType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="442.0"
-           y="2671.1015625"
-           xlink:href="#plus-icon"/>
+           x="512.0"
+           y="3087.185546875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 167.0 1238.19921875 V 2681.1015625 H 197.0"/>
-   <text x="169.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 200.0 1581.4697265625 V 3099.185546875 H 250.0"/>
+   <text x="212.0"
          fill="#64748b"
-         y="2676.1015625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="3087.185546875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -1473,12 +1529,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -1506,19 +1561,16 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ConvertibleFlag_0f8b85222d612fec0924449de188cb0c.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/ConvertibleFlag"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../ConvertibleFlag</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:boolean</span>
                             </td>
@@ -1532,13 +1584,11 @@
                                 <a href="Issuer_a6ac8671c5ac09d0174f9b403b761ea7.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Issuer"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Issuer</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/CompanyType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">CompanyType</a>
                                 
@@ -1555,13 +1605,11 @@
                                 <a href="StockMarket_3957d515f2fff6231ed487828a6ddbcf.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/StockMarket"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../StockMarket</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/MICCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">MICCodeType</a>
                                 
@@ -1578,13 +1626,11 @@
                                 <a href="Listing_84a19f2d6d1cc79a23b2cb8d5ca5a773.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Listing"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Listing</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1613,20 +1659,18 @@ Z   New issue</p>
 <li>Z  Neuemission</li>
 </ul>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Z</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">M</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ListingUnit_393ae669717755d9409b352b0fd0f7b9.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/ListingUnit"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../ListingUnit</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1646,34 +1690,31 @@ N = Nominale</p>
                                 <a href="IssueDate_4f38b3cac5c98ace623559a3ef18a474.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IssueDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../IssueDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Issue date of the bond</p>
-<p>Emissionsdatum bezeichnet jenes Datum, zu dem das Wertpapier aufgelegt wurde</p>
+<p>Emissionsdatum bezeichnet jenes Datum, zu dem das Wertpapier<br />
+aufgelegt wurde</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-04-09</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-01-12</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="MaturityDate_5c293a20506712d3020c5d72db36f350.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/MaturityDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../MaturityDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
@@ -1681,20 +1722,18 @@ N = Nominale</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Maturity date</p>
 <p>Ablaufdatum/Faelligkeitsdatum</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-06-01</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2021-07-05</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="DateFirstCoupon_1e188caabd12584e8e9364461b9e2858.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/DateFirstCoupon"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../DateFirstCoupon</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
@@ -1702,20 +1741,18 @@ N = Nominale</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>First coupon date</p>
 <p>Enthaelt das Datum des ersten Kupons</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-04-10</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2024-07-28</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="DateLastCoupon_3bdcd0f153f47cc186b2c607b7a4c2a3.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/DateLastCoupon"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../DateLastCoupon</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
@@ -1723,20 +1760,18 @@ N = Nominale</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Last coupon date</p>
 <p>Enthaelt das Datum an dem der letzte Kupon gezahlt wird</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2025-06-06</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2021-03-19</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="CouponDate_e8d052e8d944bcfcaa3968dfacbe05fb.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/CouponDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../CouponDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
@@ -1744,20 +1779,18 @@ N = Nominale</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Coupon date</p>
 <p>Gibt das Kupondatum an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-02-24</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2021-09-20</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Coupon_b853a49523decac2931accc7a1ba97c8.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Coupon"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Coupon</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1772,13 +1805,11 @@ N = Nominale</p>
                                 <a href="RedemptionRate_ebfcf6a2faf7b159dbb33117c22449ab.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/RedemptionRate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../RedemptionRate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1786,20 +1817,18 @@ N = Nominale</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Price at which the bond finally will be redeemded</p>
 <p>Enthaelt den Kurs zu dem das Wertpapier getilgt wird</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">23.16</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">151.69</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Redemption_3d5bdbcd33179a194105d838a40bcd92.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Redemption"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Redemption</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1814,13 +1843,11 @@ N = Nominale</p>
                                 <a href="InterestRate_07ab319881ba8b5c090c23505126197c.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/InterestRate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../InterestRate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1828,20 +1855,18 @@ N = Nominale</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Nominal interest rate</p>
 <p>Enthaelt einen Zinssatz</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">61.02</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">479.19</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="InterestsStartDate_c45c29c6f40f4434c96d6a27d9dcce18.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/InterestsStartDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../InterestsStartDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
@@ -1849,20 +1874,18 @@ N = Nominale</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Start date for calculation of interests</p>
 <p>Enthaelt das Datum ab dem ein Zinsanspruch ermittelt wird</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-01-23</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2024-05-12</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="IssueRate_d4d7f9539ed6f339f0686490d6a302d9.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IssueRate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../IssueRate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1871,20 +1894,18 @@ N = Nominale</p>
 ***IssuePrice</p>
 <p>Enthaelt den Emissionskurs des Wertpapier</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">194.72</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">163.04</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="IssueYield_f86123a4962dec785919c601318e92ff.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IssueYield"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../IssueYield</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1892,20 +1913,18 @@ N = Nominale</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Yield to maturity of the bond at the date of issue.</p>
 <p>Enthaelt die Emissionsrendite des Wertpapier</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">762.90</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">840.03</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Yields_a357eb2e58603f16ff75a0b8578861ea.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Yields"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Yields</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1920,13 +1939,11 @@ N = Nominale</p>
                                 <a href="EUWithholdingTaxRate_1d521f2a84a37387700253e02c57e070.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/EUWithholdingTaxRate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../EUWithholdingTaxRate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1934,20 +1951,18 @@ N = Nominale</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>European withholding tax rate</p>
 <p>Gibt den EU Quest Satz an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">295.15</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">325.55</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="EUWithholdingTaxCategory_202d804d23cc9a7cd672a26949651f62.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/EUWithholdingTaxCategory"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../EUWithholdingTaxCategory</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1962,25 +1977,24 @@ A = Genaue Berechnung<br />
 B = Vereinfachte Berechnung<br />
 C = Keine Berechnung</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">A</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">C</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="CapitalYieldsTaxKind_7195001c83b5eecdeef0d0e977946639.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/CapitalYieldsTaxKind"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../CapitalYieldsTaxKind</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:string</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicates whether incomes of a bond will be charged with capital yields tax and its kind - TO BE DISCUSSED !!!</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicates whether incomes of a bond will be charged with capital<br />
+yields tax and its kind - TO BE DISCUSSED !!!</p>
 <p>Gibt an ob ein Wertpapier KESt-Pflichtig ist</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
@@ -1990,33 +2004,29 @@ C = Keine Berechnung</p>
                                 <a href="CapitalYieldsTaxRate_b25de6235d275f073450ea4308fbeec3.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/CapitalYieldsTaxRate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../CapitalYieldsTaxRate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Gibt die Hoehe des gueltigen KESt-Satzes an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">504.52</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">15.79</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="GuaranteeType_83020903d6d64c7f4089b3b326d7b028.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/GuaranteeType"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../GuaranteeType</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -2031,20 +2041,18 @@ NONE ... Not guaranteed<br />
 OTHER ... Other<br />
 STATE ... State guarantee</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">OTHER</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">HYPO</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Guarantor_718e8181d25b352ae79c6ae32c27d643.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Guarantor"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Guarantor</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/CompanyType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">CompanyType</a>
                                 
@@ -2060,13 +2068,11 @@ STATE ... State guarantee</p>
                                 <a href="IndicatorAcceptableAsCollateral_b083df0d82afbe7ea9967c5e3ee027de.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IndicatorAcceptableAsCollateral"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../IndicatorAcceptableAsCollateral</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:boolean</span>
                             </td>
@@ -2081,57 +2087,53 @@ STATE ... State guarantee</p>
                                 <a href="IndicatorZoneA_0eb3629bb9b8ce3ecd68dee5c9e8d876.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IndicatorZoneA"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../IndicatorZoneA</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:boolean</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicates whether the security is issued in a Zone A country</p>
-<p>Enthaelt ein Kennzeichen, ob es sich um ein Wertpapier handelt, welches in einem Zone A Staat begeben wurde</p>
+<p>Enthaelt ein Kennzeichen, ob es sich um ein Wertpapier handelt,<br />
+welches in einem Zone A Staat begeben wurde</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="IndicatorAbsolutelySafe_e230c28a4e0075c7aeee4d9e54e4ecfc.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/IndicatorAbsolutelySafe"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../IndicatorAbsolutelySafe</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:boolean</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicates whether the security can be classified as absolutely safe (i.e. gilt-edged).<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicates whether the security can be classified as absolutely safe<br />
+(i.e. gilt-edged).<br />
 Boolean: truefFalse</p>
 <p>Enthaelt ein Kennzeichen, ob das Wertpapier muendelsicher ist<br />
 Boolean: true/false</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="WithholdingTaxRate_b501519b17e3bffd286c10ec012deffd.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/WithholdingTaxRate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../WithholdingTaxRate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -2139,20 +2141,18 @@ Boolean: true/false</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Withholding tax rate of the security</p>
 <p>Gibt den Quest Satz an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">264.93</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">851.16</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="AgioFactor_14f07abdc480087513a67407a53824a2.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/AgioFactor"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../AgioFactor</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -2160,20 +2160,18 @@ Boolean: true/false</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Agio factor of the security</p>
 <p>Gibt den Zuschlagsfaktor an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">162.98</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">842.72</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Durations_67da57854363c468ea28e2c3a0f72f67.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Durations"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Durations</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -2188,33 +2186,29 @@ Boolean: true/false</p>
                                 <a href="Tranche_a5640296e73e9b325288e3c1226d0baf.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/Tranche"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Tranche</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Number of tranche</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">744.78</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">61.81</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ConvertibleBond_2af199b9b98269e83747bad92c3dd544.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Bond/ConvertibleBond"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../ConvertibleBond</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/ConvertibleBondType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ConvertibleBondType</a>
                                 
@@ -2240,7 +2234,6 @@ Boolean: true/false</p>
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             name=&quot;Bond&quot;
             type=&quot;BondType&quot;&gt;
@@ -2263,9 +2256,9 @@ Boolean: true/false</p>
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -2277,6 +2270,29 @@ Boolean: true/false</p>
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

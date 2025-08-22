@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">Flow</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,838 +129,873 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="429.0"
-     height="1715.9375">
+     style="background-color: #ffffff"
+     width="517.0"
+     height="2021.578125">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="758"
-            fill="#f1f5f9"
-            width="53.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="974"
+            fill="#f8fafc"
+            width="54.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="Flow"/>
-      <text x="30"
-            fill="#0f172a"
-            y="786.3984375"
-            font-size="16"
-            font-family="Arial">Flow</text>
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow"/>
+      <text x="44"
+            fill="#1e293b"
+            y="1002.939453125"
+            font-size="14"
+            font-family="Inter Regular">Flow</text>
    </a>
-   <g id="comment">
-      <text x="30"
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
             fill="#64748b"
-            font-size="14"
-            y="811.3984375"
-            font-family="Arial"/>
+            font-size="13"
+            y="1032.939453125"
+            font-family="Inter Regular"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 73.0 777.19921875 H 103.0"/>
-   <g id="seq-group_Flow">
-      <rect x="103.0"
-            y="767.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="777.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="108.0"
-            x2="138.0"
-            y1="777.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="115.0" cy="777.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="123.0" cy="777.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="131.0" cy="777.19921875"/>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 143.0 777.19921875 h 20.0"/>
-   <rect x="193.0"
-         y="20.0"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ActionCode"/>
-   <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="48.3984375"
-            font-size="16"
-            font-family="Arial">ActionCode</text>
-      <line y2="52.3984375"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="52.3984375"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="72.796875"
-            font-size="14"
-            font-family="Arial">(anonymous)</text>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 163.0 777.19921875 V 52.3984375 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 86.0 994.4697265625 H 121.0"/>
+   <text x="133.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="193.0"
-         y="104.796875"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="DataGroupedBy"/>
-   <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="133.1953125"
-            font-size="16"
-            font-family="Arial">DataGroupedBy</text>
-      <line y2="137.1953125"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="137.1953125"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="157.59375"
-            font-size="14"
-            font-family="Arial">(anonymous)</text>
+         y="967.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856771536">
+      <rect x="121.0"
+            y="979.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="994.4697265625"
+            stroke-width="1.5"
+            x1="129.0"
+            x2="163.0"
+            stroke="#64748b"
+            y1="994.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="136.0" cy="994.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="146.0" cy="994.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="156.0" cy="994.4697265625"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 137.1953125 H 193.0"/>
-   <text x="166.5"
-         fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">0..*</text>
-   <rect x="193.0"
-         y="189.59375"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 171.0 994.4697265625 h 25.0"/>
+   <rect x="246.0"
+         y="32.0"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="DataGroupedByFrequency"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/ActionCode"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="217.9921875"
-            font-size="16"
-            font-family="Arial">DataGroupedByFrequency</text>
-      <line y2="221.9921875"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="221.9921875"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="242.390625"
+      <text x="258.0"
+            fill="#1e293b"
+            y="60.939453125"
             font-size="14"
-            font-family="Arial">FrequencyType</text>
+            font-family="Inter Regular">ActionCode</text>
+      <line y2="66.939453125"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="66.939453125"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="87.87890625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 221.9921875 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 64.939453125 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="274.390625"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="246.0"
+         y="129.87890625"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="TransactionID"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/DataGroupedBy"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="302.7890625"
-            font-size="16"
-            font-family="Arial">TransactionID</text>
-      <line y2="306.7890625"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="306.7890625"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="327.1875"
+      <text x="258.0"
+            fill="#1e293b"
+            y="158.818359375"
             font-size="14"
-            font-family="Arial">Text256Type</text>
+            font-family="Inter Regular">DataGroupedBy</text>
+      <line y2="164.818359375"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="164.818359375"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="185.7578125"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 306.7890625 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 162.818359375 H 246.0"/>
+   <text x="209.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="359.1875"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..*</text>
+   <rect x="246.0"
+         y="227.7578125"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="TradeDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/DataGroupedByFrequency"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="387.5859375"
-            font-size="16"
-            font-family="Arial">TradeDate</text>
-      <line y2="391.5859375"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="391.5859375"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="411.984375"
+      <text x="258.0"
+            fill="#1e293b"
+            y="256.697265625"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">DataGroupedByFrequency</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="262.697265625"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">FrequencyType</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 391.5859375 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 260.697265625 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="443.984375"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="325.63671875"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="AccountingDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TransactionID"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="472.3828125"
-            font-size="16"
-            font-family="Arial">AccountingDate</text>
-      <line y2="476.3828125"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="476.3828125"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="496.78125"
+      <text x="258.0"
+            fill="#1e293b"
+            y="354.576171875"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">TransactionID</text>
+      <line y2="360.576171875"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="360.576171875"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="381.515625"
+            font-size="13"
+            font-family="Inter Regular">Text256Type</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 163.0 777.19921875 V 476.3828125 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 358.576171875 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="193.0"
-         y="528.78125"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="423.515625"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="SettlementDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TradeDate"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="557.1796875"
-            font-size="16"
-            font-family="Arial">SettlementDate</text>
-      <line y2="561.1796875"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="561.1796875"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="581.578125"
+      <text x="258.0"
+            fill="#1e293b"
+            y="452.455078125"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">TradeDate</text>
+      <line y2="458.455078125"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="458.455078125"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="479.39453125"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 561.1796875 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 456.455078125 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="556.1796875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="613.578125"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="521.39453125"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ValueDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/AccountingDate"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="641.9765625"
-            font-size="16"
-            font-family="Arial">ValueDate</text>
-      <line y2="645.9765625"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="645.9765625"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="666.375"
+      <text x="258.0"
+            fill="#1e293b"
+            y="550.333984375"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">AccountingDate</text>
+      <line y2="556.333984375"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="556.333984375"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="577.2734375"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 645.9765625 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 554.333984375 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="640.9765625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="698.375"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="246.0"
+         y="619.2734375"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="TransactionType"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/SettlementDate"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="726.7734375"
-            font-size="16"
-            font-family="Arial">TransactionType</text>
-      <line y2="730.7734375"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="730.7734375"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="751.171875"
+      <text x="258.0"
+            fill="#1e293b"
+            y="648.212890625"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">SettlementDate</text>
+      <line y2="654.212890625"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="654.212890625"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="675.15234375"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 163.0 777.19921875 V 730.7734375 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 652.212890625 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="725.7734375"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="193.0"
-         y="783.171875"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="640.212890625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="717.15234375"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="TransactionSubtype"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/ValueDate"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="811.5703125"
-            font-size="16"
-            font-family="Arial">TransactionSubtype</text>
-      <line y2="815.5703125"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="815.5703125"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="835.96875"
+      <text x="258.0"
+            fill="#1e293b"
+            y="746.091796875"
             font-size="14"
-            font-family="Arial">xs:string</text>
+            font-family="Inter Regular">ValueDate</text>
+      <line y2="752.091796875"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="752.091796875"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="773.03125"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 815.5703125 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 750.091796875 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="810.5703125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="867.96875"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="738.091796875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="815.03125"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Netted"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TransactionType"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="896.3671875"
-            font-size="16"
-            font-family="Arial">Netted</text>
-      <line y2="900.3671875"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="900.3671875"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="920.765625"
+      <text x="258.0"
+            fill="#1e293b"
+            y="843.970703125"
             font-size="14"
-            font-family="Arial">xs:boolean</text>
+            font-family="Inter Regular">TransactionType</text>
+      <line y2="849.970703125"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="849.970703125"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="870.91015625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 900.3671875 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 847.970703125 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="895.3671875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="952.765625"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="835.970703125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="246.0"
+         y="912.91015625"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Cancellation"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TransactionSubtype"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="981.1640625"
-            font-size="16"
-            font-family="Arial">Cancellation</text>
-      <line y2="985.1640625"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="985.1640625"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="1005.5625"
+      <text x="258.0"
+            fill="#1e293b"
+            y="941.849609375"
             font-size="14"
-            font-family="Arial">xs:boolean</text>
+            font-family="Inter Regular">TransactionSubtype</text>
+      <line y2="947.849609375"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="947.849609375"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="968.7890625"
+            font-size="13"
+            font-family="Inter Regular">xs:string</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 985.1640625 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 945.849609375 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="980.1640625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="1037.5625"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="933.849609375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="1010.7890625"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="OriginalTransactionID"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Netted"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="1065.9609375"
-            font-size="16"
-            font-family="Arial">OriginalTransactionID</text>
-      <line y2="1069.9609375"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1069.9609375"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="1090.359375"
+      <text x="258.0"
+            fill="#1e293b"
+            y="1039.728515625"
             font-size="14"
-            font-family="Arial">Text256Type</text>
+            font-family="Inter Regular">Netted</text>
+      <line y2="1045.728515625"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1045.728515625"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="1066.66796875"
+            font-size="13"
+            font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 1069.9609375 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 1043.728515625 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="1064.9609375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="1122.359375"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1031.728515625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="1108.66796875"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Units"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Cancellation"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="1150.7578125"
-            font-size="16"
-            font-family="Arial">Units</text>
-      <line y2="1154.7578125"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1154.7578125"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="1175.15625"
+      <text x="258.0"
+            fill="#1e293b"
+            y="1137.607421875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">Cancellation</text>
+      <line y2="1143.607421875"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1143.607421875"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="1164.546875"
+            font-size="13"
+            font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 1154.7578125 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 1141.607421875 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="1149.7578125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1129.607421875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="1206.546875"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/OriginalTransactionID"/>
+   <g>
+      <text x="258.0"
+            fill="#1e293b"
+            y="1235.486328125"
+            font-size="14"
+            font-family="Inter Regular">OriginalTransactionID</text>
+      <line y2="1241.486328125"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1241.486328125"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="1262.42578125"
+            font-size="13"
+            font-family="Inter Regular">Text256Type</text>
+   </g>
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 1239.486328125 H 246.0"/>
+   <text x="208.0"
+         fill="#64748b"
+         y="1227.486328125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="1304.42578125"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Units"/>
+   <g>
+      <text x="258.0"
+            fill="#1e293b"
+            y="1333.365234375"
+            font-size="14"
+            font-family="Inter Regular">Units</text>
+      <line y2="1339.365234375"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1339.365234375"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="1360.3046875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
+   </g>
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 1337.365234375 H 246.0"/>
+   <text x="208.0"
+         fill="#64748b"
+         y="1325.365234375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="FXRate_d607329e5da76e6166aada2d5abdf08d.html">
-      <rect x="193.0"
-            y="1207.15625"
-            fill="#f1f5f9"
-            width="206.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="246.0"
+            y="1402.3046875"
+            fill="#f8fafc"
+            width="223.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="FXRate"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/FXRate"/>
       <g>
-         <text x="203.0"
-               fill="#0f172a"
-               y="1235.5546875"
-               font-size="16"
-               font-family="Arial">FXRate</text>
-         <line y2="1239.5546875"
-               stroke-width="1"
-               x1="203.0"
-               x2="389.0"
-               stroke="#e2e8f0"
-               y1="1239.5546875"/>
-         <text x="203.0"
-               fill="#64748b"
-               y="1259.953125"
+         <text x="258.0"
+               fill="#1e293b"
+               y="1431.244140625"
                font-size="14"
-               font-family="Arial">FXRatesType</text>
+               font-family="Inter Regular">FXRate</text>
+         <line y2="1437.244140625"
+               stroke-width="1"
+               x1="258.0"
+               x2="457.0"
+               stroke="#e2e8f0"
+               y1="1437.244140625"/>
+         <text x="258.0"
+               fill="#64748b"
+               y="1458.18359375"
+               font-size="13"
+               font-family="Inter Regular">FXRatesType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="401.0"
-           y="1229.5546875"
-           xlink:href="#plus-icon"/>
+           x="473.0"
+           y="1423.244140625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 1239.5546875 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 1435.244140625 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="1234.5546875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1423.244140625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="TotalValue_e231533d8d00a9b16efcd516191706fd.html">
-      <rect x="193.0"
-            y="1291.953125"
-            fill="#f1f5f9"
-            width="206.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="246.0"
+            y="1500.18359375"
+            fill="#f8fafc"
+            width="223.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="TotalValue"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TotalValue"/>
       <g>
-         <text x="203.0"
-               fill="#0f172a"
-               y="1320.3515625"
-               font-size="16"
-               font-family="Arial">TotalValue</text>
-         <line y2="1324.3515625"
-               stroke-width="1"
-               x1="203.0"
-               x2="389.0"
-               stroke="#e2e8f0"
-               y1="1324.3515625"/>
-         <text x="203.0"
-               fill="#64748b"
-               y="1344.75"
+         <text x="258.0"
+               fill="#1e293b"
+               y="1529.123046875"
                font-size="14"
-               font-family="Arial">FundAmountType</text>
+               font-family="Inter Regular">TotalValue</text>
+         <line y2="1535.123046875"
+               stroke-width="1"
+               x1="258.0"
+               x2="457.0"
+               stroke="#e2e8f0"
+               y1="1535.123046875"/>
+         <text x="258.0"
+               fill="#64748b"
+               y="1556.0625"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="401.0"
-           y="1314.3515625"
-           xlink:href="#plus-icon"/>
+           x="473.0"
+           y="1521.123046875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 163.0 777.19921875 V 1324.3515625 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 1533.123046875 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="1319.3515625"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="193.0"
-         y="1376.75"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1521.123046875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="246.0"
+         y="1598.0625"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Channel"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Channel"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="1405.1484375"
-            font-size="16"
-            font-family="Arial">Channel</text>
-      <line y2="1409.1484375"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1409.1484375"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="1429.546875"
+      <text x="258.0"
+            fill="#1e293b"
+            y="1627.001953125"
             font-size="14"
-            font-family="Arial">Text256Type</text>
+            font-family="Inter Regular">Channel</text>
+      <line y2="1633.001953125"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1633.001953125"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="1653.94140625"
+            font-size="13"
+            font-family="Inter Regular">Text256Type</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 1409.1484375 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 1631.001953125 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="1404.1484375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="1461.546875"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1619.001953125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="1695.94140625"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="InvestorID"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorID"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="1489.9453125"
-            font-size="16"
-            font-family="Arial">InvestorID</text>
-      <line y2="1493.9453125"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1493.9453125"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="1514.34375"
+      <text x="258.0"
+            fill="#1e293b"
+            y="1724.880859375"
             font-size="14"
-            font-family="Arial">Text256Type</text>
+            font-family="Inter Regular">InvestorID</text>
+      <line y2="1730.880859375"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1730.880859375"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="1751.8203125"
+            font-size="13"
+            font-family="Inter Regular">Text256Type</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 1493.9453125 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 1728.880859375 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="1488.9453125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1716.880859375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="InvestorTypes_a36f31e956ddc1a24ac136556e48e21f.html">
-      <rect x="193.0"
-            y="1546.34375"
-            fill="#f1f5f9"
-            width="206.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="246.0"
+            y="1793.8203125"
+            fill="#f8fafc"
+            width="223.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="InvestorTypes"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorTypes"/>
       <g>
-         <text x="203.0"
-               fill="#0f172a"
-               y="1574.7421875"
-               font-size="16"
-               font-family="Arial">InvestorTypes</text>
-         <line y2="1578.7421875"
-               stroke-width="1"
-               x1="203.0"
-               x2="389.0"
-               stroke="#e2e8f0"
-               y1="1578.7421875"/>
-         <text x="203.0"
-               fill="#64748b"
-               y="1599.140625"
+         <text x="258.0"
+               fill="#1e293b"
+               y="1822.759765625"
                font-size="14"
-               font-family="Arial">InvestorTypesType</text>
+               font-family="Inter Regular">InvestorTypes</text>
+         <line y2="1828.759765625"
+               stroke-width="1"
+               x1="258.0"
+               x2="457.0"
+               stroke="#e2e8f0"
+               y1="1828.759765625"/>
+         <text x="258.0"
+               fill="#64748b"
+               y="1849.69921875"
+               font-size="13"
+               font-family="Inter Regular">InvestorTypesType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="401.0"
-           y="1568.7421875"
-           xlink:href="#plus-icon"/>
+           x="473.0"
+           y="1814.759765625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 1578.7421875 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 1826.759765625 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="1573.7421875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="193.0"
-         y="1631.140625"
-         fill="#f1f5f9"
-         width="206.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1814.759765625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="246.0"
+         y="1891.69921875"
+         fill="#f8fafc"
+         width="223.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="InvestorCountry"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorCountry"/>
    <g>
-      <text x="203.0"
-            fill="#0f172a"
-            y="1659.5390625"
-            font-size="16"
-            font-family="Arial">InvestorCountry</text>
-      <line y2="1663.5390625"
-            stroke-width="1"
-            x1="203.0"
-            x2="389.0"
-            stroke="#e2e8f0"
-            y1="1663.5390625"/>
-      <text x="203.0"
-            fill="#64748b"
-            y="1683.9375"
+      <text x="258.0"
+            fill="#1e293b"
+            y="1920.638671875"
             font-size="14"
-            font-family="Arial">ISOCountryCodeType</text>
+            font-family="Inter Regular">InvestorCountry</text>
+      <line y2="1926.638671875"
+            stroke-width="1"
+            x1="258.0"
+            x2="457.0"
+            stroke="#e2e8f0"
+            y1="1926.638671875"/>
+      <text x="258.0"
+            fill="#64748b"
+            y="1947.578125"
+            font-size="13"
+            font-family="Inter Regular">ISOCountryCodeType</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 163.0 777.19921875 V 1663.5390625 H 193.0"/>
-   <text x="165.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 196.0 994.4697265625 V 1924.638671875 H 246.0"/>
+   <text x="208.0"
          fill="#64748b"
-         y="1658.5390625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1912.638671875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -976,12 +1020,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">1..*</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -1009,19 +1052,16 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ActionCode_215681f343e58fc5c031354bfc844cf1.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/ActionCode"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../ActionCode</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1029,47 +1069,45 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Operational code: Create(C), Modify(M), Delete(D) below information</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">C</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">M</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="DataGroupedBy_2224d060abc2fb19c3c20eb68c2a2b6c.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/DataGroupedBy"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../DataGroupedBy</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether data is already grouped by specific fields; &quot;Nothing&quot; indicates that information is on seperate transaction level</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines whether data is already grouped by specific fields; &quot;Nothing&quot; indicates<br />
+that information is on seperate transaction level</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">AccountingDate</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">InvestorType</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="DataGroupedByFrequency_f7c5e98e102e23713d7d3451c78198f2.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/DataGroupedByFrequency"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../DataGroupedByFrequency</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/FrequencyType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FrequencyType</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines the time period for grouped data (if DataGroupedBy contains a date field)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Defines the time period for grouped data (if DataGroupedBy contains a date<br />
+field)</p>
 <p>Frequency:<br />
 DAIL ... Daily<br />
 MNTH ... Monthly<br />
@@ -1080,20 +1118,18 @@ TWWK ... Twoweekly<br />
 WEEK ... Weekly<br />
 YEAR</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">MNTH</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">TWMN</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="TransactionID_a52b7a9241e17ef5111f866ebb840d4e.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TransactionID"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../TransactionID</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
@@ -1109,93 +1145,83 @@ YEAR</p>
                                 <a href="TradeDate_ca37fc81785a5dd8d0e084fb6db13aad.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TradeDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../TradeDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date trade has been initiated</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2024-11-13</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-05-01</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="AccountingDate_604b23e9b4a8ab7223f1a1fd4534cac0.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/AccountingDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../AccountingDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date transaction has been booked in accounting system</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2020-05-31</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-03-23</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="SettlementDate_2c9322ac5c82ac53ed3ba3483a776c2e.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/SettlementDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../SettlementDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date transaction has been settled</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-07-13</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-03-23</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ValueDate_e4745df9ce6a1ab79afa55964e0726cb.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/ValueDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../ValueDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date transaction is effective on customer account</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-05-02</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2025-06-14</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="TransactionType_13298048eb5a1835c24fdfcbce7b6a3e.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TransactionType"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../TransactionType</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1203,25 +1229,24 @@ YEAR</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Subscription or Redemption (SUB,RED)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">RED</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">SUB</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="TransactionSubtype_354f80b2c85d0382db8f8aabb8b00549.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TransactionSubtype"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../TransactionSubtype</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:string</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>reinvested dividend, capital repayment, equity increase for closed-ended funds, additional investment, repayment of liabilities, restructuring plan</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>reinvested dividend, capital repayment, equity increase for closed-ended funds,<br />
+additional investment, repayment of liabilities, restructuring plan</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
@@ -1230,33 +1255,29 @@ YEAR</p>
                                 <a href="Netted_e25c468099c6a7301c33aa222160eef5.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Netted"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../Netted</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:boolean</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Whether data is already netted or not</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Cancellation_3d456d0884d907b1c5f092756c6d998d.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Cancellation"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../Cancellation</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:boolean</span>
                             </td>
@@ -1270,13 +1291,11 @@ YEAR</p>
                                 <a href="OriginalTransactionID_fb4069a26c9a730c2e23678813778927.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/OriginalTransactionID"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../OriginalTransactionID</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
@@ -1292,33 +1311,29 @@ YEAR</p>
                                 <a href="Units_5de9da0e998569f7c76e29b28d465438.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Units"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../Units</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Number of shares/units bought or sold (should be always positive)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">906.80</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">545.11</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="FXRate_d607329e5da76e6166aada2d5abdf08d.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/FXRate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../FXRate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/FXRatesType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FXRatesType</a>
                                 
@@ -1333,13 +1348,11 @@ YEAR</p>
                                 <a href="TotalValue_e231533d8d00a9b16efcd516191706fd.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/TotalValue"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../TotalValue</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/FundAmountType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
                                 
@@ -1356,13 +1369,11 @@ YEAR</p>
                                 <a href="Channel_07bc80671a5a3351c83ab5a0d6579b99.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/Channel"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../Channel</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
@@ -1378,13 +1389,11 @@ YEAR</p>
                                 <a href="InvestorID_d6c3544b1ef30cec38290e8895b9fc03.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorID"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../InvestorID</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
@@ -1400,19 +1409,18 @@ YEAR</p>
                                 <a href="InvestorTypes_a36f31e956ddc1a24ac136556e48e21f.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorTypes"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../InvestorTypes</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/InvestorTypesType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">InvestorTypesType</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Private, Institutional, Asset Manager, Banks, Pension Funds, Insurances, Treasury, Charities, … (AIFMD &quot;ID 208 - Investor Group Type&quot;)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Private, Institutional, Asset Manager, Banks, Pension Funds, Insurances, Treasury,<br />
+Charities, … (AIFMD &quot;ID 208 - Investor Group Type&quot;)</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -1421,21 +1429,23 @@ YEAR</p>
                                 <a href="InvestorCountry_3169261807a2c24df8377555ec981792.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/ShareClasses/ShareClass/Flows/Flow/InvestorCountry"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../InvestorCountry</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/ISOCountryCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCountryCodeType</a>
                                 
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Country of investor</p>
-<p>The ISOCountryCodeType is a type for decoding ISO-CountryCodes. It is used the two-letter ISO-CountryCodes (ISO 3166-1alpha-2). It is of the type string and has a length from exactly two letters.</p>
-<p>Der ISOCountryCodeType stellt einen einfachen Typ zur Verarbeitung von ISO-Laendercodes bereit. Verwendet werden die zweistelligen ISO-Waehrungscodes (ISO 3166-1alpha-2). Er ist vom Typ string und hat eine Laenge von zwei Zeichen.</p>
+<p>The ISOCountryCodeType is a type for decoding ISO-CountryCodes. It is used<br />
+the two-letter ISO-CountryCodes (ISO 3166-1alpha-2). It is of the type string and has a length from<br />
+exactly two letters.</p>
+<p>Der ISOCountryCodeType stellt einen einfachen Typ zur Verarbeitung von<br />
+ISO-Laendercodes bereit. Verwendet werden die zweistelligen ISO-Waehrungscodes (ISO 3166-1alpha-2). Er<br />
+ist vom Typ string und hat eine Laenge von zwei Zeichen.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">aa</td>
                         </tr>
@@ -1453,7 +1463,6 @@ YEAR</p>
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
             name=&quot;Flow&quot;
@@ -1472,9 +1481,9 @@ YEAR</p>
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -1486,6 +1495,29 @@ YEAR</p>
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

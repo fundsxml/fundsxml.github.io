@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">UnderlyingInstrument</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,369 +129,391 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="573.0"
-     height="613.578125">
+     style="background-color: #ffffff"
+     width="660.0"
+     height="749.15234375">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="259"
-            fill="#f1f5f9"
-            width="163.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="338"
+            fill="#f8fafc"
+            width="165.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="UnderlyingInstrument"/>
-      <text x="30"
-            fill="#0f172a"
-            y="287.3984375"
-            font-size="16"
-            font-family="Arial">UnderlyingInstrument</text>
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument"/>
+      <text x="44"
+            fill="#1e293b"
+            y="366.939453125"
+            font-size="14"
+            font-family="Inter Regular">UnderlyingInstrument</text>
    </a>
-   <g id="comment">
-      <text x="30"
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
             fill="#64748b"
-            font-size="14"
-            y="312.3984375"
-            font-family="Arial"/>
+            font-size="13"
+            y="396.939453125"
+            font-family="Inter Regular"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 183.0 278.19921875 H 213.0"/>
-   <g id="seq-group_UnderlyingInstrument">
-      <rect x="213.0"
-            y="268.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="278.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="218.0"
-            x2="248.0"
-            y1="278.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="225.0" cy="278.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="233.0" cy="278.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="241.0" cy="278.19921875"/>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 253.0 278.19921875 h 20.0"/>
-   <rect x="303.0"
-         y="20.0"
-         fill="#f1f5f9"
-         width="240.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="InstrumentCIC"/>
-   <g>
-      <text x="313.0"
-            fill="#0f172a"
-            y="48.3984375"
-            font-size="16"
-            font-family="Arial">InstrumentCIC</text>
-      <line y2="52.3984375"
-            stroke-width="1"
-            x1="313.0"
-            x2="533.0"
-            stroke="#e2e8f0"
-            y1="52.3984375"/>
-      <text x="313.0"
-            fill="#64748b"
-            y="72.796875"
-            font-size="14"
-            font-family="Arial">CICCodeType</text>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 273.0 278.19921875 V 52.3984375 H 303.0"/>
-   <text x="275.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 197.0 358.4697265625 H 232.0"/>
+   <text x="244.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="331.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856772430">
+      <rect x="232.0"
+            y="343.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="358.4697265625"
+            stroke-width="1.5"
+            x1="240.0"
+            x2="274.0"
+            stroke="#64748b"
+            y1="358.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="247.0" cy="358.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="257.0" cy="358.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="267.0" cy="358.4697265625"/>
+   </g>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 282.0 358.4697265625 h 25.0"/>
+   <rect x="357.0"
+         y="32.0"
+         fill="#f8fafc"
+         width="255.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/InstrumentCIC"/>
+   <g>
+      <text x="369.0"
+            fill="#1e293b"
+            y="60.939453125"
+            font-size="14"
+            font-family="Inter Regular">InstrumentCIC</text>
+      <line y2="66.939453125"
+            stroke-width="1"
+            x1="369.0"
+            x2="600.0"
+            stroke="#e2e8f0"
+            y1="66.939453125"/>
+      <text x="369.0"
+            fill="#64748b"
+            y="87.87890625"
+            font-size="13"
+            font-family="Inter Regular">CICCodeType</text>
+   </g>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 307.0 358.4697265625 V 64.939453125 H 357.0"/>
+   <text x="319.0"
+         fill="#64748b"
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="InstrumentCode_57af79169e07569401cecf49a6635fbe.html">
-      <rect x="303.0"
-            y="104.796875"
-            fill="#f1f5f9"
-            width="240.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="357.0"
+            y="129.87890625"
+            fill="#f8fafc"
+            width="255.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="InstrumentCode"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/InstrumentCode"/>
       <g>
-         <text x="313.0"
-               fill="#0f172a"
-               y="133.1953125"
-               font-size="16"
-               font-family="Arial">InstrumentCode</text>
-         <line y2="137.1953125"
-               stroke-width="1"
-               x1="313.0"
-               x2="533.0"
-               stroke="#e2e8f0"
-               y1="137.1953125"/>
-         <text x="313.0"
-               fill="#64748b"
-               y="157.59375"
+         <text x="369.0"
+               fill="#1e293b"
+               y="158.818359375"
                font-size="14"
-               font-family="Arial">SIISecurityCodificationType_V5</text>
+               font-family="Inter Regular">InstrumentCode</text>
+         <line y2="164.818359375"
+               stroke-width="1"
+               x1="369.0"
+               x2="600.0"
+               stroke="#e2e8f0"
+               y1="164.818359375"/>
+         <text x="369.0"
+               fill="#64748b"
+               y="185.7578125"
+               font-size="13"
+               font-family="Inter Regular">SIISecurityCodificationType_V5</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="545.0"
-           y="127.1953125"
-           xlink:href="#plus-icon"/>
+           x="616.0"
+           y="150.818359375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 273.0 278.19921875 V 137.1953125 H 303.0"/>
-   <text x="275.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 307.0 358.4697265625 V 162.818359375 H 357.0"/>
+   <text x="319.0"
          fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="303.0"
-         y="189.59375"
-         fill="#f1f5f9"
-         width="240.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="357.0"
+         y="227.7578125"
+         fill="#f8fafc"
+         width="255.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="InstrumentName"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/InstrumentName"/>
    <g>
-      <text x="313.0"
-            fill="#0f172a"
-            y="217.9921875"
-            font-size="16"
-            font-family="Arial">InstrumentName</text>
-      <line y2="221.9921875"
-            stroke-width="1"
-            x1="313.0"
-            x2="533.0"
-            stroke="#e2e8f0"
-            y1="221.9921875"/>
-      <text x="313.0"
-            fill="#64748b"
-            y="242.390625"
+      <text x="369.0"
+            fill="#1e293b"
+            y="256.697265625"
             font-size="14"
-            font-family="Arial">xs:string</text>
+            font-family="Inter Regular">InstrumentName</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="369.0"
+            x2="600.0"
+            stroke="#e2e8f0"
+            y1="262.697265625"/>
+      <text x="369.0"
+            fill="#64748b"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">xs:string</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 273.0 278.19921875 V 221.9921875 H 303.0"/>
-   <text x="275.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 307.0 358.4697265625 V 260.697265625 H 357.0"/>
+   <text x="319.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="Valuation_11f89b1e70b1b8db5a0abb12f02681cd.html">
-      <rect x="303.0"
-            y="274.390625"
-            fill="#f1f5f9"
-            width="240.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="357.0"
+            y="325.63671875"
+            fill="#f8fafc"
+            width="255.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Valuation"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/Valuation"/>
       <g>
-         <text x="313.0"
-               fill="#0f172a"
-               y="302.7890625"
-               font-size="16"
-               font-family="Arial">Valuation</text>
-         <line y2="306.7890625"
-               stroke-width="1"
-               x1="313.0"
-               x2="533.0"
-               stroke="#e2e8f0"
-               y1="306.7890625"/>
-         <text x="313.0"
-               fill="#64748b"
-               y="327.1875"
+         <text x="369.0"
+               fill="#1e293b"
+               y="354.576171875"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Valuation</text>
+         <line y2="360.576171875"
+               stroke-width="1"
+               x1="369.0"
+               x2="600.0"
+               stroke="#e2e8f0"
+               y1="360.576171875"/>
+         <text x="369.0"
+               fill="#64748b"
+               y="381.515625"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="545.0"
-           y="296.7890625"
-           xlink:href="#plus-icon"/>
+           x="616.0"
+           y="346.576171875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 273.0 278.19921875 V 306.7890625 H 303.0"/>
-   <text x="275.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 307.0 358.4697265625 V 358.576171875 H 357.0"/>
+   <text x="319.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="Coupon_a80b6b7565d6db3f07f546e031b8b535.html">
-      <rect x="303.0"
-            y="359.1875"
-            fill="#f1f5f9"
-            width="240.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="357.0"
+            y="423.515625"
+            fill="#f8fafc"
+            width="255.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Coupon"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/Coupon"/>
       <g>
-         <text x="313.0"
-               fill="#0f172a"
-               y="387.5859375"
-               font-size="16"
-               font-family="Arial">Coupon</text>
-         <line y2="391.5859375"
-               stroke-width="1"
-               x1="313.0"
-               x2="533.0"
-               stroke="#e2e8f0"
-               y1="391.5859375"/>
-         <text x="313.0"
-               fill="#64748b"
-               y="411.984375"
+         <text x="369.0"
+               fill="#1e293b"
+               y="452.455078125"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Coupon</text>
+         <line y2="458.455078125"
+               stroke-width="1"
+               x1="369.0"
+               x2="600.0"
+               stroke="#e2e8f0"
+               y1="458.455078125"/>
+         <text x="369.0"
+               fill="#64748b"
+               y="479.39453125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="545.0"
-           y="381.5859375"
-           xlink:href="#plus-icon"/>
+           x="616.0"
+           y="444.455078125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 273.0 278.19921875 V 391.5859375 H 303.0"/>
-   <text x="275.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 307.0 358.4697265625 V 456.455078125 H 357.0"/>
+   <text x="319.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Redemption_f3c9f32a37f5fef9b1ed8dd844b8976e.html">
-      <rect x="303.0"
-            y="443.984375"
-            fill="#f1f5f9"
-            width="240.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="357.0"
+            y="521.39453125"
+            fill="#f8fafc"
+            width="255.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Redemption"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/Redemption"/>
       <g>
-         <text x="313.0"
-               fill="#0f172a"
-               y="472.3828125"
-               font-size="16"
-               font-family="Arial">Redemption</text>
-         <line y2="476.3828125"
-               stroke-width="1"
-               x1="313.0"
-               x2="533.0"
-               stroke="#e2e8f0"
-               y1="476.3828125"/>
-         <text x="313.0"
-               fill="#64748b"
-               y="496.78125"
+         <text x="369.0"
+               fill="#1e293b"
+               y="550.333984375"
                font-size="14"
-               font-family="Arial">RedemptionType_V7</text>
+               font-family="Inter Regular">Redemption</text>
+         <line y2="556.333984375"
+               stroke-width="1"
+               x1="369.0"
+               x2="600.0"
+               stroke="#e2e8f0"
+               y1="556.333984375"/>
+         <text x="369.0"
+               fill="#64748b"
+               y="577.2734375"
+               font-size="13"
+               font-family="Inter Regular">RedemptionType_V7</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="545.0"
-           y="466.3828125"
-           xlink:href="#plus-icon"/>
+           x="616.0"
+           y="542.333984375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 273.0 278.19921875 V 476.3828125 H 303.0"/>
-   <text x="275.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 307.0 358.4697265625 V 554.333984375 H 357.0"/>
+   <text x="319.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="CreditRiskData_6612df9741cd75c347302cabe1a94b03.html">
-      <rect x="303.0"
-            y="528.78125"
-            fill="#f1f5f9"
-            width="240.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="357.0"
+            y="619.2734375"
+            fill="#f8fafc"
+            width="255.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="CreditRiskData"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/CreditRiskData"/>
       <g>
-         <text x="313.0"
-               fill="#0f172a"
-               y="557.1796875"
-               font-size="16"
-               font-family="Arial">CreditRiskData</text>
-         <line y2="561.1796875"
-               stroke-width="1"
-               x1="313.0"
-               x2="533.0"
-               stroke="#e2e8f0"
-               y1="561.1796875"/>
-         <text x="313.0"
-               fill="#64748b"
-               y="581.578125"
+         <text x="369.0"
+               fill="#1e293b"
+               y="648.212890625"
                font-size="14"
-               font-family="Arial">CreditRiskDataType_V7</text>
+               font-family="Inter Regular">CreditRiskData</text>
+         <line y2="654.212890625"
+               stroke-width="1"
+               x1="369.0"
+               x2="600.0"
+               stroke="#e2e8f0"
+               y1="654.212890625"/>
+         <text x="369.0"
+               fill="#64748b"
+               y="675.15234375"
+               font-size="13"
+               font-family="Inter Regular">CreditRiskDataType_V7</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="545.0"
-           y="551.1796875"
-           xlink:href="#plus-icon"/>
+           x="616.0"
+           y="640.212890625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 273.0 278.19921875 V 561.1796875 H 303.0"/>
-   <text x="275.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 307.0 358.4697265625 V 652.212890625 H 357.0"/>
+   <text x="319.0"
          fill="#64748b"
-         y="556.1796875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="640.212890625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -507,12 +538,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -540,49 +570,48 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="InstrumentCIC_eefc9de01edbf9389fd7e5b526a42cf4.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/InstrumentCIC"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../InstrumentCIC</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/CICCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">CICCodeType</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A67 - Instrument type. E.g. Equity, bond, option, swap,...<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A67 - Instrument type. E.g. Equity, bond,<br />
+option, swap,...<br />
 CIC codification.</p>
 <p>CIC code (4 positions) to identify a kind of security</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">TNA3</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">AXD3</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="InstrumentCode_57af79169e07569401cecf49a6635fbe.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/InstrumentCode"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../InstrumentCode</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/SIISecurityCodificationType_V5.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">SIISecurityCodificationType_V5</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A69 68 - Use ISIN, CUSIP,  or OtherSecurityCodes/Name(of codification system) for BLOOMBERG, TELEKURS or Internal code</p>
-<p>CodificationSystem (restricted list for Securities) and Code expressed in CodificationSystem</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A69 68 - Use ISIN, CUSIP, or<br />
+OtherSecurityCodes/Name(of codification system) for BLOOMBERG, TELEKURS<br />
+or Internal code</p>
+<p>CodificationSystem (restricted list for Securities) and Code expressed in<br />
+CodificationSystem</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -591,13 +620,11 @@ CIC codification.</p>
                                 <a href="InstrumentName_459ec0b23c54512c3c39215533b7bdad.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/InstrumentName"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../InstrumentName</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:string</span>
                             </td>
@@ -611,13 +638,11 @@ CIC codification.</p>
                                 <a href="Valuation_11f89b1e70b1b8db5a0abb12f02681cd.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/Valuation"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Valuation</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -631,19 +656,18 @@ CIC codification.</p>
                                 <a href="Coupon_a80b6b7565d6db3f07f546e031b8b535.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/Coupon"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Coupon</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>If underlying instrument is an interest rate instrument.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>If underlying instrument is an interest rate<br />
+instrument.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -652,13 +676,11 @@ CIC codification.</p>
                                 <a href="Redemption_f3c9f32a37f5fef9b1ed8dd844b8976e.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/Redemption"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Redemption</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/RedemptionType_V7.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">RedemptionType_V7</a>
                                 
@@ -675,13 +697,11 @@ If underlying instrument is an interest rate instrument.</p>
                                 <a href="CreditRiskData_6612df9741cd75c347302cabe1a94b03.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/DerivativeOrConvertible/UnderlyingInstrument/CreditRiskData"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../CreditRiskData</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/CreditRiskDataType_V7.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">CreditRiskDataType_V7</a>
                                 
@@ -707,25 +727,29 @@ If underlying instrument is an interest rate instrument.</p>
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             name=&quot;UnderlyingInstrument&quot;&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;InstrumentCIC&quot; type=&quot;CICCodeType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A67 - Instrument type. E.g. Equity, bond, option, swap,...
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A67 - Instrument type. E.g. Equity, bond,
+                                                option, swap,...
 CIC codification.&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;InstrumentCode&quot; type=&quot;SIISecurityCodificationType_V5&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A69 68 - Use ISIN, CUSIP,  or OtherSecurityCodes/Name(of codification system) for BLOOMBERG, TELEKURS or Internal code&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A69 68 - Use ISIN, CUSIP, or
+                                                OtherSecurityCodes/Name(of codification system) for BLOOMBERG, TELEKURS
+                                                or Internal code
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;InstrumentName&quot; type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A70 - Name of underlying instrument.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A70 - Name of underlying instrument.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Valuation&quot;&gt;
@@ -733,22 +757,27 @@ CIC codification.&lt;/xs:documentation&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Currency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;A71 - Quotation currency (C)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;A71 - Quotation currency (C)
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;MarketPrice&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A72 - Last market price known, in Currency (C).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A72 - Last market price known,
+                                                            in Currency (C).
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Country&quot; type=&quot;ISOCountryCodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A73 - Country of quotation&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A73 - Country of quotation
+                                                        &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;EconomicArea&quot; type=&quot;EconomicAreaType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A74 - Economic area code of Country of quotation:
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A74 - Economic area code of
+                                                            Country of quotation:
 0 non listed
 1 EEA;
 2 OECD non EEA
@@ -760,19 +789,23 @@ CIC codification.&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Coupon&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;If underlying instrument is an interest rate instrument.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;If underlying instrument is an interest rate
+                                                instrument.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;CouponRate&quot; type=&quot;PercentageType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A75 - Next coupon rate in percentage.
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A75 - Next coupon rate in
+                                                            percentage.
 3.5% = 3.5&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;CouponFrequency&quot; type=&quot;SIICouponFrequencyType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A76 - Coupon payment frequency as &quot;number of coupon payment per year
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A76 - Coupon payment frequency
+                                                            as &quot;number of coupon payment per year
 0 = other than below options:
 1= annual
 2= biannual
@@ -814,9 +847,9 @@ If underlying instrument is an interest rate instrument.&lt;/xs:documentation&gt
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -828,6 +861,29 @@ If underlying instrument is an interest rate instrument.&lt;/xs:documentation&gt
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

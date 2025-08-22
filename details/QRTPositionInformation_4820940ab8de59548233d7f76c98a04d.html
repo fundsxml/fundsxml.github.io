@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">QRTPositionInformation</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,350 +129,372 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="552.0"
-     height="613.578125">
+     style="background-color: #ffffff"
+     width="634.0"
+     height="749.15234375">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="259"
-            fill="#f1f5f9"
-            width="185.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="338"
+            fill="#f8fafc"
+            width="178.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="QRTPositionInformation"/>
-      <text x="30"
-            fill="#0f172a"
-            y="287.3984375"
-            font-size="16"
-            font-family="Arial">QRTPositionInformation</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation"/>
+      <text x="44"
+            fill="#1e293b"
+            y="366.939453125"
             font-size="14"
-            y="312.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">Needed for segregated </tspan>
-         <tspan x="25" dy="1.2em">account.
+            font-family="Inter Regular">QRTPositionInformation</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="396.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">Needed for segregated </tspan>
+         <tspan x="27" dy="1.3em">account.
 To be </tspan>
-         <tspan x="25" dy="1.2em">specified*********** </tspan>
+         <tspan x="27" dy="1.3em">specified*********** </tspan>
       </text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 205.0 278.19921875 H 235.0"/>
-   <g id="seq-group_QRTPositionInformation">
-      <rect x="235.0"
-            y="268.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="278.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="240.0"
-            x2="270.0"
-            y1="278.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="247.0" cy="278.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="255.0" cy="278.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="263.0" cy="278.19921875"/>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 275.0 278.19921875 h 20.0"/>
-   <rect x="325.0"
-         y="20.0"
-         fill="#f1f5f9"
-         width="197.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="CollateralisedAsset"/>
-   <g>
-      <text x="335.0"
-            fill="#0f172a"
-            y="48.3984375"
-            font-size="16"
-            font-family="Arial">CollateralisedAsset</text>
-      <line y2="52.3984375"
-            stroke-width="1"
-            x1="335.0"
-            x2="512.0"
-            stroke="#e2e8f0"
-            y1="52.3984375"/>
-      <text x="335.0"
-            fill="#64748b"
-            y="72.796875"
-            font-size="14"
-            font-family="Arial">(anonymous)</text>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 295.0 278.19921875 V 52.3984375 H 325.0"/>
-   <text x="297.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 210.0 358.4697265625 H 245.0"/>
+   <text x="257.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="325.0"
-         y="104.796875"
-         fill="#f1f5f9"
-         width="197.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="PlaceOfDeposit"/>
-   <g>
-      <text x="335.0"
-            fill="#0f172a"
-            y="133.1953125"
-            font-size="16"
-            font-family="Arial">PlaceOfDeposit</text>
-      <line y2="137.1953125"
-            stroke-width="1"
-            x1="335.0"
-            x2="512.0"
-            stroke="#e2e8f0"
-            y1="137.1953125"/>
-      <text x="335.0"
-            fill="#64748b"
-            y="157.59375"
-            font-size="14"
-            font-family="Arial">xs:string</text>
+         y="331.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856772519">
+      <rect x="245.0"
+            y="343.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="358.4697265625"
+            stroke-width="1.5"
+            x1="253.0"
+            x2="287.0"
+            stroke="#64748b"
+            y1="358.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="260.0" cy="358.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="270.0" cy="358.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="280.0" cy="358.4697265625"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 295.0 278.19921875 V 137.1953125 H 325.0"/>
-   <text x="297.0"
-         fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="325.0"
-         y="189.59375"
-         fill="#f1f5f9"
-         width="197.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 295.0 358.4697265625 h 25.0"/>
+   <rect x="370.0"
+         y="32.0"
+         fill="#f8fafc"
+         width="216.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Participation"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/CollateralisedAsset"/>
    <g>
-      <text x="335.0"
-            fill="#0f172a"
-            y="217.9921875"
-            font-size="16"
-            font-family="Arial">Participation</text>
-      <line y2="221.9921875"
-            stroke-width="1"
-            x1="335.0"
-            x2="512.0"
-            stroke="#e2e8f0"
-            y1="221.9921875"/>
-      <text x="335.0"
-            fill="#64748b"
-            y="242.390625"
+      <text x="382.0"
+            fill="#1e293b"
+            y="60.939453125"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">CollateralisedAsset</text>
+      <line y2="66.939453125"
+            stroke-width="1"
+            x1="382.0"
+            x2="574.0"
+            stroke="#e2e8f0"
+            y1="66.939453125"/>
+      <text x="382.0"
+            fill="#64748b"
+            y="87.87890625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 295.0 278.19921875 V 221.9921875 H 325.0"/>
-   <text x="297.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 320.0 358.4697265625 V 64.939453125 H 370.0"/>
+   <text x="332.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="325.0"
-         y="274.390625"
-         fill="#f1f5f9"
-         width="197.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="370.0"
+         y="129.87890625"
+         fill="#f8fafc"
+         width="216.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ValorisationMethod"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/PlaceOfDeposit"/>
    <g>
-      <text x="335.0"
-            fill="#0f172a"
-            y="302.7890625"
-            font-size="16"
-            font-family="Arial">ValorisationMethod</text>
-      <line y2="306.7890625"
-            stroke-width="1"
-            x1="335.0"
-            x2="512.0"
-            stroke="#e2e8f0"
-            y1="306.7890625"/>
-      <text x="335.0"
-            fill="#64748b"
-            y="327.1875"
+      <text x="382.0"
+            fill="#1e293b"
+            y="158.818359375"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">PlaceOfDeposit</text>
+      <line y2="164.818359375"
+            stroke-width="1"
+            x1="382.0"
+            x2="574.0"
+            stroke="#e2e8f0"
+            y1="164.818359375"/>
+      <text x="382.0"
+            fill="#64748b"
+            y="185.7578125"
+            font-size="13"
+            font-family="Inter Regular">xs:string</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 295.0 278.19921875 V 306.7890625 H 325.0"/>
-   <text x="297.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 320.0 358.4697265625 V 162.818359375 H 370.0"/>
+   <text x="332.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="325.0"
-         y="359.1875"
-         fill="#f1f5f9"
-         width="197.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="370.0"
+         y="227.7578125"
+         fill="#f8fafc"
+         width="216.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="AcquisitionValue"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/Participation"/>
    <g>
-      <text x="335.0"
-            fill="#0f172a"
-            y="387.5859375"
-            font-size="16"
-            font-family="Arial">AcquisitionValue</text>
-      <line y2="391.5859375"
-            stroke-width="1"
-            x1="335.0"
-            x2="512.0"
-            stroke="#e2e8f0"
-            y1="391.5859375"/>
-      <text x="335.0"
-            fill="#64748b"
-            y="411.984375"
+      <text x="382.0"
+            fill="#1e293b"
+            y="256.697265625"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">Participation</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="382.0"
+            x2="574.0"
+            stroke="#e2e8f0"
+            y1="262.697265625"/>
+      <text x="382.0"
+            fill="#64748b"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 295.0 278.19921875 V 391.5859375 H 325.0"/>
-   <text x="297.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 320.0 358.4697265625 V 260.697265625 H 370.0"/>
+   <text x="332.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="370.0"
+         y="325.63671875"
+         fill="#f8fafc"
+         width="216.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/ValorisationMethod"/>
+   <g>
+      <text x="382.0"
+            fill="#1e293b"
+            y="354.576171875"
+            font-size="14"
+            font-family="Inter Regular">ValorisationMethod</text>
+      <line y2="360.576171875"
+            stroke-width="1"
+            x1="382.0"
+            x2="574.0"
+            stroke="#e2e8f0"
+            y1="360.576171875"/>
+      <text x="382.0"
+            fill="#64748b"
+            y="381.515625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
+   </g>
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 320.0 358.4697265625 V 358.576171875 H 370.0"/>
+   <text x="332.0"
+         fill="#64748b"
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="370.0"
+         y="423.515625"
+         fill="#f8fafc"
+         width="216.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/AcquisitionValue"/>
+   <g>
+      <text x="382.0"
+            fill="#1e293b"
+            y="452.455078125"
+            font-size="14"
+            font-family="Inter Regular">AcquisitionValue</text>
+      <line y2="458.455078125"
+            stroke-width="1"
+            x1="382.0"
+            x2="574.0"
+            stroke="#e2e8f0"
+            y1="458.455078125"/>
+      <text x="382.0"
+            fill="#64748b"
+            y="479.39453125"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
+   </g>
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 320.0 358.4697265625 V 456.455078125 H 370.0"/>
+   <text x="332.0"
+         fill="#64748b"
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="CounterpartyRating_c726e00cc03f1c02c1d7d9fff283bd06.html">
-      <rect x="325.0"
-            y="443.984375"
-            fill="#f1f5f9"
-            width="197.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="370.0"
+            y="521.39453125"
+            fill="#f8fafc"
+            width="216.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="CounterpartyRating"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/CounterpartyRating"/>
       <g>
-         <text x="335.0"
-               fill="#0f172a"
-               y="472.3828125"
-               font-size="16"
-               font-family="Arial">CounterpartyRating</text>
-         <line y2="476.3828125"
-               stroke-width="1"
-               x1="335.0"
-               x2="512.0"
-               stroke="#e2e8f0"
-               y1="476.3828125"/>
-         <text x="335.0"
-               fill="#64748b"
-               y="496.78125"
+         <text x="382.0"
+               fill="#1e293b"
+               y="550.333984375"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">CounterpartyRating</text>
+         <line y2="556.333984375"
+               stroke-width="1"
+               x1="382.0"
+               x2="574.0"
+               stroke="#e2e8f0"
+               y1="556.333984375"/>
+         <text x="382.0"
+               fill="#64748b"
+               y="577.2734375"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="524.0"
-           y="466.3828125"
-           xlink:href="#plus-icon"/>
+           x="590.0"
+           y="542.333984375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 295.0 278.19921875 V 476.3828125 H 325.0"/>
-   <text x="297.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 320.0 358.4697265625 V 554.333984375 H 370.0"/>
+   <text x="332.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="325.0"
-         y="528.78125"
-         fill="#f1f5f9"
-         width="197.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="370.0"
+         y="619.2734375"
+         fill="#f8fafc"
+         width="216.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="UnderlyingAssetCategory"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/UnderlyingAssetCategory"/>
    <g>
-      <text x="335.0"
-            fill="#0f172a"
-            y="557.1796875"
-            font-size="16"
-            font-family="Arial">UnderlyingAssetCategory</text>
-      <line y2="561.1796875"
-            stroke-width="1"
-            x1="335.0"
-            x2="512.0"
-            stroke="#e2e8f0"
-            y1="561.1796875"/>
-      <text x="335.0"
-            fill="#64748b"
-            y="581.578125"
+      <text x="382.0"
+            fill="#1e293b"
+            y="648.212890625"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">UnderlyingAssetCategory</text>
+      <line y2="654.212890625"
+            stroke-width="1"
+            x1="382.0"
+            x2="574.0"
+            stroke="#e2e8f0"
+            y1="654.212890625"/>
+      <text x="382.0"
+            fill="#64748b"
+            y="675.15234375"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 295.0 278.19921875 V 561.1796875 H 325.0"/>
-   <text x="297.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 320.0 358.4697265625 V 652.212890625 H 370.0"/>
+   <text x="332.0"
          fill="#64748b"
-         y="556.1796875"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="640.212890625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -498,12 +529,11 @@ To be specified***********</p>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">0..1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -531,19 +561,16 @@ To be specified***********</p>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="CollateralisedAsset_b2b1e8d1175db7c7f9419a2929901c7b.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/CollateralisedAsset"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../CollateralisedAsset</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -558,13 +585,11 @@ To be specified***********</p>
                                 <a href="PlaceOfDeposit_c86879c446e260d042445dae5ba8ad9b.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/PlaceOfDeposit"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../PlaceOfDeposit</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:string</span>
                             </td>
@@ -578,19 +603,18 @@ To be specified***********</p>
                                 <a href="Participation_65d8f9a9879d9663de43c544d8a4e56d.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/Participation"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Participation</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A108 - Indicator used to identify the guidelines of participation in accountancy terms<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A108 - Indicator used to identify the guidelines of participation in<br />
+accountancy terms<br />
 1 - Participation<br />
 2 - non participation</p>
 </td>
@@ -601,13 +625,11 @@ To be specified***********</p>
                                 <a href="ValorisationMethod_9c6f8467e5bb68167af1e587c6fd12ad.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/ValorisationMethod"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../ValorisationMethod</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -628,34 +650,31 @@ To be specified***********</p>
                                 <a href="AcquisitionValue_9885957c5c1049606d113d580ee3237b.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/AcquisitionValue"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../AcquisitionValue</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A111 - Total acquisition value for assets held, clean value without accrued interest.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A111 - Total acquisition value for assets held, clean value without<br />
+accrued interest.<br />
 Not applicable to CIC categories 7 and 8.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">97.46</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">193.87</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="CounterpartyRating_c726e00cc03f1c02c1d7d9fff283bd06.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/CounterpartyRating"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../CounterpartyRating</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -669,19 +688,18 @@ Not applicable to CIC categories 7 and 8.</p>
                                 <a href="UnderlyingAssetCategory_aeb00e21a77457c068278fa26414af2d.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/QRTPositionInformation/UnderlyingAssetCategory"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../UnderlyingAssetCategory</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A131 - Identifies the assets categories, receivables and derivatives within the collective investment undertaking.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A131 - Identifies the assets categories, receivables and derivatives<br />
+within the collective investment undertaking.<br />
 Possible values are:<br />
 1 - Government bonds<br />
 2 - Corporate bonds<br />
@@ -703,7 +721,7 @@ F – Credit derivatives<br />
 L - Liabilities<br />
 When the look-through regards a Fund of funds, category “4 - Collective Investment Units” shall be used only for non-material residual values.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">0</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">5</td>
                         </tr>
                         </tbody>
                     </table>
@@ -719,7 +737,6 @@ When the look-through regards a Fund of funds, category “4 - Collective Invest
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
             name=&quot;QRTPositionInformation&quot;&gt;
@@ -731,7 +748,8 @@ To be specified***********&lt;/xs:documentation&gt;
       &lt;xs:sequence&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CollateralisedAsset&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;A106 - Indicator used to identify the under-written instruments&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;A106 - Indicator used to identify the under-written instruments
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:simpleType&gt;
                &lt;xs:restriction base=&quot;xs:unsignedInt&quot;&gt;
@@ -750,7 +768,8 @@ To be specified***********&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Participation&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;A108 - Indicator used to identify the guidelines of participation in accountancy terms
+               &lt;xs:documentation&gt;A108 - Indicator used to identify the guidelines of participation in
+                                    accountancy terms
 1 - Participation
 2 - non participation&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
@@ -780,7 +799,8 @@ To be specified***********&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AcquisitionValue&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;A111 - Total acquisition value for assets held, clean value without accrued interest.
+               &lt;xs:documentation&gt;A111 - Total acquisition value for assets held, clean value without
+                                    accrued interest.
 Not applicable to CIC categories 7 and 8.&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
@@ -789,12 +809,16 @@ Not applicable to CIC categories 7 and 8.&lt;/xs:documentation&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;RatingValue&quot; type=&quot;xs:string&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;A112 - Rating of the counterparty / issuer (cf specifications QRT) (S.06.02 - old: Assets D1)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;A112 - Rating of the counterparty / issuer (cf
+                                                specifications QRT) (S.06.02 - old: Assets D1)
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;RatingAgency&quot; type=&quot;xs:string&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;A113 - Name of the rating agency (cf specification QRT) (S.06.02 - old: Assets D1)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;A113 - Name of the rating agency (cf specification QRT)
+                                                (S.06.02 - old: Assets D1)
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -802,7 +826,8 @@ Not applicable to CIC categories 7 and 8.&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;UnderlyingAssetCategory&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;A131 - Identifies the assets categories, receivables and derivatives within the collective investment undertaking.
+               &lt;xs:documentation&gt;A131 - Identifies the assets categories, receivables and derivatives
+                                    within the collective investment undertaking.
 Possible values are:
 1 - Government bonds
 2 - Corporate bonds
@@ -867,9 +892,9 @@ When the look-through regards a Fund of funds, category “4 - Collective Invest
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -881,6 +906,29 @@ When the look-through regards a Fund of funds, category “4 - Collective Invest
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

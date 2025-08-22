@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">AdditionalInformationRequiredForStructuredPRIIPs</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,527 +129,555 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="1081.0"
-     height="1037.5625">
+     style="background-color: #ffffff"
+     width="1129.0"
+     height="1238.546875">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="451"
-            fill="#f1f5f9"
-            width="372.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="582"
+            fill="#f8fafc"
+            width="355.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="AdditionalInformationRequiredForStructuredPRIIPs"/>
-      <text x="30"
-            fill="#0f172a"
-            y="479.3984375"
-            font-size="16"
-            font-family="Arial">AdditionalInformationRequiredForStructuredPRIIPs</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs"/>
+      <text x="44"
+            fill="#1e293b"
+            y="610.939453125"
             font-size="14"
-            y="504.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">07-Additional information required for structured PRIIPs: </tspan>
-         <tspan x="25" dy="1.2em">RIY Costs </tspan>
+            font-family="Inter Regular">AdditionalInformationRequiredForStructuredPRIIPs</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="640.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">07-Additional information required for structured </tspan>
+         <tspan x="27" dy="1.3em">PRIIPs: RIY Costs
+ </tspan>
       </text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 392.0 470.19921875 H 422.0"/>
-   <g id="seq-group_AdditionalInformationRequiredForStructuredPRIIPs">
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 387.0 602.4697265625 H 422.0"/>
+   <text x="434.0"
+         fill="#64748b"
+         y="575.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856772811">
       <rect x="422.0"
-            y="460.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="470.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="427.0"
-            x2="457.0"
-            y1="470.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="434.0" cy="470.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="442.0" cy="470.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="450.0" cy="470.19921875"/>
+            y="587.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="602.4697265625"
+            stroke-width="1.5"
+            x1="430.0"
+            x2="464.0"
+            stroke="#64748b"
+            y1="602.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="437.0" cy="602.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="447.0" cy="602.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="457.0" cy="602.4697265625"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 462.0 470.19921875 h 20.0"/>
-   <rect x="512.0"
-         y="20.0"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 472.0 602.4697265625 h 25.0"/>
+   <rect x="547.0"
+         y="32.0"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="FirstPossibleCallDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/FirstPossibleCallDate"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="48.3984375"
-            font-size="16"
-            font-family="Arial">FirstPossibleCallDate</text>
-      <line y2="52.3984375"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="52.3984375"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="72.796875"
+      <text x="559.0"
+            fill="#1e293b"
+            y="60.939453125"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">FirstPossibleCallDate</text>
+      <line y2="66.939453125"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="66.939453125"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="87.87890625"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 52.3984375 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 64.939453125 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="104.796875"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="129.87890625"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="TotalCost1YearOrFirstCall"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/TotalCost1YearOrFirstCall"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="133.1953125"
-            font-size="16"
-            font-family="Arial">TotalCost1YearOrFirstCall</text>
-      <line y2="137.1953125"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="137.1953125"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="157.59375"
+      <text x="559.0"
+            fill="#1e293b"
+            y="158.818359375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">TotalCost1YearOrFirstCall</text>
+      <line y2="164.818359375"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="164.818359375"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="185.7578125"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 137.1953125 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 162.818359375 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="189.59375"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="227.7578125"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="RIY_1_YearOrFirstCall"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/RIY_1_YearOrFirstCall"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="217.9921875"
-            font-size="16"
-            font-family="Arial">RIY_1_YearOrFirstCall</text>
-      <line y2="221.9921875"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="221.9921875"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="242.390625"
+      <text x="559.0"
+            fill="#1e293b"
+            y="256.697265625"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">RIY_1_YearOrFirstCall</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="262.697265625"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 221.9921875 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 260.697265625 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="274.390625"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="325.63671875"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="TotalCostHalfRHP"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/TotalCostHalfRHP"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="302.7890625"
-            font-size="16"
-            font-family="Arial">TotalCostHalfRHP</text>
-      <line y2="306.7890625"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="306.7890625"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="327.1875"
+      <text x="559.0"
+            fill="#1e293b"
+            y="354.576171875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">TotalCostHalfRHP</text>
+      <line y2="360.576171875"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="360.576171875"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="381.515625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 306.7890625 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 358.576171875 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="359.1875"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="423.515625"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="RIYHalfRHP"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/RIYHalfRHP"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="387.5859375"
-            font-size="16"
-            font-family="Arial">RIYHalfRHP</text>
-      <line y2="391.5859375"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="391.5859375"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="411.984375"
+      <text x="559.0"
+            fill="#1e293b"
+            y="452.455078125"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">RIYHalfRHP</text>
+      <line y2="458.455078125"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="458.455078125"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="479.39453125"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 391.5859375 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 456.455078125 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="443.984375"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="521.39453125"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="TotalCostRHP"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/TotalCostRHP"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="472.3828125"
-            font-size="16"
-            font-family="Arial">TotalCostRHP</text>
-      <line y2="476.3828125"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="476.3828125"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="496.78125"
+      <text x="559.0"
+            fill="#1e293b"
+            y="550.333984375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">TotalCostRHP</text>
+      <line y2="556.333984375"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="556.333984375"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="577.2734375"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 476.3828125 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 554.333984375 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="528.78125"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="619.2734375"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="RIY_RHP"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/RIY_RHP"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="557.1796875"
-            font-size="16"
-            font-family="Arial">RIY_RHP</text>
-      <line y2="561.1796875"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="561.1796875"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="581.578125"
+      <text x="559.0"
+            fill="#1e293b"
+            y="648.212890625"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">RIY_RHP</text>
+      <line y2="654.212890625"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="654.212890625"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="675.15234375"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 561.1796875 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 652.212890625 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="556.1796875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="613.578125"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="640.212890625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="717.15234375"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="One-off_costs_Portfolio_entry_cost"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/One-off_costs_Portfolio_entry_cost"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="641.9765625"
-            font-size="16"
-            font-family="Arial">One-off_costs_Portfolio_entry_cost</text>
-      <line y2="645.9765625"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="645.9765625"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="666.375"
+      <text x="559.0"
+            fill="#1e293b"
+            y="746.091796875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">One-off_costs_Portfolio_entry_cost</text>
+      <line y2="752.091796875"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="752.091796875"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="773.03125"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 645.9765625 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 750.091796875 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="640.9765625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="698.375"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="738.091796875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="815.03125"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="One-off_costs_Portfolio_exit_cost_RIY"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/One-off_costs_Portfolio_exit_cost_RIY"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="726.7734375"
-            font-size="16"
-            font-family="Arial">One-off_costs_Portfolio_exit_cost_RIY</text>
-      <line y2="730.7734375"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="730.7734375"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="751.171875"
+      <text x="559.0"
+            fill="#1e293b"
+            y="843.970703125"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">One-off_costs_Portfolio_exit_cost_RIY</text>
+      <line y2="849.970703125"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="849.970703125"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="870.91015625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 730.7734375 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 847.970703125 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="725.7734375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="783.171875"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="835.970703125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="912.91015625"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Ongoing_costs_Portfolio_transaction_costs"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/Ongoing_costs_Portfolio_transaction_costs"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="811.5703125"
-            font-size="16"
-            font-family="Arial">Ongoing_costs_Portfolio_transaction_costs</text>
-      <line y2="815.5703125"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="815.5703125"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="835.96875"
+      <text x="559.0"
+            fill="#1e293b"
+            y="941.849609375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">Ongoing_costs_Portfolio_transaction_costs</text>
+      <line y2="947.849609375"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="947.849609375"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="968.7890625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 815.5703125 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 945.849609375 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="810.5703125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="867.96875"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="933.849609375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="1010.7890625"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="OngoingCostsManagementFeesAndOtherAdministrativeOrOperatingCosts"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/OngoingCostsManagementFeesAndOtherAdministrativeOrOperatingCosts"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="896.3671875"
-            font-size="16"
-            font-family="Arial">OngoingCostsManagementFeesAndOtherAdministrativeOrOperatingCosts</text>
-      <line y2="900.3671875"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="900.3671875"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="920.765625"
+      <text x="559.0"
+            fill="#1e293b"
+            y="1039.728515625"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">OngoingCostsManagementFeesAndOtherAdministrativeOrOperatingCosts</text>
+      <line y2="1045.728515625"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="1045.728515625"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="1066.66796875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 900.3671875 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 1043.728515625 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="895.3671875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="512.0"
-         y="952.765625"
-         fill="#f1f5f9"
-         width="539.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1031.728515625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="547.0"
+         y="1108.66796875"
+         fill="#f8fafc"
+         width="534.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="IncidentalCostsPortfolioPerformanceFeesCarriedInterest"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/IncidentalCostsPortfolioPerformanceFeesCarriedInterest"/>
    <g>
-      <text x="522.0"
-            fill="#0f172a"
-            y="981.1640625"
-            font-size="16"
-            font-family="Arial">IncidentalCostsPortfolioPerformanceFeesCarriedInterest</text>
-      <line y2="985.1640625"
-            stroke-width="1"
-            x1="522.0"
-            x2="1041.0"
-            stroke="#e2e8f0"
-            y1="985.1640625"/>
-      <text x="522.0"
-            fill="#64748b"
-            y="1005.5625"
+      <text x="559.0"
+            fill="#1e293b"
+            y="1137.607421875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">IncidentalCostsPortfolioPerformanceFeesCarriedInterest</text>
+      <line y2="1143.607421875"
+            stroke-width="1"
+            x1="559.0"
+            x2="1069.0"
+            stroke="#e2e8f0"
+            y1="1143.607421875"/>
+      <text x="559.0"
+            fill="#64748b"
+            y="1164.546875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 482.0 470.19921875 V 985.1640625 H 512.0"/>
-   <text x="484.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 497.0 602.4697265625 V 1141.607421875 H 547.0"/>
+   <text x="509.0"
          fill="#64748b"
-         y="980.1640625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1129.607421875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -674,12 +711,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">0..1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -707,246 +743,236 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="FirstPossibleCallDate_22fc152cd7d4d4825e0dd6b81ffbdc44.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/FirstPossibleCallDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../FirstPossibleCallDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07005 - date of the first possible call for autocallable products</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07005 - date of the first possible call for autocallable<br />
+products</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-07-23</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2020-05-08</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="TotalCost1YearOrFirstCall_49f036c9ab6bd4681646c7a23ae64a97.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/TotalCost1YearOrFirstCall"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../TotalCost1YearOrFirstCall</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07010-Total cost in 00060_Share_Class_Currency terms in case the investor cashes in after one year, as requested in the &quot;Costs over time&quot; table. Rebased to 1.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07010-Total cost in 00060_Share_Class_Currency terms in<br />
+case the investor cashes in after one year, as requested in the &quot;Costs<br />
+over time&quot; table. Rebased to 1.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">741.66</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">21.63</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="RIY_1_YearOrFirstCall_a1f86b06fd0547aa3b1ef5b780bff80b.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/RIY_1_YearOrFirstCall"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../RIY_1_YearOrFirstCall</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07020-RIY in case the investor cashes in after one year, as requested in the &quot;Costs over time&quot; table.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07020-RIY in case the investor cashes in after one year,<br />
+as requested in the &quot;Costs over time&quot; table.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">670.84</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">620.00</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="TotalCostHalfRHP_ea32de826e6197ef4acc65e587056d87.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/TotalCostHalfRHP"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../TotalCostHalfRHP</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07030-Total cost in 00060_Share_Class_Currency terms in case the investor cashes in at the middle of the RHP, as requested in the &quot;Costs over time&quot; table.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07030-Total cost in 00060_Share_Class_Currency terms in<br />
+case the investor cashes in at the middle of the RHP, as requested in<br />
+the &quot;Costs over time&quot; table.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">815.93</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">206.31</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="RIYHalfRHP_9c0fc8531c70f0f99440b815d9582b24.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/RIYHalfRHP"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../RIYHalfRHP</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07040-RIY in case the investor cashes in at the middle of the RHP, as requested in the &quot;Costs over time&quot; table.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07040-RIY in case the investor cashes in at the middle of<br />
+the RHP, as requested in the &quot;Costs over time&quot; table.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">247.63</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">981.28</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="TotalCostRHP_fa36cd4f7cba43126581c16527fef084.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/TotalCostRHP"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../TotalCostRHP</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07050-Total cost in 00060_Share_Class_Currency terms in case the investor cashes in at the RHP, as requested in the &quot;Costs over time&quot; table.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07050-Total cost in 00060_Share_Class_Currency terms in<br />
+case the investor cashes in at the RHP, as requested in the &quot;Costs over<br />
+time&quot; table.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">98.28</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">20.82</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="RIY_RHP_53feccb79f88116b1d7b1d763cdef0fd.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/RIY_RHP"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../RIY_RHP</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07060-RIY in case the investor cashes in at the RHP, as requested in the &quot;Costs over time&quot; table.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07060-RIY in case the investor cashes in at the RHP, as<br />
+requested in the &quot;Costs over time&quot; table.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">346.99</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">687.93</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="One-off_costs_Portfolio_entry_cost_f7ea3ae4f2c46797dd8b9ea0ac003f7a.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/One-off_costs_Portfolio_entry_cost"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../One-off_costs_Portfolio_entry_cost</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07070 - The entry cost in percentage term at 1Year</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">18.43</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">726.47</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="One-off_costs_Portfolio_exit_cost_RIY_88d00bac207fb0921c5366d04067b35b.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/One-off_costs_Portfolio_exit_cost_RIY"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../One-off_costs_Portfolio_exit_cost_RIY</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07080-The exit cost in RIY terms, as requested in the &quot;Composition of costs&quot; table.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07080-The exit cost in RIY terms, as requested in the<br />
+&quot;Composition of costs&quot; table.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">132.50</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">859.02</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Ongoing_costs_Portfolio_transaction_costs_771ccc80cd4cedc6634bcb6f4415ff56.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/Ongoing_costs_Portfolio_transaction_costs"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Ongoing_costs_Portfolio_transaction_costs</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07090-The portfolio transaction costs in RIY terms, as requested in the &quot;Composition of costs&quot; table.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07090-The portfolio transaction costs in RIY terms, as<br />
+requested in the &quot;Composition of costs&quot; table.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">517.53</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">205.49</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="OngoingCostsManagementFeesAndOtherAdministrativeOrOperatingCosts_7b0850fa116062ad2bce69010fe03b8e.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/OngoingCostsManagementFeesAndOtherAdministrativeOrOperatingCosts"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../OngoingCostsManagementFeesAndOtherAdministrativeOrOperatingCosts</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07100-The other ongoing costs in RIY terms  in percentage term at 1Year (or at RHP if RHP less 1 year), as requested in the narrative part of the &quot;Composition of costs&quot; table</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07100-The other ongoing costs in RIY terms  in percentage<br />
+term at 1Year (or at RHP if RHP less 1 year), as requested in the<br />
+narrative part of the &quot;Composition of costs&quot; table</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">467.69</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">499.74</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="IncidentalCostsPortfolioPerformanceFeesCarriedInterest_51e59f56cd9fc1e7469343c7047248b6.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs/IncidentalCostsPortfolioPerformanceFeesCarriedInterest"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../IncidentalCostsPortfolioPerformanceFeesCarriedInterest</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07110-The performance fees in RIY terms, as requested in the &quot;Composition of costs&quot; table.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>07110-The performance fees in RIY terms, as requested in<br />
+the &quot;Composition of costs&quot; table.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">133.29</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">91.33</td>
                         </tr>
                         </tbody>
                     </table>
@@ -962,83 +988,110 @@
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
             name=&quot;AdditionalInformationRequiredForStructuredPRIIPs&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;07-Additional information required for structured PRIIPs: RIY Costs &lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;07-Additional information required for structured PRIIPs: RIY Costs
+                                &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
    &lt;xs:complexType&gt;
       &lt;xs:sequence&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;FirstPossibleCallDate&quot; type=&quot;xs:date&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07005 - date of the first possible call for autocallable products&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07005 - date of the first possible call for autocallable
+                                                products
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalCost1YearOrFirstCall&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07010-Total cost in 00060_Share_Class_Currency terms in case the investor cashes in after one year, as requested in the &quot;Costs over time&quot; table. Rebased to 1. &lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07010-Total cost in 00060_Share_Class_Currency terms in
+                                                case the investor cashes in after one year, as requested in the &quot;Costs
+                                                over time&quot; table. Rebased to 1.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RIY_1_YearOrFirstCall&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07020-RIY in case the investor cashes in after one year, as requested in the &quot;Costs over time&quot; table.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07020-RIY in case the investor cashes in after one year,
+                                                as requested in the &quot;Costs over time&quot; table.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalCostHalfRHP&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07030-Total cost in 00060_Share_Class_Currency terms in case the investor cashes in at the middle of the RHP, as requested in the &quot;Costs over time&quot; table.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07030-Total cost in 00060_Share_Class_Currency terms in
+                                                case the investor cashes in at the middle of the RHP, as requested in
+                                                the &quot;Costs over time&quot; table.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RIYHalfRHP&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07040-RIY in case the investor cashes in at the middle of the RHP, as requested in the &quot;Costs over time&quot; table.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07040-RIY in case the investor cashes in at the middle of
+                                                the RHP, as requested in the &quot;Costs over time&quot; table.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalCostRHP&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07050-Total cost in 00060_Share_Class_Currency terms in case the investor cashes in at the RHP, as requested in the &quot;Costs over time&quot; table.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07050-Total cost in 00060_Share_Class_Currency terms in
+                                                case the investor cashes in at the RHP, as requested in the &quot;Costs over
+                                                time&quot; table.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RIY_RHP&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07060-RIY in case the investor cashes in at the RHP, as requested in the &quot;Costs over time&quot; table.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07060-RIY in case the investor cashes in at the RHP, as
+                                                requested in the &quot;Costs over time&quot; table.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
                      name=&quot;One-off_costs_Portfolio_entry_cost&quot;
                      type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07070 - The entry cost in percentage term at 1Year&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07070 - The entry cost in percentage term at 1Year
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
                      name=&quot;One-off_costs_Portfolio_exit_cost_RIY&quot;
                      type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07080-The exit cost in RIY terms, as requested in the &quot;Composition of costs&quot; table.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07080-The exit cost in RIY terms, as requested in the
+                                                &quot;Composition of costs&quot; table.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
                      name=&quot;Ongoing_costs_Portfolio_transaction_costs&quot;
                      type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07090-The portfolio transaction costs in RIY terms, as requested in the &quot;Composition of costs&quot; table.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07090-The portfolio transaction costs in RIY terms, as
+                                                requested in the &quot;Composition of costs&quot; table.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
                      name=&quot;OngoingCostsManagementFeesAndOtherAdministrativeOrOperatingCosts&quot;
                      type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07100-The other ongoing costs in RIY terms  in percentage term at 1Year (or at RHP if RHP less 1 year), as requested in the narrative part of the &quot;Composition of costs&quot; table&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07100-The other ongoing costs in RIY terms  in percentage
+                                                term at 1Year (or at RHP if RHP less 1 year), as requested in the
+                                                narrative part of the &quot;Composition of costs&quot; table
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
                      name=&quot;IncidentalCostsPortfolioPerformanceFeesCarriedInterest&quot;
                      type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07110-The performance fees in RIY terms, as requested in the &quot;Composition of costs&quot; table.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07110-The performance fees in RIY terms, as requested in
+                                                the &quot;Composition of costs&quot; table.
+                                            &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;
@@ -1058,9 +1111,9 @@
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -1072,6 +1125,29 @@
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

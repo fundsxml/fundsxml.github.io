@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">InfrastructureInvestmentAdditionalQRT</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/AdditionalInformation/InfrastructureInvestmentAdditionalQRT</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/AdditionalInformation/InfrastructureInvestmentAdditionalQRT">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/AdditionalInformation/InfrastructureInvestmentAdditionalQRT">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,97 +129,104 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="453.0"
-     height="510.0576171875">
+     style="background-color: #ffffff"
+     width="568.0"
+     height="596.0126953125">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="-9"
-            fill="#f1f5f9"
-            width="283.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="-20"
+            fill="#f8fafc"
+            width="280.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="InfrastructureInvestmentAdditionalQRT"/>
-      <text x="30"
-            fill="#0f172a"
-            y="19.3984375"
-            font-size="16"
-            font-family="Arial">InfrastructureInvestmentAdditionalQRT</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V7/Portfolio/Positions/Position/AdditionalInformation/InfrastructureInvestmentAdditionalQRT"/>
+      <text x="44"
+            fill="#1e293b"
+            y="8.939453125"
             font-size="14"
-            y="44.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">A147 - 1 – Not an infrastructure investment; </tspan>
-         <tspan x="25" dy="1.2em">
-2 – Infrastructure non-qualifying: </tspan>
-         <tspan x="25" dy="1.2em">Government Guarantee (Government, </tspan>
-         <tspan x="25" dy="1.2em">Central bank, Regional government or local </tspan>
-         <tspan x="25" dy="1.2em">authority); 
-3 – Infrastructure non-qualifying: </tspan>
-         <tspan x="25" dy="1.2em">Government Supported including Public </tspan>
-         <tspan x="25" dy="1.2em">Finance initiative (Government, Central </tspan>
-         <tspan x="25" dy="1.2em">bank, Regional government or local </tspan>
-         <tspan x="25" dy="1.2em">authority); 
-4 – Infrastructure non-qualifying: </tspan>
-         <tspan x="25" dy="1.2em">Supranational Guarantee/Supported (ECB, </tspan>
-         <tspan x="25" dy="1.2em">Multilateral development bank, International </tspan>
-         <tspan x="25" dy="1.2em">organisation); 
+            font-family="Inter Regular">InfrastructureInvestmentAdditionalQRT</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="38.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">A147 - 1 – Not an infrastructure </tspan>
+         <tspan x="27" dy="1.3em">investment;
+2 – Infrastructure </tspan>
+         <tspan x="27" dy="1.3em">non-qualifying: Government Guarantee </tspan>
+         <tspan x="27" dy="1.3em">(Government, Central bank, Regional </tspan>
+         <tspan x="27" dy="1.3em">government or local authority);
+3 – </tspan>
+         <tspan x="27" dy="1.3em">Infrastructure non-qualifying: Government </tspan>
+         <tspan x="27" dy="1.3em">Supported including Public Finance initiative </tspan>
+         <tspan x="27" dy="1.3em">(Government, Central bank, Regional </tspan>
+         <tspan x="27" dy="1.3em">government or local authority);
+4 – </tspan>
+         <tspan x="27" dy="1.3em">Infrastructure non-qualifying: Supranational </tspan>
+         <tspan x="27" dy="1.3em">Guarantee/Supported (ECB, Multilateral </tspan>
+         <tspan x="27" dy="1.3em">development bank, International </tspan>
+         <tspan x="27" dy="1.3em">organisation);
 9 – Infrastructure </tspan>
-         <tspan x="25" dy="1.2em">non-qualifying: Other non-qualifying </tspan>
-         <tspan x="25" dy="1.2em">infrastructure loans or investments, not </tspan>
-         <tspan x="25" dy="1.2em">classified under the above categories; 
+         <tspan x="27" dy="1.3em">non-qualifying: Other non-qualifying </tspan>
+         <tspan x="27" dy="1.3em">infrastructure loans or investments, not </tspan>
+         <tspan x="27" dy="1.3em">classified under the above categories;
 12 – </tspan>
-         <tspan x="25" dy="1.2em">Infrastructure qualifying: Government </tspan>
-         <tspan x="25" dy="1.2em">Guarantee (Government, Central bank, </tspan>
-         <tspan x="25" dy="1.2em">Regional government or local authority); 
+         <tspan x="27" dy="1.3em">Infrastructure qualifying: Government </tspan>
+         <tspan x="27" dy="1.3em">Guarantee (Government, Central bank, </tspan>
+         <tspan x="27" dy="1.3em">Regional government or local authority);
 13 </tspan>
-         <tspan x="25" dy="1.2em">– Infrastructure qualifying: Government </tspan>
-         <tspan x="25" dy="1.2em">Supported including Public Finance initiative </tspan>
-         <tspan x="25" dy="1.2em">(Government, Central bank, Regional </tspan>
-         <tspan x="25" dy="1.2em">government or local authority); 
+         <tspan x="27" dy="1.3em">– Infrastructure qualifying: Government </tspan>
+         <tspan x="27" dy="1.3em">Supported including Public Finance initiative </tspan>
+         <tspan x="27" dy="1.3em">(Government, Central bank, Regional </tspan>
+         <tspan x="27" dy="1.3em">government or local authority);
 14 – </tspan>
-         <tspan x="25" dy="1.2em">Infrastructure qualifying: Supranational </tspan>
-         <tspan x="25" dy="1.2em">Guarantee/Supported (ECB, Multilateral </tspan>
-         <tspan x="25" dy="1.2em">development bank, International </tspan>
-         <tspan x="25" dy="1.2em">organisation); 
+         <tspan x="27" dy="1.3em">Infrastructure qualifying: Supranational </tspan>
+         <tspan x="27" dy="1.3em">Guarantee/Supported (ECB, Multilateral </tspan>
+         <tspan x="27" dy="1.3em">development bank, International </tspan>
+         <tspan x="27" dy="1.3em">organisation);
 19 – Infrastructure qualifying: </tspan>
-         <tspan x="25" dy="1.2em">Other qualifying infrastructure investments, </tspan>
-         <tspan x="25" dy="1.2em">not classified in the above categories; 
+         <tspan x="27" dy="1.3em">Other qualifying infrastructure investments, </tspan>
+         <tspan x="27" dy="1.3em">not classified in the above categories;
 20 – </tspan>
-         <tspan x="25" dy="1.2em">European Long-Term Investment Fund </tspan>
-         <tspan x="25" dy="1.2em">(ELTIF investing in infrastructure assets and </tspan>
-         <tspan x="25" dy="1.2em">ELTIF investing in other – non infrastructure </tspan>
-         <tspan x="25" dy="1.2em">– assets)
+         <tspan x="27" dy="1.3em">European Long-Term Investment Fund </tspan>
+         <tspan x="27" dy="1.3em">(ELTIF investing in infrastructure assets </tspan>
+         <tspan x="27" dy="1.3em">and ELTIF investing in other – non </tspan>
+         <tspan x="27" dy="1.3em">infrastructure – assets)
  </tspan>
       </text>
    </g>
@@ -256,12 +272,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">0..1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -269,11 +284,11 @@
                     </div>
                     <div class="flex flex-col md:col-span-2">
                         <dt class="text-sm font-medium text-slate-500">Sample Data</dt>
-                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">1</dd>
+                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">4</dd>
                     </div>
                     <div class="flex flex-col md:col-span-full">
                         <dt class="text-sm font-medium text-slate-500">Restrictions</dt>
-                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">Base: xs:string<br />MinLength: 1<br />MaxLength: 2<br />Enumeration: 1, 2, 3, 4, 9, 12, 13, 14, 19, 20<br /></dd>
+                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">Base: xs:string<br />MinLength: 1<br />MaxLength: 2<br />Enumeration: <ul class="list-disc list-inside space-y-1"><li><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">1</code></li><li><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">2</code></li><li><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">3</code></li><li><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">4</code></li><li><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">9</code></li><li><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">12</code></li><li><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">13</code></li><li><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">14</code></li><li><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">19</code></li><li><code class="font-mono bg-slate-100 text-slate-800 px-2 py-1 rounded-md">20</code></li></ul></dd>
                     </div>
                 </dl>
             </section>
@@ -290,20 +305,19 @@
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
             name=&quot;InfrastructureInvestmentAdditionalQRT&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;A147 - 1 – Not an infrastructure investment; 
-2 – Infrastructure non-qualifying: Government Guarantee (Government, Central bank, Regional government or local authority); 
-3 – Infrastructure non-qualifying: Government Supported including Public Finance initiative (Government, Central bank, Regional government or local authority); 
-4 – Infrastructure non-qualifying: Supranational Guarantee/Supported (ECB, Multilateral development bank, International organisation); 
-9 – Infrastructure non-qualifying: Other non-qualifying infrastructure loans or investments, not classified under the above categories; 
-12 – Infrastructure qualifying: Government Guarantee (Government, Central bank, Regional government or local authority); 
-13 – Infrastructure qualifying: Government Supported including Public Finance initiative (Government, Central bank, Regional government or local authority); 
-14 – Infrastructure qualifying: Supranational Guarantee/Supported (ECB, Multilateral development bank, International organisation); 
-19 – Infrastructure qualifying: Other qualifying infrastructure investments, not classified in the above categories; 
+      &lt;xs:documentation&gt;A147 - 1 – Not an infrastructure investment;
+2 – Infrastructure non-qualifying: Government Guarantee (Government, Central bank, Regional government or local authority);
+3 – Infrastructure non-qualifying: Government Supported including Public Finance initiative (Government, Central bank, Regional government or local authority);
+4 – Infrastructure non-qualifying: Supranational Guarantee/Supported (ECB, Multilateral development bank, International organisation);
+9 – Infrastructure non-qualifying: Other non-qualifying infrastructure loans or investments, not classified under the above categories;
+12 – Infrastructure qualifying: Government Guarantee (Government, Central bank, Regional government or local authority);
+13 – Infrastructure qualifying: Government Supported including Public Finance initiative (Government, Central bank, Regional government or local authority);
+14 – Infrastructure qualifying: Supranational Guarantee/Supported (ECB, Multilateral development bank, International organisation);
+19 – Infrastructure qualifying: Other qualifying infrastructure investments, not classified in the above categories;
 20 – European Long-Term Investment Fund (ELTIF investing in infrastructure assets and ELTIF investing in other – non infrastructure – assets)
 &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
@@ -338,9 +352,9 @@
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -352,6 +366,29 @@
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

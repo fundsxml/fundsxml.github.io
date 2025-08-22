@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">PastPerformances</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,313 +129,334 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="567.0"
-     height="528.78125">
+     style="background-color: #ffffff"
+     width="647.0"
+     height="651.2734375">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="221"
-            fill="#f1f5f9"
-            width="150.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="289"
+            fill="#f8fafc"
+            width="144.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="PastPerformances"/>
-      <text x="30"
-            fill="#0f172a"
-            y="249.3984375"
-            font-size="16"
-            font-family="Arial">PastPerformances</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances"/>
+      <text x="44"
+            fill="#1e293b"
+            y="317.939453125"
             font-size="14"
-            y="274.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">Art.15 to 19
+            font-family="Inter Regular">PastPerformances</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="347.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">Art.15 to 19
 Not to be </tspan>
-         <tspan x="25" dy="1.2em">provided for structured </tspan>
-         <tspan x="25" dy="1.2em">funds </tspan>
+         <tspan x="27" dy="1.3em">provided for </tspan>
+         <tspan x="27" dy="1.3em">structured funds </tspan>
       </text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 170.0 240.19921875 H 200.0"/>
-   <g id="seq-group_PastPerformances">
-      <rect x="200.0"
-            y="230.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="240.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="205.0"
-            x2="235.0"
-            y1="240.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="212.0" cy="240.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="220.0" cy="240.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="228.0" cy="240.19921875"/>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 240.0 240.19921875 h 20.0"/>
-   <rect x="290.0"
-         y="20.0"
-         fill="#f1f5f9"
-         width="247.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Heading"/>
-   <g>
-      <text x="300.0"
-            fill="#0f172a"
-            y="48.3984375"
-            font-size="16"
-            font-family="Arial">Heading</text>
-      <line y2="52.3984375"
-            stroke-width="1"
-            x1="300.0"
-            x2="527.0"
-            stroke="#e2e8f0"
-            y1="52.3984375"/>
-      <text x="300.0"
-            fill="#64748b"
-            y="72.796875"
-            font-size="14"
-            font-family="Arial">xs:string</text>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 260.0 240.19921875 V 52.3984375 H 290.0"/>
-   <text x="262.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 176.0 309.4697265625 H 211.0"/>
+   <text x="223.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="282.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856760806">
+      <rect x="211.0"
+            y="294.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="309.4697265625"
+            stroke-width="1.5"
+            x1="219.0"
+            x2="253.0"
+            stroke="#64748b"
+            y1="309.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="226.0" cy="309.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="236.0" cy="309.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="246.0" cy="309.4697265625"/>
+   </g>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 261.0 309.4697265625 h 25.0"/>
+   <rect x="336.0"
+         y="32.0"
+         fill="#f8fafc"
+         width="263.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/Heading"/>
+   <g>
+      <text x="348.0"
+            fill="#1e293b"
+            y="60.939453125"
+            font-size="14"
+            font-family="Inter Regular">Heading</text>
+      <line y2="66.939453125"
+            stroke-width="1"
+            x1="348.0"
+            x2="587.0"
+            stroke="#e2e8f0"
+            y1="66.939453125"/>
+      <text x="348.0"
+            fill="#64748b"
+            y="87.87890625"
+            font-size="13"
+            font-family="Inter Regular">xs:string</text>
+   </g>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 286.0 309.4697265625 V 64.939453125 H 336.0"/>
+   <text x="298.0"
+         fill="#64748b"
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="Performance_e2029114dfea16d4e55c71a5387a24f0.html">
-      <rect x="290.0"
-            y="104.796875"
-            fill="#f1f5f9"
-            width="247.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="336.0"
+            y="129.87890625"
+            fill="#f8fafc"
+            width="263.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Performance"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/Performance"/>
       <g>
-         <text x="300.0"
-               fill="#0f172a"
-               y="133.1953125"
-               font-size="16"
-               font-family="Arial">Performance</text>
-         <line y2="137.1953125"
-               stroke-width="1"
-               x1="300.0"
-               x2="527.0"
-               stroke="#e2e8f0"
-               y1="137.1953125"/>
-         <text x="300.0"
-               fill="#64748b"
-               y="157.59375"
+         <text x="348.0"
+               fill="#1e293b"
+               y="158.818359375"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Performance</text>
+         <line y2="164.818359375"
+               stroke-width="1"
+               x1="348.0"
+               x2="587.0"
+               stroke="#e2e8f0"
+               y1="164.818359375"/>
+         <text x="348.0"
+               fill="#64748b"
+               y="185.7578125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="539.0"
-           y="127.1953125"
-           xlink:href="#plus-icon"/>
+           x="603.0"
+           y="150.818359375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 260.0 240.19921875 V 137.1953125 H 290.0"/>
-   <text x="257.5"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 286.0 309.4697265625 V 162.818359375 H 336.0"/>
+   <text x="293.5"
          fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">0..10</text>
-   <rect x="290.0"
-         y="189.59375"
-         fill="#f1f5f9"
-         width="247.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..10</text>
+   <rect x="336.0"
+         y="227.7578125"
+         fill="#f8fafc"
+         width="263.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="PerformanceDisclaimer"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/PerformanceDisclaimer"/>
    <g>
-      <text x="300.0"
-            fill="#0f172a"
-            y="217.9921875"
-            font-size="16"
-            font-family="Arial">PerformanceDisclaimer</text>
-      <line y2="221.9921875"
-            stroke-width="1"
-            x1="300.0"
-            x2="527.0"
-            stroke="#e2e8f0"
-            y1="221.9921875"/>
-      <text x="300.0"
-            fill="#64748b"
-            y="242.390625"
+      <text x="348.0"
+            fill="#1e293b"
+            y="256.697265625"
             font-size="14"
-            font-family="Arial">xs:string</text>
+            font-family="Inter Regular">PerformanceDisclaimer</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="348.0"
+            x2="587.0"
+            stroke="#e2e8f0"
+            y1="262.697265625"/>
+      <text x="348.0"
+            fill="#64748b"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">xs:string</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 260.0 240.19921875 V 221.9921875 H 290.0"/>
-   <text x="262.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 286.0 309.4697265625 V 260.697265625 H 336.0"/>
+   <text x="298.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">1..5</text>
-   <rect x="290.0"
-         y="274.390625"
-         fill="#f1f5f9"
-         width="247.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..5</text>
+   <rect x="336.0"
+         y="325.63671875"
+         fill="#f8fafc"
+         width="263.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="CurrencyUsedHeading"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/CurrencyUsedHeading"/>
    <g>
-      <text x="300.0"
-            fill="#0f172a"
-            y="302.7890625"
-            font-size="16"
-            font-family="Arial">CurrencyUsedHeading</text>
-      <line y2="306.7890625"
-            stroke-width="1"
-            x1="300.0"
-            x2="527.0"
-            stroke="#e2e8f0"
-            y1="306.7890625"/>
-      <text x="300.0"
-            fill="#64748b"
-            y="327.1875"
+      <text x="348.0"
+            fill="#1e293b"
+            y="354.576171875"
             font-size="14"
-            font-family="Arial">xs:string</text>
+            font-family="Inter Regular">CurrencyUsedHeading</text>
+      <line y2="360.576171875"
+            stroke-width="1"
+            x1="348.0"
+            x2="587.0"
+            stroke="#e2e8f0"
+            y1="360.576171875"/>
+      <text x="348.0"
+            fill="#64748b"
+            y="381.515625"
+            font-size="13"
+            font-family="Inter Regular">xs:string</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 260.0 240.19921875 V 306.7890625 H 290.0"/>
-   <text x="262.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 286.0 309.4697265625 V 358.576171875 H 336.0"/>
+   <text x="298.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="290.0"
-         y="359.1875"
-         fill="#f1f5f9"
-         width="247.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="336.0"
+         y="423.515625"
+         fill="#f8fafc"
+         width="263.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="CurrencyUsed"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/CurrencyUsed"/>
    <g>
-      <text x="300.0"
-            fill="#0f172a"
-            y="387.5859375"
-            font-size="16"
-            font-family="Arial">CurrencyUsed</text>
-      <line y2="391.5859375"
-            stroke-width="1"
-            x1="300.0"
-            x2="527.0"
-            stroke="#e2e8f0"
-            y1="391.5859375"/>
-      <text x="300.0"
-            fill="#64748b"
-            y="411.984375"
+      <text x="348.0"
+            fill="#1e293b"
+            y="452.455078125"
             font-size="14"
-            font-family="Arial">ISOCurrencyCodeType</text>
+            font-family="Inter Regular">CurrencyUsed</text>
+      <line y2="458.455078125"
+            stroke-width="1"
+            x1="348.0"
+            x2="587.0"
+            stroke="#e2e8f0"
+            y1="458.455078125"/>
+      <text x="348.0"
+            fill="#64748b"
+            y="479.39453125"
+            font-size="13"
+            font-family="Inter Regular">ISOCurrencyCodeType</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 260.0 240.19921875 V 391.5859375 H 290.0"/>
-   <text x="262.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 286.0 309.4697265625 V 456.455078125 H 336.0"/>
+   <text x="298.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="290.0"
-         y="443.984375"
-         fill="#f1f5f9"
-         width="247.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="336.0"
+         y="521.39453125"
+         fill="#f8fafc"
+         width="263.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="PerformanceYearImpactHeading"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/PerformanceYearImpactHeading"/>
    <g>
-      <text x="300.0"
-            fill="#0f172a"
-            y="472.3828125"
-            font-size="16"
-            font-family="Arial">PerformanceYearImpactHeading</text>
-      <line y2="476.3828125"
-            stroke-width="1"
-            x1="300.0"
-            x2="527.0"
-            stroke="#e2e8f0"
-            y1="476.3828125"/>
-      <text x="300.0"
-            fill="#64748b"
-            y="496.78125"
+      <text x="348.0"
+            fill="#1e293b"
+            y="550.333984375"
             font-size="14"
-            font-family="Arial">xs:string</text>
+            font-family="Inter Regular">PerformanceYearImpactHeading</text>
+      <line y2="556.333984375"
+            stroke-width="1"
+            x1="348.0"
+            x2="587.0"
+            stroke="#e2e8f0"
+            y1="556.333984375"/>
+      <text x="348.0"
+            fill="#64748b"
+            y="577.2734375"
+            font-size="13"
+            font-family="Inter Regular">xs:string</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 260.0 240.19921875 V 476.3828125 H 290.0"/>
-   <text x="262.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 286.0 309.4697265625 V 554.333984375 H 336.0"/>
+   <text x="298.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -461,12 +491,11 @@ Not to be provided for structured funds</p>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">0..1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -494,19 +523,16 @@ Not to be provided for structured funds</p>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Heading_59fa0e97eab95d8fc8175c9a6b8e16a3.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/Heading"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Heading</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:string</span>
                             </td>
@@ -520,19 +546,18 @@ Not to be provided for structured funds</p>
                                 <a href="Performance_e2029114dfea16d4e55c71a5387a24f0.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/Performance"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Performance</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Zero to ten past years perfomances, according to fund existence duration.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Zero to ten past years perfomances, according to fund existence<br />
+duration.<br />
 Only full years of existence of the fund are used.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
@@ -542,13 +567,11 @@ Only full years of existence of the fund are used.</p>
                                 <a href="PerformanceDisclaimer_d40440b195f6971c457a3ac7510d7a3f.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/PerformanceDisclaimer"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../PerformanceDisclaimer</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:string</span>
                             </td>
@@ -566,13 +589,11 @@ d - Currency used for calculation</p>
                                 <a href="CurrencyUsedHeading_12891fd8caa0cef6e6753c10e9d9f3de.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/CurrencyUsedHeading"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../CurrencyUsedHeading</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:string</span>
                             </td>
@@ -586,13 +607,11 @@ d - Currency used for calculation</p>
                                 <a href="CurrencyUsed_7cad2e08d3ca68fa212c5b74fcc603fb.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/CurrencyUsed"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../CurrencyUsed</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/ISOCurrencyCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
                                 
@@ -602,25 +621,24 @@ d - Currency used for calculation</p>
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">WMV</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">HQX</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="PerformanceYearImpactHeading_86123447df26e9498db3ac344f255c56.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/KIIDs/KIID/PastPerformances/PerformanceYearImpactHeading"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../PerformanceYearImpactHeading</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:string</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>'Event impacting performance in ' [Year with MaterialChandeIndicator=&quot;y&quot;]</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>'Event impacting performance in ' [Year with<br />
+MaterialChandeIndicator=&quot;y&quot;]</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
                         </tr>
@@ -638,7 +656,6 @@ d - Currency used for calculation</p>
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
             name=&quot;PastPerformances&quot;&gt;
@@ -655,7 +672,8 @@ Not to be provided for structured funds&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element maxOccurs=&quot;10&quot; minOccurs=&quot;0&quot; name=&quot;Performance&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Zero to ten past years perfomances, according to fund existence duration.
+               &lt;xs:documentation&gt;Zero to ten past years perfomances, according to fund existence
+                                    duration.
 Only full years of existence of the fund are used.&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
@@ -672,17 +690,23 @@ Only full years of existence of the fund are used.&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;BenchmarkPerformanceValue&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Benchmark performance if available (Percentage)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Benchmark performance if available
+                                                (Percentage)
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;MaterialChangeIndicator&quot; type=&quot;xs:boolean&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;17-1 and 17-2  Indicates that a material change having an impact on performance occurred during the year (y/n)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;17-1 and 17-2 Indicates that a material
+                                                change having an impact on performance occurred during the year (y/n)
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;SimulatedPerformanceIndicator&quot; type=&quot;xs:boolean&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;19-2 Indicates that the performance has been simulated&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;19-2 Indicates that the performance has been
+                                                simulated
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -690,7 +714,7 @@ Only full years of existence of the fund are used.&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element maxOccurs=&quot;5&quot; name=&quot;PerformanceDisclaimer&quot; type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;15-5a to 5d 
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;15-5a to 5d
 a - Limited value for future performance
 b - List of charges and fees included for computation
 c - Year of creation of the fund
@@ -699,17 +723,21 @@ d - Currency used for calculation&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;CurrencyUsedHeading&quot; type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;&#39;Currency used for calculation: &#39; [CurrencyUsed]&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;&#39;Currency used for calculation: &#39; [CurrencyUsed]
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;CurrencyUsed&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Currency used for performance calculation&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Currency used for performance calculation
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;PerformanceYearImpactHeading&quot; type=&quot;xs:string&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;&#39;Event impacting performance in &#39; [Year with MaterialChandeIndicator=&quot;y&quot;]&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;&#39;Event impacting performance in &#39; [Year with
+                                    MaterialChandeIndicator=&quot;y&quot;]
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;
@@ -729,9 +757,9 @@ d - Currency used for calculation&lt;/xs:documentation&gt;
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -743,6 +771,29 @@ d - Currency used for calculation&lt;/xs:documentation&gt;
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

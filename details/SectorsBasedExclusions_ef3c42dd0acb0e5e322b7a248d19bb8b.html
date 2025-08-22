@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">SectorsBasedExclusions</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,985 +129,1021 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="731.0"
-     height="1800.734375">
+     style="background-color: #ffffff"
+     width="798.0"
+     height="2119.45703125">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="797"
-            fill="#f1f5f9"
-            width="194.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="1023"
+            fill="#f8fafc"
+            width="183.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="SectorsBasedExclusions"/>
-      <text x="30"
-            fill="#0f172a"
-            y="825.3984375"
-            font-size="16"
-            font-family="Arial">SectorsBasedExclusions</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions"/>
+      <text x="44"
+            fill="#1e293b"
+            y="1051.939453125"
             font-size="14"
-            y="850.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">50100 - 52130 </tspan>
+            font-family="Inter Regular">SectorsBasedExclusions</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="1081.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">50100 - 52130 </tspan>
       </text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 214.0 816.19921875 H 244.0"/>
-   <g id="seq-group_SectorsBasedExclusions">
-      <rect x="244.0"
-            y="806.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="816.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="249.0"
-            x2="279.0"
-            y1="816.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="256.0" cy="816.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="264.0" cy="816.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="272.0" cy="816.19921875"/>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 215.0 1043.4697265625 H 250.0"/>
+   <text x="262.0"
+         fill="#64748b"
+         y="1016.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856769942">
+      <rect x="250.0"
+            y="1028.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="1043.4697265625"
+            stroke-width="1.5"
+            x1="258.0"
+            x2="292.0"
+            stroke="#64748b"
+            y1="1043.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="265.0" cy="1043.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="275.0" cy="1043.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="285.0" cy="1043.4697265625"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 284.0 816.19921875 h 20.0"/>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 300.0 1043.4697265625 h 25.0"/>
    <a href="PornographyAdultEntertainmentServicesExclusion_6f9d801e83afa3b6dd173e88d3e0d796.html">
-      <rect x="334.0"
-            y="20.0"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="32.0"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="PornographyAdultEntertainmentServicesExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/PornographyAdultEntertainmentServicesExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="48.3984375"
-               font-size="16"
-               font-family="Arial">PornographyAdultEntertainmentServicesExclusion</text>
-         <line y2="52.3984375"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="52.3984375"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="72.796875"
+         <text x="387.0"
+               fill="#1e293b"
+               y="60.939453125"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">PornographyAdultEntertainmentServicesExclusion</text>
+         <line y2="66.939453125"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="66.939453125"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="87.87890625"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="42.3984375"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="52.939453125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 52.3984375 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 64.939453125 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="AlcoholExclusion_21fb6a66abef567621723900a2ef37d8.html">
-      <rect x="334.0"
-            y="104.796875"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="129.87890625"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="AlcoholExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="133.1953125"
-               font-size="16"
-               font-family="Arial">AlcoholExclusion</text>
-         <line y2="137.1953125"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="137.1953125"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="157.59375"
+         <text x="387.0"
+               fill="#1e293b"
+               y="158.818359375"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">AlcoholExclusion</text>
+         <line y2="164.818359375"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="164.818359375"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="185.7578125"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="127.1953125"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="150.818359375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 137.1953125 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 162.818359375 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="AnimalTestingExclusion_04b4871e490aeebbb05a6d4c529185ed.html">
-      <rect x="334.0"
-            y="189.59375"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="227.7578125"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="AnimalTestingExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/AnimalTestingExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="217.9921875"
-               font-size="16"
-               font-family="Arial">AnimalTestingExclusion</text>
-         <line y2="221.9921875"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="221.9921875"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="242.390625"
+         <text x="387.0"
+               fill="#1e293b"
+               y="256.697265625"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">AnimalTestingExclusion</text>
+         <line y2="262.697265625"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="262.697265625"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="283.63671875"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="211.9921875"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="248.697265625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 221.9921875 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 260.697265625 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="CannabisExclusion_2178e93384f9209a9ac86d1f0858b091.html">
-      <rect x="334.0"
-            y="274.390625"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="325.63671875"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="CannabisExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/CannabisExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="302.7890625"
-               font-size="16"
-               font-family="Arial">CannabisExclusion</text>
-         <line y2="306.7890625"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="306.7890625"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="327.1875"
+         <text x="387.0"
+               fill="#1e293b"
+               y="354.576171875"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">CannabisExclusion</text>
+         <line y2="360.576171875"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="360.576171875"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="381.515625"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="296.7890625"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="346.576171875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 306.7890625 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 358.576171875 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="ConventionalWeaponsExclusion_dddc0a2bbb3275ce1e2d186a28e58cd5.html">
-      <rect x="334.0"
-            y="359.1875"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="423.515625"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="ConventionalWeaponsExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/ConventionalWeaponsExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="387.5859375"
-               font-size="16"
-               font-family="Arial">ConventionalWeaponsExclusion</text>
-         <line y2="391.5859375"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="391.5859375"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="411.984375"
+         <text x="387.0"
+               fill="#1e293b"
+               y="452.455078125"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">ConventionalWeaponsExclusion</text>
+         <line y2="458.455078125"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="458.455078125"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="479.39453125"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="381.5859375"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="444.455078125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 391.5859375 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 456.455078125 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="CoalExclusion_72adb986738aecef998909863269e4b3.html">
-      <rect x="334.0"
-            y="443.984375"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="521.39453125"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="CoalExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/CoalExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="472.3828125"
-               font-size="16"
-               font-family="Arial">CoalExclusion</text>
-         <line y2="476.3828125"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="476.3828125"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="496.78125"
+         <text x="387.0"
+               fill="#1e293b"
+               y="550.333984375"
                font-size="14"
-               font-family="Arial">EETEnhancedExclusionType1.1</text>
+               font-family="Inter Regular">CoalExclusion</text>
+         <line y2="556.333984375"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="556.333984375"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="577.2734375"
+               font-size="13"
+               font-family="Inter Regular">EETEnhancedExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="466.3828125"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="542.333984375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 476.3828125 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 554.333984375 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="FactoryFarmingExclusion_ce81a1db3c8c8ef5d2db0969ff9f681c.html">
-      <rect x="334.0"
-            y="528.78125"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="619.2734375"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="FactoryFarmingExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/FactoryFarmingExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="557.1796875"
-               font-size="16"
-               font-family="Arial">FactoryFarmingExclusion</text>
-         <line y2="561.1796875"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="561.1796875"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="581.578125"
+         <text x="387.0"
+               fill="#1e293b"
+               y="648.212890625"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">FactoryFarmingExclusion</text>
+         <line y2="654.212890625"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="654.212890625"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="675.15234375"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="551.1796875"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="640.212890625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 561.1796875 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 652.212890625 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="556.1796875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="640.212890625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="FurExclusion_72fa35b3a71189c25a6e73dd16c91490.html">
-      <rect x="334.0"
-            y="613.578125"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="717.15234375"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="FurExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/FurExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="641.9765625"
-               font-size="16"
-               font-family="Arial">FurExclusion</text>
-         <line y2="645.9765625"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="645.9765625"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="666.375"
+         <text x="387.0"
+               fill="#1e293b"
+               y="746.091796875"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">FurExclusion</text>
+         <line y2="752.091796875"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="752.091796875"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="773.03125"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="635.9765625"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="738.091796875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 645.9765625 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 750.091796875 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="640.9765625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="738.091796875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="GamblingExclusion_45028c01f4514623cc543bcc67914c9d.html">
-      <rect x="334.0"
-            y="698.375"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="815.03125"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="GamblingExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/GamblingExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="726.7734375"
-               font-size="16"
-               font-family="Arial">GamblingExclusion</text>
-         <line y2="730.7734375"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="730.7734375"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="751.171875"
+         <text x="387.0"
+               fill="#1e293b"
+               y="843.970703125"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">GamblingExclusion</text>
+         <line y2="849.970703125"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="849.970703125"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="870.91015625"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="720.7734375"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="835.970703125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 730.7734375 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 847.970703125 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="725.7734375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="835.970703125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="GasExclusion_6b28c6113bb3df3ae27e0efb9c5ab5c5.html">
-      <rect x="334.0"
-            y="783.171875"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="912.91015625"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="GasExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/GasExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="811.5703125"
-               font-size="16"
-               font-family="Arial">GasExclusion</text>
-         <line y2="815.5703125"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="815.5703125"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="835.96875"
+         <text x="387.0"
+               fill="#1e293b"
+               y="941.849609375"
                font-size="14"
-               font-family="Arial">EETEnhancedExclusionType1.1</text>
+               font-family="Inter Regular">GasExclusion</text>
+         <line y2="947.849609375"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="947.849609375"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="968.7890625"
+               font-size="13"
+               font-family="Inter Regular">EETEnhancedExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="805.5703125"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="933.849609375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 815.5703125 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 945.849609375 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="810.5703125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="933.849609375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="GeneticEngineeringExclusion_4be51b793ad17b460116fe7480fa2653.html">
-      <rect x="334.0"
-            y="867.96875"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1010.7890625"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="GeneticEngineeringExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/GeneticEngineeringExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="896.3671875"
-               font-size="16"
-               font-family="Arial">GeneticEngineeringExclusion</text>
-         <line y2="900.3671875"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="900.3671875"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="920.765625"
+         <text x="387.0"
+               fill="#1e293b"
+               y="1039.728515625"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">GeneticEngineeringExclusion</text>
+         <line y2="1045.728515625"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="1045.728515625"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="1066.66796875"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="890.3671875"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="1031.728515625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 900.3671875 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 1043.728515625 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="895.3671875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1031.728515625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="GeneticallyModifiedOrganismsExclusion_04c0cd88b1e22d73d71ee4e68e8162ca.html">
-      <rect x="334.0"
-            y="952.765625"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1108.66796875"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="GeneticallyModifiedOrganismsExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/GeneticallyModifiedOrganismsExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="981.1640625"
-               font-size="16"
-               font-family="Arial">GeneticallyModifiedOrganismsExclusion</text>
-         <line y2="985.1640625"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="985.1640625"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="1005.5625"
+         <text x="387.0"
+               fill="#1e293b"
+               y="1137.607421875"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">GeneticallyModifiedOrganismsExclusion</text>
+         <line y2="1143.607421875"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="1143.607421875"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="1164.546875"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="975.1640625"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="1129.607421875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 985.1640625 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 1141.607421875 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="980.1640625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1129.607421875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="NuclearEnergyExclusion_5bf57becdedb8bc504214584e124e096.html">
-      <rect x="334.0"
-            y="1037.5625"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1206.546875"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="NuclearEnergyExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/NuclearEnergyExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="1065.9609375"
-               font-size="16"
-               font-family="Arial">NuclearEnergyExclusion</text>
-         <line y2="1069.9609375"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="1069.9609375"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="1090.359375"
+         <text x="387.0"
+               fill="#1e293b"
+               y="1235.486328125"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">NuclearEnergyExclusion</text>
+         <line y2="1241.486328125"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="1241.486328125"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="1262.42578125"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="1059.9609375"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="1227.486328125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 1069.9609375 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 1239.486328125 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="1064.9609375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1227.486328125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="NuclearWeaponsExclusion_3142bef5c2938882b1d9e20543781d84.html">
-      <rect x="334.0"
-            y="1122.359375"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1304.42578125"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="NuclearWeaponsExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/NuclearWeaponsExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="1150.7578125"
-               font-size="16"
-               font-family="Arial">NuclearWeaponsExclusion</text>
-         <line y2="1154.7578125"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="1154.7578125"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="1175.15625"
+         <text x="387.0"
+               fill="#1e293b"
+               y="1333.365234375"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">NuclearWeaponsExclusion</text>
+         <line y2="1339.365234375"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="1339.365234375"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="1360.3046875"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="1144.7578125"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="1325.365234375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 1154.7578125 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 1337.365234375 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="1149.7578125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1325.365234375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="OilExclusion_f8ebb19805622e2d2236f79012fcf392.html">
-      <rect x="334.0"
-            y="1207.15625"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1402.3046875"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="OilExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/OilExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="1235.5546875"
-               font-size="16"
-               font-family="Arial">OilExclusion</text>
-         <line y2="1239.5546875"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="1239.5546875"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="1259.953125"
+         <text x="387.0"
+               fill="#1e293b"
+               y="1431.244140625"
                font-size="14"
-               font-family="Arial">EETEnhancedExclusionType1.1</text>
+               font-family="Inter Regular">OilExclusion</text>
+         <line y2="1437.244140625"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="1437.244140625"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="1458.18359375"
+               font-size="13"
+               font-family="Inter Regular">EETEnhancedExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="1229.5546875"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="1423.244140625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 1239.5546875 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 1435.244140625 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="1234.5546875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1423.244140625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="OtherFossilFuelExclusion_b247a02f6a65fcc73a30e8ae0e9a53e6.html">
-      <rect x="334.0"
-            y="1291.953125"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1500.18359375"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="OtherFossilFuelExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/OtherFossilFuelExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="1320.3515625"
-               font-size="16"
-               font-family="Arial">OtherFossilFuelExclusion</text>
-         <line y2="1324.3515625"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="1324.3515625"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="1344.75"
+         <text x="387.0"
+               fill="#1e293b"
+               y="1529.123046875"
                font-size="14"
-               font-family="Arial">EETEnhancedExclusionType1.1</text>
+               font-family="Inter Regular">OtherFossilFuelExclusion</text>
+         <line y2="1535.123046875"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="1535.123046875"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="1556.0625"
+               font-size="13"
+               font-family="Inter Regular">EETEnhancedExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="1314.3515625"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="1521.123046875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 1324.3515625 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 1533.123046875 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="1319.3515625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1521.123046875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="PalmOilExclusion_d52f0d4d466fcd7aa236345638c6d395.html">
-      <rect x="334.0"
-            y="1376.75"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1598.0625"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="PalmOilExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/PalmOilExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="1405.1484375"
-               font-size="16"
-               font-family="Arial">PalmOilExclusion</text>
-         <line y2="1409.1484375"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="1409.1484375"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="1429.546875"
+         <text x="387.0"
+               fill="#1e293b"
+               y="1627.001953125"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">PalmOilExclusion</text>
+         <line y2="1633.001953125"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="1633.001953125"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="1653.94140625"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="1399.1484375"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="1619.001953125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 1409.1484375 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 1631.001953125 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="1404.1484375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1619.001953125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="PesticidesExclusion_51c95a1017a5db0311e646bffe9bf311.html">
-      <rect x="334.0"
-            y="1461.546875"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1695.94140625"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="PesticidesExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/PesticidesExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="1489.9453125"
-               font-size="16"
-               font-family="Arial">PesticidesExclusion</text>
-         <line y2="1493.9453125"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="1493.9453125"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="1514.34375"
+         <text x="387.0"
+               fill="#1e293b"
+               y="1724.880859375"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">PesticidesExclusion</text>
+         <line y2="1730.880859375"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="1730.880859375"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="1751.8203125"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="1483.9453125"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="1716.880859375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 1493.9453125 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 1728.880859375 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="1488.9453125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1716.880859375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="ResearchOnHumanEmbryosExclusion_4875e5c33d13d0306918f384903d91dd.html">
-      <rect x="334.0"
-            y="1546.34375"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1793.8203125"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="ResearchOnHumanEmbryosExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/ResearchOnHumanEmbryosExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="1574.7421875"
-               font-size="16"
-               font-family="Arial">ResearchOnHumanEmbryosExclusion</text>
-         <line y2="1578.7421875"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="1578.7421875"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="1599.140625"
+         <text x="387.0"
+               fill="#1e293b"
+               y="1822.759765625"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">ResearchOnHumanEmbryosExclusion</text>
+         <line y2="1828.759765625"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="1828.759765625"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="1849.69921875"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="1568.7421875"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="1814.759765625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 1578.7421875 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 1826.759765625 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="1573.7421875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1814.759765625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="TobaccoExclusion_836d43ed05d9aef5e2c73cc2b1019b5f.html">
-      <rect x="334.0"
-            y="1631.140625"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1891.69921875"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="TobaccoExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/TobaccoExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="1659.5390625"
-               font-size="16"
-               font-family="Arial">TobaccoExclusion</text>
-         <line y2="1663.5390625"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="1663.5390625"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="1683.9375"
+         <text x="387.0"
+               fill="#1e293b"
+               y="1920.638671875"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">TobaccoExclusion</text>
+         <line y2="1926.638671875"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="1926.638671875"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="1947.578125"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="1653.5390625"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="1912.638671875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 1663.5390625 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 1924.638671875 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="1658.5390625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1912.638671875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="UnconventionalWeaponsExclusion_6479038744ffa3bc47e19598e5d775e3.html">
-      <rect x="334.0"
-            y="1715.9375"
-            fill="#f1f5f9"
-            width="367.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="375.0"
+            y="1989.578125"
+            fill="#f8fafc"
+            width="375.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="UnconventionalWeaponsExclusion"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/UnconventionalWeaponsExclusion"/>
       <g>
-         <text x="344.0"
-               fill="#0f172a"
-               y="1744.3359375"
-               font-size="16"
-               font-family="Arial">UnconventionalWeaponsExclusion</text>
-         <line y2="1748.3359375"
-               stroke-width="1"
-               x1="344.0"
-               x2="691.0"
-               stroke="#e2e8f0"
-               y1="1748.3359375"/>
-         <text x="344.0"
-               fill="#64748b"
-               y="1768.734375"
+         <text x="387.0"
+               fill="#1e293b"
+               y="2018.517578125"
                font-size="14"
-               font-family="Arial">EETExclusionType1.1</text>
+               font-family="Inter Regular">UnconventionalWeaponsExclusion</text>
+         <line y2="2024.517578125"
+               stroke-width="1"
+               x1="387.0"
+               x2="738.0"
+               stroke="#e2e8f0"
+               y1="2024.517578125"/>
+         <text x="387.0"
+               fill="#64748b"
+               y="2045.45703125"
+               font-size="13"
+               font-family="Inter Regular">EETExclusionType1.1</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="703.0"
-           y="1738.3359375"
-           xlink:href="#plus-icon"/>
+           x="754.0"
+           y="2010.517578125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 304.0 816.19921875 V 1748.3359375 H 334.0"/>
-   <text x="306.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 325.0 1043.4697265625 V 2022.517578125 H 375.0"/>
+   <text x="337.0"
          fill="#64748b"
-         y="1743.3359375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="2010.517578125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -1132,12 +1177,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">0..1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -1165,19 +1209,16 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="PornographyAdultEntertainmentServicesExclusion_6f9d801e83afa3b6dd173e88d3e0d796.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/PornographyAdultEntertainmentServicesExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../PornographyAdultEntertainmentServicesExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1192,13 +1233,11 @@
                                 <a href="AlcoholExclusion_21fb6a66abef567621723900a2ef37d8.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/AlcoholExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../AlcoholExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1213,13 +1252,11 @@
                                 <a href="AnimalTestingExclusion_04b4871e490aeebbb05a6d4c529185ed.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/AnimalTestingExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../AnimalTestingExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1234,13 +1271,11 @@
                                 <a href="CannabisExclusion_2178e93384f9209a9ac86d1f0858b091.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/CannabisExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../CannabisExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1255,13 +1290,11 @@
                                 <a href="ConventionalWeaponsExclusion_dddc0a2bbb3275ce1e2d186a28e58cd5.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/ConventionalWeaponsExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../ConventionalWeaponsExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1276,13 +1309,11 @@
                                 <a href="CoalExclusion_72adb986738aecef998909863269e4b3.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/CoalExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../CoalExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETEnhancedExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType1.1</a>
                                 
@@ -1297,13 +1328,11 @@
                                 <a href="FactoryFarmingExclusion_ce81a1db3c8c8ef5d2db0969ff9f681c.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/FactoryFarmingExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../FactoryFarmingExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1318,13 +1347,11 @@
                                 <a href="FurExclusion_72fa35b3a71189c25a6e73dd16c91490.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/FurExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../FurExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1339,13 +1366,11 @@
                                 <a href="GamblingExclusion_45028c01f4514623cc543bcc67914c9d.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/GamblingExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../GamblingExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1360,13 +1385,11 @@
                                 <a href="GasExclusion_6b28c6113bb3df3ae27e0efb9c5ab5c5.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/GasExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../GasExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETEnhancedExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType1.1</a>
                                 
@@ -1381,13 +1404,11 @@
                                 <a href="GeneticEngineeringExclusion_4be51b793ad17b460116fe7480fa2653.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/GeneticEngineeringExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../GeneticEngineeringExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1402,13 +1423,11 @@
                                 <a href="GeneticallyModifiedOrganismsExclusion_04c0cd88b1e22d73d71ee4e68e8162ca.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/GeneticallyModifiedOrganismsExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../GeneticallyModifiedOrganismsExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1423,13 +1442,11 @@
                                 <a href="NuclearEnergyExclusion_5bf57becdedb8bc504214584e124e096.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/NuclearEnergyExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../NuclearEnergyExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1444,13 +1461,11 @@
                                 <a href="NuclearWeaponsExclusion_3142bef5c2938882b1d9e20543781d84.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/NuclearWeaponsExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../NuclearWeaponsExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1465,13 +1480,11 @@
                                 <a href="OilExclusion_f8ebb19805622e2d2236f79012fcf392.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/OilExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../OilExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETEnhancedExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType1.1</a>
                                 
@@ -1486,13 +1499,11 @@
                                 <a href="OtherFossilFuelExclusion_b247a02f6a65fcc73a30e8ae0e9a53e6.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/OtherFossilFuelExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../OtherFossilFuelExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETEnhancedExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETEnhancedExclusionType1.1</a>
                                 
@@ -1507,13 +1518,11 @@
                                 <a href="PalmOilExclusion_d52f0d4d466fcd7aa236345638c6d395.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/PalmOilExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../PalmOilExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1528,13 +1537,11 @@
                                 <a href="PesticidesExclusion_51c95a1017a5db0311e646bffe9bf311.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/PesticidesExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../PesticidesExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1549,13 +1556,11 @@
                                 <a href="ResearchOnHumanEmbryosExclusion_4875e5c33d13d0306918f384903d91dd.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/ResearchOnHumanEmbryosExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../ResearchOnHumanEmbryosExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1570,13 +1575,11 @@
                                 <a href="TobaccoExclusion_836d43ed05d9aef5e2c73cc2b1019b5f.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/TobaccoExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../TobaccoExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1591,13 +1594,11 @@
                                 <a href="UnconventionalWeaponsExclusion_6479038744ffa3bc47e19598e5d775e3.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EET1.1.2/EET1.1.2/ScreeningCriteria/SectorsBasedExclusions/UnconventionalWeaponsExclusion"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../UnconventionalWeaponsExclusion</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/EETExclusionType1.1.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">EETExclusionType1.1</a>
                                 
@@ -1621,7 +1622,6 @@
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
             name=&quot;SectorsBasedExclusions&quot;&gt;
@@ -1780,9 +1780,9 @@
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -1794,6 +1794,29 @@
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">Earning</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,947 +129,988 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="425.0"
-     height="1885.53125">
+     style="background-color: #ffffff"
+     width="514.0"
+     height="2217.3359375">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="835"
-            fill="#f1f5f9"
-            width="74.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="1072"
+            fill="#f8fafc"
+            width="73.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="Earning"/>
-      <text x="30"
-            fill="#0f172a"
-            y="863.3984375"
-            font-size="16"
-            font-family="Arial">Earning</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning"/>
+      <text x="44"
+            fill="#1e293b"
+            y="1100.939453125"
             font-size="14"
-            y="888.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">Earning </tspan>
-         <tspan x="25" dy="1.2em">data </tspan>
-         <tspan x="25" dy="1.2em">(single </tspan>
-         <tspan x="25" dy="1.2em">coupon, </tspan>
-         <tspan x="25" dy="1.2em">dividend or </tspan>
-         <tspan x="25" dy="1.2em">distribution) </tspan>
-         <tspan x="25" dy="1.2em">resulting </tspan>
-         <tspan x="25" dy="1.2em">from a </tspan>
-         <tspan x="25" dy="1.2em">security </tspan>
-         <tspan x="25" dy="1.2em">position </tspan>
+            font-family="Inter Regular">Earning</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="1130.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">Earning </tspan>
+         <tspan x="27" dy="1.3em">data </tspan>
+         <tspan x="27" dy="1.3em">(single </tspan>
+         <tspan x="27" dy="1.3em">coupon, </tspan>
+         <tspan x="27" dy="1.3em">dividend </tspan>
+         <tspan x="27" dy="1.3em">or </tspan>
+         <tspan x="27" dy="1.3em">distribution) </tspan>
+         <tspan x="27" dy="1.3em">resulting </tspan>
+         <tspan x="27" dy="1.3em">from a </tspan>
+         <tspan x="27" dy="1.3em">security
+     </tspan>
+         <tspan x="27" dy="1.3em">                  </tspan>
+         <tspan x="27" dy="1.3em"> position
+ </tspan>
       </text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 94.0 854.19921875 H 124.0"/>
-   <g id="seq-group_Earning">
-      <rect x="124.0"
-            y="844.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="854.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="129.0"
-            x2="159.0"
-            y1="854.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="136.0" cy="854.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="144.0" cy="854.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="152.0" cy="854.19921875"/>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 164.0 854.19921875 h 20.0"/>
-   <rect x="214.0"
-         y="20.0"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="EarningID"/>
-   <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="48.3984375"
-            font-size="16"
-            font-family="Arial">EarningID</text>
-      <line y2="52.3984375"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="52.3984375"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="72.796875"
-            font-size="14"
-            font-family="Arial">Text256Type</text>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 184.0 854.19921875 V 52.3984375 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 105.0 1092.4697265625 H 140.0"/>
+   <text x="152.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="214.0"
-         y="104.796875"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="CancellationFlag"/>
-   <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="133.1953125"
-            font-size="16"
-            font-family="Arial">CancellationFlag</text>
-      <line y2="137.1953125"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="137.1953125"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="157.59375"
-            font-size="14"
-            font-family="Arial">xs:boolean</text>
+         y="1065.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856774392">
+      <rect x="140.0"
+            y="1077.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="1092.4697265625"
+            stroke-width="1.5"
+            x1="148.0"
+            x2="182.0"
+            stroke="#64748b"
+            y1="1092.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="155.0" cy="1092.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="165.0" cy="1092.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="175.0" cy="1092.4697265625"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 137.1953125 H 214.0"/>
-   <text x="186.0"
-         fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="214.0"
-         y="189.59375"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 190.0 1092.4697265625 h 25.0"/>
+   <rect x="265.0"
+         y="32.0"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="OriginalEarningID"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/EarningID"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="217.9921875"
-            font-size="16"
-            font-family="Arial">OriginalEarningID</text>
-      <line y2="221.9921875"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="221.9921875"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="242.390625"
+      <text x="277.0"
+            fill="#1e293b"
+            y="60.939453125"
             font-size="14"
-            font-family="Arial">Text256Type</text>
+            font-family="Inter Regular">EarningID</text>
+      <line y2="66.939453125"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="66.939453125"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="87.87890625"
+            font-size="13"
+            font-family="Inter Regular">Text256Type</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 221.9921875 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 64.939453125 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="214.0"
-         y="274.390625"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="265.0"
+         y="129.87890625"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="AssetUniqueID"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/CancellationFlag"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="302.7890625"
-            font-size="16"
-            font-family="Arial">AssetUniqueID</text>
-      <line y2="306.7890625"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="306.7890625"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="327.1875"
+      <text x="277.0"
+            fill="#1e293b"
+            y="158.818359375"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">CancellationFlag</text>
+      <line y2="164.818359375"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="164.818359375"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="185.7578125"
+            font-size="13"
+            font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 306.7890625 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 162.818359375 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="265.0"
+         y="227.7578125"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/OriginalEarningID"/>
+   <g>
+      <text x="277.0"
+            fill="#1e293b"
+            y="256.697265625"
+            font-size="14"
+            font-family="Inter Regular">OriginalEarningID</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="262.697265625"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">Text256Type</text>
+   </g>
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 260.697265625 H 265.0"/>
+   <text x="227.0"
+         fill="#64748b"
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="265.0"
+         y="325.63671875"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/AssetUniqueID"/>
+   <g>
+      <text x="277.0"
+            fill="#1e293b"
+            y="354.576171875"
+            font-size="14"
+            font-family="Inter Regular">AssetUniqueID</text>
+      <line y2="360.576171875"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="360.576171875"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="381.515625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
+   </g>
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 358.576171875 H 265.0"/>
+   <text x="227.0"
+         fill="#64748b"
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Identifiers_6153c64b3e507fe13c480fec6b1cee70.html">
-      <rect x="214.0"
-            y="359.1875"
-            fill="#f1f5f9"
-            width="181.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="265.0"
+            y="423.515625"
+            fill="#f8fafc"
+            width="201.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Identifiers"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Identifiers"/>
       <g>
-         <text x="224.0"
-               fill="#0f172a"
-               y="387.5859375"
-               font-size="16"
-               font-family="Arial">Identifiers</text>
-         <line y2="391.5859375"
-               stroke-width="1"
-               x1="224.0"
-               x2="385.0"
-               stroke="#e2e8f0"
-               y1="391.5859375"/>
-         <text x="224.0"
-               fill="#64748b"
-               y="411.984375"
+         <text x="277.0"
+               fill="#1e293b"
+               y="452.455078125"
                font-size="14"
-               font-family="Arial">IdentifiersType</text>
+               font-family="Inter Regular">Identifiers</text>
+         <line y2="458.455078125"
+               stroke-width="1"
+               x1="277.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="458.455078125"/>
+         <text x="277.0"
+               fill="#64748b"
+               y="479.39453125"
+               font-size="13"
+               font-family="Inter Regular">IdentifiersType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="397.0"
-           y="381.5859375"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="444.455078125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 391.5859375 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 456.455078125 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="214.0"
-         y="443.984375"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="265.0"
+         y="521.39453125"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="EarningKind"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/EarningKind"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="472.3828125"
-            font-size="16"
-            font-family="Arial">EarningKind</text>
-      <line y2="476.3828125"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="476.3828125"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="496.78125"
+      <text x="277.0"
+            fill="#1e293b"
+            y="550.333984375"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">EarningKind</text>
+      <line y2="556.333984375"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="556.333984375"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="577.2734375"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 184.0 854.19921875 V 476.3828125 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 554.333984375 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="214.0"
-         y="528.78125"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="265.0"
+         y="619.2734375"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ClosingDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/ClosingDate"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="557.1796875"
-            font-size="16"
-            font-family="Arial">ClosingDate</text>
-      <line y2="561.1796875"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="561.1796875"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="581.578125"
+      <text x="277.0"
+            fill="#1e293b"
+            y="648.212890625"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">ClosingDate</text>
+      <line y2="654.212890625"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="654.212890625"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="675.15234375"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 561.1796875 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 652.212890625 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="556.1796875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="214.0"
-         y="613.578125"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="640.212890625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="265.0"
+         y="717.15234375"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="EntryDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/EntryDate"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="641.9765625"
-            font-size="16"
-            font-family="Arial">EntryDate</text>
-      <line y2="645.9765625"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="645.9765625"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="666.375"
+      <text x="277.0"
+            fill="#1e293b"
+            y="746.091796875"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">EntryDate</text>
+      <line y2="752.091796875"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="752.091796875"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="773.03125"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 184.0 854.19921875 V 645.9765625 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 750.091796875 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="640.9765625"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="214.0"
-         y="698.375"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="738.091796875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="265.0"
+         y="815.03125"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ValutaDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/ValutaDate"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="726.7734375"
-            font-size="16"
-            font-family="Arial">ValutaDate</text>
-      <line y2="730.7734375"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="730.7734375"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="751.171875"
+      <text x="277.0"
+            fill="#1e293b"
+            y="843.970703125"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">ValutaDate</text>
+      <line y2="849.970703125"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="849.970703125"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="870.91015625"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 730.7734375 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 847.970703125 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="725.7734375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="214.0"
-         y="783.171875"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+         y="835.970703125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="265.0"
+         y="912.91015625"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="EntryCurrency"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/EntryCurrency"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="811.5703125"
-            font-size="16"
-            font-family="Arial">EntryCurrency</text>
-      <line y2="815.5703125"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="815.5703125"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="835.96875"
+      <text x="277.0"
+            fill="#1e293b"
+            y="941.849609375"
             font-size="14"
-            font-family="Arial">ISOCurrencyCodeType</text>
+            font-family="Inter Regular">EntryCurrency</text>
+      <line y2="947.849609375"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="947.849609375"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="968.7890625"
+            font-size="13"
+            font-family="Inter Regular">ISOCurrencyCodeType</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 184.0 854.19921875 V 815.5703125 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 945.849609375 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="810.5703125"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="214.0"
-         y="867.96875"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="933.849609375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="265.0"
+         y="1010.7890625"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="IncomeCurrency"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/IncomeCurrency"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="896.3671875"
-            font-size="16"
-            font-family="Arial">IncomeCurrency</text>
-      <line y2="900.3671875"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="900.3671875"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="920.765625"
+      <text x="277.0"
+            fill="#1e293b"
+            y="1039.728515625"
             font-size="14"
-            font-family="Arial">ISOCurrencyCodeType</text>
+            font-family="Inter Regular">IncomeCurrency</text>
+      <line y2="1045.728515625"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="1045.728515625"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="1066.66796875"
+            font-size="13"
+            font-family="Inter Regular">ISOCurrencyCodeType</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 900.3671875 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 1043.728515625 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="895.3671875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1031.728515625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="EntryValue_0f7d7b8cb72e2716e105ea42c30079b8.html">
-      <rect x="214.0"
-            y="952.765625"
-            fill="#f1f5f9"
-            width="181.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="265.0"
+            y="1108.66796875"
+            fill="#f8fafc"
+            width="201.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="EntryValue"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/EntryValue"/>
       <g>
-         <text x="224.0"
-               fill="#0f172a"
-               y="981.1640625"
-               font-size="16"
-               font-family="Arial">EntryValue</text>
-         <line y2="985.1640625"
-               stroke-width="1"
-               x1="224.0"
-               x2="385.0"
-               stroke="#e2e8f0"
-               y1="985.1640625"/>
-         <text x="224.0"
-               fill="#64748b"
-               y="1005.5625"
+         <text x="277.0"
+               fill="#1e293b"
+               y="1137.607421875"
                font-size="14"
-               font-family="Arial">FundAmountType</text>
+               font-family="Inter Regular">EntryValue</text>
+         <line y2="1143.607421875"
+               stroke-width="1"
+               x1="277.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="1143.607421875"/>
+         <text x="277.0"
+               fill="#64748b"
+               y="1164.546875"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="397.0"
-           y="975.1640625"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="1129.607421875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 184.0 854.19921875 V 985.1640625 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 1141.607421875 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="980.1640625"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="1129.607421875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="Interests_dd899bb5a28a5d21dffb9f8ce496f4f9.html">
-      <rect x="214.0"
-            y="1037.5625"
-            fill="#f1f5f9"
-            width="181.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="265.0"
+            y="1206.546875"
+            fill="#f8fafc"
+            width="201.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Interests"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Interests"/>
       <g>
-         <text x="224.0"
-               fill="#0f172a"
-               y="1065.9609375"
-               font-size="16"
-               font-family="Arial">Interests</text>
-         <line y2="1069.9609375"
-               stroke-width="1"
-               x1="224.0"
-               x2="385.0"
-               stroke="#e2e8f0"
-               y1="1069.9609375"/>
-         <text x="224.0"
-               fill="#64748b"
-               y="1090.359375"
+         <text x="277.0"
+               fill="#1e293b"
+               y="1235.486328125"
                font-size="14"
-               font-family="Arial">FundAmountType</text>
+               font-family="Inter Regular">Interests</text>
+         <line y2="1241.486328125"
+               stroke-width="1"
+               x1="277.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="1241.486328125"/>
+         <text x="277.0"
+               fill="#64748b"
+               y="1262.42578125"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="397.0"
-           y="1059.9609375"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="1227.486328125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 1069.9609375 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 1239.486328125 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="1064.9609375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1227.486328125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="FXRates_03190189547b364daa7f3fffdf7adf0a.html">
-      <rect x="214.0"
-            y="1122.359375"
-            fill="#f1f5f9"
-            width="181.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="265.0"
+            y="1304.42578125"
+            fill="#f8fafc"
+            width="201.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="FXRates"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/FXRates"/>
       <g>
-         <text x="224.0"
-               fill="#0f172a"
-               y="1150.7578125"
-               font-size="16"
-               font-family="Arial">FXRates</text>
-         <line y2="1154.7578125"
-               stroke-width="1"
-               x1="224.0"
-               x2="385.0"
-               stroke="#e2e8f0"
-               y1="1154.7578125"/>
-         <text x="224.0"
-               fill="#64748b"
-               y="1175.15625"
+         <text x="277.0"
+               fill="#1e293b"
+               y="1333.365234375"
                font-size="14"
-               font-family="Arial">FXRatesType</text>
+               font-family="Inter Regular">FXRates</text>
+         <line y2="1339.365234375"
+               stroke-width="1"
+               x1="277.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="1339.365234375"/>
+         <text x="277.0"
+               fill="#64748b"
+               y="1360.3046875"
+               font-size="13"
+               font-family="Inter Regular">FXRatesType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="397.0"
-           y="1144.7578125"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="1325.365234375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 1154.7578125 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 1337.365234375 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="1149.7578125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="214.0"
-         y="1207.15625"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1325.365234375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="265.0"
+         y="1402.3046875"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="NominalValueOrUnits"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/NominalValueOrUnits"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="1235.5546875"
-            font-size="16"
-            font-family="Arial">NominalValueOrUnits</text>
-      <line y2="1239.5546875"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="1239.5546875"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="1259.953125"
+      <text x="277.0"
+            fill="#1e293b"
+            y="1431.244140625"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">NominalValueOrUnits</text>
+      <line y2="1437.244140625"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="1437.244140625"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="1458.18359375"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 1239.5546875 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 1435.244140625 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="1234.5546875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="214.0"
-         y="1291.953125"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1423.244140625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="265.0"
+         y="1500.18359375"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ReferenceNumber"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/ReferenceNumber"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="1320.3515625"
-            font-size="16"
-            font-family="Arial">ReferenceNumber</text>
-      <line y2="1324.3515625"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="1324.3515625"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="1344.75"
+      <text x="277.0"
+            fill="#1e293b"
+            y="1529.123046875"
             font-size="14"
-            font-family="Arial">Text100Type</text>
+            font-family="Inter Regular">ReferenceNumber</text>
+      <line y2="1535.123046875"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="1535.123046875"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="1556.0625"
+            font-size="13"
+            font-family="Inter Regular">Text100Type</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 1324.3515625 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 1533.123046875 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="1319.3515625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="214.0"
-         y="1376.75"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1521.123046875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="265.0"
+         y="1598.0625"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="AccountNumber"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/AccountNumber"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="1405.1484375"
-            font-size="16"
-            font-family="Arial">AccountNumber</text>
-      <line y2="1409.1484375"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="1409.1484375"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="1429.546875"
+      <text x="277.0"
+            fill="#1e293b"
+            y="1627.001953125"
             font-size="14"
-            font-family="Arial">xs:integer</text>
+            font-family="Inter Regular">AccountNumber</text>
+      <line y2="1633.001953125"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="1633.001953125"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="1653.94140625"
+            font-size="13"
+            font-family="Inter Regular">xs:integer</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 1409.1484375 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 1631.001953125 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="1404.1484375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="214.0"
-         y="1461.546875"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1619.001953125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="265.0"
+         y="1695.94140625"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="PostingText"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/PostingText"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="1489.9453125"
-            font-size="16"
-            font-family="Arial">PostingText</text>
-      <line y2="1493.9453125"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="1493.9453125"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="1514.34375"
+      <text x="277.0"
+            fill="#1e293b"
+            y="1724.880859375"
             font-size="14"
-            font-family="Arial">Text1000Type</text>
+            font-family="Inter Regular">PostingText</text>
+      <line y2="1730.880859375"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="1730.880859375"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="1751.8203125"
+            font-size="13"
+            font-family="Inter Regular">Text1000Type</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 1493.9453125 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 1728.880859375 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="1488.9453125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="214.0"
-         y="1546.34375"
-         fill="#f1f5f9"
-         width="181.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1716.880859375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="265.0"
+         y="1793.8203125"
+         fill="#f8fafc"
+         width="201.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="FinallySettled"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/FinallySettled"/>
    <g>
-      <text x="224.0"
-            fill="#0f172a"
-            y="1574.7421875"
-            font-size="16"
-            font-family="Arial">FinallySettled</text>
-      <line y2="1578.7421875"
-            stroke-width="1"
-            x1="224.0"
-            x2="385.0"
-            stroke="#e2e8f0"
-            y1="1578.7421875"/>
-      <text x="224.0"
-            fill="#64748b"
-            y="1599.140625"
+      <text x="277.0"
+            fill="#1e293b"
+            y="1822.759765625"
             font-size="14"
-            font-family="Arial">xs:boolean</text>
+            font-family="Inter Regular">FinallySettled</text>
+      <line y2="1828.759765625"
+            stroke-width="1"
+            x1="277.0"
+            x2="454.0"
+            stroke="#e2e8f0"
+            y1="1828.759765625"/>
+      <text x="277.0"
+            fill="#64748b"
+            y="1849.69921875"
+            font-size="13"
+            font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 184.0 854.19921875 V 1578.7421875 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 1826.759765625 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="1573.7421875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1814.759765625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Coupon_9e09ad7d0f9c3a43d7941f1c55f8d890.html">
-      <rect x="214.0"
-            y="1631.140625"
-            fill="#f1f5f9"
-            width="181.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="265.0"
+            y="1891.69921875"
+            fill="#f8fafc"
+            width="201.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Coupon"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Coupon"/>
       <g>
-         <text x="224.0"
-               fill="#0f172a"
-               y="1659.5390625"
-               font-size="16"
-               font-family="Arial">Coupon</text>
-         <line y2="1663.5390625"
-               stroke-width="1"
-               x1="224.0"
-               x2="385.0"
-               stroke="#e2e8f0"
-               y1="1663.5390625"/>
-         <text x="224.0"
-               fill="#64748b"
-               y="1683.9375"
+         <text x="277.0"
+               fill="#1e293b"
+               y="1920.638671875"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Coupon</text>
+         <line y2="1926.638671875"
+               stroke-width="1"
+               x1="277.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="1926.638671875"/>
+         <text x="277.0"
+               fill="#64748b"
+               y="1947.578125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="397.0"
-           y="1653.5390625"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="1912.638671875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 184.0 854.19921875 V 1663.5390625 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 1924.638671875 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="1658.5390625"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="1912.638671875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="Dividend_04cb6999b66def04bdbbad186fa4390d.html">
-      <rect x="214.0"
-            y="1715.9375"
-            fill="#f1f5f9"
-            width="181.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="265.0"
+            y="1989.578125"
+            fill="#f8fafc"
+            width="201.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Dividend"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Dividend"/>
       <g>
-         <text x="224.0"
-               fill="#0f172a"
-               y="1744.3359375"
-               font-size="16"
-               font-family="Arial">Dividend</text>
-         <line y2="1748.3359375"
-               stroke-width="1"
-               x1="224.0"
-               x2="385.0"
-               stroke="#e2e8f0"
-               y1="1748.3359375"/>
-         <text x="224.0"
-               fill="#64748b"
-               y="1768.734375"
+         <text x="277.0"
+               fill="#1e293b"
+               y="2018.517578125"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Dividend</text>
+         <line y2="2024.517578125"
+               stroke-width="1"
+               x1="277.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="2024.517578125"/>
+         <text x="277.0"
+               fill="#64748b"
+               y="2045.45703125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="397.0"
-           y="1738.3359375"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="2010.517578125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 184.0 854.19921875 V 1748.3359375 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 2022.517578125 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="1743.3359375"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="2010.517578125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="FundDistribution_cc9a8523472633b805e12b7f6f61fd53.html">
-      <rect x="214.0"
-            y="1800.734375"
-            fill="#f1f5f9"
-            width="181.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="265.0"
+            y="2087.45703125"
+            fill="#f8fafc"
+            width="201.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="FundDistribution"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/FundDistribution"/>
       <g>
-         <text x="224.0"
-               fill="#0f172a"
-               y="1829.1328125"
-               font-size="16"
-               font-family="Arial">FundDistribution</text>
-         <line y2="1833.1328125"
-               stroke-width="1"
-               x1="224.0"
-               x2="385.0"
-               stroke="#e2e8f0"
-               y1="1833.1328125"/>
-         <text x="224.0"
-               fill="#64748b"
-               y="1853.53125"
+         <text x="277.0"
+               fill="#1e293b"
+               y="2116.396484375"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">FundDistribution</text>
+         <line y2="2122.396484375"
+               stroke-width="1"
+               x1="277.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="2122.396484375"/>
+         <text x="277.0"
+               fill="#64748b"
+               y="2143.3359375"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="397.0"
-           y="1823.1328125"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="2108.396484375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 184.0 854.19921875 V 1833.1328125 H 214.0"/>
-   <text x="186.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 215.0 1092.4697265625 V 2120.396484375 H 265.0"/>
+   <text x="227.0"
          fill="#64748b"
-         y="1828.1328125"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="2108.396484375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -1075,7 +1125,8 @@
                 <div class="bg-slate-100/75 p-4 rounded-md space-y-2">
                     <div>
                         
-                        <p class="text-slate-600"><p>Earning data (single coupon, dividend or distribution) resulting from a security position</p>
+                        <p class="text-slate-600"><p>Earning data (single coupon, dividend or distribution) resulting from a security<br />
+position</p>
 </p>
                     </div>
                 </div>
@@ -1094,12 +1145,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">1..*</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -1127,19 +1177,16 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="EarningID_442a1e39f6c1e2b6746c13f29f0ee7a5.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/EarningID"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../EarningID</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
@@ -1156,13 +1203,11 @@
                                 <a href="CancellationFlag_b4ac9ac0808900fc86444de59dd15388.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/CancellationFlag"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../CancellationFlag</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:boolean</span>
                             </td>
@@ -1177,13 +1222,11 @@
                                 <a href="OriginalEarningID_bdb8a20a178e7042627ee43aa8b05f88.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/OriginalEarningID"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../OriginalEarningID</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text256Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text256Type</a>
                                 
@@ -1199,13 +1242,11 @@
                                 <a href="AssetUniqueID_44b93803751592ad20a648572bce3d5d.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/AssetUniqueID"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../AssetUniqueID</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1221,13 +1262,11 @@
                                 <a href="Identifiers_6153c64b3e507fe13c480fec6b1cee70.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Identifiers"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../Identifiers</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/IdentifiersType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">IdentifiersType</a>
                                 
@@ -1243,13 +1282,11 @@
                                 <a href="EarningKind_0c30f650f8e9311014e4bbe5be2569c9.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/EarningKind"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../EarningKind</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1257,22 +1294,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Type of earning:<br />
 Coupon, Dividend, Fund distribution, ...</p>
-<p>Diese Bezeichnung ist aus dem Dictionary zu entnehmen.Gibt die Ertragsart an: z.B Coupon, Dividend,Fund distribution</p>
+<p>Diese Bezeichnung ist aus dem Dictionary zu entnehmen.Gibt die<br />
+Ertragsart an: z.B Coupon, Dividend,Fund distribution</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Dividend</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Fund distribution</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ClosingDate_2b5d84900ce6feb5296e17a7ef9001fe.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/ClosingDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../ClosingDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
@@ -1280,60 +1316,54 @@ Coupon, Dividend, Fund distribution, ...</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Closing date / trade date</p>
 <p>Datum, an dem das Geschaeft abgeschlossen wurde</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2020-04-15</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2024-04-11</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="EntryDate_b0df390042d1e31a43a7a6aca5146427.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/EntryDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../EntryDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date when earning has been booked into portfolio</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2024-04-13</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2024-02-17</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ValutaDate_ad1893f6f9f31acb81517a37a6f9e873.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/ValutaDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../ValutaDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Value date</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-11-23</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2020-01-18</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="EntryCurrency_7901a551c99fe2cbdc2c4cd54556eaf0.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/EntryCurrency"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../EntryCurrency</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/ISOCurrencyCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
                                 
@@ -1344,20 +1374,18 @@ Coupon, Dividend, Fund distribution, ...</p>
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">QXM</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">TMV</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="IncomeCurrency_9fedf56fffeabbcd2a448adcabbdcb08.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/IncomeCurrency"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../IncomeCurrency</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/ISOCurrencyCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
                                 
@@ -1368,20 +1396,18 @@ Coupon, Dividend, Fund distribution, ...</p>
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">ZWO</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">SWF</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="EntryValue_0f7d7b8cb72e2716e105ea42c30079b8.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/EntryValue"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../EntryValue</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/FundAmountType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
                                 
@@ -1399,13 +1425,11 @@ Coupon, Dividend, Fund distribution, ...</p>
                                 <a href="Interests_dd899bb5a28a5d21dffb9f8ce496f4f9.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Interests"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../Interests</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/FundAmountType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
                                 
@@ -1422,13 +1446,11 @@ Coupon, Dividend, Fund distribution, ...</p>
                                 <a href="FXRates_03190189547b364daa7f3fffdf7adf0a.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/FXRates"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../FXRates</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/FXRatesType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FXRatesType</a>
                                 
@@ -1443,13 +1465,11 @@ Coupon, Dividend, Fund distribution, ...</p>
                                 <a href="NominalValueOrUnits_7b4f9d911b300ddd00ed40d18d873bef.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/NominalValueOrUnits"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../NominalValueOrUnits</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
@@ -1457,20 +1477,18 @@ Coupon, Dividend, Fund distribution, ...</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Nominal value / units</p>
 <p>Stuecke / Nominale</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">755.67</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">113.24</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ReferenceNumber_9b2d617888820551d805386c41dd07da.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/ReferenceNumber"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../ReferenceNumber</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text100Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text100Type</a>
                                 
@@ -1487,13 +1505,11 @@ Coupon, Dividend, Fund distribution, ...</p>
                                 <a href="AccountNumber_6b77611f6002b5a8b7795808c60227f1.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/AccountNumber"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../AccountNumber</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:integer</span>
                             </td>
@@ -1501,20 +1517,18 @@ Coupon, Dividend, Fund distribution, ...</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Account number of earning transaction</p>
 <p>Kontonummer der Erträgnisbuchung</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2356</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1090</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="PostingText_47112c5c70bc0374aad0bbb72502e49f.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/PostingText"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../PostingText</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/Text1000Type.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">Text1000Type</a>
                                 
@@ -1531,33 +1545,29 @@ Coupon, Dividend, Fund distribution, ...</p>
                                 <a href="FinallySettled_140c62e987a73bae825262bd0117004d.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/FinallySettled"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../FinallySettled</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:boolean</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Earning finally settled or not</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Coupon_9e09ad7d0f9c3a43d7941f1c55f8d890.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Coupon"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../Coupon</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1573,13 +1583,11 @@ Coupon, Dividend, Fund distribution, ...</p>
                                 <a href="Dividend_04cb6999b66def04bdbbad186fa4390d.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/Dividend"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../Dividend</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1595,13 +1603,11 @@ Coupon, Dividend, Fund distribution, ...</p>
                                 <a href="FundDistribution_cc9a8523472633b805e12b7f6f61fd53.html"
                                    title="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Earnings/Earning/FundDistribution"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../FundDistribution</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1626,13 +1632,14 @@ Coupon, Dividend, Fund distribution, ...</p>
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
             name=&quot;Earning&quot;
             type=&quot;EarningType&quot;&gt;
    &lt;xs:annotation&gt;
-      &lt;xs:documentation&gt;Earning data (single coupon, dividend or distribution) resulting from a security position&lt;/xs:documentation&gt;
+      &lt;xs:documentation&gt;Earning data (single coupon, dividend or distribution) resulting from a security
+                        position
+                    &lt;/xs:documentation&gt;
    &lt;/xs:annotation&gt;
 &lt;/xs:element&gt;
 </code></pre>
@@ -1649,9 +1656,9 @@ Coupon, Dividend, Fund distribution, ...</p>
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -1663,6 +1670,29 @@ Coupon, Dividend, Fund distribution, ...</p>
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

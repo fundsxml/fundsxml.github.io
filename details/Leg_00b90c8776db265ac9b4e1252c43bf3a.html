@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">Leg</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,1261 +129,1307 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="401.0"
-     height="2648.703125">
+     style="background-color: #ffffff"
+     width="495.0"
+     height="3098.24609375">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="1181"
-            fill="#f1f5f9"
-            width="47.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="1512"
+            fill="#f8fafc"
+            width="49.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="Leg"/>
-      <text x="30"
-            fill="#0f172a"
-            y="1209.3984375"
-            font-size="16"
-            font-family="Arial">Leg</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg"/>
+      <text x="44"
+            fill="#1e293b"
+            y="1540.939453125"
             font-size="14"
-            y="1234.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">Swap </tspan>
-         <tspan x="25" dy="1.2em">leg </tspan>
-         <tspan x="25" dy="1.2em">details </tspan>
+            font-family="Inter Regular">Leg</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="1570.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">Swap </tspan>
+         <tspan x="27" dy="1.3em">leg </tspan>
+         <tspan x="27" dy="1.3em">details </tspan>
       </text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 67.0 1200.19921875 H 97.0"/>
-   <g id="seq-group_Leg">
-      <rect x="97.0"
-            y="1190.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="1200.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="102.0"
-            x2="132.0"
-            y1="1200.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="109.0" cy="1200.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="117.0" cy="1200.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="125.0" cy="1200.19921875"/>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 137.0 1200.19921875 h 20.0"/>
-   <rect x="187.0"
-         y="20.0"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Type"/>
-   <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="48.3984375"
-            font-size="16"
-            font-family="Arial">Type</text>
-      <line y2="52.3984375"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="52.3984375"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="72.796875"
-            font-size="14"
-            font-family="Arial">(anonymous)</text>
-   </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 52.3984375 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 81.0 1532.4697265625 H 116.0"/>
+   <text x="128.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="187.0"
-         y="104.796875"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
-         class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Currency"/>
-   <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="133.1953125"
-            font-size="16"
-            font-family="Arial">Currency</text>
-      <line y2="137.1953125"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="137.1953125"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="157.59375"
-            font-size="14"
-            font-family="Arial">ISOCurrencyCodeType</text>
+         y="1505.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856772192">
+      <rect x="116.0"
+            y="1517.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="1532.4697265625"
+            stroke-width="1.5"
+            x1="124.0"
+            x2="158.0"
+            stroke="#64748b"
+            y1="1532.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="131.0" cy="1532.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="141.0" cy="1532.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="151.0" cy="1532.4697265625"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 137.1953125 H 187.0"/>
-   <text x="159.0"
-         fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="187.0"
-         y="189.59375"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5;"
-         filter="url(#drop-shadow)"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 166.0 1532.4697265625 h 25.0"/>
+   <rect x="241.0"
+         y="32.0"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Notional"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/Type"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="217.9921875"
-            font-size="16"
-            font-family="Arial">Notional</text>
-      <line y2="221.9921875"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="221.9921875"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="242.390625"
+      <text x="253.0"
+            fill="#1e293b"
+            y="60.939453125"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">Type</text>
+      <line y2="66.939453125"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="66.939453125"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="87.87890625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 221.9921875 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 64.939453125 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">1..1</text>
-   <rect x="187.0"
-         y="274.390625"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="241.0"
+         y="129.87890625"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="BulletPaymentAmount"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/Currency"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="302.7890625"
-            font-size="16"
-            font-family="Arial">BulletPaymentAmount</text>
-      <line y2="306.7890625"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="306.7890625"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="327.1875"
+      <text x="253.0"
+            fill="#1e293b"
+            y="158.818359375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">Currency</text>
+      <line y2="164.818359375"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="164.818359375"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="185.7578125"
+            font-size="13"
+            font-family="Inter Regular">ISOCurrencyCodeType</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 306.7890625 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 162.818359375 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="359.1875"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="241.0"
+         y="227.7578125"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="BulletPaymentDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/Notional"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="387.5859375"
-            font-size="16"
-            font-family="Arial">BulletPaymentDate</text>
-      <line y2="391.5859375"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="391.5859375"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="411.984375"
+      <text x="253.0"
+            fill="#1e293b"
+            y="256.697265625"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">Notional</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="262.697265625"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 391.5859375 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 260.697265625 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="386.5859375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="443.984375"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <rect x="241.0"
+         y="325.63671875"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="UpfrontPaymentAmount"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/BulletPaymentAmount"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="472.3828125"
-            font-size="16"
-            font-family="Arial">UpfrontPaymentAmount</text>
-      <line y2="476.3828125"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="476.3828125"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="496.78125"
+      <text x="253.0"
+            fill="#1e293b"
+            y="354.576171875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">BulletPaymentAmount</text>
+      <line y2="360.576171875"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="360.576171875"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="381.515625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 476.3828125 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 358.576171875 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="471.3828125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="528.78125"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="423.515625"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="UpfrontPaymentDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/BulletPaymentDate"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="557.1796875"
-            font-size="16"
-            font-family="Arial">UpfrontPaymentDate</text>
-      <line y2="561.1796875"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="561.1796875"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="581.578125"
+      <text x="253.0"
+            fill="#1e293b"
+            y="452.455078125"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">BulletPaymentDate</text>
+      <line y2="458.455078125"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="458.455078125"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="479.39453125"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 561.1796875 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 456.455078125 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="556.1796875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="613.578125"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="444.455078125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="521.39453125"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="AccrualDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/UpfrontPaymentAmount"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="641.9765625"
-            font-size="16"
-            font-family="Arial">AccrualDate</text>
-      <line y2="645.9765625"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="645.9765625"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="666.375"
+      <text x="253.0"
+            fill="#1e293b"
+            y="550.333984375"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">UpfrontPaymentAmount</text>
+      <line y2="556.333984375"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="556.333984375"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="577.2734375"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 645.9765625 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 554.333984375 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="640.9765625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="698.375"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="542.333984375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="619.2734375"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="YieldType"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/UpfrontPaymentDate"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="726.7734375"
-            font-size="16"
-            font-family="Arial">YieldType</text>
-      <line y2="730.7734375"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="730.7734375"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="751.171875"
+      <text x="253.0"
+            fill="#1e293b"
+            y="648.212890625"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">UpfrontPaymentDate</text>
+      <line y2="654.212890625"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="654.212890625"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="675.15234375"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 730.7734375 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 652.212890625 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="725.7734375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="783.171875"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="640.212890625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="717.15234375"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="Spread"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/AccrualDate"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="811.5703125"
-            font-size="16"
-            font-family="Arial">Spread</text>
-      <line y2="815.5703125"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="815.5703125"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="835.96875"
+      <text x="253.0"
+            fill="#1e293b"
+            y="746.091796875"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">AccrualDate</text>
+      <line y2="752.091796875"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="752.091796875"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="773.03125"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 815.5703125 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 750.091796875 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="810.5703125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="867.96875"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="738.091796875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="815.03125"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="FixedRate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/YieldType"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="896.3671875"
-            font-size="16"
-            font-family="Arial">FixedRate</text>
-      <line y2="900.3671875"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="900.3671875"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="920.765625"
+      <text x="253.0"
+            fill="#1e293b"
+            y="843.970703125"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">YieldType</text>
+      <line y2="849.970703125"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="849.970703125"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="870.91015625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 900.3671875 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 847.970703125 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="895.3671875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="952.765625"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="835.970703125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="912.91015625"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="RecoveryRate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/Spread"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="981.1640625"
-            font-size="16"
-            font-family="Arial">RecoveryRate</text>
-      <line y2="985.1640625"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="985.1640625"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="1005.5625"
+      <text x="253.0"
+            fill="#1e293b"
+            y="941.849609375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">Spread</text>
+      <line y2="947.849609375"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="947.849609375"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="968.7890625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 985.1640625 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 945.849609375 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="980.1640625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="1037.5625"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="933.849609375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="1010.7890625"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="PayFrequency"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FixedRate"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="1065.9609375"
-            font-size="16"
-            font-family="Arial">PayFrequency</text>
-      <line y2="1069.9609375"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="1069.9609375"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="1090.359375"
+      <text x="253.0"
+            fill="#1e293b"
+            y="1039.728515625"
             font-size="14"
-            font-family="Arial">FrequencyType</text>
+            font-family="Inter Regular">FixedRate</text>
+      <line y2="1045.728515625"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="1045.728515625"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="1066.66796875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1069.9609375 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 1043.728515625 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1064.9609375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="1122.359375"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1031.728515625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="1108.66796875"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="FixingFrequency"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/RecoveryRate"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="1150.7578125"
-            font-size="16"
-            font-family="Arial">FixingFrequency</text>
-      <line y2="1154.7578125"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="1154.7578125"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="1175.15625"
+      <text x="253.0"
+            fill="#1e293b"
+            y="1137.607421875"
             font-size="14"
-            font-family="Arial">FrequencyType</text>
+            font-family="Inter Regular">RecoveryRate</text>
+      <line y2="1143.607421875"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="1143.607421875"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="1164.546875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1154.7578125 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 1141.607421875 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1149.7578125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="1207.15625"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1129.607421875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="1206.546875"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="FirstFixingDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/PayFrequency"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="1235.5546875"
-            font-size="16"
-            font-family="Arial">FirstFixingDate</text>
-      <line y2="1239.5546875"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="1239.5546875"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="1259.953125"
+      <text x="253.0"
+            fill="#1e293b"
+            y="1235.486328125"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">PayFrequency</text>
+      <line y2="1241.486328125"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="1241.486328125"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="1262.42578125"
+            font-size="13"
+            font-family="Inter Regular">FrequencyType</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1239.5546875 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 1239.486328125 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1234.5546875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="1291.953125"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1227.486328125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="1304.42578125"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ResetType"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FixingFrequency"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="1320.3515625"
-            font-size="16"
-            font-family="Arial">ResetType</text>
-      <line y2="1324.3515625"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="1324.3515625"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="1344.75"
+      <text x="253.0"
+            fill="#1e293b"
+            y="1333.365234375"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">FixingFrequency</text>
+      <line y2="1339.365234375"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="1339.365234375"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="1360.3046875"
+            font-size="13"
+            font-family="Inter Regular">FrequencyType</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1324.3515625 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 1337.365234375 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1319.3515625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="1376.75"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1325.365234375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="1402.3046875"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="SettlementType"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FirstFixingDate"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="1405.1484375"
-            font-size="16"
-            font-family="Arial">SettlementType</text>
-      <line y2="1409.1484375"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="1409.1484375"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="1429.546875"
+      <text x="253.0"
+            fill="#1e293b"
+            y="1431.244140625"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">FirstFixingDate</text>
+      <line y2="1437.244140625"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="1437.244140625"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="1458.18359375"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1409.1484375 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 1435.244140625 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1404.1484375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="1461.546875"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1423.244140625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="1500.18359375"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="RollConvention"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/ResetType"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="1489.9453125"
-            font-size="16"
-            font-family="Arial">RollConvention</text>
-      <line y2="1493.9453125"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="1493.9453125"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="1514.34375"
+      <text x="253.0"
+            fill="#1e293b"
+            y="1529.123046875"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">ResetType</text>
+      <line y2="1535.123046875"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="1535.123046875"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="1556.0625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1493.9453125 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 1533.123046875 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1488.9453125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="1546.34375"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1521.123046875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="1598.0625"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="YieldCalculationMethod"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/SettlementType"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="1574.7421875"
-            font-size="16"
-            font-family="Arial">YieldCalculationMethod</text>
-      <line y2="1578.7421875"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="1578.7421875"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="1599.140625"
+      <text x="253.0"
+            fill="#1e293b"
+            y="1627.001953125"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">SettlementType</text>
+      <line y2="1633.001953125"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="1633.001953125"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="1653.94140625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1578.7421875 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 1631.001953125 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1573.7421875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="1631.140625"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="1619.001953125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="1695.94140625"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="YieldDayConvention"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/RollConvention"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="1659.5390625"
-            font-size="16"
-            font-family="Arial">YieldDayConvention</text>
-      <line y2="1663.5390625"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="1663.5390625"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="1683.9375"
+      <text x="253.0"
+            fill="#1e293b"
+            y="1724.880859375"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">RollConvention</text>
+      <line y2="1730.880859375"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="1730.880859375"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="1751.8203125"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1663.5390625 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 1728.880859375 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1658.5390625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="1716.880859375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="1793.8203125"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/YieldCalculationMethod"/>
+   <g>
+      <text x="253.0"
+            fill="#1e293b"
+            y="1822.759765625"
+            font-size="14"
+            font-family="Inter Regular">YieldCalculationMethod</text>
+      <line y2="1828.759765625"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="1828.759765625"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="1849.69921875"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
+   </g>
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 1826.759765625 H 241.0"/>
+   <text x="203.0"
+         fill="#64748b"
+         y="1814.759765625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="1891.69921875"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/YieldDayConvention"/>
+   <g>
+      <text x="253.0"
+            fill="#1e293b"
+            y="1920.638671875"
+            font-size="14"
+            font-family="Inter Regular">YieldDayConvention</text>
+      <line y2="1926.638671875"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="1926.638671875"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="1947.578125"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
+   </g>
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 1924.638671875 H 241.0"/>
+   <text x="203.0"
+         fill="#64748b"
+         y="1912.638671875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="Underlying_c2fdb7d3ba415bf3ffdba5ed00ae0a34.html">
-      <rect x="187.0"
-            y="1715.9375"
-            fill="#f1f5f9"
-            width="184.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="241.0"
+            y="1989.578125"
+            fill="#f8fafc"
+            width="206.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Underlying"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/Underlying"/>
       <g>
-         <text x="197.0"
-               fill="#0f172a"
-               y="1744.3359375"
-               font-size="16"
-               font-family="Arial">Underlying</text>
-         <line y2="1748.3359375"
-               stroke-width="1"
-               x1="197.0"
-               x2="361.0"
-               stroke="#e2e8f0"
-               y1="1748.3359375"/>
-         <text x="197.0"
-               fill="#64748b"
-               y="1768.734375"
+         <text x="253.0"
+               fill="#1e293b"
+               y="2018.517578125"
                font-size="14"
-               font-family="Arial">IdentifiersType</text>
+               font-family="Inter Regular">Underlying</text>
+         <line y2="2024.517578125"
+               stroke-width="1"
+               x1="253.0"
+               x2="435.0"
+               stroke="#e2e8f0"
+               y1="2024.517578125"/>
+         <text x="253.0"
+               fill="#64748b"
+               y="2045.45703125"
+               font-size="13"
+               font-family="Inter Regular">IdentifiersType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="373.0"
-           y="1738.3359375"
-           xlink:href="#plus-icon"/>
+           x="451.0"
+           y="2010.517578125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1748.3359375 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 2022.517578125 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1743.3359375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="2010.517578125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="UnderlyingAsset_dc0fe5a430ce1911735cd25c24932508.html">
-      <rect x="187.0"
-            y="1800.734375"
-            fill="#f1f5f9"
-            width="184.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="241.0"
+            y="2087.45703125"
+            fill="#f8fafc"
+            width="206.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="UnderlyingAsset"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/UnderlyingAsset"/>
       <g>
-         <text x="197.0"
-               fill="#0f172a"
-               y="1829.1328125"
-               font-size="16"
-               font-family="Arial">UnderlyingAsset</text>
-         <line y2="1833.1328125"
-               stroke-width="1"
-               x1="197.0"
-               x2="361.0"
-               stroke="#e2e8f0"
-               y1="1833.1328125"/>
-         <text x="197.0"
-               fill="#64748b"
-               y="1853.53125"
+         <text x="253.0"
+               fill="#1e293b"
+               y="2116.396484375"
                font-size="14"
-               font-family="Arial">UnderlyingType</text>
+               font-family="Inter Regular">UnderlyingAsset</text>
+         <line y2="2122.396484375"
+               stroke-width="1"
+               x1="253.0"
+               x2="435.0"
+               stroke="#e2e8f0"
+               y1="2122.396484375"/>
+         <text x="253.0"
+               fill="#64748b"
+               y="2143.3359375"
+               font-size="13"
+               font-family="Inter Regular">UnderlyingType</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="373.0"
-           y="1823.1328125"
-           xlink:href="#plus-icon"/>
+           x="451.0"
+           y="2108.396484375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1833.1328125 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 2120.396484375 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1828.1328125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="1885.53125"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2108.396484375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="2185.3359375"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ExchangeConvention"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/ExchangeConvention"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="1913.9296875"
-            font-size="16"
-            font-family="Arial">ExchangeConvention</text>
-      <line y2="1917.9296875"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="1917.9296875"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="1938.328125"
+      <text x="253.0"
+            fill="#1e293b"
+            y="2214.275390625"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">ExchangeConvention</text>
+      <line y2="2220.275390625"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="2220.275390625"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="2241.21484375"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 1917.9296875 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 2218.275390625 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1912.9296875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="1970.328125"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2206.275390625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="2283.21484375"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="InitialReferenceMonth"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/InitialReferenceMonth"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="1998.7265625"
-            font-size="16"
-            font-family="Arial">InitialReferenceMonth</text>
-      <line y2="2002.7265625"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="2002.7265625"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="2023.125"
+      <text x="253.0"
+            fill="#1e293b"
+            y="2312.154296875"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">InitialReferenceMonth</text>
+      <line y2="2318.154296875"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="2318.154296875"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="2339.09375"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 2002.7265625 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 2316.154296875 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="1997.7265625"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="2055.125"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2304.154296875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="2381.09375"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="FinalReferenceMonth"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FinalReferenceMonth"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="2083.5234375"
-            font-size="16"
-            font-family="Arial">FinalReferenceMonth</text>
-      <line y2="2087.5234375"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="2087.5234375"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="2107.921875"
+      <text x="253.0"
+            fill="#1e293b"
+            y="2410.033203125"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">FinalReferenceMonth</text>
+      <line y2="2416.033203125"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="2416.033203125"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="2436.97265625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 2087.5234375 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 2414.033203125 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="2082.5234375"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="2139.921875"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2402.033203125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="2478.97265625"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="FirstCouponRate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FirstCouponRate"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="2168.3203125"
-            font-size="16"
-            font-family="Arial">FirstCouponRate</text>
-      <line y2="2172.3203125"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="2172.3203125"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="2192.71875"
+      <text x="253.0"
+            fill="#1e293b"
+            y="2507.912109375"
             font-size="14"
-            font-family="Arial">xs:decimal</text>
+            font-family="Inter Regular">FirstCouponRate</text>
+      <line y2="2513.912109375"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="2513.912109375"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="2534.8515625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 2172.3203125 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 2511.912109375 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="2167.3203125"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="2224.71875"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2499.912109375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="2576.8515625"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="FirstCouponDate"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FirstCouponDate"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="2253.1171875"
-            font-size="16"
-            font-family="Arial">FirstCouponDate</text>
-      <line y2="2257.1171875"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="2257.1171875"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="2277.515625"
+      <text x="253.0"
+            fill="#1e293b"
+            y="2605.791015625"
             font-size="14"
-            font-family="Arial">xs:date</text>
+            font-family="Inter Regular">FirstCouponDate</text>
+      <line y2="2611.791015625"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="2611.791015625"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="2632.73046875"
+            font-size="13"
+            font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 2257.1171875 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 2609.791015625 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="2252.1171875"
-         font-size="12"
-         font-family="Arial">0..1</text>
-   <rect x="187.0"
-         y="2309.515625"
-         fill="#f1f5f9"
-         width="184.0"
-         style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         filter="url(#drop-shadow)"
+         y="2597.791015625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
+   <rect x="241.0"
+         y="2674.73046875"
+         fill="#f8fafc"
+         width="206.0"
+         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+         filter="url(#modern-shadow)"
          class="hoverable-rect"
-         rx="4"
-         ry="4"
-         height="64.796875"
-         id="ShortPeriod"/>
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/ShortPeriod"/>
    <g>
-      <text x="197.0"
-            fill="#0f172a"
-            y="2337.9140625"
-            font-size="16"
-            font-family="Arial">ShortPeriod</text>
-      <line y2="2341.9140625"
-            stroke-width="1"
-            x1="197.0"
-            x2="361.0"
-            stroke="#e2e8f0"
-            y1="2341.9140625"/>
-      <text x="197.0"
-            fill="#64748b"
-            y="2362.3125"
+      <text x="253.0"
+            fill="#1e293b"
+            y="2703.669921875"
             font-size="14"
-            font-family="Arial">(anonymous)</text>
+            font-family="Inter Regular">ShortPeriod</text>
+      <line y2="2709.669921875"
+            stroke-width="1"
+            x1="253.0"
+            x2="435.0"
+            stroke="#e2e8f0"
+            y1="2709.669921875"/>
+      <text x="253.0"
+            fill="#64748b"
+            y="2730.609375"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 2341.9140625 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 2707.669921875 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="2336.9140625"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="2695.669921875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="FixingCalendars_e08252d3f10e411065da0b9d3034530c.html">
-      <rect x="187.0"
-            y="2394.3125"
-            fill="#f1f5f9"
-            width="184.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="241.0"
+            y="2772.609375"
+            fill="#f8fafc"
+            width="206.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="FixingCalendars"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FixingCalendars"/>
       <g>
-         <text x="197.0"
-               fill="#0f172a"
-               y="2422.7109375"
-               font-size="16"
-               font-family="Arial">FixingCalendars</text>
-         <line y2="2426.7109375"
-               stroke-width="1"
-               x1="197.0"
-               x2="361.0"
-               stroke="#e2e8f0"
-               y1="2426.7109375"/>
-         <text x="197.0"
-               fill="#64748b"
-               y="2447.109375"
+         <text x="253.0"
+               fill="#1e293b"
+               y="2801.548828125"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">FixingCalendars</text>
+         <line y2="2807.548828125"
+               stroke-width="1"
+               x1="253.0"
+               x2="435.0"
+               stroke="#e2e8f0"
+               y1="2807.548828125"/>
+         <text x="253.0"
+               fill="#64748b"
+               y="2828.48828125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="373.0"
-           y="2416.7109375"
-           xlink:href="#plus-icon"/>
+           x="451.0"
+           y="2793.548828125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 2426.7109375 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 2805.548828125 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="2421.7109375"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="2793.548828125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="PaymentCalendars_c373b45b8f5c5a3c117656b82c30c783.html">
-      <rect x="187.0"
-            y="2479.109375"
-            fill="#f1f5f9"
-            width="184.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="241.0"
+            y="2870.48828125"
+            fill="#f8fafc"
+            width="206.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="PaymentCalendars"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/PaymentCalendars"/>
       <g>
-         <text x="197.0"
-               fill="#0f172a"
-               y="2507.5078125"
-               font-size="16"
-               font-family="Arial">PaymentCalendars</text>
-         <line y2="2511.5078125"
-               stroke-width="1"
-               x1="197.0"
-               x2="361.0"
-               stroke="#e2e8f0"
-               y1="2511.5078125"/>
-         <text x="197.0"
-               fill="#64748b"
-               y="2531.90625"
+         <text x="253.0"
+               fill="#1e293b"
+               y="2899.427734375"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">PaymentCalendars</text>
+         <line y2="2905.427734375"
+               stroke-width="1"
+               x1="253.0"
+               x2="435.0"
+               stroke="#e2e8f0"
+               y1="2905.427734375"/>
+         <text x="253.0"
+               fill="#64748b"
+               y="2926.3671875"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="373.0"
-           y="2501.5078125"
-           xlink:href="#plus-icon"/>
+           x="451.0"
+           y="2891.427734375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 2511.5078125 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 2903.427734375 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="2506.5078125"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="2891.427734375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
    <a href="CreditEvents_c0136a263dd5a78c142fb6152f357460.html">
-      <rect x="187.0"
-            y="2563.90625"
-            fill="#f1f5f9"
-            width="184.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="241.0"
+            y="2968.3671875"
+            fill="#f8fafc"
+            width="206.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="CreditEvents"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/CreditEvents"/>
       <g>
-         <text x="197.0"
-               fill="#0f172a"
-               y="2592.3046875"
-               font-size="16"
-               font-family="Arial">CreditEvents</text>
-         <line y2="2596.3046875"
-               stroke-width="1"
-               x1="197.0"
-               x2="361.0"
-               stroke="#e2e8f0"
-               y1="2596.3046875"/>
-         <text x="197.0"
-               fill="#64748b"
-               y="2616.703125"
+         <text x="253.0"
+               fill="#1e293b"
+               y="2997.306640625"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">CreditEvents</text>
+         <line y2="3003.306640625"
+               stroke-width="1"
+               x1="253.0"
+               x2="435.0"
+               stroke="#e2e8f0"
+               y1="3003.306640625"/>
+         <text x="253.0"
+               fill="#64748b"
+               y="3024.24609375"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="373.0"
-           y="2586.3046875"
-           xlink:href="#plus-icon"/>
+           x="451.0"
+           y="2989.306640625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-         fill="none"
-         d="M 157.0 1200.19921875 V 2596.3046875 H 187.0"/>
-   <text x="159.0"
+   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
+         class="connection-line"
+         d="M 191.0 1532.4697265625 V 3001.306640625 H 241.0"/>
+   <text x="203.0"
          fill="#64748b"
-         y="2591.3046875"
-         font-size="12"
-         font-family="Arial">0..1</text>
+         y="2989.306640625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -1408,12 +1463,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">1..*</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -1441,19 +1495,16 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Type_be7d0c66388f37a10112eade38ee412e.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/Type"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Type</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1468,13 +1519,11 @@
                                 <a href="Currency_971de9bf0193de38c9830e1009d05a0e.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/Currency"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Currency</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/ISOCurrencyCodeType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">ISOCurrencyCodeType</a>
                                 
@@ -1484,135 +1533,121 @@
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">POO</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">BAX</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Notional_ff19d6cdc6b08dcaf58cf71b27e65c2a.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/Notional"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Notional</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Notional Amount</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">643.74</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">597.38</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="BulletPaymentAmount_854dbd20d2811d8135b5c39afeb27f2e.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/BulletPaymentAmount"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../BulletPaymentAmount</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">293.31</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">744.85</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="BulletPaymentDate_091a8c4dea462a03637754464fd73f9e.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/BulletPaymentDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../BulletPaymentDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-07-12</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-10-17</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="UpfrontPaymentAmount_1746a6e81d818b5c8bb78696358d7380.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/UpfrontPaymentAmount"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../UpfrontPaymentAmount</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">316.32</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">117.17</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="UpfrontPaymentDate_e4bdc6360914523cad3c575bb707f894.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/UpfrontPaymentDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../UpfrontPaymentDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-03-31</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-09-13</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="AccrualDate_33e55e4b043b6d44492ec4385d3131bb.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/AccrualDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../AccrualDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-04-20</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-12-10</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="YieldType_96cbcc63b6cd5a2fe3000837298a21b8.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/YieldType"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../YieldType</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1620,78 +1655,70 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Fixed rate or variable rate</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Variable Rate</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Fixed Rate</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Spread_97a8f123c5b52af435ac07a05d6b792c.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/Spread"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Spread</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Spread in basis points</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">853.99</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">682.73</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="FixedRate_b7bbede58a055672fc232eb151217901.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FixedRate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../FixedRate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">984.41</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">906.61</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="RecoveryRate_5abec7b4eb050d06c6c4c27ec5714c18.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/RecoveryRate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../RecoveryRate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">690.41</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">975.33</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="PayFrequency_15046593192fcb59751e39ad6a4dc849.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/PayFrequency"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../PayFrequency</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/FrequencyType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FrequencyType</a>
                                 
@@ -1707,20 +1734,18 @@ TWWK ... Twoweekly<br />
 WEEK ... Weekly<br />
 YEAR</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">DAIL</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">YEAR</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="FixingFrequency_9e40f01648696b06371e63b4369a1d6b.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FixingFrequency"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../FixingFrequency</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../simpleTypes/FrequencyType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">FrequencyType</a>
                                 
@@ -1736,39 +1761,35 @@ TWWK ... Twoweekly<br />
 WEEK ... Weekly<br />
 YEAR</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">QURT</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">TWMN</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="FirstFixingDate_d26b34f557d80777900cd27e4292b576.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FirstFixingDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../FirstFixingDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2020-08-02</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2022-12-10</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ResetType_3c0a76d72acbf5e64bfcafcc24c20314.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/ResetType"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../ResetType</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1776,41 +1797,38 @@ YEAR</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>In arrears or Upfront</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">In arrears</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Upfront</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="SettlementType_0f4681269313255cc32956662701f271.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/SettlementType"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../SettlementType</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Cash or Cash Netted or Notional Exchange or Physical Delivery</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Cash or Cash Netted or Notional Exchange or<br />
+Physical Delivery</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Notional Exchange</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Physical Delivery</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="RollConvention_fe7b3d58c081bf279cc19388792685b6.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/RollConvention"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../RollConvention</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1830,13 +1848,11 @@ Preceeding modified</p>
                                 <a href="YieldCalculationMethod_380a663ad54e6b5be0faa3a8d26a9b81.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/YieldCalculationMethod"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../YieldCalculationMethod</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1847,20 +1863,18 @@ Compound<br />
 Flat compounding<br />
 Simple</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Simple</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Average</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="YieldDayConvention_ab4f53e44a210edf29120effca6fccb9.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/YieldDayConvention"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../YieldDayConvention</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1868,20 +1882,18 @@ Simple</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>ACT/ACT, ACT/360, ...</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">30U/360</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">ACT/365</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Underlying_c2fdb7d3ba415bf3ffdba5ed00ae0a34.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/Underlying"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../Underlying</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/IdentifiersType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">IdentifiersType</a>
                                 
@@ -1896,19 +1908,18 @@ Simple</p>
                                 <a href="UnderlyingAsset_dc0fe5a430ce1911735cd25c24932508.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/UnderlyingAsset"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../UnderlyingAsset</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="../complexTypes/UnderlyingType.html"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">UnderlyingType</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Refers to the security underlying the derivative product</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Refers to the security underlying the derivative<br />
+product</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -1917,13 +1928,11 @@ Simple</p>
                                 <a href="ExchangeConvention_ec2762cd0ede78e27e88bba3198cf5a0.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/ExchangeConvention"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../ExchangeConvention</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1931,40 +1940,18 @@ Simple</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Begin, End, Begin and end, None</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">End</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">None</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="InitialReferenceMonth_1fcbf9f4b5feadc210606dab2e90b3b3.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/InitialReferenceMonth"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../InitialReferenceMonth</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
-                                <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
-                                
-                            </td>
-
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">5</td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-3 font-mono">
-                                <a href="FinalReferenceMonth_67c35fe956cf99327701a8db4d5aef42.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FinalReferenceMonth"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
-                                    <span>/AssetMasterData/.../FinalReferenceMonth</span>
-                                </a>
-                            </td>
-
-                            <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -1975,60 +1962,73 @@ Simple</p>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
+                                <a href="FinalReferenceMonth_67c35fe956cf99327701a8db4d5aef42.html"
+                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FinalReferenceMonth"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/AssetMasterData/.../FinalReferenceMonth</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600">3</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
                                 <a href="FirstCouponRate_5d43cea77b123edfcfd82240ebf2d2bf.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FirstCouponRate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../FirstCouponRate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">863.62</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">71.53</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="FirstCouponDate_5be471e3acc0d46fff78e256063fbda9.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FirstCouponDate"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../FirstCouponDate</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 
                                 <span>xs:date</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-12-31</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2021-05-24</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="ShortPeriod_d09fda1b41fd648fe79dcbd0ec50e510.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/ShortPeriod"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../ShortPeriod</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Interpolation at beginning, Interpolation at the end, Interpolation at beginning and end</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Interpolation at beginning, Interpolation at the<br />
+end, Interpolation at beginning and end</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600">Interpolation at start</td>
                         </tr>
@@ -2037,13 +2037,11 @@ Simple</p>
                                 <a href="FixingCalendars_e08252d3f10e411065da0b9d3034530c.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/FixingCalendars"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../FixingCalendars</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -2057,13 +2055,11 @@ Simple</p>
                                 <a href="PaymentCalendars_c373b45b8f5c5a3c117656b82c30c783.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/PaymentCalendars"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../PaymentCalendars</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -2077,13 +2073,11 @@ Simple</p>
                                 <a href="CreditEvents_c0136a263dd5a78c142fb6152f357460.html"
                                    title="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/CreditEvents"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/AssetMasterData/.../CreditEvents</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -2106,7 +2100,6 @@ Simple</p>
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
             name=&quot;Leg&quot;&gt;
@@ -2177,7 +2170,9 @@ Simple</p>
                &lt;/xs:element&gt;
                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SettlementType&quot;&gt;
                   &lt;xs:annotation&gt;
-                     &lt;xs:documentation&gt;Cash or Cash Netted or Notional Exchange or Physical Delivery&lt;/xs:documentation&gt;
+                     &lt;xs:documentation&gt;Cash or Cash Netted or Notional Exchange or
+                                                        Physical Delivery
+                                                    &lt;/xs:documentation&gt;
                   &lt;/xs:annotation&gt;
                   &lt;xs:simpleType&gt;
                      &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -2252,7 +2247,10 @@ Simple&lt;/xs:documentation&gt;
                &lt;/xs:element&gt;
                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;UnderlyingAsset&quot; type=&quot;UnderlyingType&quot;&gt;
                   &lt;xs:annotation&gt;
-                     &lt;xs:documentation&gt;Refers to the security underlying the derivative product&lt;/xs:documentation&gt;
+                     &lt;xs:appinfo source=&quot;@since 4.2.8&quot;/&gt;
+                     &lt;xs:documentation&gt;Refers to the security underlying the derivative
+                                                        product
+                                                    &lt;/xs:documentation&gt;
                   &lt;/xs:annotation&gt;
                &lt;/xs:element&gt;
                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExchangeConvention&quot;&gt;
@@ -2288,7 +2286,9 @@ Simple&lt;/xs:documentation&gt;
                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;FirstCouponDate&quot; type=&quot;xs:date&quot;/&gt;
                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ShortPeriod&quot;&gt;
                   &lt;xs:annotation&gt;
-                     &lt;xs:documentation&gt;Interpolation at beginning, Interpolation at the end, Interpolation at beginning and end&lt;/xs:documentation&gt;
+                     &lt;xs:documentation&gt;Interpolation at beginning, Interpolation at the
+                                                        end, Interpolation at beginning and end
+                                                    &lt;/xs:documentation&gt;
                   &lt;/xs:annotation&gt;
                   &lt;xs:simpleType&gt;
                      &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -2329,7 +2329,12 @@ Simple&lt;/xs:documentation&gt;
                      &lt;xs:sequence&gt;
                         &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Event&quot;&gt;
                            &lt;xs:annotation&gt;
-                              &lt;xs:documentation&gt;Bankruptcy, Cross acceleration, Cross Default, Downgrade, Failure to pay principal, Merger, Moratorium, Obligation acceleration, Obligation default, Other, Reputation Moratorium, Restructuring, Withholding Tax&lt;/xs:documentation&gt;
+                              &lt;xs:documentation&gt;Bankruptcy, Cross acceleration, Cross
+                                                                    Default, Downgrade, Failure to pay principal,
+                                                                    Merger, Moratorium, Obligation acceleration,
+                                                                    Obligation default, Other, Reputation Moratorium,
+                                                                    Restructuring, Withholding Tax
+                                                                &lt;/xs:documentation&gt;
                            &lt;/xs:annotation&gt;
                            &lt;xs:simpleType&gt;
                               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -2371,9 +2376,9 @@ Simple&lt;/xs:documentation&gt;
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -2385,6 +2390,29 @@ Simple&lt;/xs:documentation&gt;
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

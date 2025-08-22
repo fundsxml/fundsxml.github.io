@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">CEPTRHP</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,252 +129,271 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="440.0"
-     height="359.1875">
+     style="background-color: #ffffff"
+     width="514.0"
+     height="455.515625">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="144"
-            fill="#f1f5f9"
-            width="96.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="191"
+            fill="#f8fafc"
+            width="88.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="CEPTRHP"/>
-      <text x="30"
-            fill="#0f172a"
-            y="172.3984375"
-            font-size="16"
-            font-family="Arial">CEPTRHP</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP"/>
+      <text x="44"
+            fill="#1e293b"
+            y="219.939453125"
             font-size="14"
-            y="197.3984375"
-            font-family="Arial"/>
+            font-family="Inter Regular">CEPTRHP</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="249.939453125"
+            font-family="Inter Regular"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 116.0 163.19921875 H 146.0"/>
-   <g id="seq-group_CEPTRHP">
-      <rect x="146.0"
-            y="153.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="163.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="151.0"
-            x2="181.0"
-            y1="163.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="158.0" cy="163.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="166.0" cy="163.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="174.0" cy="163.19921875"/>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 120.0 211.4697265625 H 155.0"/>
+   <text x="167.0"
+         fill="#64748b"
+         y="184.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856777605">
+      <rect x="155.0"
+            y="196.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="211.4697265625"
+            stroke-width="1.5"
+            x1="163.0"
+            x2="197.0"
+            stroke="#64748b"
+            y1="211.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="170.0" cy="211.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="180.0" cy="211.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="190.0" cy="211.4697265625"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 186.0 163.19921875 h 20.0"/>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 205.0 211.4697265625 h 25.0"/>
    <a href="RHPPeriodsDefinition_7329fcee2393e7c7047b5bd2f399ef7a.html">
-      <rect x="236.0"
-            y="20.0"
-            fill="#f1f5f9"
-            width="174.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="280.0"
+            y="32.0"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="RHPPeriodsDefinition"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP/RHPPeriodsDefinition"/>
       <g>
-         <text x="246.0"
-               fill="#0f172a"
-               y="48.3984375"
-               font-size="16"
-               font-family="Arial">RHPPeriodsDefinition</text>
-         <line y2="52.3984375"
-               stroke-width="1"
-               x1="246.0"
-               x2="400.0"
-               stroke="#e2e8f0"
-               y1="52.3984375"/>
-         <text x="246.0"
-               fill="#64748b"
-               y="72.796875"
+         <text x="292.0"
+               fill="#1e293b"
+               y="60.939453125"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">RHPPeriodsDefinition</text>
+         <line y2="66.939453125"
+               stroke-width="1"
+               x1="292.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="66.939453125"/>
+         <text x="292.0"
+               fill="#64748b"
+               y="87.87890625"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="412.0"
-           y="42.3984375"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="52.939453125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 206.0 163.19921875 V 52.3984375 H 236.0"/>
-   <text x="208.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 230.0 211.4697265625 V 64.939453125 H 280.0"/>
+   <text x="242.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="Risk_efec1d04cded8cd7862926ad47dffc96.html">
-      <rect x="236.0"
-            y="104.796875"
-            fill="#f1f5f9"
-            width="174.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="280.0"
+            y="129.87890625"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Risk"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP/Risk"/>
       <g>
-         <text x="246.0"
-               fill="#0f172a"
-               y="133.1953125"
-               font-size="16"
-               font-family="Arial">Risk</text>
-         <line y2="137.1953125"
-               stroke-width="1"
-               x1="246.0"
-               x2="400.0"
-               stroke="#e2e8f0"
-               y1="137.1953125"/>
-         <text x="246.0"
-               fill="#64748b"
-               y="157.59375"
+         <text x="292.0"
+               fill="#1e293b"
+               y="158.818359375"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Risk</text>
+         <line y2="164.818359375"
+               stroke-width="1"
+               x1="292.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="164.818359375"/>
+         <text x="292.0"
+               fill="#64748b"
+               y="185.7578125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="412.0"
-           y="127.1953125"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="150.818359375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 206.0 163.19921875 V 137.1953125 H 236.0"/>
-   <text x="208.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 230.0 211.4697265625 V 162.818359375 H 280.0"/>
+   <text x="242.0"
          fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="PerformaceScenario_f272764138b3c7ea13cf53d0b002b0c6.html">
-      <rect x="236.0"
-            y="189.59375"
-            fill="#f1f5f9"
-            width="174.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="280.0"
+            y="227.7578125"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="PerformaceScenario"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP/PerformaceScenario"/>
       <g>
-         <text x="246.0"
-               fill="#0f172a"
-               y="217.9921875"
-               font-size="16"
-               font-family="Arial">PerformaceScenario</text>
-         <line y2="221.9921875"
-               stroke-width="1"
-               x1="246.0"
-               x2="400.0"
-               stroke="#e2e8f0"
-               y1="221.9921875"/>
-         <text x="246.0"
-               fill="#64748b"
-               y="242.390625"
+         <text x="292.0"
+               fill="#1e293b"
+               y="256.697265625"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">PerformaceScenario</text>
+         <line y2="262.697265625"
+               stroke-width="1"
+               x1="292.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="262.697265625"/>
+         <text x="292.0"
+               fill="#64748b"
+               y="283.63671875"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="412.0"
-           y="211.9921875"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="248.697265625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 206.0 163.19921875 V 221.9921875 H 236.0"/>
-   <text x="208.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 230.0 211.4697265625 V 260.697265625 H 280.0"/>
+   <text x="242.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="Cost_d3daecc8e5f065c702194b4bf6a3af22.html">
-      <rect x="236.0"
-            y="274.390625"
-            fill="#f1f5f9"
-            width="174.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="280.0"
+            y="325.63671875"
+            fill="#f8fafc"
+            width="186.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Cost"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP/Cost"/>
       <g>
-         <text x="246.0"
-               fill="#0f172a"
-               y="302.7890625"
-               font-size="16"
-               font-family="Arial">Cost</text>
-         <line y2="306.7890625"
-               stroke-width="1"
-               x1="246.0"
-               x2="400.0"
-               stroke="#e2e8f0"
-               y1="306.7890625"/>
-         <text x="246.0"
-               fill="#64748b"
-               y="327.1875"
+         <text x="292.0"
+               fill="#1e293b"
+               y="354.576171875"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Cost</text>
+         <line y2="360.576171875"
+               stroke-width="1"
+               x1="292.0"
+               x2="454.0"
+               stroke="#e2e8f0"
+               y1="360.576171875"/>
+         <text x="292.0"
+               fill="#64748b"
+               y="381.515625"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="412.0"
-           y="296.7890625"
-           xlink:href="#plus-icon"/>
+           x="470.0"
+           y="346.576171875"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 206.0 163.19921875 V 306.7890625 H 236.0"/>
-   <text x="208.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 230.0 211.4697265625 V 358.576171875 H 280.0"/>
+   <text x="242.0"
          fill="#64748b"
-         y="301.7890625"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="346.576171875"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -390,12 +418,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">1..*</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -423,19 +450,16 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="RHPPeriodsDefinition_7329fcee2393e7c7047b5bd2f399ef7a.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP/RHPPeriodsDefinition"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../RHPPeriodsDefinition</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -450,13 +474,11 @@
                                 <a href="Risk_efec1d04cded8cd7862926ad47dffc96.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP/Risk"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Risk</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -471,19 +493,18 @@
                                 <a href="PerformaceScenario_f272764138b3c7ea13cf53d0b002b0c6.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP/PerformaceScenario"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../PerformaceScenario</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>33-Performance Scenario Section. The following calculated investment amounts are based on value 31060_Investment amount.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>33-Performance Scenario Section. The following calculated investment<br />
+amounts are based on value 31060_Investment amount.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -492,19 +513,20 @@
                                 <a href="Cost_d3daecc8e5f065c702194b4bf6a3af22.html"
                                    title="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/CEPTV2Performance/CEPTRHPS/CEPTRHP/Cost"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Cost</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>34-Cost Section. The amounts shown here are the cumulative costs of the product itself, for three different holding periods. They include potential early exit penalties. The figures assume you invest field value 01040_Investment amount = 10 000. The figures are estimates and may change in the future.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>34-Cost Section. The amounts shown here are the cumulative costs of<br />
+the product itself, for three different holding periods. They include potential<br />
+early exit penalties. The figures assume you invest field value 01040_Investment<br />
+amount = 10 000. The figures are estimates and may change in the future.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -522,7 +544,6 @@
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
             name=&quot;CEPTRHP&quot;&gt;
@@ -530,30 +551,40 @@
       &lt;xs:sequence&gt;
          &lt;xs:element name=&quot;RHPPeriodsDefinition&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;31-Definition of periods per RHPs and investment amount base&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;31-Definition of periods per RHPs and investment amount base
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Period_1&quot; type=&quot;xs:positiveInteger&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;31010-Has to be set as default value 1 and only to be filled when HP of product is &amp;gt;=3&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;31010-Has to be set as default value 1 and only to be
+                                                filled when HP of product is &amp;gt;=3
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Period_2&quot; type=&quot;xs:positiveInteger&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;31020-Is considered as RHP/2 and rounded up to the nearest year. Has to be filled when RHP is &amp;gt;3&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;31020-Is considered as RHP/2 and rounded up to the nearest
+                                                year. Has to be filled when RHP is &amp;gt;3
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;HP_Period_3&quot; type=&quot;xs:positiveInteger&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;31030-The holding period (HP) is the period used as a basis for the calculation of the subsequent purposes. It gives the MOPs manufacturer the possibility to align the HP of the underlying investment option with the RHP of the MOP.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;31030-The holding period (HP) is the period used as a
+                                                basis for the calculation of the subsequent purposes. It gives the MOPs
+                                                manufacturer the possibility to align the HP of the underlying
+                                                investment option with the RHP of the MOP.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Lump_sum_or_regular_premium_indicator&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;31050-To indicate whether a lump sum or regular premium option has been chosen
+                        &lt;xs:documentation&gt;31050-To indicate whether a lump sum or regular premium
+                                                option has been chosen
 One of the options in the following closed list to be used:
-LS - Lump sum 
+LS - Lump sum
 RP - Regular premium&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
@@ -566,7 +597,9 @@ RP - Regular premium&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Investment_Amount&quot; type=&quot;xs:positiveInteger&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;31060-Standard 10,000 for lump sum or 1,000 for regular premium&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;31060-Standard 10,000 for lump sum or 1,000 for regular
+                                                premium
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
@@ -587,7 +620,9 @@ RP - Regular premium&lt;/xs:documentation&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SRI&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;32010-The summary risk indicator (SRI) shall be presented in a numerical scale ranging from 1 to 7, where 1 indicates the lowest risk class and 7 indicates the highest risk class.
+                        &lt;xs:documentation&gt;32010-The summary risk indicator (SRI) shall be presented
+                                                in a numerical scale ranging from 1 to 7, where 1 indicates the lowest
+                                                risk class and 7 indicates the highest risk class.
 Calculated based on the RHP of the underlying PRIIP&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
@@ -607,7 +642,9 @@ Calculated based on the RHP of the underlying PRIIP&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;PerformaceScenario&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;33-Performance Scenario Section. The following calculated investment amounts are based on value 31060_Investment amount.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;33-Performance Scenario Section. The following calculated investment
+                                    amounts are based on value 31060_Investment amount.
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
@@ -646,27 +683,46 @@ Calculated based on the RHP of the underlying PRIIP&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Cost&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;34-Cost Section. The amounts shown here are the cumulative costs of the product itself, for three different holding periods. They include potential early exit penalties. The figures assume you invest field value 01040_Investment amount = 10 000. The figures are estimates and may change in the future.&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;34-Cost Section. The amounts shown here are the cumulative costs of
+                                    the product itself, for three different holding periods. They include potential
+                                    early exit penalties. The figures assume you invest field value 01040_Investment
+                                    amount = 10 000. The figures are estimates and may change in the future.
+                                &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalPeriod1&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;34010-The Reduction in Yield (RIY) shows what impact the total costs you pay will have on the investment return you might get. The total costs take into account one-off, ongoing and incidental costs. The Reduction in Yield (RIY) shows what impact the total costs you pay will have on the investment return you might get. The total costs take into account one-off, ongoing and incidental costs.
+                        &lt;xs:documentation&gt;34010-The Reduction in Yield (RIY) shows what impact the
+                                                total costs you pay will have on the investment return you might get.
+                                                The total costs take into account one-off, ongoing and incidental costs.
+                                                The Reduction in Yield (RIY) shows what impact the total costs you pay
+                                                will have on the investment return you might get. The total costs take
+                                                into account one-off, ongoing and incidental costs.
 
 The amounts shown here are the cumulative costs of the product itself, for three different holding periods. They include potential early exit penalties. The figures assume you invest field value 01040_Investment amount = 10 000. The figures are estimates and may change in the future.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalPeriod2&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;34020-The Reduction in Yield (RIY) shows what impact the total costs you pay will have on the investment return you might get. The total costs take into account one-off, ongoing and incidental costs. The Reduction in Yield (RIY) shows what impact the total costs you pay will have on the investment return you might get. The total costs take into account one-off, ongoing and incidental costs.
+                        &lt;xs:documentation&gt;34020-The Reduction in Yield (RIY) shows what impact the
+                                                total costs you pay will have on the investment return you might get.
+                                                The total costs take into account one-off, ongoing and incidental costs.
+                                                The Reduction in Yield (RIY) shows what impact the total costs you pay
+                                                will have on the investment return you might get. The total costs take
+                                                into account one-off, ongoing and incidental costs.
 
 The amounts shown here are the cumulative costs of the product itself, for three different holding periods. They include potential early exit penalties. The figures assume you invest field value 01040_Investment amount = 10 000. The figures are estimates and may change in the future.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalPeriod3&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;34030-The Reduction in Yield (RIY) shows what impact the total costs you pay will have on the investment return you might get. The total costs take into account one-off, ongoing and incidental costs. The Reduction in Yield (RIY) shows what impact the total costs you pay will have on the investment return you might get. The total costs take into account one-off, ongoing and incidental costs.
+                        &lt;xs:documentation&gt;34030-The Reduction in Yield (RIY) shows what impact the
+                                                total costs you pay will have on the investment return you might get.
+                                                The total costs take into account one-off, ongoing and incidental costs.
+                                                The Reduction in Yield (RIY) shows what impact the total costs you pay
+                                                will have on the investment return you might get. The total costs take
+                                                into account one-off, ongoing and incidental costs.
 
 The amounts shown here are the cumulative costs of the product itself, for three different holding periods. They include potential early exit penalties. The figures assume you invest field value 01040_Investment amount = 10 000. The figures are estimates and may change in the future.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
@@ -706,9 +762,9 @@ The amounts shown here are the cumulative costs of the product itself, for three
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -720,6 +776,29 @@ The amounts shown here are the cumulative costs of the product itself, for three
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

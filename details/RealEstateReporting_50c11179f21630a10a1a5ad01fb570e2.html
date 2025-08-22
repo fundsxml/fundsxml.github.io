@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">RealEstateReporting</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,166 +129,183 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="448.0"
-     height="189.59375">
+     style="background-color: #ffffff"
+     width="533.0"
+     height="259.7578125">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="67"
-            fill="#f1f5f9"
-            width="165.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="93"
+            fill="#f8fafc"
+            width="157.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="RealEstateReporting"/>
-      <text x="30"
-            fill="#0f172a"
-            y="95.3984375"
-            font-size="16"
-            font-family="Arial">RealEstateReporting</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting"/>
+      <text x="44"
+            fill="#1e293b"
+            y="121.939453125"
             font-size="14"
-            y="120.3984375"
-            font-family="Arial"/>
+            font-family="Inter Regular">RealEstateReporting</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="151.939453125"
+            font-family="Inter Regular"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 185.0 86.19921875 H 215.0"/>
-   <g id="seq-group_RealEstateReporting">
-      <rect x="215.0"
-            y="76.19921875"
-            fill="#f1f5f9"
-            width="40.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            rx="4"
-            height="20.0"/>
-      <line y2="86.19921875"
-            style="stroke: #64748b; stroke-width: 1;"
-            x1="220.0"
-            x2="250.0"
-            y1="86.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="227.0" cy="86.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="235.0" cy="86.19921875"/>
-      <circle fill="#64748b" r="1.5" cx="243.0" cy="86.19921875"/>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 189.0 113.4697265625 H 224.0"/>
+   <text x="236.0"
+         fill="#64748b"
+         y="86.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <g id="seq-group_1755856767270">
+      <rect x="224.0"
+            y="98.4697265625"
+            fill="#f8fafc"
+            width="50.0"
+            rx="8"
+            ry="8"
+            height="30.0"
+            stroke="#8b5cf6"
+            stroke-width="2"/>
+      <line y2="113.4697265625"
+            stroke-width="1.5"
+            x1="232.0"
+            x2="266.0"
+            stroke="#64748b"
+            y1="113.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="239.0" cy="113.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="249.0" cy="113.4697265625"/>
+      <circle fill="#8b5cf6" r="2" cx="259.0" cy="113.4697265625"/>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 255.0 86.19921875 h 20.0"/>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 274.0 113.4697265625 h 25.0"/>
    <a href="FundData_a3258a68fc536f0e51285da7e73cd97c.html">
-      <rect x="305.0"
-            y="20.0"
-            fill="#f1f5f9"
-            width="113.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="349.0"
+            y="32.0"
+            fill="#f8fafc"
+            width="136.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="FundData"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/FundData"/>
       <g>
-         <text x="315.0"
-               fill="#0f172a"
-               y="48.3984375"
-               font-size="16"
-               font-family="Arial">FundData</text>
-         <line y2="52.3984375"
-               stroke-width="1"
-               x1="315.0"
-               x2="408.0"
-               stroke="#e2e8f0"
-               y1="52.3984375"/>
-         <text x="315.0"
-               fill="#64748b"
-               y="72.796875"
+         <text x="361.0"
+               fill="#1e293b"
+               y="60.939453125"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">FundData</text>
+         <line y2="66.939453125"
+               stroke-width="1"
+               x1="361.0"
+               x2="473.0"
+               stroke="#e2e8f0"
+               y1="66.939453125"/>
+         <text x="361.0"
+               fill="#64748b"
+               y="87.87890625"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="420.0"
-           y="42.3984375"
-           xlink:href="#plus-icon"/>
+           x="489.0"
+           y="52.939453125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 275.0 86.19921875 V 52.3984375 H 305.0"/>
-   <text x="277.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 299.0 113.4697265625 V 64.939453125 H 349.0"/>
+   <text x="311.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="PropertyData_c5add66f3023d4d3c95c2dcfc3403026.html">
-      <rect x="305.0"
-            y="104.796875"
-            fill="#f1f5f9"
-            width="113.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="349.0"
+            y="129.87890625"
+            fill="#f8fafc"
+            width="136.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="PropertyData"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/PropertyData"/>
       <g>
-         <text x="315.0"
-               fill="#0f172a"
-               y="133.1953125"
-               font-size="16"
-               font-family="Arial">PropertyData</text>
-         <line y2="137.1953125"
-               stroke-width="1"
-               x1="315.0"
-               x2="408.0"
-               stroke="#e2e8f0"
-               y1="137.1953125"/>
-         <text x="315.0"
-               fill="#64748b"
-               y="157.59375"
+         <text x="361.0"
+               fill="#1e293b"
+               y="158.818359375"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">PropertyData</text>
+         <line y2="164.818359375"
+               stroke-width="1"
+               x1="361.0"
+               x2="473.0"
+               stroke="#e2e8f0"
+               y1="164.818359375"/>
+         <text x="361.0"
+               fill="#64748b"
+               y="185.7578125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="420.0"
-           y="127.1953125"
-           xlink:href="#plus-icon"/>
+           x="489.0"
+           y="150.818359375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 275.0 86.19921875 V 137.1953125 H 305.0"/>
-   <text x="278.5"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 299.0 113.4697265625 V 162.818359375 H 349.0"/>
+   <text x="312.0"
          fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">1..*</text>
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..*</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -304,12 +330,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">0..1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -337,19 +362,16 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="FundData_a3258a68fc536f0e51285da7e73cd97c.html"
                                    title="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/FundData"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../FundData</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -365,13 +387,11 @@
                                 <a href="PropertyData_c5add66f3023d4d3c95c2dcfc3403026.html"
                                    title="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/PropertyData"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/Funds/.../PropertyData</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -396,7 +416,6 @@
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
             name=&quot;RealEstateReporting&quot;&gt;
@@ -414,81 +433,162 @@
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;ExpiringLeases&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller auslaufenden Mietverträge. Maßgebend ist First Break, es sind keine Optionen zu berücksichtigen. Anzugeben ist ein Jahreswert.&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent. First break is relevant; no options have to be taken into account. An annual value must be given.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete
+                                                            aller auslaufenden Mietverträge. Maßgebend ist First Break,
+                                                            es sind keine Optionen zu berücksichtigen. Anzugeben ist ein
+                                                            Jahreswert.
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent.
+                                                            First break is relevant; no options have to be taken into
+                                                            account. An annual value must be given.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:complexType&gt;
                                  &lt;xs:sequence&gt;
                                     &lt;xs:element name=&quot;Year_T&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im aktuellen Berichtsjahr (t) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the current reporting year (t).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im aktuellen
+                                                                        Berichtsjahr (t) auslaufenden Mietverträge (in
+                                                                        Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) of all
+                                                                        leases expiring in the current reporting year
+                                                                        (t).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Year_TPlus1&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+1) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the year (t+1).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+1)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) of all
+                                                                        leases expiring in the year (t+1).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Year_TPlus2&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+2) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the year (t+2).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+2)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) of all
+                                                                        leases expiring in the year (t+2).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Year_TPlus3&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+3) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+3).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+3)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+3).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Year_TPlus4&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+4) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+4).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+4)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+4).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Year_TPlus5&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+5) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+5).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+5)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+5).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Year_TPlus6&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+6) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+6).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+6)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+6).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Year_TPlus7&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+7) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+7).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+7)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+7).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Year_TPlus8&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+8) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+8).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+8)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+8).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Year_TPlus9&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+9) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+9).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+9)
+                                                                        auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+9).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Year_TPlus10AndLater&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+10) oder später auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+10) or later.&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller im Jahr (t+10) oder
+                                                                        später auslaufenden Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        leases expiring in the year (t+10) or later.
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;IndefiniteLeases&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller unbefristeten Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all unlimited leases.&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
+                                                                        Nettovertragsmiete aller unbefristeten
+                                                                        Mietverträge (in Tsd. Euro)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
+                                                                        contractual rent (in thousands of euros) for all
+                                                                        unlimited leases.
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                  &lt;/xs:sequence&gt;
@@ -502,21 +602,36 @@
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Domestic&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und Verkäufe im Inland (innerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic purchases and sales in the previous quarter&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und
+                                                            Verkäufe im Inland (innerhalb Deutschlands) im
+                                                            vorangegangenen Quartal
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic
+                                                            purchases and sales in the previous quarter
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:complexType&gt;
                                  &lt;xs:sequence&gt;
                                     &lt;xs:element name=&quot;Purchases&quot; type=&quot;PurchasesDataDEType&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe  im Inland (innerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic purchases in the previous quarter&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Käufe im Inland (innerhalb Deutschlands) im
+                                                                        vorangegangenen Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
+                                                                        domestic purchases in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Sales&quot; type=&quot;SalesDataDEType&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Verkäufe  im Inland (innerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic sales in the previous quarter&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Verkäufe im Inland (innerhalb Deutschlands) im
+                                                                        vorangegangenen Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
+                                                                        domestic sales in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                  &lt;/xs:sequence&gt;
@@ -524,21 +639,36 @@
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Foreign&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und Verkäufe im Ausland (außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases and sales in the previous quarter&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und
+                                                            Verkäufe im Ausland (außerhalb Deutschlands) im
+                                                            vorangegangenen Quartal
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases
+                                                            and sales in the previous quarter
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:complexType&gt;
                                  &lt;xs:sequence&gt;
                                     &lt;xs:element name=&quot;Purchases&quot; type=&quot;PurchasesDataDEType&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe  im Ausland außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases in the previous quarter&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Käufe im Ausland außerhalb Deutschlands) im
+                                                                        vorangegangenen Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
+                                                                        foreign purchases in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Sales&quot; type=&quot;SalesDataDEType&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Verkäufe im Ausland (außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign sales  in the previous quarter&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Verkäufe im Ausland (außerhalb Deutschlands) im
+                                                                        vorangegangenen Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
+                                                                        foreign sales in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                  &lt;/xs:sequence&gt;
@@ -546,21 +676,35 @@
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;ParticipationsRECompanies&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und Verkäufe von Beteiligungen im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on purchases and sales of investees in the previous quarter&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und
+                                                            Verkäufe von Beteiligungen im vorangegangenen Quartal
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on purchases and
+                                                            sales of investees in the previous quarter
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:complexType&gt;
                                  &lt;xs:sequence&gt;
                                     &lt;xs:element name=&quot;Purchases&quot; type=&quot;PurchasesDataDEType&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe von Beteiligungen im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on purchases of investees in the previous quarter&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Käufe von Beteiligungen im vorangegangenen
+                                                                        Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
+                                                                        purchases of investees in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Sales&quot; type=&quot;SalesDataDEType&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Verkäufe von Beteiligungen im vorangegangenen Quartal&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on sales of investees in the previous quarter&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
+                                                                        Verkäufe von Beteiligungen im vorangegangenen
+                                                                        Quartal
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on sales
+                                                                        of investees in the previous quarter
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                  &lt;/xs:sequence&gt;
@@ -571,21 +715,33 @@
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AnnualReturnsStructure&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Jährliche Datenlieferung, ausschließlich für offene Publikumsfonds&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Once per year; exclusively for open-ended retail funds&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Jährliche Datenlieferung, ausschließlich für
+                                                offene Publikumsfonds
+                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Once per year; exclusively for open-ended
+                                                retail funds
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;StartFiscalYear&quot; type=&quot;xs:date&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Beginn des Geschäftsjahres, auf das sich die Renditekennzahlen beziehen&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Beginning of the fiscal year to which the return components refer&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Beginn des Geschäftsjahres, auf
+                                                            das sich die Renditekennzahlen beziehen
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Beginning of the fiscal year to
+                                                            which the return components refer
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;EndFiscalYear&quot; type=&quot;xs:date&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Ende des Geschäftsjahres, auf das sich die Renditekennzahlen beziehen&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;End of the fiscal year to which the return components refer&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Ende des Geschäftsjahres, auf
+                                                            das sich die Renditekennzahlen beziehen
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;End of the fiscal year to which
+                                                            the return components refer
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;CountryDistribution&quot;&gt;
@@ -593,8 +749,12 @@
                                  &lt;xs:sequence&gt;
                                     &lt;xs:element name=&quot;Country&quot; type=&quot;ISOCountryCodeType&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Land, für das die Renditekennzahlen zutreffen&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Country for which the return indicators apply&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Land, für das die
+                                                                        Renditekennzahlen zutreffen
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Country for which
+                                                                        the return indicators apply
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;CountryFigures&quot; type=&quot;AnnualReturnsDataDEType&quot;/&gt;
@@ -607,20 +767,37 @@
                                     &lt;xs:element name=&quot;TotalAnnualReturns&quot; type=&quot;AnnualReturnsDataDEType&quot;/&gt;
                                     &lt;xs:element name=&quot;Liquidity&quot; type=&quot;PercentageType&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Die Liquiditätsrendite errechnet wird aus &quot;Erträge und Wertveränderungen aus Liquidität&quot;/&quot;Durchschnittliche Liquidität&quot; berechnet (in Prozent).&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The liquidity yield is calculated from &quot;Income and changes in value from liquidity&quot;/&quot;Average liquidity&quot; (in percent).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Die
+                                                                        Liquiditätsrendite errechnet wird aus &quot;Erträge
+                                                                        und Wertveränderungen aus
+                                                                        Liquidität&quot;/&quot;Durchschnittliche Liquidität&quot;
+                                                                        berechnet (in Prozent).
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The liquidity yield
+                                                                        is calculated from &quot;Income and changes in value
+                                                                        from liquidity&quot;/&quot;Average liquidity&quot; (in
+                                                                        percent).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;ReturnBeforeFundCosts&quot; type=&quot;PercentageType&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des Fonds vor Fondskosten (in Prozent).&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the fund before fund costs (in Prozent).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des
+                                                                        Fonds vor Fondskosten (in Prozent).
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the
+                                                                        fund before fund costs (in Prozent).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;ReturnAfterFundCosts&quot; type=&quot;PercentageType&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des Fonds nach Fondskosten (in Prozent).&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the fund after fund costs (in Prozent).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des
+                                                                        Fonds nach Fondskosten (in Prozent).
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the
+                                                                        fund after fund costs (in Prozent).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                  &lt;/xs:sequence&gt;
@@ -631,27 +808,50 @@
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;EquityCommitments&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Für offene Spezailfonds sowie geschlossene Publikums- und Spezialfonds&lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;For open-ended Spezialfonds and closed-ended retail and Spezialfonds.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Für offene Spezailfonds sowie geschlossene
+                                                Publikums- und Spezialfonds
+                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;For open-ended Spezialfonds and closed-ended
+                                                retail and Spezialfonds.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;TotalAmount&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der gesamten Kapitalzusagen für den Fonds (in Tsd. Euro).&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Equity commitments, total amount (in thousands of euros).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der gesamten
+                                                            Kapitalzusagen für den Fonds (in Tsd. Euro).
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Equity commitments, total amount
+                                                            (in thousands of euros).
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;CalledOff&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe des von den Kapitalzusagen bereits abgerufenen Kapitals (in Tsd. Euro).&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Cumulative sum of equity commitments that have already been called off (in thousands of euros).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe des von den Kapitalzusagen
+                                                            bereits abgerufenen Kapitals (in Tsd. Euro).
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Cumulative sum of equity
+                                                            commitments that have already been called off (in thousands
+                                                            of euros).
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;NotRequested&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;In Form von Zeichungsscheinen/Verträgen befristet oder unbefristet zugesagtes Eigenkapital. Unverbindliche Zusagen (z.B. ohne Zeichnungsschein) werden bei der Ermittlung der Eigenkapitalzusagen nicht berücksichtigt. Eigenkapitalzusagen werden nur bis zur Auflösung eines Fonds berücksichtigt (in Tsd. Euro).&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The outstanding part of equity commitments in total that hasn&#39;t been requested as yet (in thousands of euros).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;In Form von
+                                                            Zeichungsscheinen/Verträgen befristet oder unbefristet
+                                                            zugesagtes Eigenkapital. Unverbindliche Zusagen (z.B. ohne
+                                                            Zeichnungsschein) werden bei der Ermittlung der
+                                                            Eigenkapitalzusagen nicht berücksichtigt.
+                                                            Eigenkapitalzusagen werden nur bis zur Auflösung eines Fonds
+                                                            berücksichtigt (in Tsd. Euro).
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The outstanding part of equity
+                                                            commitments in total that hasn&#39;t been requested as yet (in
+                                                            thousands of euros).
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -672,14 +872,20 @@
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;IDOfTheProperty&quot; type=&quot;Text32Type&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;interne Referenznummer der Liegenschaft&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Internal reference number of the property&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;interne Referenznummer der
+                                                            Liegenschaft
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Internal reference number of the
+                                                            property
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Address&quot; type=&quot;AddressTypeDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Adresse der Liegenschaft&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Address of the building&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Adresse der Liegenschaft
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Address of the building
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -690,20 +896,36 @@
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;YearOfConstruction&quot; type=&quot;xs:gYear&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Wirtschaftliches Baujahr der Liegenschaft ermittelt aus den gutachterlichen Angaben zu Gesamt- und Restnutzungsdauer oder Datum der letzten Totalsanierung (Investitionen &amp;gt;30% des VKW)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Economic year of construction of the property determined from the expert reports on the total and remaining useful life or date of the last total renovation (investments &amp;gt;30% of the fair value)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Wirtschaftliches Baujahr der
+                                                            Liegenschaft ermittelt aus den gutachterlichen Angaben zu
+                                                            Gesamt- und Restnutzungsdauer oder Datum der letzten
+                                                            Totalsanierung (Investitionen &amp;gt;30% des VKW)
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Economic year of construction of
+                                                            the property determined from the expert reports on the total
+                                                            and remaining useful life or date of the last total
+                                                            renovation (investments &amp;gt;30% of the fair value)
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;FairValue&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Bilanzierter Marktwert, Verkehrswert gemäß §194 BauGB  (in Tsd. Euro).&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Fair value according to §194 BauGB (in thousands of euros).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Bilanzierter Marktwert,
+                                                            Verkehrswert gemäß §194 BauGB (in Tsd. Euro).
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Fair value according to §194
+                                                            BauGB (in thousands of euros).
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Participation&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an, ob die Immobilie direkt oder indirekt gehalten wird.&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indicates whether the property is held directly or indirectly.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an, ob die Immobilie direkt
+                                                            oder indirekt gehalten wird.
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indicates whether the property
+                                                            is held directly or indirectly.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:complexType&gt;
                                  &lt;xs:sequence&gt;
@@ -717,8 +939,26 @@
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;ParticipationRate&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Beteiligungsquote / Eigentumsanteil des Fonds an der Liegenschaft (Bei mehrstöckigen Beteiligungsstrukturen wird die Quote entsprechend angepasst, sodass die effektive Quote, die der Fonds an der Liegenschaft hält, angegeben wird). Bei Datenlieferung für eine Anteilscheinklasse eines Fonds ist zusätzlich der Anteil der Anteilscheinklasse zu berücksichtigen (in Prozent).&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Participation rate / ownership share of the fund in the property (in the case of multi-level participation structures, the rate is adjusted accordingly so that the effective rate held by the fund in the property is indicated). If data is supplied for a share class of a fund, the share of the share class must also be considered (in percent).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Beteiligungsquote /
+                                                                        Eigentumsanteil des Fonds an der Liegenschaft
+                                                                        (Bei mehrstöckigen Beteiligungsstrukturen wird
+                                                                        die Quote entsprechend angepasst, sodass die
+                                                                        effektive Quote, die der Fonds an der
+                                                                        Liegenschaft hält, angegeben wird). Bei
+                                                                        Datenlieferung für eine Anteilscheinklasse eines
+                                                                        Fonds ist zusätzlich der Anteil der
+                                                                        Anteilscheinklasse zu berücksichtigen (in
+                                                                        Prozent).
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Participation rate /
+                                                                        ownership share of the fund in the property (in
+                                                                        the case of multi-level participation
+                                                                        structures, the rate is adjusted accordingly so
+                                                                        that the effective rate held by the fund in the
+                                                                        property is indicated). If data is supplied for
+                                                                        a share class of a fund, the share of the share
+                                                                        class must also be considered (in percent).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                        &lt;xs:simpleType&gt;
                                           &lt;xs:restriction base=&quot;PercentageType&quot;&gt;
@@ -732,14 +972,28 @@
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;DateOfPurchase&quot; type=&quot;xs:date&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Zeitpunkt des wirtschaftlichen Übergangs von Nutzen und Lasten laut Kaufvertrag&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Time of the transfer of beneficial ownership according to the purchase contract&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Zeitpunkt des wirtschaftlichen
+                                                            Übergangs von Nutzen und Lasten laut Kaufvertrag
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Time of the transfer of
+                                                            beneficial ownership according to the purchase contract
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;StatusOfProperty&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Angabe des Status der Liegenschaft (Bestandsobjekt [HELD_PROPERTY]; Projektentwicklung [DEVELOPMENT]; unbebautes Grundstück [LAND]); als Projektentwicklung gilt ein Objekt, wenn es mit Baukosten und nicht mit Verkehrswert geführt wird&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Status of the property (existing property [HELD_PROPERTY]; project development [DEVELOPMENT]; undeveloped land [LAND]); a property is considered a project development if it is managed with construction costs and not with fair value&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Angabe des Status der
+                                                            Liegenschaft (Bestandsobjekt [HELD_PROPERTY];
+                                                            Projektentwicklung [DEVELOPMENT]; unbebautes Grundstück
+                                                            [LAND]); als Projektentwicklung gilt ein Objekt, wenn es mit
+                                                            Baukosten und nicht mit Verkehrswert geführt wird
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Status of the property (existing
+                                                            property [HELD_PROPERTY]; project development [DEVELOPMENT];
+                                                            undeveloped land [LAND]); a property is considered a project
+                                                            development if it is managed with construction costs and not
+                                                            with fair value
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -757,44 +1011,68 @@
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Office&quot; type=&quot;UsageDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Büro / Praxis&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to the usage type office.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Büro /
+                                                            Praxis
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to
+                                                            the usage type office.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Retail&quot; type=&quot;UsageDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Handel / Gastronomie&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to the usage type retail.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Handel /
+                                                            Gastronomie
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to
+                                                            the usage type retail.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Industry&quot; type=&quot;UsageDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Industrie (Lager / Hallen)&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to the usage type industry.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Industrie
+                                                            (Lager / Hallen)
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to
+                                                            the usage type industry.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Residential&quot; type=&quot;UsageDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Wohnen&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to the usage type residential.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Wohnen
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to
+                                                            the usage type residential.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Hotel&quot; type=&quot;UsageDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
                                  &lt;xs:documentation&gt;Daten zur Nutzungsart Hotel&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to the usage type hotel.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to
+                                                            the usage type hotel.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Leisure&quot; type=&quot;UsageDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Freizeit&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to the usage type leisure.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Freizeit
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to
+                                                            the usage type leisure.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Parking&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart Stellplätze&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to the usage type parking.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zur Nutzungsart
+                                                            Stellplätze
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to
+                                                            the usage type parking.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:complexType&gt;
                                  &lt;xs:sequence&gt;
@@ -803,19 +1081,48 @@
                                           &lt;xs:sequence&gt;
                                              &lt;xs:element name=&quot;Let&quot; type=&quot;xs:decimal&quot;&gt;
                                                 &lt;xs:annotation&gt;
-                                                   &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nettosollmiete der zum Stichtag vermieteten Mieteinheiten der Liegenschaft (entspricht Vertragsmiete). Anzugeben ist ein Jahreswert (in Tsd. Euro).&lt;/xs:documentation&gt;
-                                                   &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Gross potential income of the rental units of the property let as of the reporting date (corresponds to contractual rent). An annual value should be given (in thousands of euros).&lt;/xs:documentation&gt;
+                                                   &lt;xs:documentation xml:lang=&quot;de&quot;&gt;
+                                                                                    Nettosollmiete der zum Stichtag
+                                                                                    vermieteten Mieteinheiten der
+                                                                                    Liegenschaft (entspricht
+                                                                                    Vertragsmiete). Anzugeben ist ein
+                                                                                    Jahreswert (in Tsd. Euro).
+                                                                                &lt;/xs:documentation&gt;
+                                                   &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Gross
+                                                                                    potential income of the rental units
+                                                                                    of the property let as of the
+                                                                                    reporting date (corresponds to
+                                                                                    contractual rent). An annual value
+                                                                                    should be given (in thousands of
+                                                                                    euros).
+                                                                                &lt;/xs:documentation&gt;
                                                 &lt;/xs:annotation&gt;
                                              &lt;/xs:element&gt;
                                              &lt;xs:element name=&quot;Vacant&quot; type=&quot;xs:decimal&quot;&gt;
                                                 &lt;xs:annotation&gt;
-                                                   &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nettosollmiete der zum Stichtag leerstehenden Mieteinheiten der Liegenschaft (entspricht Leerstandsmiete). Anzugeben ist ein Jahreswert (in Tsd. Euro).&lt;/xs:documentation&gt;
-                                                   &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Gross potential income of the rental units of the property that are vacant as of the reporting date (corresponds to contractual rent). An annual value should be given (in thousands of euros).&lt;/xs:documentation&gt;
+                                                   &lt;xs:documentation xml:lang=&quot;de&quot;&gt;
+                                                                                    Nettosollmiete der zum Stichtag
+                                                                                    leerstehenden Mieteinheiten der
+                                                                                    Liegenschaft (entspricht
+                                                                                    Leerstandsmiete). Anzugeben ist ein
+                                                                                    Jahreswert (in Tsd. Euro).
+                                                                                &lt;/xs:documentation&gt;
+                                                   &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Gross
+                                                                                    potential income of the rental units
+                                                                                    of the property that are vacant as
+                                                                                    of the reporting date (corresponds
+                                                                                    to contractual rent). An annual
+                                                                                    value should be given (in thousands
+                                                                                    of euros).
+                                                                                &lt;/xs:documentation&gt;
                                                 &lt;/xs:annotation&gt;
                                              &lt;/xs:element&gt;
                                              &lt;xs:element name=&quot;ParkingSpaces&quot; type=&quot;xs:int&quot;&gt;
                                                 &lt;xs:annotation&gt;
-                                                   &lt;xs:documentation&gt;Total number of parking spaces that belong to the property&lt;/xs:documentation&gt;
+                                                   &lt;xs:documentation&gt;Total number of
+                                                                                    parking spaces that belong to the
+                                                                                    property
+                                                                                &lt;/xs:documentation&gt;
                                                 &lt;/xs:annotation&gt;
                                              &lt;/xs:element&gt;
                                           &lt;/xs:sequence&gt;
@@ -826,8 +1133,12 @@
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Other&quot; type=&quot;UsageDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zu sonstigen Nutzungsarten&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to the usage type other.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Daten zu sonstigen
+                                                            Nutzungsarten
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Data that can be attributed to
+                                                            the usage type other.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -838,15 +1149,27 @@
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;SustainabilityLabels&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nachhaltigkeitssiegel der Liegenschaft&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability labels of the property&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nachhaltigkeitssiegel der
+                                                            Liegenschaft
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability labels of the
+                                                            property
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:complexType&gt;
                                  &lt;xs:sequence&gt;
                                     &lt;xs:element name=&quot;BREEAM&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nachhaltigkeitssiegel BREEAM; Ausprägungen: 1 Stern, 2 Sterne, 3 Sterne, 4 Sterne, 5 Sterne, 6 Sterne, nicht spezifiziert, nein)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability label BREEAM; Characteristics: 1 star, 2 stars, 3 stars, 4 stars, 5 stars, 6 stars, not specified, no).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;
+                                                                        Nachhaltigkeitssiegel BREEAM; Ausprägungen: 1
+                                                                        Stern, 2 Sterne, 3 Sterne, 4 Sterne, 5 Sterne, 6
+                                                                        Sterne, nicht spezifiziert, nein)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability label
+                                                                        BREEAM; Characteristics: 1 star, 2 stars, 3
+                                                                        stars, 4 stars, 5 stars, 6 stars, not specified,
+                                                                        no).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                        &lt;xs:simpleType&gt;
                                           &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -863,8 +1186,15 @@
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;LEED&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nachhaltigkeitssiegel LEED; Ausprägungen: Platin, Gold, Silber, zertifiziert, nicht spezifiziert, nein)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability label LEED; Characteristics: Platinum, gold, silver, certified, not specified, no).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;
+                                                                        Nachhaltigkeitssiegel LEED; Ausprägungen:
+                                                                        Platin, Gold, Silber, zertifiziert, nicht
+                                                                        spezifiziert, nein)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability label
+                                                                        LEED; Characteristics: Platinum, gold, silver,
+                                                                        certified, not specified, no).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                        &lt;xs:simpleType&gt;
                                           &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -879,8 +1209,15 @@
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;DGNB&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nachhaltigkeitssiegel DGNB; Ausprägungen: Platin, Gold, Silber, Bronze, nicht spezifiziert, nein)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability label DGNB; Characteristics: Platinum, gold, silver, bronze, not specified, no).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;
+                                                                        Nachhaltigkeitssiegel DGNB; Ausprägungen:
+                                                                        Platin, Gold, Silber, Bronze, nicht
+                                                                        spezifiziert, nein)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability label
+                                                                        DGNB; Characteristics: Platinum, gold, silver,
+                                                                        bronze, not specified, no).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                        &lt;xs:simpleType&gt;
                                           &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -895,8 +1232,15 @@
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;HQE&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nachhaltigkeitssiegel HQE; Ausprägungen: Très Performant, Performant, Base, nicht spezifiziert, nein)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability label HQE; Characteristics: Très Performant, Performant, Base, not specified, no).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;
+                                                                        Nachhaltigkeitssiegel HQE; Ausprägungen: Très
+                                                                        Performant, Performant, Base, nicht
+                                                                        spezifiziert, nein)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability label
+                                                                        HQE; Characteristics: Très Performant,
+                                                                        Performant, Base, not specified, no).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                        &lt;xs:simpleType&gt;
                                           &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -910,8 +1254,15 @@
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;WELL&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nachhaltigkeitssiegel WELL; Ausprägungen: Platin, Gold, Silber, Bronze, nicht spezifiziert, nein)&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability label WELL; Characteristics: Platinum, gold, silver, bronze,  not specified, no).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;
+                                                                        Nachhaltigkeitssiegel WELL; Ausprägungen:
+                                                                        Platin, Gold, Silber, Bronze, nicht
+                                                                        spezifiziert, nein)
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Sustainability label
+                                                                        WELL; Characteristics: Platinum, gold, silver,
+                                                                        bronze, not specified, no).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                        &lt;xs:simpleType&gt;
                                           &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -929,15 +1280,26 @@
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;CarbonDioxideEmission&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen zu Kohlendioxid-Emissionen&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on carbon dioxide emissions&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen zu
+                                                            Kohlendioxid-Emissionen
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on carbon dioxide
+                                                            emissions
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:complexType&gt;
                                  &lt;xs:sequence&gt;
                                     &lt;xs:element name=&quot;CalculationYear&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Kalenderjahr, auf das sich die angegebene CO2 Emission (sowie damit verbundene Energieverbrauchsintensität) bezieht.&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Calendar year to which the stated CO2 emission (and associated energy consumption intensity) relates.&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Kalenderjahr, auf
+                                                                        das sich die angegebene CO2 Emission (sowie
+                                                                        damit verbundene Energieverbrauchsintensität)
+                                                                        bezieht.
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Calendar year to
+                                                                        which the stated CO2 emission (and associated
+                                                                        energy consumption intensity) relates.
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                        &lt;xs:simpleType&gt;
                                           &lt;xs:restriction base=&quot;xs:int&quot;&gt;
@@ -947,8 +1309,21 @@
                                     &lt;/xs:element&gt;
                                     &lt;xs:element name=&quot;Amount&quot; type=&quot;xs:decimal&quot;&gt;
                                        &lt;xs:annotation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamte CO2 Emission der Liegenschaft aufgrund von Energieverbrauch (ohne Emission aufgrund von Baukonstruktion) inkl. Emissionen durch Mieterverbrauch. Anzugeben ist ein Jahreswert bezogen auf das letzte Kalenderjahr (in kg/Fläche).&lt;/xs:documentation&gt;
-                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total CO2 emissions of the property due to energy consumption (excluding emissions due to building construction) incl. emissions due to tenant consumption. An annual value based on the last calendar year should be specified (in kilogram per area).&lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamte CO2 Emission
+                                                                        der Liegenschaft aufgrund von Energieverbrauch
+                                                                        (ohne Emission aufgrund von Baukonstruktion)
+                                                                        inkl. Emissionen durch Mieterverbrauch.
+                                                                        Anzugeben ist ein Jahreswert bezogen auf das
+                                                                        letzte Kalenderjahr (in kg/Fläche).
+                                                                    &lt;/xs:documentation&gt;
+                                          &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total CO2 emissions
+                                                                        of the property due to energy consumption
+                                                                        (excluding emissions due to building
+                                                                        construction) incl. emissions due to tenant
+                                                                        consumption. An annual value based on the last
+                                                                        calendar year should be specified (in kilogram
+                                                                        per area).
+                                                                    &lt;/xs:documentation&gt;
                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                  &lt;/xs:sequence&gt;
@@ -956,14 +1331,35 @@
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;EnergyIntensity&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtenergieverbrauch der Liegenschaft inkl. Mieterverbrauch. Anzugeben ist ein Jahreswert bezogen auf das letzte Kalenderjahr (in kWh/Fläche).&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total energy consumption of the property including tenant consumption. An annual value based on the last calendar year should be specified (in kilowatt hour per area).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtenergieverbrauch der
+                                                            Liegenschaft inkl. Mieterverbrauch. Anzugeben ist ein
+                                                            Jahreswert bezogen auf das letzte Kalenderjahr (in
+                                                            kWh/Fläche).
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total energy consumption of the
+                                                            property including tenant consumption. An annual value based
+                                                            on the last calendar year should be specified (in kilowatt
+                                                            hour per area).
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;EnergyCertificateRating&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Angabe des Ratings bzw. Labels des Energieausweises nach lokalen Regelungen. Liegen mehrere Energieausweise für eine Liegenschaft vor, ist der Energieausweis mit dem größten Flächenanteil heranzuziehen. Ist kein Energieausweis vorhanden, ist entsprechend &quot;nicht vorhanden&quot; anzugeben.&lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indication of the rating or label of the energy certificate according to local regulations. If several energy performance certificates are available for a property, the energy performance certificate with the largest area share is to be used. If no energy certificate is available, &quot;not available&quot; must be indicated accordingly.&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Angabe des Ratings bzw. Labels
+                                                            des Energieausweises nach lokalen Regelungen. Liegen mehrere
+                                                            Energieausweise für eine Liegenschaft vor, ist der
+                                                            Energieausweis mit dem größten Flächenanteil heranzuziehen.
+                                                            Ist kein Energieausweis vorhanden, ist entsprechend &quot;nicht
+                                                            vorhanden&quot; anzugeben.
+                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indication of the rating or
+                                                            label of the energy certificate according to local
+                                                            regulations. If several energy performance certificates are
+                                                            available for a property, the energy performance certificate
+                                                            with the largest area share is to be used. If no energy
+                                                            certificate is available, &quot;not available&quot; must be indicated
+                                                            accordingly.
+                                                        &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -1003,9 +1399,9 @@
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -1017,6 +1413,29 @@
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }

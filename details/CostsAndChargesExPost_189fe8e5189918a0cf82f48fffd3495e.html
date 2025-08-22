@@ -88,22 +88,31 @@
         <!-- Card header with element name and XPath -->
         <header class="p-6 border-b border-slate-200 bg-slate-50">
             <h1 class="text-2xl font-bold text-slate-900">CostsAndChargesExPost</h1>
-            <!-- The p-tag was replaced by a flex container holding the text and a copy button -->
+            <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
                 <p class="text-sm text-slate-600 font-mono">/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/CostsAndChargesExPost</p>
-                <!-- Button to copy the XPath to the clipboard -->
-                <button onclick="copyToClipboard(this)"
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
                         class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/CostsAndChargesExPost">
-                    <!-- The copy icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    <!-- Tooltip that appears on hover and shows status after click -->
-                    <span id="tooltip-text"
-                          class="absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
                         Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/CostsAndChargesExPost">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
                     </span>
                 </button>
             </div>
@@ -120,197 +129,213 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #f8fafc"
-     width="516.0"
-     height="274.390625">
+     style="background-color: #ffffff"
+     width="599.0"
+     height="357.63671875">
    <defs>
-      <style>.hoverable-rect:hover { fill: #cad5e3; transition: fill 0.2s ease-in-out; }</style>
-      <filter width="140%"
-              x="-20%"
-              height="140%"
-              id="drop-shadow"
-              y="-20%">
-         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="2" dy="3"/>
-         <feFlood flood-color="black" flood-opacity="0.25"/>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="modern-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="0" dy="2"/>
+         <feFlood flood-color="black" flood-opacity="0.08"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #0284c7; stroke-width: 1.5; stroke-linecap: round;"
-         id="plus-icon">
-         <circle fill="none" r="9" cx="10" cy="10"/>
-         <line y2="15" x1="10" x2="10" y1="5"/>
-         <line y2="10" x1="5" x2="15" y1="10"/>
+      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f8fafc"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#3b82f6"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
       </g>
    </defs>
    <a href="#">
-      <rect x="20"
-            y="105"
-            fill="#f1f5f9"
-            width="199.0"
-            style="stroke: #475569; stroke-width: 1.5; stroke-dasharray: 7, 7;"
-            filter="url(#drop-shadow)"
+      <rect x="32"
+            y="142"
+            fill="#f8fafc"
+            width="187.0"
+            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="38.3984375"
-            id="CostsAndChargesExPost"/>
-      <text x="30"
-            fill="#0f172a"
-            y="133.3984375"
-            font-size="16"
-            font-family="Arial">CostsAndChargesExPost</text>
-   </a>
-   <g id="comment">
-      <text x="30"
-            fill="#64748b"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/CostsAndChargesExPost"/>
+      <text x="44"
+            fill="#1e293b"
+            y="170.939453125"
             font-size="14"
-            y="158.3984375"
-            font-family="Arial">
-         <tspan x="25" dy="1.2em">Costs and Charges ex post </tspan>
+            font-family="Inter Regular">CostsAndChargesExPost</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#64748b"
+            font-size="13"
+            y="200.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">Costs and Charges ex post </tspan>
       </text>
    </g>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 219.0 124.19921875 H 259.0"/>
-   <polygon style="stroke: #475569; stroke-width: 1.5;"
-            fill="#f1f5f9"
-            points="269.0,114.19921875 279.0,124.19921875 269.0,134.19921875 259.0,124.19921875"/>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 279.0 124.19921875 h 20.0"/>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 219.0 162.4697265625 H 264.0"/>
+   <text x="266.0"
+         fill="#64748b"
+         y="135.4697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
+   <polygon fill="#f8fafc"
+            stroke-width="2"
+            points="279.0,147.4697265625 294.0,162.4697265625 279.0,177.4697265625 264.0,162.4697265625"
+            stroke="#8b5cf6"/>
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 294.0 162.4697265625 h 25.0"/>
    <a href="Fund_a27ea24b0175f7f1115578334890e480.html">
-      <rect x="339.0"
-            y="20.0"
-            fill="#f1f5f9"
-            width="147.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="379.0"
+            y="32.0"
+            fill="#f8fafc"
+            width="172.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="Fund"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/CostsAndChargesExPost/Fund"/>
       <g>
-         <text x="349.0"
-               fill="#0f172a"
-               y="48.3984375"
-               font-size="16"
-               font-family="Arial">Fund</text>
-         <line y2="52.3984375"
-               stroke-width="1"
-               x1="349.0"
-               x2="476.0"
-               stroke="#e2e8f0"
-               y1="52.3984375"/>
-         <text x="349.0"
-               fill="#64748b"
-               y="72.796875"
+         <text x="391.0"
+               fill="#1e293b"
+               y="60.939453125"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">Fund</text>
+         <line y2="66.939453125"
+               stroke-width="1"
+               x1="391.0"
+               x2="539.0"
+               stroke="#e2e8f0"
+               y1="66.939453125"/>
+         <text x="391.0"
+               fill="#64748b"
+               y="87.87890625"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="488.0"
-           y="42.3984375"
-           xlink:href="#plus-icon"/>
+           x="555.0"
+           y="52.939453125"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 299.0 124.19921875 V 52.3984375 H 339.0"/>
-   <text x="306.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 319.0 162.4697265625 V 64.939453125 H 379.0"/>
+   <text x="336.0"
          fill="#64748b"
-         y="47.3984375"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="52.939453125"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="StructuredSecurity_4600e3fbfbf0ed2ed92e8301e6dde31e.html">
-      <rect x="339.0"
-            y="104.796875"
-            fill="#f1f5f9"
-            width="147.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="379.0"
+            y="129.87890625"
+            fill="#f8fafc"
+            width="172.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="StructuredSecurity"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/CostsAndChargesExPost/StructuredSecurity"/>
       <g>
-         <text x="349.0"
-               fill="#0f172a"
-               y="133.1953125"
-               font-size="16"
-               font-family="Arial">StructuredSecurity</text>
-         <line y2="137.1953125"
-               stroke-width="1"
-               x1="349.0"
-               x2="476.0"
-               stroke="#e2e8f0"
-               y1="137.1953125"/>
-         <text x="349.0"
-               fill="#64748b"
-               y="157.59375"
+         <text x="391.0"
+               fill="#1e293b"
+               y="158.818359375"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">StructuredSecurity</text>
+         <line y2="164.818359375"
+               stroke-width="1"
+               x1="391.0"
+               x2="539.0"
+               stroke="#e2e8f0"
+               y1="164.818359375"/>
+         <text x="391.0"
+               fill="#64748b"
+               y="185.7578125"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="488.0"
-           y="127.1953125"
-           xlink:href="#plus-icon"/>
+           x="555.0"
+           y="150.818359375"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 299.0 124.19921875 V 137.1953125 H 339.0"/>
-   <text x="306.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 319.0 162.4697265625 V 162.818359375 H 379.0"/>
+   <text x="336.0"
          fill="#64748b"
-         y="132.1953125"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="150.818359375"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
    <a href="ReferencePeriod_ebbac48758a14d47dd142fa2b57c4a46.html">
-      <rect x="339.0"
-            y="189.59375"
-            fill="#f1f5f9"
-            width="147.0"
-            style="stroke: #475569; stroke-width: 1.5;"
-            filter="url(#drop-shadow)"
+      <rect x="379.0"
+            y="227.7578125"
+            fill="#f8fafc"
+            width="172.0"
+            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
+            filter="url(#modern-shadow)"
             class="hoverable-rect"
-            rx="4"
-            ry="4"
-            height="64.796875"
-            id="ReferencePeriod"/>
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/CostsAndChargesExPost/ReferencePeriod"/>
       <g>
-         <text x="349.0"
-               fill="#0f172a"
-               y="217.9921875"
-               font-size="16"
-               font-family="Arial">ReferencePeriod</text>
-         <line y2="221.9921875"
-               stroke-width="1"
-               x1="349.0"
-               x2="476.0"
-               stroke="#e2e8f0"
-               y1="221.9921875"/>
-         <text x="349.0"
-               fill="#64748b"
-               y="242.390625"
+         <text x="391.0"
+               fill="#1e293b"
+               y="256.697265625"
                font-size="14"
-               font-family="Arial">(anonymous)</text>
+               font-family="Inter Regular">ReferencePeriod</text>
+         <line y2="262.697265625"
+               stroke-width="1"
+               x1="391.0"
+               x2="539.0"
+               stroke="#e2e8f0"
+               y1="262.697265625"/>
+         <text x="391.0"
+               fill="#64748b"
+               y="283.63671875"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="488.0"
-           y="211.9921875"
-           xlink:href="#plus-icon"/>
+           x="555.0"
+           y="248.697265625"
+           xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #475569; stroke-width: 1.5;"
-         fill="none"
-         d="M 299.0 124.19921875 V 221.9921875 H 339.0"/>
-   <text x="306.0"
+   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+         class="connection-line"
+         d="M 319.0 162.4697265625 V 260.697265625 H 379.0"/>
+   <text x="336.0"
          fill="#64748b"
-         y="216.9921875"
-         font-size="12"
-         font-family="Arial">1..1</text>
+         y="248.697265625"
+         font-size="11"
+         class="cardinality-text"
+         font-family="Inter Regular">1..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -344,12 +369,11 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
-                        <!-- KORREKTUR: Greift auf eine Hilfsmethode zu, die die Kardinalität vom DOM-Knoten liest. -->
                         <dd class="mt-1 text-slate-900 font-mono">0..1</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Namespace</dt>
-                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>vc</b> = "http://www.w3.org/2007/XMLSchema-versioning"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Level</dt>
@@ -377,19 +401,16 @@
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-sm">
-                        <!-- KORREKTUR: Iteriert über die Liste der Kind-XPaths -->
                         <tr>
                             <td class="px-4 py-3 font-mono">
                                 <a href="Fund_a27ea24b0175f7f1115578334890e480.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/CostsAndChargesExPost/Fund"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../Fund</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -404,13 +425,11 @@
                                 <a href="StructuredSecurity_4600e3fbfbf0ed2ed92e8301e6dde31e.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/CostsAndChargesExPost/StructuredSecurity"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../StructuredSecurity</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -425,13 +444,11 @@
                                 <a href="ReferencePeriod_ebbac48758a14d47dd142fa2b57c4a46.html"
                                    title="/FundsXML4/RegulatoryReportings/DirectReporting/EMT_V4_1/FinancialInstrument/CostsAndChargesExPost/ReferencePeriod"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <!-- KORREKTUR: Verbesserte und korrigierte Logik zur Pfad-Kürzung -->
                                     <span>/RegulatoryReportings/.../ReferencePeriod</span>
                                 </a>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <!-- Die Logik zur Verlinkung von Typen bleibt gleich, da sie Hilfsmethoden nutzt -->
                                 <a href="#"
                                    class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
@@ -454,7 +471,6 @@
                 <div class="rounded-lg overflow-hidden border border-slate-200">
                     <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
-            xmlns:vc=&quot;http://www.w3.org/2007/XMLSchema-versioning&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
             name=&quot;CostsAndChargesExPost&quot;&gt;
@@ -481,29 +497,37 @@
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;OngoingCosts&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08030: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied)&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08030: % of NAV of the Financial Product expressed in
+                                                    annualized terms (rate of cost deduction to be applied)
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;BorrowingCoststUK&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08045: Financing costs related to borrowing for the purposes of gearing expressed as a % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied)&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08045: Financing costs related to borrowing for the
+                                                    purposes of gearing expressed as a % of NAV of the Financial Product
+                                                    expressed in annualized terms (rate of cost deduction to be applied)
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;ManagementFee&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08050: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied)&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08050: % of NAV of the Financial Product expressed in
+                                                    annualized terms (rate of cost deduction to be applied)
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DistributionFee&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08060: 
+                           &lt;xs:documentation&gt;08060:
 % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied).
 Only applicable if the product has this feature (legal wording in the documentation). These fees are included in total on going costs and are not included into the management fees. &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;TransactionCosts&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08070: % of NAV of the Financial Product expressed in annualized terms (rate of cost deduction to be applied).
+                           &lt;xs:documentation&gt;08070: % of NAV of the Financial Product expressed in
+                                                    annualized terms (rate of cost deduction to be applied).
 Costs within the products&lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
@@ -524,7 +548,12 @@ Costs within the products&lt;/xs:documentation&gt;
                   &lt;xs:sequence&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;GrossEntryCost&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08010: This data should only incorporate manufacturer costs (i.e. cost of the financial instrument) and distributor upfront when known by the manufacturer.  It should however NOT include distribution fees added on top of the product price by distributors that is out of control of the manufacturer.&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08010: This data should only incorporate manufacturer
+                                                    costs (i.e. cost of the financial instrument) and distributor
+                                                    upfront when known by the manufacturer.  It should however NOT
+                                                    include distribution fees added on top of the product price by
+                                                    distributors that is out of control of the manufacturer.
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;NetEntryCost&quot; type=&quot;xs:decimal&quot;&gt;
@@ -536,7 +565,7 @@ This data is optional and could be used in the event of only one layer of interm
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExitCost&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08020: 
+                           &lt;xs:documentation&gt;08020:
 Fixed amount
 If 00096 set to U : number of units in product currency
 If 00096 set to P : % of Reference in field 08110 or 08120 respectively.
@@ -545,7 +574,10 @@ This exit cost is supposed to be prior RHP&lt;/xs:documentation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;OngoingCosts&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08030: Expressed as a % of NAV / Notional (or currency  amount for Absolute quotation) of the Financial Product in annualized terms related to Reference Value in 08110 &lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08030: Expressed as a % of NAV / Notional (or currency
+                                                    amount for Absolute quotation) of the Financial Product in
+                                                    annualized terms related to Reference Value in 08110
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OngoingCostsAccumulated&quot; type=&quot;xs:decimal&quot;&gt;
@@ -557,25 +589,39 @@ Mandatory field for Distribution in Germany, Switzerland and Austria&lt;/xs:docu
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ManagementFee&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08050: Expressed as a % of NAV / Notional (or currency  amount for Absolute quotation) of the Financial Product in annualized terms related to Reference Value in 08110.
+                           &lt;xs:documentation&gt;08050: Expressed as a % of NAV / Notional (or currency
+                                                    amount for Absolute quotation) of the Financial Product in
+                                                    annualized terms related to Reference Value in 08110.
 These fees are included in total on going costs. Only applicable if the product has this feature. These fees are used by distributors to calculate their retrocession fees  &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element name=&quot;IncidentalCosts&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08080: Expressed as a % of NAV / Notional (or currency  amount for Absolute quotation) of the Financial Product in annualized terms related to Reference Value in 08110 
+                           &lt;xs:documentation&gt;08080: Expressed as a % of NAV / Notional (or currency
+                                                    amount for Absolute quotation) of the Financial Product in
+                                                    annualized terms related to Reference Value in 08110
 If 00096 set to U : number of units in product currency
 If 00096 set to P : % of Reference in field 08110 or 08120 respectively.&lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ReferencePrice&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;08110: The Reference Price is the instrument price to which a Unit disclosed Ex-Post cost is based and to which a Percentage disclosed cost should be multiplied in order to retrieve the Unit cost. This field is conditional and only used if 08120 is not used.&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;08110: The Reference Price is the instrument price to
+                                                    which a Unit disclosed Ex-Post cost is based and to which a
+                                                    Percentage disclosed cost should be multiplied in order to retrieve
+                                                    the Unit cost. This field is conditional and only used if 08120 is
+                                                    not used.
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;NotionalReferenceAmount&quot; type=&quot;xs:decimal&quot;&gt;
                         &lt;xs:annotation&gt;
-                           &lt;xs:documentation&gt;080120: The Notional Reference Amount is the amount expressed in number of currency units to which a Unit disclosed Ex-Post cost is based and to which a Percentage disclosed cost should be multiplied in order to retrieve the Unit cost. This field is conditional and only used if 08110 is not used.&lt;/xs:documentation&gt;
+                           &lt;xs:documentation&gt;080120: The Notional Reference Amount is the amount
+                                                    expressed in number of currency units to which a Unit disclosed
+                                                    Ex-Post cost is based and to which a Percentage disclosed cost
+                                                    should be multiplied in order to retrieve the Unit cost. This field
+                                                    is conditional and only used if 08110 is not used.
+                                                &lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                      &lt;/xs:element&gt;
                   &lt;/xs:sequence&gt;
@@ -587,12 +633,20 @@ If 00096 set to P : % of Reference in field 08110 or 08120 respectively.&lt;/xs:
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Start&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;08090: The Date that specifies the start of the Reference Period. Defined as &quot;From and including&quot;. All ex-post cost disclosures apart from 08040 refers to all dates in such period.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;08090: The Date that specifies the start of the Reference
+                                                Period. Defined as &quot;From and including&quot;. All ex-post cost disclosures
+                                                apart from 08040 refers to all dates in such period.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;End&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;08100: The Date that specifies the end of the Reference Period. Defined as &quot;To and including&quot;. All ex-post cost disclosures apart from 08040 refers to all dates in such period. For the avoidance of doubt, this date can be specified as equal to the date specified in 08090.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;08100: The Date that specifies the end of the Reference
+                                                Period. Defined as &quot;To and including&quot;. All ex-post cost disclosures
+                                                apart from 08040 refers to all dates in such period. For the avoidance
+                                                of doubt, this date can be specified as equal to the date specified in
+                                                08090.
+                                            &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -615,9 +669,9 @@ If 00096 set to P : % of Reference in field 08110 or 08120 respectively.&lt;/xs:
 
 <!-- JavaScript for the copy functionality -->
 <script>
-    function copyToClipboard(buttonElement) {
+    function copyXPath(buttonElement) {
         const textToCopy = buttonElement.getAttribute('data-xpath');
-        const tooltip = buttonElement.querySelector('#tooltip-text');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             tooltip.textContent = 'Copied!';
@@ -629,6 +683,29 @@ If 00096 set to P : % of Reference in field 08110 or 08120 respectively.&lt;/xs:
             console.error('Could not copy text: ', err);
             setTimeout(() => {
                 tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
             }, 2000);
         });
     }
