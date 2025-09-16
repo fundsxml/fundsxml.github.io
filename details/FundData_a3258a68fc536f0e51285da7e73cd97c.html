@@ -129,51 +129,165 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #ffffff"
+     style="background-color: #f0f8ff"
      width="531.0"
-     height="455.515625">
+     height="439.515625">
    <defs>
-      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f0f8ff" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="attributeGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f9f5e7" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="sequenceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="choiceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#fff3cd" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="anyGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#dee2e6" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="structuralGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { transform: translateY(-1px); filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 2.5; } .cardinality-text { font-weight: 600; font-size: 10px; } .element-icon { fill: #4a90e2; } .attribute-icon { fill: #d4a147; }</style>
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="modern-shadow"
+              id="xmlspy-shadow"
               y="-50%">
-         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="0" dy="2"/>
-         <feFlood flood-color="black" flood-opacity="0.08"/>
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="1" dy="1"/>
+         <feFlood flood-color="black" flood-opacity="0.2"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+      <g style="stroke: #4a90e2; stroke-width: 2; stroke-linecap: round;"
          id="modern-plus-icon">
-         <circle fill="#f8fafc"
+         <circle fill="#f0f8ff"
                  stroke-width="1.5"
                  r="10"
                  cx="12"
                  cy="12"
-                 stroke="#3b82f6"/>
+                 stroke="#4a90e2"/>
          <line y2="17" x1="12" x2="12" y1="7"/>
          <line y2="12" x1="7" x2="17" y1="12"/>
+      </g>
+      <g id="string-icon">
+         <path fill="#28a745"
+               d="M2.5 4v1.5c0 .83.67 1.5 1.5 1.5h1v1h-1c-.83 0-1.5.67-1.5 1.5V11c0 .55-.45 1-1 1H0v-1h.5c.28 0 .5-.22.5-.5V9s0-2.5 0-2.5c0-.83.67-1.5 1.5-1.5h1v-1h-1C1.67 4 1 3.33 1 2.5V1c0-.55.45-1 1-1H1v1h-.5c-.28 0-.5.22-.5.5V3s0 2.5 0 2.5c0 .83-.67 1.5-1.5 1.5h-1z"/>
+      </g>
+      <g id="numeric-icon">
+         <path fill="#007bff"
+               d="M1.5 6l.5 2H1l-.5-2H0V5h.5L0 3h1l.5 2h1L2 3h1l.5 2H4v1h-.5L4 8H3l-.5-2h-1z"/>
+      </g>
+      <g id="date-icon">
+         <path fill="#fd7e14"
+               d="M3.5 0c-.28 0-.5.22-.5.5v.5h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5H0v8h8V1h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5h-2v-.5c0-.28-.22-.5-.5-.5zM1 2h6v2H1V2zm0 3h6v3H1V5z"/>
+      </g>
+      <g id="boolean-icon">
+         <path fill="#6f42c1" d="M7 1L3.5 4.5 1 2l-1 1 3.5 3.5L8 2z"/>
+      </g>
+      <g id="binary-icon">
+         <path fill="#6c757d"
+               d="M1 1v6h6V3L5 1H1zm4 0v2h2L5 1zm-3 3h2v1H2V4zm0 2h4v1H2V6z"/>
+      </g>
+      <g id="uri-icon">
+         <path fill="#17a2b8"
+               d="M2 3h1v1H2V3zm3 0h1v1H5V3zM1.5 1C.67 1 0 1.67 0 2.5S.67 4 1.5 4h.25L2 3.75v-.5l-.25-.25H1.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h1c.28 0 .5.22.5.5v.25l.25.25h.5l.25-.25V2.5c0-.83-.67-1.5-1.5-1.5h-1z"/>
+      </g>
+      <g id="qname-icon">
+         <path fill="#e83e8c"
+               d="M0 2v4c0 .55.45 1 1 1h2.5L7 3.5v-1L3.5 0H1C.45 0 0 .45 0 2zm5.5 1.5L3 5H1V2h2.5L5.5 3.5z"/>
+      </g>
+      <g id="language-icon">
+         <path fill="#20c997"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm2 7c-.02-.02-.05-.03-.08-.03H5c-.28 0-.5-.22-.5-.5 0-.25.19-.46.44-.5.02 0 .04-.01.06-.01h1c.83 0 1.5-.67 1.5-1.5 0-.78-.6-1.42-1.36-1.49C6.09 2.95 6.05 2.93 6 2.93c-.28 0-.5-.22-.5-.5s.22-.5.5-.5c.05 0 .09.02.14.03C6.36 1.94 6.6 2 6.5 2c0 0 .5.22.5.5s-.22.5-.5.5c-.28 0-.5-.22-.5-.5 0-.02.01-.04.01-.06h-1c-.83 0-1.5.67-1.5 1.5 0 .78.6 1.42 1.36 1.49C4.91 5.05 4.95 5.07 5 5.07c.28 0 .5.22.5.5s-.22.5-.5.5c-.05 0-.09-.02-.14-.03C4.64 6.06 4.4 6 4.5 6z"/>
+      </g>
+      <g id="complex-icon" transform="scale(0.5)">
+         <rect x="5"
+               y="0"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="0"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="10"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="8"
+               x2="8"
+               stroke="#dc3545"
+               y1="4"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="3"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="3"
+               x2="3"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="13"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+      </g>
+      <g id="default-icon">
+         <path fill="#4a90e2"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+      </g>
+      <g id="sequence-icon">
+         <path fill="#6c757d"
+               d="M2,17H4V19H2V17M2,13H4V15H2V13M2,9H4V11H2V9M2,5H4V7H2V5M7,5H22V7H7V5M7,9H22V11H7V9M7,13H22V15H7V13M7,17H22V19H7V17Z"/>
+      </g>
+      <g id="choice-icon">
+         <path fill="#ff8c00"
+               d="M8,10V12H16V10H8M8,14V16H16V14H8M18,8C19.11,8 20,8.9 20,10V14C20,15.11 19.11,16 18,16H16V14H18V10H16V8H18M6,8V10H4V14H6V16H4C2.89,16 2,15.11 2,14V10C2,8.9 2.89,8 4,8H6Z"/>
       </g>
    </defs>
    <a href="#">
       <rect x="32"
             y="191"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="88.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
             height="40.939453125"
             id="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/FundData"/>
       <text x="44"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="219.939453125"
             font-size="14"
             font-family="Inter Regular">FundData</text>
@@ -181,7 +295,7 @@
    <g id="modern-comment">
       <text font-style="italic"
             x="44"
-            fill="#64748b"
+            fill="#6c757d"
             font-size="13"
             y="249.939453125"
             font-family="Inter Regular">
@@ -193,45 +307,34 @@
          <tspan x="27" dy="1.3em">at fund level </tspan>
       </text>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+   <line y2="211.4697265625"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         x1="120.0"
          class="connection-line"
-         d="M 120.0 211.4697265625 H 155.0"/>
-   <text x="167.0"
-         fill="#64748b"
-         y="184.4697265625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
-   <g id="seq-group_1755856779298">
+         x2="155.0"
+         y1="211.4697265625"/>
+   <g>
       <rect x="155.0"
             y="196.4697265625"
-            fill="#f8fafc"
+            fill="url(#sequenceGradient)"
             width="50.0"
-            rx="8"
-            ry="8"
+            rx="4"
+            ry="4"
             height="30.0"
-            stroke="#8b5cf6"
+            stroke="#6c757d"
             stroke-width="2"/>
-      <line y2="211.4697265625"
-            stroke-width="1.5"
-            x1="163.0"
-            x2="197.0"
-            stroke="#64748b"
-            y1="211.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="170.0" cy="211.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="180.0" cy="211.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="190.0" cy="211.4697265625"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="172.0"
+           y="203.4697265625"
+           xlink:href="#sequence-icon"/>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 205.0 211.4697265625 h 25.0"/>
    <a href="RentalContracts_7d23882594ea7b9c015fc037a5a49556.html">
       <rect x="280.0"
             y="32.0"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="203.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -239,7 +342,7 @@
             id="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/FundData/RentalContracts"/>
       <g>
          <text x="292.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="60.939453125"
                font-size="14"
                font-family="Inter Regular">RentalContracts</text>
@@ -247,10 +350,14 @@
                stroke-width="1"
                x1="292.0"
                x2="471.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="66.939453125"/>
-         <text x="292.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="292.0"
+              y="77.87890625"
+              xlink:href="#complex-icon"/>
+         <text x="308.0"
+               fill="#dc3545"
                y="87.87890625"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -260,22 +367,17 @@
            y="52.939453125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 230.0 211.4697265625 V 64.939453125 H 280.0"/>
-   <text x="242.0"
-         fill="#64748b"
-         y="52.939453125"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 205.0 211.5 H 235.0 V 64.9 H 280.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="PurchasesAndSales_ca2457d9472ea22c79989e2bf10ffd7c.html">
       <rect x="280.0"
             y="129.87890625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="203.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -283,7 +385,7 @@
             id="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/FundData/PurchasesAndSales"/>
       <g>
          <text x="292.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="158.818359375"
                font-size="14"
                font-family="Inter Regular">PurchasesAndSales</text>
@@ -291,10 +393,14 @@
                stroke-width="1"
                x1="292.0"
                x2="471.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="164.818359375"/>
-         <text x="292.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="292.0"
+              y="175.7578125"
+              xlink:href="#complex-icon"/>
+         <text x="308.0"
+               fill="#dc3545"
                y="185.7578125"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -304,22 +410,27 @@
            y="150.818359375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 230.0 211.4697265625 V 162.818359375 H 280.0"/>
-   <text x="242.0"
-         fill="#64748b"
-         y="150.818359375"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 205.0 211.5 H 235.0 V 162.8 H 280.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
+   <rect x="280.0"
+         y="227.7578125"
+         fill="none"
+         width="203.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="AnnualReturnsStructure_8a15968a483bb490402b6a7928db548f.html">
       <rect x="280.0"
             y="227.7578125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="203.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -327,7 +438,7 @@
             id="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/FundData/AnnualReturnsStructure"/>
       <g>
          <text x="292.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="256.697265625"
                font-size="14"
                font-family="Inter Regular">AnnualReturnsStructure</text>
@@ -335,10 +446,14 @@
                stroke-width="1"
                x1="292.0"
                x2="471.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="262.697265625"/>
-         <text x="292.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="292.0"
+              y="273.63671875"
+              xlink:href="#complex-icon"/>
+         <text x="308.0"
+               fill="#dc3545"
                y="283.63671875"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -348,22 +463,42 @@
            y="248.697265625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 230.0 211.4697265625 V 260.697265625 H 280.0"/>
-   <text x="242.0"
-         fill="#64748b"
-         y="248.697265625"
-         font-size="11"
+   <path fill="none"
+         d="M 205.0 211.5 H 235.0 V 260.7 H 280.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="241.0"
+         y="228.7578125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="245.0"
+         font-size="10"
+         y="243.697265625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="280.0"
+         y="325.63671875"
+         fill="none"
+         width="203.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="EquityCommitments_20b1b0001b117250d3c3c35e816f46e9.html">
       <rect x="280.0"
             y="325.63671875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="203.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -371,7 +506,7 @@
             id="/FundsXML4/Funds/Fund/CountrySpecificData/DE/RealEstateReporting/FundData/EquityCommitments"/>
       <g>
          <text x="292.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="354.576171875"
                font-size="14"
                font-family="Inter Regular">EquityCommitments</text>
@@ -379,10 +514,14 @@
                stroke-width="1"
                x1="292.0"
                x2="471.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="360.576171875"/>
-         <text x="292.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="292.0"
+              y="371.515625"
+              xlink:href="#complex-icon"/>
+         <text x="308.0"
+               fill="#dc3545"
                y="381.515625"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -392,15 +531,25 @@
            y="346.576171875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 230.0 211.4697265625 V 358.576171875 H 280.0"/>
-   <text x="242.0"
-         fill="#64748b"
-         y="346.576171875"
-         font-size="11"
+   <path fill="none"
+         d="M 205.0 211.5 H 235.0 V 358.6 H 280.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="241.0"
+         y="326.63671875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="245.0"
+         font-size="10"
+         y="341.576171875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -522,10 +671,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Jährliche Datenlieferung, ausschließlich für<br />
-offene Publikumsfonds</p>
-<p>Once per year; exclusively for open-ended<br />
-retail funds</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Jährliche Datenlieferung, ausschließlich für offene Publikumsfonds</p>
+<p>Once per year; exclusively for open-ended retail funds</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -544,10 +691,8 @@ retail funds</p>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Für offene Spezailfonds sowie geschlossene<br />
-Publikums- und Spezialfonds</p>
-<p>For open-ended Spezialfonds and closed-ended<br />
-retail and Spezialfonds.</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Für offene Spezailfonds sowie geschlossene Publikums- und Spezialfonds</p>
+<p>For open-ended Spezialfonds and closed-ended retail and Spezialfonds.</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -578,162 +723,81 @@ retail and Spezialfonds.</p>
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;ExpiringLeases&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete
-                                                            aller auslaufenden Mietverträge. Maßgebend ist First Break,
-                                                            es sind keine Optionen zu berücksichtigen. Anzugeben ist ein
-                                                            Jahreswert.
-                                                        &lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent.
-                                                            First break is relevant; no options have to be taken into
-                                                            account. An annual value must be given.
-                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller auslaufenden Mietverträge. Maßgebend ist First Break, es sind keine Optionen zu berücksichtigen. Anzugeben ist ein Jahreswert.&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent. First break is relevant; no options have to be taken into account. An annual value must be given.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Year_T&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im aktuellen
-                                                                        Berichtsjahr (t) auslaufenden Mietverträge (in
-                                                                        Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) of all
-                                                                        leases expiring in the current reporting year
-                                                                        (t).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im aktuellen Berichtsjahr (t) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the current reporting year (t).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus1&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im Jahr (t+1)
-                                                                        auslaufenden Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) of all
-                                                                        leases expiring in the year (t+1).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+1) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the year (t+1).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus2&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im Jahr (t+2)
-                                                                        auslaufenden Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) of all
-                                                                        leases expiring in the year (t+2).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+2) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) of all leases expiring in the year (t+2).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus3&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im Jahr (t+3)
-                                                                        auslaufenden Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) for all
-                                                                        leases expiring in the year (t+3).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+3) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+3).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus4&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im Jahr (t+4)
-                                                                        auslaufenden Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) for all
-                                                                        leases expiring in the year (t+4).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+4) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+4).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus5&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im Jahr (t+5)
-                                                                        auslaufenden Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) for all
-                                                                        leases expiring in the year (t+5).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+5) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+5).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus6&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im Jahr (t+6)
-                                                                        auslaufenden Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) for all
-                                                                        leases expiring in the year (t+6).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+6) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+6).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus7&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im Jahr (t+7)
-                                                                        auslaufenden Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) for all
-                                                                        leases expiring in the year (t+7).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+7) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+7).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus8&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im Jahr (t+8)
-                                                                        auslaufenden Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) for all
-                                                                        leases expiring in the year (t+8).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+8) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+8).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus9&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im Jahr (t+9)
-                                                                        auslaufenden Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) for all
-                                                                        leases expiring in the year (t+9).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+9) auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+9).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Year_TPlus10AndLater&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller im Jahr (t+10) oder
-                                                                        später auslaufenden Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) for all
-                                                                        leases expiring in the year (t+10) or later.
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller im Jahr (t+10) oder später auslaufenden Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all leases expiring in the year (t+10) or later.&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;IndefiniteLeases&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der
-                                                                        Nettovertragsmiete aller unbefristeten
-                                                                        Mietverträge (in Tsd. Euro)
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net
-                                                                        contractual rent (in thousands of euros) for all
-                                                                        unlimited leases.
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der Nettovertragsmiete aller unbefristeten Mietverträge (in Tsd. Euro)&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total net contractual rent (in thousands of euros) for all unlimited leases.&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -747,36 +811,21 @@ retail and Spezialfonds.</p>
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;Domestic&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und
-                                                            Verkäufe im Inland (innerhalb Deutschlands) im
-                                                            vorangegangenen Quartal
-                                                        &lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic
-                                                            purchases and sales in the previous quarter
-                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und Verkäufe im Inland (innerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic purchases and sales in the previous quarter&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Purchases&quot; type=&quot;PurchasesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
-                                                                        Käufe im Inland (innerhalb Deutschlands) im
-                                                                        vorangegangenen Quartal
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
-                                                                        domestic purchases in the previous quarter
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe  im Inland (innerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic purchases in the previous quarter&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Sales&quot; type=&quot;SalesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
-                                                                        Verkäufe im Inland (innerhalb Deutschlands) im
-                                                                        vorangegangenen Quartal
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
-                                                                        domestic sales in the previous quarter
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Verkäufe  im Inland (innerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on domestic sales in the previous quarter&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -784,36 +833,21 @@ retail and Spezialfonds.</p>
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Foreign&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und
-                                                            Verkäufe im Ausland (außerhalb Deutschlands) im
-                                                            vorangegangenen Quartal
-                                                        &lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases
-                                                            and sales in the previous quarter
-                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und Verkäufe im Ausland (außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases and sales in the previous quarter&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Purchases&quot; type=&quot;PurchasesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
-                                                                        Käufe im Ausland außerhalb Deutschlands) im
-                                                                        vorangegangenen Quartal
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
-                                                                        foreign purchases in the previous quarter
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe  im Ausland außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign purchases in the previous quarter&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Sales&quot; type=&quot;SalesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
-                                                                        Verkäufe im Ausland (außerhalb Deutschlands) im
-                                                                        vorangegangenen Quartal
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
-                                                                        foreign sales in the previous quarter
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Verkäufe im Ausland (außerhalb Deutschlands) im vorangegangenen Quartal&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on foreign sales  in the previous quarter&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -821,35 +855,21 @@ retail and Spezialfonds.</p>
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;ParticipationsRECompanies&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und
-                                                            Verkäufe von Beteiligungen im vorangegangenen Quartal
-                                                        &lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on purchases and
-                                                            sales of investees in the previous quarter
-                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe und Verkäufe von Beteiligungen im vorangegangenen Quartal&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on purchases and sales of investees in the previous quarter&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Purchases&quot; type=&quot;PurchasesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
-                                                                        Käufe von Beteiligungen im vorangegangenen
-                                                                        Quartal
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on
-                                                                        purchases of investees in the previous quarter
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Käufe von Beteiligungen im vorangegangenen Quartal&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on purchases of investees in the previous quarter&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Sales&quot; type=&quot;SalesDataDEType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über
-                                                                        Verkäufe von Beteiligungen im vorangegangenen
-                                                                        Quartal
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on sales
-                                                                        of investees in the previous quarter
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Informationen über Verkäufe von Beteiligungen im vorangegangenen Quartal&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Information on sales of investees in the previous quarter&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -860,33 +880,21 @@ retail and Spezialfonds.</p>
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AnnualReturnsStructure&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Jährliche Datenlieferung, ausschließlich für
-                                                offene Publikumsfonds
-                                            &lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Once per year; exclusively for open-ended
-                                                retail funds
-                                            &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Jährliche Datenlieferung, ausschließlich für offene Publikumsfonds&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Once per year; exclusively for open-ended retail funds&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;StartFiscalYear&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Beginn des Geschäftsjahres, auf
-                                                            das sich die Renditekennzahlen beziehen
-                                                        &lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Beginning of the fiscal year to
-                                                            which the return components refer
-                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Beginn des Geschäftsjahres, auf das sich die Renditekennzahlen beziehen&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Beginning of the fiscal year to which the return components refer&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;EndFiscalYear&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Ende des Geschäftsjahres, auf
-                                                            das sich die Renditekennzahlen beziehen
-                                                        &lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;End of the fiscal year to which
-                                                            the return components refer
-                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Ende des Geschäftsjahres, auf das sich die Renditekennzahlen beziehen&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;End of the fiscal year to which the return components refer&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;CountryDistribution&quot;&gt;
@@ -894,12 +902,8 @@ retail and Spezialfonds.</p>
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;Country&quot; type=&quot;ISOCountryCodeType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Land, für das die
-                                                                        Renditekennzahlen zutreffen
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Country for which
-                                                                        the return indicators apply
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Land, für das die Renditekennzahlen zutreffen&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Country for which the return indicators apply&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;CountryFigures&quot; type=&quot;AnnualReturnsDataDEType&quot;/&gt;
@@ -912,37 +916,20 @@ retail and Spezialfonds.</p>
                            &lt;xs:element name=&quot;TotalAnnualReturns&quot; type=&quot;AnnualReturnsDataDEType&quot;/&gt;
                            &lt;xs:element name=&quot;Liquidity&quot; type=&quot;PercentageType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Die
-                                                                        Liquiditätsrendite errechnet wird aus &quot;Erträge
-                                                                        und Wertveränderungen aus
-                                                                        Liquidität&quot;/&quot;Durchschnittliche Liquidität&quot;
-                                                                        berechnet (in Prozent).
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The liquidity yield
-                                                                        is calculated from &quot;Income and changes in value
-                                                                        from liquidity&quot;/&quot;Average liquidity&quot; (in
-                                                                        percent).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Die Liquiditätsrendite errechnet wird aus &quot;Erträge und Wertveränderungen aus Liquidität&quot;/&quot;Durchschnittliche Liquidität&quot; berechnet (in Prozent).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The liquidity yield is calculated from &quot;Income and changes in value from liquidity&quot;/&quot;Average liquidity&quot; (in percent).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;ReturnBeforeFundCosts&quot; type=&quot;PercentageType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des
-                                                                        Fonds vor Fondskosten (in Prozent).
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the
-                                                                        fund before fund costs (in Prozent).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des Fonds vor Fondskosten (in Prozent).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the fund before fund costs (in Prozent).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;ReturnAfterFundCosts&quot; type=&quot;PercentageType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des
-                                                                        Fonds nach Fondskosten (in Prozent).
-                                                                    &lt;/xs:documentation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the
-                                                                        fund after fund costs (in Prozent).
-                                                                    &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtergebnis des Fonds nach Fondskosten (in Prozent).&lt;/xs:documentation&gt;
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total return of the fund after fund costs (in Prozent).&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -953,50 +940,27 @@ retail and Spezialfonds.</p>
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;EquityCommitments&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Für offene Spezailfonds sowie geschlossene
-                                                Publikums- und Spezialfonds
-                                            &lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;For open-ended Spezialfonds and closed-ended
-                                                retail and Spezialfonds.
-                                            &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Für offene Spezailfonds sowie geschlossene Publikums- und Spezialfonds&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;For open-ended Spezialfonds and closed-ended retail and Spezialfonds.&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;TotalAmount&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der gesamten
-                                                            Kapitalzusagen für den Fonds (in Tsd. Euro).
-                                                        &lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Equity commitments, total amount
-                                                            (in thousands of euros).
-                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe der gesamten Kapitalzusagen für den Fonds (in Tsd. Euro).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Equity commitments, total amount (in thousands of euros).&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;CalledOff&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe des von den Kapitalzusagen
-                                                            bereits abgerufenen Kapitals (in Tsd. Euro).
-                                                        &lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Cumulative sum of equity
-                                                            commitments that have already been called off (in thousands
-                                                            of euros).
-                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Summe des von den Kapitalzusagen bereits abgerufenen Kapitals (in Tsd. Euro).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Cumulative sum of equity commitments that have already been called off (in thousands of euros).&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;NotRequested&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;In Form von
-                                                            Zeichungsscheinen/Verträgen befristet oder unbefristet
-                                                            zugesagtes Eigenkapital. Unverbindliche Zusagen (z.B. ohne
-                                                            Zeichnungsschein) werden bei der Ermittlung der
-                                                            Eigenkapitalzusagen nicht berücksichtigt.
-                                                            Eigenkapitalzusagen werden nur bis zur Auflösung eines Fonds
-                                                            berücksichtigt (in Tsd. Euro).
-                                                        &lt;/xs:documentation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The outstanding part of equity
-                                                            commitments in total that hasn&#39;t been requested as yet (in
-                                                            thousands of euros).
-                                                        &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;In Form von Zeichungsscheinen/Verträgen befristet oder unbefristet zugesagtes Eigenkapital. Unverbindliche Zusagen (z.B. ohne Zeichnungsschein) werden bei der Ermittlung der Eigenkapitalzusagen nicht berücksichtigt. Eigenkapitalzusagen werden nur bis zur Auflösung eines Fonds berücksichtigt (in Tsd. Euro).&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;The outstanding part of equity commitments in total that hasn&#39;t been requested as yet (in thousands of euros).&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;

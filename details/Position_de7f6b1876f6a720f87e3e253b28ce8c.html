@@ -129,51 +129,165 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #ffffff"
+     style="background-color: #f0f8ff"
      width="526.0"
-     height="3783.3984375">
+     height="3767.3984375">
    <defs>
-      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f0f8ff" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="attributeGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f9f5e7" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="sequenceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="choiceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#fff3cd" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="anyGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#dee2e6" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="structuralGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { transform: translateY(-1px); filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 2.5; } .cardinality-text { font-weight: 600; font-size: 10px; } .element-icon { fill: #4a90e2; } .attribute-icon { fill: #d4a147; }</style>
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="modern-shadow"
+              id="xmlspy-shadow"
               y="-50%">
-         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="0" dy="2"/>
-         <feFlood flood-color="black" flood-opacity="0.08"/>
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="1" dy="1"/>
+         <feFlood flood-color="black" flood-opacity="0.2"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+      <g style="stroke: #4a90e2; stroke-width: 2; stroke-linecap: round;"
          id="modern-plus-icon">
-         <circle fill="#f8fafc"
+         <circle fill="#f0f8ff"
                  stroke-width="1.5"
                  r="10"
                  cx="12"
                  cy="12"
-                 stroke="#3b82f6"/>
+                 stroke="#4a90e2"/>
          <line y2="17" x1="12" x2="12" y1="7"/>
          <line y2="12" x1="7" x2="17" y1="12"/>
+      </g>
+      <g id="string-icon">
+         <path fill="#28a745"
+               d="M2.5 4v1.5c0 .83.67 1.5 1.5 1.5h1v1h-1c-.83 0-1.5.67-1.5 1.5V11c0 .55-.45 1-1 1H0v-1h.5c.28 0 .5-.22.5-.5V9s0-2.5 0-2.5c0-.83.67-1.5 1.5-1.5h1v-1h-1C1.67 4 1 3.33 1 2.5V1c0-.55.45-1 1-1H1v1h-.5c-.28 0-.5.22-.5.5V3s0 2.5 0 2.5c0 .83-.67 1.5-1.5 1.5h-1z"/>
+      </g>
+      <g id="numeric-icon">
+         <path fill="#007bff"
+               d="M1.5 6l.5 2H1l-.5-2H0V5h.5L0 3h1l.5 2h1L2 3h1l.5 2H4v1h-.5L4 8H3l-.5-2h-1z"/>
+      </g>
+      <g id="date-icon">
+         <path fill="#fd7e14"
+               d="M3.5 0c-.28 0-.5.22-.5.5v.5h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5H0v8h8V1h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5h-2v-.5c0-.28-.22-.5-.5-.5zM1 2h6v2H1V2zm0 3h6v3H1V5z"/>
+      </g>
+      <g id="boolean-icon">
+         <path fill="#6f42c1" d="M7 1L3.5 4.5 1 2l-1 1 3.5 3.5L8 2z"/>
+      </g>
+      <g id="binary-icon">
+         <path fill="#6c757d"
+               d="M1 1v6h6V3L5 1H1zm4 0v2h2L5 1zm-3 3h2v1H2V4zm0 2h4v1H2V6z"/>
+      </g>
+      <g id="uri-icon">
+         <path fill="#17a2b8"
+               d="M2 3h1v1H2V3zm3 0h1v1H5V3zM1.5 1C.67 1 0 1.67 0 2.5S.67 4 1.5 4h.25L2 3.75v-.5l-.25-.25H1.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h1c.28 0 .5.22.5.5v.25l.25.25h.5l.25-.25V2.5c0-.83-.67-1.5-1.5-1.5h-1z"/>
+      </g>
+      <g id="qname-icon">
+         <path fill="#e83e8c"
+               d="M0 2v4c0 .55.45 1 1 1h2.5L7 3.5v-1L3.5 0H1C.45 0 0 .45 0 2zm5.5 1.5L3 5H1V2h2.5L5.5 3.5z"/>
+      </g>
+      <g id="language-icon">
+         <path fill="#20c997"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm2 7c-.02-.02-.05-.03-.08-.03H5c-.28 0-.5-.22-.5-.5 0-.25.19-.46.44-.5.02 0 .04-.01.06-.01h1c.83 0 1.5-.67 1.5-1.5 0-.78-.6-1.42-1.36-1.49C6.09 2.95 6.05 2.93 6 2.93c-.28 0-.5-.22-.5-.5s.22-.5.5-.5c.05 0 .09.02.14.03C6.36 1.94 6.6 2 6.5 2c0 0 .5.22.5.5s-.22.5-.5.5c-.28 0-.5-.22-.5-.5 0-.02.01-.04.01-.06h-1c-.83 0-1.5.67-1.5 1.5 0 .78.6 1.42 1.36 1.49C4.91 5.05 4.95 5.07 5 5.07c.28 0 .5.22.5.5s-.22.5-.5.5c-.05 0-.09-.02-.14-.03C4.64 6.06 4.4 6 4.5 6z"/>
+      </g>
+      <g id="complex-icon" transform="scale(0.5)">
+         <rect x="5"
+               y="0"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="0"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="10"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="8"
+               x2="8"
+               stroke="#dc3545"
+               y1="4"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="3"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="3"
+               x2="3"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="13"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+      </g>
+      <g id="default-icon">
+         <path fill="#4a90e2"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+      </g>
+      <g id="sequence-icon">
+         <path fill="#6c757d"
+               d="M2,17H4V19H2V17M2,13H4V15H2V13M2,9H4V11H2V9M2,5H4V7H2V5M7,5H22V7H7V5M7,9H22V11H7V9M7,13H22V15H7V13M7,17H22V19H7V17Z"/>
+      </g>
+      <g id="choice-icon">
+         <path fill="#ff8c00"
+               d="M8,10V12H16V10H8M8,14V16H16V14H8M18,8C19.11,8 20,8.9 20,10V14C20,15.11 19.11,16 18,16H16V14H18V10H16V8H18M6,8V10H4V14H6V16H4C2.89,16 2,15.11 2,14V10C2,8.9 2.89,8 4,8H6Z"/>
       </g>
    </defs>
    <a href="#">
       <rect x="32"
             y="1855"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="75.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
             height="40.939453125"
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position"/>
       <text x="44"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="1883.939453125"
             font-size="14"
             font-family="Inter Regular">Position</text>
@@ -181,49 +295,38 @@
    <g id="modern-comment">
       <text font-style="italic"
             x="44"
-            fill="#64748b"
+            fill="#6c757d"
             font-size="13"
             y="1913.939453125"
             font-family="Inter Regular"/>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+   <line y2="1875.4697265625"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         x1="107.0"
          class="connection-line"
-         d="M 107.0 1875.4697265625 H 142.0"/>
-   <text x="154.0"
-         fill="#64748b"
-         y="1848.4697265625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
-   <g id="seq-group_1755856780884">
+         x2="142.0"
+         y1="1875.4697265625"/>
+   <g>
       <rect x="142.0"
             y="1860.4697265625"
-            fill="#f8fafc"
+            fill="url(#sequenceGradient)"
             width="50.0"
-            rx="8"
-            ry="8"
+            rx="4"
+            ry="4"
             height="30.0"
-            stroke="#8b5cf6"
+            stroke="#6c757d"
             stroke-width="2"/>
-      <line y2="1875.4697265625"
-            stroke-width="1.5"
-            x1="150.0"
-            x2="184.0"
-            stroke="#64748b"
-            y1="1875.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="157.0" cy="1875.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="167.0" cy="1875.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="177.0" cy="1875.4697265625"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="159.0"
+           y="1867.4697265625"
+           xlink:href="#sequence-icon"/>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 192.0 1875.4697265625 h 25.0"/>
    <rect x="267.0"
          y="32.0"
-         fill="#f8fafc"
+         fill="#f0f8ff"
          width="211.0"
-         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -231,7 +334,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/UniqueID"/>
    <g>
       <text x="279.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="60.939453125"
             font-size="14"
             font-family="Inter Regular">UniqueID</text>
@@ -239,30 +342,39 @@
             stroke-width="1"
             x1="279.0"
             x2="466.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="66.939453125"/>
-      <text x="279.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="279.0"
+           y="77.87890625"
+           xlink:href="#complex-icon"/>
+      <text x="295.0"
+            fill="#dc3545"
             y="87.87890625"
             font-size="13"
             font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 64.939453125 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="52.939453125"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 64.9 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
+   <rect x="267.0"
+         y="129.87890625"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="Identifiers_2939a421f679002c9c292d3c251c7f89.html">
       <rect x="267.0"
             y="129.87890625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -270,7 +382,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Identifiers"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="158.818359375"
                font-size="14"
                font-family="Inter Regular">Identifiers</text>
@@ -278,10 +390,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="164.818359375"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="175.7578125"
+              xlink:href="#string-icon"/>
+         <text x="295.0"
+               fill="#28a745"
                y="185.7578125"
                font-size="13"
                font-family="Inter Regular">IdentifiersType</text>
@@ -291,21 +407,41 @@
            y="150.818359375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 162.818359375 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="150.818359375"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 162.8 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="130.87890625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="145.818359375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="267.0"
          y="227.7578125"
-         fill="#f8fafc"
+         fill="none"
          width="211.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="267.0"
+         y="227.7578125"
+         fill="#f0f8ff"
+         width="211.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -313,7 +449,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Currency"/>
    <g>
       <text x="279.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="256.697265625"
             font-size="14"
             font-family="Inter Regular">Currency</text>
@@ -321,30 +457,44 @@
             stroke-width="1"
             x1="279.0"
             x2="466.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="262.697265625"/>
-      <text x="279.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="279.0"
+           y="273.63671875"
+           xlink:href="#complex-icon"/>
+      <text x="295.0"
+            fill="#dc3545"
             y="283.63671875"
             font-size="13"
             font-family="Inter Regular">ISOCurrencyCodeType</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 260.697265625 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="248.697265625"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 260.7 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="228.7578125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="243.697265625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <a href="TotalValue_07f262137f8714eab1e35b00d95ed578.html">
       <rect x="267.0"
             y="325.63671875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -352,7 +502,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/TotalValue"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="354.576171875"
                font-size="14"
                font-family="Inter Regular">TotalValue</text>
@@ -360,10 +510,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="360.576171875"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="371.515625"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="381.515625"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -373,22 +527,27 @@
            y="346.576171875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 358.576171875 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="346.576171875"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 358.6 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
+   <rect x="267.0"
+         y="423.515625"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="OtherTotalValues_8981906c099bdf888f16445284a0deb9.html">
       <rect x="267.0"
             y="423.515625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -396,7 +555,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/OtherTotalValues"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="452.455078125"
                font-size="14"
                font-family="Inter Regular">OtherTotalValues</text>
@@ -404,10 +563,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="458.455078125"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="469.39453125"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="479.39453125"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -417,21 +580,41 @@
            y="444.455078125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 456.455078125 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="444.455078125"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 456.5 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="424.515625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="439.455078125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="267.0"
          y="521.39453125"
-         fill="#f8fafc"
+         fill="none"
          width="211.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="267.0"
+         y="521.39453125"
+         fill="#f0f8ff"
+         width="211.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -439,7 +622,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/TotalPercentage"/>
    <g>
       <text x="279.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="550.333984375"
             font-size="14"
             font-family="Inter Regular">TotalPercentage</text>
@@ -447,30 +630,54 @@
             stroke-width="1"
             x1="279.0"
             x2="466.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="556.333984375"/>
-      <text x="279.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="279.0"
+           y="567.2734375"
+           xlink:href="#complex-icon"/>
+      <text x="295.0"
+            fill="#dc3545"
             y="577.2734375"
             font-size="13"
             font-family="Inter Regular">PercentageType</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 554.333984375 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="542.333984375"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 554.3 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="522.39453125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="537.333984375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="267.0"
+         y="619.2734375"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="AveragePurchasePrice_5f42fe3a25fbfe8e0d339a279f0ff380.html">
       <rect x="267.0"
             y="619.2734375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -478,7 +685,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/AveragePurchasePrice"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="648.212890625"
                font-size="14"
                font-family="Inter Regular">AveragePurchasePrice</text>
@@ -486,10 +693,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="654.212890625"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="665.15234375"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="675.15234375"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -499,22 +710,42 @@
            y="640.212890625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 652.212890625 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="640.212890625"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 652.2 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="620.2734375"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="635.212890625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="267.0"
+         y="717.15234375"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="AveragePurchaseFXRate_c2193ec93201839728ea47d1447a16fe.html">
       <rect x="267.0"
             y="717.15234375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -522,7 +753,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/AveragePurchaseFXRate"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="746.091796875"
                font-size="14"
                font-family="Inter Regular">AveragePurchaseFXRate</text>
@@ -530,10 +761,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="752.091796875"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="763.03125"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="773.03125"
                font-size="13"
                font-family="Inter Regular">FXRatesType</text>
@@ -543,22 +778,42 @@
            y="738.091796875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 750.091796875 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="738.091796875"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 750.1 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="718.15234375"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="733.091796875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="267.0"
+         y="815.03125"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="Exposures_1b15b47ebfa4cc6019ef3316b39bb604.html">
       <rect x="267.0"
             y="815.03125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -566,7 +821,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Exposures"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="843.970703125"
                font-size="14"
                font-family="Inter Regular">Exposures</text>
@@ -574,10 +829,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="849.970703125"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="860.91015625"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="870.91015625"
                font-size="13"
                font-family="Inter Regular">ExposureType</text>
@@ -587,22 +846,42 @@
            y="835.970703125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 847.970703125 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="835.970703125"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 848.0 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="816.03125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="830.970703125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="267.0"
+         y="912.91015625"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="FXRates_ffc753f0ea8277d7cb90e33d2dbef852.html">
       <rect x="267.0"
             y="912.91015625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -610,7 +889,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FXRates"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="941.849609375"
                font-size="14"
                font-family="Inter Regular">FXRates</text>
@@ -618,10 +897,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="947.849609375"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="958.7890625"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="968.7890625"
                font-size="13"
                font-family="Inter Regular">FXRatesType</text>
@@ -631,21 +914,41 @@
            y="933.849609375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 945.849609375 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="933.849609375"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 945.8 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="913.91015625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="928.849609375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="267.0"
          y="1010.7890625"
-         fill="#f8fafc"
+         fill="none"
          width="211.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="267.0"
+         y="1010.7890625"
+         fill="#f0f8ff"
+         width="211.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -653,7 +956,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/PriceDate"/>
    <g>
       <text x="279.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="1039.728515625"
             font-size="14"
             font-family="Inter Regular">PriceDate</text>
@@ -661,30 +964,54 @@
             stroke-width="1"
             x1="279.0"
             x2="466.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="1045.728515625"/>
-      <text x="279.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="279.0"
+           y="1056.66796875"
+           xlink:href="#date-icon"/>
+      <text x="295.0"
+            fill="#fd7e14"
             y="1066.66796875"
             font-size="13"
             font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 1043.728515625 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="1031.728515625"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 1043.7 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="1011.7890625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="1026.728515625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="267.0"
+         y="1108.66796875"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="PricingSource_0d4fbb7e1efc160df7224e2b04bfa725.html">
       <rect x="267.0"
             y="1108.66796875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -692,7 +1019,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/PricingSource"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1137.607421875"
                font-size="14"
                font-family="Inter Regular">PricingSource</text>
@@ -700,10 +1027,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1143.607421875"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="1154.546875"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="1164.546875"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -713,22 +1044,32 @@
            y="1129.607421875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 1141.607421875 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="1129.607421875"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 1141.6 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="1109.66796875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="1124.607421875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <a href="Equity_73d25690ea77f61e88fecd2e7d010855.html">
       <rect x="267.0"
             y="1206.546875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -736,7 +1077,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Equity"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1235.486328125"
                font-size="14"
                font-family="Inter Regular">Equity</text>
@@ -744,10 +1085,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1241.486328125"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="1252.42578125"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="1262.42578125"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -757,22 +1102,17 @@
            y="1227.486328125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 1239.486328125 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="1227.486328125"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 1239.5 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Bond_158606bf6bc0eebd242b41bdfe2b5036.html">
       <rect x="267.0"
             y="1304.42578125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -780,7 +1120,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1333.365234375"
                font-size="14"
                font-family="Inter Regular">Bond</text>
@@ -788,10 +1128,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1339.365234375"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="1350.3046875"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="1360.3046875"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -801,22 +1145,17 @@
            y="1325.365234375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 1337.365234375 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="1325.365234375"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 1337.4 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="ShareClass_b68f930b4a329aaffce80d4a335378ee.html">
       <rect x="267.0"
             y="1402.3046875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -824,7 +1163,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/ShareClass"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1431.244140625"
                font-size="14"
                font-family="Inter Regular">ShareClass</text>
@@ -832,10 +1171,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1437.244140625"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="1448.18359375"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="1458.18359375"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -845,22 +1188,17 @@
            y="1423.244140625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 1435.244140625 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="1423.244140625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 1435.2 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Warrant_c3571c6b29496343c23e79a479288b71.html">
       <rect x="267.0"
             y="1500.18359375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -868,7 +1206,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Warrant"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1529.123046875"
                font-size="14"
                font-family="Inter Regular">Warrant</text>
@@ -876,10 +1214,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1535.123046875"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="1546.0625"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="1556.0625"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -889,22 +1231,17 @@
            y="1521.123046875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 1533.123046875 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="1521.123046875"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 1533.1 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Certificate_70110fb5b15c973006b872b776903ca9.html">
       <rect x="267.0"
             y="1598.0625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -912,7 +1249,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Certificate"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1627.001953125"
                font-size="14"
                font-family="Inter Regular">Certificate</text>
@@ -920,10 +1257,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1633.001953125"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="1643.94140625"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="1653.94140625"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -933,22 +1274,17 @@
            y="1619.001953125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 1631.001953125 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="1619.001953125"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 1631.0 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Option_e1ad20a332484a0944f7e268ffb87b2d.html">
       <rect x="267.0"
             y="1695.94140625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -956,7 +1292,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Option"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1724.880859375"
                font-size="14"
                font-family="Inter Regular">Option</text>
@@ -964,10 +1300,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1730.880859375"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="1741.8203125"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="1751.8203125"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -977,22 +1317,17 @@
            y="1716.880859375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 1728.880859375 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="1716.880859375"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 1728.9 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Future_ab5c13695ae2201ee92db00b7a8e323a.html">
       <rect x="267.0"
             y="1793.8203125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1000,7 +1335,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Future"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1822.759765625"
                font-size="14"
                font-family="Inter Regular">Future</text>
@@ -1008,10 +1343,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1828.759765625"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="1839.69921875"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="1849.69921875"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1021,22 +1360,17 @@
            y="1814.759765625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 1826.759765625 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="1814.759765625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 1826.8 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="FXForward_2b86faaf49f2856e5dc9b60cb5ab33b6.html">
       <rect x="267.0"
             y="1891.69921875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1044,7 +1378,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FXForward"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1920.638671875"
                font-size="14"
                font-family="Inter Regular">FXForward</text>
@@ -1052,10 +1386,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1926.638671875"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="1937.578125"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="1947.578125"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1065,22 +1403,17 @@
            y="1912.638671875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 1924.638671875 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="1912.638671875"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 1924.6 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Swap_63ad8303293dc74da9f6efdfbfdfa4c2.html">
       <rect x="267.0"
             y="1989.578125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1088,7 +1421,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Swap"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="2018.517578125"
                font-size="14"
                font-family="Inter Regular">Swap</text>
@@ -1096,10 +1429,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="2024.517578125"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="2035.45703125"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="2045.45703125"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1109,21 +1446,16 @@
            y="2010.517578125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 2022.517578125 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2010.517578125"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 2022.5 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <rect x="267.0"
          y="2087.45703125"
-         fill="#f8fafc"
+         fill="#f0f8ff"
          width="211.0"
-         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -1131,7 +1463,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Repo"/>
    <g>
       <text x="279.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="2116.396484375"
             font-size="14"
             font-family="Inter Regular">Repo</text>
@@ -1139,30 +1471,29 @@
             stroke-width="1"
             x1="279.0"
             x2="466.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="2122.396484375"/>
-      <text x="279.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="279.0"
+           y="2133.3359375"
+           xlink:href="#complex-icon"/>
+      <text x="295.0"
+            fill="#dc3545"
             y="2143.3359375"
             font-size="13"
             font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 2120.396484375 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2108.396484375"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 2120.4 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="FixedTimeDeposit_d87de3548f30200f80d1b482a181a1c6.html">
       <rect x="267.0"
             y="2185.3359375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1170,7 +1501,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/FixedTimeDeposit"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="2214.275390625"
                font-size="14"
                font-family="Inter Regular">FixedTimeDeposit</text>
@@ -1178,10 +1509,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="2220.275390625"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="2231.21484375"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="2241.21484375"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1191,22 +1526,17 @@
            y="2206.275390625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 2218.275390625 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2206.275390625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 2218.3 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="CallMoney_9ed3c38a1e34c80246dcc1572e76b112.html">
       <rect x="267.0"
             y="2283.21484375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1214,7 +1544,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CallMoney"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="2312.154296875"
                font-size="14"
                font-family="Inter Regular">CallMoney</text>
@@ -1222,10 +1552,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="2318.154296875"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="2329.09375"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="2339.09375"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1235,22 +1569,17 @@
            y="2304.154296875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 2316.154296875 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2304.154296875"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 2316.2 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Account_e31251046675de8c8c275de85fa80c33.html">
       <rect x="267.0"
             y="2381.09375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1258,7 +1587,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Account"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="2410.033203125"
                font-size="14"
                font-family="Inter Regular">Account</text>
@@ -1266,10 +1595,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="2416.033203125"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="2426.97265625"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="2436.97265625"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1279,21 +1612,16 @@
            y="2402.033203125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 2414.033203125 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2402.033203125"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 2414.0 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <rect x="267.0"
          y="2478.97265625"
-         fill="#f8fafc"
+         fill="#f0f8ff"
          width="211.0"
-         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -1301,7 +1629,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Fee"/>
    <g>
       <text x="279.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="2507.912109375"
             font-size="14"
             font-family="Inter Regular">Fee</text>
@@ -1309,30 +1637,29 @@
             stroke-width="1"
             x1="279.0"
             x2="466.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="2513.912109375"/>
-      <text x="279.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="279.0"
+           y="2524.8515625"
+           xlink:href="#complex-icon"/>
+      <text x="295.0"
+            fill="#dc3545"
             y="2534.8515625"
             font-size="13"
             font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 2511.912109375 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2499.912109375"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 2511.9 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="RealEstate_817a26a089852227af39f2081bf7fcfa.html">
       <rect x="267.0"
             y="2576.8515625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1340,7 +1667,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RealEstate"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="2605.791015625"
                font-size="14"
                font-family="Inter Regular">RealEstate</text>
@@ -1348,10 +1675,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="2611.791015625"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="2622.73046875"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="2632.73046875"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1361,22 +1692,17 @@
            y="2597.791015625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 2609.791015625 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2597.791015625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 2609.8 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="REIT_28a33dbf164850c23170f480e1ee3479.html">
       <rect x="267.0"
             y="2674.73046875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1384,7 +1710,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/REIT"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="2703.669921875"
                font-size="14"
                font-family="Inter Regular">REIT</text>
@@ -1392,10 +1718,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="2709.669921875"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="2720.609375"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="2730.609375"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1405,22 +1735,17 @@
            y="2695.669921875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 2707.669921875 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2695.669921875"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 2707.7 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Loan_80f6bdc1f54b17d9ffb5a5977606aa16.html">
       <rect x="267.0"
             y="2772.609375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1428,7 +1753,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Loan"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="2801.548828125"
                font-size="14"
                font-family="Inter Regular">Loan</text>
@@ -1436,10 +1761,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="2807.548828125"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="2818.48828125"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="2828.48828125"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1449,22 +1778,17 @@
            y="2793.548828125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 2805.548828125 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2793.548828125"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 2805.5 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Right_050723820b103f31a3d6dc73415ba522.html">
       <rect x="267.0"
             y="2870.48828125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1472,7 +1796,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Right"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="2899.427734375"
                font-size="14"
                font-family="Inter Regular">Right</text>
@@ -1480,10 +1804,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="2905.427734375"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="2916.3671875"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="2926.3671875"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1493,21 +1821,16 @@
            y="2891.427734375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 2903.427734375 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2891.427734375"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 2903.4 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <rect x="267.0"
          y="2968.3671875"
-         fill="#f8fafc"
+         fill="#f0f8ff"
          width="211.0"
-         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -1515,7 +1838,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Commodity"/>
    <g>
       <text x="279.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="2997.306640625"
             font-size="14"
             font-family="Inter Regular">Commodity</text>
@@ -1523,30 +1846,29 @@
             stroke-width="1"
             x1="279.0"
             x2="466.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="3003.306640625"/>
-      <text x="279.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="279.0"
+           y="3014.24609375"
+           xlink:href="#complex-icon"/>
+      <text x="295.0"
+            fill="#dc3545"
             y="3024.24609375"
             font-size="13"
             font-family="Inter Regular">(anonymous)</text>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 3001.306640625 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="2989.306640625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 3001.3 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="PrivateEquity_5fb90c006da99f9778338177f63dd6db.html">
       <rect x="267.0"
             y="3066.24609375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1554,7 +1876,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/PrivateEquity"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="3095.185546875"
                font-size="14"
                font-family="Inter Regular">PrivateEquity</text>
@@ -1562,10 +1884,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="3101.185546875"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="3112.125"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="3122.125"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1575,22 +1901,17 @@
            y="3087.185546875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 3099.185546875 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="3087.185546875"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 3099.2 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="CommercialPaper_88562d241580fe4d58e12ff05e1e4d37.html">
       <rect x="267.0"
             y="3164.125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1598,7 +1919,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CommercialPaper"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="3193.064453125"
                font-size="14"
                font-family="Inter Regular">CommercialPaper</text>
@@ -1606,10 +1927,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="3199.064453125"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="3210.00390625"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="3220.00390625"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1619,22 +1944,27 @@
            y="3185.064453125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 3197.064453125 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="3185.064453125"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 3197.1 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
+   <rect x="267.0"
+         y="3262.00390625"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="CapitalYieldsTaxClaim_7f671145466c297f8001da343b6c47c7.html">
       <rect x="267.0"
             y="3262.00390625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1642,7 +1972,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CapitalYieldsTaxClaim"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="3290.943359375"
                font-size="14"
                font-family="Inter Regular">CapitalYieldsTaxClaim</text>
@@ -1650,10 +1980,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="3296.943359375"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="3307.8828125"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="3317.8828125"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -1663,21 +1997,41 @@
            y="3282.943359375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 3294.943359375 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="3282.943359375"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 3294.9 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="3263.00390625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="3277.943359375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="267.0"
          y="3359.8828125"
-         fill="#f8fafc"
+         fill="none"
          width="211.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="267.0"
+         y="3359.8828125"
+         fill="#f0f8ff"
+         width="211.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -1685,7 +2039,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/InflationaryAdjustment"/>
    <g>
       <text x="279.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="3388.822265625"
             font-size="14"
             font-family="Inter Regular">InflationaryAdjustment</text>
@@ -1693,30 +2047,54 @@
             stroke-width="1"
             x1="279.0"
             x2="466.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="3394.822265625"/>
-      <text x="279.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="279.0"
+           y="3405.76171875"
+           xlink:href="#complex-icon"/>
+      <text x="295.0"
+            fill="#dc3545"
             y="3415.76171875"
             font-size="13"
             font-family="Inter Regular">PercentageType</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 3392.822265625 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="3380.822265625"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 3392.8 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="3360.8828125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="3375.822265625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="267.0"
+         y="3457.76171875"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="RiskCodes_9e6899790b6788a35ca7063340e852c8.html">
       <rect x="267.0"
             y="3457.76171875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1724,7 +2102,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/RiskCodes"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="3486.701171875"
                font-size="14"
                font-family="Inter Regular">RiskCodes</text>
@@ -1732,10 +2110,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="3492.701171875"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="3503.640625"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="3513.640625"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1745,22 +2127,42 @@
            y="3478.701171875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 3490.701171875 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="3478.701171875"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 3490.7 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="3458.76171875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="3473.701171875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="267.0"
+         y="3555.640625"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="Underlyings_2743be90fad89970837b81cc62acd16c.html">
       <rect x="267.0"
             y="3555.640625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1768,7 +2170,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Underlyings"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="3584.580078125"
                font-size="14"
                font-family="Inter Regular">Underlyings</text>
@@ -1776,10 +2178,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="3590.580078125"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="3601.51953125"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="3611.51953125"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -1789,22 +2195,42 @@
            y="3576.580078125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 3588.580078125 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="3576.580078125"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 3588.6 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="3556.640625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="3571.580078125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="267.0"
+         y="3653.51953125"
+         fill="none"
+         width="211.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="CustomAttributes_6e6c4ea5a448804b70e1dd44452f30e1.html">
       <rect x="267.0"
             y="3653.51953125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="211.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1812,7 +2238,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CustomAttributes"/>
       <g>
          <text x="279.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="3682.458984375"
                font-size="14"
                font-family="Inter Regular">CustomAttributes</text>
@@ -1820,10 +2246,14 @@
                stroke-width="1"
                x1="279.0"
                x2="466.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="3688.458984375"/>
-         <text x="279.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="279.0"
+              y="3699.3984375"
+              xlink:href="#complex-icon"/>
+         <text x="295.0"
+               fill="#dc3545"
                y="3709.3984375"
                font-size="13"
                font-family="Inter Regular">AttributesType</text>
@@ -1833,15 +2263,25 @@
            y="3674.458984375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 217.0 1875.4697265625 V 3686.458984375 H 267.0"/>
-   <text x="229.0"
-         fill="#64748b"
-         y="3674.458984375"
-         font-size="11"
+   <path fill="none"
+         d="M 192.0 1875.5 H 222.0 V 3686.5 H 267.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="228.0"
+         y="3654.51953125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="232.0"
+         font-size="10"
+         y="3669.458984375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -1913,10 +2353,8 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unique identifier referencing the corresponding element in the<br />
-AssetMasterData block</p>
-<p>Eindeutige Referenznummer der Stammdaten der Position (muss unter<br />
-/AssetMasterData/Asset/UniqueID vorhanden sein)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Unique identifier referencing the corresponding element in the AssetMasterData block</p>
+<p>Eindeutige Referenznummer der Stammdaten der Position (muss unter /AssetMasterData/Asset/UniqueID vorhanden sein)</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -1936,8 +2374,7 @@ AssetMasterData block</p>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Identifiers of instrument (like ISIN, Ticker, ...)</p>
-<p>Kennnummer des im Portfolio enthaltenen Instrumentes (ISIN, Ticker,<br />
-...)</p>
+<p>Kennnummer des im Portfolio enthaltenen Instrumentes (ISIN, Ticker, ...)</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -1961,7 +2398,7 @@ AssetMasterData block</p>
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">DEQ</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">CWL</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2020,16 +2457,10 @@ AssetMasterData block</p>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Percentage of total value based on total asset value (of fund or share class)</p>
-<p>The PercentageType defines the percentage-values. It is derived from<br />
-decimal. To decimal there is no modification. Percentage values can be expressed in three was: For 3.5 %<br />
-it can be written as 3.5 or 1.035 or 0.035. For FundsXML percentage value has to be written as 3.5</p>
-<p>Der PercentageType definiert die Prozentwerte. Abgeleitet ist er von<br />
-decimal. Veraendert wurde er nicht. Bei Prozentwerten kann man je nach Definition fuer 3, 5 % die Werte<br />
-3.5 oder 1.035 oder 0.035 angeben. Mit diesem Typ dokumentiert FundsXML, dass fuer Prozentwerte die<br />
-Auspraegung 3.5 benutzt werden muss um eine einheitliche Auspraegung fuer den Datenaustausch zwischen<br />
-Firmen zu erreichen.</p>
+<p>The PercentageType defines the percentage-values. It is derived from decimal. To decimal there is no modification. Percentage values can be expressed in three was: For 3.5 % it can be written as 3.5 or 1.035 or 0.035. For FundsXML percentage value has to be written as 3.5</p>
+<p>Der PercentageType definiert die Prozentwerte. Abgeleitet ist er von decimal. Veraendert wurde er nicht. Bei Prozentwerten kann man je nach Definition fuer 3, 5 % die Werte 3.5 oder 1.035 oder 0.035 angeben. Mit diesem Typ dokumentiert FundsXML, dass fuer Prozentwerte die Auspraegung 3.5 benutzt werden muss um eine einheitliche Auspraegung fuer den Datenaustausch zwischen Firmen zu erreichen.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">456.24</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">916.96</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2046,8 +2477,7 @@ Firmen zu erreichen.</p>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Average purchase price (considering all transactions related to this<br />
-position)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Average purchase price (considering all transactions related to this position)</p>
 <p>Mischeinstands-Preis</p>
 <p>Amount in different currencies</p>
 <p>Betrag in verschiedenen Waehrungen</p>
@@ -2069,8 +2499,7 @@ position)</p>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Average purchase fx rates (considering all transactions related to<br />
-this position)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Average purchase fx rates (considering all transactions related to this position)</p>
 <p>Mischeinstands-Devisenkurs</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
@@ -2129,7 +2558,7 @@ this position)</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date of pricing information taken for fund valuation</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-05-25</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2021-03-16</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -2592,16 +3021,10 @@ this position)</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Inflationary adjustment of position</p>
 <p>Inflationsausgleich der Position</p>
-<p>The PercentageType defines the percentage-values. It is derived from<br />
-decimal. To decimal there is no modification. Percentage values can be expressed in three was: For 3.5 %<br />
-it can be written as 3.5 or 1.035 or 0.035. For FundsXML percentage value has to be written as 3.5</p>
-<p>Der PercentageType definiert die Prozentwerte. Abgeleitet ist er von<br />
-decimal. Veraendert wurde er nicht. Bei Prozentwerten kann man je nach Definition fuer 3, 5 % die Werte<br />
-3.5 oder 1.035 oder 0.035 angeben. Mit diesem Typ dokumentiert FundsXML, dass fuer Prozentwerte die<br />
-Auspraegung 3.5 benutzt werden muss um eine einheitliche Auspraegung fuer den Datenaustausch zwischen<br />
-Firmen zu erreichen.</p>
+<p>The PercentageType defines the percentage-values. It is derived from decimal. To decimal there is no modification. Percentage values can be expressed in three was: For 3.5 % it can be written as 3.5 or 1.035 or 0.035. For FundsXML percentage value has to be written as 3.5</p>
+<p>Der PercentageType definiert die Prozentwerte. Abgeleitet ist er von decimal. Veraendert wurde er nicht. Bei Prozentwerten kann man je nach Definition fuer 3, 5 % die Werte 3.5 oder 1.035 oder 0.035 angeben. Mit diesem Typ dokumentiert FundsXML, dass fuer Prozentwerte die Auspraegung 3.5 benutzt werden muss um eine einheitliche Auspraegung fuer den Datenaustausch zwischen Firmen zu erreichen.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">372.72</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">639.17</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">

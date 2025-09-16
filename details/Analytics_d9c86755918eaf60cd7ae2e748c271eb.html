@@ -129,51 +129,165 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #ffffff"
+     style="background-color: #f0f8ff"
      width="650.0"
-     height="847.03125">
+     height="831.03125">
    <defs>
-      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f0f8ff" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="attributeGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f9f5e7" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="sequenceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="choiceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#fff3cd" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="anyGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#dee2e6" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="structuralGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { transform: translateY(-1px); filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 2.5; } .cardinality-text { font-weight: 600; font-size: 10px; } .element-icon { fill: #4a90e2; } .attribute-icon { fill: #d4a147; }</style>
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="modern-shadow"
+              id="xmlspy-shadow"
               y="-50%">
-         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="0" dy="2"/>
-         <feFlood flood-color="black" flood-opacity="0.08"/>
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="1" dy="1"/>
+         <feFlood flood-color="black" flood-opacity="0.2"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+      <g style="stroke: #4a90e2; stroke-width: 2; stroke-linecap: round;"
          id="modern-plus-icon">
-         <circle fill="#f8fafc"
+         <circle fill="#f0f8ff"
                  stroke-width="1.5"
                  r="10"
                  cx="12"
                  cy="12"
-                 stroke="#3b82f6"/>
+                 stroke="#4a90e2"/>
          <line y2="17" x1="12" x2="12" y1="7"/>
          <line y2="12" x1="7" x2="17" y1="12"/>
+      </g>
+      <g id="string-icon">
+         <path fill="#28a745"
+               d="M2.5 4v1.5c0 .83.67 1.5 1.5 1.5h1v1h-1c-.83 0-1.5.67-1.5 1.5V11c0 .55-.45 1-1 1H0v-1h.5c.28 0 .5-.22.5-.5V9s0-2.5 0-2.5c0-.83.67-1.5 1.5-1.5h1v-1h-1C1.67 4 1 3.33 1 2.5V1c0-.55.45-1 1-1H1v1h-.5c-.28 0-.5.22-.5.5V3s0 2.5 0 2.5c0 .83-.67 1.5-1.5 1.5h-1z"/>
+      </g>
+      <g id="numeric-icon">
+         <path fill="#007bff"
+               d="M1.5 6l.5 2H1l-.5-2H0V5h.5L0 3h1l.5 2h1L2 3h1l.5 2H4v1h-.5L4 8H3l-.5-2h-1z"/>
+      </g>
+      <g id="date-icon">
+         <path fill="#fd7e14"
+               d="M3.5 0c-.28 0-.5.22-.5.5v.5h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5H0v8h8V1h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5h-2v-.5c0-.28-.22-.5-.5-.5zM1 2h6v2H1V2zm0 3h6v3H1V5z"/>
+      </g>
+      <g id="boolean-icon">
+         <path fill="#6f42c1" d="M7 1L3.5 4.5 1 2l-1 1 3.5 3.5L8 2z"/>
+      </g>
+      <g id="binary-icon">
+         <path fill="#6c757d"
+               d="M1 1v6h6V3L5 1H1zm4 0v2h2L5 1zm-3 3h2v1H2V4zm0 2h4v1H2V6z"/>
+      </g>
+      <g id="uri-icon">
+         <path fill="#17a2b8"
+               d="M2 3h1v1H2V3zm3 0h1v1H5V3zM1.5 1C.67 1 0 1.67 0 2.5S.67 4 1.5 4h.25L2 3.75v-.5l-.25-.25H1.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h1c.28 0 .5.22.5.5v.25l.25.25h.5l.25-.25V2.5c0-.83-.67-1.5-1.5-1.5h-1z"/>
+      </g>
+      <g id="qname-icon">
+         <path fill="#e83e8c"
+               d="M0 2v4c0 .55.45 1 1 1h2.5L7 3.5v-1L3.5 0H1C.45 0 0 .45 0 2zm5.5 1.5L3 5H1V2h2.5L5.5 3.5z"/>
+      </g>
+      <g id="language-icon">
+         <path fill="#20c997"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm2 7c-.02-.02-.05-.03-.08-.03H5c-.28 0-.5-.22-.5-.5 0-.25.19-.46.44-.5.02 0 .04-.01.06-.01h1c.83 0 1.5-.67 1.5-1.5 0-.78-.6-1.42-1.36-1.49C6.09 2.95 6.05 2.93 6 2.93c-.28 0-.5-.22-.5-.5s.22-.5.5-.5c.05 0 .09.02.14.03C6.36 1.94 6.6 2 6.5 2c0 0 .5.22.5.5s-.22.5-.5.5c-.28 0-.5-.22-.5-.5 0-.02.01-.04.01-.06h-1c-.83 0-1.5.67-1.5 1.5 0 .78.6 1.42 1.36 1.49C4.91 5.05 4.95 5.07 5 5.07c.28 0 .5.22.5.5s-.22.5-.5.5c-.05 0-.09-.02-.14-.03C4.64 6.06 4.4 6 4.5 6z"/>
+      </g>
+      <g id="complex-icon" transform="scale(0.5)">
+         <rect x="5"
+               y="0"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="0"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="10"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="8"
+               x2="8"
+               stroke="#dc3545"
+               y1="4"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="3"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="3"
+               x2="3"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="13"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+      </g>
+      <g id="default-icon">
+         <path fill="#4a90e2"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+      </g>
+      <g id="sequence-icon">
+         <path fill="#6c757d"
+               d="M2,17H4V19H2V17M2,13H4V15H2V13M2,9H4V11H2V9M2,5H4V7H2V5M7,5H22V7H7V5M7,9H22V11H7V9M7,13H22V15H7V13M7,17H22V19H7V17Z"/>
+      </g>
+      <g id="choice-icon">
+         <path fill="#ff8c00"
+               d="M8,10V12H16V10H8M8,14V16H16V14H8M18,8C19.11,8 20,8.9 20,10V14C20,15.11 19.11,16 18,16H16V14H18V10H16V8H18M6,8V10H4V14H6V16H4C2.89,16 2,15.11 2,14V10C2,8.9 2.89,8 4,8H6Z"/>
       </g>
    </defs>
    <a href="#">
       <rect x="32"
             y="387"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="83.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
             height="40.939453125"
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Analytics"/>
       <text x="44"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="415.939453125"
             font-size="14"
             font-family="Inter Regular">Analytics</text>
@@ -181,7 +295,7 @@
    <g id="modern-comment">
       <text font-style="italic"
             x="44"
-            fill="#64748b"
+            fill="#6c757d"
             font-size="13"
             y="445.939453125"
             font-family="Inter Regular">
@@ -196,44 +310,43 @@ Useless fo </tspan>
          <tspan x="27" dy="1.3em">positions </tspan>
       </text>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+   <line y2="407.4697265625"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         x1="115.0"
          class="connection-line"
-         d="M 115.0 407.4697265625 H 150.0"/>
-   <text x="162.0"
-         fill="#64748b"
-         y="380.4697265625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
-   <g id="seq-group_1755856778568">
+         x2="150.0"
+         y1="407.4697265625"/>
+   <g>
       <rect x="150.0"
             y="392.4697265625"
-            fill="#f8fafc"
+            fill="url(#sequenceGradient)"
             width="50.0"
-            rx="8"
-            ry="8"
+            rx="4"
+            ry="4"
             height="30.0"
-            stroke="#8b5cf6"
+            stroke="#6c757d"
             stroke-width="2"/>
-      <line y2="407.4697265625"
-            stroke-width="1.5"
-            x1="158.0"
-            x2="192.0"
-            stroke="#64748b"
-            y1="407.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="165.0" cy="407.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="175.0" cy="407.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="185.0" cy="407.4697265625"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="167.0"
+           y="399.4697265625"
+           xlink:href="#sequence-icon"/>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 200.0 407.4697265625 h 25.0"/>
    <rect x="275.0"
          y="32.0"
-         fill="#f8fafc"
+         fill="none"
          width="327.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="275.0"
+         y="32.0"
+         fill="#f0f8ff"
+         width="327.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -241,7 +354,7 @@ Useless fo </tspan>
          id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Analytics/ModifiedDurationToMaturity"/>
    <g>
       <text x="287.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="60.939453125"
             font-size="14"
             font-family="Inter Regular">ModifiedDurationToMaturity</text>
@@ -249,29 +362,53 @@ Useless fo </tspan>
             stroke-width="1"
             x1="287.0"
             x2="590.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="66.939453125"/>
-      <text x="287.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="287.0"
+           y="77.87890625"
+           xlink:href="#numeric-icon"/>
+      <text x="303.0"
+            fill="#007bff"
             y="87.87890625"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 225.0 407.4697265625 V 64.939453125 H 275.0"/>
-   <text x="237.0"
-         fill="#64748b"
-         y="52.939453125"
-         font-size="11"
+   <path fill="none"
+         d="M 200.0 407.5 H 230.0 V 64.9 H 275.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="236.0"
+         y="33.0"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="240.0"
+         font-size="10"
+         y="47.939453125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="275.0"
          y="129.87890625"
-         fill="#f8fafc"
+         fill="none"
          width="327.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="275.0"
+         y="129.87890625"
+         fill="#f0f8ff"
+         width="327.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -279,7 +416,7 @@ Useless fo </tspan>
          id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Analytics/ModifiedDurationToCall"/>
    <g>
       <text x="287.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="158.818359375"
             font-size="14"
             font-family="Inter Regular">ModifiedDurationToCall</text>
@@ -287,29 +424,53 @@ Useless fo </tspan>
             stroke-width="1"
             x1="287.0"
             x2="590.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="164.818359375"/>
-      <text x="287.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="287.0"
+           y="175.7578125"
+           xlink:href="#numeric-icon"/>
+      <text x="303.0"
+            fill="#007bff"
             y="185.7578125"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 225.0 407.4697265625 V 162.818359375 H 275.0"/>
-   <text x="237.0"
-         fill="#64748b"
-         y="150.818359375"
-         font-size="11"
+   <path fill="none"
+         d="M 200.0 407.5 H 230.0 V 162.8 H 275.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="236.0"
+         y="130.87890625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="240.0"
+         font-size="10"
+         y="145.818359375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="275.0"
          y="227.7578125"
-         fill="#f8fafc"
+         fill="none"
          width="327.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="275.0"
+         y="227.7578125"
+         fill="#f0f8ff"
+         width="327.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -317,7 +478,7 @@ Useless fo </tspan>
          id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Analytics/CreditSensitivity"/>
    <g>
       <text x="287.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="256.697265625"
             font-size="14"
             font-family="Inter Regular">CreditSensitivity</text>
@@ -325,29 +486,53 @@ Useless fo </tspan>
             stroke-width="1"
             x1="287.0"
             x2="590.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="262.697265625"/>
-      <text x="287.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="287.0"
+           y="273.63671875"
+           xlink:href="#numeric-icon"/>
+      <text x="303.0"
+            fill="#007bff"
             y="283.63671875"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 225.0 407.4697265625 V 260.697265625 H 275.0"/>
-   <text x="237.0"
-         fill="#64748b"
-         y="248.697265625"
-         font-size="11"
+   <path fill="none"
+         d="M 200.0 407.5 H 230.0 V 260.7 H 275.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="236.0"
+         y="228.7578125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="240.0"
+         font-size="10"
+         y="243.697265625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="275.0"
          y="325.63671875"
-         fill="#f8fafc"
+         fill="none"
          width="327.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="275.0"
+         y="325.63671875"
+         fill="#f0f8ff"
+         width="327.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -355,7 +540,7 @@ Useless fo </tspan>
          id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Analytics/Delta"/>
    <g>
       <text x="287.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="354.576171875"
             font-size="14"
             font-family="Inter Regular">Delta</text>
@@ -363,29 +548,53 @@ Useless fo </tspan>
             stroke-width="1"
             x1="287.0"
             x2="590.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="360.576171875"/>
-      <text x="287.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="287.0"
+           y="371.515625"
+           xlink:href="#numeric-icon"/>
+      <text x="303.0"
+            fill="#007bff"
             y="381.515625"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 225.0 407.4697265625 V 358.576171875 H 275.0"/>
-   <text x="237.0"
-         fill="#64748b"
-         y="346.576171875"
-         font-size="11"
+   <path fill="none"
+         d="M 200.0 407.5 H 230.0 V 358.6 H 275.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="236.0"
+         y="326.63671875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="240.0"
+         font-size="10"
+         y="341.576171875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="275.0"
          y="423.515625"
-         fill="#f8fafc"
+         fill="none"
          width="327.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="275.0"
+         y="423.515625"
+         fill="#f0f8ff"
+         width="327.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -393,7 +602,7 @@ Useless fo </tspan>
          id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Analytics/Convexity"/>
    <g>
       <text x="287.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="452.455078125"
             font-size="14"
             font-family="Inter Regular">Convexity</text>
@@ -401,29 +610,53 @@ Useless fo </tspan>
             stroke-width="1"
             x1="287.0"
             x2="590.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="458.455078125"/>
-      <text x="287.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="287.0"
+           y="469.39453125"
+           xlink:href="#numeric-icon"/>
+      <text x="303.0"
+            fill="#007bff"
             y="479.39453125"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 225.0 407.4697265625 V 456.455078125 H 275.0"/>
-   <text x="237.0"
-         fill="#64748b"
-         y="444.455078125"
-         font-size="11"
+   <path fill="none"
+         d="M 200.0 407.5 H 230.0 V 456.5 H 275.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="236.0"
+         y="424.515625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="240.0"
+         font-size="10"
+         y="439.455078125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="275.0"
          y="521.39453125"
-         fill="#f8fafc"
+         fill="none"
          width="327.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="275.0"
+         y="521.39453125"
+         fill="#f0f8ff"
+         width="327.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -431,7 +664,7 @@ Useless fo </tspan>
          id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Analytics/Vega"/>
    <g>
       <text x="287.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="550.333984375"
             font-size="14"
             font-family="Inter Regular">Vega</text>
@@ -439,29 +672,53 @@ Useless fo </tspan>
             stroke-width="1"
             x1="287.0"
             x2="590.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="556.333984375"/>
-      <text x="287.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="287.0"
+           y="567.2734375"
+           xlink:href="#numeric-icon"/>
+      <text x="303.0"
+            fill="#007bff"
             y="577.2734375"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 225.0 407.4697265625 V 554.333984375 H 275.0"/>
-   <text x="237.0"
-         fill="#64748b"
-         y="542.333984375"
-         font-size="11"
+   <path fill="none"
+         d="M 200.0 407.5 H 230.0 V 554.3 H 275.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="236.0"
+         y="522.39453125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="240.0"
+         font-size="10"
+         y="537.333984375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="275.0"
          y="619.2734375"
-         fill="#f8fafc"
+         fill="none"
          width="327.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="275.0"
+         y="619.2734375"
+         fill="#f0f8ff"
+         width="327.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -469,7 +726,7 @@ Useless fo </tspan>
          id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Analytics/ModifiedDurationToMaturityDateExpected"/>
    <g>
       <text x="287.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="648.212890625"
             font-size="14"
             font-family="Inter Regular">ModifiedDurationToMaturityDateExpected</text>
@@ -477,29 +734,53 @@ Useless fo </tspan>
             stroke-width="1"
             x1="287.0"
             x2="590.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="654.212890625"/>
-      <text x="287.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="287.0"
+           y="665.15234375"
+           xlink:href="#numeric-icon"/>
+      <text x="303.0"
+            fill="#007bff"
             y="675.15234375"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 225.0 407.4697265625 V 652.212890625 H 275.0"/>
-   <text x="237.0"
-         fill="#64748b"
-         y="640.212890625"
-         font-size="11"
+   <path fill="none"
+         d="M 200.0 407.5 H 230.0 V 652.2 H 275.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="236.0"
+         y="620.2734375"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="240.0"
+         font-size="10"
+         y="635.212890625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="275.0"
          y="717.15234375"
-         fill="#f8fafc"
+         fill="none"
          width="327.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="275.0"
+         y="717.15234375"
+         fill="#f0f8ff"
+         width="327.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -507,7 +788,7 @@ Useless fo </tspan>
          id="/FundsXML4/RegulatoryReportings/IndirectReporting/TripartiteTemplateSolvencyII_V5/Portfolio/Positions/Position/Analytics/CreditSensitivityExpected"/>
    <g>
       <text x="287.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="746.091796875"
             font-size="14"
             font-family="Inter Regular">CreditSensitivityExpected</text>
@@ -515,23 +796,37 @@ Useless fo </tspan>
             stroke-width="1"
             x1="287.0"
             x2="590.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="752.091796875"/>
-      <text x="287.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="287.0"
+           y="763.03125"
+           xlink:href="#numeric-icon"/>
+      <text x="303.0"
+            fill="#007bff"
             y="773.03125"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 225.0 407.4697265625 V 750.091796875 H 275.0"/>
-   <text x="237.0"
-         fill="#64748b"
-         y="738.091796875"
-         font-size="11"
+   <path fill="none"
+         d="M 200.0 407.5 H 230.0 V 750.1 H 275.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="236.0"
+         y="718.15234375"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="240.0"
+         font-size="10"
+         y="733.091796875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -612,10 +907,9 @@ Useless fo cash positions</p>
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A90 - Modified duration based on maturity date<br />
-(contractual one), indicated in datapoint 39</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A90 - Modified duration based on maturity date (contractual one), indicated in datapoint 39</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">870.16</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">607.45</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -631,10 +925,9 @@ Useless fo cash positions</p>
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A91 - Modified duration based on next option exercice<br />
-indicated in datapoint 43</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A91 - Modified duration based on next option exercice indicated in datapoint 43</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">461.57</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">711.71</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -650,11 +943,9 @@ indicated in datapoint 43</p>
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A92 Modified duration based on maturity date<br />
-(contractual) indicated in datapoint 39) eventually used for the SCR spread risk<br />
-calculation (e.g. based on 176 (1) or (2) DR 2015/35 for bonds and loans)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A92 Modified duration based on maturity date (contractual) indicated in datapoint 39) eventually  used for the SCR spread risk calculation (e.g. based on 176 (1) or (2) DR 2015/35 for bonds and loans)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">904.93</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">254.63</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -673,7 +964,7 @@ calculation (e.g. based on 176 (1) or (2) DR 2015/35 for bonds and loans)</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A93 - For Convertibles and Options.<br />
 Sensitivity to the underlying asset.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">507.81</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">629.84</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -692,7 +983,7 @@ Sensitivity to the underlying asset.</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A94 - Convexity for interest rates instruments; or<br />
 gamma for derivatives with optional components</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">174.58</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">875.29</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -710,7 +1001,7 @@ gamma for derivatives with optional components</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A94b</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">859.14</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">721.32</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -726,11 +1017,10 @@ gamma for derivatives with optional components</p>
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A144 - Modified duration based on the expected maturity date as<br />
-defined in the field 143.<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A144 - Modified duration  based on the expected maturity date as defined in the field 143.<br />
 This datapoint is needed by insurance companies in case the legal/contractual maturity date is different from the expected maturity date used sor SCR calculation.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">665.14</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">182.47</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -746,12 +1036,10 @@ This datapoint is needed by insurance companies in case the legal/contractual ma
                                 <span>xs:decimal</span>
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A145 - Modified duration (Credit sensitivity) to the expected maturity<br />
-date based on the field 143 eventually used for the spread risk calculation (e.g.<br />
-based on 176 (1) or (2) DR 2015/35 for bonds and loans).<br />
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>A145 - Modified duration (Credit sensitivity) to the expected maturity date based on the field 143 eventually used for the spread risk calculation (e.g. based on 176 (1) or (2) DR 2015/35 for bonds and loans).<br />
 This datapoint is needed by insurance companies in case the legal/contractual maturity date is different from the expected maturity date used sor SCR calculation.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">688.79</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">97.03</td>
                         </tr>
                         </tbody>
                     </table>
@@ -778,24 +1066,17 @@ Useless fo cash positions&lt;/xs:documentation&gt;
       &lt;xs:sequence&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ModifiedDurationToMaturity&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A90 - Modified duration based on maturity date
-                                    (contractual one), indicated in datapoint 39
-                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A90 - Modified duration based on maturity date (contractual one), indicated in datapoint 39&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ModifiedDurationToCall&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A91 - Modified duration based on next option exercice
-                                    indicated in datapoint 43
-                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A91 - Modified duration based on next option exercice indicated in datapoint 43&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CreditSensitivity&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A92 Modified duration based on maturity date
-                                    (contractual) indicated in datapoint 39) eventually used for the SCR spread risk
-                                    calculation (e.g. based on 176 (1) or (2) DR 2015/35 for bonds and loans)
-                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A92 Modified duration based on maturity date (contractual) indicated in datapoint 39) eventually  used for the SCR spread risk calculation (e.g. based on 176 (1) or (2) DR 2015/35 for bonds and loans)&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Delta&quot; type=&quot;xs:decimal&quot;&gt;
@@ -806,7 +1087,7 @@ Sensitivity to the underlying asset.&lt;/xs:documentation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Convexity&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A94 - Convexity for interest rates instruments; or
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;A94 - Convexity for interest rates instruments; or 
 gamma for derivatives with optional components &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
@@ -819,8 +1100,7 @@ gamma for derivatives with optional components &lt;/xs:documentation&gt;
                      name=&quot;ModifiedDurationToMaturityDateExpected&quot;
                      type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;A144 - Modified duration based on the expected maturity date as
-                                    defined in the field 143.
+               &lt;xs:documentation&gt;A144 - Modified duration  based on the expected maturity date as defined in the field 143.
 This datapoint is needed by insurance companies in case the legal/contractual maturity date is different from the expected maturity date used sor SCR calculation.
 
 
@@ -830,9 +1110,7 @@ This datapoint is needed by insurance companies in case the legal/contractual ma
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CreditSensitivityExpected&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;A145 - Modified duration (Credit sensitivity) to the expected maturity
-                                    date based on the field 143 eventually used for the spread risk calculation (e.g.
-                                    based on 176 (1) or (2) DR 2015/35 for bonds and loans).
+               &lt;xs:documentation&gt;A145 - Modified duration (Credit sensitivity) to the expected maturity date based on the field 143 eventually used for the spread risk calculation (e.g. based on 176 (1) or (2) DR 2015/35 for bonds and loans). 
 This datapoint is needed by insurance companies in case the legal/contractual maturity date is different from the expected maturity date used sor SCR calculation.
 
 

@@ -129,51 +129,165 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #ffffff"
+     style="background-color: #f0f8ff"
      width="687.0"
-     height="1042.7890625">
+     height="1026.7890625">
    <defs>
-      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f0f8ff" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="attributeGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f9f5e7" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="sequenceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="choiceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#fff3cd" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="anyGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#dee2e6" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="structuralGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { transform: translateY(-1px); filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 2.5; } .cardinality-text { font-weight: 600; font-size: 10px; } .element-icon { fill: #4a90e2; } .attribute-icon { fill: #d4a147; }</style>
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="modern-shadow"
+              id="xmlspy-shadow"
               y="-50%">
-         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="0" dy="2"/>
-         <feFlood flood-color="black" flood-opacity="0.08"/>
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="1" dy="1"/>
+         <feFlood flood-color="black" flood-opacity="0.2"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+      <g style="stroke: #4a90e2; stroke-width: 2; stroke-linecap: round;"
          id="modern-plus-icon">
-         <circle fill="#f8fafc"
+         <circle fill="#f0f8ff"
                  stroke-width="1.5"
                  r="10"
                  cx="12"
                  cy="12"
-                 stroke="#3b82f6"/>
+                 stroke="#4a90e2"/>
          <line y2="17" x1="12" x2="12" y1="7"/>
          <line y2="12" x1="7" x2="17" y1="12"/>
+      </g>
+      <g id="string-icon">
+         <path fill="#28a745"
+               d="M2.5 4v1.5c0 .83.67 1.5 1.5 1.5h1v1h-1c-.83 0-1.5.67-1.5 1.5V11c0 .55-.45 1-1 1H0v-1h.5c.28 0 .5-.22.5-.5V9s0-2.5 0-2.5c0-.83.67-1.5 1.5-1.5h1v-1h-1C1.67 4 1 3.33 1 2.5V1c0-.55.45-1 1-1H1v1h-.5c-.28 0-.5.22-.5.5V3s0 2.5 0 2.5c0 .83-.67 1.5-1.5 1.5h-1z"/>
+      </g>
+      <g id="numeric-icon">
+         <path fill="#007bff"
+               d="M1.5 6l.5 2H1l-.5-2H0V5h.5L0 3h1l.5 2h1L2 3h1l.5 2H4v1h-.5L4 8H3l-.5-2h-1z"/>
+      </g>
+      <g id="date-icon">
+         <path fill="#fd7e14"
+               d="M3.5 0c-.28 0-.5.22-.5.5v.5h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5H0v8h8V1h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5h-2v-.5c0-.28-.22-.5-.5-.5zM1 2h6v2H1V2zm0 3h6v3H1V5z"/>
+      </g>
+      <g id="boolean-icon">
+         <path fill="#6f42c1" d="M7 1L3.5 4.5 1 2l-1 1 3.5 3.5L8 2z"/>
+      </g>
+      <g id="binary-icon">
+         <path fill="#6c757d"
+               d="M1 1v6h6V3L5 1H1zm4 0v2h2L5 1zm-3 3h2v1H2V4zm0 2h4v1H2V6z"/>
+      </g>
+      <g id="uri-icon">
+         <path fill="#17a2b8"
+               d="M2 3h1v1H2V3zm3 0h1v1H5V3zM1.5 1C.67 1 0 1.67 0 2.5S.67 4 1.5 4h.25L2 3.75v-.5l-.25-.25H1.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h1c.28 0 .5.22.5.5v.25l.25.25h.5l.25-.25V2.5c0-.83-.67-1.5-1.5-1.5h-1z"/>
+      </g>
+      <g id="qname-icon">
+         <path fill="#e83e8c"
+               d="M0 2v4c0 .55.45 1 1 1h2.5L7 3.5v-1L3.5 0H1C.45 0 0 .45 0 2zm5.5 1.5L3 5H1V2h2.5L5.5 3.5z"/>
+      </g>
+      <g id="language-icon">
+         <path fill="#20c997"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm2 7c-.02-.02-.05-.03-.08-.03H5c-.28 0-.5-.22-.5-.5 0-.25.19-.46.44-.5.02 0 .04-.01.06-.01h1c.83 0 1.5-.67 1.5-1.5 0-.78-.6-1.42-1.36-1.49C6.09 2.95 6.05 2.93 6 2.93c-.28 0-.5-.22-.5-.5s.22-.5.5-.5c.05 0 .09.02.14.03C6.36 1.94 6.6 2 6.5 2c0 0 .5.22.5.5s-.22.5-.5.5c-.28 0-.5-.22-.5-.5 0-.02.01-.04.01-.06h-1c-.83 0-1.5.67-1.5 1.5 0 .78.6 1.42 1.36 1.49C4.91 5.05 4.95 5.07 5 5.07c.28 0 .5.22.5.5s-.22.5-.5.5c-.05 0-.09-.02-.14-.03C4.64 6.06 4.4 6 4.5 6z"/>
+      </g>
+      <g id="complex-icon" transform="scale(0.5)">
+         <rect x="5"
+               y="0"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="0"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="10"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="8"
+               x2="8"
+               stroke="#dc3545"
+               y1="4"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="3"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="3"
+               x2="3"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="13"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+      </g>
+      <g id="default-icon">
+         <path fill="#4a90e2"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+      </g>
+      <g id="sequence-icon">
+         <path fill="#6c757d"
+               d="M2,17H4V19H2V17M2,13H4V15H2V13M2,9H4V11H2V9M2,5H4V7H2V5M7,5H22V7H7V5M7,9H22V11H7V9M7,13H22V15H7V13M7,17H22V19H7V17Z"/>
+      </g>
+      <g id="choice-icon">
+         <path fill="#ff8c00"
+               d="M8,10V12H16V10H8M8,14V16H16V14H8M18,8C19.11,8 20,8.9 20,10V14C20,15.11 19.11,16 18,16H16V14H18V10H16V8H18M6,8V10H4V14H6V16H4C2.89,16 2,15.11 2,14V10C2,8.9 2.89,8 4,8H6Z"/>
       </g>
    </defs>
    <a href="#">
       <rect x="32"
             y="484"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="68.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
             height="40.939453125"
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2"/>
       <text x="44"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="512.939453125"
             font-size="14"
             font-family="Inter Regular">EPTV2</text>
@@ -181,50 +295,49 @@
    <g id="modern-comment">
       <text font-style="italic"
             x="44"
-            fill="#64748b"
+            fill="#6c757d"
             font-size="13"
             y="542.939453125"
             font-family="Inter Regular"/>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+   <line y2="504.4697265625"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         x1="100.0"
          class="connection-line"
-         d="M 100.0 504.4697265625 H 135.0"/>
-   <text x="147.0"
-         fill="#64748b"
-         y="477.4697265625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
-   <g id="seq-group_1755856769529">
+         x2="135.0"
+         y1="504.4697265625"/>
+   <g>
       <rect x="135.0"
             y="489.4697265625"
-            fill="#f8fafc"
+            fill="url(#sequenceGradient)"
             width="50.0"
-            rx="8"
-            ry="8"
+            rx="4"
+            ry="4"
             height="30.0"
-            stroke="#8b5cf6"
+            stroke="#6c757d"
             stroke-width="2"/>
-      <line y2="504.4697265625"
-            stroke-width="1.5"
-            x1="143.0"
-            x2="177.0"
-            stroke="#64748b"
-            y1="504.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="150.0" cy="504.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="160.0" cy="504.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="170.0" cy="504.4697265625"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="152.0"
+           y="496.4697265625"
+           xlink:href="#sequence-icon"/>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 185.0 504.4697265625 h 25.0"/>
+   <rect x="260.0"
+         y="32.0"
+         fill="none"
+         width="379.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="FundOrShareClassIdentifiers_dfe1d9f8aae774c4bd840c0a0dae79cd.html">
       <rect x="260.0"
             y="32.0"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="379.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -232,7 +345,7 @@
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/FundOrShareClassIdentifiers"/>
       <g>
          <text x="272.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="60.939453125"
                font-size="14"
                font-family="Inter Regular">FundOrShareClassIdentifiers</text>
@@ -240,10 +353,14 @@
                stroke-width="1"
                x1="272.0"
                x2="627.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="66.939453125"/>
-         <text x="272.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="272.0"
+              y="77.87890625"
+              xlink:href="#string-icon"/>
+         <text x="288.0"
+               fill="#28a745"
                y="87.87890625"
                font-size="13"
                font-family="Inter Regular">FundOrShareClassIdentifiersType</text>
@@ -253,22 +370,42 @@
            y="52.939453125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 210.0 504.4697265625 V 64.939453125 H 260.0"/>
-   <text x="222.0"
-         fill="#64748b"
-         y="52.939453125"
-         font-size="11"
+   <path fill="none"
+         d="M 185.0 504.5 H 215.0 V 64.9 H 260.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="221.0"
+         y="33.0"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="225.0"
+         font-size="10"
+         y="47.939453125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="260.0"
+         y="129.87890625"
+         fill="none"
+         width="379.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="DataSupplier_4f7a666aa461ad96d3d24182509ea020.html">
       <rect x="260.0"
             y="129.87890625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="379.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -276,7 +413,7 @@
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/DataSupplier"/>
       <g>
          <text x="272.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="158.818359375"
                font-size="14"
                font-family="Inter Regular">DataSupplier</text>
@@ -284,10 +421,14 @@
                stroke-width="1"
                x1="272.0"
                x2="627.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="164.818359375"/>
-         <text x="272.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="272.0"
+              y="175.7578125"
+              xlink:href="#complex-icon"/>
+         <text x="288.0"
+               fill="#dc3545"
                y="185.7578125"
                font-size="13"
                font-family="Inter Regular">DataSupplierType</text>
@@ -297,22 +438,32 @@
            y="150.818359375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 210.0 504.4697265625 V 162.818359375 H 260.0"/>
-   <text x="222.0"
-         fill="#64748b"
-         y="150.818359375"
-         font-size="11"
+   <path fill="none"
+         d="M 185.0 504.5 H 215.0 V 162.8 H 260.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="221.0"
+         y="130.87890625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="225.0"
+         font-size="10"
+         y="145.818359375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <a href="DataSetInformation_17d2f0e831a39cad3ebbbc59c0f5e165.html">
       <rect x="260.0"
             y="227.7578125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="379.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -320,7 +471,7 @@
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/DataSetInformation"/>
       <g>
          <text x="272.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="256.697265625"
                font-size="14"
                font-family="Inter Regular">DataSetInformation</text>
@@ -328,10 +479,14 @@
                stroke-width="1"
                x1="272.0"
                x2="627.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="262.697265625"/>
-         <text x="272.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="272.0"
+              y="273.63671875"
+              xlink:href="#complex-icon"/>
+         <text x="288.0"
+               fill="#dc3545"
                y="283.63671875"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -341,22 +496,17 @@
            y="248.697265625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 210.0 504.4697265625 V 260.697265625 H 260.0"/>
-   <text x="222.0"
-         fill="#64748b"
-         y="248.697265625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 185.0 504.5 H 215.0 V 260.7 H 260.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="GeneralPortfolioInformation_42be4da34b0ec3665073cf8662eab716.html">
       <rect x="260.0"
             y="325.63671875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="379.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -364,7 +514,7 @@
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/GeneralPortfolioInformation"/>
       <g>
          <text x="272.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="354.576171875"
                font-size="14"
                font-family="Inter Regular">GeneralPortfolioInformation</text>
@@ -372,10 +522,14 @@
                stroke-width="1"
                x1="272.0"
                x2="627.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="360.576171875"/>
-         <text x="272.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="272.0"
+              y="371.515625"
+              xlink:href="#complex-icon"/>
+         <text x="288.0"
+               fill="#dc3545"
                y="381.515625"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -385,22 +539,17 @@
            y="346.576171875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 210.0 504.4697265625 V 358.576171875 H 260.0"/>
-   <text x="222.0"
-         fill="#64748b"
-         y="346.576171875"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 185.0 504.5 H 215.0 V 358.6 H 260.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="RiskAssessment_37858d2cfdfcf47b50ce73764c883dfd.html">
       <rect x="260.0"
             y="423.515625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="379.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -408,7 +557,7 @@
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/RiskAssessment"/>
       <g>
          <text x="272.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="452.455078125"
                font-size="14"
                font-family="Inter Regular">RiskAssessment</text>
@@ -416,10 +565,14 @@
                stroke-width="1"
                x1="272.0"
                x2="627.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="458.455078125"/>
-         <text x="272.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="272.0"
+              y="469.39453125"
+              xlink:href="#complex-icon"/>
+         <text x="288.0"
+               fill="#dc3545"
                y="479.39453125"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -429,22 +582,17 @@
            y="444.455078125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 210.0 504.4697265625 V 456.455078125 H 260.0"/>
-   <text x="222.0"
-         fill="#64748b"
-         y="444.455078125"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 185.0 504.5 H 215.0 V 456.5 H 260.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="PerformanceScenario_77e85b92c053cae22056ce64c7390c10.html">
       <rect x="260.0"
             y="521.39453125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="379.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -452,7 +600,7 @@
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/PerformanceScenario"/>
       <g>
          <text x="272.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="550.333984375"
                font-size="14"
                font-family="Inter Regular">PerformanceScenario</text>
@@ -460,10 +608,14 @@
                stroke-width="1"
                x1="272.0"
                x2="627.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="556.333984375"/>
-         <text x="272.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="272.0"
+              y="567.2734375"
+              xlink:href="#complex-icon"/>
+         <text x="288.0"
+               fill="#dc3545"
                y="577.2734375"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -473,22 +625,17 @@
            y="542.333984375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 210.0 504.4697265625 V 554.333984375 H 260.0"/>
-   <text x="222.0"
-         fill="#64748b"
-         y="542.333984375"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 185.0 504.5 H 215.0 V 554.3 H 260.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Costs_964b66a2c78df476e1b7d8f43fee8b72.html">
       <rect x="260.0"
             y="619.2734375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="379.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -496,7 +643,7 @@
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/Costs"/>
       <g>
          <text x="272.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="648.212890625"
                font-size="14"
                font-family="Inter Regular">Costs</text>
@@ -504,10 +651,14 @@
                stroke-width="1"
                x1="272.0"
                x2="627.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="654.212890625"/>
-         <text x="272.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="272.0"
+              y="665.15234375"
+              xlink:href="#complex-icon"/>
+         <text x="288.0"
+               fill="#dc3545"
                y="675.15234375"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -517,22 +668,17 @@
            y="640.212890625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 210.0 504.4697265625 V 652.212890625 H 260.0"/>
-   <text x="222.0"
-         fill="#64748b"
-         y="640.212890625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 185.0 504.5 H 215.0 V 652.2 H 260.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <a href="Narratives_9a103dc953ee1649370a9c8f0975745f.html">
       <rect x="260.0"
             y="717.15234375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="379.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -540,7 +686,7 @@
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/Narratives"/>
       <g>
          <text x="272.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="746.091796875"
                font-size="14"
                font-family="Inter Regular">Narratives</text>
@@ -548,10 +694,14 @@
                stroke-width="1"
                x1="272.0"
                x2="627.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="752.091796875"/>
-         <text x="272.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="272.0"
+              y="763.03125"
+              xlink:href="#complex-icon"/>
+         <text x="288.0"
+               fill="#dc3545"
                y="773.03125"
                font-size="13"
                font-family="Inter Regular">PRIIPS_V2_NarrativesType</text>
@@ -561,22 +711,27 @@
            y="738.091796875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 210.0 504.4697265625 V 750.091796875 H 260.0"/>
-   <text x="222.0"
-         fill="#64748b"
-         y="738.091796875"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 185.0 504.5 H 215.0 V 750.1 H 260.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
+   <rect x="260.0"
+         y="815.03125"
+         fill="none"
+         width="379.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="AdditionalInformationRequiredForStructuredPRIIPs_db838dd043ed0769fcb4a9cbc0ab83a2.html">
       <rect x="260.0"
             y="815.03125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="379.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -584,7 +739,7 @@
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/AdditionalInformationRequiredForStructuredPRIIPs"/>
       <g>
          <text x="272.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="843.970703125"
                font-size="14"
                font-family="Inter Regular">AdditionalInformationRequiredForStructuredPRIIPs</text>
@@ -592,10 +747,14 @@
                stroke-width="1"
                x1="272.0"
                x2="627.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="849.970703125"/>
-         <text x="272.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="272.0"
+              y="860.91015625"
+              xlink:href="#complex-icon"/>
+         <text x="288.0"
+               fill="#dc3545"
                y="870.91015625"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -605,22 +764,42 @@
            y="835.970703125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 210.0 504.4697265625 V 847.970703125 H 260.0"/>
-   <text x="222.0"
-         fill="#64748b"
-         y="835.970703125"
-         font-size="11"
+   <path fill="none"
+         d="M 185.0 504.5 H 215.0 V 848.0 H 260.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="221.0"
+         y="816.03125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="225.0"
+         font-size="10"
+         y="830.970703125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="260.0"
+         y="912.91015625"
+         fill="none"
+         width="379.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="CountrySpecificData_8720c02652dff92dbd5a561d9ab68318.html">
       <rect x="260.0"
             y="912.91015625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="379.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -628,7 +807,7 @@
             id="/FundsXML4/RegulatoryReportings/IndirectReporting/PRIIPS_V20/EPTV2/CountrySpecificData"/>
       <g>
          <text x="272.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="941.849609375"
                font-size="14"
                font-family="Inter Regular">CountrySpecificData</text>
@@ -636,10 +815,14 @@
                stroke-width="1"
                x1="272.0"
                x2="627.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="947.849609375"/>
-         <text x="272.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="272.0"
+              y="958.7890625"
+              xlink:href="#complex-icon"/>
+         <text x="288.0"
+               fill="#dc3545"
                y="968.7890625"
                font-size="13"
                font-family="Inter Regular">(anonymous)</text>
@@ -649,15 +832,25 @@
            y="933.849609375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 210.0 504.4697265625 V 945.849609375 H 260.0"/>
-   <text x="222.0"
-         fill="#64748b"
-         y="933.849609375"
-         font-size="11"
+   <path fill="none"
+         d="M 185.0 504.5 H 215.0 V 945.8 H 260.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="221.0"
+         y="913.91015625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="225.0"
+         font-size="10"
+         y="928.849609375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -729,8 +922,7 @@
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Fund or share class identifiers for easy connection to other fund or<br />
-share class data</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Fund or share class identifiers for easy connection to other fund or share class data</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -863,8 +1055,7 @@ share class data</p>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>04 - Narratives - mandatory section for underlying options offered in<br />
-German or Italian MOPs</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>04 - Narratives - mandatory section for underlying options offered in German or Italian MOPs</p>
 </td>
                             <td class="px-4 py-3 font-mono text-slate-600"></td>
                         </tr>
@@ -927,15 +1118,12 @@ German or Italian MOPs</p>
                      name=&quot;FundOrShareClassIdentifiers&quot;
                      type=&quot;FundOrShareClassIdentifiersType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Fund or share class identifiers for easy connection to other fund or
-                                    share class data
-                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Fund or share class identifiers for easy connection to other fund or share class data&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DataSupplier&quot; type=&quot;DataSupplierType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Definition of data source (investment company, vendor, ...)
-                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Definition of data source (investment company, vendor, ...)&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;DataSetInformation&quot;&gt;
@@ -961,13 +1149,13 @@ German or Italian MOPs</p>
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;GeneralPortfolioInformation&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;EPT 00 / CEPT PRICES 10 / CEPT RHP 30&lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;EPT 00 / CEPT PRICES 10 / CEPT RHP 30 &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;PortfolioManufacturerName&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;EPT 00010 - (a) entity that manufactures PRIIPs;
+                        &lt;xs:documentation&gt;EPT 00010 - (a)  entity that manufactures PRIIPs;
 (b)  entity that makes changes to an existing PRIIP including, but not limited to, altering its risk and reward profile or the costs associated with an investment in a PRIIP&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
@@ -978,9 +1166,7 @@ German or Italian MOPs</p>
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;PortfolioManufacturerGroupName&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;EPT 00015 - Name of the group PRIIPs manufacturer belongs
-                                                to
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;EPT 00015 - Name of the group PRIIPs manufacturer belongs to&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -990,17 +1176,12 @@ German or Italian MOPs</p>
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;PortfolioManufacturerLEI&quot; type=&quot;LEICodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;00016 - Legal Entity Identifier, LEI of the manufacturer
-                                                of the portfolio
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;00016 - Legal Entity Identifier, LEI of the manufacturer of the portfolio&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;PortfolioManufacturerEmail&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;00017 - Contact entry point for communication with the
-                                                manufacturer to either provide feed back reporting or to retrieve
-                                                details on how to provide feed back reporting.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;00017 - Contact entry point for communication with the manufacturer to either provide feed back reporting or to retrieve details on how to provide feed back reporting.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -1010,9 +1191,7 @@ German or Italian MOPs</p>
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Portfolio_Guarantor_Name&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;EPT 00020 - Name of Guarantor of the financial instrument
-                                                ... i.e. the entity to which the end investor has counterparty risk
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;EPT 00020 - Name of Guarantor of the financial instrument ... i.e. the entity to which the end investor has counterparty risk &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -1022,36 +1201,28 @@ German or Italian MOPs</p>
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;PortfolioID&quot; type=&quot;PRIIPS_SecurityCodificationType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;EPT 00030 / CEPT PRICES 10020 / C - Use
-                                                ISIN, CUSIP, BLOOMBERG etc. or internal code. See CodificationSystem.
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;EPT 00030 / CEPT PRICES 10020 / C - Use ISIN, CUSIP, BLOOMBERG etc.  or internal code. See CodificationSystem.
 ISIN Preferred when available.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;PortfolioName&quot; type=&quot;Text256Type&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;EPT 00050 Name of the Portfolio or name of
-                                                the CIS
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;EPT 00050 Name of the Portfolio or name of the CIS&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;PortfolioCurrency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;EPT 00060 - Denomination currency of the
-                                                portfolio
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;EPT 00060 - Denomination currency of the portfolio&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;GeneralReferenceDate&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;EPT 00070- Date to which the general data within the EPT
-                                                refer
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;EPT 00070- Date to which the general data within the EPT refer&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;PortfolioPRIIPSCategory&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;EPT 00080 PRIIPS Category of the Portfolio (1 to 4)
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;EPT 00080 PRIIPS Category of the Portfolio (1 to 4)&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:short&quot;&gt;
@@ -1064,7 +1235,7 @@ ISIN Preferred when available.&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;FundCICCode&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;EPT 00090 - CIC code - Fund (4 digits)&lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;EPT 00090 - CIC code - Fund   (4 digits)&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -1075,18 +1246,12 @@ ISIN Preferred when available.&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;IsAnAutocallableProduct&quot; type=&quot;YesNoType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;00110 - indication of whether the product is an
-                                                autocallable
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;00110 - indication of whether the product is an autocallable &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ReferenceLanguage&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;00120 - Language in which the linked website with past
-                                                performance, the historical performance (02190_Past_Performance_Link and
-                                                02200_Previous_Performance_Scenarios_Calculation_Link) and all
-                                                narratives/texts of this set of data are written
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;00120 - Language in which the linked website with past performance, the historical performance (02190_Past_Performance_Link and 02200_Previous_Performance_Scenarios_Calculation_Link) and all narratives/texts of this set of data are written&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -1100,66 +1265,49 @@ ISIN Preferred when available.&lt;/xs:documentation&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;ValuationFrequency&quot; type=&quot;PRIIPSFrequencyType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01010-Number of valuation days per year for the portfolio
-                                                or fund or share class.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01010-Number of valuation days per year for the portfolio or fund or share class. &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;VEV_Reference&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01020-VEV of the Portfolio/Share Class. Mandatory for cat
-                                                2 and 3 / Optional for cat 1 and 4
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01020-VEV of the Portfolio/Share Class. Mandatory for cat 2 and 3 / Optional for cat 1 and 4&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;IS_Flexible&quot; type=&quot;YesNoType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01030-Indicator to alert if the fund is flexible. If the
-                                                annex 2 section 14 of the regulation applies
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01030-Indicator to alert if the fund is flexible. If the annex 2 section 14 of the regulation applies&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Flex_VEV_Historical&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01040-Var Equivalent Volatility of the portfolio.
-                                                Mandatory if IS-Flexible is set to Yes
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01040-Var Equivalent Volatility of the portfolio. Mandatory if IS-Flexible is set to Yes&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;Flex_VEV_Ref_Asset_Allocation&quot;
                               type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01050-Var Equivalent of the reference asset allocation of
-                                                the portfolio. Mandatory if IS-Flexible is set to Yes
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01050-Var Equivalent of the reference asset allocation of the portfolio. Mandatory if IS-Flexible is set to Yes&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;IS_Risk_Limit_Relevant&quot; type=&quot;YesNoType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01060-Indicator to alert if there is a relevant risk limit
-                                                for flexible funds
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01060-Indicator to alert if there is a relevant risk limit for flexible funds&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Flex_VEV_Risk_Limit&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01070-Var Equivalent volatility of the risk limit of the
-                                                portfolio
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01070-Var Equivalent volatility of the risk limit of the portfolio&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Existing_Credit_Risk&quot; type=&quot;YesNoType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01080-Indicator to alert if there is a credit risk
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01080-Indicator to alert if there is a credit risk&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;SRI&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01090-Summary Indicator Risk of the fund or the portfolio
-                                                (1 to 7)
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01090-Summary Indicator Risk of the fund or the portfolio (1 to 7)&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:short&quot;&gt;
@@ -1175,16 +1323,12 @@ ISIN Preferred when available.&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;IsSRIAdjusted&quot; type=&quot;YesNoType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;010095 - whether or not the manufacturer increased the
-                                                SRI
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;010095 - whether or not the manufacturer increased the SRI&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;MRM&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01100-Market Risk Measure of the fund or portfolio (1 to
-                                                7)
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01100-Market Risk Measure of the fund or portfolio (1 to 7)&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:short&quot;&gt;
@@ -1200,9 +1344,7 @@ ISIN Preferred when available.&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CRM&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01110-Credit Risk measure of the fund or the portfolio (1
-                                                to 6)
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01110-Credit Risk measure of the fund or the portfolio (1 to 6)&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:short&quot;&gt;
@@ -1217,30 +1359,22 @@ ISIN Preferred when available.&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Recommended_Holding_Period&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01120-Recommended holding period of the fund (in years
-                                                (not an integer))
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01120-Recommended holding period of the fund (in years (not an integer))&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;HasAContractualMaturityDate&quot; type=&quot;YesNoType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01125 - Indicates the existence of a contractual maturiy
-                                                date of the portfolio
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01125 - Indicates the existence of a contractual maturiy date of the portfolio&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MaturityDate&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01130 - Required only for fixed maturity financial
-                                                instruments in ordrer to calculate the remaining time to maturity as a
-                                                RHP.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;01130 - Required only for fixed maturity financial instruments in ordrer to calculate the remaining time to maturity as a RHP. &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;Liquidity_Risk&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;01140 - Risk of Liquidity at the level of the fund or the
-                                                portfolio
+                        &lt;xs:documentation&gt;01140 - Risk of Liquidity at the level of the fund or the portfolio
 M = material liquidity risk, I = illiquid, L = no liquidity issue. &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
@@ -1262,35 +1396,27 @@ M = material liquidity risk, I = illiquid, L = no liquidity issue. &lt;/xs:docum
                &lt;xs:sequence&gt;
                   &lt;xs:element name=&quot;ReturnUnfavorable&quot; type=&quot;PRIIPS_V2_ReturnScenarioType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02010-02020-02030 Annual return of the portfolio, fund,
-                                                share class corresponding to the unfavorable scenario.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02010-02020-02030 Annual return  of the portfolio, fund, share class corresponding to the unfavorable scenario.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;ReturnModerate&quot; type=&quot;PRIIPS_V2_ReturnScenarioType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02040-02050-02060 Return of the portfolio, fund, share
-                                                class corresponding to the moderate scenario
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02040-02050-02060 Return of the portfolio, fund, share class corresponding to the moderate scenario&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;ReturnFavorable&quot; type=&quot;PRIIPS_V2_ReturnScenarioType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02070-02080-02090 Annual return of the portfolio, fund,
-                                                share class corresponding to the favorable scenario
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02070-02080-02090 Annual return  of the portfolio, fund, share class corresponding to the favorable scenario&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;ReturnStress&quot; type=&quot;PRIIPS_V2_ReturnScenarioType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02100-02110-02120 Annual return of the portfolio, fund,
-                                                share class corresponding to the stress scenario
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02100-02110-02120 Annual return  of the portfolio, fund, share class corresponding to the stress scenario&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;NumberOfObservedReturn_M0&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02130-See PRIIPS regulation.
+                        &lt;xs:documentation&gt;02130-See PRIIPS regulation. 
 Mandatory for PRIIPS cat equals to 2&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
@@ -1302,58 +1428,45 @@ M1. Mandatory for PRIIPS cat equals to 2&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ObservedSigma&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02150-See PRIIPS Regulation. Square root of M2. Mandatory
-                                                for PRIIPS cat equals to 2
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02150-See PRIIPS Regulation. Square root of M2. Mandatory for PRIIPS cat equals to 2&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ObservedSkewness&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02160-See PRIIPS Regulation. Mandatory for PRIIPS cat
-                                                equals to 2
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02160-See PRIIPS Regulation. Mandatory for PRIIPS cat equals to 2&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ObservedExcessKurtosis&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02170-See PRIIPS Regulation. Mandatory for PRIIPS cat
-                                                equals to 2
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02170-See PRIIPS Regulation. Mandatory for PRIIPS cat equals to 2&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ObservedStressedVolatility&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
                         &lt;xs:documentation&gt;02180-Volatility used to calculate stress scenario
-                                                stressed volatility applied for stress scenario calculations for &amp;gt;1y
-                                            &lt;/xs:documentation&gt;
+stressed volatility applied for stress scenario calculations for &amp;gt;1y&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element name=&quot;PortfolioPastPerformanceDisclosureRequired&quot; type=&quot;YesNoType&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02185-Does this product fulfil conditions sets in Annex
-                                                VIII number 1 a and b
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02185-Does this product fulfil conditions sets in  Annex VIII number 1 a and b&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;PastPerformanceLink&quot; type=&quot;xs:anyURI&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02190 - link to the past performance of the fund
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02190 - link to the past performance of the fund&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;PreviousPerformanceScenariosCalculationLink&quot;
                               type=&quot;xs:anyURI&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02200 - Link to the previous calculations
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02200 - Link to the previous calculations&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;PastPerformanceNumberOfYears&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02210 - Number of years for which past performance is
-                                                presented
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;02210 - Number of years for which past performance is presented&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:simpleType&gt;
                         &lt;xs:restriction base=&quot;xs:decimal&quot;&gt;
@@ -1364,8 +1477,7 @@ M1. Mandatory for PRIIPS cat equals to 2&lt;/xs:documentation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;InvestedAmountOtherCurrency&quot; type=&quot;xs:int&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;02220 - invested amount if the currency of the PRIIP is
-                                                not EUR as shown in the performance scenarios.
+                        &lt;xs:documentation&gt;02220 - invested amount if the currency of the PRIIP is not EUR as shown in the performance scenarios.
 Mandatory if the share class in 00060_Share_Class_Currency is not in EUR.  &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
@@ -1386,10 +1498,7 @@ Mandatory if the share class in 00060_Share_Class_Currency is not in EUR.  &lt;/
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;EntryCost&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03010-Subscription fees not acquired to the
-                                                            fund or the share class or portfolio mandate. Expressed as a
-                                                            % of the amount to be invested
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03010-Subscription fees not acquired to the fund or the share class or portfolio mandate. Expressed as a % of the amount to be invested&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:decimal&quot;&gt;
@@ -1399,18 +1508,12 @@ Mandatory if the share class in 00060_Share_Class_Currency is not in EUR.  &lt;/
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;EntryCostsAcquired&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03015-Subscription fees acquired to the fund
-                                                            or the share class or portfolio mandate. Expressed as a % of
-                                                            the amount to be invested
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03015-Subscription fees acquired to the fund or the share class or portfolio mandate. Expressed as a % of the amount to be invested&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;ExitCostAtRHP&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03020-Exit fees at the end of RHP for the
-                                                            portfolio or fund or share class. It is expressed as a % of
-                                                            net asset value.
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03020-Exit fees at the end of RHP for the portfolio or fund or share class. It is expressed as a % of net asset value.&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:decimal&quot;&gt;
@@ -1420,11 +1523,7 @@ Mandatory if the share class in 00060_Share_Class_Currency is not in EUR.  &lt;/
                            &lt;/xs:element&gt;
                            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExitCostOneYear&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03030-Exit fees after one year for the
-                                                            portfolio or fund or shar class. It is expressed as a % of
-                                                            net asset value. Mandatory if datapoint Sliding exit cost is
-                                                            Yes.
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03030-Exit fees after one year for the portfolio or fund or shar class. It is expressed as a % of net asset value. Mandatory if datapoint Sliding exit cost is Yes.&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:decimal&quot;&gt;
@@ -1434,11 +1533,7 @@ Mandatory if the share class in 00060_Share_Class_Currency is not in EUR.  &lt;/
                            &lt;/xs:element&gt;
                            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ExitCostHalfRHP&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03040-Exit fees after half of the RHP for the
-                                                            portfolio or fund or shar class. It is expressed as a % of
-                                                            net asset value. Mandatory if datapoint Sliding exit cost is
-                                                            Yes.
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03040-Exit fees after half of the RHP for the portfolio or fund or shar class. It is expressed as a % of net asset value. Mandatory if datapoint Sliding exit cost is Yes.&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:decimal&quot;&gt;
@@ -1448,8 +1543,7 @@ Mandatory if the share class in 00060_Share_Class_Currency is not in EUR.  &lt;/
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;SlidingExitCostIndicator&quot; type=&quot;YesNoType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03050-Sliding exit cost indicator
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03050-Sliding exit cost indicator&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -1463,8 +1557,7 @@ Mandatory if the share class in 00060_Share_Class_Currency is not in EUR.  &lt;/
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;OtherCost&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03060-See PRIIPS definition as a % of NAV of
-                                                            the portfolio, the funds or the share class / per annum.
+                                 &lt;xs:documentation&gt;03060-See PRIIPS definition as a % of NAV of the portfolio, the funds or the share class / per annum.
 Maximum  fees, including look through for fund of funds / custodian fees / management fees. &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
@@ -1475,17 +1568,12 @@ Maximum  fees, including look through for fund of funds / custodian fees / manag
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;ManagementCosts&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03070-Maximum fee. Can be submitted to
-                                                            reduction for some specific commercial agreement between
-                                                            insurers and structurers.
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03070-Maximum fee. Can be submitted to reduction for some specific commercial agreement between insurers and structurers. &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;Transaction&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03080-See PRIIPS definition as a % of NAV of
-                                                            the portfolio, the funds or the share class / per annum
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03080-See PRIIPS definition as a % of NAV of the portfolio, the funds or the share class / per annum&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:decimal&quot;&gt;
@@ -1504,23 +1592,17 @@ Maximum  fees, including look through for fund of funds / custodian fees / manag
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;ExistringIncidentalCostsPortfolio&quot; type=&quot;YesNoType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03090-Indicates whether there are existing
-                                                            performance fees or carried interest or not
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03090-Indicates whether there are existing performance fees or carried interest or not&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;IncidentalCostsPortfolio&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03095-See PRIIPS definition as a % of NAV of
-                                                            the portfolio, the funds or the share class / per annum
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03095-See PRIIPS definition as a % of NAV of the portfolio, the funds or the share class / per annum&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;ExistingIncidentalCostsPortfolio&quot; type=&quot;YesNoType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;03100 - Indicates whether there are existing
-                                                            performance fees or carried interest or not
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;03100 - Indicates whether there are existing performance fees or carried interest or not&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                         &lt;/xs:sequence&gt;
@@ -1531,113 +1613,83 @@ Maximum  fees, including look through for fund of funds / custodian fees / manag
          &lt;/xs:element&gt;
          &lt;xs:element name=&quot;Narratives&quot; type=&quot;PRIIPS_V2_NarrativesType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;04 - Narratives - mandatory section for underlying options offered in
-                                    German or Italian MOPs
-                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;04 - Narratives - mandatory section for underlying options offered in German or Italian MOPs &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AdditionalInformationRequiredForStructuredPRIIPs&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;07-Additional information required for structured PRIIPs: RIY Costs
-                                &lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;07-Additional information required for structured PRIIPs: RIY Costs &lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
             &lt;xs:complexType&gt;
                &lt;xs:sequence&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;FirstPossibleCallDate&quot; type=&quot;xs:date&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07005 - date of the first possible call for autocallable
-                                                products
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07005 - date of the first possible call for autocallable products&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalCost1YearOrFirstCall&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07010-Total cost in 00060_Share_Class_Currency terms in
-                                                case the investor cashes in after one year, as requested in the &quot;Costs
-                                                over time&quot; table. Rebased to 1.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07010-Total cost in 00060_Share_Class_Currency terms in case the investor cashes in after one year, as requested in the &quot;Costs over time&quot; table. Rebased to 1. &lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RIY_1_YearOrFirstCall&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07020-RIY in case the investor cashes in after one year,
-                                                as requested in the &quot;Costs over time&quot; table.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07020-RIY in case the investor cashes in after one year, as requested in the &quot;Costs over time&quot; table.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalCostHalfRHP&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07030-Total cost in 00060_Share_Class_Currency terms in
-                                                case the investor cashes in at the middle of the RHP, as requested in
-                                                the &quot;Costs over time&quot; table.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07030-Total cost in 00060_Share_Class_Currency terms in case the investor cashes in at the middle of the RHP, as requested in the &quot;Costs over time&quot; table.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RIYHalfRHP&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07040-RIY in case the investor cashes in at the middle of
-                                                the RHP, as requested in the &quot;Costs over time&quot; table.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07040-RIY in case the investor cashes in at the middle of the RHP, as requested in the &quot;Costs over time&quot; table.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TotalCostRHP&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07050-Total cost in 00060_Share_Class_Currency terms in
-                                                case the investor cashes in at the RHP, as requested in the &quot;Costs over
-                                                time&quot; table.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07050-Total cost in 00060_Share_Class_Currency terms in case the investor cashes in at the RHP, as requested in the &quot;Costs over time&quot; table.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RIY_RHP&quot; type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07060-RIY in case the investor cashes in at the RHP, as
-                                                requested in the &quot;Costs over time&quot; table.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07060-RIY in case the investor cashes in at the RHP, as requested in the &quot;Costs over time&quot; table.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;One-off_costs_Portfolio_entry_cost&quot;
                               type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07070 - The entry cost in percentage term at 1Year
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07070 - The entry cost in percentage term at 1Year&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;One-off_costs_Portfolio_exit_cost_RIY&quot;
                               type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07080-The exit cost in RIY terms, as requested in the
-                                                &quot;Composition of costs&quot; table.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07080-The exit cost in RIY terms, as requested in the &quot;Composition of costs&quot; table.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;Ongoing_costs_Portfolio_transaction_costs&quot;
                               type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07090-The portfolio transaction costs in RIY terms, as
-                                                requested in the &quot;Composition of costs&quot; table.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07090-The portfolio transaction costs in RIY terms, as requested in the &quot;Composition of costs&quot; table.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;OngoingCostsManagementFeesAndOtherAdministrativeOrOperatingCosts&quot;
                               type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07100-The other ongoing costs in RIY terms  in percentage
-                                                term at 1Year (or at RHP if RHP less 1 year), as requested in the
-                                                narrative part of the &quot;Composition of costs&quot; table
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07100-The other ongoing costs in RIY terms  in percentage term at 1Year (or at RHP if RHP less 1 year), as requested in the narrative part of the &quot;Composition of costs&quot; table&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot;
                               name=&quot;IncidentalCostsPortfolioPerformanceFeesCarriedInterest&quot;
                               type=&quot;xs:decimal&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;07110-The performance fees in RIY terms, as requested in
-                                                the &quot;Composition of costs&quot; table.
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;07110-The performance fees in RIY terms, as requested in the &quot;Composition of costs&quot; table.&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                &lt;/xs:sequence&gt;
@@ -1655,8 +1707,7 @@ Maximum  fees, including look through for fund of funds / custodian fees / manag
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DE&quot; type=&quot;PRIIPS_V2_Country_Specific_DE&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Specific data for German CAT IV PRIIPs (PIA model)
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Specific data for German CAT IV PRIIPs (PIA model)&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DK&quot;&gt;
@@ -1689,15 +1740,13 @@ Maximum  fees, including look through for fund of funds / custodian fees / manag
                   &lt;/xs:element&gt;
                   &lt;xs:element minOccurs=&quot;0&quot; name=&quot;UK&quot;&gt;
                      &lt;xs:annotation&gt;
-                        &lt;xs:documentation&gt;Additional information required according to EPT V2.1
-                                            &lt;/xs:documentation&gt;
+                        &lt;xs:documentation&gt;Additional information required according to EPT V2.1	&lt;/xs:documentation&gt;
                      &lt;/xs:annotation&gt;
                      &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                            &lt;xs:element name=&quot;UKPRIIPOrUCITSOrBoth&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;08010 Indicates if the line
-                                                            contains UK PRIIPs data, UCITS data or Both
+                                 &lt;xs:documentation xml:lang=&quot;en&quot;&gt;08010 Indicates if the line contains UK PRIIPs data, UCITS data or Both
 &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
@@ -1710,8 +1759,7 @@ Maximum  fees, including look through for fund of funds / custodian fees / manag
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKOngoingCostsPortfolioTransactionCosts&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08020-See UK PRIIPs definition for PRIIPs
-                                                            other than UCITS/NURS.
+                                 &lt;xs:documentation&gt;08020-See UK PRIIPs definition for PRIIPs other than UCITS/NURS.
 UCITS/NURS may follow alternative definitions.
 Express as a % of NAV of the portfolio, the funds or the share class / per annum
 &lt;/xs:documentation&gt;
@@ -1720,7 +1768,7 @@ Express as a % of NAV of the portfolio, the funds or the share class / per annum
                            &lt;xs:element name=&quot;UKTransactionscostsmethodology&quot;&gt;
                               &lt;xs:annotation&gt;
                                  &lt;xs:documentation xml:lang=&quot;en&quot;&gt;08030 1 New PRIIPS methodology
-2 Full UK PRIIPS methodology
+2 Full UK PRIIPS methodology 
 3 Other methodology&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
@@ -1735,24 +1783,20 @@ Express as a % of NAV of the portfolio, the funds or the share class / per annum
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKAntiDilutionBenefitDerived&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08040 Information about the total benefit
-                                                            derived from an anti-dilution mechanism floating decimal.
-                                                            100%= 1, 5%= 0,05
+                                 &lt;xs:documentation&gt;08040 Information about the total benefit derived from an anti-dilution mechanism floating decimal. 100%= 1,     5%= 0,05
 
 &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKPRIIPsDataReferenceDate&quot; type=&quot;xs:date&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08045 The date to which the UK PRIIPs data in
-                                                            this section relates
+                                 &lt;xs:documentation&gt;08045 The date to which the UK PRIIPs data in this section relates
 &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKPRIIPsKIDPublicationDate&quot; type=&quot;xs:date&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08050 Date of the latest UK PRIIPs KID
-                                                            produced for the portfolio or share class.
+                                 &lt;xs:documentation&gt;08050 Date of the latest UK PRIIPs KID produced for the portfolio or share class.
 &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
@@ -1765,8 +1809,7 @@ Express as a % of NAV of the portfolio, the funds or the share class / per annum
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;InvestmentObjectivePortfolio&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08070 &quot;Text in reference language, as proposed
-                                                            by the asset manager
+                                 &lt;xs:documentation&gt;08070 &quot;Text in reference language, as proposed by the asset manager
 
 Information stating the objectives of the PRIIP and the means for achieving those objectives in the section entitled ‘What is this product?’ of the key information document shall be summarised in a brief, clear and easily understandable manner. That information shall identify the main factors upon which return depends, the underlying investment assets or reference values, and how the return is determined, as well as the relationship between the PRIIP’s return and that of the underlying investment assets or reference values.&quot;
 &lt;/xs:documentation&gt;
@@ -1779,8 +1822,7 @@ Information stating the objectives of the PRIIP and the means for achieving thos
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKOtherMateriallyRelevantRiskNarrativePortfolio&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08080 Text in reference language, as proposed
-                                                            by the asset managers : (Element E)
+                                 &lt;xs:documentation&gt;08080 Text in reference language, as proposed by the asset managers : (Element E)
 [Where applicable: element h] [Other risks materially relevant to the PRIIP not included in the summary risk indicator to be explained with a maximum of 400 characters]
 The field shall contain well-formulated text which can be used directly by the insurer in the KID according to article 14 of the regulation.
 &lt;/xs:documentation&gt;
@@ -1793,12 +1835,7 @@ The field shall contain well-formulated text which can be used directly by the i
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKPerformanceInformationMainFactors&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08090 A description of the main factors likely
-                                                            to affect future returns for the investor, identifying those
-                                                            most likely to determine the outcome of the investment and
-                                                            other factors which could have a material impact on
-                                                            performance.
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;08090 A description of the main factors likely to affect future returns for the investor, identifying those most likely to determine the outcome of the investment and other factors which could have a material impact on performance.&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -1808,11 +1845,7 @@ The field shall contain well-formulated text which can be used directly by the i
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKPerformanceInformationComparator&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08100 Identification of the most relevant
-                                                            index, benchmark, target, or proxy, as applicable, along
-                                                            with an explanation of how the PRIIP is likely to compare in
-                                                            terms of performance and volatility.
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;08100 Identification of the most relevant index, benchmark, target, or proxy, as applicable, along with an explanation of how the PRIIP is likely to compare in terms of performance and volatility.&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:string&quot;&gt;
@@ -1822,9 +1855,7 @@ The field shall contain well-formulated text which can be used directly by the i
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKPerformanceInformationHigherReturns&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08110 A brief explanation of the kinds of
-                                                            conditions that would be conducive to the PRIIP generating
-                                                            higher returns.
+                                 &lt;xs:documentation&gt;08110 A brief explanation of the kinds of conditions that would be conducive to the PRIIP generating higher returns.
 &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
@@ -1835,9 +1866,7 @@ The field shall contain well-formulated text which can be used directly by the i
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKPerformanceInformationLowerReturnsOrLoss&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08120 A brief explanation of the kinds of
-                                                            conditions whereby the PRIIP is likely to generate lower
-                                                            returns or lead to investment loss.
+                                 &lt;xs:documentation&gt;08120 A brief explanation of the kinds of conditions whereby the PRIIP is likely to generate lower returns or lead to investment loss.
 
 &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
@@ -1849,9 +1878,7 @@ The field shall contain well-formulated text which can be used directly by the i
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKPerformanceInformationAdverseConditions&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08130 A brief description of what outcome the
-                                                            investor may expect where the PRIIP matures or is redeemed
-                                                            or encashed under severely adverse market conditions.
+                                 &lt;xs:documentation&gt;08130 A brief description of what outcome the investor may expect where the PRIIP matures or is redeemed or encashed under severely adverse market conditions.
 
 
 &lt;/xs:documentation&gt;
@@ -1864,17 +1891,13 @@ The field shall contain well-formulated text which can be used directly by the i
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UKAssumedPortfolioReturn&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08140 The performance used as the annual
-                                                            internal rate of return for estimating future benefit
-                                                            payments when calculating summary cost indicators
+                                 &lt;xs:documentation&gt;08140 The performance used as the annual internal rate of return for estimating future benefit payments when calculating summary cost indicators
 &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UCITSKIIDPublicationDate&quot; type=&quot;xs:date&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08150 Date of the latest UCITS KIID produced
-                                                            for the portfolio or share class.
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;08150 Date of the latest UCITS KIID produced for the portfolio or share class.  &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UCITSKIIDWebAddress&quot; type=&quot;xs:anyURI&quot;&gt;
@@ -1887,8 +1910,7 @@ The field shall contain well-formulated text which can be used directly by the i
                            &lt;/xs:element&gt;
                            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;UCITSSRRI&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08170 -The SRRI of the Valid UCITS KIID
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;08170 -The SRRI of the Valid UCITS KIID &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                               &lt;xs:simpleType&gt;
                                  &lt;xs:restriction base=&quot;xs:short&quot;&gt;
@@ -1904,29 +1926,23 @@ The field shall contain well-formulated text which can be used directly by the i
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UCITSOngoingCharges&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08180-See UCITS definition as a % of NAV of
-                                                            the portfolio, the funds or the share class / per annum
+                                 &lt;xs:documentation&gt;08180-See UCITS definition as a % of NAV of the portfolio, the funds or the share class / per annum
 &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UCITSExistingPerformanceFees&quot; type=&quot;YesNoType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08190 -Indicates whether there are existing
-                                                            performance fees or carried interest
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;08190 -Indicates whether there are existing performance fees or carried interest&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element name=&quot;UCITSExistingPerformanceFees&quot; type=&quot;YesNoType&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08190 -Indicates whether there are existing
-                                                            performance fees or carried interest
-                                                        &lt;/xs:documentation&gt;
+                                 &lt;xs:documentation&gt;08190 -Indicates whether there are existing performance fees or carried interest&lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;
                            &lt;/xs:element&gt;
                            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;UCITSPerformanceFees&quot; type=&quot;xs:decimal&quot;&gt;
                               &lt;xs:annotation&gt;
-                                 &lt;xs:documentation&gt;08200-See UCITS definition as a % of NAV of
-                                                            the portfolio, the funds or the share class / per annum
+                                 &lt;xs:documentation&gt;08200-See UCITS definition as a % of NAV of the portfolio, the funds or the share class / per annum 
 
 &lt;/xs:documentation&gt;
                               &lt;/xs:annotation&gt;

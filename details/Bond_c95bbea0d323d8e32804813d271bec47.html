@@ -129,51 +129,165 @@
                     <div>
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
-     style="background-color: #ffffff"
+     style="background-color: #f0f8ff"
      width="556.0"
-     height="2315.21484375">
+     height="2299.21484375">
    <defs>
-      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { fill: #e2e8f0; transform: translateY(-2px); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 3; } .cardinality-text { font-weight: 500; font-size: 11px; }</style>
+      <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f0f8ff" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="attributeGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f9f5e7" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="sequenceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="choiceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#fff3cd" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="anyGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#dee2e6" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="structuralGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { transform: translateY(-1px); filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 2.5; } .cardinality-text { font-weight: 600; font-size: 10px; } .element-icon { fill: #4a90e2; } .attribute-icon { fill: #d4a147; }</style>
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="modern-shadow"
+              id="xmlspy-shadow"
               y="-50%">
-         <feGaussianBlur stdDeviation="3" in="SourceAlpha"/>
-         <feOffset result="offsetblur" dx="0" dy="2"/>
-         <feFlood flood-color="black" flood-opacity="0.08"/>
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="1" dy="1"/>
+         <feFlood flood-color="black" flood-opacity="0.2"/>
          <feComposite in2="offsetblur" operator="in"/>
          <feMerge>
             <feMergeNode/>
             <feMergeNode in="SourceGraphic"/>
          </feMerge>
       </filter>
-      <g style="stroke: #3b82f6; stroke-width: 2; stroke-linecap: round;"
+      <g style="stroke: #4a90e2; stroke-width: 2; stroke-linecap: round;"
          id="modern-plus-icon">
-         <circle fill="#f8fafc"
+         <circle fill="#f0f8ff"
                  stroke-width="1.5"
                  r="10"
                  cx="12"
                  cy="12"
-                 stroke="#3b82f6"/>
+                 stroke="#4a90e2"/>
          <line y2="17" x1="12" x2="12" y1="7"/>
          <line y2="12" x1="7" x2="17" y1="12"/>
+      </g>
+      <g id="string-icon">
+         <path fill="#28a745"
+               d="M2.5 4v1.5c0 .83.67 1.5 1.5 1.5h1v1h-1c-.83 0-1.5.67-1.5 1.5V11c0 .55-.45 1-1 1H0v-1h.5c.28 0 .5-.22.5-.5V9s0-2.5 0-2.5c0-.83.67-1.5 1.5-1.5h1v-1h-1C1.67 4 1 3.33 1 2.5V1c0-.55.45-1 1-1H1v1h-.5c-.28 0-.5.22-.5.5V3s0 2.5 0 2.5c0 .83-.67 1.5-1.5 1.5h-1z"/>
+      </g>
+      <g id="numeric-icon">
+         <path fill="#007bff"
+               d="M1.5 6l.5 2H1l-.5-2H0V5h.5L0 3h1l.5 2h1L2 3h1l.5 2H4v1h-.5L4 8H3l-.5-2h-1z"/>
+      </g>
+      <g id="date-icon">
+         <path fill="#fd7e14"
+               d="M3.5 0c-.28 0-.5.22-.5.5v.5h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5H0v8h8V1h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5h-2v-.5c0-.28-.22-.5-.5-.5zM1 2h6v2H1V2zm0 3h6v3H1V5z"/>
+      </g>
+      <g id="boolean-icon">
+         <path fill="#6f42c1" d="M7 1L3.5 4.5 1 2l-1 1 3.5 3.5L8 2z"/>
+      </g>
+      <g id="binary-icon">
+         <path fill="#6c757d"
+               d="M1 1v6h6V3L5 1H1zm4 0v2h2L5 1zm-3 3h2v1H2V4zm0 2h4v1H2V6z"/>
+      </g>
+      <g id="uri-icon">
+         <path fill="#17a2b8"
+               d="M2 3h1v1H2V3zm3 0h1v1H5V3zM1.5 1C.67 1 0 1.67 0 2.5S.67 4 1.5 4h.25L2 3.75v-.5l-.25-.25H1.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h1c.28 0 .5.22.5.5v.25l.25.25h.5l.25-.25V2.5c0-.83-.67-1.5-1.5-1.5h-1z"/>
+      </g>
+      <g id="qname-icon">
+         <path fill="#e83e8c"
+               d="M0 2v4c0 .55.45 1 1 1h2.5L7 3.5v-1L3.5 0H1C.45 0 0 .45 0 2zm5.5 1.5L3 5H1V2h2.5L5.5 3.5z"/>
+      </g>
+      <g id="language-icon">
+         <path fill="#20c997"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm2 7c-.02-.02-.05-.03-.08-.03H5c-.28 0-.5-.22-.5-.5 0-.25.19-.46.44-.5.02 0 .04-.01.06-.01h1c.83 0 1.5-.67 1.5-1.5 0-.78-.6-1.42-1.36-1.49C6.09 2.95 6.05 2.93 6 2.93c-.28 0-.5-.22-.5-.5s.22-.5.5-.5c.05 0 .09.02.14.03C6.36 1.94 6.6 2 6.5 2c0 0 .5.22.5.5s-.22.5-.5.5c-.28 0-.5-.22-.5-.5 0-.02.01-.04.01-.06h-1c-.83 0-1.5.67-1.5 1.5 0 .78.6 1.42 1.36 1.49C4.91 5.05 4.95 5.07 5 5.07c.28 0 .5.22.5.5s-.22.5-.5.5c-.05 0-.09-.02-.14-.03C4.64 6.06 4.4 6 4.5 6z"/>
+      </g>
+      <g id="complex-icon" transform="scale(0.5)">
+         <rect x="5"
+               y="0"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="0"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="10"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="8"
+               x2="8"
+               stroke="#dc3545"
+               y1="4"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="3"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="3"
+               x2="3"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="13"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+      </g>
+      <g id="default-icon">
+         <path fill="#4a90e2"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+      </g>
+      <g id="sequence-icon">
+         <path fill="#6c757d"
+               d="M2,17H4V19H2V17M2,13H4V15H2V13M2,9H4V11H2V9M2,5H4V7H2V5M7,5H22V7H7V5M7,9H22V11H7V9M7,13H22V15H7V13M7,17H22V19H7V17Z"/>
+      </g>
+      <g id="choice-icon">
+         <path fill="#ff8c00"
+               d="M8,10V12H16V10H8M8,14V16H16V14H8M18,8C19.11,8 20,8.9 20,10V14C20,15.11 19.11,16 18,16H16V14H18V10H16V8H18M6,8V10H4V14H6V16H4C2.89,16 2,15.11 2,14V10C2,8.9 2.89,8 4,8H6Z"/>
       </g>
    </defs>
    <a href="#">
       <rect x="32"
             y="1121"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="58.0"
-            style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
             height="40.939453125"
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond"/>
       <text x="44"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="1149.939453125"
             font-size="14"
             font-family="Inter Regular">Bond</text>
@@ -181,7 +295,7 @@
    <g id="modern-comment">
       <text font-style="italic"
             x="44"
-            fill="#64748b"
+            fill="#6c757d"
             font-size="13"
             y="1179.939453125"
             font-family="Inter Regular">
@@ -190,44 +304,33 @@
          <tspan x="27" dy="1.3em">positions </tspan>
       </text>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
+   <line y2="1141.4697265625"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         x1="90.0"
          class="connection-line"
-         d="M 90.0 1141.4697265625 H 125.0"/>
-   <text x="137.0"
-         fill="#64748b"
-         y="1114.4697265625"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
-   <g id="seq-group_1755856764130">
+         x2="125.0"
+         y1="1141.4697265625"/>
+   <g>
       <rect x="125.0"
             y="1126.4697265625"
-            fill="#f8fafc"
+            fill="url(#sequenceGradient)"
             width="50.0"
-            rx="8"
-            ry="8"
+            rx="4"
+            ry="4"
             height="30.0"
-            stroke="#8b5cf6"
+            stroke="#6c757d"
             stroke-width="2"/>
-      <line y2="1141.4697265625"
-            stroke-width="1.5"
-            x1="133.0"
-            x2="167.0"
-            stroke="#64748b"
-            y1="1141.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="140.0" cy="1141.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="150.0" cy="1141.4697265625"/>
-      <circle fill="#8b5cf6" r="2" cx="160.0" cy="1141.4697265625"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="142.0"
+           y="1133.4697265625"
+           xlink:href="#sequence-icon"/>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 175.0 1141.4697265625 h 25.0"/>
    <rect x="250.0"
          y="32.0"
-         fill="#f8fafc"
+         fill="#f0f8ff"
          width="258.0"
-         style="stroke: #334155; stroke-width: 2; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -235,7 +338,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/Nominal"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="60.939453125"
             font-size="14"
             font-family="Inter Regular">Nominal</text>
@@ -243,29 +346,38 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="66.939453125"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="77.87890625"
+           xlink:href="#numeric-icon"/>
+      <text x="278.0"
+            fill="#007bff"
             y="87.87890625"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #334155; stroke-width: 2; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 64.939453125 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="52.939453125"
-         font-size="11"
-         class="cardinality-text"
-         font-family="Inter Regular">1..1</text>
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 64.9 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
    <rect x="250.0"
          y="129.87890625"
-         fill="#f8fafc"
+         fill="none"
          width="258.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="250.0"
+         y="129.87890625"
+         fill="#f0f8ff"
+         width="258.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -273,7 +385,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/OriginalFace"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="158.818359375"
             font-size="14"
             font-family="Inter Regular">OriginalFace</text>
@@ -281,30 +393,54 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="164.818359375"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="175.7578125"
+           xlink:href="#numeric-icon"/>
+      <text x="278.0"
+            fill="#007bff"
             y="185.7578125"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 162.818359375 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="150.818359375"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 162.8 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="130.87890625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="145.818359375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="227.7578125"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="Price_c59777e96a17a1b10f086bc27910356e.html">
       <rect x="250.0"
             y="227.7578125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -312,7 +448,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/Price"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="256.697265625"
                font-size="14"
                font-family="Inter Regular">Price</text>
@@ -320,10 +456,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="262.697265625"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="273.63671875"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="283.63671875"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -333,22 +473,42 @@
            y="248.697265625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 260.697265625 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="248.697265625"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 260.7 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="228.7578125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="243.697265625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="325.63671875"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="OtherPrices_b5dfbed5037e355c307e2d0869690430.html">
       <rect x="250.0"
             y="325.63671875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -356,7 +516,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/OtherPrices"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="354.576171875"
                font-size="14"
                font-family="Inter Regular">OtherPrices</text>
@@ -364,10 +524,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="360.576171875"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="371.515625"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="381.515625"
                font-size="13"
                font-family="Inter Regular">OtherPricesType</text>
@@ -377,22 +541,42 @@
            y="346.576171875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 358.576171875 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="346.576171875"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 358.6 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="326.63671875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="341.576171875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="423.515625"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="DirtyPrice_9cd26f4b9846efa146d5903f5c131d67.html">
       <rect x="250.0"
             y="423.515625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -400,7 +584,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/DirtyPrice"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="452.455078125"
                font-size="14"
                font-family="Inter Regular">DirtyPrice</text>
@@ -408,10 +592,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="458.455078125"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="469.39453125"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="479.39453125"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -421,22 +609,42 @@
            y="444.455078125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 456.455078125 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="444.455078125"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 456.5 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="424.515625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="439.455078125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="521.39453125"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="MarketValue_065968321e0ecc2677a079b94b2b9f6f.html">
       <rect x="250.0"
             y="521.39453125"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -444,7 +652,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/MarketValue"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="550.333984375"
                font-size="14"
                font-family="Inter Regular">MarketValue</text>
@@ -452,10 +660,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="556.333984375"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="567.2734375"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="577.2734375"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -465,22 +677,42 @@
            y="542.333984375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 554.333984375 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="542.333984375"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 554.3 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="522.39453125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="537.333984375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="619.2734375"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="InterestClaimNet_ce2a03538e1493485ccb708f54d29894.html">
       <rect x="250.0"
             y="619.2734375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -488,7 +720,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/InterestClaimNet"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="648.212890625"
                font-size="14"
                font-family="Inter Regular">InterestClaimNet</text>
@@ -496,10 +728,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="654.212890625"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="665.15234375"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="675.15234375"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -509,22 +745,42 @@
            y="640.212890625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 652.212890625 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="640.212890625"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 652.2 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="620.2734375"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="635.212890625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="717.15234375"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="InterestClaimGross_872df53f334c844f8ff817ce869a2a1d.html">
       <rect x="250.0"
             y="717.15234375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -532,7 +788,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/InterestClaimGross"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="746.091796875"
                font-size="14"
                font-family="Inter Regular">InterestClaimGross</text>
@@ -540,10 +796,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="752.091796875"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="763.03125"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="773.03125"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -553,21 +813,41 @@
            y="738.091796875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 750.091796875 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="738.091796875"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 750.1 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="718.15234375"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="733.091796875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="250.0"
          y="815.03125"
-         fill="#f8fafc"
+         fill="none"
          width="258.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="250.0"
+         y="815.03125"
+         fill="#f0f8ff"
+         width="258.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -575,7 +855,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/AccruedInterestDays"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="843.970703125"
             font-size="14"
             font-family="Inter Regular">AccruedInterestDays</text>
@@ -583,30 +863,54 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="849.970703125"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="860.91015625"
+           xlink:href="#numeric-icon"/>
+      <text x="278.0"
+            fill="#007bff"
             y="870.91015625"
             font-size="13"
             font-family="Inter Regular">xs:integer</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 847.970703125 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="835.970703125"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 848.0 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="816.03125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="830.970703125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="912.91015625"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="ZeroBondInterestClaimNet_89cd98222484bda3d04f881119062485.html">
       <rect x="250.0"
             y="912.91015625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -614,7 +918,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/ZeroBondInterestClaimNet"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="941.849609375"
                font-size="14"
                font-family="Inter Regular">ZeroBondInterestClaimNet</text>
@@ -622,10 +926,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="947.849609375"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="958.7890625"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="968.7890625"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -635,22 +943,42 @@
            y="933.849609375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 945.849609375 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="933.849609375"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 945.8 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="913.91015625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="928.849609375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="1010.7890625"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="ZeroBondInterestClaimGross_d214b2af1d794e456d49c758be113277.html">
       <rect x="250.0"
             y="1010.7890625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -658,7 +986,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/ZeroBondInterestClaimGross"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1039.728515625"
                font-size="14"
                font-family="Inter Regular">ZeroBondInterestClaimGross</text>
@@ -666,10 +994,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1045.728515625"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="1056.66796875"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="1066.66796875"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -679,22 +1011,42 @@
            y="1031.728515625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 1043.728515625 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="1031.728515625"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 1043.7 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1011.7890625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="1026.728515625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="1108.66796875"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="ZeroBondCapitalYieldsTaxClaim_720bb8b15ccd685dcfcae7544c3fd0d9.html">
       <rect x="250.0"
             y="1108.66796875"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -702,7 +1054,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/ZeroBondCapitalYieldsTaxClaim"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1137.607421875"
                font-size="14"
                font-family="Inter Regular">ZeroBondCapitalYieldsTaxClaim</text>
@@ -710,10 +1062,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1143.607421875"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="1154.546875"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="1164.546875"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -723,21 +1079,41 @@
            y="1129.607421875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 1141.607421875 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="1129.607421875"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 1141.6 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1109.66796875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="1124.607421875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="250.0"
          y="1206.546875"
-         fill="#f8fafc"
+         fill="none"
          width="258.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="250.0"
+         y="1206.546875"
+         fill="#f0f8ff"
+         width="258.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -745,7 +1121,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/ZeroBondYield"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="1235.486328125"
             font-size="14"
             font-family="Inter Regular">ZeroBondYield</text>
@@ -753,29 +1129,53 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="1241.486328125"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="1252.42578125"
+           xlink:href="#numeric-icon"/>
+      <text x="278.0"
+            fill="#007bff"
             y="1262.42578125"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 1239.486328125 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="1227.486328125"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 1239.5 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1207.546875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="1222.486328125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="250.0"
          y="1304.42578125"
-         fill="#f8fafc"
+         fill="none"
          width="258.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="250.0"
+         y="1304.42578125"
+         fill="#f0f8ff"
+         width="258.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -783,7 +1183,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/Indexfactor"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="1333.365234375"
             font-size="14"
             font-family="Inter Regular">Indexfactor</text>
@@ -791,29 +1191,53 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="1339.365234375"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="1350.3046875"
+           xlink:href="#numeric-icon"/>
+      <text x="278.0"
+            fill="#007bff"
             y="1360.3046875"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 1337.365234375 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="1325.365234375"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 1337.4 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1305.42578125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="1320.365234375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="250.0"
          y="1402.3046875"
-         fill="#f8fafc"
+         fill="none"
          width="258.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="250.0"
+         y="1402.3046875"
+         fill="#f0f8ff"
+         width="258.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -821,7 +1245,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/Poolfactor"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="1431.244140625"
             font-size="14"
             font-family="Inter Regular">Poolfactor</text>
@@ -829,30 +1253,54 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="1437.244140625"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="1448.18359375"
+           xlink:href="#numeric-icon"/>
+      <text x="278.0"
+            fill="#007bff"
             y="1458.18359375"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 1435.244140625 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="1423.244140625"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 1435.2 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1403.3046875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="1418.244140625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="1500.18359375"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="BookRate_159d2363c221f80fb266884f4cb05ea0.html">
       <rect x="250.0"
             y="1500.18359375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -860,7 +1308,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/BookRate"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1529.123046875"
                font-size="14"
                font-family="Inter Regular">BookRate</text>
@@ -868,10 +1316,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1535.123046875"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="1546.0625"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="1556.0625"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -881,22 +1333,42 @@
            y="1521.123046875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 1533.123046875 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="1521.123046875"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 1533.1 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1501.18359375"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="1516.123046875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="1598.0625"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="PurchaseValue_83870ad7270121cb3423f69ae917fb3b.html">
       <rect x="250.0"
             y="1598.0625"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -904,7 +1376,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/PurchaseValue"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="1627.001953125"
                font-size="14"
                font-family="Inter Regular">PurchaseValue</text>
@@ -912,10 +1384,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="1633.001953125"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="1643.94140625"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="1653.94140625"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -925,21 +1401,41 @@
            y="1619.001953125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 1631.001953125 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="1619.001953125"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 1631.0 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1599.0625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="1614.001953125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="250.0"
          y="1695.94140625"
-         fill="#f8fafc"
+         fill="none"
          width="258.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="250.0"
+         y="1695.94140625"
+         fill="#f0f8ff"
+         width="258.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -947,7 +1443,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/AcrualIndexedBond"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="1724.880859375"
             font-size="14"
             font-family="Inter Regular">AcrualIndexedBond</text>
@@ -955,29 +1451,53 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="1730.880859375"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="1741.8203125"
+           xlink:href="#boolean-icon"/>
+      <text x="278.0"
+            fill="#6f42c1"
             y="1751.8203125"
             font-size="13"
             font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 1728.880859375 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="1716.880859375"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 1728.9 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1696.94140625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="1711.880859375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="250.0"
          y="1793.8203125"
-         fill="#f8fafc"
+         fill="none"
          width="258.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="250.0"
+         y="1793.8203125"
+         fill="#f0f8ff"
+         width="258.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -985,7 +1505,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/DateLastCouponPayment"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="1822.759765625"
             font-size="14"
             font-family="Inter Regular">DateLastCouponPayment</text>
@@ -993,29 +1513,53 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="1828.759765625"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="1839.69921875"
+           xlink:href="#date-icon"/>
+      <text x="278.0"
+            fill="#fd7e14"
             y="1849.69921875"
             font-size="13"
             font-family="Inter Regular">xs:date</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 1826.759765625 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="1814.759765625"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 1826.8 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1794.8203125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="1809.759765625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="250.0"
          y="1891.69921875"
-         fill="#f8fafc"
+         fill="none"
          width="258.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="250.0"
+         y="1891.69921875"
+         fill="#f0f8ff"
+         width="258.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -1023,7 +1567,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/LendedFlag"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="1920.638671875"
             font-size="14"
             font-family="Inter Regular">LendedFlag</text>
@@ -1031,29 +1575,53 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="1926.638671875"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="1937.578125"
+           xlink:href="#boolean-icon"/>
+      <text x="278.0"
+            fill="#6f42c1"
             y="1947.578125"
             font-size="13"
             font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 1924.638671875 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="1912.638671875"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 1924.6 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1892.69921875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="1907.638671875"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="250.0"
          y="1989.578125"
-         fill="#f8fafc"
+         fill="none"
          width="258.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="250.0"
+         y="1989.578125"
+         fill="#f0f8ff"
+         width="258.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -1061,7 +1629,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/LendedUnits"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="2018.517578125"
             font-size="14"
             font-family="Inter Regular">LendedUnits</text>
@@ -1069,29 +1637,53 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="2024.517578125"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="2035.45703125"
+           xlink:href="#numeric-icon"/>
+      <text x="278.0"
+            fill="#007bff"
             y="2045.45703125"
             font-size="13"
             font-family="Inter Regular">xs:decimal</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 2022.517578125 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="2010.517578125"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 2022.5 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="1990.578125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="2005.517578125"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
    <rect x="250.0"
          y="2087.45703125"
-         fill="#f8fafc"
+         fill="none"
          width="258.0"
-         style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-         filter="url(#modern-shadow)"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="250.0"
+         y="2087.45703125"
+         fill="#f0f8ff"
+         width="258.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
          class="hoverable-rect"
          rx="8"
          ry="8"
@@ -1099,7 +1691,7 @@
          id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/IndicatorRaffled"/>
    <g>
       <text x="262.0"
-            fill="#1e293b"
+            fill="#2c5aa0"
             y="2116.396484375"
             font-size="14"
             font-family="Inter Regular">IndicatorRaffled</text>
@@ -1107,30 +1699,54 @@
             stroke-width="1"
             x1="262.0"
             x2="496.0"
-            stroke="#e2e8f0"
+            stroke="#dee2e6"
             y1="2122.396484375"/>
-      <text x="262.0"
-            fill="#64748b"
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="262.0"
+           y="2133.3359375"
+           xlink:href="#boolean-icon"/>
+      <text x="278.0"
+            fill="#6f42c1"
             y="2143.3359375"
             font-size="13"
             font-family="Inter Regular">xs:boolean</text>
    </g>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 2120.396484375 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="2108.396484375"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 2120.4 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="2088.45703125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="2103.396484375"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
+   <rect x="250.0"
+         y="2185.3359375"
+         fill="none"
+         width="258.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <a href="CollateralValue_a9377758068b9712a005a9c4c10928fe.html">
       <rect x="250.0"
             y="2185.3359375"
-            fill="#f8fafc"
+            fill="#f0f8ff"
             width="258.0"
-            style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: #f8fafc;"
-            filter="url(#modern-shadow)"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1138,7 +1754,7 @@
             id="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Bond/CollateralValue"/>
       <g>
          <text x="262.0"
-               fill="#1e293b"
+               fill="#2c5aa0"
                y="2214.275390625"
                font-size="14"
                font-family="Inter Regular">CollateralValue</text>
@@ -1146,10 +1762,14 @@
                stroke-width="1"
                x1="262.0"
                x2="496.0"
-               stroke="#e2e8f0"
+               stroke="#dee2e6"
                y1="2220.275390625"/>
-         <text x="262.0"
-               fill="#64748b"
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="262.0"
+              y="2231.21484375"
+              xlink:href="#complex-icon"/>
+         <text x="278.0"
+               fill="#dc3545"
                y="2241.21484375"
                font-size="13"
                font-family="Inter Regular">FundAmountType</text>
@@ -1159,15 +1779,25 @@
            y="2206.275390625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path style="stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8, 8; fill: none;"
-         class="connection-line"
-         d="M 200.0 1141.4697265625 V 2218.275390625 H 250.0"/>
-   <text x="212.0"
-         fill="#64748b"
-         y="2206.275390625"
-         font-size="11"
+   <path fill="none"
+         d="M 175.0 1141.5 H 205.0 V 2218.3 H 250.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="211.0"
+         y="2186.3359375"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="215.0"
+         font-size="10"
+         y="2201.275390625"
+         fill="#6c757d"
+         font-family="Inter Regular"
          class="cardinality-text"
-         font-family="Inter Regular">0..1</text>
+         font-weight="600">0..1</text>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -1250,7 +1880,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Nominal value (units) of bond</p>
 <p>Nominale/Stückzahl der Rentenposition</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">796.65</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">284.79</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1268,7 +1898,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Par value of a bond when it has been bought</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">241.05</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">937.40</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1414,7 +2044,7 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Number of accrued interest days</p>
 <p>Anzahl der Stueckzins Tage an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">4268</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">3626</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1432,8 +2062,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Interest claim net value of zero bond position</p>
-<p>Netto-Zinsanspruch der<br />
-Null-Coupon-Anleihenposition</p>
+<p>Netto-Zinsanspruch der Null-Coupon-Anleihenposition</p>
 <p>Amount in different currencies</p>
 <p>Betrag in verschiedenen Waehrungen</p>
 </td>
@@ -1500,7 +2129,7 @@ Null-Coupon-Anleihenposition</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Yield of zero bond (percentage)</p>
 <p>Null-Coupon-Anleihenrendite (in Prozent)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">441.17</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">682.62</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1519,7 +2148,7 @@ Null-Coupon-Anleihenposition</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Index factor of bond</p>
 <p>Indexfaktor der Anleihe</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">425.83</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">294.69</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1538,7 +2167,7 @@ Null-Coupon-Anleihenposition</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Pool factor of bond</p>
 <p>Poolfaktor der Anleihe</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">646.75</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">927.99</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1601,7 +2230,7 @@ Null-Coupon-Anleihenposition</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicates whether it is an acrual indexed bond</p>
 <p>Gibt an ob die Abgrenzung der Indexanleihe erfolgt</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1620,7 +2249,7 @@ Null-Coupon-Anleihenposition</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date when last coupon will be payed</p>
 <p>Datum an dem der letzte Kupon gezahlt wird</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-01-23</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2022-10-26</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1658,7 +2287,7 @@ Null-Coupon-Anleihenposition</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Number of lended units</p>
 <p>Verliehende Stücke</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">661.68</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">623.85</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1677,7 +2306,7 @@ Null-Coupon-Anleihenposition</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Indicates whether bond has been raffled</p>
 <p>Gibt an, ob das Wertpapier verlost wurde</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
@@ -1694,8 +2323,7 @@ Null-Coupon-Anleihenposition</p>
                                 
                             </td>
 
-                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Current value of collateral usage (positive value if received,<br />
-negative value if delivered from/to counterparty)</p>
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Current value of collateral usage (positive value if received, negative value if delivered from/to counterparty)</p>
 <p>Amount in different currencies</p>
 <p>Betrag in verschiedenen Waehrungen</p>
 </td>
@@ -1725,8 +2353,7 @@ negative value if delivered from/to counterparty)</p>
          &lt;xs:element name=&quot;Nominal&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Nominal value (units) of bond&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nominale/Stückzahl der Rentenposition
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nominale/Stückzahl der Rentenposition&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OriginalFace&quot; type=&quot;xs:decimal&quot;&gt;
@@ -1736,10 +2363,8 @@ negative value if delivered from/to counterparty)</p>
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Price&quot; type=&quot;FundAmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Clean price (in different currencies)
-                                    &lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Bewertungskurs (in verschiedenen Währungen)
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Clean price (in different currencies)&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Bewertungskurs (in verschiedenen Währungen)&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OtherPrices&quot; type=&quot;OtherPricesType&quot;&gt;
@@ -1754,22 +2379,19 @@ negative value if delivered from/to counterparty)</p>
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MarketValue&quot; type=&quot;FundAmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Market value of security position without interests
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Market value of security position without interests&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;InterestClaimNet&quot; type=&quot;FundAmountType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Interest claim net value&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Netto-Zinsanspruch der Rentenposition
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Netto-Zinsanspruch der Rentenposition&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;InterestClaimGross&quot; type=&quot;FundAmountType&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Interest claim gross value&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Brutto-Zinsanspruch der Rentenposition
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Brutto-Zinsanspruch der Rentenposition&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AccruedInterestDays&quot; type=&quot;xs:integer&quot;&gt;
@@ -1780,38 +2402,30 @@ negative value if delivered from/to counterparty)</p>
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ZeroBondInterestClaimNet&quot; type=&quot;FundAmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Interest claim net value of zero bond position
-                                    &lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Netto-Zinsanspruch der
-                                        Null-Coupon-Anleihenposition
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Interest claim net value of zero bond position&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Netto-Zinsanspruch der Null-Coupon-Anleihenposition&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
                      name=&quot;ZeroBondInterestClaimGross&quot;
                      type=&quot;FundAmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Interest claim gross value of zero bond position
-                                    &lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Brutto Zinsanspruch des Zerobond an
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Interest claim gross value of zero bond position&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Brutto Zinsanspruch des Zerobond an&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot;
                      name=&quot;ZeroBondCapitalYieldsTaxClaim&quot;
                      type=&quot;FundAmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Capital yields tax claim of zero bond position
-                                    &lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;KEST-Anspruch der Null-Coupon-Anleihenposition
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Capital yields tax claim of zero bond position&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;KEST-Anspruch der Null-Coupon-Anleihenposition&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ZeroBondYield&quot; type=&quot;xs:decimal&quot;&gt;
             &lt;xs:annotation&gt;
                &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Yield of zero bond (percentage)&lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Null-Coupon-Anleihenrendite (in Prozent)
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Null-Coupon-Anleihenrendite (in Prozent)&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Indexfactor&quot; type=&quot;xs:decimal&quot;&gt;
@@ -1840,26 +2454,20 @@ negative value if delivered from/to counterparty)</p>
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AcrualIndexedBond&quot; type=&quot;xs:boolean&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indicates whether it is an acrual indexed bond
-                                    &lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an ob die Abgrenzung der Indexanleihe erfolgt
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indicates whether it is an acrual indexed bond&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an ob die Abgrenzung der Indexanleihe erfolgt&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DateLastCouponPayment&quot; type=&quot;xs:date&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Date when last coupon will be payed
-                                    &lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Datum an dem der letzte Kupon gezahlt wird
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Date when last coupon will be payed&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Datum an dem der letzte Kupon gezahlt wird&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;LendedFlag&quot; type=&quot;xs:boolean&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indicates whether (part of) position is lended
-                                    &lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an, ob Bestand (teilweise) verliehen ist
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indicates whether (part of) position is lended&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an, ob Bestand (teilweise) verliehen ist&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;LendedUnits&quot; type=&quot;xs:decimal&quot;&gt;
@@ -1870,17 +2478,13 @@ negative value if delivered from/to counterparty)</p>
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;IndicatorRaffled&quot; type=&quot;xs:boolean&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indicates whether bond has been raffled
-                                    &lt;/xs:documentation&gt;
-               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an, ob das Wertpapier verlost wurde
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Indicates whether bond has been raffled&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gibt an, ob das Wertpapier verlost wurde&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CollateralValue&quot; type=&quot;FundAmountType&quot;&gt;
             &lt;xs:annotation&gt;
-               &lt;xs:documentation&gt;Current value of collateral usage (positive value if received,
-                                        negative value if delivered from/to counterparty)
-                                    &lt;/xs:documentation&gt;
+               &lt;xs:documentation&gt;Current value of collateral usage (positive value if received, negative value if delivered from/to counterparty)&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
          &lt;/xs:element&gt;
       &lt;/xs:sequence&gt;
