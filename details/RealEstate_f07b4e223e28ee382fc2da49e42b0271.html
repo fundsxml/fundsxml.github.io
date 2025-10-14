@@ -1,0 +1,1930 @@
+<!--
+  ~ FreeXMLToolkit - Universal Toolkit for XML
+  ~ Copyright (c) Karl Kauc 2024.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  ~
+  -->
+
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-50">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Detail: RealEstate</title>
+
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
+    <link href="../assets/prism.css" rel="stylesheet"/>
+</head>
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
+
+<!-- Modern navigation with shadow and clear spacing -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Left navigation group -->
+            <div class="hidden md:flex items-baseline space-x-6">
+                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Home</a>
+                <a href="../complexTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                    Types</a>
+                <a href="../simpleTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                    Types</a>
+                <a href="../dataDictionary.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
+                    Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
+            </div>
+            <!-- Right navigation group (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main content -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+
+    <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_2774c1ae369ab9c17359040c0bb19641.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_88e550141df40a4a6c312ba698dca54f.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_b2ecb70fe2b5f3b9cd9f521f3c4d7b47.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_a48023c46aa0db80f5082927b08f5e34.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_6f783f46ae8b05648fbfc669510bb106.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='SegmentDynamicData_7811fb8ee6b5694d51e656d1670ac3a0.html' class='text-sky-600 hover:underline'>SegmentDynamicData</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_8845f8dfd7b3f0383777250a389fde89.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_32130e43176afbdf28ef010da4e50e2d.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Positions_22b76481b8b084ebf64b59bf1ee6e2d8.html' class='text-sky-600 hover:underline'>Positions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Position_b202faed527f0d305c67974796529fd2.html' class='text-sky-600 hover:underline'>Position</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_4c463516071c23b213957052b1c44042.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>RealEstate</span></nav>
+
+    <!-- Central detail card -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Card header with element name and XPath -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <h1 class="text-2xl font-bold text-slate-900">RealEstate</h1>
+            <!-- Container for XPath and copy buttons -->
+            <div class="flex items-center space-x-2 mt-1">
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate</p>
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
+                    </span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Card body with all detail sections -->
+        <div class="p-6 md:p-8 space-y-10">
+
+            <!-- Section: Diagram -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Diagram</h2>
+                <div class="p-4 border border-slate-200 rounded-lg bg-slate-50 overflow-x-auto">
+                    <!-- Thymeleaf switch to differentiate between SVG and PNG -->
+                    <div>
+                        <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
+                        <div><svg xmlns="http://www.w3.org/2000/svg"
+     style="background-color: #f0f8ff"
+     width="574.0"
+     height="1516.18359375">
+   <defs>
+      <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f0f8ff" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="attributeGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f9f5e7" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="sequenceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="choiceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#fff3cd" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="anyGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#dee2e6" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="structuralGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { transform: translateY(-1px); filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 2.5; } .cardinality-text { font-weight: 600; font-size: 10px; } .element-icon { fill: #4a90e2; } .attribute-icon { fill: #d4a147; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="xmlspy-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="1" dy="1"/>
+         <feFlood flood-color="black" flood-opacity="0.2"/>
+         <feComposite in2="offsetblur" operator="in"/>
+         <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+         </feMerge>
+      </filter>
+      <g style="stroke: #4a90e2; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f0f8ff"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#4a90e2"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
+      </g>
+      <g id="string-icon">
+         <path fill="#28a745"
+               d="M2.5 4v1.5c0 .83.67 1.5 1.5 1.5h1v1h-1c-.83 0-1.5.67-1.5 1.5V11c0 .55-.45 1-1 1H0v-1h.5c.28 0 .5-.22.5-.5V9s0-2.5 0-2.5c0-.83.67-1.5 1.5-1.5h1v-1h-1C1.67 4 1 3.33 1 2.5V1c0-.55.45-1 1-1H1v1h-.5c-.28 0-.5.22-.5.5V3s0 2.5 0 2.5c0 .83-.67 1.5-1.5 1.5h-1z"/>
+      </g>
+      <g id="numeric-icon">
+         <path fill="#007bff"
+               d="M1.5 6l.5 2H1l-.5-2H0V5h.5L0 3h1l.5 2h1L2 3h1l.5 2H4v1h-.5L4 8H3l-.5-2h-1z"/>
+      </g>
+      <g id="date-icon">
+         <path fill="#fd7e14"
+               d="M3.5 0c-.28 0-.5.22-.5.5v.5h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5H0v8h8V1h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5h-2v-.5c0-.28-.22-.5-.5-.5zM1 2h6v2H1V2zm0 3h6v3H1V5z"/>
+      </g>
+      <g id="boolean-icon">
+         <path fill="#6f42c1" d="M7 1L3.5 4.5 1 2l-1 1 3.5 3.5L8 2z"/>
+      </g>
+      <g id="binary-icon">
+         <path fill="#6c757d"
+               d="M1 1v6h6V3L5 1H1zm4 0v2h2L5 1zm-3 3h2v1H2V4zm0 2h4v1H2V6z"/>
+      </g>
+      <g id="uri-icon">
+         <path fill="#17a2b8"
+               d="M2 3h1v1H2V3zm3 0h1v1H5V3zM1.5 1C.67 1 0 1.67 0 2.5S.67 4 1.5 4h.25L2 3.75v-.5l-.25-.25H1.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h1c.28 0 .5.22.5.5v.25l.25.25h.5l.25-.25V2.5c0-.83-.67-1.5-1.5-1.5h-1z"/>
+      </g>
+      <g id="qname-icon">
+         <path fill="#e83e8c"
+               d="M0 2v4c0 .55.45 1 1 1h2.5L7 3.5v-1L3.5 0H1C.45 0 0 .45 0 2zm5.5 1.5L3 5H1V2h2.5L5.5 3.5z"/>
+      </g>
+      <g id="language-icon">
+         <path fill="#20c997"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm2 7c-.02-.02-.05-.03-.08-.03H5c-.28 0-.5-.22-.5-.5 0-.25.19-.46.44-.5.02 0 .04-.01.06-.01h1c.83 0 1.5-.67 1.5-1.5 0-.78-.6-1.42-1.36-1.49C6.09 2.95 6.05 2.93 6 2.93c-.28 0-.5-.22-.5-.5s.22-.5.5-.5c.05 0 .09.02.14.03C6.36 1.94 6.6 2 6.5 2c0 0 .5.22.5.5s-.22.5-.5.5c-.28 0-.5-.22-.5-.5 0-.02.01-.04.01-.06h-1c-.83 0-1.5.67-1.5 1.5 0 .78.6 1.42 1.36 1.49C4.91 5.05 4.95 5.07 5 5.07c.28 0 .5.22.5.5s-.22.5-.5.5c-.05 0-.09-.02-.14-.03C4.64 6.06 4.4 6 4.5 6z"/>
+      </g>
+      <g id="complex-icon" transform="scale(0.5)">
+         <rect x="5"
+               y="0"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="0"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="10"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="8"
+               x2="8"
+               stroke="#dc3545"
+               y1="4"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="3"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="3"
+               x2="3"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="13"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+      </g>
+      <g id="default-icon">
+         <path fill="#4a90e2"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+      </g>
+      <g id="sequence-icon">
+         <path fill="#6c757d"
+               d="M2,17H4V19H2V17M2,13H4V15H2V13M2,9H4V11H2V9M2,5H4V7H2V5M7,5H22V7H7V5M7,9H22V11H7V9M7,13H22V15H7V13M7,17H22V19H7V17Z"/>
+      </g>
+      <g id="choice-icon">
+         <path fill="#ff8c00"
+               d="M8,10V12H16V10H8M8,14V16H16V14H8M18,8C19.11,8 20,8.9 20,10V14C20,15.11 19.11,16 18,16H16V14H18V10H16V8H18M6,8V10H4V14H6V16H4C2.89,16 2,15.11 2,14V10C2,8.9 2.89,8 4,8H6Z"/>
+      </g>
+   </defs>
+   <a href="#">
+      <rect x="32"
+            y="729"
+            fill="#f0f8ff"
+            width="93.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate"/>
+      <text x="44"
+            fill="#2c5aa0"
+            y="757.939453125"
+            font-size="14"
+            font-family="Inter Regular">RealEstate</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#6c757d"
+            font-size="13"
+            y="787.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">Details for </tspan>
+         <tspan x="27" dy="1.3em">real estate </tspan>
+         <tspan x="27" dy="1.3em">positions </tspan>
+      </text>
+   </g>
+   <line y2="749.4697265625"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         x1="125.0"
+         class="connection-line"
+         x2="160.0"
+         y1="749.4697265625"/>
+   <g>
+      <rect x="160.0"
+            y="734.4697265625"
+            fill="url(#sequenceGradient)"
+            width="50.0"
+            rx="4"
+            ry="4"
+            height="30.0"
+            stroke="#6c757d"
+            stroke-width="2"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="177.0"
+           y="741.4697265625"
+           xlink:href="#sequence-icon"/>
+   </g>
+   <rect x="285.0"
+         y="32.0"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="MarketValue_31bab0859442cc836c285f4c1c215d73.html">
+      <rect x="285.0"
+            y="32.0"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/MarketValue"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="60.939453125"
+               font-size="14"
+               font-family="Inter Regular">MarketValue</text>
+         <line y2="66.939453125"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="66.939453125"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="77.87890625"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="87.87890625"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="52.939453125"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 64.9 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="33.0"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="47.939453125"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="129.87890625"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="RentIncome_f25801802c31709620305b98b215f060.html">
+      <rect x="285.0"
+            y="129.87890625"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/RentIncome"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="158.818359375"
+               font-size="14"
+               font-family="Inter Regular">RentIncome</text>
+         <line y2="164.818359375"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="164.818359375"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="175.7578125"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="185.7578125"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="150.818359375"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 162.8 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="130.87890625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="145.818359375"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="227.7578125"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="RentAccruals_77c99ece26327943ac4e1733915c9c44.html">
+      <rect x="285.0"
+            y="227.7578125"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/RentAccruals"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="256.697265625"
+               font-size="14"
+               font-family="Inter Regular">RentAccruals</text>
+         <line y2="262.697265625"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="262.697265625"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="273.63671875"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="283.63671875"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="248.697265625"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 260.7 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="228.7578125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="243.697265625"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="325.63671875"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="MaintenanceReserve_bbaecbe06713ec52db38b803fd043031.html">
+      <rect x="285.0"
+            y="325.63671875"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/MaintenanceReserve"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="354.576171875"
+               font-size="14"
+               font-family="Inter Regular">MaintenanceReserve</text>
+         <line y2="360.576171875"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="360.576171875"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="371.515625"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="381.515625"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="346.576171875"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 358.6 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="326.63671875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="341.576171875"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="423.515625"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="MaintenanceProvision_5cbb227e6bbf929fa20eb07649c20c12.html">
+      <rect x="285.0"
+            y="423.515625"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/MaintenanceProvision"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="452.455078125"
+               font-size="14"
+               font-family="Inter Regular">MaintenanceProvision</text>
+         <line y2="458.455078125"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="458.455078125"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="469.39453125"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="479.39453125"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="444.455078125"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 456.5 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="424.515625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="439.455078125"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="521.39453125"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="AncillaryCosts_5c80d9e04e50541a30c008748e045419.html">
+      <rect x="285.0"
+            y="521.39453125"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/AncillaryCosts"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="550.333984375"
+               font-size="14"
+               font-family="Inter Regular">AncillaryCosts</text>
+         <line y2="556.333984375"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="556.333984375"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="567.2734375"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="577.2734375"
+               font-size="13"
+               font-family="Inter Regular">(anonymous)</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="542.333984375"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 554.3 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="522.39453125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="537.333984375"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="619.2734375"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="RentDeposit_aa7abea074fc9fba3aca5ec8a02d85bc.html">
+      <rect x="285.0"
+            y="619.2734375"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/RentDeposit"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="648.212890625"
+               font-size="14"
+               font-family="Inter Regular">RentDeposit</text>
+         <line y2="654.212890625"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="654.212890625"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="665.15234375"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="675.15234375"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="640.212890625"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 652.2 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="620.2734375"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="635.212890625"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="717.15234375"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="RentReceivables_6538176789e2949a195f1547ae8e1dc6.html">
+      <rect x="285.0"
+            y="717.15234375"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/RentReceivables"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="746.091796875"
+               font-size="14"
+               font-family="Inter Regular">RentReceivables</text>
+         <line y2="752.091796875"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="752.091796875"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="763.03125"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="773.03125"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="738.091796875"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 750.1 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="718.15234375"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="733.091796875"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="815.03125"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="TaxLiabilities_b6a4f443a1dbd0cffe7b7e07367406cc.html">
+      <rect x="285.0"
+            y="815.03125"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/TaxLiabilities"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="843.970703125"
+               font-size="14"
+               font-family="Inter Regular">TaxLiabilities</text>
+         <line y2="849.970703125"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="849.970703125"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="860.91015625"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="870.91015625"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="835.970703125"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 848.0 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="816.03125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="830.970703125"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="912.91015625"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="VacancyCosts_605aa27fabef79f77979a64a354dfbca.html">
+      <rect x="285.0"
+            y="912.91015625"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/VacancyCosts"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="941.849609375"
+               font-size="14"
+               font-family="Inter Regular">VacancyCosts</text>
+         <line y2="947.849609375"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="947.849609375"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="958.7890625"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="968.7890625"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="933.849609375"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 945.8 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="913.91015625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="928.849609375"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="1010.7890625"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="PlannedMaintenanceCosts_a0dd1bf0586091e8ecc5a08df3552cbc.html">
+      <rect x="285.0"
+            y="1010.7890625"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/PlannedMaintenanceCosts"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="1039.728515625"
+               font-size="14"
+               font-family="Inter Regular">PlannedMaintenanceCosts</text>
+         <line y2="1045.728515625"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="1045.728515625"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="1056.66796875"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="1066.66796875"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="1031.728515625"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 1043.7 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="1011.7890625"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="1026.728515625"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="1108.66796875"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="OtherIncome_0d36476ade25af7a8859a027c57213b2.html">
+      <rect x="285.0"
+            y="1108.66796875"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/OtherIncome"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="1137.607421875"
+               font-size="14"
+               font-family="Inter Regular">OtherIncome</text>
+         <line y2="1143.607421875"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="1143.607421875"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="1154.546875"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="1164.546875"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="1129.607421875"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 1141.6 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="1109.66796875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="1124.607421875"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="1206.546875"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="OtherAssets_b92223c4f730f057914bd8cb47240931.html">
+      <rect x="285.0"
+            y="1206.546875"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/OtherAssets"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="1235.486328125"
+               font-size="14"
+               font-family="Inter Regular">OtherAssets</text>
+         <line y2="1241.486328125"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="1241.486328125"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="1252.42578125"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="1262.42578125"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="1227.486328125"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 1239.5 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="1207.546875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="1222.486328125"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="1304.42578125"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="OtherLiabilities_05aa2d33cf2fc77f8b3778880803126f.html">
+      <rect x="285.0"
+            y="1304.42578125"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/OtherLiabilities"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="1333.365234375"
+               font-size="14"
+               font-family="Inter Regular">OtherLiabilities</text>
+         <line y2="1339.365234375"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="1339.365234375"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="1350.3046875"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="1360.3046875"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="1325.365234375"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 1337.4 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="1305.42578125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="1320.365234375"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="285.0"
+         y="1402.3046875"
+         fill="none"
+         width="241.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="OtherNonFinancialAssetValue_47f7d271a588558b55969e0c12c5c664.html">
+      <rect x="285.0"
+            y="1402.3046875"
+            fill="#f0f8ff"
+            width="241.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/OtherNonFinancialAssetValue"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="1431.244140625"
+               font-size="14"
+               font-family="Inter Regular">OtherNonFinancialAssetValue</text>
+         <line y2="1437.244140625"
+               stroke-width="1"
+               x1="297.0"
+               x2="514.0"
+               stroke="#dee2e6"
+               y1="1437.244140625"/>
+         <use xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="297.0"
+              y="1448.18359375"
+              xlink:href="#complex-icon"/>
+         <text x="313.0"
+               fill="#dc3545"
+               y="1458.18359375"
+               font-size="13"
+               font-family="Inter Regular">FundAmountType</text>
+      </g>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="530.0"
+           y="1423.244140625"
+           xlink:href="#modern-plus-icon"/>
+   </a>
+   <path fill="none"
+         d="M 210.0 749.5 H 240.0 V 1435.2 H 285.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="246.0"
+         y="1403.3046875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="250.0"
+         font-size="10"
+         y="1418.244140625"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+</svg>
+</div>
+                        <!-- Case 2: If the type is 'PNG', create a normal image tag -->
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Documentation -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Documentation</h2>
+                <div class="bg-slate-100/75 p-4 rounded-md space-y-2">
+                    <div>
+                        
+                        <p class="text-slate-600"><p>Details for real estate positions</p>
+</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section for Javadoc-style annotations -->
+            
+
+            <!-- Section: Properties -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Type</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">(anonymous)</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">1</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Namespace</dt>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Level</dt>
+                        <dd class="mt-1 text-slate-900">15</dd>
+                    </div>
+                    <div class="flex flex-col md:col-span-2">
+                        <dt class="text-sm font-medium text-slate-500">Sample Data</dt>
+                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm"></dd>
+                    </div>
+                    
+                </dl>
+            </section>
+
+            <!-- Section: Child Elements & Attributes -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name (XPath)</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="MarketValue_31bab0859442cc836c285f4c1c215d73.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/MarketValue"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../MarketValue</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Market value of position</p>
+<p>Aktueller Verkehrswert</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="RentIncome_f25801802c31709620305b98b215f060.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/RentIncome"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../RentIncome</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Rent income</p>
+<p>Miete (80%) inkl. Abschlagszahlung</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="RentAccruals_77c99ece26327943ac4e1733915c9c44.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/RentAccruals"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../RentAccruals</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Rent accruals</p>
+<p>Aktuelle Mietabgrenzung</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="MaintenanceReserve_bbaecbe06713ec52db38b803fd043031.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/MaintenanceReserve"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../MaintenanceReserve</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Maintenance reserve (20%) for the real estate asset</p>
+<p>Instandhaltungsrücklage (20%)</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="MaintenanceProvision_5cbb227e6bbf929fa20eb07649c20c12.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/MaintenanceProvision"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../MaintenanceProvision</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Maintenance provision for the real estate asset</p>
+<p>Instandhaltungsrückstellung</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="AncillaryCosts_5c80d9e04e50541a30c008748e045419.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/AncillaryCosts"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../AncillaryCosts</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Ancillary costs of the real estate asset</p>
+<p>Anschaffungsnebenkosten</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="RentDeposit_aa7abea074fc9fba3aca5ec8a02d85bc.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/RentDeposit"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../RentDeposit</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Rent deposit for the real estate asset</p>
+<p>Kautionen</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="RentReceivables_6538176789e2949a195f1547ae8e1dc6.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/RentReceivables"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../RentReceivables</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Oustanding rent receivables</p>
+<p>offene Mietforderungen</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="TaxLiabilities_b6a4f443a1dbd0cffe7b7e07367406cc.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/TaxLiabilities"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../TaxLiabilities</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Consolidated tax liabilities for the real estate asset</p>
+<p>Steuerverbindlichkeiten (Sammelposition)</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="VacancyCosts_605aa27fabef79f77979a64a354dfbca.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/VacancyCosts"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../VacancyCosts</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Vacancy costs of the real estate asset</p>
+<p>Leerstands-Betriebskosten</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="PlannedMaintenanceCosts_a0dd1bf0586091e8ecc5a08df3552cbc.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/PlannedMaintenanceCosts"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../PlannedMaintenanceCosts</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Yearly planned costs of maintenance</p>
+<p>Enthaelt die jährlich geplanten Instanthaltungskosten</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="OtherIncome_0d36476ade25af7a8859a027c57213b2.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/OtherIncome"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../OtherIncome</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Other income of the real estate asset; e.g.building lease charges etc.</p>
+<p>Pacht/Baurechtzins etc.</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="OtherAssets_b92223c4f730f057914bd8cb47240931.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/OtherAssets"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../OtherAssets</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Other assets corresponding to the real estate asset</p>
+<p>Sonstige Aktiva</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="OtherLiabilities_05aa2d33cf2fc77f8b3778880803126f.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/OtherLiabilities"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../OtherLiabilities</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Other liabilities corresponding to the real estate asset</p>
+<p>Sonstige Passiva</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="OtherNonFinancialAssetValue_47f7d271a588558b55969e0c12c5c664.html"
+                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/CHOICE_10782/RealEstate/OtherNonFinancialAssetValue"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../OtherNonFinancialAssetValue</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="../complexTypes/FundAmountType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">FundAmountType</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Current market value of other non financial assets corresponding to the real estate asset</p>
+<p>Sonstige Bewirtschaftungsgüter; Zeitwert zum Stichtag</p>
+<p>Amount in different currencies</p>
+<p>Betrag in verschiedenen Waehrungen</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section: Additional Information (for generic appinfo tags) -->
+            
+
+            <!-- Section: XML Snippet -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
+                <div class="rounded-lg overflow-hidden border border-slate-200">
+                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+            xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+            xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            name=&quot;RealEstate&quot;&gt;
+   &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Details for real estate positions&lt;/xs:documentation&gt;
+   &lt;/xs:annotation&gt;
+   &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MarketValue&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Market value of position&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Aktueller Verkehrswert&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RentIncome&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Rent income&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Miete (80%) inkl. Abschlagszahlung&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RentAccruals&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Rent accruals&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Aktuelle Mietabgrenzung&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MaintenanceReserve&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Maintenance reserve (20%) for the real estate asset&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Instandhaltungsrücklage (20%)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;MaintenanceProvision&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Maintenance provision for the real estate asset&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Instandhaltungsrückstellung&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AncillaryCosts&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Ancillary costs of the real estate asset&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Anschaffungsnebenkosten&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:complexType&gt;
+               &lt;xs:sequence&gt;
+                  &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Outstanding&quot; type=&quot;FundAmountType&quot;&gt;
+                     &lt;xs:annotation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Ancillary costs outstanding&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;offene ANK&lt;/xs:documentation&gt;
+                     &lt;/xs:annotation&gt;
+                  &lt;/xs:element&gt;
+                  &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Accrued&quot; type=&quot;FundAmountType&quot;&gt;
+                     &lt;xs:annotation&gt;
+                        &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Ancillary costs already accrued&lt;/xs:documentation&gt;
+                        &lt;xs:documentation xml:lang=&quot;de&quot;&gt;bereits abgegrenzte ANK&lt;/xs:documentation&gt;
+                     &lt;/xs:annotation&gt;
+                  &lt;/xs:element&gt;
+               &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RentDeposit&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Rent deposit for the real estate asset&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Kautionen&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RentReceivables&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Oustanding rent receivables&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;offene Mietforderungen&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TaxLiabilities&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Consolidated tax liabilities for the real estate asset&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Steuerverbindlichkeiten (Sammelposition)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;VacancyCosts&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Vacancy costs of the real estate asset&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Leerstands-Betriebskosten&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;PlannedMaintenanceCosts&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Yearly planned costs of maintenance&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Enthaelt die jährlich geplanten Instanthaltungskosten&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OtherIncome&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Other income of the real estate asset; e.g.building lease charges etc.&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Pacht/Baurechtzins etc.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OtherAssets&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Other assets corresponding to the real estate asset&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Sonstige Aktiva&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OtherLiabilities&quot; type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Other liabilities corresponding to the real estate asset&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Sonstige Passiva&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot;
+                     name=&quot;OtherNonFinancialAssetValue&quot;
+                     type=&quot;FundAmountType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Current market value of other non financial assets corresponding to the real estate asset&lt;/xs:documentation&gt;
+               &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Sonstige Bewirtschaftungsgüter; Zeitwert zum Stichtag&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+   &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></pre>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<!-- Load scripts at the end -->
+<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
+
+<!-- JavaScript for the copy functionality -->
+<script>
+    function copyXPath(buttonElement) {
+        const textToCopy = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy text: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,788 @@
+<!--
+  ~ FreeXMLToolkit - Universal Toolkit for XML
+  ~ Copyright (c) Karl Kauc 2024.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  ~
+  -->
+
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-50">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Detail: Price</title>
+
+    <!-- Generated Tailwind CSS -->
+    <link href="../assets/freexmltoolkit-docs.css" rel="stylesheet">
+
+    <!-- PrismJS for Syntax Highlighting -->
+    <link href="../assets/prism.css" rel="stylesheet"/>
+</head>
+<body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
+
+<!-- Modern navigation with shadow and clear spacing -->
+<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Left navigation group -->
+            <div class="hidden md:flex items-baseline space-x-6">
+                <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-sky-600 bg-sky-100"
+                   aria-current="page">Home</a>
+                <a href="../complexTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Complex
+                    Types</a>
+                <a href="../simpleTypes.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Simple
+                    Types</a>
+                <a href="../dataDictionary.html"
+                   class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900">Data
+                    Dictionary</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-md mx-4">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3" aria-hidden="true">
+                    <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <input type="search" id="search-input" placeholder="Loading search index..." disabled
+                       class="w-full pl-3 pr-10 py-2 text-sm leading-tight text-slate-700 border border-slate-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 disabled:bg-slate-50 disabled:cursor-not-allowed">
+                <div id="search-results"
+                     class="absolute hidden w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg z-20 max-h-96 overflow-y-auto">
+                    <!-- Search results will be injected here -->
+                </div>
+            </div>
+            <!-- Right navigation group (GitHub Link) -->
+            <div class="hidden md:block">
+                <a href="https://github.com/karlkauc/FreeXmlToolkit" target="_blank"
+                   class="flex items-center space-x-2 text-slate-700 font-bold">
+                    <img src="../assets/logo.png" alt="logo" class="h-8 w-8"/>
+                    <span>FreeXmlToolKit</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main content -->
+<main class="container mx-auto px-4 py-8 md:py-12">
+
+    <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundDynamicData_4e937de67ae9c465d1df1b5fa3906a4a.html' class='text-sky-600 hover:underline'>FundDynamicData</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_eeca6e7b0379b1c317f1de81d10bf474.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_9a5c0b5bdb876a54d3657ec753f26b00.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='PositionsDecomposed_0f9355367cf2cbab59693413e192f493.html' class='text-sky-600 hover:underline'>PositionsDecomposed</a> <span class='mx-1 text-slate-400'>/</span> <a href='Positions_77ebbe6c6d54cdb9fb6cc7eed241e4af.html' class='text-sky-600 hover:underline'>Positions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Position_8ae557fe242ccb22587771957a212d09.html' class='text-sky-600 hover:underline'>Position</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_6bbacb924c903aa6cc584737d0f7563e.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='Equity_c459265d2a951c6012a713f5782d62e1.html' class='text-sky-600 hover:underline'>Equity</a> <span class='mx-1 text-slate-400'>/</span> <a href='OtherPrices_836d5845fa99befa4fafa8ccc88ed349.html' class='text-sky-600 hover:underline'>OtherPrices</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Price</span></nav>
+
+    <!-- Central detail card -->
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        <!-- Card header with element name and XPath -->
+        <header class="p-6 border-b border-slate-200 bg-slate-50">
+            <h1 class="text-2xl font-bold text-slate-900">Price</h1>
+            <!-- Container for XPath and copy buttons -->
+            <div class="flex items-center space-x-2 mt-1">
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price</p>
+
+                <!-- Button to copy the XPath -->
+                <button onclick="copyXPath(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy XPath
+                    </span>
+                </button>
+
+                <!-- Button to copy the Permalink -->
+                <button onclick="copyPermalink(this)"
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="tooltip-text absolute -top-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Copy Permalink
+                    </span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Card body with all detail sections -->
+        <div class="p-6 md:p-8 space-y-10">
+
+            <!-- Section: Diagram -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Diagram</h2>
+                <div class="p-4 border border-slate-200 rounded-lg bg-slate-50 overflow-x-auto">
+                    <!-- Thymeleaf switch to differentiate between SVG and PNG -->
+                    <div>
+                        <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
+                        <div><svg xmlns="http://www.w3.org/2000/svg"
+     style="background-color: #f0f8ff"
+     width="460.0"
+     height="492.4228515625">
+   <defs>
+      <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f0f8ff" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="attributeGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#f9f5e7" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="sequenceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="choiceGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#fff3cd" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="anyGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#dee2e6" offset="100%"/>
+      </linearGradient>
+      <linearGradient y2="100%" id="structuralGradient" x1="0%" x2="0%" y1="0%">
+         <stop stop-color="#ffffff" offset="0%"/>
+         <stop stop-color="#e9ecef" offset="100%"/>
+      </linearGradient>
+      <style>.hoverable-rect { transition: all 0.3s ease; cursor: pointer; } .hoverable-rect:hover { transform: translateY(-1px); filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2)); } .connection-line { transition: stroke-width 0.2s ease; } .connection-line:hover { stroke-width: 2.5; } .cardinality-text { font-weight: 600; font-size: 10px; } .element-icon { fill: #4a90e2; } .attribute-icon { fill: #d4a147; }</style>
+      <filter width="200%"
+              x="-50%"
+              height="200%"
+              id="xmlspy-shadow"
+              y="-50%">
+         <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
+         <feOffset result="offsetblur" dx="1" dy="1"/>
+         <feFlood flood-color="black" flood-opacity="0.2"/>
+         <feComposite in2="offsetblur" operator="in"/>
+         <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+         </feMerge>
+      </filter>
+      <g style="stroke: #4a90e2; stroke-width: 2; stroke-linecap: round;"
+         id="modern-plus-icon">
+         <circle fill="#f0f8ff"
+                 stroke-width="1.5"
+                 r="10"
+                 cx="12"
+                 cy="12"
+                 stroke="#4a90e2"/>
+         <line y2="17" x1="12" x2="12" y1="7"/>
+         <line y2="12" x1="7" x2="17" y1="12"/>
+      </g>
+      <g id="string-icon">
+         <path fill="#28a745"
+               d="M2.5 4v1.5c0 .83.67 1.5 1.5 1.5h1v1h-1c-.83 0-1.5.67-1.5 1.5V11c0 .55-.45 1-1 1H0v-1h.5c.28 0 .5-.22.5-.5V9s0-2.5 0-2.5c0-.83.67-1.5 1.5-1.5h1v-1h-1C1.67 4 1 3.33 1 2.5V1c0-.55.45-1 1-1H1v1h-.5c-.28 0-.5.22-.5.5V3s0 2.5 0 2.5c0 .83-.67 1.5-1.5 1.5h-1z"/>
+      </g>
+      <g id="numeric-icon">
+         <path fill="#007bff"
+               d="M1.5 6l.5 2H1l-.5-2H0V5h.5L0 3h1l.5 2h1L2 3h1l.5 2H4v1h-.5L4 8H3l-.5-2h-1z"/>
+      </g>
+      <g id="date-icon">
+         <path fill="#fd7e14"
+               d="M3.5 0c-.28 0-.5.22-.5.5v.5h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5H0v8h8V1h-1v-.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5h-2v-.5c0-.28-.22-.5-.5-.5zM1 2h6v2H1V2zm0 3h6v3H1V5z"/>
+      </g>
+      <g id="boolean-icon">
+         <path fill="#6f42c1" d="M7 1L3.5 4.5 1 2l-1 1 3.5 3.5L8 2z"/>
+      </g>
+      <g id="binary-icon">
+         <path fill="#6c757d"
+               d="M1 1v6h6V3L5 1H1zm4 0v2h2L5 1zm-3 3h2v1H2V4zm0 2h4v1H2V6z"/>
+      </g>
+      <g id="uri-icon">
+         <path fill="#17a2b8"
+               d="M2 3h1v1H2V3zm3 0h1v1H5V3zM1.5 1C.67 1 0 1.67 0 2.5S.67 4 1.5 4h.25L2 3.75v-.5l-.25-.25H1.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h1c.28 0 .5.22.5.5v.25l.25.25h.5l.25-.25V2.5c0-.83-.67-1.5-1.5-1.5h-1z"/>
+      </g>
+      <g id="qname-icon">
+         <path fill="#e83e8c"
+               d="M0 2v4c0 .55.45 1 1 1h2.5L7 3.5v-1L3.5 0H1C.45 0 0 .45 0 2zm5.5 1.5L3 5H1V2h2.5L5.5 3.5z"/>
+      </g>
+      <g id="language-icon">
+         <path fill="#20c997"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm2 7c-.02-.02-.05-.03-.08-.03H5c-.28 0-.5-.22-.5-.5 0-.25.19-.46.44-.5.02 0 .04-.01.06-.01h1c.83 0 1.5-.67 1.5-1.5 0-.78-.6-1.42-1.36-1.49C6.09 2.95 6.05 2.93 6 2.93c-.28 0-.5-.22-.5-.5s.22-.5.5-.5c.05 0 .09.02.14.03C6.36 1.94 6.6 2 6.5 2c0 0 .5.22.5.5s-.22.5-.5.5c-.28 0-.5-.22-.5-.5 0-.02.01-.04.01-.06h-1c-.83 0-1.5.67-1.5 1.5 0 .78.6 1.42 1.36 1.49C4.91 5.05 4.95 5.07 5 5.07c.28 0 .5.22.5.5s-.22.5-.5.5c-.05 0-.09-.02-.14-.03C4.64 6.06 4.4 6 4.5 6z"/>
+      </g>
+      <g id="complex-icon" transform="scale(0.5)">
+         <rect x="5"
+               y="0"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="0"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <rect x="10"
+               y="12"
+               fill="none"
+               width="6"
+               height="4"
+               stroke="#dc3545"
+               stroke-width="1.5"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="8"
+               x2="8"
+               stroke="#dc3545"
+               y1="4"/>
+         <line y2="10"
+               stroke-width="1.5"
+               x1="3"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="3"
+               x2="3"
+               stroke="#dc3545"
+               y1="10"/>
+         <line y2="12"
+               stroke-width="1.5"
+               x1="13"
+               x2="13"
+               stroke="#dc3545"
+               y1="10"/>
+      </g>
+      <g id="default-icon">
+         <path fill="#4a90e2"
+               d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+      </g>
+      <g id="sequence-icon">
+         <path fill="#6c757d"
+               d="M2,17H4V19H2V17M2,13H4V15H2V13M2,9H4V11H2V9M2,5H4V7H2V5M7,5H22V7H7V5M7,9H22V11H7V9M7,13H22V15H7V13M7,17H22V19H7V17Z"/>
+      </g>
+      <g id="choice-icon">
+         <path fill="#ff8c00"
+               d="M8,10V12H16V10H8M8,14V16H16V14H8M18,8C19.11,8 20,8.9 20,10V14C20,15.11 19.11,16 18,16H16V14H18V10H16V8H18M6,8V10H4V14H6V16H4C2.89,16 2,15.11 2,14V10C2,8.9 2.89,8 4,8H6Z"/>
+      </g>
+   </defs>
+   <a href="#">
+      <rect x="32"
+            y="191"
+            fill="#f0f8ff"
+            width="57.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#xmlspy-shadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="40.939453125"
+            id="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price"/>
+      <text x="44"
+            fill="#2c5aa0"
+            y="219.939453125"
+            font-size="14"
+            font-family="Inter Regular">Price</text>
+   </a>
+   <g id="modern-comment">
+      <text font-style="italic"
+            x="44"
+            fill="#6c757d"
+            font-size="13"
+            y="249.939453125"
+            font-family="Inter Regular">
+         <tspan x="27" dy="1.3em">Inform </tspan>
+         <tspan x="27" dy="1.3em">on the </tspan>
+         <tspan x="27" dy="1.3em">price </tspan>
+         <tspan x="27" dy="1.3em">type </tspan>
+         <tspan x="27" dy="1.3em">(different </tspan>
+         <tspan x="27" dy="1.3em">from </tspan>
+         <tspan x="27" dy="1.3em">the </tspan>
+         <tspan x="27" dy="1.3em">official </tspan>
+         <tspan x="27" dy="1.3em">NAV) </tspan>
+         <tspan x="27" dy="1.3em">used for </tspan>
+         <tspan x="27" dy="1.3em">other </tspan>
+         <tspan x="27" dy="1.3em">price </tspan>
+         <tspan x="27" dy="1.3em">communication </tspan>
+      </text>
+   </g>
+   <line y2="211.4697265625"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         x1="89.0"
+         class="connection-line"
+         x2="124.0"
+         y1="211.4697265625"/>
+   <g>
+      <rect x="124.0"
+            y="196.4697265625"
+            fill="url(#sequenceGradient)"
+            width="50.0"
+            rx="4"
+            ry="4"
+            height="30.0"
+            stroke="#6c757d"
+            stroke-width="2"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="141.0"
+           y="203.4697265625"
+           xlink:href="#sequence-icon"/>
+   </g>
+   <rect x="249.0"
+         y="32.0"
+         fill="#f0f8ff"
+         width="163.0"
+         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price/PriceType"/>
+   <g>
+      <text x="261.0"
+            fill="#2c5aa0"
+            y="60.939453125"
+            font-size="14"
+            font-family="Inter Regular">PriceType</text>
+      <line y2="66.939453125"
+            stroke-width="1"
+            x1="261.0"
+            x2="400.0"
+            stroke="#dee2e6"
+            y1="66.939453125"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="261.0"
+           y="77.87890625"
+           xlink:href="#complex-icon"/>
+      <text x="277.0"
+            fill="#dc3545"
+            y="87.87890625"
+            font-size="13"
+            font-family="Inter Regular">(anonymous)</text>
+   </g>
+   <path fill="none"
+         d="M 174.0 211.5 H 204.0 V 64.9 H 249.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
+   <rect x="249.0"
+         y="129.87890625"
+         fill="#f0f8ff"
+         width="163.0"
+         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price/NavPrice"/>
+   <g>
+      <text x="261.0"
+            fill="#2c5aa0"
+            y="158.818359375"
+            font-size="14"
+            font-family="Inter Regular">NavPrice</text>
+      <line y2="164.818359375"
+            stroke-width="1"
+            x1="261.0"
+            x2="400.0"
+            stroke="#dee2e6"
+            y1="164.818359375"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="261.0"
+           y="175.7578125"
+           xlink:href="#numeric-icon"/>
+      <text x="277.0"
+            fill="#007bff"
+            y="185.7578125"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
+   </g>
+   <path fill="none"
+         d="M 174.0 211.5 H 204.0 V 162.8 H 249.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none;"
+         class="connection-line"/>
+   <rect x="249.0"
+         y="227.7578125"
+         fill="none"
+         width="163.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="249.0"
+         y="227.7578125"
+         fill="#f0f8ff"
+         width="163.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price/SubscriptionPrice"/>
+   <g>
+      <text x="261.0"
+            fill="#2c5aa0"
+            y="256.697265625"
+            font-size="14"
+            font-family="Inter Regular">SubscriptionPrice</text>
+      <line y2="262.697265625"
+            stroke-width="1"
+            x1="261.0"
+            x2="400.0"
+            stroke="#dee2e6"
+            y1="262.697265625"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="261.0"
+           y="273.63671875"
+           xlink:href="#numeric-icon"/>
+      <text x="277.0"
+            fill="#007bff"
+            y="283.63671875"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
+   </g>
+   <path fill="none"
+         d="M 174.0 211.5 H 204.0 V 260.7 H 249.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="210.0"
+         y="228.7578125"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="214.0"
+         font-size="10"
+         y="243.697265625"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+   <rect x="249.0"
+         y="325.63671875"
+         fill="none"
+         width="163.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <rect x="249.0"
+         y="325.63671875"
+         fill="#f0f8ff"
+         width="163.0"
+         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+         filter="url(#xmlspy-shadow)"
+         class="hoverable-rect"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         id="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price/RedemptionPrice"/>
+   <g>
+      <text x="261.0"
+            fill="#2c5aa0"
+            y="354.576171875"
+            font-size="14"
+            font-family="Inter Regular">RedemptionPrice</text>
+      <line y2="360.576171875"
+            stroke-width="1"
+            x1="261.0"
+            x2="400.0"
+            stroke="#dee2e6"
+            y1="360.576171875"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="261.0"
+           y="371.515625"
+           xlink:href="#numeric-icon"/>
+      <text x="277.0"
+            fill="#007bff"
+            y="381.515625"
+            font-size="13"
+            font-family="Inter Regular">xs:decimal</text>
+   </g>
+   <path fill="none"
+         d="M 174.0 211.5 H 204.0 V 358.6 H 249.0"
+         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
+         class="connection-line"/>
+   <rect x="210.0"
+         y="326.63671875"
+         fill="#f0f8ff"
+         width="34.0"
+         rx="3"
+         height="20.939453125"
+         stroke="#dee2e6"
+         stroke-width="1"/>
+   <text x="214.0"
+         font-size="10"
+         y="341.576171875"
+         fill="#6c757d"
+         font-family="Inter Regular"
+         class="cardinality-text"
+         font-weight="600">0..1</text>
+</svg>
+</div>
+                        <!-- Case 2: If the type is 'PNG', create a normal image tag -->
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Documentation -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Documentation</h2>
+                <div class="bg-slate-100/75 p-4 rounded-md space-y-2">
+                    <div>
+                        
+                        <p class="text-slate-600"><p>Inform on the price type (different from the official NAV) used for other price communication</p>
+</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section for Javadoc-style annotations -->
+            
+
+            <!-- Section: Properties -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Properties</h2>
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Type</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">(anonymous)</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
+                        <dd class="mt-1 text-slate-900 font-mono">1..*</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Namespace</dt>
+                        <dd class="mt-1 text-slate-900"><b>xs</b> = "http://www.w3.org/2001/XMLSchema"<br /><b>altova</b> = "http://www.altova.com/xml-schema-extensions"<br /><b>ds</b> = "http://www.w3.org/2000/09/xmldsig#"</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="text-sm font-medium text-slate-500">Level</dt>
+                        <dd class="mt-1 text-slate-900">12</dd>
+                    </div>
+                    <div class="flex flex-col md:col-span-2">
+                        <dt class="text-sm font-medium text-slate-500">Sample Data</dt>
+                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm"></dd>
+                    </div>
+                    
+                </dl>
+            </section>
+
+            <!-- Section: Child Elements & Attributes -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">Child Elements &amp; Attributes</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-sm">
+                        <tr>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Name (XPath)</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Type</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Documentation</th>
+                            <th scope="col" class="px-4 py-3 font-semibold text-slate-900">Sample Data</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="PriceType_ffe8cb56f464bcec20ae4a2b8a82a7dd.html"
+                                   title="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price/PriceType"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../PriceType</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                <a href="#"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
+                                
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Select the price type you would like to communicate (SWING, MATURITY, MARKET,HOLD TO MATURITY, ADJUSTED GROSS, ADJUSTED NET)</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">SWING</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="NavPrice_986fb99b5e68d89aa4bd72557000fba9.html"
+                                   title="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price/NavPrice"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../NavPrice</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:decimal</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Other price type Net Asset value calculated per share</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">208.91</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="SubscriptionPrice_4b03b400ab66b7c116bd124ad4c9bad1.html"
+                                   title="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price/SubscriptionPrice"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../SubscriptionPrice</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:decimal</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Other price type Subscription price per share</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">892.72</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <a href="RedemptionPrice_145acc29bba0b984ff045ff4f815084f.html"
+                                   title="/FundsXML4/Funds/Fund/FundDynamicData/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_2170/Equity/OtherPrices/Price/RedemptionPrice"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">
+                                    <span>/Funds/.../RedemptionPrice</span>
+                                </a>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:decimal</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Other price type Redemption price per share</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">543.30</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section: Additional Information (for generic appinfo tags) -->
+            
+
+            <!-- Section: XML Snippet -->
+            <section>
+                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
+                <div class="rounded-lg overflow-hidden border border-slate-200">
+                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+            xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+            xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            maxOccurs=&quot;unbounded&quot;
+            name=&quot;Price&quot;&gt;
+   &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Inform on the price type (different from the official NAV) used for other price communication&lt;/xs:documentation&gt;
+   &lt;/xs:annotation&gt;
+   &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+         &lt;xs:element name=&quot;PriceType&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Select the price type you would like to communicate (SWING, MATURITY, MARKET,HOLD TO MATURITY, ADJUSTED GROSS, ADJUSTED NET)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+               &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                  &lt;xs:minLength value=&quot;5&quot;/&gt;
+                  &lt;xs:maxLength value=&quot;16&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;SWING&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;MATURITY&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;MARKET&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;HOLD TO MATURITY&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;ADJUSTED GROSS&quot;/&gt;
+                  &lt;xs:enumeration value=&quot;ADJUSTED NET&quot;/&gt;
+               &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element name=&quot;NavPrice&quot; type=&quot;xs:decimal&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Other price type Net Asset value calculated per share&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SubscriptionPrice&quot; type=&quot;xs:decimal&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Other price type Subscription price per share&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+         &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RedemptionPrice&quot; type=&quot;xs:decimal&quot;&gt;
+            &lt;xs:annotation&gt;
+               &lt;xs:documentation&gt;Other price type Redemption price per share&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+         &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+   &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></pre>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<!-- Load scripts at the end -->
+<script src="../assets/prism.js"></script>
+<script src="../assets/search.js" defer></script>
+
+<!-- JavaScript for the copy functionality -->
+<script>
+    function copyXPath(buttonElement) {
+        const textToCopy = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy text: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy XPath';
+            }, 2000);
+        });
+    }
+
+    function copyPermalink(buttonElement) {
+        const xpath = buttonElement.getAttribute('data-xpath');
+        const tooltip = buttonElement.querySelector('.tooltip-text');
+
+        const permalinkUrl = new URL('../index.html', window.location.href);
+        permalinkUrl.searchParams.set('xpath', xpath);
+
+        const urlToCopy = permalinkUrl.href.replaceAll('%2F', '/');
+
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        }).catch(err => {
+            tooltip.textContent = 'Failed to copy!';
+            console.error('Could not copy permalink: ', err);
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Permalink';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
