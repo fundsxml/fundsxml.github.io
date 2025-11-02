@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -81,7 +90,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
-    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_2774c1ae369ab9c17359040c0bb19641.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfunds_b26f7b71fbfa7f0c9248e03057b8af47.html' class='text-sky-600 hover:underline'>Subfunds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfund_64b691c40f891b0155a10eb333b71e69.html' class='text-sky-600 hover:underline'>Subfund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_f8466cca9266a2b96359ee44b8daf355.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_629b550d194af1808fade67bf7aec8de.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_2336531510a222ad4d8343e79485d9b7.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_57804e049481ca31b7819c47b548012b.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='SegmentDynamicData_40c0acdd13f680c1d8a3cf7bbd4235aa.html' class='text-sky-600 hover:underline'>SegmentDynamicData</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_b7c90f1e7a37002087e5f0a7d2ac0a06.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_3cac343cc04be172b611f37c8e72e0b4.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Positions_9d6ecd253599b72f433ecaf173ac8c3a.html' class='text-sky-600 hover:underline'>Positions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Position_a909366143dafcbc265d3415bde99185.html' class='text-sky-600 hover:underline'>Position</a> <span class='mx-1 text-slate-400'>/</span> <a href='Underlyings_43d90703a95602302eae9a7af4609f10.html' class='text-sky-600 hover:underline'>Underlyings</a> <span class='mx-1 text-slate-400'>/</span> <a href='Underlying_ce1db61517088fb0e34c9d8bc7c22e18.html' class='text-sky-600 hover:underline'>Underlying</a> <span class='mx-1 text-slate-400'>/</span> <a href='Identifiers_398cc39dd5e3e8f2a5278c0314bb2b93.html' class='text-sky-600 hover:underline'>Identifiers</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>OtherID</span></nav>
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfunds_b26f7b71fbfa7f0c9248e03057b8af47.html' class='text-sky-600 hover:underline'>Subfunds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfund_64b691c40f891b0155a10eb333b71e69.html' class='text-sky-600 hover:underline'>Subfund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_f8466cca9266a2b96359ee44b8daf355.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_629b550d194af1808fade67bf7aec8de.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_2336531510a222ad4d8343e79485d9b7.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_57804e049481ca31b7819c47b548012b.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='SegmentDynamicData_40c0acdd13f680c1d8a3cf7bbd4235aa.html' class='text-sky-600 hover:underline'>SegmentDynamicData</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_b7c90f1e7a37002087e5f0a7d2ac0a06.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_3cac343cc04be172b611f37c8e72e0b4.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Positions_9d6ecd253599b72f433ecaf173ac8c3a.html' class='text-sky-600 hover:underline'>Positions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Position_a909366143dafcbc265d3415bde99185.html' class='text-sky-600 hover:underline'>Position</a> <span class='mx-1 text-slate-400'>/</span> <a href='Underlyings_43d90703a95602302eae9a7af4609f10.html' class='text-sky-600 hover:underline'>Underlyings</a> <span class='mx-1 text-slate-400'>/</span> <a href='Underlying_ce1db61517088fb0e34c9d8bc7c22e18.html' class='text-sky-600 hover:underline'>Underlying</a> <span class='mx-1 text-slate-400'>/</span> <a href='Identifiers_398cc39dd5e3e8f2a5278c0314bb2b93.html' class='text-sky-600 hover:underline'>Identifiers</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>OtherID</span></nav>
 
     <!-- Central detail card -->
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -90,11 +99,11 @@
             <h1 class="text-2xl font-bold text-slate-900">OtherID</h1>
             <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
-                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID</p>
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID</p>
 
                 <!-- Button to copy the XPath -->
                 <button onclick="copyXPath(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -107,7 +116,7 @@
 
                 <!-- Button to copy the Permalink -->
                 <button onclick="copyPermalink(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -130,7 +139,7 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="495.0"
+     width="539.0"
      height="268.5869140625">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -280,7 +289,7 @@
             fill="#f0f8ff"
             width="75.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="121.939453125"
             font-size="14"
-            font-family="Inter Regular">OtherID</text>
+            font-family="Inter-Regular">OtherID</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="151.939453125"
-            font-family="Inter Regular">
+            font-family="Inter-Regular">
          <tspan x="27" dy="1.3em">All other </tspan>
          <tspan x="27" dy="1.3em">identifiers </tspan>
          <tspan x="27" dy="1.3em">(with listed </tspan>
@@ -306,80 +315,116 @@
          <tspan x="27" dy="1.3em">type) </tspan>
       </text>
    </g>
-   <rect x="267.0"
-         y="32.0"
-         fill="#f0f8ff"
-         width="180.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID/@ListedType"/>
-   <g>
-      <text x="279.0"
-            fill="#2c5aa0"
-            y="60.939453125"
-            font-size="14"
-            font-family="Inter Regular">@ListedType</text>
-      <line y2="66.939453125"
-            stroke-width="1"
-            x1="279.0"
-            x2="435.0"
-            stroke="#dee2e6"
-            y1="66.939453125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="279.0"
-           y="77.87890625"
-           xlink:href="#string-icon"/>
-      <text x="295.0"
-            fill="#28a745"
-            y="87.87890625"
-            font-size="13"
-            font-family="Inter Regular">ListedIdentifierType</text>
-   </g>
-   <path fill="none"
-         d="M 107.0 113.5 H 137.0 V 64.9 H 267.0"
-         style="stroke: #94a3b8; stroke-width: 1; stroke-dasharray: 5, 5; fill: none;"
-         class="connection-line"/>
-   <rect x="267.0"
-         y="129.87890625"
-         fill="#f0f8ff"
-         width="180.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID/@FreeType"/>
-   <g>
-      <text x="279.0"
-            fill="#2c5aa0"
-            y="158.818359375"
-            font-size="14"
-            font-family="Inter Regular">@FreeType</text>
-      <line y2="164.818359375"
-            stroke-width="1"
-            x1="279.0"
-            x2="435.0"
-            stroke="#dee2e6"
-            y1="164.818359375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="279.0"
-           y="175.7578125"
-           xlink:href="#complex-icon"/>
-      <text x="295.0"
-            fill="#dc3545"
-            y="185.7578125"
-            font-size="13"
-            font-family="Inter Regular">Text100Type</text>
-   </g>
-   <path fill="none"
-         d="M 107.0 113.5 H 137.0 V 162.8 H 267.0"
-         style="stroke: #94a3b8; stroke-width: 1; stroke-dasharray: 5, 5; fill: none;"
-         class="connection-line"/>
+   <a href="attr_ListedType_0a418084c99e1910b0b653235027135d.html">
+      <rect x="267.0"
+            y="32.0"
+            fill="#f0f8ff"
+            width="224.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID/@ListedType"/>
+      <g>
+         <text x="279.0"
+               fill="#2c5aa0"
+               y="60.939453125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">@ListedType</text>
+         <line y2="64.939453125"
+               stroke-width="1"
+               x1="279.0"
+               x2="479.0"
+               stroke="#e0e0e0"
+               y1="64.939453125"/>
+         <text x="279.0"
+               fill="#6c757d"
+               y="85.87890625"
+               font-size="13"
+               font-family="Inter-Regular">ListedIdentifierType</text>
+         <g>
+            <rect x="455.0"
+                  y="72.939453125"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="83.939453125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
+   <line y2="64.939453125"
+         stroke-width="2"
+         x1="107.0"
+         x2="267.0"
+         stroke="#4a90e2"
+         y1="113.4697265625"/>
+   <a href="attr_FreeType_e586c5ff0b28c884d42234c05b0c0855.html">
+      <rect x="267.0"
+            y="129.87890625"
+            fill="#f0f8ff"
+            width="224.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID/@FreeType"/>
+      <g>
+         <text x="279.0"
+               fill="#2c5aa0"
+               y="158.818359375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">@FreeType</text>
+         <line y2="162.818359375"
+               stroke-width="1"
+               x1="279.0"
+               x2="479.0"
+               stroke="#e0e0e0"
+               y1="162.818359375"/>
+         <text x="279.0"
+               fill="#6c757d"
+               y="183.7578125"
+               font-size="13"
+               font-family="Inter-Regular">Text100Type</text>
+         <g>
+            <rect x="455.0"
+                  y="170.818359375"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="181.818359375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
+   <line y2="162.818359375"
+         stroke-width="2"
+         x1="107.0"
+         x2="267.0"
+         stroke="#4a90e2"
+         y1="113.4697265625"/>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -409,7 +454,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">(anonymous)</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>(anonymous)</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -447,11 +496,17 @@
                         <tbody class="divide-y divide-slate-200 text-sm">
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="attr_ListedType_0a418084c99e1910b0b653235027135d.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID/@ListedType"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../@ListedType</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="attr_ListedType_0a418084c99e1910b0b653235027135d.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID/@ListedType"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../@ListedType</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -462,15 +517,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>List of all public available Identifiers</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">FSMA FUND CODE</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">REUTERS LISTING CODE</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="attr_FreeType_e586c5ff0b28c884d42234c05b0c0855.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID/@FreeType"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../@FreeType</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="attr_FreeType_e586c5ff0b28c884d42234c05b0c0855.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Positions/Position/Underlyings/Underlying/Identifiers/OtherID/@FreeType"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../@FreeType</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -491,11 +552,35 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
@@ -514,8 +599,12 @@
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
             </section>
+
+            <!-- Section: Referenced Type Definition -->
+            
 
         </div>
     </div>

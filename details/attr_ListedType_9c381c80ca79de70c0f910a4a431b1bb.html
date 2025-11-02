@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -130,7 +139,7 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="399.0"
+     width="400.0"
      height="160.1279296875">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -278,9 +287,9 @@
       <rect x="32"
             y="16"
             fill="#f0f8ff"
-            width="111.0"
+            width="112.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="44.939453125"
             font-size="14"
-            font-family="Inter Regular">@ListedType</text>
+            font-family="Inter-Regular">@ListedType</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="74.939453125"
-            font-family="Inter Regular">
+            font-family="Inter-Regular">
          <tspan x="27" dy="1.3em">List of all public </tspan>
          <tspan x="27" dy="1.3em">available </tspan>
          <tspan x="27" dy="1.3em">Identifiers </tspan>
@@ -333,7 +342,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">ListedIdentifierType</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>ListedIdentifierType</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -349,7 +362,7 @@
                     </div>
                     <div class="flex flex-col md:col-span-2">
                         <dt class="text-sm font-medium text-slate-500">Sample Data</dt>
-                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">AUSTRIAN OENB CODE</dd>
+                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">REUTERS LISTING CODE</dd>
                     </div>
                     <div class="flex flex-col md:col-span-full">
                         <dt class="text-sm font-medium text-slate-500">Restrictions</dt>
@@ -364,17 +377,111 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:attribute xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:attribute xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
               xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
               xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
               name=&quot;ListedType&quot;
               type=&quot;ListedIdentifierType&quot;/&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Section: Referenced Type Definition -->
+            <section>
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Referenced Type Definition
+                                <span class="font-mono text-sm text-slate-600">
+                                    (<span>ListedIdentifierType</span>)
+                                </span>
+                            </h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:simpleType xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+               xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+               xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+               name=&quot;ListedIdentifierType&quot;&gt;
+   &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;List of all public available Identifiers&lt;/xs:documentation&gt;
+   &lt;/xs:annotation&gt;
+   &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+      &lt;xs:enumeration value=&quot;AIF CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;AIFM CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;AMF CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;ASGT ASSOGESTIONI CODICE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;AUSTRIAN FUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;AUSTRIAN SUBFUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;AUSTRIAN SHARECLASS CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;AUSTRIAN FMA CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;AUSTRIAN OENB CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;BAFIN ID&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CBI FUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CBI SUB FUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CENTRAL ADMIN FUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CENTRAL ADMIN SUBFUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CENTRAL ADMIN SHARECLASS CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CID CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CITICODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CNMV CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CSSF FUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CSSF SUBFUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;CSSF SHARECLASS CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;FMQ SEDOL&quot;/&gt;
+      &lt;xs:enumeration value=&quot;FSMA FUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;FSMA SUBFUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;GIIN CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;GLOBAL ID CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;INAV BLOOMBERG LISTING CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;INAV REUTERS LISTING CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;INTERNAL FUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;INTERNAL SUBFUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;INTERNAL SHARECLASS CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;REUTERS LISTING CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;SWAP LEG ID&quot;/&gt;
+      &lt;xs:enumeration value=&quot;SWISS FUND DATA FUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;SWISS FUND DATA SUBFUND CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;SWISS FUND DATA SHARECLASS CODE&quot;/&gt;
+      &lt;xs:enumeration value=&quot;PRIVATE EQUITY ID&quot;/&gt;
+   &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+                    </div>
+                </details>
             </section>
 
         </div>

@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -81,7 +90,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
-    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_2774c1ae369ab9c17359040c0bb19641.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_30393f9408dd38b439df72201f67657e.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_8504619690fbe3e6e7b1a9d573182bc0.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_97528db10dd193b99758ad5c71a41acd.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_6025f21c4458d26eca3d9999112097ec.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Positions_227c5f948a7c47473bbeacc67dd9a73a.html' class='text-sky-600 hover:underline'>Positions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Position_04b1e739ff9c4d54bde6a9a53c568fb8.html' class='text-sky-600 hover:underline'>Position</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_fdcc2b618a3dd510f8c1a0a2600f8dd1.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='FixedTimeDeposit_8302402614c6a5fb6fb08476abbae69f.html' class='text-sky-600 hover:underline'>FixedTimeDeposit</a> <span class='mx-1 text-slate-400'>/</span> <a href='MarketValue_3d654b3ba998b74196313bd6544d721f.html' class='text-sky-600 hover:underline'>MarketValue</a> <span class='mx-1 text-slate-400'>/</span> <a href='Amount_2ae0c72d526dd65c03dfd0a1d4b35555.html' class='text-sky-600 hover:underline'>Amount</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>@isFundCcy</span></nav>
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_30393f9408dd38b439df72201f67657e.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_8504619690fbe3e6e7b1a9d573182bc0.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_97528db10dd193b99758ad5c71a41acd.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_6025f21c4458d26eca3d9999112097ec.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Positions_227c5f948a7c47473bbeacc67dd9a73a.html' class='text-sky-600 hover:underline'>Positions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Position_04b1e739ff9c4d54bde6a9a53c568fb8.html' class='text-sky-600 hover:underline'>Position</a> <span class='mx-1 text-slate-400'>/</span> <a href='FixedTimeDeposit_8302402614c6a5fb6fb08476abbae69f.html' class='text-sky-600 hover:underline'>FixedTimeDeposit</a> <span class='mx-1 text-slate-400'>/</span> <a href='MarketValue_3d654b3ba998b74196313bd6544d721f.html' class='text-sky-600 hover:underline'>MarketValue</a> <span class='mx-1 text-slate-400'>/</span> <a href='Amount_2ae0c72d526dd65c03dfd0a1d4b35555.html' class='text-sky-600 hover:underline'>Amount</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>@isFundCcy</span></nav>
 
     <!-- Central detail card -->
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -90,11 +99,11 @@
             <h1 class="text-2xl font-bold text-slate-900">@isFundCcy</h1>
             <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
-                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CHOICE_3528/FixedTimeDeposit/MarketValue/Amount/@isFundCcy</p>
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/FixedTimeDeposit/MarketValue/Amount/@isFundCcy</p>
 
                 <!-- Button to copy the XPath -->
                 <button onclick="copyXPath(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CHOICE_3528/FixedTimeDeposit/MarketValue/Amount/@isFundCcy">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/FixedTimeDeposit/MarketValue/Amount/@isFundCcy">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -107,7 +116,7 @@
 
                 <!-- Button to copy the Permalink -->
                 <button onclick="copyPermalink(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CHOICE_3528/FixedTimeDeposit/MarketValue/Amount/@isFundCcy">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/FixedTimeDeposit/MarketValue/Amount/@isFundCcy">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -130,7 +139,7 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="394.0"
+     width="395.0"
      height="88.939453125">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -278,9 +287,9 @@
       <rect x="32"
             y="16"
             fill="#f0f8ff"
-            width="106.0"
+            width="107.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="44.939453125"
             font-size="14"
-            font-family="Inter Regular">@isFundCcy</text>
+            font-family="Inter-Regular">@isFundCcy</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="74.939453125"
-            font-family="Inter Regular"/>
+            font-family="Inter-Regular"/>
    </g>
 </svg>
 </div>
@@ -320,7 +329,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">xs:boolean</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>xs:boolean</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -348,18 +361,46 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:attribute xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:attribute xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
               xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
               xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
               name=&quot;isFundCcy&quot;
               type=&quot;xs:boolean&quot;/&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
             </section>
+
+            <!-- Section: Referenced Type Definition -->
+            
 
         </div>
     </div>

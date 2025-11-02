@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -130,7 +139,7 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="562.0"
+     width="574.0"
      height="1222.546875">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -280,7 +289,7 @@
             fill="#f0f8ff"
             width="93.0"
             style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="610.939453125"
             font-size="14"
-            font-family="Inter Regular">RealEstate</text>
+            font-family="Inter-Regular">RealEstate</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="640.939453125"
-            font-family="Inter Regular">
+            font-family="Inter-Regular">
          <tspan x="27" dy="1.3em">Real Estate </tspan>
          <tspan x="27" dy="1.3em">details </tspan>
          <tspan x="27" dy="1.3em">Real Estate </tspan>
@@ -343,7 +352,7 @@
             fill="#f0f8ff"
             width="229.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -354,22 +363,36 @@
                fill="#2c5aa0"
                y="60.939453125"
                font-size="14"
-               font-family="Inter Regular">InvestmentCosts</text>
-         <line y2="66.939453125"
+               font-weight="600"
+               font-family="Inter-Regular">InvestmentCosts</text>
+         <line y2="64.939453125"
                stroke-width="1"
                x1="297.0"
                x2="502.0"
-               stroke="#dee2e6"
-               y1="66.939453125"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="297.0"
-              y="77.87890625"
-              xlink:href="#complex-icon"/>
-         <text x="313.0"
-               fill="#dc3545"
-               y="87.87890625"
+               stroke="#e0e0e0"
+               y1="64.939453125"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="85.87890625"
                font-size="13"
-               font-family="Inter Regular">(anonymous)</text>
+               font-family="Inter-Regular">(anonymous)</text>
+         <g>
+            <rect x="461.0"
+                  y="72.939453125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="83.939453125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
            x="518.0"
@@ -377,24 +400,10 @@
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 64.9 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="33.0"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="47.939453125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 64.939453125 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="129.87890625"
          fill="none"
@@ -405,58 +414,60 @@
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="285.0"
-         y="129.87890625"
-         fill="#f0f8ff"
-         width="229.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/FirstRateAcrrual"/>
-   <g>
-      <text x="297.0"
-            fill="#2c5aa0"
-            y="158.818359375"
-            font-size="14"
-            font-family="Inter Regular">FirstRateAcrrual</text>
-      <line y2="164.818359375"
-            stroke-width="1"
-            x1="297.0"
-            x2="502.0"
-            stroke="#dee2e6"
-            y1="164.818359375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="297.0"
-           y="175.7578125"
-           xlink:href="#date-icon"/>
-      <text x="313.0"
-            fill="#fd7e14"
-            y="185.7578125"
-            font-size="13"
-            font-family="Inter Regular">xs:date</text>
-   </g>
+   <a href="FirstRateAcrrual_5cafe6d900b1a3f2160c1a7ec298f16c.html">
+      <rect x="285.0"
+            y="129.87890625"
+            fill="#f0f8ff"
+            width="229.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/FirstRateAcrrual"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="158.818359375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">FirstRateAcrrual</text>
+         <line y2="162.818359375"
+               stroke-width="1"
+               x1="297.0"
+               x2="502.0"
+               stroke="#e0e0e0"
+               y1="162.818359375"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="183.7578125"
+               font-size="13"
+               font-family="Inter-Regular">xs:date</text>
+         <g>
+            <rect x="461.0"
+                  y="170.818359375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="181.818359375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 162.8 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="130.87890625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="145.818359375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 162.818359375 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="227.7578125"
          fill="none"
@@ -467,58 +478,60 @@
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="285.0"
-         y="227.7578125"
-         fill="#f0f8ff"
-         width="229.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/DateOfPropertyTransaction"/>
-   <g>
-      <text x="297.0"
-            fill="#2c5aa0"
-            y="256.697265625"
-            font-size="14"
-            font-family="Inter Regular">DateOfPropertyTransaction</text>
-      <line y2="262.697265625"
-            stroke-width="1"
-            x1="297.0"
-            x2="502.0"
-            stroke="#dee2e6"
-            y1="262.697265625"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="297.0"
-           y="273.63671875"
-           xlink:href="#date-icon"/>
-      <text x="313.0"
-            fill="#fd7e14"
-            y="283.63671875"
-            font-size="13"
-            font-family="Inter Regular">xs:date</text>
-   </g>
+   <a href="DateOfPropertyTransaction_fb74389af486f725dd0800a02fe70a09.html">
+      <rect x="285.0"
+            y="227.7578125"
+            fill="#f0f8ff"
+            width="229.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/DateOfPropertyTransaction"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="256.697265625"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">DateOfPropertyTransaction</text>
+         <line y2="260.697265625"
+               stroke-width="1"
+               x1="297.0"
+               x2="502.0"
+               stroke="#e0e0e0"
+               y1="260.697265625"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="281.63671875"
+               font-size="13"
+               font-family="Inter-Regular">xs:date</text>
+         <g>
+            <rect x="461.0"
+                  y="268.697265625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="279.697265625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 260.7 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="228.7578125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="243.697265625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 260.697265625 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="325.63671875"
          fill="none"
@@ -529,58 +542,60 @@
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="285.0"
-         y="325.63671875"
-         fill="#f0f8ff"
-         width="229.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/ConstructionYear"/>
-   <g>
-      <text x="297.0"
-            fill="#2c5aa0"
-            y="354.576171875"
-            font-size="14"
-            font-family="Inter Regular">ConstructionYear</text>
-      <line y2="360.576171875"
-            stroke-width="1"
-            x1="297.0"
-            x2="502.0"
-            stroke="#dee2e6"
-            y1="360.576171875"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="297.0"
-           y="371.515625"
-           xlink:href="#numeric-icon"/>
-      <text x="313.0"
-            fill="#007bff"
-            y="381.515625"
-            font-size="13"
-            font-family="Inter Regular">xs:positiveInteger</text>
-   </g>
+   <a href="ConstructionYear_40b4fceb150a7fd60ea262bf90bcc8b6.html">
+      <rect x="285.0"
+            y="325.63671875"
+            fill="#f0f8ff"
+            width="229.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/ConstructionYear"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="354.576171875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ConstructionYear</text>
+         <line y2="358.576171875"
+               stroke-width="1"
+               x1="297.0"
+               x2="502.0"
+               stroke="#e0e0e0"
+               y1="358.576171875"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="379.515625"
+               font-size="13"
+               font-family="Inter-Regular">xs:positiveInteger</text>
+         <g>
+            <rect x="461.0"
+                  y="366.576171875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="377.576171875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 358.6 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="326.63671875"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="341.576171875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 358.576171875 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="423.515625"
          fill="none"
@@ -591,58 +606,60 @@
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="285.0"
-         y="423.515625"
-         fill="#f0f8ff"
-         width="229.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/TotalRefurbishmentYear"/>
-   <g>
-      <text x="297.0"
-            fill="#2c5aa0"
-            y="452.455078125"
-            font-size="14"
-            font-family="Inter Regular">TotalRefurbishmentYear</text>
-      <line y2="458.455078125"
-            stroke-width="1"
-            x1="297.0"
-            x2="502.0"
-            stroke="#dee2e6"
-            y1="458.455078125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="297.0"
-           y="469.39453125"
-           xlink:href="#numeric-icon"/>
-      <text x="313.0"
-            fill="#007bff"
-            y="479.39453125"
-            font-size="13"
-            font-family="Inter Regular">xs:positiveInteger</text>
-   </g>
+   <a href="TotalRefurbishmentYear_976b1266aebca9fed6fb8f05996e0849.html">
+      <rect x="285.0"
+            y="423.515625"
+            fill="#f0f8ff"
+            width="229.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/TotalRefurbishmentYear"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="452.455078125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">TotalRefurbishmentYear</text>
+         <line y2="456.455078125"
+               stroke-width="1"
+               x1="297.0"
+               x2="502.0"
+               stroke="#e0e0e0"
+               y1="456.455078125"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="477.39453125"
+               font-size="13"
+               font-family="Inter-Regular">xs:positiveInteger</text>
+         <g>
+            <rect x="461.0"
+                  y="464.455078125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="475.455078125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 456.5 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="424.515625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="439.455078125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 456.455078125 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="521.39453125"
          fill="none"
@@ -653,58 +670,60 @@
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="285.0"
-         y="521.39453125"
-         fill="#f0f8ff"
-         width="229.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/Zoning"/>
-   <g>
-      <text x="297.0"
-            fill="#2c5aa0"
-            y="550.333984375"
-            font-size="14"
-            font-family="Inter Regular">Zoning</text>
-      <line y2="556.333984375"
-            stroke-width="1"
-            x1="297.0"
-            x2="502.0"
-            stroke="#dee2e6"
-            y1="556.333984375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="297.0"
-           y="567.2734375"
-           xlink:href="#string-icon"/>
-      <text x="313.0"
-            fill="#28a745"
-            y="577.2734375"
-            font-size="13"
-            font-family="Inter Regular">xs:string</text>
-   </g>
+   <a href="Zoning_1569a32b2c40402fbda4c1310a193759.html">
+      <rect x="285.0"
+            y="521.39453125"
+            fill="#f0f8ff"
+            width="229.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/Zoning"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="550.333984375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">Zoning</text>
+         <line y2="554.333984375"
+               stroke-width="1"
+               x1="297.0"
+               x2="502.0"
+               stroke="#e0e0e0"
+               y1="554.333984375"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="575.2734375"
+               font-size="13"
+               font-family="Inter-Regular">xs:string</text>
+         <g>
+            <rect x="461.0"
+                  y="562.333984375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="573.333984375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 554.3 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="522.39453125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="537.333984375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 554.333984375 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="619.2734375"
          fill="none"
@@ -715,58 +734,60 @@
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="285.0"
-         y="619.2734375"
-         fill="#f0f8ff"
-         width="229.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/TransactionType"/>
-   <g>
-      <text x="297.0"
-            fill="#2c5aa0"
-            y="648.212890625"
-            font-size="14"
-            font-family="Inter Regular">TransactionType</text>
-      <line y2="654.212890625"
-            stroke-width="1"
-            x1="297.0"
-            x2="502.0"
-            stroke="#dee2e6"
-            y1="654.212890625"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="297.0"
-           y="665.15234375"
-           xlink:href="#complex-icon"/>
-      <text x="313.0"
-            fill="#dc3545"
-            y="675.15234375"
-            font-size="13"
-            font-family="Inter Regular">(anonymous)</text>
-   </g>
+   <a href="TransactionType_934ed801e263aa2b9e3cc2dfc44c48f9.html">
+      <rect x="285.0"
+            y="619.2734375"
+            fill="#f0f8ff"
+            width="229.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/TransactionType"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="648.212890625"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">TransactionType</text>
+         <line y2="652.212890625"
+               stroke-width="1"
+               x1="297.0"
+               x2="502.0"
+               stroke="#e0e0e0"
+               y1="652.212890625"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="673.15234375"
+               font-size="13"
+               font-family="Inter-Regular">xs:string</text>
+         <g>
+            <rect x="461.0"
+                  y="660.212890625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="671.212890625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 652.2 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="620.2734375"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="635.212890625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 652.212890625 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="717.15234375"
          fill="none"
@@ -783,7 +804,7 @@
             fill="#f0f8ff"
             width="229.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -794,22 +815,36 @@
                fill="#2c5aa0"
                y="746.091796875"
                font-size="14"
-               font-family="Inter Regular">TypeOfUse</text>
-         <line y2="752.091796875"
+               font-weight="600"
+               font-family="Inter-Regular">TypeOfUse</text>
+         <line y2="750.091796875"
                stroke-width="1"
                x1="297.0"
                x2="502.0"
-               stroke="#dee2e6"
-               y1="752.091796875"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="297.0"
-              y="763.03125"
-              xlink:href="#complex-icon"/>
-         <text x="313.0"
-               fill="#dc3545"
-               y="773.03125"
+               stroke="#e0e0e0"
+               y1="750.091796875"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="771.03125"
                font-size="13"
-               font-family="Inter Regular">(anonymous)</text>
+               font-family="Inter-Regular">(anonymous)</text>
+         <g>
+            <rect x="461.0"
+                  y="758.091796875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="769.091796875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
            x="518.0"
@@ -817,24 +852,10 @@
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 750.1 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="718.15234375"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="733.091796875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 750.091796875 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="815.03125"
          fill="none"
@@ -845,58 +866,60 @@
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="285.0"
-         y="815.03125"
-         fill="#f0f8ff"
-         width="229.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/LegalType"/>
-   <g>
-      <text x="297.0"
-            fill="#2c5aa0"
-            y="843.970703125"
-            font-size="14"
-            font-family="Inter Regular">LegalType</text>
-      <line y2="849.970703125"
-            stroke-width="1"
-            x1="297.0"
-            x2="502.0"
-            stroke="#dee2e6"
-            y1="849.970703125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="297.0"
-           y="860.91015625"
-           xlink:href="#string-icon"/>
-      <text x="313.0"
-            fill="#28a745"
-            y="870.91015625"
-            font-size="13"
-            font-family="Inter Regular">xs:string</text>
-   </g>
+   <a href="LegalType_36d1d8383e0f6adce08f0932f9c1902d.html">
+      <rect x="285.0"
+            y="815.03125"
+            fill="#f0f8ff"
+            width="229.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/LegalType"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="843.970703125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">LegalType</text>
+         <line y2="847.970703125"
+               stroke-width="1"
+               x1="297.0"
+               x2="502.0"
+               stroke="#e0e0e0"
+               y1="847.970703125"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="868.91015625"
+               font-size="13"
+               font-family="Inter-Regular">xs:string</text>
+         <g>
+            <rect x="461.0"
+                  y="855.970703125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="866.970703125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 848.0 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="816.03125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="830.970703125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 847.970703125 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="912.91015625"
          fill="none"
@@ -907,58 +930,60 @@
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="285.0"
-         y="912.91015625"
-         fill="#f0f8ff"
-         width="229.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/UsableArea"/>
-   <g>
-      <text x="297.0"
-            fill="#2c5aa0"
-            y="941.849609375"
-            font-size="14"
-            font-family="Inter Regular">UsableArea</text>
-      <line y2="947.849609375"
-            stroke-width="1"
-            x1="297.0"
-            x2="502.0"
-            stroke="#dee2e6"
-            y1="947.849609375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="297.0"
-           y="958.7890625"
-           xlink:href="#numeric-icon"/>
-      <text x="313.0"
-            fill="#007bff"
-            y="968.7890625"
-            font-size="13"
-            font-family="Inter Regular">xs:positiveInteger</text>
-   </g>
+   <a href="UsableArea_39269a6e940645ddb8a054973ef9fbb4.html">
+      <rect x="285.0"
+            y="912.91015625"
+            fill="#f0f8ff"
+            width="229.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/UsableArea"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="941.849609375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">UsableArea</text>
+         <line y2="945.849609375"
+               stroke-width="1"
+               x1="297.0"
+               x2="502.0"
+               stroke="#e0e0e0"
+               y1="945.849609375"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="966.7890625"
+               font-size="13"
+               font-family="Inter-Regular">xs:positiveInteger</text>
+         <g>
+            <rect x="461.0"
+                  y="953.849609375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="964.849609375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 945.8 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="913.91015625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="928.849609375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 945.849609375 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="1010.7890625"
          fill="none"
@@ -975,7 +1000,7 @@
             fill="#f0f8ff"
             width="229.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -986,22 +1011,36 @@
                fill="#2c5aa0"
                y="1039.728515625"
                font-size="14"
-               font-family="Inter Regular">Address</text>
-         <line y2="1045.728515625"
+               font-weight="600"
+               font-family="Inter-Regular">Address</text>
+         <line y2="1043.728515625"
                stroke-width="1"
                x1="297.0"
                x2="502.0"
-               stroke="#dee2e6"
-               y1="1045.728515625"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="297.0"
-              y="1056.66796875"
-              xlink:href="#complex-icon"/>
-         <text x="313.0"
-               fill="#dc3545"
-               y="1066.66796875"
+               stroke="#e0e0e0"
+               y1="1043.728515625"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="1064.66796875"
                font-size="13"
-               font-family="Inter Regular">AddressType</text>
+               font-family="Inter-Regular">AddressType</text>
+         <g>
+            <rect x="461.0"
+                  y="1051.728515625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="1062.728515625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
            x="518.0"
@@ -1009,24 +1048,10 @@
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 1043.7 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="1011.7890625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="1026.728515625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 1043.728515625 H 285.0"
+         stroke="#6c757d"/>
    <rect x="285.0"
          y="1108.66796875"
          fill="none"
@@ -1037,58 +1062,60 @@
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="285.0"
-         y="1108.66796875"
-         fill="#f0f8ff"
-         width="229.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/LocationType"/>
-   <g>
-      <text x="297.0"
-            fill="#2c5aa0"
-            y="1137.607421875"
-            font-size="14"
-            font-family="Inter Regular">LocationType</text>
-      <line y2="1143.607421875"
-            stroke-width="1"
-            x1="297.0"
-            x2="502.0"
-            stroke="#dee2e6"
-            y1="1143.607421875"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="297.0"
-           y="1154.546875"
-           xlink:href="#complex-icon"/>
-      <text x="313.0"
-            fill="#dc3545"
-            y="1164.546875"
-            font-size="13"
-            font-family="Inter Regular">(anonymous)</text>
-   </g>
+   <a href="LocationType_ceaebd76ea957b873556d5fda4940fe8.html">
+      <rect x="285.0"
+            y="1108.66796875"
+            fill="#f0f8ff"
+            width="229.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/LocationType"/>
+      <g>
+         <text x="297.0"
+               fill="#2c5aa0"
+               y="1137.607421875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">LocationType</text>
+         <line y2="1141.607421875"
+               stroke-width="1"
+               x1="297.0"
+               x2="502.0"
+               stroke="#e0e0e0"
+               y1="1141.607421875"/>
+         <text x="297.0"
+               fill="#6c757d"
+               y="1162.546875"
+               font-size="13"
+               font-family="Inter-Regular">xs:string</text>
+         <g>
+            <rect x="461.0"
+                  y="1149.607421875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="465.0"
+                  fill="#495057"
+                  y="1160.607421875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 210.0 602.5 H 240.0 V 1141.6 H 285.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="246.0"
-         y="1109.66796875"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="250.0"
-         font-size="10"
-         y="1124.607421875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 210.0 602.4697265625 H 228.75 V 1141.607421875 H 285.0"
+         stroke="#6c757d"/>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -1118,7 +1145,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">RealEstateType</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>RealEstateType</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -1156,11 +1187,17 @@
                         <tbody class="divide-y divide-slate-200 text-sm">
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="InvestmentCosts_42967792bfe2956a1b9031ede6657bbf.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/InvestmentCosts"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../InvestmentCosts</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="InvestmentCosts_42967792bfe2956a1b9031ede6657bbf.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/InvestmentCosts"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../InvestmentCosts</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1176,11 +1213,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="FirstRateAcrrual_5cafe6d900b1a3f2160c1a7ec298f16c.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/FirstRateAcrrual"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../FirstRateAcrrual</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="FirstRateAcrrual_5cafe6d900b1a3f2160c1a7ec298f16c.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/FirstRateAcrrual"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../FirstRateAcrrual</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1191,15 +1234,21 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date of the first rate accrual</p>
 <p>Enthaelt das Datum der ersten Mietabgrenzung</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2025-09-19</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2022-06-17</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="DateOfPropertyTransaction_fb74389af486f725dd0800a02fe70a09.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/DateOfPropertyTransaction"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../DateOfPropertyTransaction</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="DateOfPropertyTransaction_fb74389af486f725dd0800a02fe70a09.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/DateOfPropertyTransaction"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../DateOfPropertyTransaction</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1210,15 +1259,21 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date of the property transaction</p>
 <p>Enthaelt das Datum des Eigentumuebergangs</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2022-10-19</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2022-11-26</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="ConstructionYear_40b4fceb150a7fd60ea262bf90bcc8b6.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/ConstructionYear"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../ConstructionYear</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="ConstructionYear_40b4fceb150a7fd60ea262bf90bcc8b6.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/ConstructionYear"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../ConstructionYear</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1229,15 +1284,21 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Year of construction</p>
 <p>Enthaelt das Errichtungsjahr (Fertigstellung)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">761</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">5200</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="TotalRefurbishmentYear_976b1266aebca9fed6fb8f05996e0849.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/TotalRefurbishmentYear"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../TotalRefurbishmentYear</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="TotalRefurbishmentYear_976b1266aebca9fed6fb8f05996e0849.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/TotalRefurbishmentYear"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../TotalRefurbishmentYear</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1248,15 +1309,21 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Year when the last total refurbishment was finished</p>
 <p>Enthaelt Jahr der letzten Generalsanierung (Fertigstellung)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">8496</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">4921</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Zoning_1569a32b2c40402fbda4c1310a193759.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/Zoning"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../Zoning</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Zoning_1569a32b2c40402fbda4c1310a193759.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/Zoning"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../Zoning</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1271,17 +1338,22 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="TransactionType_934ed801e263aa2b9e3cc2dfc44c48f9.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/TransactionType"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../TransactionType</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="TransactionType_934ed801e263aa2b9e3cc2dfc44c48f9.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/TransactionType"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../TransactionType</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
+                                <span>xs:string</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Transaction type of the investment deal:</p>
@@ -1299,15 +1371,21 @@
 <li>other transaction type</li>
 </ul>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">share deal corporate</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">direct investment</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="TypeOfUse_9d0918cd511d6aed3c5a94980c78b234.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/TypeOfUse"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../TypeOfUse</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="TypeOfUse_9d0918cd511d6aed3c5a94980c78b234.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/TypeOfUse"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../TypeOfUse</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1323,11 +1401,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="LegalType_36d1d8383e0f6adce08f0932f9c1902d.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/LegalType"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../LegalType</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="LegalType_36d1d8383e0f6adce08f0932f9c1902d.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/LegalType"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../LegalType</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1349,11 +1433,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="UsableArea_39269a6e940645ddb8a054973ef9fbb4.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/UsableArea"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../UsableArea</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="UsableArea_39269a6e940645ddb8a054973ef9fbb4.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/UsableArea"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../UsableArea</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1363,15 +1453,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>usable area in square meters</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">512</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">1985</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Address_0b626a1e8d6c4056195d499c107a2fa9.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/Address"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../Address</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Address_0b626a1e8d6c4056195d499c107a2fa9.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/Address"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../Address</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1386,22 +1482,27 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="LocationType_ceaebd76ea957b873556d5fda4940fe8.html"
-                                   title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/LocationType"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/AssetMasterData/.../LocationType</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="LocationType_ceaebd76ea957b873556d5fda4940fe8.html"
+                                       title="/FundsXML4/AssetMasterData/Asset/AssetDetails/RealEstate/LocationType"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/AssetMasterData/.../LocationType</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
+                                <span>xs:string</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>according to ESRB/2016/14</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">Not applicable</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">Prime Location</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1411,11 +1512,35 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             name=&quot;RealEstate&quot;
@@ -1425,7 +1550,251 @@
    &lt;/xs:annotation&gt;
 &lt;/xs:element&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Section: Referenced Type Definition -->
+            <section>
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Referenced Type Definition
+                                <span class="font-mono text-sm text-slate-600">
+                                    (<span>RealEstateType</span>)
+                                </span>
+                            </h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:complexType xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+                xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+                name=&quot;RealEstateType&quot;&gt;
+   &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Real Estate Asset data information&lt;/xs:documentation&gt;
+   &lt;/xs:annotation&gt;
+   &lt;xs:sequence&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;InvestmentCosts&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Investment costs of the real estate asset&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Investitionskosten&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+         &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+               &lt;xs:element name=&quot;PurchasePrice&quot;&gt;
+                  &lt;xs:annotation&gt;
+                     &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Purchase price of the real estate asset according to contract of purchase; including forward purchase contracts&lt;/xs:documentation&gt;
+                     &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Kaufpreis der Immobilie oder Grundstück laut Vertrag inkl. Forward puchase Verträgen&lt;/xs:documentation&gt;
+                  &lt;/xs:annotation&gt;
+                  &lt;xs:complexType&gt;
+                     &lt;xs:sequence&gt;
+                        &lt;xs:element name=&quot;Value&quot; type=&quot;xs:decimal&quot;&gt;
+                           &lt;xs:annotation&gt;
+                              &lt;xs:documentation&gt;Wert&lt;/xs:documentation&gt;
+                           &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name=&quot;Currency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
+                           &lt;xs:annotation&gt;
+                              &lt;xs:documentation&gt;Währung&lt;/xs:documentation&gt;
+                           &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name=&quot;FXRate&quot; type=&quot;xs:decimal&quot;&gt;
+                           &lt;xs:annotation&gt;
+                              &lt;xs:documentation&gt;FX Kurs&lt;/xs:documentation&gt;
+                           &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                     &lt;/xs:sequence&gt;
+                  &lt;/xs:complexType&gt;
+               &lt;/xs:element&gt;
+               &lt;xs:element name=&quot;ConstructionCosts&quot;&gt;
+                  &lt;xs:annotation&gt;
+                     &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Total construction costs excluding property purchase price (relevant only for building and construction projects)&lt;/xs:documentation&gt;
+                     &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Gesamtinvestitionskosten exkl. Grundstückskaufpreis (nur relevant bei Bauprojekten mit laufender Zahlung)&lt;/xs:documentation&gt;
+                  &lt;/xs:annotation&gt;
+                  &lt;xs:complexType&gt;
+                     &lt;xs:sequence&gt;
+                        &lt;xs:element name=&quot;Value&quot; type=&quot;xs:decimal&quot;&gt;
+                           &lt;xs:annotation&gt;
+                              &lt;xs:documentation&gt;Wert&lt;/xs:documentation&gt;
+                           &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name=&quot;Currency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
+                           &lt;xs:annotation&gt;
+                              &lt;xs:documentation&gt;Währung&lt;/xs:documentation&gt;
+                           &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name=&quot;FXRate&quot; type=&quot;xs:decimal&quot;&gt;
+                           &lt;xs:annotation&gt;
+                              &lt;xs:documentation&gt;FX Kurs&lt;/xs:documentation&gt;
+                           &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                     &lt;/xs:sequence&gt;
+                  &lt;/xs:complexType&gt;
+               &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;FirstRateAcrrual&quot; type=&quot;xs:date&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Date of the first rate accrual&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Enthaelt das Datum der ersten Mietabgrenzung&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;DateOfPropertyTransaction&quot; type=&quot;xs:date&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Date of the property transaction&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Enthaelt das Datum des Eigentumuebergangs&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ConstructionYear&quot; type=&quot;xs:positiveInteger&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Year of construction&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Enthaelt das Errichtungsjahr (Fertigstellung)&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot;
+                  name=&quot;TotalRefurbishmentYear&quot;
+                  type=&quot;xs:positiveInteger&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Year when the last total refurbishment was finished&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Enthaelt Jahr der letzten Generalsanierung (Fertigstellung)&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Zoning&quot; type=&quot;xs:string&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Devotement of the real estate asset&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Enthaelt die Widmung&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TransactionType&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Transaction type of the investment deal:
+
+- direct investment
+- share deal corporate
+- share deal personnel
+- other transaction type&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Art des Immobilienerwerbs:
+
+- direct investment
+- share deal corporate
+- share deal personnel
+- other transaction type&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+         &lt;xs:simpleType&gt;
+            &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+               &lt;xs:enumeration value=&quot;direct investment&quot;/&gt;
+               &lt;xs:enumeration value=&quot;share deal corporate&quot;/&gt;
+               &lt;xs:enumeration value=&quot;share deal personnel&quot;/&gt;
+               &lt;xs:enumeration value=&quot;other transaction type&quot;/&gt;
+            &lt;/xs:restriction&gt;
+         &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;TypeOfUse&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Type of use of the real estate asset&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nutzungsart&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+         &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+               &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ECB&quot;&gt;
+                  &lt;xs:annotation&gt;
+                     &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Type of use according to ECB Investment Funds Statistics classifications&lt;/xs:documentation&gt;
+                     &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nutzungsart gem. EZB-IF Statistik&lt;/xs:documentation&gt;
+                  &lt;/xs:annotation&gt;
+                  &lt;xs:simpleType&gt;
+                     &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                        &lt;xs:enumeration value=&quot;office property&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;residential property&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;commercial real estate&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;other real estate&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;industrial real estate&quot;/&gt;
+                     &lt;/xs:restriction&gt;
+                  &lt;/xs:simpleType&gt;
+               &lt;/xs:element&gt;
+               &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AIFMD&quot;&gt;
+                  &lt;xs:annotation&gt;
+                     &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Type of use according to AIFMD Reporting classifications&lt;/xs:documentation&gt;
+                     &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nutzungsart gem. AIFMD Reporting&lt;/xs:documentation&gt;
+                  &lt;/xs:annotation&gt;
+                  &lt;xs:simpleType&gt;
+                     &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                        &lt;xs:enumeration value=&quot;PHY_RES_RESL&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;PHY_RES_COML&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;PHY_RES_OTHR&quot;/&gt;
+                     &lt;/xs:restriction&gt;
+                  &lt;/xs:simpleType&gt;
+               &lt;/xs:element&gt;
+               &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ESRB&quot;&gt;
+                  &lt;xs:annotation&gt;
+                     &lt;xs:documentation&gt;european systemic Risk Board&lt;/xs:documentation&gt;
+                  &lt;/xs:annotation&gt;
+                  &lt;xs:simpleType&gt;
+                     &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+                        &lt;xs:enumeration value=&quot;Residential properties&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;Retail&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;Office space&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;industrial use&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;other types of commercial real estate&quot;/&gt;
+                        &lt;xs:enumeration value=&quot;not applicable&quot;/&gt;
+                     &lt;/xs:restriction&gt;
+                  &lt;/xs:simpleType&gt;
+               &lt;/xs:element&gt;
+               &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Internal&quot; type=&quot;xs:string&quot;&gt;
+                  &lt;xs:annotation&gt;
+                     &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Internal type of use&lt;/xs:documentation&gt;
+                     &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Nutzungsart intern&lt;/xs:documentation&gt;
+                  &lt;/xs:annotation&gt;
+               &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;LegalType&quot; type=&quot;xs:string&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang=&quot;en&quot;&gt;Legal classification of the real estate asset&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang=&quot;de&quot;&gt;Juristische Klassifizierung des Assets gem. ImmoInvFG (AT):
+
+- bebaute Grundstücke
+- Grundstücke im Zustand der Bebauung
+- unbebaute Grundstücke
+- Baurechte, Superädifikate
+- sonstige
+
+&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;UsableArea&quot; type=&quot;xs:positiveInteger&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;usable area in square meters&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Address&quot; type=&quot;AddressType&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Address of Real Estate&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;LocationType&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;according to ESRB/2016/14&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+         &lt;xs:simpleType&gt;
+            &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+               &lt;xs:enumeration value=&quot;Prime Location&quot;/&gt;
+               &lt;xs:enumeration value=&quot;Non-Prime Location&quot;/&gt;
+               &lt;xs:enumeration value=&quot;Not applicable&quot;/&gt;
+            &lt;/xs:restriction&gt;
+         &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+   &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+                    </div>
+                </details>
             </section>
 
         </div>

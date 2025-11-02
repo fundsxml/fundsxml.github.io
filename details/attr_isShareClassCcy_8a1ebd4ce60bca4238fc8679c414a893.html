@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -81,7 +90,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
-    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_2774c1ae369ab9c17359040c0bb19641.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_88e550141df40a4a6c312ba698dca54f.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_b2ecb70fe2b5f3b9cd9f521f3c4d7b47.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_2f106f0eb6f8a941976119602c041f8d.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_b6630d0195aeafb0a60ba947a33751a2.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_b931757849475a2c62bba20ddc1e0806.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_ecdbd1ab5dd97f290ac296f09640c999.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='PositionsDecomposed_9cab2e30dde106f34f6fe31bffce0eef.html' class='text-sky-600 hover:underline'>PositionsDecomposed</a> <span class='mx-1 text-slate-400'>/</span> <a href='Positions_2a09a800491c824bb05794675a96d2e0.html' class='text-sky-600 hover:underline'>Positions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Position_1ac831995ff2e4e91c6d3ebff181d22f.html' class='text-sky-600 hover:underline'>Position</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_0af16caee80563943aa7cd2c3eb1cd60.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='Equity_807681742bd9af2271300111511949a9.html' class='text-sky-600 hover:underline'>Equity</a> <span class='mx-1 text-slate-400'>/</span> <a href='PurchaseValue_4994e3a5916066ee24441c2ba4420fcf.html' class='text-sky-600 hover:underline'>PurchaseValue</a> <span class='mx-1 text-slate-400'>/</span> <a href='Amount_45818829ac135423ed68ab230b41e128.html' class='text-sky-600 hover:underline'>Amount</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>@isShareClassCcy</span></nav>
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_88e550141df40a4a6c312ba698dca54f.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_b2ecb70fe2b5f3b9cd9f521f3c4d7b47.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_2f106f0eb6f8a941976119602c041f8d.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_b6630d0195aeafb0a60ba947a33751a2.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_b931757849475a2c62bba20ddc1e0806.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_ecdbd1ab5dd97f290ac296f09640c999.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='PositionsDecomposed_9cab2e30dde106f34f6fe31bffce0eef.html' class='text-sky-600 hover:underline'>PositionsDecomposed</a> <span class='mx-1 text-slate-400'>/</span> <a href='Positions_2a09a800491c824bb05794675a96d2e0.html' class='text-sky-600 hover:underline'>Positions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Position_1ac831995ff2e4e91c6d3ebff181d22f.html' class='text-sky-600 hover:underline'>Position</a> <span class='mx-1 text-slate-400'>/</span> <a href='Equity_807681742bd9af2271300111511949a9.html' class='text-sky-600 hover:underline'>Equity</a> <span class='mx-1 text-slate-400'>/</span> <a href='PurchaseValue_4994e3a5916066ee24441c2ba4420fcf.html' class='text-sky-600 hover:underline'>PurchaseValue</a> <span class='mx-1 text-slate-400'>/</span> <a href='Amount_45818829ac135423ed68ab230b41e128.html' class='text-sky-600 hover:underline'>Amount</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>@isShareClassCcy</span></nav>
 
     <!-- Central detail card -->
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -90,11 +99,11 @@
             <h1 class="text-2xl font-bold text-slate-900">@isShareClassCcy</h1>
             <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
-                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_9638/Equity/PurchaseValue/Amount/@isShareClassCcy</p>
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Equity/PurchaseValue/Amount/@isShareClassCcy</p>
 
                 <!-- Button to copy the XPath -->
                 <button onclick="copyXPath(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_9638/Equity/PurchaseValue/Amount/@isShareClassCcy">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Equity/PurchaseValue/Amount/@isShareClassCcy">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -107,7 +116,7 @@
 
                 <!-- Button to copy the Permalink -->
                 <button onclick="copyPermalink(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/CHOICE_9638/Equity/PurchaseValue/Amount/@isShareClassCcy">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/PositionsDecomposed/Positions/Position/Equity/PurchaseValue/Amount/@isShareClassCcy">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -130,7 +139,7 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="434.0"
+     width="435.0"
      height="88.939453125">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -278,9 +287,9 @@
       <rect x="32"
             y="16"
             fill="#f0f8ff"
-            width="146.0"
+            width="147.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="44.939453125"
             font-size="14"
-            font-family="Inter Regular">@isShareClassCcy</text>
+            font-family="Inter-Regular">@isShareClassCcy</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="74.939453125"
-            font-family="Inter Regular"/>
+            font-family="Inter-Regular"/>
    </g>
 </svg>
 </div>
@@ -320,7 +329,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">xs:boolean</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>xs:boolean</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -348,18 +361,46 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:attribute xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:attribute xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
               xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
               xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
               name=&quot;isShareClassCcy&quot;
               type=&quot;xs:boolean&quot;/&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
             </section>
+
+            <!-- Section: Referenced Type Definition -->
+            
 
         </div>
     </div>

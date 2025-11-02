@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -81,7 +90,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
-    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='AssetMasterData_1944b3819a21ab3426c2741e35e5c461.html' class='text-sky-600 hover:underline'>AssetMasterData</a> <span class='mx-1 text-slate-400'>/</span> <a href='Asset_2730c64f96f2968f4d1c360891c64bb9.html' class='text-sky-600 hover:underline'>Asset</a> <span class='mx-1 text-slate-400'>/</span> <a href='AssetDetails_5b4732028b92aa3f93aabd3643d80e60.html' class='text-sky-600 hover:underline'>AssetDetails</a> <span class='mx-1 text-slate-400'>/</span> <a href='Swap_8de85b7bccc28d9eb3054b53e706eb7c.html' class='text-sky-600 hover:underline'>Swap</a> <span class='mx-1 text-slate-400'>/</span> <a href='Legs_086d0c8db85a08ec9acb10df3588f878.html' class='text-sky-600 hover:underline'>Legs</a> <span class='mx-1 text-slate-400'>/</span> <a href='Leg_00b90c8776db265ac9b4e1252c43bf3a.html' class='text-sky-600 hover:underline'>Leg</a> <span class='mx-1 text-slate-400'>/</span> <a href='SEQUENCE_cd4d70e3c698c29699e43aa3b228e7fa.html' class='text-sky-600 hover:underline'>SEQUENCE</a> <span class='mx-1 text-slate-400'>/</span> <a href='UnderlyingAsset_43dc6a03db724fff3f574582423f3e12.html' class='text-sky-600 hover:underline'>UnderlyingAsset</a> <span class='mx-1 text-slate-400'>/</span> <a href='Identifiers_aa3b26f9c11f34fcf8f7341504e5edc8.html' class='text-sky-600 hover:underline'>Identifiers</a> <span class='mx-1 text-slate-400'>/</span> <a href='Bloomberg_2bfda2e3b32dedd5b5f3a2511aee43aa.html' class='text-sky-600 hover:underline'>Bloomberg</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Ticker</span></nav>
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='AssetMasterData_1944b3819a21ab3426c2741e35e5c461.html' class='text-sky-600 hover:underline'>AssetMasterData</a> <span class='mx-1 text-slate-400'>/</span> <a href='Asset_2730c64f96f2968f4d1c360891c64bb9.html' class='text-sky-600 hover:underline'>Asset</a> <span class='mx-1 text-slate-400'>/</span> <a href='AssetDetails_5b4732028b92aa3f93aabd3643d80e60.html' class='text-sky-600 hover:underline'>AssetDetails</a> <span class='mx-1 text-slate-400'>/</span> <a href='Swap_8de85b7bccc28d9eb3054b53e706eb7c.html' class='text-sky-600 hover:underline'>Swap</a> <span class='mx-1 text-slate-400'>/</span> <a href='Legs_086d0c8db85a08ec9acb10df3588f878.html' class='text-sky-600 hover:underline'>Legs</a> <span class='mx-1 text-slate-400'>/</span> <a href='Leg_00b90c8776db265ac9b4e1252c43bf3a.html' class='text-sky-600 hover:underline'>Leg</a> <span class='mx-1 text-slate-400'>/</span> <a href='UnderlyingAsset_43dc6a03db724fff3f574582423f3e12.html' class='text-sky-600 hover:underline'>UnderlyingAsset</a> <span class='mx-1 text-slate-400'>/</span> <a href='Identifiers_aa3b26f9c11f34fcf8f7341504e5edc8.html' class='text-sky-600 hover:underline'>Identifiers</a> <span class='mx-1 text-slate-400'>/</span> <a href='Bloomberg_2bfda2e3b32dedd5b5f3a2511aee43aa.html' class='text-sky-600 hover:underline'>Bloomberg</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Ticker</span></nav>
 
     <!-- Central detail card -->
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -90,11 +99,11 @@
             <h1 class="text-2xl font-bold text-slate-900">Ticker</h1>
             <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
-                <p class="text-sm text-slate-600 font-mono">/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/SEQUENCE_32641/UnderlyingAsset/Identifiers/Bloomberg/Ticker</p>
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/UnderlyingAsset/Identifiers/Bloomberg/Ticker</p>
 
                 <!-- Button to copy the XPath -->
                 <button onclick="copyXPath(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/SEQUENCE_32641/UnderlyingAsset/Identifiers/Bloomberg/Ticker">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/UnderlyingAsset/Identifiers/Bloomberg/Ticker">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -107,7 +116,7 @@
 
                 <!-- Button to copy the Permalink -->
                 <button onclick="copyPermalink(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/SEQUENCE_32641/UnderlyingAsset/Identifiers/Bloomberg/Ticker">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/AssetMasterData/Asset/AssetDetails/Swap/Legs/Leg/UnderlyingAsset/Identifiers/Bloomberg/Ticker">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -280,7 +289,7 @@
             fill="#f0f8ff"
             width="65.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="44.939453125"
             font-size="14"
-            font-family="Inter Regular">Ticker</text>
+            font-family="Inter-Regular">Ticker</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="74.939453125"
-            font-family="Inter Regular">
+            font-family="Inter-Regular">
          <tspan x="27" dy="1.3em"></tspan>
          <tspan x="27" dy="1.3em">Bloomberg </tspan>
          <tspan x="27" dy="1.3em">Ticker </tspan>
@@ -336,7 +345,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">Text32Type</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>Text32Type</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -367,11 +380,35 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
@@ -382,7 +419,41 @@
    &lt;/xs:annotation&gt;
 &lt;/xs:element&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Section: Referenced Type Definition -->
+            <section>
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Referenced Type Definition
+                                <span class="font-mono text-sm text-slate-600">
+                                    (<span>Text32Type</span>)
+                                </span>
+                            </h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:simpleType xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+               xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+               xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+               name=&quot;Text32Type&quot;&gt;
+   &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Text (max. 32 characters)&lt;/xs:documentation&gt;
+   &lt;/xs:annotation&gt;
+   &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+      &lt;xs:maxLength value=&quot;32&quot;/&gt;
+   &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+                    </div>
+                </details>
             </section>
 
         </div>

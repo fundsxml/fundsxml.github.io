@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -81,7 +90,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
-    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_2774c1ae369ab9c17359040c0bb19641.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_88e550141df40a4a6c312ba698dca54f.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_b2ecb70fe2b5f3b9cd9f521f3c4d7b47.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_2f106f0eb6f8a941976119602c041f8d.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_b6630d0195aeafb0a60ba947a33751a2.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='PerformanceFigures_db1da24b6c2183ac793a30a673518e6c.html' class='text-sky-600 hover:underline'>PerformanceFigures</a> <span class='mx-1 text-slate-400'>/</span> <a href='TotalReturns_bb4f2ce387d467b3898c96dfb0a4dcd0.html' class='text-sky-600 hover:underline'>TotalReturns</a> <span class='mx-1 text-slate-400'>/</span> <a href='TotalReturn_ad1c94f5b893ef4e0aba8a2a3e17761e.html' class='text-sky-600 hover:underline'>TotalReturn</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Value</span></nav>
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_88e550141df40a4a6c312ba698dca54f.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_b2ecb70fe2b5f3b9cd9f521f3c4d7b47.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_2f106f0eb6f8a941976119602c041f8d.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_b6630d0195aeafb0a60ba947a33751a2.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='PerformanceFigures_db1da24b6c2183ac793a30a673518e6c.html' class='text-sky-600 hover:underline'>PerformanceFigures</a> <span class='mx-1 text-slate-400'>/</span> <a href='TotalReturns_bb4f2ce387d467b3898c96dfb0a4dcd0.html' class='text-sky-600 hover:underline'>TotalReturns</a> <span class='mx-1 text-slate-400'>/</span> <a href='TotalReturn_ad1c94f5b893ef4e0aba8a2a3e17761e.html' class='text-sky-600 hover:underline'>TotalReturn</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Value</span></nav>
 
     <!-- Central detail card -->
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -90,11 +99,11 @@
             <h1 class="text-2xl font-bold text-slate-900">Value</h1>
             <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
-                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value</p>
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value</p>
 
                 <!-- Button to copy the XPath -->
                 <button onclick="copyXPath(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -107,7 +116,7 @@
 
                 <!-- Button to copy the Permalink -->
                 <button onclick="copyPermalink(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -130,8 +139,8 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="441.0"
-     height="252.857421875">
+     width="637.0"
+     height="341.63671875">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
          <stop stop-color="#ffffff" offset="0%"/>
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -278,9 +287,9 @@
       <rect x="32"
             y="93"
             fill="#f0f8ff"
-            width="60.0"
+            width="61.0"
             style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="121.939453125"
             font-size="14"
-            font-family="Inter Regular">Value</text>
+            font-family="Inter-Regular">Value</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="151.939453125"
-            font-family="Inter Regular">
+            font-family="Inter-Regular">
          <tspan x="27" dy="1.3em">Absolute </tspan>
          <tspan x="27" dy="1.3em">and/or </tspan>
          <tspan x="27" dy="1.3em">percentage </tspan>
@@ -307,12 +316,12 @@
    </g>
    <line y2="113.4697265625"
          style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         x1="92.0"
+         x1="93.0"
          class="connection-line"
-         x2="137.0"
+         x2="138.0"
          y1="113.4697265625"/>
    <g>
-      <rect x="137.0"
+      <rect x="138.0"
             y="98.4697265625"
             fill="url(#choiceGradient)"
             width="30.0"
@@ -323,90 +332,199 @@
             stroke="#ff8c00"
             stroke-width="2"/>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="143.0"
+           x="144.0"
            y="105.4697265625"
            xlink:href="#choice-icon"/>
    </g>
-   <rect x="252.0"
-         y="32.0"
-         fill="#f0f8ff"
-         width="141.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value/AbsoluteValue"/>
-   <g>
-      <text x="264.0"
-            fill="#2c5aa0"
-            y="60.939453125"
-            font-size="14"
-            font-family="Inter Regular">AbsoluteValue</text>
-      <line y2="66.939453125"
-            stroke-width="1"
-            x1="264.0"
-            x2="381.0"
-            stroke="#dee2e6"
-            y1="66.939453125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="264.0"
-           y="77.87890625"
-           xlink:href="#numeric-icon"/>
-      <text x="280.0"
-            fill="#007bff"
-            y="87.87890625"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
-   <path fill="none"
-         d="M 167.0 113.5 H 197.0 V 64.9 H 252.0"
-         style="stroke: #ff8c00; stroke-width: 2; fill: none;"
-         class="connection-line"/>
-   <a href="SEQUENCE_eed7a183be4220cf26fb73642378b206.html">
-      <rect x="252.0"
-            y="129.87890625"
+   <a href="AbsoluteValue_343830e52ee742dfb53e664f237a4867.html">
+      <rect x="253.0"
+            y="32.0"
             fill="#f0f8ff"
-            width="141.0"
+            width="163.0"
             style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
             height="65.87890625"
-            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value/SEQUENCE_8134"/>
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value/AbsoluteValue"/>
       <g>
-         <text x="264.0"
+         <text x="265.0"
                fill="#2c5aa0"
-               y="158.818359375"
+               y="60.939453125"
                font-size="14"
-               font-family="Inter Regular">SEQUENCE</text>
-         <line y2="164.818359375"
+               font-weight="600"
+               font-family="Inter-Regular">AbsoluteValue</text>
+         <line y2="64.939453125"
                stroke-width="1"
-               x1="264.0"
-               x2="381.0"
-               stroke="#dee2e6"
-               y1="164.818359375"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="264.0"
-              y="175.7578125"
-              xlink:href="#complex-icon"/>
-         <text x="280.0"
-               fill="#dc3545"
-               y="185.7578125"
+               x1="265.0"
+               x2="404.0"
+               stroke="#e0e0e0"
+               y1="64.939453125"/>
+         <text x="265.0"
+               fill="#6c757d"
+               y="85.87890625"
                font-size="13"
-               font-family="Inter Regular">(container)</text>
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="380.0"
+                  y="72.939453125"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="384.0"
+                  fill="#495057"
+                  y="83.939453125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
       </g>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="397.0"
-           y="150.818359375"
-           xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 167.0 113.5 H 197.0 V 162.8 H 252.0"
-         style="stroke: #ff8c00; stroke-width: 2; fill: none;"
-         class="connection-line"/>
+         stroke-width="2"
+         d="M 168.0 113.4697265625 H 189.25 V 64.939453125 H 253.0"
+         stroke="#ff8c00"/>
+   <g>
+      <rect x="288.0"
+            y="149.87890625"
+            fill="url(#sequenceGradient)"
+            width="50.0"
+            rx="4"
+            ry="4"
+            height="30.0"
+            stroke="#6c757d"
+            stroke-width="2"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="296.0"
+           y="154.87890625"
+           xlink:href="#sequence-icon"/>
+   </g>
+   <path fill="none"
+         stroke-width="2"
+         d="M 168.0 113.4697265625 H 198.0 V 164.87890625 H 288.0"
+         stroke="#6c757d"/>
+   <a href="PercentageValue_e4d79048bd8a74377160490837b121fc.html">
+      <rect x="403.0"
+            y="149.87890625"
+            fill="#f0f8ff"
+            width="202.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value/SEQUENCE_8134/PercentageValue"/>
+      <g>
+         <text x="415.0"
+               fill="#2c5aa0"
+               y="178.818359375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">PercentageValue</text>
+         <line y2="182.818359375"
+               stroke-width="1"
+               x1="415.0"
+               x2="593.0"
+               stroke="#e0e0e0"
+               y1="182.818359375"/>
+         <text x="415.0"
+               fill="#6c757d"
+               y="203.7578125"
+               font-size="13"
+               font-family="Inter-Regular">PercentageType</text>
+         <g>
+            <rect x="569.0"
+                  y="190.818359375"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="573.0"
+                  fill="#495057"
+                  y="201.818359375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
+   <path fill="none"
+         stroke-width="2"
+         d="M 363.0 164.87890625 H 379.0 V 182.818359375 H 403.0"
+         stroke="#6c757d"/>
+   <rect x="403.0"
+         y="247.7578125"
+         fill="none"
+         width="202.0"
+         stroke-dasharray="5,2"
+         rx="8"
+         ry="8"
+         height="65.87890625"
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="AbsoluteValue_adb185319a4e47244e9e13e76e92a382.html">
+      <rect x="403.0"
+            y="247.7578125"
+            fill="#f0f8ff"
+            width="202.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value/SEQUENCE_8134/AbsoluteValue"/>
+      <g>
+         <text x="415.0"
+               fill="#2c5aa0"
+               y="276.697265625"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">AbsoluteValue</text>
+         <line y2="280.697265625"
+               stroke-width="1"
+               x1="415.0"
+               x2="593.0"
+               stroke="#e0e0e0"
+               y1="280.697265625"/>
+         <text x="415.0"
+               fill="#6c757d"
+               y="301.63671875"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="552.0"
+                  y="288.697265625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="556.0"
+                  fill="#495057"
+                  y="299.697265625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <path fill="none"
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 363.0 164.87890625 H 379.0 V 280.697265625 H 403.0"
+         stroke="#6c757d"/>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -436,7 +554,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">(anonymous)</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>(anonymous)</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -474,11 +596,17 @@
                         <tbody class="divide-y divide-slate-200 text-sm">
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="AbsoluteValue_343830e52ee742dfb53e664f237a4867.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value/AbsoluteValue"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../AbsoluteValue</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="AbsoluteValue_343830e52ee742dfb53e664f237a4867.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value/AbsoluteValue"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../AbsoluteValue</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -487,25 +615,62 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">43.90</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">193.02</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="SEQUENCE_eed7a183be4220cf26fb73642378b206.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value/SEQUENCE_8134"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../SEQUENCE_8134</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="PercentageValue_e4d79048bd8a74377160490837b121fc.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value/SEQUENCE_8134/PercentageValue"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../PercentageValue</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800"
+                                          title="This element is part of a sequence">
+                                        sequence
+                                    </span>
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(container)</a>
+                                <a href="../simpleTypes/PercentageType.html"
+                                   class="text-sky-600 hover:text-sky-800 hover:underline">PercentageType</a>
                                 
                             </td>
 
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>The PercentageType defines the percentage-values. It is derived from decimal. To decimal there is no modification. Percentage values can be expressed in three was: For 3.5 % it can be written as 3.5 or 1.035 or 0.035. For FundsXML percentage value has to be written as 3.5</p>
+<p>Der PercentageType definiert die Prozentwerte. Abgeleitet ist er von decimal. Veraendert wurde er nicht. Bei Prozentwerten kann man je nach Definition fuer 3, 5 % die Werte 3.5 oder 1.035 oder 0.035 angeben. Mit diesem Typ dokumentiert FundsXML, dass fuer Prozentwerte die Auspraegung 3.5 benutzt werden muss um eine einheitliche Auspraegung fuer den Datenaustausch zwischen Firmen zu erreichen.</p>
+</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">737.65</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <div class="flex items-center gap-2">
+                                    <a href="AbsoluteValue_adb185319a4e47244e9e13e76e92a382.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value/SEQUENCE_8134/AbsoluteValue"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../AbsoluteValue</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800"
+                                          title="This element is part of a sequence">
+                                        sequence
+                                    </span>
+                                    
+                                </div>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:decimal</span>
+                            </td>
+
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600">976.86</td>
                         </tr>
                         </tbody>
                     </table>
@@ -515,11 +680,35 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             name=&quot;Value&quot;&gt;
@@ -537,8 +726,12 @@
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
             </section>
+
+            <!-- Section: Referenced Type Definition -->
+            
 
         </div>
     </div>

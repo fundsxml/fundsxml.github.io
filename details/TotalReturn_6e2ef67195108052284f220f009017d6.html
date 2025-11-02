@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -81,7 +90,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
-    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_2774c1ae369ab9c17359040c0bb19641.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfunds_b26f7b71fbfa7f0c9248e03057b8af47.html' class='text-sky-600 hover:underline'>Subfunds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfund_64b691c40f891b0155a10eb333b71e69.html' class='text-sky-600 hover:underline'>Subfund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_f8466cca9266a2b96359ee44b8daf355.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_629b550d194af1808fade67bf7aec8de.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_128d4ed49f066341d55d5828a27875d6.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_45b25539a1d67aaafe70ebe1dd9085b7.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='PerformanceFigures_94710890b2397e1962cc865bdba803ac.html' class='text-sky-600 hover:underline'>PerformanceFigures</a> <span class='mx-1 text-slate-400'>/</span> <a href='TotalReturns_d13f98ecf672416fdc41a4077629faec.html' class='text-sky-600 hover:underline'>TotalReturns</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>TotalReturn</span></nav>
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfunds_b26f7b71fbfa7f0c9248e03057b8af47.html' class='text-sky-600 hover:underline'>Subfunds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfund_64b691c40f891b0155a10eb333b71e69.html' class='text-sky-600 hover:underline'>Subfund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_f8466cca9266a2b96359ee44b8daf355.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_629b550d194af1808fade67bf7aec8de.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_128d4ed49f066341d55d5828a27875d6.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_45b25539a1d67aaafe70ebe1dd9085b7.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='PerformanceFigures_94710890b2397e1962cc865bdba803ac.html' class='text-sky-600 hover:underline'>PerformanceFigures</a> <span class='mx-1 text-slate-400'>/</span> <a href='TotalReturns_d13f98ecf672416fdc41a4077629faec.html' class='text-sky-600 hover:underline'>TotalReturns</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>TotalReturn</span></nav>
 
     <!-- Central detail card -->
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -90,11 +99,11 @@
             <h1 class="text-2xl font-bold text-slate-900">TotalReturn</h1>
             <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
-                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn</p>
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn</p>
 
                 <!-- Button to copy the XPath -->
                 <button onclick="copyXPath(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -107,7 +116,7 @@
 
                 <!-- Button to copy the Permalink -->
                 <button onclick="copyPermalink(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -130,7 +139,7 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="548.0"
+     width="597.0"
      height="1026.7890625">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -280,7 +289,7 @@
             fill="#f0f8ff"
             width="100.0"
             style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="512.939453125"
             font-size="14"
-            font-family="Inter Regular">TotalReturn</text>
+            font-family="Inter-Regular">TotalReturn</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="542.939453125"
-            font-family="Inter Regular"/>
+            font-family="Inter-Regular"/>
    </g>
    <line y2="504.4697265625"
          style="stroke: #6c757d; stroke-width: 2; fill: none;"
@@ -321,50 +330,66 @@
            y="496.4697265625"
            xlink:href="#sequence-icon"/>
    </g>
-   <rect x="292.0"
-         y="32.0"
-         fill="#f0f8ff"
-         width="208.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Currency"/>
-   <g>
-      <text x="304.0"
-            fill="#2c5aa0"
-            y="60.939453125"
-            font-size="14"
-            font-family="Inter Regular">Currency</text>
-      <line y2="66.939453125"
-            stroke-width="1"
-            x1="304.0"
-            x2="488.0"
-            stroke="#dee2e6"
-            y1="66.939453125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="304.0"
-           y="77.87890625"
-           xlink:href="#complex-icon"/>
-      <text x="320.0"
-            fill="#dc3545"
-            y="87.87890625"
-            font-size="13"
-            font-family="Inter Regular">ISOCurrencyCodeType</text>
-   </g>
+   <a href="Currency_719cce99e3882cf201a7e2a09098519a.html">
+      <rect x="292.0"
+            y="32.0"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Currency"/>
+      <g>
+         <text x="304.0"
+               fill="#2c5aa0"
+               y="60.939453125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">Currency</text>
+         <line y2="64.939453125"
+               stroke-width="1"
+               x1="304.0"
+               x2="525.0"
+               stroke="#e0e0e0"
+               y1="64.939453125"/>
+         <text x="304.0"
+               fill="#6c757d"
+               y="85.87890625"
+               font-size="13"
+               font-family="Inter-Regular">ISOCurrencyCodeType</text>
+         <g>
+            <rect x="501.0"
+                  y="72.939453125"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="505.0"
+                  fill="#495057"
+                  y="83.939453125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 217.0 504.5 H 247.0 V 64.9 H 292.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
+         stroke-width="2"
+         d="M 217.0 504.4697265625 H 235.75 V 64.939453125 H 292.0"
+         stroke="#6c757d"/>
    <a href="Value_751d07e5a1f85f06ae2227b2a08b6b0d.html">
       <rect x="292.0"
             y="129.87890625"
             fill="#f0f8ff"
-            width="208.0"
+            width="245.0"
             style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -375,234 +400,284 @@
                fill="#2c5aa0"
                y="158.818359375"
                font-size="14"
-               font-family="Inter Regular">Value</text>
-         <line y2="164.818359375"
+               font-weight="600"
+               font-family="Inter-Regular">Value</text>
+         <line y2="162.818359375"
                stroke-width="1"
                x1="304.0"
-               x2="488.0"
-               stroke="#dee2e6"
-               y1="164.818359375"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="304.0"
-              y="175.7578125"
-              xlink:href="#complex-icon"/>
-         <text x="320.0"
-               fill="#dc3545"
-               y="185.7578125"
+               x2="525.0"
+               stroke="#e0e0e0"
+               y1="162.818359375"/>
+         <text x="304.0"
+               fill="#6c757d"
+               y="183.7578125"
                font-size="13"
-               font-family="Inter Regular">(anonymous)</text>
+               font-family="Inter-Regular">(anonymous)</text>
+         <g>
+            <rect x="501.0"
+                  y="170.818359375"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="505.0"
+                  fill="#495057"
+                  y="181.818359375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="504.0"
+           x="541.0"
            y="150.818359375"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 217.0 504.5 H 247.0 V 162.8 H 292.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
-   <rect x="292.0"
-         y="227.7578125"
-         fill="#f0f8ff"
-         width="208.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/ValidityDate"/>
-   <g>
-      <text x="304.0"
-            fill="#2c5aa0"
-            y="256.697265625"
-            font-size="14"
-            font-family="Inter Regular">ValidityDate</text>
-      <line y2="262.697265625"
-            stroke-width="1"
-            x1="304.0"
-            x2="488.0"
-            stroke="#dee2e6"
-            y1="262.697265625"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="304.0"
-           y="273.63671875"
-           xlink:href="#date-icon"/>
-      <text x="320.0"
-            fill="#fd7e14"
-            y="283.63671875"
-            font-size="13"
-            font-family="Inter Regular">xs:date</text>
-   </g>
+         stroke-width="2"
+         d="M 217.0 504.4697265625 H 235.75 V 162.818359375 H 292.0"
+         stroke="#6c757d"/>
+   <a href="ValidityDate_3a665a0e5d78088c02c96e8adab58c91.html">
+      <rect x="292.0"
+            y="227.7578125"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/ValidityDate"/>
+      <g>
+         <text x="304.0"
+               fill="#2c5aa0"
+               y="256.697265625"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ValidityDate</text>
+         <line y2="260.697265625"
+               stroke-width="1"
+               x1="304.0"
+               x2="525.0"
+               stroke="#e0e0e0"
+               y1="260.697265625"/>
+         <text x="304.0"
+               fill="#6c757d"
+               y="281.63671875"
+               font-size="13"
+               font-family="Inter-Regular">xs:date</text>
+         <g>
+            <rect x="501.0"
+                  y="268.697265625"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="505.0"
+                  fill="#495057"
+                  y="279.697265625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 217.0 504.5 H 247.0 V 260.7 H 292.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
-   <rect x="292.0"
-         y="325.63671875"
-         fill="#f0f8ff"
-         width="208.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CalculationPeriod"/>
-   <g>
-      <text x="304.0"
-            fill="#2c5aa0"
-            y="354.576171875"
-            font-size="14"
-            font-family="Inter Regular">CalculationPeriod</text>
-      <line y2="360.576171875"
-            stroke-width="1"
-            x1="304.0"
-            x2="488.0"
-            stroke="#dee2e6"
-            y1="360.576171875"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="304.0"
-           y="371.515625"
-           xlink:href="#complex-icon"/>
-      <text x="320.0"
-            fill="#dc3545"
-            y="381.515625"
-            font-size="13"
-            font-family="Inter Regular">CalculationPeriodType</text>
-   </g>
+         stroke-width="2"
+         d="M 217.0 504.4697265625 H 235.75 V 260.697265625 H 292.0"
+         stroke="#6c757d"/>
+   <a href="CalculationPeriod_8927af48e3f8ca0488a8327602505956.html">
+      <rect x="292.0"
+            y="325.63671875"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CalculationPeriod"/>
+      <g>
+         <text x="304.0"
+               fill="#2c5aa0"
+               y="354.576171875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">CalculationPeriod</text>
+         <line y2="358.576171875"
+               stroke-width="1"
+               x1="304.0"
+               x2="525.0"
+               stroke="#e0e0e0"
+               y1="358.576171875"/>
+         <text x="304.0"
+               fill="#6c757d"
+               y="379.515625"
+               font-size="13"
+               font-family="Inter-Regular">CalculationPeriodType</text>
+         <g>
+            <rect x="501.0"
+                  y="366.576171875"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="505.0"
+                  fill="#495057"
+                  y="377.576171875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 217.0 504.5 H 247.0 V 358.6 H 292.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
+         stroke-width="2"
+         d="M 217.0 504.4697265625 H 235.75 V 358.576171875 H 292.0"
+         stroke="#6c757d"/>
    <rect x="292.0"
          y="423.515625"
          fill="none"
-         width="208.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="292.0"
-         y="423.515625"
-         fill="#f0f8ff"
-         width="208.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/AnnualizedFlag"/>
-   <g>
-      <text x="304.0"
-            fill="#2c5aa0"
-            y="452.455078125"
-            font-size="14"
-            font-family="Inter Regular">AnnualizedFlag</text>
-      <line y2="458.455078125"
-            stroke-width="1"
-            x1="304.0"
-            x2="488.0"
-            stroke="#dee2e6"
-            y1="458.455078125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="304.0"
-           y="469.39453125"
-           xlink:href="#boolean-icon"/>
-      <text x="320.0"
-            fill="#6f42c1"
-            y="479.39453125"
-            font-size="13"
-            font-family="Inter Regular">xs:boolean</text>
-   </g>
+   <a href="AnnualizedFlag_8fc6c4eafd4c915a97210e41852ee93d.html">
+      <rect x="292.0"
+            y="423.515625"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/AnnualizedFlag"/>
+      <g>
+         <text x="304.0"
+               fill="#2c5aa0"
+               y="452.455078125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">AnnualizedFlag</text>
+         <line y2="456.455078125"
+               stroke-width="1"
+               x1="304.0"
+               x2="525.0"
+               stroke="#e0e0e0"
+               y1="456.455078125"/>
+         <text x="304.0"
+               fill="#6c757d"
+               y="477.39453125"
+               font-size="13"
+               font-family="Inter-Regular">xs:boolean</text>
+         <g>
+            <rect x="484.0"
+                  y="464.455078125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="488.0"
+                  fill="#495057"
+                  y="475.455078125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 217.0 504.5 H 247.0 V 456.5 H 292.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="253.0"
-         y="424.515625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="257.0"
-         font-size="10"
-         y="439.455078125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 217.0 504.4697265625 H 235.75 V 456.455078125 H 292.0"
+         stroke="#6c757d"/>
    <rect x="292.0"
          y="521.39453125"
          fill="none"
-         width="208.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="292.0"
-         y="521.39453125"
-         fill="#f0f8ff"
-         width="208.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CalculationMethod"/>
-   <g>
-      <text x="304.0"
-            fill="#2c5aa0"
-            y="550.333984375"
-            font-size="14"
-            font-family="Inter Regular">CalculationMethod</text>
-      <line y2="556.333984375"
-            stroke-width="1"
-            x1="304.0"
-            x2="488.0"
-            stroke="#dee2e6"
-            y1="556.333984375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="304.0"
-           y="567.2734375"
-           xlink:href="#complex-icon"/>
-      <text x="320.0"
-            fill="#dc3545"
-            y="577.2734375"
-            font-size="13"
-            font-family="Inter Regular">Text500Type</text>
-   </g>
+   <a href="CalculationMethod_ab903e9fd6f08c5c3b1a1ba3bd151a35.html">
+      <rect x="292.0"
+            y="521.39453125"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CalculationMethod"/>
+      <g>
+         <text x="304.0"
+               fill="#2c5aa0"
+               y="550.333984375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">CalculationMethod</text>
+         <line y2="554.333984375"
+               stroke-width="1"
+               x1="304.0"
+               x2="525.0"
+               stroke="#e0e0e0"
+               y1="554.333984375"/>
+         <text x="304.0"
+               fill="#6c757d"
+               y="575.2734375"
+               font-size="13"
+               font-family="Inter-Regular">Text500Type</text>
+         <g>
+            <rect x="484.0"
+                  y="562.333984375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="488.0"
+                  fill="#495057"
+                  y="573.333984375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 217.0 504.5 H 247.0 V 554.3 H 292.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="253.0"
-         y="522.39453125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="257.0"
-         font-size="10"
-         y="537.333984375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 217.0 504.4697265625 H 235.75 V 554.333984375 H 292.0"
+         stroke="#6c757d"/>
    <rect x="292.0"
          y="619.2734375"
          fill="none"
-         width="208.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -613,9 +688,9 @@
       <rect x="292.0"
             y="619.2734375"
             fill="#f0f8ff"
-            width="208.0"
+            width="245.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -626,233 +701,239 @@
                fill="#2c5aa0"
                y="648.212890625"
                font-size="14"
-               font-family="Inter Regular">Investment</text>
-         <line y2="654.212890625"
+               font-weight="600"
+               font-family="Inter-Regular">Investment</text>
+         <line y2="652.212890625"
                stroke-width="1"
                x1="304.0"
-               x2="488.0"
-               stroke="#dee2e6"
-               y1="654.212890625"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="304.0"
-              y="665.15234375"
-              xlink:href="#complex-icon"/>
-         <text x="320.0"
-               fill="#dc3545"
-               y="675.15234375"
+               x2="525.0"
+               stroke="#e0e0e0"
+               y1="652.212890625"/>
+         <text x="304.0"
+               fill="#6c757d"
+               y="673.15234375"
                font-size="13"
-               font-family="Inter Regular">(anonymous)</text>
+               font-family="Inter-Regular">(anonymous)</text>
+         <g>
+            <rect x="484.0"
+                  y="660.212890625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="488.0"
+                  fill="#495057"
+                  y="671.212890625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="504.0"
+           x="541.0"
            y="640.212890625"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 217.0 504.5 H 247.0 V 652.2 H 292.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="253.0"
-         y="620.2734375"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="257.0"
-         font-size="10"
-         y="635.212890625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 217.0 504.4697265625 H 235.75 V 652.212890625 H 292.0"
+         stroke="#6c757d"/>
    <rect x="292.0"
          y="717.15234375"
          fill="none"
-         width="208.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="292.0"
-         y="717.15234375"
-         fill="#f0f8ff"
-         width="208.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/StartCalculationDate"/>
-   <g>
-      <text x="304.0"
-            fill="#2c5aa0"
-            y="746.091796875"
-            font-size="14"
-            font-family="Inter Regular">StartCalculationDate</text>
-      <line y2="752.091796875"
-            stroke-width="1"
-            x1="304.0"
-            x2="488.0"
-            stroke="#dee2e6"
-            y1="752.091796875"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="304.0"
-           y="763.03125"
-           xlink:href="#date-icon"/>
-      <text x="320.0"
-            fill="#fd7e14"
-            y="773.03125"
-            font-size="13"
-            font-family="Inter Regular">xs:date</text>
-   </g>
+   <a href="StartCalculationDate_429f0844a065a6357d18f8de6de434a7.html">
+      <rect x="292.0"
+            y="717.15234375"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/StartCalculationDate"/>
+      <g>
+         <text x="304.0"
+               fill="#2c5aa0"
+               y="746.091796875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">StartCalculationDate</text>
+         <line y2="750.091796875"
+               stroke-width="1"
+               x1="304.0"
+               x2="525.0"
+               stroke="#e0e0e0"
+               y1="750.091796875"/>
+         <text x="304.0"
+               fill="#6c757d"
+               y="771.03125"
+               font-size="13"
+               font-family="Inter-Regular">xs:date</text>
+         <g>
+            <rect x="484.0"
+                  y="758.091796875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="488.0"
+                  fill="#495057"
+                  y="769.091796875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 217.0 504.5 H 247.0 V 750.1 H 292.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="253.0"
-         y="718.15234375"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="257.0"
-         font-size="10"
-         y="733.091796875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 217.0 504.4697265625 H 235.75 V 750.091796875 H 292.0"
+         stroke="#6c757d"/>
    <rect x="292.0"
          y="815.03125"
          fill="none"
-         width="208.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="292.0"
-         y="815.03125"
-         fill="#f0f8ff"
-         width="208.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CorrectionCoefficient"/>
-   <g>
-      <text x="304.0"
-            fill="#2c5aa0"
-            y="843.970703125"
-            font-size="14"
-            font-family="Inter Regular">CorrectionCoefficient</text>
-      <line y2="849.970703125"
-            stroke-width="1"
-            x1="304.0"
-            x2="488.0"
-            stroke="#dee2e6"
-            y1="849.970703125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="304.0"
-           y="860.91015625"
-           xlink:href="#numeric-icon"/>
-      <text x="320.0"
-            fill="#007bff"
-            y="870.91015625"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
+   <a href="CorrectionCoefficient_f0c1df38b8c29029d3f7a851a564c8fd.html">
+      <rect x="292.0"
+            y="815.03125"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CorrectionCoefficient"/>
+      <g>
+         <text x="304.0"
+               fill="#2c5aa0"
+               y="843.970703125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">CorrectionCoefficient</text>
+         <line y2="847.970703125"
+               stroke-width="1"
+               x1="304.0"
+               x2="525.0"
+               stroke="#e0e0e0"
+               y1="847.970703125"/>
+         <text x="304.0"
+               fill="#6c757d"
+               y="868.91015625"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="484.0"
+                  y="855.970703125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="488.0"
+                  fill="#495057"
+                  y="866.970703125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 217.0 504.5 H 247.0 V 848.0 H 292.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="253.0"
-         y="816.03125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="257.0"
-         font-size="10"
-         y="830.970703125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 217.0 504.4697265625 H 235.75 V 847.970703125 H 292.0"
+         stroke="#6c757d"/>
    <rect x="292.0"
          y="912.91015625"
          fill="none"
-         width="208.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="292.0"
-         y="912.91015625"
-         fill="#f0f8ff"
-         width="208.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/ReinvestmentCoefficient"/>
-   <g>
-      <text x="304.0"
-            fill="#2c5aa0"
-            y="941.849609375"
-            font-size="14"
-            font-family="Inter Regular">ReinvestmentCoefficient</text>
-      <line y2="947.849609375"
-            stroke-width="1"
-            x1="304.0"
-            x2="488.0"
-            stroke="#dee2e6"
-            y1="947.849609375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="304.0"
-           y="958.7890625"
-           xlink:href="#numeric-icon"/>
-      <text x="320.0"
-            fill="#007bff"
-            y="968.7890625"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
+   <a href="ReinvestmentCoefficient_36874ff82f19474bd3c8044d984b3594.html">
+      <rect x="292.0"
+            y="912.91015625"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/ReinvestmentCoefficient"/>
+      <g>
+         <text x="304.0"
+               fill="#2c5aa0"
+               y="941.849609375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ReinvestmentCoefficient</text>
+         <line y2="945.849609375"
+               stroke-width="1"
+               x1="304.0"
+               x2="525.0"
+               stroke="#e0e0e0"
+               y1="945.849609375"/>
+         <text x="304.0"
+               fill="#6c757d"
+               y="966.7890625"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="484.0"
+                  y="953.849609375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="488.0"
+                  fill="#495057"
+                  y="964.849609375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 217.0 504.5 H 247.0 V 945.8 H 292.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="253.0"
-         y="913.91015625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="257.0"
-         font-size="10"
-         y="928.849609375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 217.0 504.4697265625 H 235.75 V 945.849609375 H 292.0"
+         stroke="#6c757d"/>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -873,7 +954,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">TotalReturnType</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>TotalReturnType</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -911,11 +996,17 @@
                         <tbody class="divide-y divide-slate-200 text-sm">
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Currency_719cce99e3882cf201a7e2a09098519a.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Currency"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../Currency</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Currency_719cce99e3882cf201a7e2a09098519a.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Currency"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../Currency</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -927,15 +1018,21 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">RFS</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">LUM</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Value_751d07e5a1f85f06ae2227b2a08b6b0d.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../Value</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Value_751d07e5a1f85f06ae2227b2a08b6b0d.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Value"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../Value</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -950,11 +1047,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="ValidityDate_3a665a0e5d78088c02c96e8adab58c91.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/ValidityDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../ValidityDate</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="ValidityDate_3a665a0e5d78088c02c96e8adab58c91.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/ValidityDate"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ValidityDate</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -963,15 +1066,21 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-10-29</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2020-10-20</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="CalculationPeriod_8927af48e3f8ca0488a8327602505956.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CalculationPeriod"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../CalculationPeriod</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="CalculationPeriod_8927af48e3f8ca0488a8327602505956.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CalculationPeriod"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../CalculationPeriod</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -981,15 +1090,21 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">6 Months</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">YTD</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="AnnualizedFlag_8fc6c4eafd4c915a97210e41852ee93d.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/AnnualizedFlag"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../AnnualizedFlag</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="AnnualizedFlag_8fc6c4eafd4c915a97210e41852ee93d.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/AnnualizedFlag"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../AnnualizedFlag</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -998,15 +1113,21 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">false</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="CalculationMethod_ab903e9fd6f08c5c3b1a1ba3bd151a35.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CalculationMethod"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../CalculationMethod</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="CalculationMethod_ab903e9fd6f08c5c3b1a1ba3bd151a35.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CalculationMethod"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../CalculationMethod</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1021,11 +1142,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Investment_904528d76f3d276e50ef1a543ae6cbc6.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Investment"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../Investment</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Investment_904528d76f3d276e50ef1a543ae6cbc6.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/Investment"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../Investment</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1040,11 +1167,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="StartCalculationDate_429f0844a065a6357d18f8de6de434a7.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/StartCalculationDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../StartCalculationDate</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="StartCalculationDate_429f0844a065a6357d18f8de6de434a7.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/StartCalculationDate"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../StartCalculationDate</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1053,15 +1186,21 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2024-04-13</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2024-06-24</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="CorrectionCoefficient_f0c1df38b8c29029d3f7a851a564c8fd.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CorrectionCoefficient"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../CorrectionCoefficient</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="CorrectionCoefficient_f0c1df38b8c29029d3f7a851a564c8fd.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/CorrectionCoefficient"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../CorrectionCoefficient</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1070,15 +1209,21 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">440.69</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">988.47</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="ReinvestmentCoefficient_36874ff82f19474bd3c8044d984b3594.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/ReinvestmentCoefficient"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../ReinvestmentCoefficient</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="ReinvestmentCoefficient_36874ff82f19474bd3c8044d984b3594.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/ShareClasses/ShareClass/PerformanceFigures/TotalReturns/TotalReturn/ReinvestmentCoefficient"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ReinvestmentCoefficient</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1087,7 +1232,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600">515.25</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">243.01</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1097,18 +1242,108 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
             name=&quot;TotalReturn&quot;
             type=&quot;TotalReturnType&quot;/&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Section: Referenced Type Definition -->
+            <section>
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Referenced Type Definition
+                                <span class="font-mono text-sm text-slate-600">
+                                    (<span>TotalReturnType</span>)
+                                </span>
+                            </h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:complexType xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+                xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+                name=&quot;TotalReturnType&quot;&gt;
+   &lt;xs:sequence&gt;
+      &lt;xs:element name=&quot;Currency&quot; type=&quot;ISOCurrencyCodeType&quot;/&gt;
+      &lt;xs:element name=&quot;Value&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Absolute and/or percentage value&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+         &lt;xs:complexType&gt;
+            &lt;xs:choice&gt;
+               &lt;xs:element name=&quot;AbsoluteValue&quot; type=&quot;xs:decimal&quot;/&gt;
+               &lt;xs:sequence&gt;
+                  &lt;xs:element name=&quot;PercentageValue&quot; type=&quot;PercentageType&quot;/&gt;
+                  &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AbsoluteValue&quot; type=&quot;xs:decimal&quot;/&gt;
+               &lt;/xs:sequence&gt;
+            &lt;/xs:choice&gt;
+         &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ValidityDate&quot; type=&quot;xs:date&quot;/&gt;
+      &lt;xs:element name=&quot;CalculationPeriod&quot; type=&quot;CalculationPeriodType&quot;/&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;AnnualizedFlag&quot; type=&quot;xs:boolean&quot;/&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CalculationMethod&quot; type=&quot;Text500Type&quot;/&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;Investment&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Single or savings plan investment amounts&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+         &lt;xs:complexType&gt;
+            &lt;xs:choice&gt;
+               &lt;xs:element name=&quot;SingleInvestment&quot; type=&quot;FundAmountType&quot;/&gt;
+               &lt;xs:sequence&gt;
+                  &lt;xs:element name=&quot;SavingsPlanInvestment&quot; type=&quot;FundAmountType&quot;/&gt;
+                  &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SavingsPlanFrequency&quot; type=&quot;FrequencyType&quot;/&gt;
+               &lt;/xs:sequence&gt;
+            &lt;/xs:choice&gt;
+         &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;StartCalculationDate&quot; type=&quot;xs:date&quot;/&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;CorrectionCoefficient&quot; type=&quot;xs:decimal&quot;/&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;ReinvestmentCoefficient&quot; type=&quot;xs:decimal&quot;/&gt;
+   &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+                    </div>
+                </details>
             </section>
 
         </div>

@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -280,7 +289,7 @@
             fill="#f0f8ff"
             width="146.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="44.939453125"
             font-size="14"
-            font-family="Inter Regular">Share_price_factor</text>
+            font-family="Inter-Regular">Share_price_factor</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="74.939453125"
-            font-family="Inter Regular">
+            font-family="Inter-Regular">
          <tspan x="27" dy="1.3em">11040-Factor as </tspan>
          <tspan x="27" dy="1.3em">combination of </tspan>
          <tspan x="27" dy="1.3em">distribution value and </tspan>
@@ -307,19 +316,19 @@
          <tspan x="27" dy="1.3em">then following fields </tspan>
          <tspan x="27" dy="1.3em">are not required). </tspan>
          <tspan x="27" dy="1.3em">Value which the price </tspan>
-         <tspan x="27" dy="1.3em">should be multiplied </tspan>
-         <tspan x="27" dy="1.3em">to to obtain the </tspan>
-         <tspan x="27" dy="1.3em">correct performance </tspan>
-         <tspan x="27" dy="1.3em">time series. This </tspan>
-         <tspan x="27" dy="1.3em">should reflect the </tspan>
-         <tspan x="27" dy="1.3em">multiplying factor and </tspan>
-         <tspan x="27" dy="1.3em">should be populated </tspan>
-         <tspan x="27" dy="1.3em">every day. In case of </tspan>
-         <tspan x="27" dy="1.3em">null value, '1' is taken </tspan>
-         <tspan x="27" dy="1.3em">as default. Should </tspan>
-         <tspan x="27" dy="1.3em">only be populated in </tspan>
-         <tspan x="27" dy="1.3em">case a share price </tspan>
-         <tspan x="27" dy="1.3em">factor is relevant. </tspan>
+         <tspan x="27" dy="1.3em">should be multiplied to </tspan>
+         <tspan x="27" dy="1.3em">to obtain the correct </tspan>
+         <tspan x="27" dy="1.3em">performance time </tspan>
+         <tspan x="27" dy="1.3em">series. This should </tspan>
+         <tspan x="27" dy="1.3em">reflect the multiplying </tspan>
+         <tspan x="27" dy="1.3em">factor and should be </tspan>
+         <tspan x="27" dy="1.3em">populated every day. </tspan>
+         <tspan x="27" dy="1.3em">In case of null value, </tspan>
+         <tspan x="27" dy="1.3em">'1' is taken as default. </tspan>
+         <tspan x="27" dy="1.3em">Should only be </tspan>
+         <tspan x="27" dy="1.3em">populated in case a </tspan>
+         <tspan x="27" dy="1.3em">share price factor is </tspan>
+         <tspan x="27" dy="1.3em">relevant. </tspan>
       </text>
    </g>
 </svg>
@@ -351,7 +360,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">xs:decimal</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>xs:decimal</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -367,7 +380,7 @@
                     </div>
                     <div class="flex flex-col md:col-span-2">
                         <dt class="text-sm font-medium text-slate-500">Sample Data</dt>
-                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">752.73</dd>
+                        <dd class="mt-1 text-slate-900 bg-slate-100 p-2 rounded-md font-mono text-sm">716.32</dd>
                     </div>
                     
                 </dl>
@@ -379,11 +392,35 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             minOccurs=&quot;0&quot;
@@ -394,8 +431,12 @@
    &lt;/xs:annotation&gt;
 &lt;/xs:element&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
             </section>
+
+            <!-- Section: Referenced Type Definition -->
+            
 
         </div>
     </div>

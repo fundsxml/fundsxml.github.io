@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -81,7 +90,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
-    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_2774c1ae369ab9c17359040c0bb19641.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_88e550141df40a4a6c312ba698dca54f.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_b2ecb70fe2b5f3b9cd9f521f3c4d7b47.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_2f106f0eb6f8a941976119602c041f8d.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_b6630d0195aeafb0a60ba947a33751a2.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_b931757849475a2c62bba20ddc1e0806.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_ecdbd1ab5dd97f290ac296f09640c999.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Positions_ff03afd6fa8793fda54ad8d6b57f2a4b.html' class='text-sky-600 hover:underline'>Positions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Position_db4723aad7284b39590c1d2374a1f3f5.html' class='text-sky-600 hover:underline'>Position</a> <span class='mx-1 text-slate-400'>/</span> <a href='CustomAttributes_291da7dabfb15d3ef76161615c014219.html' class='text-sky-600 hover:underline'>CustomAttributes</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Attribute</span></nav>
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_88e550141df40a4a6c312ba698dca54f.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_b2ecb70fe2b5f3b9cd9f521f3c4d7b47.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_2f106f0eb6f8a941976119602c041f8d.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_b6630d0195aeafb0a60ba947a33751a2.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_b931757849475a2c62bba20ddc1e0806.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_ecdbd1ab5dd97f290ac296f09640c999.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Positions_ff03afd6fa8793fda54ad8d6b57f2a4b.html' class='text-sky-600 hover:underline'>Positions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Position_db4723aad7284b39590c1d2374a1f3f5.html' class='text-sky-600 hover:underline'>Position</a> <span class='mx-1 text-slate-400'>/</span> <a href='CustomAttributes_291da7dabfb15d3ef76161615c014219.html' class='text-sky-600 hover:underline'>CustomAttributes</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Attribute</span></nav>
 
     <!-- Central detail card -->
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -90,11 +99,11 @@
             <h1 class="text-2xl font-bold text-slate-900">Attribute</h1>
             <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
-                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute</p>
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute</p>
 
                 <!-- Button to copy the XPath -->
                 <button onclick="copyXPath(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -107,7 +116,7 @@
 
                 <!-- Button to copy the Permalink -->
                 <button onclick="copyPermalink(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -130,8 +139,8 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="460.0"
-     height="341.63671875">
+     width="599.0"
+     height="635.2734375">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
          <stop stop-color="#ffffff" offset="0%"/>
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -278,9 +287,9 @@
       <rect x="32"
             y="142"
             fill="#f0f8ff"
-            width="81.0"
+            width="82.0"
             style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="170.939453125"
             font-size="14"
-            font-family="Inter Regular">Attribute</text>
+            font-family="Inter-Regular">Attribute</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,16 +307,16 @@
             fill="#6c757d"
             font-size="13"
             y="200.939453125"
-            font-family="Inter Regular"/>
+            font-family="Inter-Regular"/>
    </g>
    <line y2="162.4697265625"
          style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         x1="113.0"
+         x1="114.0"
          class="connection-line"
-         x2="148.0"
+         x2="149.0"
          y1="162.4697265625"/>
    <g>
-      <rect x="148.0"
+      <rect x="149.0"
             y="147.4697265625"
             fill="url(#sequenceGradient)"
             width="50.0"
@@ -317,127 +326,348 @@
             stroke="#6c757d"
             stroke-width="2"/>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="165.0"
+           x="166.0"
            y="154.4697265625"
            xlink:href="#sequence-icon"/>
    </g>
-   <rect x="273.0"
-         y="32.0"
-         fill="#f0f8ff"
-         width="139.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/Name"/>
-   <g>
-      <text x="285.0"
-            fill="#2c5aa0"
-            y="60.939453125"
-            font-size="14"
-            font-family="Inter Regular">Name</text>
-      <line y2="66.939453125"
-            stroke-width="1"
-            x1="285.0"
-            x2="400.0"
-            stroke="#dee2e6"
-            y1="66.939453125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="285.0"
-           y="77.87890625"
-           xlink:href="#complex-icon"/>
-      <text x="301.0"
-            fill="#dc3545"
-            y="87.87890625"
-            font-size="13"
-            font-family="Inter Regular">Text256Type</text>
-   </g>
-   <path fill="none"
-         d="M 198.0 162.5 H 228.0 V 64.9 H 273.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
-   <rect x="273.0"
-         y="129.87890625"
-         fill="#f0f8ff"
-         width="139.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/Type"/>
-   <g>
-      <text x="285.0"
-            fill="#2c5aa0"
-            y="158.818359375"
-            font-size="14"
-            font-family="Inter Regular">Type</text>
-      <line y2="164.818359375"
-            stroke-width="1"
-            x1="285.0"
-            x2="400.0"
-            stroke="#dee2e6"
-            y1="164.818359375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="285.0"
-           y="175.7578125"
-           xlink:href="#complex-icon"/>
-      <text x="301.0"
-            fill="#dc3545"
-            y="185.7578125"
-            font-size="13"
-            font-family="Inter Regular">(anonymous)</text>
-   </g>
-   <path fill="none"
-         d="M 198.0 162.5 H 228.0 V 162.8 H 273.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
-   <a href="CHOICE_84cfa85a81fed4ef4a0b6256f946c8ee.html">
-      <rect x="273.0"
-            y="227.7578125"
+   <a href="Name_92ffab4bbc84856f6dbb06af4e7d0b47.html">
+      <rect x="274.0"
+            y="32.0"
             fill="#f0f8ff"
-            width="139.0"
+            width="182.0"
             style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
             height="65.87890625"
-            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/CHOICE_8960"/>
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/Name"/>
       <g>
-         <text x="285.0"
+         <text x="286.0"
                fill="#2c5aa0"
-               y="256.697265625"
+               y="60.939453125"
                font-size="14"
-               font-family="Inter Regular">CHOICE</text>
-         <line y2="262.697265625"
+               font-weight="600"
+               font-family="Inter-Regular">Name</text>
+         <line y2="64.939453125"
                stroke-width="1"
-               x1="285.0"
-               x2="400.0"
-               stroke="#dee2e6"
-               y1="262.697265625"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="285.0"
-              y="273.63671875"
-              xlink:href="#complex-icon"/>
-         <text x="301.0"
-               fill="#dc3545"
-               y="283.63671875"
+               x1="286.0"
+               x2="444.0"
+               stroke="#e0e0e0"
+               y1="64.939453125"/>
+         <text x="286.0"
+               fill="#6c757d"
+               y="85.87890625"
                font-size="13"
-               font-family="Inter Regular">(container)</text>
+               font-family="Inter-Regular">Text256Type</text>
+         <g>
+            <rect x="420.0"
+                  y="72.939453125"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="424.0"
+                  fill="#495057"
+                  y="83.939453125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
       </g>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="416.0"
-           y="248.697265625"
-           xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 198.0 162.5 H 228.0 V 260.7 H 273.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
+         stroke-width="2"
+         d="M 199.0 162.4697265625 H 217.75 V 64.939453125 H 274.0"
+         stroke="#6c757d"/>
+   <a href="Type_40b8ab7154288e5f23799e23c3f68870.html">
+      <rect x="274.0"
+            y="129.87890625"
+            fill="#f0f8ff"
+            width="182.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/Type"/>
+      <g>
+         <text x="286.0"
+               fill="#2c5aa0"
+               y="158.818359375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">Type</text>
+         <line y2="162.818359375"
+               stroke-width="1"
+               x1="286.0"
+               x2="444.0"
+               stroke="#e0e0e0"
+               y1="162.818359375"/>
+         <text x="286.0"
+               fill="#6c757d"
+               y="183.7578125"
+               font-size="13"
+               font-family="Inter-Regular">xs:string</text>
+         <g>
+            <rect x="420.0"
+                  y="170.818359375"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="424.0"
+                  fill="#495057"
+                  y="181.818359375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
+   <path fill="none"
+         stroke-width="2"
+         d="M 199.0 162.4697265625 H 217.75 V 162.818359375 H 274.0"
+         stroke="#6c757d"/>
+   <g>
+      <rect x="319.0"
+            y="247.7578125"
+            fill="url(#choiceGradient)"
+            width="30.0"
+            rx="4"
+            stroke-dasharray="5,5"
+            ry="4"
+            height="30.0"
+            stroke="#ff8c00"
+            stroke-width="2"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="325.0"
+           y="254.7578125"
+           xlink:href="#choice-icon"/>
+   </g>
+   <path fill="none"
+         stroke-width="2"
+         d="M 199.0 162.4697265625 H 229.0 V 262.7578125 H 319.0"
+         stroke="#ff8c00"/>
+   <a href="ValueText_78ec65025e1c19062f718d0e8b9fe51f.html">
+      <rect x="404.0"
+            y="247.7578125"
+            fill="#f0f8ff"
+            width="163.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/CHOICE_8960/ValueText"/>
+      <g>
+         <text x="416.0"
+               fill="#2c5aa0"
+               y="276.697265625"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ValueText</text>
+         <line y2="280.697265625"
+               stroke-width="1"
+               x1="416.0"
+               x2="555.0"
+               stroke="#e0e0e0"
+               y1="280.697265625"/>
+         <text x="416.0"
+               fill="#6c757d"
+               y="301.63671875"
+               font-size="13"
+               font-family="Inter-Regular">xs:string</text>
+         <g>
+            <rect x="531.0"
+                  y="288.697265625"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="535.0"
+                  fill="#495057"
+                  y="299.697265625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
+   <path fill="none"
+         stroke-width="2"
+         d="M 364.0 262.7578125 H 380.0 V 280.697265625 H 404.0"
+         stroke="#ff8c00"/>
+   <a href="ValueNumber_a57aa8499b26c4e0d7b2496446a4a2b6.html">
+      <rect x="404.0"
+            y="345.63671875"
+            fill="#f0f8ff"
+            width="163.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/CHOICE_8960/ValueNumber"/>
+      <g>
+         <text x="416.0"
+               fill="#2c5aa0"
+               y="374.576171875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ValueNumber</text>
+         <line y2="378.576171875"
+               stroke-width="1"
+               x1="416.0"
+               x2="555.0"
+               stroke="#e0e0e0"
+               y1="378.576171875"/>
+         <text x="416.0"
+               fill="#6c757d"
+               y="399.515625"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="531.0"
+                  y="386.576171875"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="535.0"
+                  fill="#495057"
+                  y="397.576171875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
+   <path fill="none"
+         stroke-width="2"
+         d="M 364.0 262.7578125 H 380.0 V 378.576171875 H 404.0"
+         stroke="#ff8c00"/>
+   <a href="ValueDate_8e0dca059fec0e3d68e8ddfa52f74d1c.html">
+      <rect x="404.0"
+            y="443.515625"
+            fill="#f0f8ff"
+            width="163.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/CHOICE_8960/ValueDate"/>
+      <g>
+         <text x="416.0"
+               fill="#2c5aa0"
+               y="472.455078125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ValueDate</text>
+         <line y2="476.455078125"
+               stroke-width="1"
+               x1="416.0"
+               x2="555.0"
+               stroke="#e0e0e0"
+               y1="476.455078125"/>
+         <text x="416.0"
+               fill="#6c757d"
+               y="497.39453125"
+               font-size="13"
+               font-family="Inter-Regular">xs:date</text>
+         <g>
+            <rect x="531.0"
+                  y="484.455078125"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="535.0"
+                  fill="#495057"
+                  y="495.455078125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
+   <path fill="none"
+         stroke-width="2"
+         d="M 364.0 262.7578125 H 380.0 V 476.455078125 H 404.0"
+         stroke="#ff8c00"/>
+   <a href="ValueBoolean_6e1d6a7b14551303f27273d43d9097af.html">
+      <rect x="404.0"
+            y="541.39453125"
+            fill="#f0f8ff"
+            width="163.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/CHOICE_8960/ValueBoolean"/>
+      <g>
+         <text x="416.0"
+               fill="#2c5aa0"
+               y="570.333984375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ValueBoolean</text>
+         <line y2="574.333984375"
+               stroke-width="1"
+               x1="416.0"
+               x2="555.0"
+               stroke="#e0e0e0"
+               y1="574.333984375"/>
+         <text x="416.0"
+               fill="#6c757d"
+               y="595.2734375"
+               font-size="13"
+               font-family="Inter-Regular">xs:boolean</text>
+         <g>
+            <rect x="531.0"
+                  y="582.333984375"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="535.0"
+                  fill="#495057"
+                  y="593.333984375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
+   <path fill="none"
+         stroke-width="2"
+         d="M 364.0 262.7578125 H 380.0 V 574.333984375 H 404.0"
+         stroke="#ff8c00"/>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -458,7 +688,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">AttributeType</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>AttributeType</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -496,11 +730,17 @@
                         <tbody class="divide-y divide-slate-200 text-sm">
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Name_92ffab4bbc84856f6dbb06af4e7d0b47.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/Name"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../Name</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Name_92ffab4bbc84856f6dbb06af4e7d0b47.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/Name"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../Name</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -516,17 +756,22 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Type_40b8ab7154288e5f23799e23c3f68870.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/Type"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../Type</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Type_40b8ab7154288e5f23799e23c3f68870.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/Type"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../Type</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
+                                <span>xs:string</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Type of attribute:<br />
@@ -535,25 +780,111 @@ N ... Number<br />
 D ... Date<br />
 B ... Boolean</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">T</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">B</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="CHOICE_84cfa85a81fed4ef4a0b6256f946c8ee.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/CHOICE_8960"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../CHOICE_8960</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="ValueText_78ec65025e1c19062f718d0e8b9fe51f.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/CHOICE_8960/ValueText"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ValueText</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800"
+                                          title="This element is part of a choice group - only one option from the group should be selected">
+                                        choice
+                                    </span>
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(container)</a>
                                 
+                                <span>xs:string</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
-                            <td class="px-4 py-3 font-mono text-slate-600"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600">ExampleText</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <div class="flex items-center gap-2">
+                                    <a href="ValueNumber_a57aa8499b26c4e0d7b2496446a4a2b6.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/CHOICE_8960/ValueNumber"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ValueNumber</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800"
+                                          title="This element is part of a choice group - only one option from the group should be selected">
+                                        choice
+                                    </span>
+                                    
+                                    
+                                </div>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:decimal</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600">996.16</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <div class="flex items-center gap-2">
+                                    <a href="ValueDate_8e0dca059fec0e3d68e8ddfa52f74d1c.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/CHOICE_8960/ValueDate"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ValueDate</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800"
+                                          title="This element is part of a choice group - only one option from the group should be selected">
+                                        choice
+                                    </span>
+                                    
+                                    
+                                </div>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:date</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2021-08-20</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono">
+                                <div class="flex items-center gap-2">
+                                    <a href="ValueBoolean_6e1d6a7b14551303f27273d43d9097af.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Positions/Position/CustomAttributes/Attribute/CHOICE_8960/ValueBoolean"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ValueBoolean</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800"
+                                          title="This element is part of a choice group - only one option from the group should be selected">
+                                        choice
+                                    </span>
+                                    
+                                    
+                                </div>
+                            </td>
+
+                            <td class="px-4 py-3 font-mono">
+                                
+                                <span>xs:boolean</span>
+                            </td>
+
+                            <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"></td>
+                            <td class="px-4 py-3 font-mono text-slate-600">true</td>
                         </tr>
                         </tbody>
                     </table>
@@ -563,18 +894,101 @@ B ... Boolean</p>
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
             name=&quot;Attribute&quot;
             type=&quot;AttributeType&quot;/&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Section: Referenced Type Definition -->
+            <section>
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Referenced Type Definition
+                                <span class="font-mono text-sm text-slate-600">
+                                    (<span>AttributeType</span>)
+                                </span>
+                            </h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:complexType xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+                xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+                name=&quot;AttributeType&quot;&gt;
+   &lt;xs:sequence&gt;
+      &lt;xs:element name=&quot;Name&quot; type=&quot;Text256Type&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Name of attribute&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;Type&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Type of attribute:
+T ... Text
+N ... Number
+D ... Date
+B ... Boolean&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+         &lt;xs:simpleType&gt;
+            &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+               &lt;xs:length value=&quot;1&quot;/&gt;
+               &lt;xs:enumeration value=&quot;T&quot;/&gt;
+               &lt;xs:enumeration value=&quot;N&quot;/&gt;
+               &lt;xs:enumeration value=&quot;D&quot;/&gt;
+               &lt;xs:enumeration value=&quot;B&quot;/&gt;
+            &lt;/xs:restriction&gt;
+         &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:choice&gt;
+         &lt;xs:element name=&quot;ValueText&quot; type=&quot;xs:string&quot;/&gt;
+         &lt;xs:element name=&quot;ValueNumber&quot; type=&quot;xs:decimal&quot;/&gt;
+         &lt;xs:element name=&quot;ValueDate&quot; type=&quot;xs:date&quot;/&gt;
+         &lt;xs:element name=&quot;ValueBoolean&quot; type=&quot;xs:boolean&quot;/&gt;
+      &lt;/xs:choice&gt;
+   &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+                    </div>
+                </details>
             </section>
 
         </div>

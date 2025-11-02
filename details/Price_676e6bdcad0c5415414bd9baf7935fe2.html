@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -81,7 +90,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
-    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_2774c1ae369ab9c17359040c0bb19641.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfunds_b26f7b71fbfa7f0c9248e03057b8af47.html' class='text-sky-600 hover:underline'>Subfunds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfund_64b691c40f891b0155a10eb333b71e69.html' class='text-sky-600 hover:underline'>Subfund</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_4e6e08999fe71905c1e49f5440e953a8.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_d08006ade6129217949f2ae8f26a7f3d.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='Prices_17f0be8ecb967df6a2f325834af62682.html' class='text-sky-600 hover:underline'>Prices</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Price</span></nav>
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfunds_b26f7b71fbfa7f0c9248e03057b8af47.html' class='text-sky-600 hover:underline'>Subfunds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfund_64b691c40f891b0155a10eb333b71e69.html' class='text-sky-600 hover:underline'>Subfund</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_4e6e08999fe71905c1e49f5440e953a8.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_d08006ade6129217949f2ae8f26a7f3d.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='Prices_17f0be8ecb967df6a2f325834af62682.html' class='text-sky-600 hover:underline'>Prices</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Price</span></nav>
 
     <!-- Central detail card -->
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -90,11 +99,11 @@
             <h1 class="text-2xl font-bold text-slate-900">Price</h1>
             <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
-                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price</p>
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price</p>
 
                 <!-- Button to copy the XPath -->
                 <button onclick="copyXPath(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -107,7 +116,7 @@
 
                 <!-- Button to copy the Permalink -->
                 <button onclick="copyPermalink(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -130,7 +139,7 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="498.0"
+     width="554.0"
      height="1124.66796875">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -280,7 +289,7 @@
             fill="#f0f8ff"
             width="57.0"
             style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="561.939453125"
             font-size="14"
-            font-family="Inter Regular">Price</text>
+            font-family="Inter-Regular">Price</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="591.939453125"
-            font-family="Inter Regular"/>
+            font-family="Inter-Regular"/>
    </g>
    <line y2="553.4697265625"
          style="stroke: #6c757d; stroke-width: 2; fill: none;"
@@ -321,443 +330,531 @@
            y="545.4697265625"
            xlink:href="#sequence-icon"/>
    </g>
-   <rect x="249.0"
-         y="32.0"
-         fill="#f0f8ff"
-         width="201.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/ActionCode"/>
-   <g>
-      <text x="261.0"
-            fill="#2c5aa0"
-            y="60.939453125"
-            font-size="14"
-            font-family="Inter Regular">ActionCode</text>
-      <line y2="66.939453125"
-            stroke-width="1"
-            x1="261.0"
-            x2="438.0"
-            stroke="#dee2e6"
-            y1="66.939453125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="261.0"
-           y="77.87890625"
-           xlink:href="#complex-icon"/>
-      <text x="277.0"
-            fill="#dc3545"
-            y="87.87890625"
-            font-size="13"
-            font-family="Inter Regular">(anonymous)</text>
-   </g>
+   <a href="ActionCode_59e25ade99d9004c94ef3e9e703b0518.html">
+      <rect x="249.0"
+            y="32.0"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/ActionCode"/>
+      <g>
+         <text x="261.0"
+               fill="#2c5aa0"
+               y="60.939453125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ActionCode</text>
+         <line y2="64.939453125"
+               stroke-width="1"
+               x1="261.0"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="64.939453125"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="85.87890625"
+               font-size="13"
+               font-family="Inter-Regular">xs:string</text>
+         <g>
+            <rect x="458.0"
+                  y="72.939453125"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="462.0"
+                  fill="#495057"
+                  y="83.939453125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 64.9 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
-   <rect x="249.0"
-         y="129.87890625"
-         fill="#f0f8ff"
-         width="201.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/NavDate"/>
-   <g>
-      <text x="261.0"
-            fill="#2c5aa0"
-            y="158.818359375"
-            font-size="14"
-            font-family="Inter Regular">NavDate</text>
-      <line y2="164.818359375"
-            stroke-width="1"
-            x1="261.0"
-            x2="438.0"
-            stroke="#dee2e6"
-            y1="164.818359375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="261.0"
-           y="175.7578125"
-           xlink:href="#date-icon"/>
-      <text x="277.0"
-            fill="#fd7e14"
-            y="185.7578125"
-            font-size="13"
-            font-family="Inter Regular">xs:date</text>
-   </g>
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 64.939453125 H 249.0"
+         stroke="#6c757d"/>
+   <a href="NavDate_4e4dbb87c41ec82c0fc999ee46e62d01.html">
+      <rect x="249.0"
+            y="129.87890625"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/NavDate"/>
+      <g>
+         <text x="261.0"
+               fill="#2c5aa0"
+               y="158.818359375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">NavDate</text>
+         <line y2="162.818359375"
+               stroke-width="1"
+               x1="261.0"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="162.818359375"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="183.7578125"
+               font-size="13"
+               font-family="Inter-Regular">xs:date</text>
+         <g>
+            <rect x="458.0"
+                  y="170.818359375"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="462.0"
+                  fill="#495057"
+                  y="181.818359375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 162.8 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 162.818359375 H 249.0"
+         stroke="#6c757d"/>
    <rect x="249.0"
          y="227.7578125"
          fill="none"
-         width="201.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="249.0"
-         y="227.7578125"
-         fill="#f0f8ff"
-         width="201.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceCalculationDate"/>
-   <g>
-      <text x="261.0"
-            fill="#2c5aa0"
-            y="256.697265625"
-            font-size="14"
-            font-family="Inter Regular">PriceCalculationDate</text>
-      <line y2="262.697265625"
-            stroke-width="1"
-            x1="261.0"
-            x2="438.0"
-            stroke="#dee2e6"
-            y1="262.697265625"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="261.0"
-           y="273.63671875"
-           xlink:href="#date-icon"/>
-      <text x="277.0"
-            fill="#fd7e14"
-            y="283.63671875"
-            font-size="13"
-            font-family="Inter Regular">xs:date</text>
-   </g>
+   <a href="PriceCalculationDate_ccadb2a17e549a2f2669ae7e7be53a62.html">
+      <rect x="249.0"
+            y="227.7578125"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceCalculationDate"/>
+      <g>
+         <text x="261.0"
+               fill="#2c5aa0"
+               y="256.697265625"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">PriceCalculationDate</text>
+         <line y2="260.697265625"
+               stroke-width="1"
+               x1="261.0"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="260.697265625"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="281.63671875"
+               font-size="13"
+               font-family="Inter-Regular">xs:date</text>
+         <g>
+            <rect x="441.0"
+                  y="268.697265625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="445.0"
+                  fill="#495057"
+                  y="279.697265625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 260.7 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="210.0"
-         y="228.7578125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="214.0"
-         font-size="10"
-         y="243.697265625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 260.697265625 H 249.0"
+         stroke="#6c757d"/>
    <rect x="249.0"
          y="325.63671875"
          fill="none"
-         width="201.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="249.0"
-         y="325.63671875"
-         fill="#f0f8ff"
-         width="201.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceValuationDate"/>
-   <g>
-      <text x="261.0"
-            fill="#2c5aa0"
-            y="354.576171875"
-            font-size="14"
-            font-family="Inter Regular">PriceValuationDate</text>
-      <line y2="360.576171875"
-            stroke-width="1"
-            x1="261.0"
-            x2="438.0"
-            stroke="#dee2e6"
-            y1="360.576171875"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="261.0"
-           y="371.515625"
-           xlink:href="#date-icon"/>
-      <text x="277.0"
-            fill="#fd7e14"
-            y="381.515625"
-            font-size="13"
-            font-family="Inter Regular">xs:date</text>
-   </g>
+   <a href="PriceValuationDate_b2e3ed0b2b1cf2ad0b13624985abdf05.html">
+      <rect x="249.0"
+            y="325.63671875"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceValuationDate"/>
+      <g>
+         <text x="261.0"
+               fill="#2c5aa0"
+               y="354.576171875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">PriceValuationDate</text>
+         <line y2="358.576171875"
+               stroke-width="1"
+               x1="261.0"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="358.576171875"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="379.515625"
+               font-size="13"
+               font-family="Inter-Regular">xs:date</text>
+         <g>
+            <rect x="441.0"
+                  y="366.576171875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="445.0"
+                  fill="#495057"
+                  y="377.576171875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 358.6 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="210.0"
-         y="326.63671875"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="214.0"
-         font-size="10"
-         y="341.576171875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
-   <rect x="249.0"
-         y="423.515625"
-         fill="#f0f8ff"
-         width="201.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceCurrency"/>
-   <g>
-      <text x="261.0"
-            fill="#2c5aa0"
-            y="452.455078125"
-            font-size="14"
-            font-family="Inter Regular">PriceCurrency</text>
-      <line y2="458.455078125"
-            stroke-width="1"
-            x1="261.0"
-            x2="438.0"
-            stroke="#dee2e6"
-            y1="458.455078125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="261.0"
-           y="469.39453125"
-           xlink:href="#complex-icon"/>
-      <text x="277.0"
-            fill="#dc3545"
-            y="479.39453125"
-            font-size="13"
-            font-family="Inter Regular">ISOCurrencyCodeType</text>
-   </g>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 358.576171875 H 249.0"
+         stroke="#6c757d"/>
+   <a href="PriceCurrency_9926ec7fdb723007df9fbc08f972bcfb.html">
+      <rect x="249.0"
+            y="423.515625"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceCurrency"/>
+      <g>
+         <text x="261.0"
+               fill="#2c5aa0"
+               y="452.455078125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">PriceCurrency</text>
+         <line y2="456.455078125"
+               stroke-width="1"
+               x1="261.0"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="456.455078125"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="477.39453125"
+               font-size="13"
+               font-family="Inter-Regular">ISOCurrencyCodeType</text>
+         <g>
+            <rect x="458.0"
+                  y="464.455078125"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="462.0"
+                  fill="#495057"
+                  y="475.455078125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 456.5 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
-   <rect x="249.0"
-         y="521.39453125"
-         fill="#f0f8ff"
-         width="201.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceNature"/>
-   <g>
-      <text x="261.0"
-            fill="#2c5aa0"
-            y="550.333984375"
-            font-size="14"
-            font-family="Inter Regular">PriceNature</text>
-      <line y2="556.333984375"
-            stroke-width="1"
-            x1="261.0"
-            x2="438.0"
-            stroke="#dee2e6"
-            y1="556.333984375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="261.0"
-           y="567.2734375"
-           xlink:href="#complex-icon"/>
-      <text x="277.0"
-            fill="#dc3545"
-            y="577.2734375"
-            font-size="13"
-            font-family="Inter Regular">(anonymous)</text>
-   </g>
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 456.455078125 H 249.0"
+         stroke="#6c757d"/>
+   <a href="PriceNature_27c6e4e2d3892323748751b5f3407886.html">
+      <rect x="249.0"
+            y="521.39453125"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceNature"/>
+      <g>
+         <text x="261.0"
+               fill="#2c5aa0"
+               y="550.333984375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">PriceNature</text>
+         <line y2="554.333984375"
+               stroke-width="1"
+               x1="261.0"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="554.333984375"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="575.2734375"
+               font-size="13"
+               font-family="Inter-Regular">xs:string</text>
+         <g>
+            <rect x="458.0"
+                  y="562.333984375"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="462.0"
+                  fill="#495057"
+                  y="573.333984375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 554.3 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
-   <rect x="249.0"
-         y="619.2734375"
-         fill="#f0f8ff"
-         width="201.0"
-         style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/NavPrice"/>
-   <g>
-      <text x="261.0"
-            fill="#2c5aa0"
-            y="648.212890625"
-            font-size="14"
-            font-family="Inter Regular">NavPrice</text>
-      <line y2="654.212890625"
-            stroke-width="1"
-            x1="261.0"
-            x2="438.0"
-            stroke="#dee2e6"
-            y1="654.212890625"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="261.0"
-           y="665.15234375"
-           xlink:href="#complex-icon"/>
-      <text x="277.0"
-            fill="#dc3545"
-            y="675.15234375"
-            font-size="13"
-            font-family="Inter Regular">(anonymous)</text>
-   </g>
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 554.333984375 H 249.0"
+         stroke="#6c757d"/>
+   <a href="NavPrice_46f0c9cd768b7c8095e48b7d6db3870a.html">
+      <rect x="249.0"
+            y="619.2734375"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/NavPrice"/>
+      <g>
+         <text x="261.0"
+               fill="#2c5aa0"
+               y="648.212890625"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">NavPrice</text>
+         <line y2="652.212890625"
+               stroke-width="1"
+               x1="261.0"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="652.212890625"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="673.15234375"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="458.0"
+                  y="660.212890625"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="462.0"
+                  fill="#495057"
+                  y="671.212890625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 652.2 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 652.212890625 H 249.0"
+         stroke="#6c757d"/>
    <rect x="249.0"
          y="717.15234375"
          fill="none"
-         width="201.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="249.0"
-         y="717.15234375"
-         fill="#f0f8ff"
-         width="201.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/SubscriptionPrice"/>
-   <g>
-      <text x="261.0"
-            fill="#2c5aa0"
-            y="746.091796875"
-            font-size="14"
-            font-family="Inter Regular">SubscriptionPrice</text>
-      <line y2="752.091796875"
-            stroke-width="1"
-            x1="261.0"
-            x2="438.0"
-            stroke="#dee2e6"
-            y1="752.091796875"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="261.0"
-           y="763.03125"
-           xlink:href="#numeric-icon"/>
-      <text x="277.0"
-            fill="#007bff"
-            y="773.03125"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
+   <a href="SubscriptionPrice_d3aad802851be5e591d2199d62dcffc1.html">
+      <rect x="249.0"
+            y="717.15234375"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/SubscriptionPrice"/>
+      <g>
+         <text x="261.0"
+               fill="#2c5aa0"
+               y="746.091796875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">SubscriptionPrice</text>
+         <line y2="750.091796875"
+               stroke-width="1"
+               x1="261.0"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="750.091796875"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="771.03125"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="441.0"
+                  y="758.091796875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="445.0"
+                  fill="#495057"
+                  y="769.091796875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 750.1 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="210.0"
-         y="718.15234375"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="214.0"
-         font-size="10"
-         y="733.091796875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 750.091796875 H 249.0"
+         stroke="#6c757d"/>
    <rect x="249.0"
          y="815.03125"
          fill="none"
-         width="201.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="249.0"
-         y="815.03125"
-         fill="#f0f8ff"
-         width="201.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/RedemptionPrice"/>
-   <g>
-      <text x="261.0"
-            fill="#2c5aa0"
-            y="843.970703125"
-            font-size="14"
-            font-family="Inter Regular">RedemptionPrice</text>
-      <line y2="849.970703125"
-            stroke-width="1"
-            x1="261.0"
-            x2="438.0"
-            stroke="#dee2e6"
-            y1="849.970703125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="261.0"
-           y="860.91015625"
-           xlink:href="#numeric-icon"/>
-      <text x="277.0"
-            fill="#007bff"
-            y="870.91015625"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
+   <a href="RedemptionPrice_f3102b5988d5cddcc274d328107de131.html">
+      <rect x="249.0"
+            y="815.03125"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/RedemptionPrice"/>
+      <g>
+         <text x="261.0"
+               fill="#2c5aa0"
+               y="843.970703125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">RedemptionPrice</text>
+         <line y2="847.970703125"
+               stroke-width="1"
+               x1="261.0"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="847.970703125"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="868.91015625"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="441.0"
+                  y="855.970703125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="445.0"
+                  fill="#495057"
+                  y="866.970703125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 848.0 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="210.0"
-         y="816.03125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="214.0"
-         font-size="10"
-         y="830.970703125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 847.970703125 H 249.0"
+         stroke="#6c757d"/>
    <rect x="249.0"
          y="912.91015625"
          fill="none"
-         width="201.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -768,9 +865,9 @@
       <rect x="249.0"
             y="912.91015625"
             fill="#f0f8ff"
-            width="201.0"
+            width="245.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -781,109 +878,111 @@
                fill="#2c5aa0"
                y="941.849609375"
                font-size="14"
-               font-family="Inter Regular">OtherPrices</text>
-         <line y2="947.849609375"
+               font-weight="600"
+               font-family="Inter-Regular">OtherPrices</text>
+         <line y2="945.849609375"
                stroke-width="1"
                x1="261.0"
-               x2="438.0"
-               stroke="#dee2e6"
-               y1="947.849609375"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="261.0"
-              y="958.7890625"
-              xlink:href="#complex-icon"/>
-         <text x="277.0"
-               fill="#dc3545"
-               y="968.7890625"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="945.849609375"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="966.7890625"
                font-size="13"
-               font-family="Inter Regular">OtherPricesType</text>
+               font-family="Inter-Regular">OtherPricesType</text>
+         <g>
+            <rect x="441.0"
+                  y="953.849609375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="445.0"
+                  fill="#495057"
+                  y="964.849609375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="454.0"
+           x="498.0"
            y="933.849609375"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 945.8 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="210.0"
-         y="913.91015625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="214.0"
-         font-size="10"
-         y="928.849609375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 945.849609375 H 249.0"
+         stroke="#6c757d"/>
    <rect x="249.0"
          y="1010.7890625"
          fill="none"
-         width="201.0"
+         width="245.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="249.0"
-         y="1010.7890625"
-         fill="#f0f8ff"
-         width="201.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/SplitFactor"/>
-   <g>
-      <text x="261.0"
-            fill="#2c5aa0"
-            y="1039.728515625"
-            font-size="14"
-            font-family="Inter Regular">SplitFactor</text>
-      <line y2="1045.728515625"
-            stroke-width="1"
-            x1="261.0"
-            x2="438.0"
-            stroke="#dee2e6"
-            y1="1045.728515625"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="261.0"
-           y="1056.66796875"
-           xlink:href="#numeric-icon"/>
-      <text x="277.0"
-            fill="#007bff"
-            y="1066.66796875"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
+   <a href="SplitFactor_e05369ac5e7c4b7261b48ae69086ab25.html">
+      <rect x="249.0"
+            y="1010.7890625"
+            fill="#f0f8ff"
+            width="245.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/SplitFactor"/>
+      <g>
+         <text x="261.0"
+               fill="#2c5aa0"
+               y="1039.728515625"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">SplitFactor</text>
+         <line y2="1043.728515625"
+               stroke-width="1"
+               x1="261.0"
+               x2="482.0"
+               stroke="#e0e0e0"
+               y1="1043.728515625"/>
+         <text x="261.0"
+               fill="#6c757d"
+               y="1064.66796875"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="441.0"
+                  y="1051.728515625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="445.0"
+                  fill="#495057"
+                  y="1062.728515625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 174.0 553.5 H 204.0 V 1043.7 H 249.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="210.0"
-         y="1011.7890625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="214.0"
-         font-size="10"
-         y="1026.728515625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 174.0 553.4697265625 H 192.75 V 1043.728515625 H 249.0"
+         stroke="#6c757d"/>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -904,7 +1003,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">ShareClassPriceType</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>ShareClassPriceType</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -942,17 +1045,22 @@
                         <tbody class="divide-y divide-slate-200 text-sm">
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="ActionCode_59e25ade99d9004c94ef3e9e703b0518.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/ActionCode"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../ActionCode</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="ActionCode_59e25ade99d9004c94ef3e9e703b0518.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/ActionCode"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ActionCode</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
+                                <span>xs:string</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Operational code: Create(C), Modify(M) or Delete(D)</p>
@@ -961,11 +1069,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="NavDate_4e4dbb87c41ec82c0fc999ee46e62d01.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/NavDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../NavDate</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="NavDate_4e4dbb87c41ec82c0fc999ee46e62d01.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/NavDate"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../NavDate</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -975,15 +1089,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date of the calculated price per share if you don't know if it's the valuation price or calculation price</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2025-04-12</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2024-09-04</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="PriceCalculationDate_ccadb2a17e549a2f2669ae7e7be53a62.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceCalculationDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../PriceCalculationDate</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="PriceCalculationDate_ccadb2a17e549a2f2669ae7e7be53a62.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceCalculationDate"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../PriceCalculationDate</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -993,15 +1113,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Date when the price per share is calculated</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-12-09</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2023-06-21</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="PriceValuationDate_b2e3ed0b2b1cf2ad0b13624985abdf05.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceValuationDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../PriceValuationDate</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="PriceValuationDate_b2e3ed0b2b1cf2ad0b13624985abdf05.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceValuationDate"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../PriceValuationDate</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1011,15 +1137,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Valuation date of the price per share. Indicates which valuation date for price calculation is used.</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2021-09-17</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2021-02-19</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="PriceCurrency_9926ec7fdb723007df9fbc08f972bcfb.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceCurrency"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../PriceCurrency</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="PriceCurrency_9926ec7fdb723007df9fbc08f972bcfb.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceCurrency"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../PriceCurrency</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1032,53 +1164,69 @@
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">HLE</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">MSV</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="PriceNature_27c6e4e2d3892323748751b5f3407886.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceNature"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../PriceNature</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="PriceNature_27c6e4e2d3892323748751b5f3407886.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/PriceNature"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../PriceNature</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
+                                <span>xs:string</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Information whether the calculated price is an official, estimated or technical price</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">ESTIMATED</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">TECHNICAL</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="NavPrice_46f0c9cd768b7c8095e48b7d6db3870a.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/NavPrice"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../NavPrice</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="NavPrice_46f0c9cd768b7c8095e48b7d6db3870a.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/NavPrice"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../NavPrice</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
+                                <span>xs:decimal</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Net Asset value calculated per share</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">376.15</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">667.50</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="SubscriptionPrice_d3aad802851be5e591d2199d62dcffc1.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/SubscriptionPrice"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../SubscriptionPrice</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="SubscriptionPrice_d3aad802851be5e591d2199d62dcffc1.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/SubscriptionPrice"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../SubscriptionPrice</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1088,15 +1236,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Subscription price per share</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">189.43</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">697.92</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="RedemptionPrice_f3102b5988d5cddcc274d328107de131.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/RedemptionPrice"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../RedemptionPrice</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="RedemptionPrice_f3102b5988d5cddcc274d328107de131.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/RedemptionPrice"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../RedemptionPrice</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1106,15 +1260,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Redemption price per share</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">838.84</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">41.89</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="OtherPrices_4c8e9235698b300149c18da1e862684f.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/OtherPrices"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../OtherPrices</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="OtherPrices_4c8e9235698b300149c18da1e862684f.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/OtherPrices"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../OtherPrices</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1128,11 +1288,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="SplitFactor_e05369ac5e7c4b7261b48ae69086ab25.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/SplitFactor"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../SplitFactor</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="SplitFactor_e05369ac5e7c4b7261b48ae69086ab25.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/ShareClasses/ShareClass/Prices/Price/SplitFactor"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../SplitFactor</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1142,7 +1308,7 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Split factor in case of NAV split</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">119.39</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">691.48</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1152,18 +1318,146 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
             name=&quot;Price&quot;
             type=&quot;ShareClassPriceType&quot;/&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Section: Referenced Type Definition -->
+            <section>
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Referenced Type Definition
+                                <span class="font-mono text-sm text-slate-600">
+                                    (<span>ShareClassPriceType</span>)
+                                </span>
+                            </h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:complexType xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+                xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+                name=&quot;ShareClassPriceType&quot;&gt;
+   &lt;xs:sequence&gt;
+      &lt;xs:element name=&quot;ActionCode&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Operational code: Create(C), Modify(M) or Delete(D)&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+         &lt;xs:simpleType&gt;
+            &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+               &lt;xs:length value=&quot;1&quot;/&gt;
+               &lt;xs:enumeration value=&quot;C&quot;/&gt;
+               &lt;xs:enumeration value=&quot;D&quot;/&gt;
+               &lt;xs:enumeration value=&quot;M&quot;/&gt;
+            &lt;/xs:restriction&gt;
+         &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;NavDate&quot; type=&quot;xs:date&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Date of the calculated price per share if you don&#39;t know if it&#39;s the valuation price or calculation price&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;PriceCalculationDate&quot; type=&quot;xs:date&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Date when the price per share is calculated&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;PriceValuationDate&quot; type=&quot;xs:date&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Valuation date of the price per share. Indicates which valuation date for price calculation is used.&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;PriceCurrency&quot; type=&quot;ISOCurrencyCodeType&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Currencyof the calculated price. (use the 3 characters ISO code 4217)&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;PriceNature&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Information whether the calculated price is an official, estimated or technical price&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+         &lt;xs:simpleType&gt;
+            &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+               &lt;xs:minLength value=&quot;8&quot;/&gt;
+               &lt;xs:maxLength value=&quot;9&quot;/&gt;
+               &lt;xs:enumeration value=&quot;OFFICIAL&quot;/&gt;
+               &lt;xs:enumeration value=&quot;ESTIMATED&quot;/&gt;
+               &lt;xs:enumeration value=&quot;TECHNICAL&quot;/&gt;
+            &lt;/xs:restriction&gt;
+         &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;NavPrice&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Net Asset value calculated per share&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+         &lt;xs:simpleType&gt;
+            &lt;xs:restriction base=&quot;xs:decimal&quot;&gt;
+               &lt;xs:totalDigits fixed=&quot;false&quot; value=&quot;15&quot;/&gt;
+               &lt;xs:fractionDigits value=&quot;8&quot;/&gt;
+            &lt;/xs:restriction&gt;
+         &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SubscriptionPrice&quot; type=&quot;xs:decimal&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Subscription price per share&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;RedemptionPrice&quot; type=&quot;xs:decimal&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Redemption price per share&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;OtherPrices&quot; type=&quot;OtherPricesType&quot;/&gt;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;SplitFactor&quot; type=&quot;xs:decimal&quot;&gt;
+         &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Split factor in case of NAV split&lt;/xs:documentation&gt;
+         &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+   &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+                    </div>
+                </details>
             </section>
 
         </div>

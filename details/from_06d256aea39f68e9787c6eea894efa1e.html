@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -81,7 +90,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
-    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_2774c1ae369ab9c17359040c0bb19641.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_88e550141df40a4a6c312ba698dca54f.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_b2ecb70fe2b5f3b9cd9f521f3c4d7b47.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_2f106f0eb6f8a941976119602c041f8d.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_b6630d0195aeafb0a60ba947a33751a2.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_b931757849475a2c62bba20ddc1e0806.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_ecdbd1ab5dd97f290ac296f09640c999.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Transactions_88d7ddfb135a1fba65770d18e409e8a1.html' class='text-sky-600 hover:underline'>Transactions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Transaction_1e79e132a2e8cbdf99d07f6971e21261.html' class='text-sky-600 hover:underline'>Transaction</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_e9101f532a32f758b4cca73bd81dd5b3.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='CorporateAction_febaa9ac60b9627f9af566f20c9c5c1e.html' class='text-sky-600 hover:underline'>CorporateAction</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>from</span></nav>
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='SingleFund_53e5cb338e5065e36697127f688f8c8e.html' class='text-sky-600 hover:underline'>SingleFund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_88e550141df40a4a6c312ba698dca54f.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_b2ecb70fe2b5f3b9cd9f521f3c4d7b47.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClasses_2f106f0eb6f8a941976119602c041f8d.html' class='text-sky-600 hover:underline'>ShareClasses</a> <span class='mx-1 text-slate-400'>/</span> <a href='ShareClass_b6630d0195aeafb0a60ba947a33751a2.html' class='text-sky-600 hover:underline'>ShareClass</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_b931757849475a2c62bba20ddc1e0806.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_ecdbd1ab5dd97f290ac296f09640c999.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Transactions_88d7ddfb135a1fba65770d18e409e8a1.html' class='text-sky-600 hover:underline'>Transactions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Transaction_1e79e132a2e8cbdf99d07f6971e21261.html' class='text-sky-600 hover:underline'>Transaction</a> <span class='mx-1 text-slate-400'>/</span> <a href='CorporateAction_febaa9ac60b9627f9af566f20c9c5c1e.html' class='text-sky-600 hover:underline'>CorporateAction</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>from</span></nav>
 
     <!-- Central detail card -->
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -90,11 +99,11 @@
             <h1 class="text-2xl font-bold text-slate-900">from</h1>
             <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
-                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from</p>
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from</p>
 
                 <!-- Button to copy the XPath -->
                 <button onclick="copyXPath(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -107,7 +116,7 @@
 
                 <!-- Button to copy the Permalink -->
                 <button onclick="copyPermalink(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CorporateAction/from">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -130,7 +139,7 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="535.0"
+     width="568.0"
      height="1907.69921875">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -280,7 +289,7 @@
             fill="#f0f8ff"
             width="54.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="953.939453125"
             font-size="14"
-            font-family="Inter Regular">from</text>
+            font-family="Inter-Regular">from</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="983.939453125"
-            font-family="Inter Regular">
+            font-family="Inter-Regular">
          <tspan x="27" dy="1.3em">Source </tspan>
          <tspan x="27" dy="1.3em">security </tspan>
          <tspan x="27" dy="1.3em">of </tspan>
@@ -306,34 +315,13 @@
          <tspan x="27" dy="1.3em">action </tspan>
       </text>
    </g>
-   <line y2="945.4697265625"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         x1="86.0"
-         class="connection-line"
-         x2="121.0"
-         y1="945.4697265625"/>
-   <g>
-      <rect x="121.0"
-            y="930.4697265625"
-            fill="url(#sequenceGradient)"
-            width="50.0"
-            rx="4"
-            ry="4"
-            height="30.0"
-            stroke="#6c757d"
-            stroke-width="2"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="138.0"
-           y="937.4697265625"
-           xlink:href="#sequence-icon"/>
-   </g>
    <a href="Identifiers_baa091281188b58a174d4e07e38d2e7f.html">
       <rect x="246.0"
             y="32.0"
             fill="#f0f8ff"
-            width="241.0"
+            width="262.0"
             style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -344,284 +332,316 @@
                fill="#2c5aa0"
                y="60.939453125"
                font-size="14"
-               font-family="Inter Regular">Identifiers</text>
-         <line y2="66.939453125"
+               font-weight="600"
+               font-family="Inter-Regular">Identifiers</text>
+         <line y2="64.939453125"
                stroke-width="1"
                x1="258.0"
-               x2="475.0"
-               stroke="#dee2e6"
-               y1="66.939453125"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="258.0"
-              y="77.87890625"
-              xlink:href="#string-icon"/>
-         <text x="274.0"
-               fill="#28a745"
-               y="87.87890625"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="64.939453125"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="85.87890625"
                font-size="13"
-               font-family="Inter Regular">IdentifiersType</text>
+               font-family="Inter-Regular">IdentifiersType</text>
+         <g>
+            <rect x="472.0"
+                  y="72.939453125"
+                  fill="#e9ecef"
+                  width="24.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="476.0"
+                  fill="#495057"
+                  y="83.939453125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="491.0"
+           x="512.0"
            y="52.939453125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 64.9 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none;"
-         class="connection-line"/>
+   <line y2="64.939453125"
+         stroke-width="2"
+         x1="86.0"
+         x2="246.0"
+         stroke="#4a90e2"
+         y1="945.4697265625"/>
    <rect x="246.0"
          y="129.87890625"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="246.0"
-         y="129.87890625"
-         fill="#f0f8ff"
-         width="241.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/AssetUniqueID"/>
-   <g>
-      <text x="258.0"
-            fill="#2c5aa0"
-            y="158.818359375"
-            font-size="14"
-            font-family="Inter Regular">AssetUniqueID</text>
-      <line y2="164.818359375"
-            stroke-width="1"
-            x1="258.0"
-            x2="475.0"
-            stroke="#dee2e6"
-            y1="164.818359375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="258.0"
-           y="175.7578125"
-           xlink:href="#complex-icon"/>
-      <text x="274.0"
-            fill="#dc3545"
-            y="185.7578125"
-            font-size="13"
-            font-family="Inter Regular">(anonymous)</text>
-   </g>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 162.8 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="130.87890625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="145.818359375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
-   <rect x="246.0"
-         y="227.7578125"
-         fill="none"
-         width="241.0"
-         stroke-dasharray="5,2"
-         rx="8"
-         ry="8"
-         height="65.87890625"
+   <a href="AssetUniqueID_cb03a26d7fb8b28edea516f60c2e3195.html">
+      <rect x="246.0"
+            y="129.87890625"
+            fill="#f0f8ff"
+            width="262.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/AssetUniqueID"/>
+      <g>
+         <text x="258.0"
+               fill="#2c5aa0"
+               y="158.818359375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">AssetUniqueID</text>
+         <line y2="162.818359375"
+               stroke-width="1"
+               x1="258.0"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="162.818359375"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="183.7578125"
+               font-size="13"
+               font-family="Inter-Regular">xs:IDREF</text>
+         <g>
+            <rect x="455.0"
+                  y="170.818359375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="181.818359375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="162.818359375"
+         stroke-dasharray="5,5"
          stroke="#4a90e2"
          stroke-width="2"/>
    <rect x="246.0"
          y="227.7578125"
-         fill="#f0f8ff"
-         width="241.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/SubscriptionRatio"/>
-   <g>
-      <text x="258.0"
-            fill="#2c5aa0"
-            y="256.697265625"
-            font-size="14"
-            font-family="Inter Regular">SubscriptionRatio</text>
-      <line y2="262.697265625"
-            stroke-width="1"
-            x1="258.0"
-            x2="475.0"
-            stroke="#dee2e6"
-            y1="262.697265625"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="258.0"
-           y="273.63671875"
-           xlink:href="#numeric-icon"/>
-      <text x="274.0"
-            fill="#007bff"
-            y="283.63671875"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 260.7 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="228.7578125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="243.697265625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
-   <rect x="246.0"
-         y="325.63671875"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
+   <a href="SubscriptionRatio_54b19abb70fc4cc50313ec5bdb29554d.html">
+      <rect x="246.0"
+            y="227.7578125"
+            fill="#f0f8ff"
+            width="262.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/SubscriptionRatio"/>
+      <g>
+         <text x="258.0"
+               fill="#2c5aa0"
+               y="256.697265625"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">SubscriptionRatio</text>
+         <line y2="260.697265625"
+               stroke-width="1"
+               x1="258.0"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="260.697265625"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="281.63671875"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="455.0"
+                  y="268.697265625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="279.697265625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="260.697265625"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="325.63671875"
-         fill="#f0f8ff"
-         width="241.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/UnitsExDate"/>
-   <g>
-      <text x="258.0"
-            fill="#2c5aa0"
-            y="354.576171875"
-            font-size="14"
-            font-family="Inter Regular">UnitsExDate</text>
-      <line y2="360.576171875"
-            stroke-width="1"
-            x1="258.0"
-            x2="475.0"
-            stroke="#dee2e6"
-            y1="360.576171875"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="258.0"
-           y="371.515625"
-           xlink:href="#numeric-icon"/>
-      <text x="274.0"
-            fill="#007bff"
-            y="381.515625"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 358.6 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="326.63671875"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="341.576171875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
-   <rect x="246.0"
-         y="423.515625"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
+   <a href="UnitsExDate_1d940dc03761cadb3b3137ea4ed40301.html">
+      <rect x="246.0"
+            y="325.63671875"
+            fill="#f0f8ff"
+            width="262.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/UnitsExDate"/>
+      <g>
+         <text x="258.0"
+               fill="#2c5aa0"
+               y="354.576171875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">UnitsExDate</text>
+         <line y2="358.576171875"
+               stroke-width="1"
+               x1="258.0"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="358.576171875"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="379.515625"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="455.0"
+                  y="366.576171875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="377.576171875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="358.576171875"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="423.515625"
-         fill="#f0f8ff"
-         width="241.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
+         fill="none"
+         width="262.0"
+         stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/Price"/>
-   <g>
-      <text x="258.0"
-            fill="#2c5aa0"
-            y="452.455078125"
-            font-size="14"
-            font-family="Inter Regular">Price</text>
-      <line y2="458.455078125"
-            stroke-width="1"
-            x1="258.0"
-            x2="475.0"
-            stroke="#dee2e6"
-            y1="458.455078125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="258.0"
-           y="469.39453125"
-           xlink:href="#numeric-icon"/>
-      <text x="274.0"
-            fill="#007bff"
-            y="479.39453125"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 456.5 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="424.515625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="439.455078125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="Price_c17394bafdc9ae24d31b94fd0170e086.html">
+      <rect x="246.0"
+            y="423.515625"
+            fill="#f0f8ff"
+            width="262.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/Price"/>
+      <g>
+         <text x="258.0"
+               fill="#2c5aa0"
+               y="452.455078125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">Price</text>
+         <line y2="456.455078125"
+               stroke-width="1"
+               x1="258.0"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="456.455078125"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="477.39453125"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="455.0"
+                  y="464.455078125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="475.455078125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="456.455078125"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="521.39453125"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -632,9 +652,9 @@
       <rect x="246.0"
             y="521.39453125"
             fill="#f0f8ff"
-            width="241.0"
+            width="262.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -645,175 +665,185 @@
                fill="#2c5aa0"
                y="550.333984375"
                font-size="14"
-               font-family="Inter Regular">MarketValue</text>
-         <line y2="556.333984375"
+               font-weight="600"
+               font-family="Inter-Regular">MarketValue</text>
+         <line y2="554.333984375"
                stroke-width="1"
                x1="258.0"
-               x2="475.0"
-               stroke="#dee2e6"
-               y1="556.333984375"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="258.0"
-              y="567.2734375"
-              xlink:href="#complex-icon"/>
-         <text x="274.0"
-               fill="#dc3545"
-               y="577.2734375"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="554.333984375"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="575.2734375"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="455.0"
+                  y="562.333984375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="573.333984375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="491.0"
+           x="512.0"
            y="542.333984375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 554.3 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="522.39453125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="537.333984375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="554.333984375"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="619.2734375"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="246.0"
-         y="619.2734375"
-         fill="#f0f8ff"
-         width="241.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/NominalOrUnits"/>
-   <g>
-      <text x="258.0"
-            fill="#2c5aa0"
-            y="648.212890625"
-            font-size="14"
-            font-family="Inter Regular">NominalOrUnits</text>
-      <line y2="654.212890625"
-            stroke-width="1"
-            x1="258.0"
-            x2="475.0"
-            stroke="#dee2e6"
-            y1="654.212890625"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="258.0"
-           y="665.15234375"
-           xlink:href="#numeric-icon"/>
-      <text x="274.0"
-            fill="#007bff"
-            y="675.15234375"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 652.2 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="620.2734375"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="635.212890625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+   <a href="NominalOrUnits_e7fc0324bfda39061176a3e4835ffcf6.html">
+      <rect x="246.0"
+            y="619.2734375"
+            fill="#f0f8ff"
+            width="262.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/NominalOrUnits"/>
+      <g>
+         <text x="258.0"
+               fill="#2c5aa0"
+               y="648.212890625"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">NominalOrUnits</text>
+         <line y2="652.212890625"
+               stroke-width="1"
+               x1="258.0"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="652.212890625"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="673.15234375"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="455.0"
+                  y="660.212890625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="671.212890625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="652.212890625"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="717.15234375"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="246.0"
-         y="717.15234375"
-         fill="#f0f8ff"
-         width="241.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/ExchangeRateValue"/>
-   <g>
-      <text x="258.0"
-            fill="#2c5aa0"
-            y="746.091796875"
-            font-size="14"
-            font-family="Inter Regular">ExchangeRateValue</text>
-      <line y2="752.091796875"
-            stroke-width="1"
-            x1="258.0"
-            x2="475.0"
-            stroke="#dee2e6"
-            y1="752.091796875"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="258.0"
-           y="763.03125"
-           xlink:href="#numeric-icon"/>
-      <text x="274.0"
-            fill="#007bff"
-            y="773.03125"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 750.1 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="718.15234375"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="733.091796875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+   <a href="ExchangeRateValue_afab2c6b514fb8a7a6477dc7cbe94225.html">
+      <rect x="246.0"
+            y="717.15234375"
+            fill="#f0f8ff"
+            width="262.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/ExchangeRateValue"/>
+      <g>
+         <text x="258.0"
+               fill="#2c5aa0"
+               y="746.091796875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ExchangeRateValue</text>
+         <line y2="750.091796875"
+               stroke-width="1"
+               x1="258.0"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="750.091796875"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="771.03125"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="455.0"
+                  y="758.091796875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="769.091796875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="750.091796875"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="815.03125"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -824,9 +854,9 @@
       <rect x="246.0"
             y="815.03125"
             fill="#f0f8ff"
-            width="241.0"
+            width="262.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -837,113 +867,119 @@
                fill="#2c5aa0"
                y="843.970703125"
                font-size="14"
-               font-family="Inter Regular">Interests</text>
-         <line y2="849.970703125"
+               font-weight="600"
+               font-family="Inter-Regular">Interests</text>
+         <line y2="847.970703125"
                stroke-width="1"
                x1="258.0"
-               x2="475.0"
-               stroke="#dee2e6"
-               y1="849.970703125"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="258.0"
-              y="860.91015625"
-              xlink:href="#complex-icon"/>
-         <text x="274.0"
-               fill="#dc3545"
-               y="870.91015625"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="847.970703125"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="868.91015625"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="455.0"
+                  y="855.970703125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="866.970703125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="491.0"
+           x="512.0"
            y="835.970703125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 848.0 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="816.03125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="830.970703125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="847.970703125"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="912.91015625"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="246.0"
-         y="912.91015625"
-         fill="#f0f8ff"
-         width="241.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/InterestsCurrency"/>
-   <g>
-      <text x="258.0"
-            fill="#2c5aa0"
-            y="941.849609375"
-            font-size="14"
-            font-family="Inter Regular">InterestsCurrency</text>
-      <line y2="947.849609375"
-            stroke-width="1"
-            x1="258.0"
-            x2="475.0"
-            stroke="#dee2e6"
-            y1="947.849609375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="258.0"
-           y="958.7890625"
-           xlink:href="#complex-icon"/>
-      <text x="274.0"
-            fill="#dc3545"
-            y="968.7890625"
-            font-size="13"
-            font-family="Inter Regular">ISOCurrencyCodeType</text>
-   </g>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 945.8 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="913.91015625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="928.849609375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+   <a href="InterestsCurrency_4510127304add4dc674b8d923c7aa531.html">
+      <rect x="246.0"
+            y="912.91015625"
+            fill="#f0f8ff"
+            width="262.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/InterestsCurrency"/>
+      <g>
+         <text x="258.0"
+               fill="#2c5aa0"
+               y="941.849609375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">InterestsCurrency</text>
+         <line y2="945.849609375"
+               stroke-width="1"
+               x1="258.0"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="945.849609375"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="966.7890625"
+               font-size="13"
+               font-family="Inter-Regular">ISOCurrencyCodeType</text>
+         <g>
+            <rect x="455.0"
+                  y="953.849609375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="964.849609375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="945.849609375"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="1010.7890625"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -954,9 +990,9 @@
       <rect x="246.0"
             y="1010.7890625"
             fill="#f0f8ff"
-            width="241.0"
+            width="262.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -967,237 +1003,251 @@
                fill="#2c5aa0"
                y="1039.728515625"
                font-size="14"
-               font-family="Inter Regular">CostValue</text>
-         <line y2="1045.728515625"
+               font-weight="600"
+               font-family="Inter-Regular">CostValue</text>
+         <line y2="1043.728515625"
                stroke-width="1"
                x1="258.0"
-               x2="475.0"
-               stroke="#dee2e6"
-               y1="1045.728515625"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="258.0"
-              y="1056.66796875"
-              xlink:href="#complex-icon"/>
-         <text x="274.0"
-               fill="#dc3545"
-               y="1066.66796875"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="1043.728515625"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="1064.66796875"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="455.0"
+                  y="1051.728515625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="1062.728515625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="491.0"
+           x="512.0"
            y="1031.728515625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 1043.7 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="1011.7890625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="1026.728515625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
-   <rect x="246.0"
-         y="1108.66796875"
-         fill="none"
-         width="241.0"
-         stroke-dasharray="5,2"
-         rx="8"
-         ry="8"
-         height="65.87890625"
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="1043.728515625"
+         stroke-dasharray="5,5"
          stroke="#4a90e2"
          stroke-width="2"/>
    <rect x="246.0"
          y="1108.66796875"
-         fill="#f0f8ff"
-         width="241.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/ValueDate"/>
-   <g>
-      <text x="258.0"
-            fill="#2c5aa0"
-            y="1137.607421875"
-            font-size="14"
-            font-family="Inter Regular">ValueDate</text>
-      <line y2="1143.607421875"
-            stroke-width="1"
-            x1="258.0"
-            x2="475.0"
-            stroke="#dee2e6"
-            y1="1143.607421875"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="258.0"
-           y="1154.546875"
-           xlink:href="#date-icon"/>
-      <text x="274.0"
-            fill="#fd7e14"
-            y="1164.546875"
-            font-size="13"
-            font-family="Inter Regular">xs:date</text>
-   </g>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 1141.6 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="1109.66796875"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="1124.607421875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
-   <rect x="246.0"
-         y="1206.546875"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
+   <a href="ValueDate_4ef57fb77f245ff1477c6b5a5e5bed71.html">
+      <rect x="246.0"
+            y="1108.66796875"
+            fill="#f0f8ff"
+            width="262.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/ValueDate"/>
+      <g>
+         <text x="258.0"
+               fill="#2c5aa0"
+               y="1137.607421875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ValueDate</text>
+         <line y2="1141.607421875"
+               stroke-width="1"
+               x1="258.0"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="1141.607421875"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="1162.546875"
+               font-size="13"
+               font-family="Inter-Regular">xs:date</text>
+         <g>
+            <rect x="455.0"
+                  y="1149.607421875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="1160.607421875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="1141.607421875"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="1206.546875"
-         fill="#f0f8ff"
-         width="241.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/DividendCurrency"/>
-   <g>
-      <text x="258.0"
-            fill="#2c5aa0"
-            y="1235.486328125"
-            font-size="14"
-            font-family="Inter Regular">DividendCurrency</text>
-      <line y2="1241.486328125"
-            stroke-width="1"
-            x1="258.0"
-            x2="475.0"
-            stroke="#dee2e6"
-            y1="1241.486328125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="258.0"
-           y="1252.42578125"
-           xlink:href="#complex-icon"/>
-      <text x="274.0"
-            fill="#dc3545"
-            y="1262.42578125"
-            font-size="13"
-            font-family="Inter Regular">ISOCurrencyCodeType</text>
-   </g>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 1239.5 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="1207.546875"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="1222.486328125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
-   <rect x="246.0"
-         y="1304.42578125"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
+   <a href="DividendCurrency_5fa10f5ac0c8f518dac4760e7859b3fe.html">
+      <rect x="246.0"
+            y="1206.546875"
+            fill="#f0f8ff"
+            width="262.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/DividendCurrency"/>
+      <g>
+         <text x="258.0"
+               fill="#2c5aa0"
+               y="1235.486328125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">DividendCurrency</text>
+         <line y2="1239.486328125"
+               stroke-width="1"
+               x1="258.0"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="1239.486328125"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="1260.42578125"
+               font-size="13"
+               font-family="Inter-Regular">ISOCurrencyCodeType</text>
+         <g>
+            <rect x="455.0"
+                  y="1247.486328125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="1258.486328125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="1239.486328125"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="1304.42578125"
-         fill="#f0f8ff"
-         width="241.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
+         fill="none"
+         width="262.0"
+         stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/DividendExchangeRate"/>
-   <g>
-      <text x="258.0"
-            fill="#2c5aa0"
-            y="1333.365234375"
-            font-size="14"
-            font-family="Inter Regular">DividendExchangeRate</text>
-      <line y2="1339.365234375"
-            stroke-width="1"
-            x1="258.0"
-            x2="475.0"
-            stroke="#dee2e6"
-            y1="1339.365234375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="258.0"
-           y="1350.3046875"
-           xlink:href="#numeric-icon"/>
-      <text x="274.0"
-            fill="#007bff"
-            y="1360.3046875"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 1337.4 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="1305.42578125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="1320.365234375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke="#4a90e2"
+         stroke-width="2"/>
+   <a href="DividendExchangeRate_7bff55fc0f41bfcc6902c21c02e386df.html">
+      <rect x="246.0"
+            y="1304.42578125"
+            fill="#f0f8ff"
+            width="262.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/DividendExchangeRate"/>
+      <g>
+         <text x="258.0"
+               fill="#2c5aa0"
+               y="1333.365234375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">DividendExchangeRate</text>
+         <line y2="1337.365234375"
+               stroke-width="1"
+               x1="258.0"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="1337.365234375"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="1358.3046875"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="455.0"
+                  y="1345.365234375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="1356.365234375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="1337.365234375"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="1402.3046875"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -1208,9 +1258,9 @@
       <rect x="246.0"
             y="1402.3046875"
             fill="#f0f8ff"
-            width="241.0"
+            width="262.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1221,51 +1271,53 @@
                fill="#2c5aa0"
                y="1431.244140625"
                font-size="14"
-               font-family="Inter Regular">NetDividend</text>
-         <line y2="1437.244140625"
+               font-weight="600"
+               font-family="Inter-Regular">NetDividend</text>
+         <line y2="1435.244140625"
                stroke-width="1"
                x1="258.0"
-               x2="475.0"
-               stroke="#dee2e6"
-               y1="1437.244140625"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="258.0"
-              y="1448.18359375"
-              xlink:href="#complex-icon"/>
-         <text x="274.0"
-               fill="#dc3545"
-               y="1458.18359375"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="1435.244140625"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="1456.18359375"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="455.0"
+                  y="1443.244140625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="1454.244140625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="491.0"
+           x="512.0"
            y="1423.244140625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 1435.2 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="1403.3046875"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="1418.244140625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="1435.244140625"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="1500.18359375"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -1276,9 +1328,9 @@
       <rect x="246.0"
             y="1500.18359375"
             fill="#f0f8ff"
-            width="241.0"
+            width="262.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1289,51 +1341,53 @@
                fill="#2c5aa0"
                y="1529.123046875"
                font-size="14"
-               font-family="Inter Regular">Quest</text>
-         <line y2="1535.123046875"
+               font-weight="600"
+               font-family="Inter-Regular">Quest</text>
+         <line y2="1533.123046875"
                stroke-width="1"
                x1="258.0"
-               x2="475.0"
-               stroke="#dee2e6"
-               y1="1535.123046875"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="258.0"
-              y="1546.0625"
-              xlink:href="#complex-icon"/>
-         <text x="274.0"
-               fill="#dc3545"
-               y="1556.0625"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="1533.123046875"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="1554.0625"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="455.0"
+                  y="1541.123046875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="1552.123046875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="491.0"
+           x="512.0"
            y="1521.123046875"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 1533.1 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="1501.18359375"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="1516.123046875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="1533.123046875"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="1598.0625"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -1344,9 +1398,9 @@
       <rect x="246.0"
             y="1598.0625"
             fill="#f0f8ff"
-            width="241.0"
+            width="262.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1357,51 +1411,53 @@
                fill="#2c5aa0"
                y="1627.001953125"
                font-size="14"
-               font-family="Inter Regular">ProfitLoss</text>
-         <line y2="1633.001953125"
+               font-weight="600"
+               font-family="Inter-Regular">ProfitLoss</text>
+         <line y2="1631.001953125"
                stroke-width="1"
                x1="258.0"
-               x2="475.0"
-               stroke="#dee2e6"
-               y1="1633.001953125"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="258.0"
-              y="1643.94140625"
-              xlink:href="#complex-icon"/>
-         <text x="274.0"
-               fill="#dc3545"
-               y="1653.94140625"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="1631.001953125"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="1651.94140625"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="455.0"
+                  y="1639.001953125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="1650.001953125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="491.0"
+           x="512.0"
            y="1619.001953125"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 1631.0 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="1599.0625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="1614.001953125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="1631.001953125"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="1695.94140625"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -1412,9 +1468,9 @@
       <rect x="246.0"
             y="1695.94140625"
             fill="#f0f8ff"
-            width="241.0"
+            width="262.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1425,51 +1481,53 @@
                fill="#2c5aa0"
                y="1724.880859375"
                font-size="14"
-               font-family="Inter Regular">UnitsInterestCapitalYieldsTax</text>
-         <line y2="1730.880859375"
+               font-weight="600"
+               font-family="Inter-Regular">UnitsInterestCapitalYieldsTax</text>
+         <line y2="1728.880859375"
                stroke-width="1"
                x1="258.0"
-               x2="475.0"
-               stroke="#dee2e6"
-               y1="1730.880859375"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="258.0"
-              y="1741.8203125"
-              xlink:href="#complex-icon"/>
-         <text x="274.0"
-               fill="#dc3545"
-               y="1751.8203125"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="1728.880859375"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="1749.8203125"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="455.0"
+                  y="1736.880859375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="1747.880859375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="491.0"
+           x="512.0"
            y="1716.880859375"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 1728.9 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="1696.94140625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="1711.880859375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="1728.880859375"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
    <rect x="246.0"
          y="1793.8203125"
          fill="none"
-         width="241.0"
+         width="262.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -1480,9 +1538,9 @@
       <rect x="246.0"
             y="1793.8203125"
             fill="#f0f8ff"
-            width="241.0"
+            width="262.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1493,47 +1551,49 @@
                fill="#2c5aa0"
                y="1822.759765625"
                font-size="14"
-               font-family="Inter Regular">EUWithholdingTax</text>
-         <line y2="1828.759765625"
+               font-weight="600"
+               font-family="Inter-Regular">EUWithholdingTax</text>
+         <line y2="1826.759765625"
                stroke-width="1"
                x1="258.0"
-               x2="475.0"
-               stroke="#dee2e6"
-               y1="1828.759765625"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="258.0"
-              y="1839.69921875"
-              xlink:href="#complex-icon"/>
-         <text x="274.0"
-               fill="#dc3545"
-               y="1849.69921875"
+               x2="496.0"
+               stroke="#e0e0e0"
+               y1="1826.759765625"/>
+         <text x="258.0"
+               fill="#6c757d"
+               y="1847.69921875"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="455.0"
+                  y="1834.759765625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="459.0"
+                  fill="#495057"
+                  y="1845.759765625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="491.0"
+           x="512.0"
            y="1814.759765625"
            xlink:href="#modern-plus-icon"/>
    </a>
-   <path fill="none"
-         d="M 171.0 945.5 H 201.0 V 1826.8 H 246.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="207.0"
-         y="1794.8203125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="211.0"
-         font-size="10"
-         y="1809.759765625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+   <line x1="86.0"
+         x2="246.0"
+         y1="945.4697265625"
+         y2="1826.759765625"
+         stroke-dasharray="5,5"
+         stroke="#4a90e2"
+         stroke-width="2"/>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -1563,7 +1623,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">(anonymous)</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>(anonymous)</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -1601,11 +1665,17 @@
                         <tbody class="divide-y divide-slate-200 text-sm">
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Identifiers_baa091281188b58a174d4e07e38d2e7f.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/Identifiers"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../Identifiers</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Identifiers_baa091281188b58a174d4e07e38d2e7f.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/Identifiers"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../Identifiers</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1620,17 +1690,22 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="AssetUniqueID_cb03a26d7fb8b28edea516f60c2e3195.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/AssetUniqueID"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../AssetUniqueID</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="AssetUniqueID_cb03a26d7fb8b28edea516f60c2e3195.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/AssetUniqueID"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../AssetUniqueID</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
-                                <a href="#"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">(anonymous)</a>
                                 
+                                <span>xs:IDREF</span>
                             </td>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Link to AssetMasterData</p>
@@ -1640,11 +1715,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="SubscriptionRatio_54b19abb70fc4cc50313ec5bdb29554d.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/SubscriptionRatio"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../SubscriptionRatio</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="SubscriptionRatio_54b19abb70fc4cc50313ec5bdb29554d.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/SubscriptionRatio"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../SubscriptionRatio</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1654,15 +1735,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Enhaelt das Bezugsverhaeltnis von</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">713.16</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">723.89</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="UnitsExDate_1d940dc03761cadb3b3137ea4ed40301.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/UnitsExDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../UnitsExDate</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="UnitsExDate_1d940dc03761cadb3b3137ea4ed40301.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/UnitsExDate"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../UnitsExDate</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1673,15 +1760,21 @@
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>***Should be &quot;UnitsExDate&quot;<br />
 Anzahl der Stuecke, die vom Bestand weggebucht werden</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">15.86</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">630.39</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Price_c17394bafdc9ae24d31b94fd0170e086.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/Price"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../Price</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Price_c17394bafdc9ae24d31b94fd0170e086.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/Price"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../Price</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1691,15 +1784,21 @@ Anzahl der Stuecke, die vom Bestand weggebucht werden</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Gibt den Kurs an mit dem der auszubuchende Bestand gebucht wird</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">483.09</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">835.85</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="MarketValue_7c481cbb2588a4960b5d2200fff65ce9.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/MarketValue"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../MarketValue</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="MarketValue_7c481cbb2588a4960b5d2200fff65ce9.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/MarketValue"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../MarketValue</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1716,11 +1815,17 @@ Anzahl der Stuecke, die vom Bestand weggebucht werden</p>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="NominalOrUnits_e7fc0324bfda39061176a3e4835ffcf6.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/NominalOrUnits"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../NominalOrUnits</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="NominalOrUnits_e7fc0324bfda39061176a3e4835ffcf6.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/NominalOrUnits"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../NominalOrUnits</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1730,15 +1835,21 @@ Anzahl der Stuecke, die vom Bestand weggebucht werden</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Gibt die Stuecke oder Nominale an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">696.77</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">539.15</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="ExchangeRateValue_afab2c6b514fb8a7a6477dc7cbe94225.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/ExchangeRateValue"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../ExchangeRateValue</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="ExchangeRateValue_afab2c6b514fb8a7a6477dc7cbe94225.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/ExchangeRateValue"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ExchangeRateValue</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1748,15 +1859,21 @@ Anzahl der Stuecke, die vom Bestand weggebucht werden</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Gibt den Devisenkurs an mit dem der auszubuchende Bestand gebucht wird</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">649.31</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">50.14</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Interests_26bea187abeb5d4a9c62b64f1bb21af0.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/Interests"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../Interests</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Interests_26bea187abeb5d4a9c62b64f1bb21af0.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/Interests"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../Interests</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1773,11 +1890,17 @@ Anzahl der Stuecke, die vom Bestand weggebucht werden</p>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="InterestsCurrency_4510127304add4dc674b8d923c7aa531.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/InterestsCurrency"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../InterestsCurrency</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="InterestsCurrency_4510127304add4dc674b8d923c7aa531.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/InterestsCurrency"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../InterestsCurrency</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1790,15 +1913,21 @@ Anzahl der Stuecke, die vom Bestand weggebucht werden</p>
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">ODQ</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">HUC</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="CostValue_147d0ae61a231c5fa972d03220f246a6.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/CostValue"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../CostValue</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="CostValue_147d0ae61a231c5fa972d03220f246a6.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/CostValue"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../CostValue</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1815,11 +1944,17 @@ Anzahl der Stuecke, die vom Bestand weggebucht werden</p>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="ValueDate_4ef57fb77f245ff1477c6b5a5e5bed71.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/ValueDate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../ValueDate</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="ValueDate_4ef57fb77f245ff1477c6b5a5e5bed71.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/ValueDate"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ValueDate</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1830,15 +1965,21 @@ Anzahl der Stuecke, die vom Bestand weggebucht werden</p>
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>****Should be &quot;ValueDate&quot;<br />
 Valutadatum</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">2023-01-15</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2020-09-16</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="DividendCurrency_5fa10f5ac0c8f518dac4760e7859b3fe.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/DividendCurrency"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../DividendCurrency</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="DividendCurrency_5fa10f5ac0c8f518dac4760e7859b3fe.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/DividendCurrency"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../DividendCurrency</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1851,15 +1992,21 @@ Valutadatum</p>
 <p>Three-letter ISO-CurrencyCode (ISO 4217)</p>
 <p>Dreistelliger ISO-Waehrungscode (ISO 4217)</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">WHL</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">UKO</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="DividendExchangeRate_7bff55fc0f41bfcc6902c21c02e386df.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/DividendExchangeRate"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../DividendExchangeRate</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="DividendExchangeRate_7bff55fc0f41bfcc6902c21c02e386df.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/DividendExchangeRate"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../DividendExchangeRate</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1869,15 +2016,21 @@ Valutadatum</p>
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Devisenkurs mit dem die Dividende vom auszubuchenden Bestand gebucht wurde</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">32.05</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">506.46</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="NetDividend_f32b2f2df3a74ee91fa26b5ef81925a4.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/NetDividend"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../NetDividend</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="NetDividend_f32b2f2df3a74ee91fa26b5ef81925a4.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/NetDividend"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../NetDividend</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1894,11 +2047,17 @@ Valutadatum</p>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Quest_dec14260c66f5ca58f7f9cf3b591090b.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/Quest"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../Quest</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Quest_dec14260c66f5ca58f7f9cf3b591090b.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/Quest"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../Quest</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1915,11 +2074,17 @@ Valutadatum</p>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="ProfitLoss_451b0c5cdf87aef470271ee6459a96b1.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/ProfitLoss"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../ProfitLoss</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="ProfitLoss_451b0c5cdf87aef470271ee6459a96b1.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/ProfitLoss"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ProfitLoss</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1936,11 +2101,17 @@ Valutadatum</p>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="UnitsInterestCapitalYieldsTax_58f0eb08a21c6429bd48baa2be4c6d9b.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/UnitsInterestCapitalYieldsTax"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../UnitsInterestCapitalYieldsTax</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="UnitsInterestCapitalYieldsTax_58f0eb08a21c6429bd48baa2be4c6d9b.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/UnitsInterestCapitalYieldsTax"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../UnitsInterestCapitalYieldsTax</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1957,11 +2128,17 @@ Valutadatum</p>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="EUWithholdingTax_6a6dffdb775c7f90ab8c87b81a196783.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/EUWithholdingTax"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../EUWithholdingTax</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="EUWithholdingTax_6a6dffdb775c7f90ab8c87b81a196783.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/SingleFund/Segments/Segment/ShareClasses/ShareClass/Portfolios/Portfolio/Transactions/Transaction/CHOICE_9168/CorporateAction/from/EUWithholdingTax"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../EUWithholdingTax</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1984,11 +2161,35 @@ Valutadatum</p>
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             maxOccurs=&quot;unbounded&quot;
@@ -2108,8 +2309,12 @@ Valutadatum &lt;/xs:documentation&gt;
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
             </section>
+
+            <!-- Section: Referenced Type Definition -->
+            
 
         </div>
     </div>

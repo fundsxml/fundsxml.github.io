@@ -28,6 +28,15 @@
 
     <!-- PrismJS for Syntax Highlighting -->
     <link href="../assets/prism.css" rel="stylesheet"/>
+
+    <!-- Custom styles for details/summary -->
+    <style>
+        /* Hide the default marker for summary elements */
+        summary::marker,
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-slate-800" data-root-path=".." data-search-index-path="../search_index.json">
 
@@ -81,7 +90,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12">
 
     <!-- Breadcrumb navigation: Now uses a pre-formatted HTML string for simplicity and correctness. -->
-    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_2774c1ae369ab9c17359040c0bb19641.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfunds_b26f7b71fbfa7f0c9248e03057b8af47.html' class='text-sky-600 hover:underline'>Subfunds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfund_64b691c40f891b0155a10eb333b71e69.html' class='text-sky-600 hover:underline'>Subfund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_f8466cca9266a2b96359ee44b8daf355.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_629b550d194af1808fade67bf7aec8de.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='SegmentDynamicData_1fdb18d55c9af1fcdc5688522bfb2fd2.html' class='text-sky-600 hover:underline'>SegmentDynamicData</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_2b3735c85844807ab37752d310748ad9.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_d02282844c7521c70e9d4785ce5e241e.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Transactions_4244b04ebdd4cad6f23a484b6724d3e7.html' class='text-sky-600 hover:underline'>Transactions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Transaction_f93719a949d78e617424bc776ca98159.html' class='text-sky-600 hover:underline'>Transaction</a> <span class='mx-1 text-slate-400'>/</span> <a href='CHOICE_78d04b8a3dbf5e804f42da190976f70b.html' class='text-sky-600 hover:underline'>CHOICE</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Bonds</span></nav>
+    <nav aria-label="breadcrumb" class="mb-6 text-sm"><a href='../index.html' class='text-sky-600 hover:underline'>Schema</a> <span class='mx-1 text-slate-400'>/</span> <a href='FundsXML4_03619599b453e5076558dea9d0ed8acb.html' class='text-sky-600 hover:underline'>FundsXML4</a> <span class='mx-1 text-slate-400'>/</span> <a href='Funds_656aeab202d160b949f1bc6412654b59.html' class='text-sky-600 hover:underline'>Funds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Fund_71097e857687283c392615ceb51e59ab.html' class='text-sky-600 hover:underline'>Fund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfunds_b26f7b71fbfa7f0c9248e03057b8af47.html' class='text-sky-600 hover:underline'>Subfunds</a> <span class='mx-1 text-slate-400'>/</span> <a href='Subfund_64b691c40f891b0155a10eb333b71e69.html' class='text-sky-600 hover:underline'>Subfund</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segments_f8466cca9266a2b96359ee44b8daf355.html' class='text-sky-600 hover:underline'>Segments</a> <span class='mx-1 text-slate-400'>/</span> <a href='Segment_629b550d194af1808fade67bf7aec8de.html' class='text-sky-600 hover:underline'>Segment</a> <span class='mx-1 text-slate-400'>/</span> <a href='SegmentDynamicData_1fdb18d55c9af1fcdc5688522bfb2fd2.html' class='text-sky-600 hover:underline'>SegmentDynamicData</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolios_2b3735c85844807ab37752d310748ad9.html' class='text-sky-600 hover:underline'>Portfolios</a> <span class='mx-1 text-slate-400'>/</span> <a href='Portfolio_d02282844c7521c70e9d4785ce5e241e.html' class='text-sky-600 hover:underline'>Portfolio</a> <span class='mx-1 text-slate-400'>/</span> <a href='Transactions_4244b04ebdd4cad6f23a484b6724d3e7.html' class='text-sky-600 hover:underline'>Transactions</a> <span class='mx-1 text-slate-400'>/</span> <a href='Transaction_f93719a949d78e617424bc776ca98159.html' class='text-sky-600 hover:underline'>Transaction</a> <span class='mx-1 text-slate-400'>/</span> <span class='font-medium text-slate-500'>Bonds</span></nav>
 
     <!-- Central detail card -->
     <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -90,11 +99,11 @@
             <h1 class="text-2xl font-bold text-slate-900">Bonds</h1>
             <!-- Container for XPath and copy buttons -->
             <div class="flex items-center space-x-2 mt-1">
-                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds</p>
+                <p class="text-sm text-slate-600 font-mono">/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Bonds</p>
 
                 <!-- Button to copy the XPath -->
                 <button onclick="copyXPath(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Bonds">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -107,7 +116,7 @@
 
                 <!-- Button to copy the Permalink -->
                 <button onclick="copyPermalink(this)"
-                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds">
+                        class="relative group p-1 rounded-md text-slate-400 hover:bg-slate-200 hover:text-slate-600 transition-colors" data-xpath="/FundsXML4/Funds/Fund/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/Bonds">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -130,7 +139,7 @@
                         <!-- Case 1: If the type is 'SVG', insert the SVG code directly -->
                         <div><svg xmlns="http://www.w3.org/2000/svg"
      style="background-color: #f0f8ff"
-     width="607.0"
+     width="620.0"
      height="1418.3046875">
    <defs>
       <linearGradient y2="100%" id="elementGradient" x1="0%" x2="0%" y1="0%">
@@ -161,7 +170,7 @@
       <filter width="200%"
               x="-50%"
               height="200%"
-              id="xmlspy-shadow"
+              id="dropShadow"
               y="-50%">
          <feGaussianBlur stdDeviation="2" in="SourceAlpha"/>
          <feOffset result="offsetblur" dx="1" dy="1"/>
@@ -280,7 +289,7 @@
             fill="#f0f8ff"
             width="65.0"
             style="stroke: #4a90e2; stroke-width: 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -290,7 +299,7 @@
             fill="#2c5aa0"
             y="708.939453125"
             font-size="14"
-            font-family="Inter Regular">Bonds</text>
+            font-family="Inter-Regular">Bonds</text>
    </a>
    <g id="modern-comment">
       <text font-style="italic"
@@ -298,7 +307,7 @@
             fill="#6c757d"
             font-size="13"
             y="738.939453125"
-            font-family="Inter Regular">
+            font-family="Inter-Regular">
          <tspan x="27" dy="1.3em">Details </tspan>
          <tspan x="27" dy="1.3em">for bond </tspan>
          <tspan x="27" dy="1.3em">transactions </tspan>
@@ -328,7 +337,7 @@
    <rect x="257.0"
          y="32.0"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -339,9 +348,9 @@
       <rect x="257.0"
             y="32.0"
             fill="#f0f8ff"
-            width="302.0"
+            width="303.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -352,113 +361,115 @@
                fill="#2c5aa0"
                y="60.939453125"
                font-size="14"
-               font-family="Inter Regular">UnitInterests</text>
-         <line y2="66.939453125"
+               font-weight="600"
+               font-family="Inter-Regular">UnitInterests</text>
+         <line y2="64.939453125"
                stroke-width="1"
                x1="269.0"
-               x2="547.0"
-               stroke="#dee2e6"
-               y1="66.939453125"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="269.0"
-              y="77.87890625"
-              xlink:href="#complex-icon"/>
-         <text x="285.0"
-               fill="#dc3545"
-               y="87.87890625"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="64.939453125"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="85.87890625"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="507.0"
+                  y="72.939453125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="83.939453125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="563.0"
+           x="564.0"
            y="52.939453125"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 64.9 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="33.0"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="47.939453125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 64.939453125 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="129.87890625"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="257.0"
-         y="129.87890625"
-         fill="#f0f8ff"
-         width="302.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/UnitInterestsDays"/>
-   <g>
-      <text x="269.0"
-            fill="#2c5aa0"
-            y="158.818359375"
-            font-size="14"
-            font-family="Inter Regular">UnitInterestsDays</text>
-      <line y2="164.818359375"
-            stroke-width="1"
-            x1="269.0"
-            x2="547.0"
-            stroke="#dee2e6"
-            y1="164.818359375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="269.0"
-           y="175.7578125"
-           xlink:href="#numeric-icon"/>
-      <text x="285.0"
-            fill="#007bff"
-            y="185.7578125"
-            font-size="13"
-            font-family="Inter Regular">xs:integer</text>
-   </g>
+   <a href="UnitInterestsDays_c99c81034e0b105a1ef792dbac9b9b14.html">
+      <rect x="257.0"
+            y="129.87890625"
+            fill="#f0f8ff"
+            width="303.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/UnitInterestsDays"/>
+      <g>
+         <text x="269.0"
+               fill="#2c5aa0"
+               y="158.818359375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">UnitInterestsDays</text>
+         <line y2="162.818359375"
+               stroke-width="1"
+               x1="269.0"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="162.818359375"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="183.7578125"
+               font-size="13"
+               font-family="Inter-Regular">xs:integer</text>
+         <g>
+            <rect x="507.0"
+                  y="170.818359375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="181.818359375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 162.8 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="130.87890625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="145.818359375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 162.818359375 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="227.7578125"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -469,9 +480,9 @@
       <rect x="257.0"
             y="227.7578125"
             fill="#f0f8ff"
-            width="302.0"
+            width="303.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -482,51 +493,51 @@
                fill="#2c5aa0"
                y="256.697265625"
                font-size="14"
-               font-family="Inter Regular">CapitalYieldsTaxValue</text>
-         <line y2="262.697265625"
+               font-weight="600"
+               font-family="Inter-Regular">CapitalYieldsTaxValue</text>
+         <line y2="260.697265625"
                stroke-width="1"
                x1="269.0"
-               x2="547.0"
-               stroke="#dee2e6"
-               y1="262.697265625"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="269.0"
-              y="273.63671875"
-              xlink:href="#complex-icon"/>
-         <text x="285.0"
-               fill="#dc3545"
-               y="283.63671875"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="260.697265625"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="281.63671875"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="507.0"
+                  y="268.697265625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="279.697265625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="563.0"
+           x="564.0"
            y="248.697265625"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 260.7 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="228.7578125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="243.697265625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 260.697265625 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="325.63671875"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -537,9 +548,9 @@
       <rect x="257.0"
             y="325.63671875"
             fill="#f0f8ff"
-            width="302.0"
+            width="303.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -550,51 +561,51 @@
                fill="#2c5aa0"
                y="354.576171875"
                font-size="14"
-               font-family="Inter Regular">CapitalYieldsTaxZeroValue</text>
-         <line y2="360.576171875"
+               font-weight="600"
+               font-family="Inter-Regular">CapitalYieldsTaxZeroValue</text>
+         <line y2="358.576171875"
                stroke-width="1"
                x1="269.0"
-               x2="547.0"
-               stroke="#dee2e6"
-               y1="360.576171875"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="269.0"
-              y="371.515625"
-              xlink:href="#complex-icon"/>
-         <text x="285.0"
-               fill="#dc3545"
-               y="381.515625"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="358.576171875"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="379.515625"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="507.0"
+                  y="366.576171875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="377.576171875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="563.0"
+           x="564.0"
            y="346.576171875"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 358.6 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="326.63671875"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="341.576171875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 358.576171875 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="423.515625"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -605,9 +616,9 @@
       <rect x="257.0"
             y="423.515625"
             fill="#f0f8ff"
-            width="302.0"
+            width="303.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -618,51 +629,51 @@
                fill="#2c5aa0"
                y="452.455078125"
                font-size="14"
-               font-family="Inter Regular">EUWithholdingTaxValue</text>
-         <line y2="458.455078125"
+               font-weight="600"
+               font-family="Inter-Regular">EUWithholdingTaxValue</text>
+         <line y2="456.455078125"
                stroke-width="1"
                x1="269.0"
-               x2="547.0"
-               stroke="#dee2e6"
-               y1="458.455078125"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="269.0"
-              y="469.39453125"
-              xlink:href="#complex-icon"/>
-         <text x="285.0"
-               fill="#dc3545"
-               y="479.39453125"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="456.455078125"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="477.39453125"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="507.0"
+                  y="464.455078125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="475.455078125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="563.0"
+           x="564.0"
            y="444.455078125"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 456.5 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="424.515625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="439.455078125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 456.455078125 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="521.39453125"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -673,9 +684,9 @@
       <rect x="257.0"
             y="521.39453125"
             fill="#f0f8ff"
-            width="302.0"
+            width="303.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -686,51 +697,51 @@
                fill="#2c5aa0"
                y="550.333984375"
                font-size="14"
-               font-family="Inter Regular">EUWithholdingTaxZeroValue</text>
-         <line y2="556.333984375"
+               font-weight="600"
+               font-family="Inter-Regular">EUWithholdingTaxZeroValue</text>
+         <line y2="554.333984375"
                stroke-width="1"
                x1="269.0"
-               x2="547.0"
-               stroke="#dee2e6"
-               y1="556.333984375"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="269.0"
-              y="567.2734375"
-              xlink:href="#complex-icon"/>
-         <text x="285.0"
-               fill="#dc3545"
-               y="577.2734375"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="554.333984375"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="575.2734375"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="507.0"
+                  y="562.333984375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="573.333984375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="563.0"
+           x="564.0"
            y="542.333984375"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 554.3 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="522.39453125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="537.333984375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 554.333984375 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="619.2734375"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -741,9 +752,9 @@
       <rect x="257.0"
             y="619.2734375"
             fill="#f0f8ff"
-            width="302.0"
+            width="303.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -754,175 +765,179 @@
                fill="#2c5aa0"
                y="648.212890625"
                font-size="14"
-               font-family="Inter Regular">EUWithholdingTaxInterests</text>
-         <line y2="654.212890625"
+               font-weight="600"
+               font-family="Inter-Regular">EUWithholdingTaxInterests</text>
+         <line y2="652.212890625"
                stroke-width="1"
                x1="269.0"
-               x2="547.0"
-               stroke="#dee2e6"
-               y1="654.212890625"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="269.0"
-              y="665.15234375"
-              xlink:href="#complex-icon"/>
-         <text x="285.0"
-               fill="#dc3545"
-               y="675.15234375"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="652.212890625"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="673.15234375"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="507.0"
+                  y="660.212890625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="671.212890625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="563.0"
+           x="564.0"
            y="640.212890625"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 652.2 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="620.2734375"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="635.212890625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 652.212890625 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="717.15234375"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="257.0"
-         y="717.15234375"
-         fill="#f0f8ff"
-         width="302.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/Poolfactor"/>
-   <g>
-      <text x="269.0"
-            fill="#2c5aa0"
-            y="746.091796875"
-            font-size="14"
-            font-family="Inter Regular">Poolfactor</text>
-      <line y2="752.091796875"
-            stroke-width="1"
-            x1="269.0"
-            x2="547.0"
-            stroke="#dee2e6"
-            y1="752.091796875"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="269.0"
-           y="763.03125"
-           xlink:href="#numeric-icon"/>
-      <text x="285.0"
-            fill="#007bff"
-            y="773.03125"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
+   <a href="Poolfactor_b6bfc972fea60f58c6c4ce15256b5de2.html">
+      <rect x="257.0"
+            y="717.15234375"
+            fill="#f0f8ff"
+            width="303.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/Poolfactor"/>
+      <g>
+         <text x="269.0"
+               fill="#2c5aa0"
+               y="746.091796875"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">Poolfactor</text>
+         <line y2="750.091796875"
+               stroke-width="1"
+               x1="269.0"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="750.091796875"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="771.03125"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="507.0"
+                  y="758.091796875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="769.091796875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 750.1 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="718.15234375"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="733.091796875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 750.091796875 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="815.03125"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="257.0"
-         y="815.03125"
-         fill="#f0f8ff"
-         width="302.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/IndexRatio"/>
-   <g>
-      <text x="269.0"
-            fill="#2c5aa0"
-            y="843.970703125"
-            font-size="14"
-            font-family="Inter Regular">IndexRatio</text>
-      <line y2="849.970703125"
-            stroke-width="1"
-            x1="269.0"
-            x2="547.0"
-            stroke="#dee2e6"
-            y1="849.970703125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="269.0"
-           y="860.91015625"
-           xlink:href="#numeric-icon"/>
-      <text x="285.0"
-            fill="#007bff"
-            y="870.91015625"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
+   <a href="IndexRatio_1b73df150b5f0cfdf0498e04a0134743.html">
+      <rect x="257.0"
+            y="815.03125"
+            fill="#f0f8ff"
+            width="303.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/IndexRatio"/>
+      <g>
+         <text x="269.0"
+               fill="#2c5aa0"
+               y="843.970703125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">IndexRatio</text>
+         <line y2="847.970703125"
+               stroke-width="1"
+               x1="269.0"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="847.970703125"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="868.91015625"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="507.0"
+                  y="855.970703125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="866.970703125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 848.0 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="816.03125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="830.970703125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 847.970703125 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="912.91015625"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -933,9 +948,9 @@
       <rect x="257.0"
             y="912.91015625"
             fill="#f0f8ff"
-            width="302.0"
+            width="303.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -946,51 +961,51 @@
                fill="#2c5aa0"
                y="941.849609375"
                font-size="14"
-               font-family="Inter Regular">IndexBondAccrual</text>
-         <line y2="947.849609375"
+               font-weight="600"
+               font-family="Inter-Regular">IndexBondAccrual</text>
+         <line y2="945.849609375"
                stroke-width="1"
                x1="269.0"
-               x2="547.0"
-               stroke="#dee2e6"
-               y1="947.849609375"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="269.0"
-              y="958.7890625"
-              xlink:href="#complex-icon"/>
-         <text x="285.0"
-               fill="#dc3545"
-               y="968.7890625"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="945.849609375"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="966.7890625"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="507.0"
+                  y="953.849609375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="964.849609375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="563.0"
+           x="564.0"
            y="933.849609375"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 945.8 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="913.91015625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="928.849609375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 945.849609375 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="1010.7890625"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -1001,9 +1016,9 @@
       <rect x="257.0"
             y="1010.7890625"
             fill="#f0f8ff"
-            width="302.0"
+            width="303.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1014,51 +1029,51 @@
                fill="#2c5aa0"
                y="1039.728515625"
                font-size="14"
-               font-family="Inter Regular">InflationaryAdjustment</text>
-         <line y2="1045.728515625"
+               font-weight="600"
+               font-family="Inter-Regular">InflationaryAdjustment</text>
+         <line y2="1043.728515625"
                stroke-width="1"
                x1="269.0"
-               x2="547.0"
-               stroke="#dee2e6"
-               y1="1045.728515625"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="269.0"
-              y="1056.66796875"
-              xlink:href="#complex-icon"/>
-         <text x="285.0"
-               fill="#dc3545"
-               y="1066.66796875"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="1043.728515625"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="1064.66796875"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="507.0"
+                  y="1051.728515625"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="1062.728515625"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="563.0"
+           x="564.0"
            y="1031.728515625"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 1043.7 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="1011.7890625"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="1026.728515625"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 1043.728515625 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="1108.66796875"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
@@ -1069,9 +1084,9 @@
       <rect x="257.0"
             y="1108.66796875"
             fill="#f0f8ff"
-            width="302.0"
+            width="303.0"
             style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-            filter="url(#xmlspy-shadow)"
+            filter="url(#dropShadow)"
             class="hoverable-rect"
             rx="8"
             ry="8"
@@ -1082,171 +1097,175 @@
                fill="#2c5aa0"
                y="1137.607421875"
                font-size="14"
-               font-family="Inter Regular">EntryConditionalInflationaryAdjustment</text>
-         <line y2="1143.607421875"
+               font-weight="600"
+               font-family="Inter-Regular">EntryConditionalInflationaryAdjustment</text>
+         <line y2="1141.607421875"
                stroke-width="1"
                x1="269.0"
-               x2="547.0"
-               stroke="#dee2e6"
-               y1="1143.607421875"/>
-         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="269.0"
-              y="1154.546875"
-              xlink:href="#complex-icon"/>
-         <text x="285.0"
-               fill="#dc3545"
-               y="1164.546875"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="1141.607421875"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="1162.546875"
                font-size="13"
-               font-family="Inter Regular">FundAmountType</text>
+               font-family="Inter-Regular">FundAmountType</text>
+         <g>
+            <rect x="507.0"
+                  y="1149.607421875"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="1160.607421875"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
       </g>
       <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="563.0"
+           x="564.0"
            y="1129.607421875"
            xlink:href="#modern-plus-icon"/>
    </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 1141.6 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="1109.66796875"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="1124.607421875"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 1141.607421875 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="1206.546875"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="257.0"
-         y="1206.546875"
-         fill="#f0f8ff"
-         width="302.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EntryConditionalIndexBondAccrual"/>
-   <g>
-      <text x="269.0"
-            fill="#2c5aa0"
-            y="1235.486328125"
-            font-size="14"
-            font-family="Inter Regular">EntryConditionalIndexBondAccrual</text>
-      <line y2="1241.486328125"
-            stroke-width="1"
-            x1="269.0"
-            x2="547.0"
-            stroke="#dee2e6"
-            y1="1241.486328125"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="269.0"
-           y="1252.42578125"
-           xlink:href="#numeric-icon"/>
-      <text x="285.0"
-            fill="#007bff"
-            y="1262.42578125"
-            font-size="13"
-            font-family="Inter Regular">xs:decimal</text>
-   </g>
+   <a href="EntryConditionalIndexBondAccrual_c9918360ac4c5bd7721337ff3f144d5c.html">
+      <rect x="257.0"
+            y="1206.546875"
+            fill="#f0f8ff"
+            width="303.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EntryConditionalIndexBondAccrual"/>
+      <g>
+         <text x="269.0"
+               fill="#2c5aa0"
+               y="1235.486328125"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">EntryConditionalIndexBondAccrual</text>
+         <line y2="1239.486328125"
+               stroke-width="1"
+               x1="269.0"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="1239.486328125"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="1260.42578125"
+               font-size="13"
+               font-family="Inter-Regular">xs:decimal</text>
+         <g>
+            <rect x="507.0"
+                  y="1247.486328125"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="1258.486328125"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 1239.5 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="1207.546875"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="1222.486328125"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 1239.486328125 H 257.0"
+         stroke="#6c757d"/>
    <rect x="257.0"
          y="1304.42578125"
          fill="none"
-         width="302.0"
+         width="303.0"
          stroke-dasharray="5,2"
          rx="8"
          ry="8"
          height="65.87890625"
          stroke="#4a90e2"
          stroke-width="2"/>
-   <rect x="257.0"
-         y="1304.42578125"
-         fill="#f0f8ff"
-         width="302.0"
-         style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
-         filter="url(#xmlspy-shadow)"
-         class="hoverable-rect"
-         rx="8"
-         ry="8"
-         height="65.87890625"
-         id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/ExCouponFlag"/>
-   <g>
-      <text x="269.0"
-            fill="#2c5aa0"
-            y="1333.365234375"
-            font-size="14"
-            font-family="Inter Regular">ExCouponFlag</text>
-      <line y2="1339.365234375"
-            stroke-width="1"
-            x1="269.0"
-            x2="547.0"
-            stroke="#dee2e6"
-            y1="1339.365234375"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="269.0"
-           y="1350.3046875"
-           xlink:href="#boolean-icon"/>
-      <text x="285.0"
-            fill="#6f42c1"
-            y="1360.3046875"
-            font-size="13"
-            font-family="Inter Regular">xs:boolean</text>
-   </g>
+   <a href="ExCouponFlag_656283dbf9f1d4ad5482e02371fbb99c.html">
+      <rect x="257.0"
+            y="1304.42578125"
+            fill="#f0f8ff"
+            width="303.0"
+            style="stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5, 2; fill: url(#elementGradient); filter: url(#dropShadow);"
+            filter="url(#dropShadow)"
+            class="hoverable-rect"
+            rx="8"
+            ry="8"
+            height="65.87890625"
+            id="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/ExCouponFlag"/>
+      <g>
+         <text x="269.0"
+               fill="#2c5aa0"
+               y="1333.365234375"
+               font-size="14"
+               font-weight="600"
+               font-family="Inter-Regular">ExCouponFlag</text>
+         <line y2="1337.365234375"
+               stroke-width="1"
+               x1="269.0"
+               x2="548.0"
+               stroke="#e0e0e0"
+               y1="1337.365234375"/>
+         <text x="269.0"
+               fill="#6c757d"
+               y="1358.3046875"
+               font-size="13"
+               font-family="Inter-Regular">xs:boolean</text>
+         <g>
+            <rect x="507.0"
+                  y="1345.365234375"
+                  fill="#e9ecef"
+                  width="41.0"
+                  rx="2"
+                  ry="2"
+                  height="16"
+                  stroke="#adb5bd"
+                  stroke-width="1"/>
+            <text x="511.0"
+                  fill="#495057"
+                  y="1356.365234375"
+                  font-size="10"
+                  font-weight="500"
+                  font-family="monospace">[0..1]</text>
+         </g>
+      </g>
+   </a>
    <path fill="none"
-         d="M 182.0 700.5 H 212.0 V 1337.4 H 257.0"
-         style="stroke: #6c757d; stroke-width: 2; fill: none; stroke-dasharray: 5,5;"
-         class="connection-line"/>
-   <rect x="218.0"
-         y="1305.42578125"
-         fill="#f0f8ff"
-         width="34.0"
-         rx="3"
-         height="20.939453125"
-         stroke="#dee2e6"
-         stroke-width="1"/>
-   <text x="222.0"
-         font-size="10"
-         y="1320.365234375"
-         fill="#6c757d"
-         font-family="Inter Regular"
-         class="cardinality-text"
-         font-weight="600">0..1</text>
+         stroke-dasharray="5,5"
+         stroke-width="2"
+         d="M 182.0 700.4697265625 H 200.75 V 1337.365234375 H 257.0"
+         stroke="#6c757d"/>
 </svg>
 </div>
                         <!-- Case 2: If the type is 'PNG', create a normal image tag -->
@@ -1276,7 +1295,11 @@
                 <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Type</dt>
-                        <dd class="mt-1 text-slate-900 font-mono">(anonymous)</dd>
+                        <dd class="mt-1 text-slate-900 font-mono">
+                            
+                            
+                            <span>(anonymous)</span>
+                        </dd>
                     </div>
                     <div class="flex flex-col">
                         <dt class="text-sm font-medium text-slate-500">Cardinality</dt>
@@ -1314,11 +1337,17 @@
                         <tbody class="divide-y divide-slate-200 text-sm">
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="UnitInterests_3525c2862377d6515abf283d85e6f93e.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/UnitInterests"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../UnitInterests</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="UnitInterests_3525c2862377d6515abf283d85e6f93e.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/UnitInterests"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../UnitInterests</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1335,11 +1364,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="UnitInterestsDays_c99c81034e0b105a1ef792dbac9b9b14.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/UnitInterestsDays"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../UnitInterestsDays</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="UnitInterestsDays_c99c81034e0b105a1ef792dbac9b9b14.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/UnitInterestsDays"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../UnitInterestsDays</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1349,15 +1384,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Zeigt die StuecKZinstage der Transaktion</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">8011</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">2979</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="CapitalYieldsTaxValue_48921d749e182e2497bebf9684089b4e.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/CapitalYieldsTaxValue"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../CapitalYieldsTaxValue</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="CapitalYieldsTaxValue_48921d749e182e2497bebf9684089b4e.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/CapitalYieldsTaxValue"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../CapitalYieldsTaxValue</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1374,11 +1415,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="CapitalYieldsTaxZeroValue_528c58d56232198d61d53f01618ff5e4.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/CapitalYieldsTaxZeroValue"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../CapitalYieldsTaxZeroValue</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="CapitalYieldsTaxZeroValue_528c58d56232198d61d53f01618ff5e4.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/CapitalYieldsTaxZeroValue"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../CapitalYieldsTaxZeroValue</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1395,11 +1442,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="EUWithholdingTaxValue_f90e922210a807cac02e6889c1bf66af.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EUWithholdingTaxValue"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../EUWithholdingTaxValue</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="EUWithholdingTaxValue_f90e922210a807cac02e6889c1bf66af.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EUWithholdingTaxValue"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../EUWithholdingTaxValue</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1416,11 +1469,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="EUWithholdingTaxZeroValue_4297c554cc9f0a170cddd361f1c5ab85.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EUWithholdingTaxZeroValue"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../EUWithholdingTaxZeroValue</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="EUWithholdingTaxZeroValue_4297c554cc9f0a170cddd361f1c5ab85.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EUWithholdingTaxZeroValue"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../EUWithholdingTaxZeroValue</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1437,11 +1496,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="EUWithholdingTaxInterests_71715b802b9811d65a18df92dc766fb2.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EUWithholdingTaxInterests"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../EUWithholdingTaxInterests</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="EUWithholdingTaxInterests_71715b802b9811d65a18df92dc766fb2.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EUWithholdingTaxInterests"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../EUWithholdingTaxInterests</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1458,11 +1523,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="Poolfactor_b6bfc972fea60f58c6c4ce15256b5de2.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/Poolfactor"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../Poolfactor</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="Poolfactor_b6bfc972fea60f58c6c4ce15256b5de2.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/Poolfactor"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../Poolfactor</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1472,15 +1543,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Gibt den Poolfaktor der Wertpapiertransaktion</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">463.68</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">260.47</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="IndexRatio_1b73df150b5f0cfdf0498e04a0134743.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/IndexRatio"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../IndexRatio</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="IndexRatio_1b73df150b5f0cfdf0498e04a0134743.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/IndexRatio"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../IndexRatio</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1490,15 +1567,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Gibt die Hoehe des Index-Ratio der Rente an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">26.40</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">21.89</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="IndexBondAccrual_74fe9f960110276aefcc05e0fb5326dd.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/IndexBondAccrual"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../IndexBondAccrual</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="IndexBondAccrual_74fe9f960110276aefcc05e0fb5326dd.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/IndexBondAccrual"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../IndexBondAccrual</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1515,11 +1598,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="InflationaryAdjustment_996adff23d72c3c9a6b4c433aefe7cd7.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/InflationaryAdjustment"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../InflationaryAdjustment</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="InflationaryAdjustment_996adff23d72c3c9a6b4c433aefe7cd7.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/InflationaryAdjustment"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../InflationaryAdjustment</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1536,11 +1625,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="EntryConditionalInflationaryAdjustment_014a53498fd4a748c24692667e95610a.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EntryConditionalInflationaryAdjustment"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../EntryConditionalInflationaryAdjustment</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="EntryConditionalInflationaryAdjustment_014a53498fd4a748c24692667e95610a.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EntryConditionalInflationaryAdjustment"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../EntryConditionalInflationaryAdjustment</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1557,11 +1652,17 @@
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="EntryConditionalIndexBondAccrual_c9918360ac4c5bd7721337ff3f144d5c.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EntryConditionalIndexBondAccrual"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../EntryConditionalIndexBondAccrual</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="EntryConditionalIndexBondAccrual_c9918360ac4c5bd7721337ff3f144d5c.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/EntryConditionalIndexBondAccrual"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../EntryConditionalIndexBondAccrual</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1571,15 +1672,21 @@
 
                             <td class="px-4 py-3 text-slate-600 prose prose-sm max-w-md"><p>Gibt den Buchungsbedingten Abgrenzungsbetrag fuer Indexanleihen an</p>
 </td>
-                            <td class="px-4 py-3 font-mono text-slate-600">404.18</td>
+                            <td class="px-4 py-3 font-mono text-slate-600">915.67</td>
                         </tr>
                         <tr>
                             <td class="px-4 py-3 font-mono">
-                                <a href="ExCouponFlag_656283dbf9f1d4ad5482e02371fbb99c.html"
-                                   title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/ExCouponFlag"
-                                   class="text-sky-600 hover:text-sky-800 hover:underline">
-                                    <span>/Funds/.../ExCouponFlag</span>
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <a href="ExCouponFlag_656283dbf9f1d4ad5482e02371fbb99c.html"
+                                       title="/FundsXML4/Funds/Fund/CHOICE_2819/Subfunds/Subfund/Segments/Segment/SegmentDynamicData/Portfolios/Portfolio/Transactions/Transaction/CHOICE_21517/Bonds/ExCouponFlag"
+                                       class="text-sky-600 hover:text-sky-800 hover:underline">
+                                        <span>/Funds/.../ExCouponFlag</span>
+                                    </a>
+                                    <!-- Compositor badge -->
+                                    
+                                    
+                                    
+                                </div>
                             </td>
 
                             <td class="px-4 py-3 font-mono">
@@ -1599,11 +1706,35 @@
             <!-- Section: Additional Information (for generic appinfo tags) -->
             
 
-            <!-- Section: XML Snippet -->
+            <!-- Section: Identity Constraints (XSD 1.0) -->
+            
+
+            <!-- Section: Assertions (XSD 1.1) -->
+            
+
+            <!-- Section: Type Alternatives (XSD 1.1) -->
+            
+
+            <!-- Section: Wildcards (xs:any, xs:anyAttribute) -->
+            
+
+            <!-- Section: Open Content (XSD 1.1) -->
+            
+
+            <!-- Section: Element Definition -->
             <section>
-                <h2 class="text-lg font-semibold text-slate-800 mb-3">XML Snippet</h2>
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
+                <details open class="group">
+                    <summary class="cursor-pointer select-none list-none">
+                        <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-t-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 text-slate-600 transition-transform rotate-90 group-open:rotate-0"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            <h2 class="text-lg font-semibold text-slate-800">Element Definition</h2>
+                        </div>
+                    </summary>
+                    <div class="rounded-b-lg overflow-hidden border border-t-0 border-slate-200">
+                        <pre class="language-xml !m-0"><code>&lt;xs:element xmlns:altova=&quot;http://www.altova.com/xml-schema-extensions&quot;
             xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
             xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
             name=&quot;Bonds&quot;&gt;
@@ -1696,8 +1827,12 @@
    &lt;/xs:complexType&gt;
 &lt;/xs:element&gt;
 </code></pre>
-                </div>
+                    </div>
+                </details>
             </section>
+
+            <!-- Section: Referenced Type Definition -->
+            
 
         </div>
     </div>
